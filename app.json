@@ -2,10 +2,10 @@
   "apps": [{
     "name": "demacia",
     "cwd": ".",
-    "script": "/usr/bin/java",
+    "script": "java",
     "args": [
       "-jar", 
-      "/home/ubuntu/s03p13a602/backend/target/webBlog-0.0.1-SNAPSHOT.jar"
+      "/home/ubuntu/back/webBlog-0.0.1-SNAPSHOT.jar"
     ],
     "env": {
     },
