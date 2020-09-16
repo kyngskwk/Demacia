@@ -1,6 +1,8 @@
 import requests
 import json
 from pprint import pprint
+import numpy
+import copy
 
 # 닉네임 불러오기
 # summonarNames = []
@@ -71,33 +73,90 @@ from pprint import pprint
         #     json.dump(game_ids, make_file, indent="\t")
 
 
-# # 승률을 구하려면 이긴 횟수, 진 횟수 dict를 만들어야 함
 # champion_info = dict() # "timo" : [이긴횟수, 진횟수]
-# # champion id 별 이긴횟수, 진횟수 딕셔너리 만들기
-# # match-v4-gameid
-# for game_id in game_ids:
-#     match_v4_gameId ="https://kr.api.riotgames.com/lol/match/v4/matches/"+str(game_id)+"?api_key=RGAPI-4dcd2099-2605-4440-9864-f53a305141e7"
-#     results = requests.get(match_v4_gameId).json()["teams"]
-#     for team in results:
-#         if team["win"] == "Fail":
-#             for champ in team["bans"]:
-#                 if champ["championId"] not in champion_info:
-#                     champion_info[champ["championId"]] = [0,1]
-#                 else:
-#                     champion_info[champ["championId"]][1] += 1
-#         elif team["win"] == "Win":
-#             for champ in team["bans"]:
-#                 if champ["championId"] not in champion_info:
-#                     champion_info[champ["championId"]] = [1,0]
-#                 else:
-#                     champion_info[champ["championId"]][0] += 1
+# champion id 별 이긴횟수, 진횟수 딕셔너리 만들기
+# 2차원 배열로 그룹 추천 
+# champion_group_2_array = [[0]*877 for _ in range(877)]
+# match-v4-gameid
 
-# # 승률 구하기
+ 
+
+with open('winnigrate.json', 'r') as winnigdict:
+    # 원래 있던 gameid 값 가져오기
+    champion_info = json.load(winnigdict)  
+    # champion_info = copy.deepcopy(c_info)
+
+
+with open('chamcombi.json', 'r') as combimatrix:
+    # 원래 있던 gameid 값 가져오기
+    champion_group_2_array = json.load(combimatrix) 
+    # champion_group_2_array = copy.deepcopy(c_array)
+
+
+with open('gameid.json', 'r') as gameids:
+    # 원래 있던 gameid 값 가져오기
+    game_ids = json.load(gameids) 
+
+
+    cnt = 0
+    for game_id in game_ids:
+        # print(champion_info)
+        # print(champion_group_2_array)
+
+        if cnt == 100:
+            print(game_id)
+            with open('winnigrate.json', 'w', encoding="UTF-8") as make_file:
+                json.dump(champion_info, make_file)
+            
+            with open('chamcombi.json', 'w', encoding="UTF-8") as make_file:
+                json.dump(champion_group_2_array, make_file)
+            break
+
+        match_v4_gameId ="https://kr.api.riotgames.com/lol/match/v4/matches/"+str(game_id)+"?api_key=RGAPI-4dcd2099-2605-4440-9864-f53a305141e7"
+        results = requests.get(match_v4_gameId).json()["teams"]
+        cnt += 1
+        for team in results:
+            if team["win"] == "Fail":
+                for champ in team["bans"]:
+                    # champion id 별 이긴횟수, 진횟수 딕셔너리 만들기
+                    if champ["championId"] not in champion_info:
+                        champion_info[champ["championId"]] = [0,1]
+                    else:
+                        champion_info[champ["championId"]][1] += 1
+                    
+                    
+            elif team["win"] == "Win":
+                indexes = []
+                for champ in team["bans"]:
+                    if champ["championId"] not in champion_info:
+                        champion_info[champ["championId"]] = [1,0]
+                    else:
+                        champion_info[champ["championId"]][0] += 1
+                    # 2차원 배열 인덱스 만들기
+                    if -1 < champ["championId"] < 877:
+                        indexes.append(champ["championId"])
+                # 2차원 배열에 하나씩 플러스
+
+                for i in indexes:
+                    for j in indexes:
+                        if i != j:
+                            champion_group_2_array[i][j] += 1
+
+# 승률 구하기
 # champion_winnig_rate = dict()
 # for champion_id in champion_info:
 #     champion_winnig_rate[champion_id] = champion_info[champion_id][0] / sum(champion_info[champion_id])
 
 # print(champion_winnig_rate)
+
+# 챔피언 dictionary 만들기 
+# champ_dictionary = dict()
+# for i in range(877):
+#     if i not in champ_dictionary and sum(champion_group_2_array[i]) > 0 :
+#         champ_dictionary[i] = list(numpy.argsort(champion_group_2_array[i])[::-1][:4])
+
+
+# print(champ_dictionary)
 
 # mbti 조합 dict mbti : [좋은조합, 나쁜조합]
 mbti_couple = {
@@ -120,50 +179,50 @@ mbti_couple = {
 } 
 
 
-result = []
-with open('champions.json', 'r') as chams:
+# result = []
+# with open('champions.json', 'r') as chams:
 
-    cham_infos = json.load(chams)
-    for cham_info in cham_infos:
-        table = {}
-        table["models"] = "appname.champion"
-        table["pk"] = cham_info["key"]
-        cham_id = cham_info["key"]
+#     cham_infos = json.load(chams)
+#     for cham_info in cham_infos:
+#         table = {}
+#         table["models"] = "appname.champion"
+#         table["pk"] = cham_info["key"]
+#         cham_id = cham_info["key"]
 
-        # 필드 채우기
-        table["fields"] = {}
-        table["fields"]["chamkey"] = cham_id
-        table["fields"]["chamname"] = cham_info["id"]
-        table["fields"]["chamtags"] = cham_info["tags"]
-        # table["fields"]["partype"] = ''
+#         # 필드 채우기
+#         table["fields"] = {}
+#         table["fields"]["chamkey"] = cham_id
+#         table["fields"]["chamname"] = cham_info["id"]
+#         table["fields"]["chamtags"] = cham_info["tags"]
+#         # table["fields"]["partype"] = ''
 
-        # 챔피언 딕셔너리
-        table["fields"]["dictionary"] = ''
+#         # 챔피언 딕셔너리
+#         table["fields"]["dictionary"] = ''
 
-        # 챔피언 라인
-        table["fields"]["lane"] = cham_info["lane"]
+#         # 챔피언 라인
+#         table["fields"]["lane"] = cham_info["lane"]
         
-        # 챔피언 mbti
-        # cham_mbti = cham_info["?????"]
-        # table["fields"]["mbti"] = cham_mbti
-        table["fields"]["mbti"] = ''
+#         # 챔피언 mbti
+#         # cham_mbti = cham_info["?????"]
+#         # table["fields"]["mbti"] = cham_mbti
+#         table["fields"]["mbti"] = ''
 
-        # 챔피언별 승률
-        table["fields"]["winningRate"] = '' 
-        # 코드 불러온 후
-        # table["fields"]["winningRate"] = champion_winnig_rate[cham_id]
+#         # 챔피언별 승률
+#         table["fields"]["winningRate"] = '' 
+#         # 코드 불러온 후
+#         # table["fields"]["winningRate"] = champion_winnig_rate[cham_id]
 
-        # mbti 좋은 조합
-        table["fields"]["goodmbti"] = '' 
-        # table["fields"]["goodmbti"] = mbti_couple["cham_mbti"][0]
-
-
-        # mbti 나쁜 조합
-        table["fields"]["badmbti"] = '' 
-        # table["fields"]["goodmbti"] = mbti_couple["cham_mbti"][1]
+#         # mbti 좋은 조합
+#         table["fields"]["goodmbti"] = '' 
+#         # table["fields"]["goodmbti"] = mbti_couple["cham_mbti"][0]
 
 
-        result.append(table)
+#         # mbti 나쁜 조합
+#         table["fields"]["badmbti"] = '' 
+#         # table["fields"]["goodmbti"] = mbti_couple["cham_mbti"][1]
 
-with open('cham.json', 'w', encoding="UTF-8") as make_file:
-    json.dump(result, make_file, indent="\t")
+
+#         result.append(table)
+
+# with open('cham.json', 'w', encoding="UTF-8") as make_file:
+#     json.dump(result, make_file, indent="\t")

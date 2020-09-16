@@ -1,4 +1,4 @@
-from winning_rate import champion_group_2_array
+from ..chamdata import champion_group_2_array
 import numpy
 champ_dictionary = dict()
 
