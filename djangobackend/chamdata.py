@@ -2,8 +2,103 @@ import requests
 import json
 from pprint import pprint
 
-# 호니 코드 불러올 예정
-champion_winnig_rate = dict()
+# 닉네임 불러오기
+# summonarNames = []
+# # league-V4
+# league_v4_url = "https://kr.api.riotgames.com/lol/league/v4/challengerleagues/by-queue/RANKED_SOLO_5x5?api_key=RGAPI-4dcd2099-2605-4440-9864-f53a305141e7"
+# results = requests.get(league_v4_url).json()["entries"]
+# for i in range(len(results)):
+#     summonarNames.append(results[i]["summonerName"])
+
+# with open('summonarNames.json', 'w', encoding="UTF-8") as make_file:
+#     json.dump(summonarNames, make_file, indent="\t")
+
+# # account id 얻기
+# with open('summonarNames.json', 'r') as names:
+#     names_list = json.load(names)
+#     account_ids = []
+#     cnt = 0
+#     for summonarname in names_list:
+#         # if cnt == 90:
+#         #     print(summonarname)
+#         #     with open('accountid.json', 'w', encoding="UTF-8") as make_file:
+#         #         json.dump(account_ids, make_file, indent="\t")
+#         #         break
+
+#         name = summonarname
+#         print(name)
+#         # summoner_v4_byname = "https://kr.api.riotgames.com/lol/summoner/v4/summoners/by-name/"+ str(name)+ "?api_key=RGAPI-aa7d304b-1def-416a-a85c-3a89c8752017"
+#         summoner_v4_byname = "https://kr.api.riotgames.com/lol/summoner/v4/summoners/by-name/"+ str(name)+ "?api_key=RGAPI-4dcd2099-2605-4440-9864-f53a305141e7"
+
+#         # results = requests.get(summoner_v4_byname).json()
+#         # print(results)
+#         results = requests.get(summoner_v4_byname).json()["accountId"]
+#         print(results)
+#         account_ids.append(str(results))
+#         cnt += 1
+
+#     with open('accountid.json', 'w', encoding="UTF-8") as make_file:
+#         json.dump(account_ids, make_file, indent="\t")
+
+
+# # game id 얻기
+# with open('gameid.json', 'r') as gameids:
+#     # 원래 있던 gameid 값 가져오기
+#     game_ids = json.load(gameids)    
+
+#     with open('accountid.json', 'r') as accounts:
+#         account_ids = json.load(accounts)
+        # cnt = 0
+        # for account_id in account_ids:
+        #     if cnt == 50:
+        #         print(account_id)
+        #         game_ids = list(set(game_ids))
+
+        #         with open('gameid.json', 'w', encoding="UTF-8") as make_file:
+        #             json.dump(game_ids, make_file, indent="\t")
+        #             break
+        # for account_id in account_ids:
+        #     match_v4_accountid = "https://kr.api.riotgames.com/lol/match/v4/matchlists/by-account/"+str(account_id)+"?api_key=RGAPI-4dcd2099-2605-4440-9864-f53a305141e7"
+        #     results = requests.get(match_v4_accountid).json()["matches"]
+        #     # cnt += 1
+        #     print(account_id)
+        #     for i in range(len(results)):
+        #         game_ids.append(results[i]["gameId"])
+
+        # game_ids = list(set(game_ids)) # game_Ids 집합으로 해야함
+
+        # with open('gameid.json', 'w', encoding="UTF-8") as make_file:
+        #     json.dump(game_ids, make_file, indent="\t")
+
+
+# # 승률을 구하려면 이긴 횟수, 진 횟수 dict를 만들어야 함
+# champion_info = dict() # "timo" : [이긴횟수, 진횟수]
+# # champion id 별 이긴횟수, 진횟수 딕셔너리 만들기
+# # match-v4-gameid
+# for game_id in game_ids:
+#     match_v4_gameId ="https://kr.api.riotgames.com/lol/match/v4/matches/"+str(game_id)+"?api_key=RGAPI-4dcd2099-2605-4440-9864-f53a305141e7"
+#     results = requests.get(match_v4_gameId).json()["teams"]
+#     for team in results:
+#         if team["win"] == "Fail":
+#             for champ in team["bans"]:
+#                 if champ["championId"] not in champion_info:
+#                     champion_info[champ["championId"]] = [0,1]
+#                 else:
+#                     champion_info[champ["championId"]][1] += 1
+#         elif team["win"] == "Win":
+#             for champ in team["bans"]:
+#                 if champ["championId"] not in champion_info:
+#                     champion_info[champ["championId"]] = [1,0]
+#                 else:
+#                     champion_info[champ["championId"]][0] += 1
+
+# # 승률 구하기
+# champion_winnig_rate = dict()
+# for champion_id in champion_info:
+#     champion_winnig_rate[champion_id] = champion_info[champion_id][0] / sum(champion_info[champion_id])
+
+# print(champion_winnig_rate)
+
 # mbti 조합 dict mbti : [좋은조합, 나쁜조합]
 mbti_couple = {
     'entj': ['isfp', 'isfj'],
