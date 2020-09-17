@@ -101,7 +101,6 @@ with open('champion_stats.json') as json_file:
     # for i in range(len(mbti_championlist)):
     #     cnt += len(mbti_championlist[i])
     # print(cnt)
-
     MBTI = {"['ENTJ']": ['Amumu', 'Chogath', 'Galio', 'Volibear', 'Mordekaiser', 'Zac', 'Gangplank' ],
 "['INFP']": ['Shen', 'Malphite', 'Sion', 'Maokai', 'Nasus', 'Ornn', 'Poppy', 'Singed', 'TahmKench', 'Urgot', 'Sett', 'DrMundo' ],
 "['INTP']": [ 'Darius', 'Gnar', 'MonkeyKing', 'Garen', 'Olaf', 'Renekton', 'Warwick', 'Yorick',  'Illaoi', 'Kled', 'Kennen'],
