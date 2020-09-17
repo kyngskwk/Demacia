@@ -193,6 +193,8 @@ export default {
       .then(({ data }) => {
         this.writePost = data.object;
         this.videolink = process.env.VUE_APP_IMGUP_URL + this.writePost.video;
+        let vd = document.querySelector("#vid");
+        vd.load();
         // 글쓴이 정보 불러오기
         axios
           .get(process.env.VUE_APP_API_URL + "/account/user", {
