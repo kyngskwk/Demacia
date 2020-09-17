@@ -3,6 +3,9 @@ import Router from "vue-router";
 
 import constants from "../lib/constants";
 
+// 메인 페이지
+import main from "../page/Main"
+
 // 포스트
 import List from "../page/post/List.vue";
 import Write from "../page/post/Write.vue";
@@ -20,7 +23,11 @@ import Join from "../page/user/Join.vue";
 import Mypage from "../page/user/Mypage.vue";
 import Myprofile from "../page/user/Myprofile.vue";
 
-import welcome from "../components/common/welcome.vue";
+// 영상분석
+import videoList from "../page/video/List.vue";
+import videoWrite from "../page/video/Write.vue";
+import videoDetail from "../page/video/Detail.vue";
+import videoEdit from "../page/video/Edit.vue";
 
 Vue.use(Router);
 
@@ -30,7 +37,7 @@ export default new Router({
     // 메인 페이지
     {
       path: "/",
-      component: welcome
+      component: main
     },
     // 포스트
     {
@@ -57,6 +64,27 @@ export default new Router({
       path: "/result/:postNo",
       name: constants.URL_TYPE.POST.RESULT,
       component: Result,
+    },
+    // 영상분석
+    {
+      path: "/vlist",
+      name: constants.URL_TYPE.VIDEO.MAIN,
+      component: videoList,
+    },
+    {
+      path: "/vwrite",
+      name: constants.URL_TYPE.VIDEO.WRITE,
+      component: videoWrite,
+    },
+    {
+      path: "/vdetail/:videoNo",
+      name: constants.URL_TYPE.VIDEO.DETAIL,
+      component: videoDetail,
+    },
+    {
+      path: "/vedit/:videoNo",
+      name: constants.URL_TYPE.VIDEO.EDIT,
+      component: videoEdit,
     },
     // 유저
     {
