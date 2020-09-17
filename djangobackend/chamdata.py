@@ -3,6 +3,7 @@ import json
 from pprint import pprint
 import numpy
 import copy
+import pickle
 
 # 닉네임 불러오기
 # summonarNames = []
@@ -79,18 +80,11 @@ import copy
 # champion_group_2_array = [[0]*877 for _ in range(877)]
 # match-v4-gameid
 
- 
 
-with open('winnigrate.json', 'r') as winnigdict:
-    # 원래 있던 gameid 값 가져오기
-    champion_info = json.load(winnigdict)  
-    # champion_info = copy.deepcopy(c_info)
-
-
-with open('chamcombi.json', 'r') as combimatrix:
-    # 원래 있던 gameid 값 가져오기
-    champion_group_2_array = json.load(combimatrix) 
-    # champion_group_2_array = copy.deepcopy(c_array)
+# 원래 있던 champion_info, champion_group_2_array 값 가져오기
+with open('dictandcombo.p', 'rb') as file:
+    champion_info = pickle.load(file)
+    champion_group_2_array = pickle.load(file)
 
 
 with open('gameid.json', 'r') as gameids:
@@ -105,10 +99,14 @@ with open('gameid.json', 'r') as gameids:
 
         if cnt == 100:
             print(game_id)
-            with open('winnigrate.json', 'w', encoding="UTF-8") as make_file:
+            with open('dictandcombo.p', 'wb') as file:
+                pickle.dump(champion_info, file)
+                pickle.dump(champion_group_2_array, file)
+
+            with open('winandlose.json', 'w', encoding="UTF-8") as make_file:
                 json.dump(champion_info, make_file)
-            
-            with open('chamcombi.json', 'w', encoding="UTF-8") as make_file:
+
+            with open('chammatrix.json', 'w', encoding="UTF-8") as make_file:
                 json.dump(champion_group_2_array, make_file)
             break
 
@@ -118,23 +116,25 @@ with open('gameid.json', 'r') as gameids:
         for team in results:
             if team["win"] == "Fail":
                 for champ in team["bans"]:
+                    champid = champ["championId"]
                     # champion id 별 이긴횟수, 진횟수 딕셔너리 만들기
-                    if champ["championId"] not in champion_info:
-                        champion_info[champ["championId"]] = [0,1]
+                    if champid not in champion_info:
+                        champion_info[champid] = [0,1]
                     else:
-                        champion_info[champ["championId"]][1] += 1
+                        champion_info[champid][1] += 1
                     
                     
             elif team["win"] == "Win":
                 indexes = []
-                for champ in team["bans"]:
-                    if champ["championId"] not in champion_info:
-                        champion_info[champ["championId"]] = [1,0]
+                for champ in team["bans"]: 
+                    champid = champ["championId"]
+                    if champid not in champion_info:
+                        champion_info[champid] = [1,0]
                     else:
-                        champion_info[champ["championId"]][0] += 1
+                        champion_info[champid][0] += 1
                     # 2차원 배열 인덱스 만들기
-                    if -1 < champ["championId"] < 877:
-                        indexes.append(champ["championId"])
+                    if -1 < champid < 877:
+                        indexes.append(champid)
                 # 2차원 배열에 하나씩 플러스
 
                 for i in indexes:
