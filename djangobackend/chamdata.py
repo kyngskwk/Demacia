@@ -263,6 +263,7 @@ with open('champions.json', 'r') as chams:
         for mbti, cham in MBTI.items():
             if chamname in cham:
                 table["fields"]["mbti"] = mbti
+                cham_mbti = mbti
                 break
 
         # 챔피언별 승률
@@ -274,13 +275,13 @@ with open('champions.json', 'r') as chams:
         # table["fields"]["winningRate"] = champion_winnig_rate[cham_id]
 
         # mbti 좋은 조합
-        table["fields"]["goodmbti"] = '' 
-        # table["fields"]["goodmbti"] = mbti_couple["cham_mbti"][0]
+        # table["fields"]["goodmbti"] = '' 
+        table["fields"]["goodmbti"] = mbti_couple[cham_mbti.lower()][0].upper()
 
 
         # mbti 나쁜 조합
-        table["fields"]["badmbti"] = '' 
-        # table["fields"]["goodmbti"] = mbti_couple["cham_mbti"][1]
+        # table["fields"]["badmbti"] = '' 
+        table["fields"]["badmbti"] = mbti_couple[cham_mbti.lower()][1].upper()
 
 
         result.append(table)
