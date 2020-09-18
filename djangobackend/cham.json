@@ -8,7 +8,7 @@
 			"chamtags": "['Fighter', 'Tank']",
 			"dictionary": "[517, 122, 350, 35]",
 			"lane": "['top', 'mid']",
-			"mbti": "",
+			"mbti": "ISFP",
 			"winningRate": "0.4878048780487805",
 			"goodmbti": "",
 			"badmbti": ""
@@ -23,7 +23,7 @@
 			"chamtags": "['Mage', 'Assassin']",
 			"dictionary": "[80, 104, 777, 51]",
 			"lane": "['mid']",
-			"mbti": "",
+			"mbti": "INTJ",
 			"winningRate": "0.46",
 			"goodmbti": "",
 			"badmbti": ""
@@ -38,7 +38,7 @@
 			"chamtags": "['Assassin']",
 			"dictionary": "[51, 76, 80, 30]",
 			"lane": "['top', 'mid']",
-			"mbti": "",
+			"mbti": "INTJ",
 			"winningRate": "0.4967866323907455",
 			"goodmbti": "",
 			"badmbti": ""
@@ -53,7 +53,7 @@
 			"chamtags": "['Tank', 'Support']",
 			"dictionary": "[876, 30, 350, 236]",
 			"lane": "['support']",
-			"mbti": "",
+			"mbti": "ESTP",
 			"winningRate": "0.3333333333333333",
 			"goodmbti": "",
 			"badmbti": ""
@@ -68,7 +68,7 @@
 			"chamtags": "['Tank', 'Mage']",
 			"dictionary": "[51, 876, 142, 104]",
 			"lane": "['jungle']",
-			"mbti": "",
+			"mbti": "ENTJ",
 			"winningRate": "0.7272727272727273",
 			"goodmbti": "",
 			"badmbti": ""
@@ -83,7 +83,7 @@
 			"chamtags": "['Mage', 'Support']",
 			"dictionary": "[76, 51, 126, 9]",
 			"lane": "['mid']",
-			"mbti": "",
+			"mbti": "ISTP",
 			"winningRate": "0.35714285714285715",
 			"goodmbti": "",
 			"badmbti": ""
@@ -98,7 +98,7 @@
 			"chamtags": "['Mage']",
 			"dictionary": "[30, 74, 133, 412]",
 			"lane": "['mid', 'support']",
-			"mbti": "",
+			"mbti": "ESFJ",
 			"winningRate": "0.4375",
 			"goodmbti": "",
 			"badmbti": ""
@@ -113,7 +113,7 @@
 			"chamtags": "['Marksman']",
 			"dictionary": "[76, 429, 81, 104]",
 			"lane": "['ad']",
-			"mbti": "",
+			"mbti": "ESTJ",
 			"winningRate": "0.45897435897435895",
 			"goodmbti": "",
 			"badmbti": ""
@@ -128,7 +128,7 @@
 			"chamtags": "['Marksman', 'Support']",
 			"dictionary": "[51, 76, 80, 30]",
 			"lane": "['ad']",
-			"mbti": "",
+			"mbti": "ENTP",
 			"winningRate": "0.504406580493537",
 			"goodmbti": "",
 			"badmbti": ""
@@ -143,7 +143,7 @@
 			"chamtags": "['Mage']",
 			"dictionary": "[236, 777, 117, 58]",
 			"lane": "['mid']",
-			"mbti": "",
+			"mbti": "ISTP",
 			"winningRate": "0.4444444444444444",
 			"goodmbti": "",
 			"badmbti": ""
@@ -158,7 +158,7 @@
 			"chamtags": "['Mage', 'Marksman']",
 			"dictionary": "[76, 51, 104, 876]",
 			"lane": "['mid']",
-			"mbti": "",
+			"mbti": "ISFJ",
 			"winningRate": "0.5573770491803278",
 			"goodmbti": "",
 			"badmbti": ""
@@ -173,7 +173,7 @@
 			"chamtags": "['Support', 'Mage']",
 			"dictionary": "[76, 51, 80, 30]",
 			"lane": "['support']",
-			"mbti": "",
+			"mbti": "ESFP",
 			"winningRate": "0.4963072378138848",
 			"goodmbti": "",
 			"badmbti": ""
@@ -188,7 +188,7 @@
 			"chamtags": "['Tank', 'Fighter']",
 			"dictionary": "[51, 777, 76, 30]",
 			"lane": "['support']",
-			"mbti": "",
+			"mbti": "ESTP",
 			"winningRate": "0.5056497175141242",
 			"goodmbti": "",
 			"badmbti": ""
@@ -203,7 +203,7 @@
 			"chamtags": "['Mage']",
 			"dictionary": "",
 			"lane": "['support', 'mid']",
-			"mbti": "",
+			"mbti": "ESFJ",
 			"winningRate": "0.0",
 			"goodmbti": "",
 			"badmbti": ""
@@ -218,7 +218,7 @@
 			"chamtags": "['Support', 'Tank']",
 			"dictionary": "[875, 238, 122, 142]",
 			"lane": "['support']",
-			"mbti": "",
+			"mbti": "ESTP",
 			"winningRate": "0.375",
 			"goodmbti": "",
 			"badmbti": ""
@@ -233,7 +233,7 @@
 			"chamtags": "['Marksman']",
 			"dictionary": "[76, 30, 80, 876]",
 			"lane": "['ad']",
-			"mbti": "",
+			"mbti": "ESTJ",
 			"winningRate": "0.500383393580896",
 			"goodmbti": "",
 			"badmbti": ""
@@ -248,7 +248,7 @@
 			"chamtags": "['Fighter', 'Tank']",
 			"dictionary": "[51, 76, 80, 30]",
 			"lane": "['top', 'mid']",
-			"mbti": "",
+			"mbti": "ISFP",
 			"winningRate": "0.5123634272570443",
 			"goodmbti": "",
 			"badmbti": ""
@@ -263,7 +263,7 @@
 			"chamtags": "['Mage']",
 			"dictionary": "[51, 76, 80, 777]",
 			"lane": "['mid', 'ad']",
-			"mbti": "",
+			"mbti": "ISTP",
 			"winningRate": "0.5487364620938628",
 			"goodmbti": "",
 			"badmbti": ""
@@ -278,7 +278,7 @@
 			"chamtags": "['Tank', 'Mage']",
 			"dictionary": "[105, 350, 17, 51]",
 			"lane": "['mid', 'top', 'jungle']",
-			"mbti": "",
+			"mbti": "ENTJ",
 			"winningRate": "0.5",
 			"goodmbti": "",
 			"badmbti": ""
@@ -293,7 +293,7 @@
 			"chamtags": "['Marksman']",
 			"dictionary": "[51, 876, 20, 157]",
 			"lane": "['mid', 'ad']",
-			"mbti": "",
+			"mbti": "ENTP",
 			"winningRate": "0.6",
 			"goodmbti": "",
 			"badmbti": ""
@@ -308,7 +308,7 @@
 			"chamtags": "['Fighter', 'Tank']",
 			"dictionary": "[51, 777, 238, 76]",
 			"lane": "['top']",
-			"mbti": "",
+			"mbti": "INTP",
 			"winningRate": "0.4706896551724138",
 			"goodmbti": "",
 			"badmbti": ""
@@ -323,7 +323,7 @@
 			"chamtags": "['Fighter', 'Mage']",
 			"dictionary": "[62, 523, 64, 80]",
 			"lane": "['mid', 'top']",
-			"mbti": "",
+			"mbti": "INTJ",
 			"winningRate": "0.32142857142857145",
 			"goodmbti": "",
 			"badmbti": ""
@@ -338,7 +338,7 @@
 			"chamtags": "['Marksman']",
 			"dictionary": "[76, 51, 104, 777]",
 			"lane": "['ad']",
-			"mbti": "",
+			"mbti": "ESTJ",
 			"winningRate": "0.5555555555555556",
 			"goodmbti": "",
 			"badmbti": ""
@@ -353,7 +353,7 @@
 			"chamtags": "['Fighter', 'Tank']",
 			"dictionary": "[81, 67, 122, 236]",
 			"lane": "['top', 'jungle']",
-			"mbti": "",
+			"mbti": "INFP",
 			"winningRate": "0.375",
 			"goodmbti": "",
 			"badmbti": ""
@@ -368,7 +368,7 @@
 			"chamtags": "['Assassin', 'Fighter']",
 			"dictionary": "[76, 51, 80, 30]",
 			"lane": "['mid', 'jungle']",
-			"mbti": "",
+			"mbti": "ENFP",
 			"winningRate": "0.47761194029850745",
 			"goodmbti": "",
 			"badmbti": ""
@@ -383,7 +383,7 @@
 			"chamtags": "['Mage', 'Fighter']",
 			"dictionary": "[51, 76, 80, 30]",
 			"lane": "['jungle']",
-			"mbti": "",
+			"mbti": "INFJ",
 			"winningRate": "0.49517684887459806",
 			"goodmbti": "",
 			"badmbti": ""
@@ -398,7 +398,7 @@
 			"chamtags": "['Assassin', 'Mage']",
 			"dictionary": "[51, 80, 76, 30]",
 			"lane": "['jungle']",
-			"mbti": "",
+			"mbti": "ENFP",
 			"winningRate": "0.4865424430641822",
 			"goodmbti": "",
 			"badmbti": ""
@@ -413,7 +413,7 @@
 			"chamtags": "['Marksman', 'Mage']",
 			"dictionary": "[76, 51, 80, 30]",
 			"lane": "['ad']",
-			"mbti": "",
+			"mbti": "ENTP",
 			"winningRate": "0.5224014336917563",
 			"goodmbti": "",
 			"badmbti": ""
@@ -428,7 +428,7 @@
 			"chamtags": "['Mage', 'Support']",
 			"dictionary": "[76, 51, 80, 777]",
 			"lane": "['jungle']",
-			"mbti": "",
+			"mbti": "INFJ",
 			"winningRate": "0.5314285714285715",
 			"goodmbti": "",
 			"badmbti": ""
@@ -443,7 +443,7 @@
 			"chamtags": "['Fighter', 'Assassin']",
 			"dictionary": "[51, 76, 80, 30]",
 			"lane": "['top']",
-			"mbti": "",
+			"mbti": "ISFP",
 			"winningRate": "0.47570621468926555",
 			"goodmbti": "",
 			"badmbti": ""
@@ -458,7 +458,7 @@
 			"chamtags": "['Assassin', 'Fighter']",
 			"dictionary": "[51, 76, 80, 777]",
 			"lane": "['mid']",
-			"mbti": "",
+			"mbti": "INTJ",
 			"winningRate": "0.5115511551155115",
 			"goodmbti": "",
 			"badmbti": ""
@@ -473,7 +473,7 @@
 			"chamtags": "['Tank', 'Mage']",
 			"dictionary": "[51, 76, 777, 80]",
 			"lane": "['mid', 'support']",
-			"mbti": "",
+			"mbti": "ENTJ",
 			"winningRate": "0.46957878315132606",
 			"goodmbti": "",
 			"badmbti": ""
@@ -488,7 +488,7 @@
 			"chamtags": "['Fighter']",
 			"dictionary": "[51, 76, 80, 104]",
 			"lane": "['top']",
-			"mbti": "",
+			"mbti": "ENTJ",
 			"winningRate": "0.5379939209726444",
 			"goodmbti": "",
 			"badmbti": ""
@@ -503,7 +503,7 @@
 			"chamtags": "['Fighter', 'Tank']",
 			"dictionary": "[777, 51, 76, 876]",
 			"lane": "['top']",
-			"mbti": "",
+			"mbti": "INTP",
 			"winningRate": "0.5012658227848101",
 			"goodmbti": "",
 			"badmbti": ""
@@ -518,7 +518,7 @@
 			"chamtags": "['Fighter', 'Tank']",
 			"dictionary": "[432, 876, 7, 517]",
 			"lane": "['top']",
-			"mbti": "",
+			"mbti": "INTP",
 			"winningRate": "0.2727272727272727",
 			"goodmbti": "",
 			"badmbti": ""
@@ -533,7 +533,7 @@
 			"chamtags": "['Fighter', 'Mage']",
 			"dictionary": "[51, 76, 58, 876]",
 			"lane": "['jungle', 'mid']",
-			"mbti": "",
+			"mbti": "ENFJ",
 			"winningRate": "0.6666666666666666",
 			"goodmbti": "",
 			"badmbti": ""
@@ -548,7 +548,7 @@
 			"chamtags": "['Marksman']",
 			"dictionary": "[51, 76, 80, 30]",
 			"lane": "['jungle']",
-			"mbti": "",
+			"mbti": "ENFP",
 			"winningRate": "0.47487370380218025",
 			"goodmbti": "",
 			"badmbti": ""
@@ -563,7 +563,7 @@
 			"chamtags": "['Fighter', 'Tank']",
 			"dictionary": "[51, 76, 876, 30]",
 			"lane": "['jungle', 'top']",
-			"mbti": "",
+			"mbti": "ENFJ",
 			"winningRate": "0.515451174289246",
 			"goodmbti": "",
 			"badmbti": ""
@@ -578,7 +578,7 @@
 			"chamtags": "['Mage', 'Support']",
 			"dictionary": "[76, 777, 51, 876]",
 			"lane": "['top']",
-			"mbti": "",
+			"mbti": "ISTP",
 			"winningRate": "0.55",
 			"goodmbti": "",
 			"badmbti": ""
@@ -593,7 +593,7 @@
 			"chamtags": "['Fighter', 'Tank']",
 			"dictionary": "[54, 157, 238, 25]",
 			"lane": "['top']",
-			"mbti": "",
+			"mbti": "INTP",
 			"winningRate": "0.6571428571428571",
 			"goodmbti": "",
 			"badmbti": ""
@@ -608,7 +608,7 @@
 			"chamtags": "['Fighter', 'Assassin']",
 			"dictionary": "[51, 80, 76, 876]",
 			"lane": "['top',  'mid']",
-			"mbti": "",
+			"mbti": "ISFP",
 			"winningRate": "0.46998867497168745",
 			"goodmbti": "",
 			"badmbti": ""
@@ -623,7 +623,7 @@
 			"chamtags": "['Support', 'Mage']",
 			"dictionary": "[51, 76, 80, 236]",
 			"lane": "['jungle']",
-			"mbti": "",
+			"mbti": "ESFP",
 			"winningRate": "0.44545454545454544",
 			"goodmbti": "",
 			"badmbti": ""
@@ -638,7 +638,7 @@
 			"chamtags": "['Support', 'Mage']",
 			"dictionary": "[51, 25, 30, 76]",
 			"lane": "['support']",
-			"mbti": "",
+			"mbti": "ESFP",
 			"winningRate": "0.5614035087719298",
 			"goodmbti": "",
 			"badmbti": ""
@@ -653,7 +653,7 @@
 			"chamtags": "['Tank', 'Fighter']",
 			"dictionary": "[76, 876, 104, 80]",
 			"lane": "['jungle']",
-			"mbti": "",
+			"mbti": "ENFJ",
 			"winningRate": "0.3",
 			"goodmbti": "",
 			"badmbti": ""
@@ -668,7 +668,7 @@
 			"chamtags": "['Fighter', 'Assassin']",
 			"dictionary": "[51, 30, 76, 80]",
 			"lane": "['top', 'jungle']",
-			"mbti": "",
+			"mbti": "ISFP",
 			"winningRate": "0.4933884297520661",
 			"goodmbti": "",
 			"badmbti": ""
@@ -683,7 +683,7 @@
 			"chamtags": "['Fighter', 'Marksman']",
 			"dictionary": "[51, 76, 80, 30]",
 			"lane": "['top', 'mid']",
-			"mbti": "",
+			"mbti": "INTJ",
 			"winningRate": "0.5014814814814815",
 			"goodmbti": "",
 			"badmbti": ""
@@ -698,7 +698,7 @@
 			"chamtags": "['Marksman', 'Mage']",
 			"dictionary": "[51, 76, 30, 22]",
 			"lane": "['ad']",
-			"mbti": "",
+			"mbti": "ENTP",
 			"winningRate": "0.5254237288135594",
 			"goodmbti": "",
 			"badmbti": ""
@@ -713,7 +713,7 @@
 			"chamtags": "['Marksman']",
 			"dictionary": "[51, 777, 80, 76]",
 			"lane": "['ad']",
-			"mbti": "",
+			"mbti": "ESTJ",
 			"winningRate": "0.45161290322580644",
 			"goodmbti": "",
 			"badmbti": ""
@@ -728,7 +728,7 @@
 			"chamtags": "['Marksman']",
 			"dictionary": "[51, 58, 246, 876]",
 			"lane": "['ad']",
-			"mbti": "",
+			"mbti": "ESTJ",
 			"winningRate": "0.43478260869565216",
 			"goodmbti": "",
 			"badmbti": ""
@@ -743,7 +743,7 @@
 			"chamtags": "['Marksman']",
 			"dictionary": "[76, 51, 80, 58]",
 			"lane": "['ad']",
-			"mbti": "",
+			"mbti": "ESTJ",
 			"winningRate": "0.5083114610673666",
 			"goodmbti": "",
 			"badmbti": ""
@@ -758,7 +758,7 @@
 			"chamtags": "['Mage', 'Support']",
 			"dictionary": "[76, 51, 80, 30]",
 			"lane": "['support']",
-			"mbti": "",
+			"mbti": "ESFJ",
 			"winningRate": "0.5052461662631155",
 			"goodmbti": "",
 			"badmbti": ""
@@ -773,7 +773,7 @@
 			"chamtags": "['Mage']",
 			"dictionary": "[51, 76, 80, 876]",
 			"lane": "['jungle']",
-			"mbti": "",
+			"mbti": "ISTP",
 			"winningRate": "0.48825503355704697",
 			"goodmbti": "",
 			"badmbti": ""
@@ -788,7 +788,7 @@
 			"chamtags": "['Assassin', 'Mage']",
 			"dictionary": "[51, 76, 876, 80]",
 			"lane": "['mid']",
-			"mbti": "",
+			"mbti": "INTJ",
 			"winningRate": "0.5015673981191222",
 			"goodmbti": "",
 			"badmbti": ""
@@ -803,7 +803,7 @@
 			"chamtags": "['Assassin', 'Mage']",
 			"dictionary": "[51, 80, 30, 76]",
 			"lane": "['mid']",
-			"mbti": "",
+			"mbti": "INTJ",
 			"winningRate": "0.4775828460038986",
 			"goodmbti": "",
 			"badmbti": ""
@@ -818,7 +818,7 @@
 			"chamtags": "['Fighter', 'Support']",
 			"dictionary": "[777, 60, 157, 39]",
 			"lane": "['top', 'mid']",
-			"mbti": "",
+			"mbti": "ENTP",
 			"winningRate": "0.5789473684210527",
 			"goodmbti": "",
 			"badmbti": ""
@@ -833,7 +833,7 @@
 			"chamtags": "['Fighter', 'Assassin']",
 			"dictionary": "[51, 76, 80, 236]",
 			"lane": "['jungle']",
-			"mbti": "",
+			"mbti": "ENFP",
 			"winningRate": "0.5588235294117647",
 			"goodmbti": "",
 			"badmbti": ""
@@ -848,7 +848,7 @@
 			"chamtags": "['Mage', 'Marksman']",
 			"dictionary": "[76, 51, 80, 876]",
 			"lane": "['top']",
-			"mbti": "",
+			"mbti": "INTP",
 			"winningRate": "0.5345911949685535",
 			"goodmbti": "",
 			"badmbti": ""
@@ -863,7 +863,7 @@
 			"chamtags": "['Assassin']",
 			"dictionary": "[58, 76, 30, 432]",
 			"lane": "['jungle']",
-			"mbti": "",
+			"mbti": "ENFP",
 			"winningRate": "0.49122807017543857",
 			"goodmbti": "",
 			"badmbti": ""
@@ -878,7 +878,7 @@
 			"chamtags": "['Marksman']",
 			"dictionary": "[51, 76, 80, 30]",
 			"lane": "['jungle']",
-			"mbti": "",
+			"mbti": "ESTJ",
 			"winningRate": "0.5441176470588235",
 			"goodmbti": "",
 			"badmbti": ""
@@ -893,7 +893,7 @@
 			"chamtags": "['Fighter', 'Tank']",
 			"dictionary": "[51, 80, 876, 58]",
 			"lane": "['top']",
-			"mbti": "",
+			"mbti": "INTP",
 			"winningRate": "0.46551724137931033",
 			"goodmbti": "",
 			"badmbti": ""
@@ -908,7 +908,7 @@
 			"chamtags": "['Marksman', 'Mage']",
 			"dictionary": "[30, 76, 80, 876]",
 			"lane": "['ad']",
-			"mbti": "",
+			"mbti": "ENTP",
 			"winningRate": "0.4666666666666667",
 			"goodmbti": "",
 			"badmbti": ""
@@ -923,7 +923,7 @@
 			"chamtags": "['Assassin', 'Mage']",
 			"dictionary": "[51, 76, 80, 30]",
 			"lane": "['mid']",
-			"mbti": "",
+			"mbti": "INTJ",
 			"winningRate": "0.4888668975754577",
 			"goodmbti": "",
 			"badmbti": ""
@@ -938,7 +938,7 @@
 			"chamtags": "['Fighter', 'Assassin']",
 			"dictionary": "[51, 80, 30, 876]",
 			"lane": "['jungle']",
-			"mbti": "",
+			"mbti": "ISFP",
 			"winningRate": "0.49763779527559054",
 			"goodmbti": "",
 			"badmbti": ""
@@ -953,7 +953,7 @@
 			"chamtags": "['Tank', 'Support']",
 			"dictionary": "[51, 76, 80, 876]",
 			"lane": "['support']",
-			"mbti": "",
+			"mbti": "ESTP",
 			"winningRate": "0.5886792452830188",
 			"goodmbti": "",
 			"badmbti": ""
@@ -968,7 +968,7 @@
 			"chamtags": "['Fighter', 'Mage']",
 			"dictionary": "[51, 76, 80, 30]",
 			"lane": "['jungle']",
-			"mbti": "",
+			"mbti": "INFJ",
 			"winningRate": "0.5033662477558348",
 			"goodmbti": "",
 			"badmbti": ""
@@ -983,7 +983,7 @@
 			"chamtags": "['Mage']",
 			"dictionary": "[51, 58, 30, 104]",
 			"lane": "['mid']",
-			"mbti": "",
+			"mbti": "INFJ",
 			"winningRate": "0.5882352941176471",
 			"goodmbti": "",
 			"badmbti": ""
@@ -998,7 +998,7 @@
 			"chamtags": "['Marksman']",
 			"dictionary": "[51, 76, 80, 876]",
 			"lane": "['ad', 'mid', 'top']",
-			"mbti": "",
+			"mbti": "ESTJ",
 			"winningRate": "0.5002658160552897",
 			"goodmbti": "",
 			"badmbti": ""
@@ -1013,7 +1013,7 @@
 			"chamtags": "['Support', 'Mage']",
 			"dictionary": "[51, 76, 80, 236]",
 			"lane": "['support', 'top']",
-			"mbti": "",
+			"mbti": "ESFP",
 			"winningRate": "0.5198618307426598",
 			"goodmbti": "",
 			"badmbti": ""
@@ -1028,7 +1028,7 @@
 			"chamtags": "['Mage', 'Support']",
 			"dictionary": "[51, 777, 76, 80]",
 			"lane": "['support', 'mid']",
-			"mbti": "",
+			"mbti": "ESFJ",
 			"winningRate": "0.491725768321513",
 			"goodmbti": "",
 			"badmbti": ""
@@ -1043,7 +1043,7 @@
 			"chamtags": "['Tank', 'Fighter']",
 			"dictionary": "[122, 157, 517, 777]",
 			"lane": "['top', 'mid', 'support']",
-			"mbti": "",
+			"mbti": "INFP",
 			"winningRate": "0.4393939393939394",
 			"goodmbti": "",
 			"badmbti": ""
@@ -1058,7 +1058,7 @@
 			"chamtags": "['Mage', 'Assassin']",
 			"dictionary": "[157, 777, 86, 104]",
 			"lane": "['mid']",
-			"mbti": "",
+			"mbti": "ISFJ",
 			"winningRate": "0.2857142857142857",
 			"goodmbti": "",
 			"badmbti": ""
@@ -1073,7 +1073,7 @@
 			"chamtags": "['Tank', 'Mage']",
 			"dictionary": "[51, 876, 30, 80]",
 			"lane": "['top', 'support']",
-			"mbti": "",
+			"mbti": "INFP",
 			"winningRate": "0.5070422535211268",
 			"goodmbti": "",
 			"badmbti": ""
@@ -1088,7 +1088,7 @@
 			"chamtags": "['Assassin', 'Fighter']",
 			"dictionary": "[44, 35, 39, 51]",
 			"lane": "['jungle']",
-			"mbti": "",
+			"mbti": "ENFP",
 			"winningRate": "0.46218487394957986",
 			"goodmbti": "",
 			"badmbti": ""
@@ -1103,7 +1103,7 @@
 			"chamtags": "['Marksman']",
 			"dictionary": "[51, 876, 76, 30]",
 			"lane": "['ad']",
-			"mbti": "",
+			"mbti": "ESTJ",
 			"winningRate": "0.5166666666666667",
 			"goodmbti": "",
 			"badmbti": ""
@@ -1118,7 +1118,7 @@
 			"chamtags": "['Fighter', 'Tank']",
 			"dictionary": "[76, 51, 104, 80]",
 			"lane": "['top', 'jungle']",
-			"mbti": "",
+			"mbti": "INTP",
 			"winningRate": "0.5160891089108911",
 			"goodmbti": "",
 			"badmbti": ""
@@ -1133,7 +1133,7 @@
 			"chamtags": "['Fighter']",
 			"dictionary": "[777, 51, 76, 80]",
 			"lane": "['top', 'mid']",
-			"mbti": "",
+			"mbti": "ENTJ",
 			"winningRate": "0.5252525252525253",
 			"goodmbti": "",
 			"badmbti": ""
@@ -1148,7 +1148,7 @@
 			"chamtags": "['Mage', 'Support']",
 			"dictionary": "[51, 76, 30, 80]",
 			"lane": "['support']",
-			"mbti": "",
+			"mbti": "ESFJ",
 			"winningRate": "0.4978768577494692",
 			"goodmbti": "",
 			"badmbti": ""
@@ -1163,7 +1163,7 @@
 			"chamtags": "['Support', 'Mage']",
 			"dictionary": "[76, 51, 80, 4]",
 			"lane": "['support']",
-			"mbti": "",
+			"mbti": "ESFP",
 			"winningRate": "0.5263157894736842",
 			"goodmbti": "",
 			"badmbti": ""
@@ -1178,7 +1178,7 @@
 			"chamtags": "['Fighter', 'Tank']",
 			"dictionary": "[24, 157, 20, 30]",
 			"lane": "['top']",
-			"mbti": "",
+			"mbti": "INFP",
 			"winningRate": "0.45544554455445546",
 			"goodmbti": "",
 			"badmbti": ""
@@ -1193,7 +1193,7 @@
 			"chamtags": "['Tank', 'Fighter']",
 			"dictionary": "[80, 76, 51, 30]",
 			"lane": "['support']",
-			"mbti": "",
+			"mbti": "ESTP",
 			"winningRate": "0.5026178010471204",
 			"goodmbti": "",
 			"badmbti": ""
@@ -1208,7 +1208,7 @@
 			"chamtags": "['Mage', 'Support']",
 			"dictionary": "[876, 105, 99, 25]",
 			"lane": "['mid', 'support']",
-			"mbti": "",
+			"mbti": "ESFJ",
 			"winningRate": "0.4583333333333333",
 			"goodmbti": "",
 			"badmbti": ""
@@ -1223,7 +1223,7 @@
 			"chamtags": "['Assassin', 'Mage']",
 			"dictionary": "[51, 80, 30, 777]",
 			"lane": "['jungle']",
-			"mbti": "",
+			"mbti": "ENFP",
 			"winningRate": "0.5056078380817326",
 			"goodmbti": "",
 			"badmbti": ""
@@ -1238,7 +1238,7 @@
 			"chamtags": "['Assassin', 'Fighter']",
 			"dictionary": "[51, 246, 876, 80]",
 			"lane": "['jungle', 'mid']",
-			"mbti": "",
+			"mbti": "INTJ",
 			"winningRate": "0.5185185185185185",
 			"goodmbti": "",
 			"badmbti": ""
@@ -1253,7 +1253,7 @@
 			"chamtags": "['Tank', 'Fighter']",
 			"dictionary": "[76, 51, 80, 104]",
 			"lane": "['jungle', 'mid']",
-			"mbti": "",
+			"mbti": "ENFJ",
 			"winningRate": "0.49958088851634536",
 			"goodmbti": "",
 			"badmbti": ""
@@ -1268,7 +1268,7 @@
 			"chamtags": "['Fighter', 'Tank']",
 			"dictionary": "[76, 30, 51, 22]",
 			"lane": "['jungle', 'top']",
-			"mbti": "",
+			"mbti": "INTP",
 			"winningRate": "0.45",
 			"goodmbti": "",
 			"badmbti": ""
@@ -1283,7 +1283,7 @@
 			"chamtags": "['Mage', 'Support']",
 			"dictionary": "[51, 76, 80, 876]",
 			"lane": "['mid']",
-			"mbti": "",
+			"mbti": "ESFJ",
 			"winningRate": "0.49850746268656715",
 			"goodmbti": "",
 			"badmbti": ""
@@ -1298,7 +1298,7 @@
 			"chamtags": "['Tank', 'Fighter']",
 			"dictionary": "[777, 80, 58, 30]",
 			"lane": "['top', 'mid']",
-			"mbti": "",
+			"mbti": "INFP",
 			"winningRate": "0.52",
 			"goodmbti": "",
 			"badmbti": ""
@@ -1313,7 +1313,7 @@
 			"chamtags": "['Fighter', 'Assassin']",
 			"dictionary": "[51, 76, 30, 876]",
 			"lane": "['support', 'mid']",
-			"mbti": "",
+			"mbti": "ISFP",
 			"winningRate": "0.5021780798048441",
 			"goodmbti": "",
 			"badmbti": ""
@@ -1328,7 +1328,7 @@
 			"chamtags": "['Tank', 'Fighter']",
 			"dictionary": "[76, 51, 30, 777]",
 			"lane": "['top', 'jungle', 'support']",
-			"mbti": "",
+			"mbti": "INFP",
 			"winningRate": "0.45",
 			"goodmbti": "",
 			"badmbti": ""
@@ -1343,7 +1343,7 @@
 			"chamtags": "['Support', 'Assassin']",
 			"dictionary": "[51, 76, 80, 30]",
 			"lane": "['support', 'mid']",
-			"mbti": "",
+			"mbti": "INTJ",
 			"winningRate": "0.5",
 			"goodmbti": "",
 			"badmbti": ""
@@ -1358,7 +1358,7 @@
 			"chamtags": "['Assassin', 'Fighter']",
 			"dictionary": "[51, 76, 80, 30]",
 			"lane": "['mid']",
-			"mbti": "",
+			"mbti": "INTJ",
 			"winningRate": "0.493953488372093",
 			"goodmbti": "",
 			"badmbti": ""
@@ -1373,7 +1373,7 @@
 			"chamtags": "['Marksman', 'Assassin']",
 			"dictionary": "[51, 80, 30, 876]",
 			"lane": "['top']",
-			"mbti": "",
+			"mbti": "ISTJ",
 			"winningRate": "0.5026737967914439",
 			"goodmbti": "",
 			"badmbti": ""
@@ -1388,7 +1388,7 @@
 			"chamtags": "['Support']",
 			"dictionary": "[51, 80, 76, 876]",
 			"lane": "['support']",
-			"mbti": "",
+			"mbti": "ESTP",
 			"winningRate": "0.4583333333333333",
 			"goodmbti": "",
 			"badmbti": ""
@@ -1403,7 +1403,7 @@
 			"chamtags": "['Tank', 'Fighter']",
 			"dictionary": "[51, 777, 76, 80]",
 			"lane": "['jungle']",
-			"mbti": "",
+			"mbti": "ENFJ",
 			"winningRate": "0.43661971830985913",
 			"goodmbti": "",
 			"badmbti": ""
@@ -1418,7 +1418,7 @@
 			"chamtags": "['Fighter']",
 			"dictionary": "[51, 76, 30, 777]",
 			"lane": "['jungle']",
-			"mbti": "",
+			"mbti": "ENFJ",
 			"winningRate": "0.4890909090909091",
 			"goodmbti": "",
 			"badmbti": ""
@@ -1433,7 +1433,7 @@
 			"chamtags": "['Fighter', 'Tank']",
 			"dictionary": "[51, 76, 80, 30]",
 			"lane": "['top', 'mid']",
-			"mbti": "",
+			"mbti": "INTP",
 			"winningRate": "0.5092158700406123",
 			"goodmbti": "",
 			"badmbti": ""
@@ -1448,7 +1448,7 @@
 			"chamtags": "['Assassin', 'Fighter']",
 			"dictionary": "[51, 76, 80, 777]",
 			"lane": "['top', 'jungle']",
-			"mbti": "",
+			"mbti": "ENFP",
 			"winningRate": "0.53156146179402",
 			"goodmbti": "",
 			"badmbti": ""
@@ -1463,7 +1463,7 @@
 			"chamtags": "['Fighter', 'Assassin']",
 			"dictionary": "[876, 51, 58, 80]",
 			"lane": "['top']",
-			"mbti": "",
+			"mbti": "ISFP",
 			"winningRate": "0.5",
 			"goodmbti": "",
 			"badmbti": ""
@@ -1478,7 +1478,7 @@
 			"chamtags": "['Fighter', 'Mage']",
 			"dictionary": "[876, 122, 777, 236]",
 			"lane": "['mid', 'top']",
-			"mbti": "",
+			"mbti": "INFJ",
 			"winningRate": "0.5",
 			"goodmbti": "",
 			"badmbti": ""
@@ -1493,7 +1493,7 @@
 			"chamtags": "['Mage', 'Fighter']",
 			"dictionary": "[35, 134, 80, 20]",
 			"lane": "['mid', 'top']",
-			"mbti": "",
+			"mbti": "INFJ",
 			"winningRate": "0.4166666666666667",
 			"goodmbti": "",
 			"badmbti": ""
@@ -1508,7 +1508,7 @@
 			"chamtags": "['Tank', 'Fighter']",
 			"dictionary": "[51, 22, 104, 76]",
 			"lane": "['jungle']",
-			"mbti": "",
+			"mbti": "ENFJ",
 			"winningRate": "0.3333333333333333",
 			"goodmbti": "",
 			"badmbti": ""
@@ -1523,7 +1523,7 @@
 			"chamtags": "['Marksman', 'Support']",
 			"dictionary": "[76, 51, 80, 58]",
 			"lane": "['ad', 'support']",
-			"mbti": "",
+			"mbti": "ENTP",
 			"winningRate": "0.47804878048780486",
 			"goodmbti": "",
 			"badmbti": ""
@@ -1538,7 +1538,7 @@
 			"chamtags": "['Fighter', 'Tank']",
 			"dictionary": "[76, 51, 80, 30]",
 			"lane": "['support', 'top', 'jungle']",
-			"mbti": "",
+			"mbti": "INFP",
 			"winningRate": "0.5049104563835933",
 			"goodmbti": "",
 			"badmbti": ""
@@ -1553,7 +1553,7 @@
 			"chamtags": "['Assassin']",
 			"dictionary": "[777, 517, 51, 157]",
 			"lane": "['jungle', 'support']",
-			"mbti": "",
+			"mbti": "ENFP",
 			"winningRate": "0.484375",
 			"goodmbti": "",
 			"badmbti": ""
@@ -1568,7 +1568,7 @@
 			"chamtags": "['Tank']",
 			"dictionary": "[51, 80, 30, 76]",
 			"lane": "['top', 'support']",
-			"mbti": "",
+			"mbti": "INFP",
 			"winningRate": "0.5045871559633027",
 			"goodmbti": "",
 			"badmbti": ""
@@ -1583,7 +1583,7 @@
 			"chamtags": "['Fighter', 'Tank']",
 			"dictionary": "[350, 80, 35, 876]",
 			"lane": "['jugnle']",
-			"mbti": "",
+			"mbti": "ENFJ",
 			"winningRate": "0.2916666666666667",
 			"goodmbti": "",
 			"badmbti": ""
@@ -1598,7 +1598,7 @@
 			"chamtags": "['Tank', 'Fighter']",
 			"dictionary": "[51, 30, 76, 80]",
 			"lane": "['top']",
-			"mbti": "",
+			"mbti": "INFP",
 			"winningRate": "0.5659574468085107",
 			"goodmbti": "",
 			"badmbti": ""
@@ -1613,7 +1613,7 @@
 			"chamtags": "['Tank', 'Fighter']",
 			"dictionary": "[350, 35, 54, 777]",
 			"lane": "['top']",
-			"mbti": "",
+			"mbti": "INFP",
 			"winningRate": "0.6956521739130435",
 			"goodmbti": "",
 			"badmbti": ""
@@ -1628,7 +1628,7 @@
 			"chamtags": "['Marksman']",
 			"dictionary": "[58, 74, 91, 876]",
 			"lane": "['ad']",
-			"mbti": "",
+			"mbti": "ESTJ",
 			"winningRate": "0.16666666666666666",
 			"goodmbti": "",
 			"badmbti": ""
@@ -1643,7 +1643,7 @@
 			"chamtags": "['Fighter', 'Tank']",
 			"dictionary": "[104, 80, 86, 91]",
 			"lane": "['jungle']",
-			"mbti": "",
+			"mbti": "ENFJ",
 			"winningRate": "0.3888888888888889",
 			"goodmbti": "",
 			"badmbti": ""
@@ -1658,7 +1658,7 @@
 			"chamtags": "['Support', 'Mage']",
 			"dictionary": "[777, 25, 516, 86]",
 			"lane": "['support']",
-			"mbti": "",
+			"mbti": "ESFP",
 			"winningRate": "0.36363636363636365",
 			"goodmbti": "",
 			"badmbti": ""
@@ -1673,7 +1673,7 @@
 			"chamtags": "['Support', 'Mage']",
 			"dictionary": "[238, 51, 157, 7]",
 			"lane": "['support']",
-			"mbti": "",
+			"mbti": "ESFP",
 			"winningRate": "0.4642857142857143",
 			"goodmbti": "",
 			"badmbti": ""
@@ -1688,7 +1688,7 @@
 			"chamtags": "['Mage', 'Fighter']",
 			"dictionary": "[51, 76, 80, 104]",
 			"lane": "['support']",
-			"mbti": "",
+			"mbti": "INFJ",
 			"winningRate": "0.53125",
 			"goodmbti": "",
 			"badmbti": ""
@@ -1703,7 +1703,7 @@
 			"chamtags": "['Mage', 'Assassin']",
 			"dictionary": "[51, 76, 30, 80]",
 			"lane": "['mid', 'jungle', 'top']",
-			"mbti": "",
+			"mbti": "INFJ",
 			"winningRate": "0.4842436974789916",
 			"goodmbti": "",
 			"badmbti": ""
@@ -1718,7 +1718,7 @@
 			"chamtags": "['Mage', 'Support']",
 			"dictionary": "[76, 51, 876, 80]",
 			"lane": "['mid']",
-			"mbti": "",
+			"mbti": "ISFJ",
 			"winningRate": "0.529126213592233",
 			"goodmbti": "",
 			"badmbti": ""
@@ -1733,7 +1733,7 @@
 			"chamtags": "['Support', 'Tank']",
 			"dictionary": "[876, 58, 51, 30]",
 			"lane": "['support', 'top']",
-			"mbti": "",
+			"mbti": "INFP",
 			"winningRate": "0.43548387096774194",
 			"goodmbti": "",
 			"badmbti": ""
@@ -1748,7 +1748,7 @@
 			"chamtags": "['Mage', 'Support']",
 			"dictionary": "[22, 80, 51, 30]",
 			"lane": "['jungle']",
-			"mbti": "",
+			"mbti": "ESFJ",
 			"winningRate": "0.6666666666666666",
 			"goodmbti": "",
 			"badmbti": ""
@@ -1763,7 +1763,7 @@
 			"chamtags": "['Assassin']",
 			"dictionary": "[51, 76, 80, 30]",
 			"lane": "['mid']",
-			"mbti": "",
+			"mbti": "INTJ",
 			"winningRate": "0.5167597765363129",
 			"goodmbti": "",
 			"badmbti": ""
@@ -1778,7 +1778,7 @@
 			"chamtags": "['Support', 'Fighter']",
 			"dictionary": "[51, 76, 80, 236]",
 			"lane": "['support']",
-			"mbti": "",
+			"mbti": "ESTP",
 			"winningRate": "0.535",
 			"goodmbti": "",
 			"badmbti": ""
@@ -1793,7 +1793,7 @@
 			"chamtags": "['Marksman', 'Assassin']",
 			"dictionary": "[35, 7, 876, 777]",
 			"lane": "['top']",
-			"mbti": "",
+			"mbti": "ISTJ",
 			"winningRate": "0.5294117647058824",
 			"goodmbti": "",
 			"badmbti": ""
@@ -1808,7 +1808,7 @@
 			"chamtags": "['Support', 'Fighter']",
 			"dictionary": "[76, 51, 80, 30]",
 			"lane": "['support']",
-			"mbti": "",
+			"mbti": "ESTP",
 			"winningRate": "0.5295566502463054",
 			"goodmbti": "",
 			"badmbti": ""
@@ -1823,7 +1823,7 @@
 			"chamtags": "['Marksman', 'Assassin']",
 			"dictionary": "[76, 236, 58, 22]",
 			"lane": "['ad']",
-			"mbti": "",
+			"mbti": "ISTJ",
 			"winningRate": "0.3",
 			"goodmbti": "",
 			"badmbti": ""
@@ -1838,7 +1838,7 @@
 			"chamtags": "['Fighter', 'Tank']",
 			"dictionary": "[350, 236, 777, 35]",
 			"lane": "['jungle']",
-			"mbti": "",
+			"mbti": "ENFJ",
 			"winningRate": "0.46296296296296297",
 			"goodmbti": "",
 			"badmbti": ""
@@ -1853,7 +1853,7 @@
 			"chamtags": "['Fighter', 'Assassin']",
 			"dictionary": "[76, 51, 80, 876]",
 			"lane": "['top']",
-			"mbti": "",
+			"mbti": "ISFP",
 			"winningRate": "0.52734375",
 			"goodmbti": "",
 			"badmbti": ""
@@ -1868,7 +1868,7 @@
 			"chamtags": "['Mage']",
 			"dictionary": "[76, 51, 80, 30]",
 			"lane": "['mid']",
-			"mbti": "",
+			"mbti": "ISTP",
 			"winningRate": "0.5163283318623124",
 			"goodmbti": "",
 			"badmbti": ""
@@ -1883,7 +1883,7 @@
 			"chamtags": "['Marksman', 'Assassin']",
 			"dictionary": "[51, 80, 236, 876]",
 			"lane": "['ad']",
-			"mbti": "",
+			"mbti": "ISTJ",
 			"winningRate": "0.4781420765027322",
 			"goodmbti": "",
 			"badmbti": ""
@@ -1898,7 +1898,7 @@
 			"chamtags": "['Fighter', 'Tank']",
 			"dictionary": "[876, 84, 104, 350]",
 			"lane": "['jungle']",
-			"mbti": "",
+			"mbti": "ENFP",
 			"winningRate": "0.5",
 			"goodmbti": "",
 			"badmbti": ""
@@ -1913,7 +1913,7 @@
 			"chamtags": "['Fighter', 'Tank']",
 			"dictionary": "[876, 58, 236, 51]",
 			"lane": "['top']",
-			"mbti": "",
+			"mbti": "INFP",
 			"winningRate": "0.4117647058823529",
 			"goodmbti": "",
 			"badmbti": ""
@@ -1928,7 +1928,7 @@
 			"chamtags": "['Marksman', 'Mage']",
 			"dictionary": "[76, 81, 62, 875]",
 			"lane": "['ad']",
-			"mbti": "",
+			"mbti": "ENTP",
 			"winningRate": "0.5134328358208955",
 			"goodmbti": "",
 			"badmbti": ""
@@ -1943,7 +1943,7 @@
 			"chamtags": "['Marksman', 'Assassin']",
 			"dictionary": "[777, 76, 517, 122]",
 			"lane": "['ad']",
-			"mbti": "",
+			"mbti": "ISTJ",
 			"winningRate": "0.53125",
 			"goodmbti": "",
 			"badmbti": ""
@@ -1958,7 +1958,7 @@
 			"chamtags": "['Mage']",
 			"dictionary": "[517, 875, 25, 157]",
 			"lane": "['mid']",
-			"mbti": "",
+			"mbti": "ISFJ",
 			"winningRate": "0.49019607843137253",
 			"goodmbti": "",
 			"badmbti": ""
@@ -1973,7 +1973,7 @@
 			"chamtags": "['Mage']",
 			"dictionary": "[25, 104, 111, 24]",
 			"lane": "['support', 'mid']",
-			"mbti": "",
+			"mbti": "ISFJ",
 			"winningRate": "0.5384615384615384",
 			"goodmbti": "",
 			"badmbti": ""
@@ -1988,7 +1988,7 @@
 			"chamtags": "['Fighter', 'Assassin']",
 			"dictionary": "[51, 236, 30, 58]",
 			"lane": "['jungle']",
-			"mbti": "",
+			"mbti": "ISFP",
 			"winningRate": "0.325",
 			"goodmbti": "",
 			"badmbti": ""
@@ -2003,7 +2003,7 @@
 			"chamtags": "['Mage']",
 			"dictionary": "[111, 126, 51, 117]",
 			"lane": "['mid']",
-			"mbti": "",
+			"mbti": "ISFJ",
 			"winningRate": "0.5",
 			"goodmbti": "",
 			"badmbti": ""
@@ -2018,7 +2018,7 @@
 			"chamtags": "['Mage']",
 			"dictionary": "[51, 76, 80, 876]",
 			"lane": "['top' ,'mid']",
-			"mbti": "",
+			"mbti": "INFJ",
 			"winningRate": "0.48214285714285715",
 			"goodmbti": "",
 			"badmbti": ""
@@ -2033,7 +2033,7 @@
 			"chamtags": "['Fighter', 'Tank']",
 			"dictionary": "[76, 30, 51, 4]",
 			"lane": "['jungle', 'top']",
-			"mbti": "",
+			"mbti": "ENTJ",
 			"winningRate": "0.5141176470588236",
 			"goodmbti": "",
 			"badmbti": ""
@@ -2048,7 +2048,7 @@
 			"chamtags": "['Fighter', 'Tank']",
 			"dictionary": "[777, 238, 22, 246]",
 			"lane": "['jungle', 'top']",
-			"mbti": "",
+			"mbti": "INTP",
 			"winningRate": "0.4166666666666667",
 			"goodmbti": "",
 			"badmbti": ""
@@ -2063,7 +2063,7 @@
 			"chamtags": "['Marksman']",
 			"dictionary": "[876, 62, 57, 25]",
 			"lane": "['ad']",
-			"mbti": "",
+			"mbti": "ESTJ",
 			"winningRate": "0.6666666666666666",
 			"goodmbti": "",
 			"badmbti": ""
@@ -2078,7 +2078,7 @@
 			"chamtags": "['Mage']",
 			"dictionary": "[51, 30, 76, 4]",
 			"lane": "['support', 'mid']",
-			"mbti": "",
+			"mbti": "ISFJ",
 			"winningRate": "0.47368421052631576",
 			"goodmbti": "",
 			"badmbti": ""
@@ -2093,7 +2093,7 @@
 			"chamtags": "['Fighter', 'Assassin']",
 			"dictionary": "[31, 80, 76, 517]",
 			"lane": "['jungle']",
-			"mbti": "",
+			"mbti": "ISFP",
 			"winningRate": "0.25",
 			"goodmbti": "",
 			"badmbti": ""
@@ -2108,7 +2108,7 @@
 			"chamtags": "['Fighter', 'Assassin']",
 			"dictionary": "[51, 777, 76, 80]",
 			"lane": "['mid', 'ad', 'top']",
-			"mbti": "",
+			"mbti": "ISFP",
 			"winningRate": "0.4533508541392904",
 			"goodmbti": "",
 			"badmbti": ""
@@ -2123,7 +2123,7 @@
 			"chamtags": "['Assassin', 'Fighter']",
 			"dictionary": "[51, 76, 80, 876]",
 			"lane": "['mid', 'top']",
-			"mbti": "",
+			"mbti": "ISFP",
 			"winningRate": "0.49815583218072845",
 			"goodmbti": "",
 			"badmbti": ""
@@ -2138,7 +2138,7 @@
 			"chamtags": "['Fighter', 'Tank']",
 			"dictionary": "[777, 876, 48, 77]",
 			"lane": "['top']",
-			"mbti": "",
+			"mbti": "INTP",
 			"winningRate": "0.2727272727272727",
 			"goodmbti": "",
 			"badmbti": ""
@@ -2153,7 +2153,7 @@
 			"chamtags": "['Support', 'Mage']",
 			"dictionary": "[76, 777, 51, 81]",
 			"lane": "['support']",
-			"mbti": "",
+			"mbti": "ESFP",
 			"winningRate": "0.5064655172413793",
 			"goodmbti": "",
 			"badmbti": ""
@@ -2168,7 +2168,7 @@
 			"chamtags": "['Tank', 'Fighter']",
 			"dictionary": "[76, 51, 777, 142]",
 			"lane": "['jungle', 'top', 'support']",
-			"mbti": "",
+			"mbti": "ENTJ",
 			"winningRate": "0.5047619047619047",
 			"goodmbti": "",
 			"badmbti": ""
@@ -2183,7 +2183,7 @@
 			"chamtags": "['Assassin']",
 			"dictionary": "[51, 76, 777, 30]",
 			"lane": "['mid']",
-			"mbti": "",
+			"mbti": "INTJ",
 			"winningRate": "0.4828042328042328",
 			"goodmbti": "",
 			"badmbti": ""
@@ -2198,7 +2198,7 @@
 			"chamtags": "['Mage']",
 			"dictionary": "[876, 429, 114, 80]",
 			"lane": "['ad', 'mid']",
-			"mbti": "",
+			"mbti": "ISFJ",
 			"winningRate": "0.48",
 			"goodmbti": "",
 			"badmbti": ""
@@ -2213,7 +2213,7 @@
 			"chamtags": "['Support', 'Mage']",
 			"dictionary": "[51, 777, 76, 53]",
 			"lane": "['support']",
-			"mbti": "",
+			"mbti": "ESFP",
 			"winningRate": "0.5454545454545454",
 			"goodmbti": "",
 			"badmbti": ""
@@ -2228,7 +2228,7 @@
 			"chamtags": "['Mage', 'Support']",
 			"dictionary": "[51, 76, 80, 30]",
 			"lane": "['mid']",
-			"mbti": "",
+			"mbti": "ISFJ",
 			"winningRate": "0.4981738495252009",
 			"goodmbti": "",
 			"badmbti": ""
@@ -2243,7 +2243,7 @@
 			"chamtags": "['Mage', 'Support']",
 			"dictionary": "[236, 81, 80, 246]",
 			"lane": "['support']",
-			"mbti": "",
+			"mbti": "ESFJ",
 			"winningRate": "0.5",
 			"goodmbti": "",
 			"badmbti": ""

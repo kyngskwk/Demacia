@@ -244,6 +244,7 @@ with open('champions.json', 'r') as chams:
         table["fields"] = {}
         table["fields"]["chamkey"] = cham_id
         table["fields"]["chamname"] = cham_info["id"]
+        chamname = cham_info["id"]
         table["fields"]["chamtags"] = cham_info["tags"]
         # table["fields"]["partype"] = ''
 
@@ -259,7 +260,10 @@ with open('champions.json', 'r') as chams:
         # 챔피언 mbti
         # cham_mbti = cham_info["?????"]
         # table["fields"]["mbti"] = cham_mbti
-        table["fields"]["mbti"] = ''
+        for mbti, cham in MBTI.items():
+            if chamname in cham:
+                table["fields"]["mbti"] = mbti
+                break
 
         # 챔피언별 승률
         if int(cham_id) in champion_winnig_rate:
