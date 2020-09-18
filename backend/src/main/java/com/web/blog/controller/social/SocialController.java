@@ -37,19 +37,20 @@ public class SocialController {
     KakaoAPI kakao;
 
     @RequestMapping(value = "/login/oauth")
-    public Object login(@RequestParam("code") String code) {
+    public Object login(String code, String redirectUrl) {
         ResponseEntity response = null;
         final BasicResponse result = new BasicResponse();
         System.out.println(" oauth code : " + code);
 
         try {
-            String access_Token = kakao.getAccessToken(code);
+            String access_Token = kakao.getAccessToken(code, redirectUrl);
             System.out.println("access_Token : " + access_Token);
             HashMap<String, String> userInfo = kakao.getUserInfo(access_Token);
             System.out.println("login Controller : " + userInfo);
 
             String userEmail = userInfo.get("userEmail");
             String userNickname = userInfo.get("userNickname");
+            String userImage = userInfo.get("thumbnail_image");
 
             // 기존에 정보를 저장한 회원정보가 있는 경우
             if (userService.socialuserByEmail(userEmail) != null) {
@@ -71,7 +72,7 @@ public class SocialController {
                 OauthUser.setUserEmail(userEmail);
                 OauthUser.setUserNickname(userNickname);
                 OauthUser.setAccessToken(access_Token);
-
+                OauthUser.setUserImage(userImage);
                 System.out.println(" 소셜 유저 정보 " + OauthUser.toString());
                 int res = userService.socialuserInsert(OauthUser);
                 System.out.println("res : " + res);

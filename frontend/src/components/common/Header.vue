@@ -135,7 +135,7 @@ export default {
   },
 };
 </script>
-<style >
+<style scoped>
 .dropdown-item {
   color: rgba(255, 255, 255, 0.5) !important;
 }
