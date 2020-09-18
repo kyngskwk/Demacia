@@ -97,18 +97,18 @@ with open('gameid.json', 'r') as gameids:
         # print(champion_info)
         # print(champion_group_2_array)
 
-        if cnt == 100:
-            print(game_id)
-            with open('dictandcombo.p', 'wb') as file:
-                pickle.dump(champion_info, file)
-                pickle.dump(champion_group_2_array, file)
+        # if cnt == 100:
+        #     print(game_id)
+        #     with open('dictandcombo.p', 'wb') as file:
+        #         pickle.dump(champion_info, file)
+        #         pickle.dump(champion_group_2_array, file)
 
-            with open('winandlose.json', 'w', encoding="UTF-8") as make_file:
-                json.dump(champion_info, make_file)
+        #     with open('winandlose.json', 'w', encoding="UTF-8") as make_file:
+        #         json.dump(champion_info, make_file)
 
-            with open('chammatrix.json', 'w', encoding="UTF-8") as make_file:
-                json.dump(champion_group_2_array, make_file)
-            break
+        #     with open('chammatrix.json', 'w', encoding="UTF-8") as make_file:
+        #         json.dump(champion_group_2_array, make_file)
+        #     break
 
         match_v4_gameId ="https://kr.api.riotgames.com/lol/match/v4/matches/"+str(game_id)+"?api_key=RGAPI-4dcd2099-2605-4440-9864-f53a305141e7"
         results = requests.get(match_v4_gameId).json()["teams"]
@@ -142,6 +142,16 @@ with open('gameid.json', 'r') as gameids:
                         if i != j:
                             champion_group_2_array[i][j] += 1
 
+
+    with open('dictandcombo.p', 'wb') as file:
+        pickle.dump(champion_info, file)
+        pickle.dump(champion_group_2_array, file)
+
+    with open('winandlose.json', 'w', encoding="UTF-8") as make_file:
+        json.dump(champion_info, make_file)
+
+    with open('chammatrix.json', 'w', encoding="UTF-8") as make_file:
+        json.dump(champion_group_2_array, make_file)
 # 승률 구하기
 # champion_winnig_rate = dict()
 # for champion_id in champion_info:
@@ -156,7 +166,23 @@ with open('gameid.json', 'r') as gameids:
 #         champ_dictionary[i] = list(numpy.argsort(champion_group_2_array[i])[::-1][:4])
 
 
-# print(champ_dictionary)
+# MBTI 조합
+    MBTI = {"ENTJ": ['Amumu', 'Chogath', 'Galio', 'Volibear', 'Mordekaiser', 'Zac', 'Gangplank'],
+"INFP": ['Shen', 'Malphite', 'Sion', 'Maokai', 'Nasus', 'Ornn', 'Poppy', 'Singed', 'TahmKench', 'Urgot', 'Sett', 'DrMundo' ],
+"INTP": [ 'Darius', 'Gnar', 'MonkeyKing', 'Garen', 'Olaf', 'Renekton', 'Warwick', 'Yorick',  'Illaoi', 'Kled', 'Kennen'],
+"ENFJ": [ 'JarvanIV', 'Hecarim', 'Skarner', 'Trundle', 'Shyvana', 'RekSai', 'Rammus', 'Nunu', 'Sejuani', 'Gragas'],
+"ISFJ": [ 'Syndra', 'Veigar', 'Zoe', 'Velkoz', 'Viktor', 'Xerath', 'Ziggs', 'Azir', 'Malzahar'],
+"ISTP": [ 'Anivia', 'Heimerdinger', 'AurelionSol', 'Cassiopeia', 'Karthus', 'TwistedFate',],
+"ESFJ": ['Annie',  'Brand', 'Karma', 'Lux', 'Morgana', 'Neeko', 'Orianna',  'Taliyah', 'Zyra'],
+"ESTJ": ['Aphelios', 'Caitlyn', 'Draven', 'Jinx', 'Kaisa', 'Kalista', 'Kindred', 'Lucian', 'MissFortune', 'Sivir', 'Xayah'],
+"ISFP": ['Aatrox', 'Camille', 'Fiora', 'Irelia', 'Jax', 'LeeSin', 'Pantheon', 'Riven', 'Tryndamere', 'Vi', 'XinZhao', 'Yasuo', 'Yone'],
+"ESFP": ['Bard', 'Ivern', 'Janna', 'Lulu', 'Nami', 'Sona', 'Soraka', 'Yuumi', 'Zilean'],
+"INTJ": ['Akali', 'Fizz', 'Nocturne', 'Qiyana', 'Ahri', 'Jayce', 'Kassadin', 'Katarina', 'Diana', 'Leblanc', 'Talon', 'Zed', 'Pyke'],
+"ENFP": ['Khazix', 'Shaco', 'Evelynn', 'Ekko', 'Nidalee', 'Rengar', 'Udyr', 'Kayn', 'MasterYi', 'Graves'],
+"ISTJ": ['Quinn', 'Teemo', 'Tristana', 'Twitch', 'Vayne'],
+"ENTP": ['Ezreal', 'Jhin', 'KogMaw', 'Varus', 'Kayle', 'Ashe', 'Senna', 'Corki'],
+"INFJ": ['Elise', 'Swain', 'Fiddlesticks', 'Lissandra', 'Vladimir', 'Ryze', 'Sylas', 'Lillia', 'Rumble'],
+"ESTP": ['Taric', 'Thresh', 'Blitzcrank', 'Rakan', 'Nautilus', 'Alistar', 'Leona', 'Braum']}
 
 # mbti 조합 dict mbti : [좋은조합, 나쁜조합]
 mbti_couple = {
