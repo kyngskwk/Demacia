@@ -42,11 +42,14 @@
             class="btn btn-secondary btn-lg"
             style="width:80%;margin-bottom:2%;"
           >회원가입</div>
-          <a
-            href="https://kauth.kakao.com/oauth/authorize?client_id=b38bb5991f9f2b1b516e239a8791f302&redirect_uri=http://i3a602.p.ssafy.io/login&response_type=code"
-          >
-            <img :src="kakaologo" class="btn" style="width:87%;" alt="kakaologo" draggable="false" />
-          </a>
+          <img
+            :src="kakaologo"
+            class="btn"
+            style="width:87%;"
+            alt="kakaologo"
+            draggable="false"
+            @click="kakao"
+          />
           <img
             :src="naverlogo"
             class="btn"
@@ -89,16 +92,36 @@ export default {
         .get(process.env.VUE_APP_API_URL + "/login/oauth", {
           params: {
             code: this.$route.query.code,
+            redirectUrl: process.env.VUE_APP_BASE_URL,
           },
         })
         .then((res) => {
           if (res.data.status) {
             res.data.object.userPw = "";
+            // if (res.data.object.userImage.includes("http:")) {
+            //   let uploadImageFile = res.data.object.userImage;
+            //   const fd = new FormData();
+            //   fd.append(
+            //     "upLoadImage",
+            //     uploadImageFile,
+            //     res.data.object.userNo + ".jpg"
+            //   );
+            //   axios
+            //     .post(process.env.VUE_APP_IMGUP_URL + "/upload", fd, {
+            //       headers: {
+            //         "Content-Type": "multipart/form-data",
+            //       },
+            //     })
+            //     .then(() => {
+            //       console.log("succes");
+            //       res.data.object.userImage =
+            //         "/images/" + res.data.object.userNo + ".jpg";
+            //     });
+            // }
             this.$store.commit("addUserInfo", res.data.object);
-            console.log(this.$store.state.userInfo);
             // 세션에 로그인 정보 추가
             sessionStorage.setItem("user", JSON.stringify(res.data.object));
-            location.href = "/list";
+            location.href = "/";
           } else {
             this.emailValid = this.pwValid = false;
             this.errToast("아이디 또는 비밀번호를 확인해주세요");
@@ -111,6 +134,14 @@ export default {
   },
 
   methods: {
+    kakao() {
+      location.href =
+        "https://kauth.kakao.com/oauth/authorize?client_id=" +
+        "121c6ba38cce9dba0c6843a59450b6fd" +
+        "&redirect_uri=" +
+        process.env.VUE_APP_BASE_URL +
+        "/login&response_type=code";
+    },
     naver() {
       this.errToast("네이버와 계약에 실패해서 서비스를 제공할 수 없었습니다..");
     },
