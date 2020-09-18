@@ -18,7 +18,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class KakaoAPI {
 
-    public String getAccessToken(String authorize_code) {
+    public String getAccessToken(String authorize_code, String redirectUrl) {
         String access_Token = "";
         String refresh_Token = "";
         String reqURL = "https://kauth.kakao.com/oauth/token";
@@ -35,10 +35,8 @@ public class KakaoAPI {
             // POST 요청에 필요로 요구하는 파라미터 스트림을 통해 전송
             BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(conn.getOutputStream()));
             StringBuilder sb = new StringBuilder();
-            sb.append("grant_type=authorization_code");
-            sb.append("&client_id=b38bb5991f9f2b1b516e239a8791f302");
-            sb.append("&redirect_uri=http://i3a602.p.ssafy.io/login");
-            sb.append("&code=" + authorize_code);
+            sb.append("grant_type=authorization_code").append("&client_id=121c6ba38cce9dba0c6843a59450b6fd")
+                    .append("&redirect_uri=").append(redirectUrl).append("/login").append("&code=" + authorize_code);
             System.out.println("파라미터 스트림 : " + sb.toString());
             bw.write(sb.toString());
             bw.flush();
@@ -114,9 +112,10 @@ public class KakaoAPI {
 
             String nickname = properties.getAsJsonObject().get("nickname").getAsString();
             String email = kakao_account.getAsJsonObject().get("email").getAsString();
-
+            String image = properties.getAsJsonObject().get("thumbnail_image").getAsString();
             userInfo.put("userNickname", nickname);
             userInfo.put("userEmail", email);
+            userInfo.put("thumbnail_image", image);
 
         } catch (IOException e) {
             // TODO Auto-generated catch block
