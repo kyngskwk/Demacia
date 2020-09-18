@@ -87,71 +87,71 @@ with open('dictandcombo.p', 'rb') as file:
     champion_group_2_array = pickle.load(file)
 
 
-with open('gameid.json', 'r') as gameids:
-    # 원래 있던 gameid 값 가져오기
-    game_ids = json.load(gameids) 
+# with open('gameid.json', 'r') as gameids:
+#     # 원래 있던 gameid 값 가져오기
+#     game_ids = json.load(gameids) 
 
 
-    cnt = 0
-    for game_id in game_ids:
-        # print(champion_info)
-        # print(champion_group_2_array)
+#     cnt = 0
+#     for game_id in game_ids:
+#         # print(champion_info)
+#         # print(champion_group_2_array)
 
-        # if cnt == 100:
-        #     print(game_id)
-        #     with open('dictandcombo.p', 'wb') as file:
-        #         pickle.dump(champion_info, file)
-        #         pickle.dump(champion_group_2_array, file)
+#         # if cnt == 100:
+#         #     print(game_id)
+#         #     with open('dictandcombo.p', 'wb') as file:
+#         #         pickle.dump(champion_info, file)
+#         #         pickle.dump(champion_group_2_array, file)
 
-        #     with open('winandlose.json', 'w', encoding="UTF-8") as make_file:
-        #         json.dump(champion_info, make_file)
+#         #     with open('winandlose.json', 'w', encoding="UTF-8") as make_file:
+#         #         json.dump(champion_info, make_file)
 
-        #     with open('chammatrix.json', 'w', encoding="UTF-8") as make_file:
-        #         json.dump(champion_group_2_array, make_file)
-        #     break
+#         #     with open('chammatrix.json', 'w', encoding="UTF-8") as make_file:
+#         #         json.dump(champion_group_2_array, make_file)
+#         #     break
 
-        match_v4_gameId ="https://kr.api.riotgames.com/lol/match/v4/matches/"+str(game_id)+"?api_key=RGAPI-4dcd2099-2605-4440-9864-f53a305141e7"
-        results = requests.get(match_v4_gameId).json()["teams"]
-        cnt += 1
-        for team in results:
-            if team["win"] == "Fail":
-                for champ in team["bans"]:
-                    champid = champ["championId"]
-                    # champion id 별 이긴횟수, 진횟수 딕셔너리 만들기
-                    if champid not in champion_info:
-                        champion_info[champid] = [0,1]
-                    else:
-                        champion_info[champid][1] += 1
+#         match_v4_gameId ="https://kr.api.riotgames.com/lol/match/v4/matches/"+str(game_id)+"?api_key=RGAPI-4dcd2099-2605-4440-9864-f53a305141e7"
+#         results = requests.get(match_v4_gameId).json()["teams"]
+#         cnt += 1
+#         for team in results:
+#             if team["win"] == "Fail":
+#                 for champ in team["bans"]:
+#                     champid = champ["championId"]
+#                     # champion id 별 이긴횟수, 진횟수 딕셔너리 만들기
+#                     if champid not in champion_info:
+#                         champion_info[champid] = [0,1]
+#                     else:
+#                         champion_info[champid][1] += 1
                     
                     
-            elif team["win"] == "Win":
-                indexes = []
-                for champ in team["bans"]: 
-                    champid = champ["championId"]
-                    if champid not in champion_info:
-                        champion_info[champid] = [1,0]
-                    else:
-                        champion_info[champid][0] += 1
-                    # 2차원 배열 인덱스 만들기
-                    if -1 < champid < 877:
-                        indexes.append(champid)
-                # 2차원 배열에 하나씩 플러스
+#             elif team["win"] == "Win":
+#                 indexes = []
+#                 for champ in team["bans"]: 
+#                     champid = champ["championId"]
+#                     if champid not in champion_info:
+#                         champion_info[champid] = [1,0]
+#                     else:
+#                         champion_info[champid][0] += 1
+#                     # 2차원 배열 인덱스 만들기
+#                     if -1 < champid < 877:
+#                         indexes.append(champid)
+#                 # 2차원 배열에 하나씩 플러스
 
-                for i in indexes:
-                    for j in indexes:
-                        if i != j:
-                            champion_group_2_array[i][j] += 1
+#                 for i in indexes:
+#                     for j in indexes:
+#                         if i != j:
+#                             champion_group_2_array[i][j] += 1
 
 
-    with open('dictandcombo.p', 'wb') as file:
-        pickle.dump(champion_info, file)
-        pickle.dump(champion_group_2_array, file)
+#     with open('dictandcombo.p', 'wb') as file:
+#         pickle.dump(champion_info, file)
+#         pickle.dump(champion_group_2_array, file)
 
-    with open('winandlose.json', 'w', encoding="UTF-8") as make_file:
-        json.dump(champion_info, make_file)
+#     with open('winandlose.json', 'w', encoding="UTF-8") as make_file:
+#         json.dump(champion_info, make_file)
 
-    with open('chammatrix.json', 'w', encoding="UTF-8") as make_file:
-        json.dump(champion_group_2_array, make_file)
+#     with open('chammatrix.json', 'w', encoding="UTF-8") as make_file:
+#         json.dump(champion_group_2_array, make_file)
 # 승률 구하기
 # champion_winnig_rate = dict()
 # for champion_id in champion_info:
@@ -166,8 +166,33 @@ with open('gameid.json', 'r') as gameids:
 #         champ_dictionary[i] = list(numpy.argsort(champion_group_2_array[i])[::-1][:4])
 
 
+# 변수 저장
+# with open('finaldictcomb.p', 'wb') as file:
+#     pickle.dump(champion_winnig_rate, file)
+#     pickle.dump(champ_dictionary, file)
+
+# with open('winnigrate.json', 'w', encoding="UTF-8") as make_file:
+#     json.dump(champion_winnig_rate, make_file)
+
+# with open('chamcombi.json', 'w', encoding="UTF-8") as make_file:
+#     json.dump(champ_dictionary, make_file)
+
+# 저장한 변수 가져오기
+with open('finaldictcomb.p', 'rb') as file:
+    champion_winnig_rate = pickle.load(file)
+    champ_dictionary = pickle.load(file)
+
+print(champ_dictionary)
+print(champion_winnig_rate)
+
+# with open('winnigrate.json', 'w', encoding="UTF-8") as make_file:
+#     json.dump(champion_winnig_rate, make_file)
+
+# with open('chamcombi.json', 'w', encoding="UTF-8") as make_file:
+#     json.dump(champ_dictionary, make_file)
+
 # MBTI 조합
-    MBTI = {"ENTJ": ['Amumu', 'Chogath', 'Galio', 'Volibear', 'Mordekaiser', 'Zac', 'Gangplank'],
+MBTI = {"ENTJ": ['Amumu', 'Chogath', 'Galio', 'Volibear', 'Mordekaiser', 'Zac', 'Gangplank'],
 "INFP": ['Shen', 'Malphite', 'Sion', 'Maokai', 'Nasus', 'Ornn', 'Poppy', 'Singed', 'TahmKench', 'Urgot', 'Sett', 'DrMundo' ],
 "INTP": [ 'Darius', 'Gnar', 'MonkeyKing', 'Garen', 'Olaf', 'Renekton', 'Warwick', 'Yorick',  'Illaoi', 'Kled', 'Kennen'],
 "ENFJ": [ 'JarvanIV', 'Hecarim', 'Skarner', 'Trundle', 'Shyvana', 'RekSai', 'Rammus', 'Nunu', 'Sejuani', 'Gragas'],
@@ -205,50 +230,56 @@ mbti_couple = {
 } 
 
 
-# result = []
-# with open('champions.json', 'r') as chams:
+result = []
+with open('champions.json', 'r') as chams:
 
-#     cham_infos = json.load(chams)
-#     for cham_info in cham_infos:
-#         table = {}
-#         table["models"] = "appname.champion"
-#         table["pk"] = cham_info["key"]
-#         cham_id = cham_info["key"]
+    cham_infos = json.load(chams)
+    for cham_info in cham_infos:
+        table = {}
+        table["models"] = "appname.champion"
+        table["pk"] = cham_info["key"]
+        cham_id = cham_info["key"]
 
-#         # 필드 채우기
-#         table["fields"] = {}
-#         table["fields"]["chamkey"] = cham_id
-#         table["fields"]["chamname"] = cham_info["id"]
-#         table["fields"]["chamtags"] = cham_info["tags"]
-#         # table["fields"]["partype"] = ''
+        # 필드 채우기
+        table["fields"] = {}
+        table["fields"]["chamkey"] = cham_id
+        table["fields"]["chamname"] = cham_info["id"]
+        table["fields"]["chamtags"] = cham_info["tags"]
+        # table["fields"]["partype"] = ''
 
-#         # 챔피언 딕셔너리
-#         table["fields"]["dictionary"] = ''
+        # 챔피언 딕셔너리
+        if int(cham_id) in champ_dictionary:
+            table["fields"]["dictionary"] = str(champ_dictionary[int(cham_id)])
+        else:
+            table["fields"]["dictionary"] = ''
 
-#         # 챔피언 라인
-#         table["fields"]["lane"] = cham_info["lane"]
+        # 챔피언 라인
+        table["fields"]["lane"] = cham_info["lane"]
         
-#         # 챔피언 mbti
-#         # cham_mbti = cham_info["?????"]
-#         # table["fields"]["mbti"] = cham_mbti
-#         table["fields"]["mbti"] = ''
+        # 챔피언 mbti
+        # cham_mbti = cham_info["?????"]
+        # table["fields"]["mbti"] = cham_mbti
+        table["fields"]["mbti"] = ''
 
-#         # 챔피언별 승률
-#         table["fields"]["winningRate"] = '' 
-#         # 코드 불러온 후
-#         # table["fields"]["winningRate"] = champion_winnig_rate[cham_id]
+        # 챔피언별 승률
+        if int(cham_id) in champion_winnig_rate:
+            table["fields"]["winningRate"] = str(champion_winnig_rate[int(cham_id)])
+        else:
+            table["fields"]["winningRate"] = ''
+        # 코드 불러온 후
+        # table["fields"]["winningRate"] = champion_winnig_rate[cham_id]
 
-#         # mbti 좋은 조합
-#         table["fields"]["goodmbti"] = '' 
-#         # table["fields"]["goodmbti"] = mbti_couple["cham_mbti"][0]
-
-
-#         # mbti 나쁜 조합
-#         table["fields"]["badmbti"] = '' 
-#         # table["fields"]["goodmbti"] = mbti_couple["cham_mbti"][1]
+        # mbti 좋은 조합
+        table["fields"]["goodmbti"] = '' 
+        # table["fields"]["goodmbti"] = mbti_couple["cham_mbti"][0]
 
 
-#         result.append(table)
+        # mbti 나쁜 조합
+        table["fields"]["badmbti"] = '' 
+        # table["fields"]["goodmbti"] = mbti_couple["cham_mbti"][1]
 
-# with open('cham.json', 'w', encoding="UTF-8") as make_file:
-#     json.dump(result, make_file, indent="\t")
+
+        result.append(table)
+
+with open('cham.json', 'w', encoding="UTF-8") as make_file:
+    json.dump(result, make_file, indent="\t")

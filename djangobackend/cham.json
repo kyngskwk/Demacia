@@ -6,10 +6,10 @@
 			"chamkey": "266",
 			"chamname": "Aatrox",
 			"chamtags": "['Fighter', 'Tank']",
-			"dictionary": "",
+			"dictionary": "[517, 122, 350, 35]",
 			"lane": "['top', 'mid']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.4878048780487805",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -21,10 +21,10 @@
 			"chamkey": "103",
 			"chamname": "Ahri",
 			"chamtags": "['Mage', 'Assassin']",
-			"dictionary": "",
+			"dictionary": "[80, 104, 777, 51]",
 			"lane": "['mid']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.46",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -36,10 +36,10 @@
 			"chamkey": "84",
 			"chamname": "Akali",
 			"chamtags": "['Assassin']",
-			"dictionary": "",
+			"dictionary": "[51, 76, 80, 30]",
 			"lane": "['top', 'mid']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.4967866323907455",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -51,10 +51,10 @@
 			"chamkey": "12",
 			"chamname": "Alistar",
 			"chamtags": "['Tank', 'Support']",
-			"dictionary": "",
+			"dictionary": "[876, 30, 350, 236]",
 			"lane": "['support']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.3333333333333333",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -66,10 +66,10 @@
 			"chamkey": "32",
 			"chamname": "Amumu",
 			"chamtags": "['Tank', 'Mage']",
-			"dictionary": "",
+			"dictionary": "[51, 876, 142, 104]",
 			"lane": "['jungle']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.7272727272727273",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -81,10 +81,10 @@
 			"chamkey": "34",
 			"chamname": "Anivia",
 			"chamtags": "['Mage', 'Support']",
-			"dictionary": "",
+			"dictionary": "[76, 51, 126, 9]",
 			"lane": "['mid']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.35714285714285715",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -96,10 +96,10 @@
 			"chamkey": "1",
 			"chamname": "Annie",
 			"chamtags": "['Mage']",
-			"dictionary": "",
+			"dictionary": "[30, 74, 133, 412]",
 			"lane": "['mid', 'support']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.4375",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -111,10 +111,10 @@
 			"chamkey": "523",
 			"chamname": "Aphelios",
 			"chamtags": "['Marksman']",
-			"dictionary": "",
+			"dictionary": "[76, 429, 81, 104]",
 			"lane": "['ad']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.45897435897435895",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -126,10 +126,10 @@
 			"chamkey": "22",
 			"chamname": "Ashe",
 			"chamtags": "['Marksman', 'Support']",
-			"dictionary": "",
+			"dictionary": "[51, 76, 80, 30]",
 			"lane": "['ad']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.504406580493537",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -141,10 +141,10 @@
 			"chamkey": "136",
 			"chamname": "AurelionSol",
 			"chamtags": "['Mage']",
-			"dictionary": "",
+			"dictionary": "[236, 777, 117, 58]",
 			"lane": "['mid']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.4444444444444444",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -156,10 +156,10 @@
 			"chamkey": "268",
 			"chamname": "Azir",
 			"chamtags": "['Mage', 'Marksman']",
-			"dictionary": "",
+			"dictionary": "[76, 51, 104, 876]",
 			"lane": "['mid']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.5573770491803278",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -171,10 +171,10 @@
 			"chamkey": "432",
 			"chamname": "Bard",
 			"chamtags": "['Support', 'Mage']",
-			"dictionary": "",
+			"dictionary": "[76, 51, 80, 30]",
 			"lane": "['support']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.4963072378138848",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -186,10 +186,10 @@
 			"chamkey": "53",
 			"chamname": "Blitzcrank",
 			"chamtags": "['Tank', 'Fighter']",
-			"dictionary": "",
+			"dictionary": "[51, 777, 76, 30]",
 			"lane": "['support']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.5056497175141242",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -204,7 +204,7 @@
 			"dictionary": "",
 			"lane": "['support', 'mid']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.0",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -216,10 +216,10 @@
 			"chamkey": "201",
 			"chamname": "Braum",
 			"chamtags": "['Support', 'Tank']",
-			"dictionary": "",
+			"dictionary": "[875, 238, 122, 142]",
 			"lane": "['support']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.375",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -231,10 +231,10 @@
 			"chamkey": "51",
 			"chamname": "Caitlyn",
 			"chamtags": "['Marksman']",
-			"dictionary": "",
+			"dictionary": "[76, 30, 80, 876]",
 			"lane": "['ad']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.500383393580896",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -246,10 +246,10 @@
 			"chamkey": "164",
 			"chamname": "Camille",
 			"chamtags": "['Fighter', 'Tank']",
-			"dictionary": "",
+			"dictionary": "[51, 76, 80, 30]",
 			"lane": "['top', 'mid']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.5123634272570443",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -261,10 +261,10 @@
 			"chamkey": "69",
 			"chamname": "Cassiopeia",
 			"chamtags": "['Mage']",
-			"dictionary": "",
+			"dictionary": "[51, 76, 80, 777]",
 			"lane": "['mid', 'ad']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.5487364620938628",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -276,10 +276,10 @@
 			"chamkey": "31",
 			"chamname": "Chogath",
 			"chamtags": "['Tank', 'Mage']",
-			"dictionary": "",
+			"dictionary": "[105, 350, 17, 51]",
 			"lane": "['mid', 'top', 'jungle']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.5",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -291,10 +291,10 @@
 			"chamkey": "42",
 			"chamname": "Corki",
 			"chamtags": "['Marksman']",
-			"dictionary": "",
+			"dictionary": "[51, 876, 20, 157]",
 			"lane": "['mid', 'ad']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.6",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -306,10 +306,10 @@
 			"chamkey": "122",
 			"chamname": "Darius",
 			"chamtags": "['Fighter', 'Tank']",
-			"dictionary": "",
+			"dictionary": "[51, 777, 238, 76]",
 			"lane": "['top']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.4706896551724138",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -321,10 +321,10 @@
 			"chamkey": "131",
 			"chamname": "Diana",
 			"chamtags": "['Fighter', 'Mage']",
-			"dictionary": "",
+			"dictionary": "[62, 523, 64, 80]",
 			"lane": "['mid', 'top']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.32142857142857145",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -336,10 +336,10 @@
 			"chamkey": "119",
 			"chamname": "Draven",
 			"chamtags": "['Marksman']",
-			"dictionary": "",
+			"dictionary": "[76, 51, 104, 777]",
 			"lane": "['ad']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.5555555555555556",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -351,10 +351,10 @@
 			"chamkey": "36",
 			"chamname": "DrMundo",
 			"chamtags": "['Fighter', 'Tank']",
-			"dictionary": "",
+			"dictionary": "[81, 67, 122, 236]",
 			"lane": "['top', 'jungle']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.375",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -366,10 +366,10 @@
 			"chamkey": "245",
 			"chamname": "Ekko",
 			"chamtags": "['Assassin', 'Fighter']",
-			"dictionary": "",
+			"dictionary": "[76, 51, 80, 30]",
 			"lane": "['mid', 'jungle']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.47761194029850745",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -381,10 +381,10 @@
 			"chamkey": "60",
 			"chamname": "Elise",
 			"chamtags": "['Mage', 'Fighter']",
-			"dictionary": "",
+			"dictionary": "[51, 76, 80, 30]",
 			"lane": "['jungle']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.49517684887459806",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -396,10 +396,10 @@
 			"chamkey": "28",
 			"chamname": "Evelynn",
 			"chamtags": "['Assassin', 'Mage']",
-			"dictionary": "",
+			"dictionary": "[51, 80, 76, 30]",
 			"lane": "['jungle']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.4865424430641822",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -411,10 +411,10 @@
 			"chamkey": "81",
 			"chamname": "Ezreal",
 			"chamtags": "['Marksman', 'Mage']",
-			"dictionary": "",
+			"dictionary": "[76, 51, 80, 30]",
 			"lane": "['ad']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.5224014336917563",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -426,10 +426,10 @@
 			"chamkey": "9",
 			"chamname": "Fiddlesticks",
 			"chamtags": "['Mage', 'Support']",
-			"dictionary": "",
+			"dictionary": "[76, 51, 80, 777]",
 			"lane": "['jungle']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.5314285714285715",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -441,10 +441,10 @@
 			"chamkey": "114",
 			"chamname": "Fiora",
 			"chamtags": "['Fighter', 'Assassin']",
-			"dictionary": "",
+			"dictionary": "[51, 76, 80, 30]",
 			"lane": "['top']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.47570621468926555",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -456,10 +456,10 @@
 			"chamkey": "105",
 			"chamname": "Fizz",
 			"chamtags": "['Assassin', 'Fighter']",
-			"dictionary": "",
+			"dictionary": "[51, 76, 80, 777]",
 			"lane": "['mid']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.5115511551155115",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -471,10 +471,10 @@
 			"chamkey": "3",
 			"chamname": "Galio",
 			"chamtags": "['Tank', 'Mage']",
-			"dictionary": "",
+			"dictionary": "[51, 76, 777, 80]",
 			"lane": "['mid', 'support']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.46957878315132606",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -486,10 +486,10 @@
 			"chamkey": "41",
 			"chamname": "Gangplank",
 			"chamtags": "['Fighter']",
-			"dictionary": "",
+			"dictionary": "[51, 76, 80, 104]",
 			"lane": "['top']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.5379939209726444",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -501,10 +501,10 @@
 			"chamkey": "86",
 			"chamname": "Garen",
 			"chamtags": "['Fighter', 'Tank']",
-			"dictionary": "",
+			"dictionary": "[777, 51, 76, 876]",
 			"lane": "['top']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.5012658227848101",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -516,10 +516,10 @@
 			"chamkey": "150",
 			"chamname": "Gnar",
 			"chamtags": "['Fighter', 'Tank']",
-			"dictionary": "",
+			"dictionary": "[432, 876, 7, 517]",
 			"lane": "['top']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.2727272727272727",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -531,10 +531,10 @@
 			"chamkey": "79",
 			"chamname": "Gragas",
 			"chamtags": "['Fighter', 'Mage']",
-			"dictionary": "",
+			"dictionary": "[51, 76, 58, 876]",
 			"lane": "['jungle', 'mid']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.6666666666666666",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -546,10 +546,10 @@
 			"chamkey": "104",
 			"chamname": "Graves",
 			"chamtags": "['Marksman']",
-			"dictionary": "",
+			"dictionary": "[51, 76, 80, 30]",
 			"lane": "['jungle']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.47487370380218025",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -561,10 +561,10 @@
 			"chamkey": "120",
 			"chamname": "Hecarim",
 			"chamtags": "['Fighter', 'Tank']",
-			"dictionary": "",
+			"dictionary": "[51, 76, 876, 30]",
 			"lane": "['jungle', 'top']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.515451174289246",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -576,10 +576,10 @@
 			"chamkey": "74",
 			"chamname": "Heimerdinger",
 			"chamtags": "['Mage', 'Support']",
-			"dictionary": "",
+			"dictionary": "[76, 777, 51, 876]",
 			"lane": "['top']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.55",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -591,10 +591,10 @@
 			"chamkey": "420",
 			"chamname": "Illaoi",
 			"chamtags": "['Fighter', 'Tank']",
-			"dictionary": "",
+			"dictionary": "[54, 157, 238, 25]",
 			"lane": "['top']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.6571428571428571",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -606,10 +606,10 @@
 			"chamkey": "39",
 			"chamname": "Irelia",
 			"chamtags": "['Fighter', 'Assassin']",
-			"dictionary": "",
+			"dictionary": "[51, 80, 76, 876]",
 			"lane": "['top',  'mid']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.46998867497168745",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -621,10 +621,10 @@
 			"chamkey": "427",
 			"chamname": "Ivern",
 			"chamtags": "['Support', 'Mage']",
-			"dictionary": "",
+			"dictionary": "[51, 76, 80, 236]",
 			"lane": "['jungle']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.44545454545454544",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -636,10 +636,10 @@
 			"chamkey": "40",
 			"chamname": "Janna",
 			"chamtags": "['Support', 'Mage']",
-			"dictionary": "",
+			"dictionary": "[51, 25, 30, 76]",
 			"lane": "['support']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.5614035087719298",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -651,10 +651,10 @@
 			"chamkey": "59",
 			"chamname": "JarvanIV",
 			"chamtags": "['Tank', 'Fighter']",
-			"dictionary": "",
+			"dictionary": "[76, 876, 104, 80]",
 			"lane": "['jungle']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.3",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -666,10 +666,10 @@
 			"chamkey": "24",
 			"chamname": "Jax",
 			"chamtags": "['Fighter', 'Assassin']",
-			"dictionary": "",
+			"dictionary": "[51, 30, 76, 80]",
 			"lane": "['top', 'jungle']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.4933884297520661",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -681,10 +681,10 @@
 			"chamkey": "126",
 			"chamname": "Jayce",
 			"chamtags": "['Fighter', 'Marksman']",
-			"dictionary": "",
+			"dictionary": "[51, 76, 80, 30]",
 			"lane": "['top', 'mid']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.5014814814814815",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -696,10 +696,10 @@
 			"chamkey": "202",
 			"chamname": "Jhin",
 			"chamtags": "['Marksman', 'Mage']",
-			"dictionary": "",
+			"dictionary": "[51, 76, 30, 22]",
 			"lane": "['ad']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.5254237288135594",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -711,10 +711,10 @@
 			"chamkey": "222",
 			"chamname": "Jinx",
 			"chamtags": "['Marksman']",
-			"dictionary": "",
+			"dictionary": "[51, 777, 80, 76]",
 			"lane": "['ad']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.45161290322580644",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -726,10 +726,10 @@
 			"chamkey": "145",
 			"chamname": "Kaisa",
 			"chamtags": "['Marksman']",
-			"dictionary": "",
+			"dictionary": "[51, 58, 246, 876]",
 			"lane": "['ad']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.43478260869565216",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -741,10 +741,10 @@
 			"chamkey": "429",
 			"chamname": "Kalista",
 			"chamtags": "['Marksman']",
-			"dictionary": "",
+			"dictionary": "[76, 51, 80, 58]",
 			"lane": "['ad']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.5083114610673666",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -756,10 +756,10 @@
 			"chamkey": "43",
 			"chamname": "Karma",
 			"chamtags": "['Mage', 'Support']",
-			"dictionary": "",
+			"dictionary": "[76, 51, 80, 30]",
 			"lane": "['support']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.5052461662631155",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -771,10 +771,10 @@
 			"chamkey": "30",
 			"chamname": "Karthus",
 			"chamtags": "['Mage']",
-			"dictionary": "",
+			"dictionary": "[51, 76, 80, 876]",
 			"lane": "['jungle']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.48825503355704697",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -786,10 +786,10 @@
 			"chamkey": "38",
 			"chamname": "Kassadin",
 			"chamtags": "['Assassin', 'Mage']",
-			"dictionary": "",
+			"dictionary": "[51, 76, 876, 80]",
 			"lane": "['mid']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.5015673981191222",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -801,10 +801,10 @@
 			"chamkey": "55",
 			"chamname": "Katarina",
 			"chamtags": "['Assassin', 'Mage']",
-			"dictionary": "",
+			"dictionary": "[51, 80, 30, 76]",
 			"lane": "['mid']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.4775828460038986",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -816,10 +816,10 @@
 			"chamkey": "10",
 			"chamname": "Kayle",
 			"chamtags": "['Fighter', 'Support']",
-			"dictionary": "",
+			"dictionary": "[777, 60, 157, 39]",
 			"lane": "['top', 'mid']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.5789473684210527",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -831,10 +831,10 @@
 			"chamkey": "141",
 			"chamname": "Kayn",
 			"chamtags": "['Fighter', 'Assassin']",
-			"dictionary": "",
+			"dictionary": "[51, 76, 80, 236]",
 			"lane": "['jungle']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.5588235294117647",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -846,10 +846,10 @@
 			"chamkey": "85",
 			"chamname": "Kennen",
 			"chamtags": "['Mage', 'Marksman']",
-			"dictionary": "",
+			"dictionary": "[76, 51, 80, 876]",
 			"lane": "['top']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.5345911949685535",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -861,10 +861,10 @@
 			"chamkey": "121",
 			"chamname": "Khazix",
 			"chamtags": "['Assassin']",
-			"dictionary": "",
+			"dictionary": "[58, 76, 30, 432]",
 			"lane": "['jungle']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.49122807017543857",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -876,10 +876,10 @@
 			"chamkey": "203",
 			"chamname": "Kindred",
 			"chamtags": "['Marksman']",
-			"dictionary": "",
+			"dictionary": "[51, 76, 80, 30]",
 			"lane": "['jungle']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.5441176470588235",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -891,10 +891,10 @@
 			"chamkey": "240",
 			"chamname": "Kled",
 			"chamtags": "['Fighter', 'Tank']",
-			"dictionary": "",
+			"dictionary": "[51, 80, 876, 58]",
 			"lane": "['top']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.46551724137931033",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -906,10 +906,10 @@
 			"chamkey": "96",
 			"chamname": "KogMaw",
 			"chamtags": "['Marksman', 'Mage']",
-			"dictionary": "",
+			"dictionary": "[30, 76, 80, 876]",
 			"lane": "['ad']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.4666666666666667",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -921,10 +921,10 @@
 			"chamkey": "7",
 			"chamname": "Leblanc",
 			"chamtags": "['Assassin', 'Mage']",
-			"dictionary": "",
+			"dictionary": "[51, 76, 80, 30]",
 			"lane": "['mid']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.4888668975754577",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -936,10 +936,10 @@
 			"chamkey": "64",
 			"chamname": "LeeSin",
 			"chamtags": "['Fighter', 'Assassin']",
-			"dictionary": "",
+			"dictionary": "[51, 80, 30, 876]",
 			"lane": "['jungle']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.49763779527559054",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -951,10 +951,10 @@
 			"chamkey": "89",
 			"chamname": "Leona",
 			"chamtags": "['Tank', 'Support']",
-			"dictionary": "",
+			"dictionary": "[51, 76, 80, 876]",
 			"lane": "['support']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.5886792452830188",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -966,10 +966,10 @@
 			"chamkey": "876",
 			"chamname": "Lillia",
 			"chamtags": "['Fighter', 'Mage']",
-			"dictionary": "",
+			"dictionary": "[51, 76, 80, 30]",
 			"lane": "['jungle']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.5033662477558348",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -981,10 +981,10 @@
 			"chamkey": "127",
 			"chamname": "Lissandra",
 			"chamtags": "['Mage']",
-			"dictionary": "",
+			"dictionary": "[51, 58, 30, 104]",
 			"lane": "['mid']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.5882352941176471",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -996,10 +996,10 @@
 			"chamkey": "236",
 			"chamname": "Lucian",
 			"chamtags": "['Marksman']",
-			"dictionary": "",
+			"dictionary": "[51, 76, 80, 876]",
 			"lane": "['ad', 'mid', 'top']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.5002658160552897",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -1011,10 +1011,10 @@
 			"chamkey": "117",
 			"chamname": "Lulu",
 			"chamtags": "['Support', 'Mage']",
-			"dictionary": "",
+			"dictionary": "[51, 76, 80, 236]",
 			"lane": "['support', 'top']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.5198618307426598",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -1026,10 +1026,10 @@
 			"chamkey": "99",
 			"chamname": "Lux",
 			"chamtags": "['Mage', 'Support']",
-			"dictionary": "",
+			"dictionary": "[51, 777, 76, 80]",
 			"lane": "['support', 'mid']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.491725768321513",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -1041,10 +1041,10 @@
 			"chamkey": "54",
 			"chamname": "Malphite",
 			"chamtags": "['Tank', 'Fighter']",
-			"dictionary": "",
+			"dictionary": "[122, 157, 517, 777]",
 			"lane": "['top', 'mid', 'support']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.4393939393939394",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -1056,10 +1056,10 @@
 			"chamkey": "90",
 			"chamname": "Malzahar",
 			"chamtags": "['Mage', 'Assassin']",
-			"dictionary": "",
+			"dictionary": "[157, 777, 86, 104]",
 			"lane": "['mid']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.2857142857142857",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -1071,10 +1071,10 @@
 			"chamkey": "57",
 			"chamname": "Maokai",
 			"chamtags": "['Tank', 'Mage']",
-			"dictionary": "",
+			"dictionary": "[51, 876, 30, 80]",
 			"lane": "['top', 'support']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.5070422535211268",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -1086,10 +1086,10 @@
 			"chamkey": "11",
 			"chamname": "MasterYi",
 			"chamtags": "['Assassin', 'Fighter']",
-			"dictionary": "",
+			"dictionary": "[44, 35, 39, 51]",
 			"lane": "['jungle']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.46218487394957986",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -1101,10 +1101,10 @@
 			"chamkey": "21",
 			"chamname": "MissFortune",
 			"chamtags": "['Marksman']",
-			"dictionary": "",
+			"dictionary": "[51, 876, 76, 30]",
 			"lane": "['ad']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.5166666666666667",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -1116,10 +1116,10 @@
 			"chamkey": "62",
 			"chamname": "MonkeyKing",
 			"chamtags": "['Fighter', 'Tank']",
-			"dictionary": "",
+			"dictionary": "[76, 51, 104, 80]",
 			"lane": "['top', 'jungle']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.5160891089108911",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -1131,10 +1131,10 @@
 			"chamkey": "82",
 			"chamname": "Mordekaiser",
 			"chamtags": "['Fighter']",
-			"dictionary": "",
+			"dictionary": "[777, 51, 76, 80]",
 			"lane": "['top', 'mid']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.5252525252525253",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -1146,10 +1146,10 @@
 			"chamkey": "25",
 			"chamname": "Morgana",
 			"chamtags": "['Mage', 'Support']",
-			"dictionary": "",
+			"dictionary": "[51, 76, 30, 80]",
 			"lane": "['support']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.4978768577494692",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -1161,10 +1161,10 @@
 			"chamkey": "267",
 			"chamname": "Nami",
 			"chamtags": "['Support', 'Mage']",
-			"dictionary": "",
+			"dictionary": "[76, 51, 80, 4]",
 			"lane": "['support']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.5263157894736842",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -1176,10 +1176,10 @@
 			"chamkey": "75",
 			"chamname": "Nasus",
 			"chamtags": "['Fighter', 'Tank']",
-			"dictionary": "",
+			"dictionary": "[24, 157, 20, 30]",
 			"lane": "['top']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.45544554455445546",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -1191,10 +1191,10 @@
 			"chamkey": "111",
 			"chamname": "Nautilus",
 			"chamtags": "['Tank', 'Fighter']",
-			"dictionary": "",
+			"dictionary": "[80, 76, 51, 30]",
 			"lane": "['support']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.5026178010471204",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -1206,10 +1206,10 @@
 			"chamkey": "518",
 			"chamname": "Neeko",
 			"chamtags": "['Mage', 'Support']",
-			"dictionary": "",
+			"dictionary": "[876, 105, 99, 25]",
 			"lane": "['mid', 'support']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.4583333333333333",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -1221,10 +1221,10 @@
 			"chamkey": "76",
 			"chamname": "Nidalee",
 			"chamtags": "['Assassin', 'Mage']",
-			"dictionary": "",
+			"dictionary": "[51, 80, 30, 777]",
 			"lane": "['jungle']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.5056078380817326",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -1236,10 +1236,10 @@
 			"chamkey": "56",
 			"chamname": "Nocturne",
 			"chamtags": "['Assassin', 'Fighter']",
-			"dictionary": "",
+			"dictionary": "[51, 246, 876, 80]",
 			"lane": "['jungle', 'mid']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.5185185185185185",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -1251,10 +1251,10 @@
 			"chamkey": "20",
 			"chamname": "Nunu",
 			"chamtags": "['Tank', 'Fighter']",
-			"dictionary": "",
+			"dictionary": "[76, 51, 80, 104]",
 			"lane": "['jungle', 'mid']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.49958088851634536",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -1266,10 +1266,10 @@
 			"chamkey": "2",
 			"chamname": "Olaf",
 			"chamtags": "['Fighter', 'Tank']",
-			"dictionary": "",
+			"dictionary": "[76, 30, 51, 22]",
 			"lane": "['jungle', 'top']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.45",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -1281,10 +1281,10 @@
 			"chamkey": "61",
 			"chamname": "Orianna",
 			"chamtags": "['Mage', 'Support']",
-			"dictionary": "",
+			"dictionary": "[51, 76, 80, 876]",
 			"lane": "['mid']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.49850746268656715",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -1296,10 +1296,10 @@
 			"chamkey": "516",
 			"chamname": "Ornn",
 			"chamtags": "['Tank', 'Fighter']",
-			"dictionary": "",
+			"dictionary": "[777, 80, 58, 30]",
 			"lane": "['top', 'mid']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.52",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -1311,10 +1311,10 @@
 			"chamkey": "80",
 			"chamname": "Pantheon",
 			"chamtags": "['Fighter', 'Assassin']",
-			"dictionary": "",
+			"dictionary": "[51, 76, 30, 876]",
 			"lane": "['support', 'mid']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.5021780798048441",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -1326,10 +1326,10 @@
 			"chamkey": "78",
 			"chamname": "Poppy",
 			"chamtags": "['Tank', 'Fighter']",
-			"dictionary": "",
+			"dictionary": "[76, 51, 30, 777]",
 			"lane": "['top', 'jungle', 'support']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.45",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -1341,10 +1341,10 @@
 			"chamkey": "555",
 			"chamname": "Pyke",
 			"chamtags": "['Support', 'Assassin']",
-			"dictionary": "",
+			"dictionary": "[51, 76, 80, 30]",
 			"lane": "['support', 'mid']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.5",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -1356,10 +1356,10 @@
 			"chamkey": "246",
 			"chamname": "Qiyana",
 			"chamtags": "['Assassin', 'Fighter']",
-			"dictionary": "",
+			"dictionary": "[51, 76, 80, 30]",
 			"lane": "['mid']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.493953488372093",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -1371,10 +1371,10 @@
 			"chamkey": "133",
 			"chamname": "Quinn",
 			"chamtags": "['Marksman', 'Assassin']",
-			"dictionary": "",
+			"dictionary": "[51, 80, 30, 876]",
 			"lane": "['top']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.5026737967914439",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -1386,10 +1386,10 @@
 			"chamkey": "497",
 			"chamname": "Rakan",
 			"chamtags": "['Support']",
-			"dictionary": "",
+			"dictionary": "[51, 80, 76, 876]",
 			"lane": "['support']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.4583333333333333",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -1401,10 +1401,10 @@
 			"chamkey": "33",
 			"chamname": "Rammus",
 			"chamtags": "['Tank', 'Fighter']",
-			"dictionary": "",
+			"dictionary": "[51, 777, 76, 80]",
 			"lane": "['jungle']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.43661971830985913",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -1416,10 +1416,10 @@
 			"chamkey": "421",
 			"chamname": "RekSai",
 			"chamtags": "['Fighter']",
-			"dictionary": "",
+			"dictionary": "[51, 76, 30, 777]",
 			"lane": "['jungle']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.4890909090909091",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -1431,10 +1431,10 @@
 			"chamkey": "58",
 			"chamname": "Renekton",
 			"chamtags": "['Fighter', 'Tank']",
-			"dictionary": "",
+			"dictionary": "[51, 76, 80, 30]",
 			"lane": "['top', 'mid']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.5092158700406123",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -1446,10 +1446,10 @@
 			"chamkey": "107",
 			"chamname": "Rengar",
 			"chamtags": "['Assassin', 'Fighter']",
-			"dictionary": "",
+			"dictionary": "[51, 76, 80, 777]",
 			"lane": "['top', 'jungle']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.53156146179402",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -1461,10 +1461,10 @@
 			"chamkey": "92",
 			"chamname": "Riven",
 			"chamtags": "['Fighter', 'Assassin']",
-			"dictionary": "",
+			"dictionary": "[876, 51, 58, 80]",
 			"lane": "['top']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.5",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -1476,10 +1476,10 @@
 			"chamkey": "68",
 			"chamname": "Rumble",
 			"chamtags": "['Fighter', 'Mage']",
-			"dictionary": "",
+			"dictionary": "[876, 122, 777, 236]",
 			"lane": "['mid', 'top']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.5",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -1491,10 +1491,10 @@
 			"chamkey": "13",
 			"chamname": "Ryze",
 			"chamtags": "['Mage', 'Fighter']",
-			"dictionary": "",
+			"dictionary": "[35, 134, 80, 20]",
 			"lane": "['mid', 'top']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.4166666666666667",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -1506,10 +1506,10 @@
 			"chamkey": "113",
 			"chamname": "Sejuani",
 			"chamtags": "['Tank', 'Fighter']",
-			"dictionary": "",
+			"dictionary": "[51, 22, 104, 76]",
 			"lane": "['jungle']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.3333333333333333",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -1521,10 +1521,10 @@
 			"chamkey": "235",
 			"chamname": "Senna",
 			"chamtags": "['Marksman', 'Support']",
-			"dictionary": "",
+			"dictionary": "[76, 51, 80, 58]",
 			"lane": "['ad', 'support']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.47804878048780486",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -1536,10 +1536,10 @@
 			"chamkey": "875",
 			"chamname": "Sett",
 			"chamtags": "['Fighter', 'Tank']",
-			"dictionary": "",
+			"dictionary": "[76, 51, 80, 30]",
 			"lane": "['support', 'top', 'jungle']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.5049104563835933",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -1551,10 +1551,10 @@
 			"chamkey": "35",
 			"chamname": "Shaco",
 			"chamtags": "['Assassin']",
-			"dictionary": "",
+			"dictionary": "[777, 517, 51, 157]",
 			"lane": "['jungle', 'support']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.484375",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -1566,10 +1566,10 @@
 			"chamkey": "98",
 			"chamname": "Shen",
 			"chamtags": "['Tank']",
-			"dictionary": "",
+			"dictionary": "[51, 80, 30, 76]",
 			"lane": "['top', 'support']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.5045871559633027",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -1581,10 +1581,10 @@
 			"chamkey": "102",
 			"chamname": "Shyvana",
 			"chamtags": "['Fighter', 'Tank']",
-			"dictionary": "",
+			"dictionary": "[350, 80, 35, 876]",
 			"lane": "['jugnle']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.2916666666666667",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -1596,10 +1596,10 @@
 			"chamkey": "27",
 			"chamname": "Singed",
 			"chamtags": "['Tank', 'Fighter']",
-			"dictionary": "",
+			"dictionary": "[51, 30, 76, 80]",
 			"lane": "['top']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.5659574468085107",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -1611,10 +1611,10 @@
 			"chamkey": "14",
 			"chamname": "Sion",
 			"chamtags": "['Tank', 'Fighter']",
-			"dictionary": "",
+			"dictionary": "[350, 35, 54, 777]",
 			"lane": "['top']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.6956521739130435",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -1626,10 +1626,10 @@
 			"chamkey": "15",
 			"chamname": "Sivir",
 			"chamtags": "['Marksman']",
-			"dictionary": "",
+			"dictionary": "[58, 74, 91, 876]",
 			"lane": "['ad']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.16666666666666666",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -1641,10 +1641,10 @@
 			"chamkey": "72",
 			"chamname": "Skarner",
 			"chamtags": "['Fighter', 'Tank']",
-			"dictionary": "",
+			"dictionary": "[104, 80, 86, 91]",
 			"lane": "['jungle']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.3888888888888889",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -1656,10 +1656,10 @@
 			"chamkey": "37",
 			"chamname": "Sona",
 			"chamtags": "['Support', 'Mage']",
-			"dictionary": "",
+			"dictionary": "[777, 25, 516, 86]",
 			"lane": "['support']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.36363636363636365",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -1671,10 +1671,10 @@
 			"chamkey": "16",
 			"chamname": "Soraka",
 			"chamtags": "['Support', 'Mage']",
-			"dictionary": "",
+			"dictionary": "[238, 51, 157, 7]",
 			"lane": "['support']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.4642857142857143",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -1686,10 +1686,10 @@
 			"chamkey": "50",
 			"chamname": "Swain",
 			"chamtags": "['Mage', 'Fighter']",
-			"dictionary": "",
+			"dictionary": "[51, 76, 80, 104]",
 			"lane": "['support']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.53125",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -1701,10 +1701,10 @@
 			"chamkey": "517",
 			"chamname": "Sylas",
 			"chamtags": "['Mage', 'Assassin']",
-			"dictionary": "",
+			"dictionary": "[51, 76, 30, 80]",
 			"lane": "['mid', 'jungle', 'top']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.4842436974789916",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -1716,10 +1716,10 @@
 			"chamkey": "134",
 			"chamname": "Syndra",
 			"chamtags": "['Mage', 'Support']",
-			"dictionary": "",
+			"dictionary": "[76, 51, 876, 80]",
 			"lane": "['mid']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.529126213592233",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -1731,10 +1731,10 @@
 			"chamkey": "223",
 			"chamname": "TahmKench",
 			"chamtags": "['Support', 'Tank']",
-			"dictionary": "",
+			"dictionary": "[876, 58, 51, 30]",
 			"lane": "['support', 'top']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.43548387096774194",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -1746,10 +1746,10 @@
 			"chamkey": "163",
 			"chamname": "Taliyah",
 			"chamtags": "['Mage', 'Support']",
-			"dictionary": "",
+			"dictionary": "[22, 80, 51, 30]",
 			"lane": "['jungle']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.6666666666666666",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -1761,10 +1761,10 @@
 			"chamkey": "91",
 			"chamname": "Talon",
 			"chamtags": "['Assassin']",
-			"dictionary": "",
+			"dictionary": "[51, 76, 80, 30]",
 			"lane": "['mid']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.5167597765363129",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -1776,10 +1776,10 @@
 			"chamkey": "44",
 			"chamname": "Taric",
 			"chamtags": "['Support', 'Fighter']",
-			"dictionary": "",
+			"dictionary": "[51, 76, 80, 236]",
 			"lane": "['support']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.535",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -1791,10 +1791,10 @@
 			"chamkey": "17",
 			"chamname": "Teemo",
 			"chamtags": "['Marksman', 'Assassin']",
-			"dictionary": "",
+			"dictionary": "[35, 7, 876, 777]",
 			"lane": "['top']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.5294117647058824",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -1806,10 +1806,10 @@
 			"chamkey": "412",
 			"chamname": "Thresh",
 			"chamtags": "['Support', 'Fighter']",
-			"dictionary": "",
+			"dictionary": "[76, 51, 80, 30]",
 			"lane": "['support']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.5295566502463054",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -1821,10 +1821,10 @@
 			"chamkey": "18",
 			"chamname": "Tristana",
 			"chamtags": "['Marksman', 'Assassin']",
-			"dictionary": "",
+			"dictionary": "[76, 236, 58, 22]",
 			"lane": "['ad']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.3",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -1836,10 +1836,10 @@
 			"chamkey": "48",
 			"chamname": "Trundle",
 			"chamtags": "['Fighter', 'Tank']",
-			"dictionary": "",
+			"dictionary": "[350, 236, 777, 35]",
 			"lane": "['jungle']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.46296296296296297",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -1851,10 +1851,10 @@
 			"chamkey": "23",
 			"chamname": "Tryndamere",
 			"chamtags": "['Fighter', 'Assassin']",
-			"dictionary": "",
+			"dictionary": "[76, 51, 80, 876]",
 			"lane": "['top']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.52734375",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -1866,10 +1866,10 @@
 			"chamkey": "4",
 			"chamname": "TwistedFate",
 			"chamtags": "['Mage']",
-			"dictionary": "",
+			"dictionary": "[76, 51, 80, 30]",
 			"lane": "['mid']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.5163283318623124",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -1881,10 +1881,10 @@
 			"chamkey": "29",
 			"chamname": "Twitch",
 			"chamtags": "['Marksman', 'Assassin']",
-			"dictionary": "",
+			"dictionary": "[51, 80, 236, 876]",
 			"lane": "['ad']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.4781420765027322",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -1896,10 +1896,10 @@
 			"chamkey": "77",
 			"chamname": "Udyr",
 			"chamtags": "['Fighter', 'Tank']",
-			"dictionary": "",
+			"dictionary": "[876, 84, 104, 350]",
 			"lane": "['jungle']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.5",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -1911,10 +1911,10 @@
 			"chamkey": "6",
 			"chamname": "Urgot",
 			"chamtags": "['Fighter', 'Tank']",
-			"dictionary": "",
+			"dictionary": "[876, 58, 236, 51]",
 			"lane": "['top']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.4117647058823529",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -1926,10 +1926,10 @@
 			"chamkey": "110",
 			"chamname": "Varus",
 			"chamtags": "['Marksman', 'Mage']",
-			"dictionary": "",
+			"dictionary": "[76, 81, 62, 875]",
 			"lane": "['ad']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.5134328358208955",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -1941,10 +1941,10 @@
 			"chamkey": "67",
 			"chamname": "Vayne",
 			"chamtags": "['Marksman', 'Assassin']",
-			"dictionary": "",
+			"dictionary": "[777, 76, 517, 122]",
 			"lane": "['ad']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.53125",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -1956,10 +1956,10 @@
 			"chamkey": "45",
 			"chamname": "Veigar",
 			"chamtags": "['Mage']",
-			"dictionary": "",
+			"dictionary": "[517, 875, 25, 157]",
 			"lane": "['mid']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.49019607843137253",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -1971,10 +1971,10 @@
 			"chamkey": "161",
 			"chamname": "Velkoz",
 			"chamtags": "['Mage']",
-			"dictionary": "",
+			"dictionary": "[25, 104, 111, 24]",
 			"lane": "['support', 'mid']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.5384615384615384",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -1986,10 +1986,10 @@
 			"chamkey": "254",
 			"chamname": "Vi",
 			"chamtags": "['Fighter', 'Assassin']",
-			"dictionary": "",
+			"dictionary": "[51, 236, 30, 58]",
 			"lane": "['jungle']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.325",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -2001,10 +2001,10 @@
 			"chamkey": "112",
 			"chamname": "Viktor",
 			"chamtags": "['Mage']",
-			"dictionary": "",
+			"dictionary": "[111, 126, 51, 117]",
 			"lane": "['mid']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.5",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -2016,10 +2016,10 @@
 			"chamkey": "8",
 			"chamname": "Vladimir",
 			"chamtags": "['Mage']",
-			"dictionary": "",
+			"dictionary": "[51, 76, 80, 876]",
 			"lane": "['top' ,'mid']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.48214285714285715",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -2031,10 +2031,10 @@
 			"chamkey": "106",
 			"chamname": "Volibear",
 			"chamtags": "['Fighter', 'Tank']",
-			"dictionary": "",
+			"dictionary": "[76, 30, 51, 4]",
 			"lane": "['jungle', 'top']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.5141176470588236",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -2046,10 +2046,10 @@
 			"chamkey": "19",
 			"chamname": "Warwick",
 			"chamtags": "['Fighter', 'Tank']",
-			"dictionary": "",
+			"dictionary": "[777, 238, 22, 246]",
 			"lane": "['jungle', 'top']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.4166666666666667",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -2061,10 +2061,10 @@
 			"chamkey": "498",
 			"chamname": "Xayah",
 			"chamtags": "['Marksman']",
-			"dictionary": "",
+			"dictionary": "[876, 62, 57, 25]",
 			"lane": "['ad']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.6666666666666666",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -2076,10 +2076,10 @@
 			"chamkey": "101",
 			"chamname": "Xerath",
 			"chamtags": "['Mage']",
-			"dictionary": "",
+			"dictionary": "[51, 30, 76, 4]",
 			"lane": "['support', 'mid']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.47368421052631576",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -2091,10 +2091,10 @@
 			"chamkey": "5",
 			"chamname": "XinZhao",
 			"chamtags": "['Fighter', 'Assassin']",
-			"dictionary": "",
+			"dictionary": "[31, 80, 76, 517]",
 			"lane": "['jungle']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.25",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -2106,10 +2106,10 @@
 			"chamkey": "157",
 			"chamname": "Yasuo",
 			"chamtags": "['Fighter', 'Assassin']",
-			"dictionary": "",
+			"dictionary": "[51, 777, 76, 80]",
 			"lane": "['mid', 'ad', 'top']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.4533508541392904",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -2121,10 +2121,10 @@
 			"chamkey": "777",
 			"chamname": "Yone",
 			"chamtags": "['Assassin', 'Fighter']",
-			"dictionary": "",
+			"dictionary": "[51, 76, 80, 876]",
 			"lane": "['mid', 'top']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.49815583218072845",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -2136,10 +2136,10 @@
 			"chamkey": "83",
 			"chamname": "Yorick",
 			"chamtags": "['Fighter', 'Tank']",
-			"dictionary": "",
+			"dictionary": "[777, 876, 48, 77]",
 			"lane": "['top']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.2727272727272727",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -2151,10 +2151,10 @@
 			"chamkey": "350",
 			"chamname": "Yuumi",
 			"chamtags": "['Support', 'Mage']",
-			"dictionary": "",
+			"dictionary": "[76, 777, 51, 81]",
 			"lane": "['support']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.5064655172413793",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -2166,10 +2166,10 @@
 			"chamkey": "154",
 			"chamname": "Zac",
 			"chamtags": "['Tank', 'Fighter']",
-			"dictionary": "",
+			"dictionary": "[76, 51, 777, 142]",
 			"lane": "['jungle', 'top', 'support']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.5047619047619047",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -2181,10 +2181,10 @@
 			"chamkey": "238",
 			"chamname": "Zed",
 			"chamtags": "['Assassin']",
-			"dictionary": "",
+			"dictionary": "[51, 76, 777, 30]",
 			"lane": "['mid']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.4828042328042328",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -2196,10 +2196,10 @@
 			"chamkey": "115",
 			"chamname": "Ziggs",
 			"chamtags": "['Mage']",
-			"dictionary": "",
+			"dictionary": "[876, 429, 114, 80]",
 			"lane": "['ad', 'mid']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.48",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -2211,10 +2211,10 @@
 			"chamkey": "26",
 			"chamname": "Zilean",
 			"chamtags": "['Support', 'Mage']",
-			"dictionary": "",
+			"dictionary": "[51, 777, 76, 53]",
 			"lane": "['support']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.5454545454545454",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -2226,10 +2226,10 @@
 			"chamkey": "142",
 			"chamname": "Zoe",
 			"chamtags": "['Mage', 'Support']",
-			"dictionary": "",
+			"dictionary": "[51, 76, 80, 30]",
 			"lane": "['mid']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.4981738495252009",
 			"goodmbti": "",
 			"badmbti": ""
 		}
@@ -2241,10 +2241,10 @@
 			"chamkey": "143",
 			"chamname": "Zyra",
 			"chamtags": "['Mage', 'Support']",
-			"dictionary": "",
+			"dictionary": "[236, 81, 80, 246]",
 			"lane": "['support']",
 			"mbti": "",
-			"winningRate": "",
+			"winningRate": "0.5",
 			"goodmbti": "",
 			"badmbti": ""
 		}
