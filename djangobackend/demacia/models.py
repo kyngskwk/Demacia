@@ -210,3 +210,44 @@ class Champion(models.Model):
 
     class Meta:
         db_table = 'champion'
+
+
+class Match(models.Model):
+    matchno = models.AutoField(primary_key=True)
+    userno = models.ForeignKey('User', models.DO_NOTHING, db_column='userno')
+    recommand_champion = models.CharField(max_length=200)
+    lane = models.CharField(max_length=100)
+
+    class Meta:
+        db_table = 'match'
+
+
+class VideoPost(models.Model):
+    videopostno = models.AutoField(primary_key=True)
+    userno = models.ForeignKey('User', models.DO_NOTHING, db_column='userno')
+    title = models.CharField(max_length=200)
+    video = models.CharField(max_length=250)
+    data = models.CharField(max_length=250)
+    isprivate = models.BooleanField()
+
+    class Meta:
+        db_table = 'videopost'
+
+
+class ReplyLikes(models.Model):
+    replikeno = models.AutoField(primary_key=True)
+    replyno = models.ForeignKey('Reply', models.DO_NOTHING, db_column='replyno')
+    userno = models.ForeignKey('User', models.DO_NOTHING, db_column='userno')
+
+    class Meta:
+        db_table = 'replylikes'
+    
+
+class VideoPostLikes(models.Model):
+    vpostlikeno = models.AutoField(primary_key=True)
+    videopostno = models.ForeignKey('VideoPost', models.DO_NOTHING, db_column='videopostno')
+    userno = models.ForeignKey('User', models.DO_NOTHING, db_column='userno')
+
+
+    class Meta:
+        db_table = 'videopostlikes'
