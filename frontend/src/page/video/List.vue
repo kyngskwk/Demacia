@@ -2,8 +2,8 @@
   <div class="col-12 col-xl-10 m-auto" id="body" style="font-family:Tmon">
     <div class="row">
       <div class="col-12" style="padding:2em;">
-        <b-button pill size="lg" variant="dark" class="p-3" href="/write">
-          <b-icon icon="archive-fill" />&nbsp;투표 의뢰
+        <b-button pill size="lg" variant="dark" class="p-3" href="/vwrite">
+          <b-icon icon="camera-video-fill" />&nbsp;영상 의뢰
         </b-button>
       </div>
       <div class="col-0 col-lg-1 col-xl-1 mt-4"></div>
@@ -34,18 +34,6 @@
             <b-form-select v-model="orderby" :options="orderOptions" class="shadow1"></b-form-select>
           </b-col>
         </b-row>
-        <b-tabs
-          card
-          v-model="tabIndex"
-          noody
-          style="color:white; font-size:2.5vh;"
-          content-class="mt-3"
-          fill
-        >
-          <b-tab title="전체" />
-          <b-tab title="진행중" />
-          <b-tab title="마감" />
-        </b-tabs>
 
         <!-- 리스트 시작 -->
         <b-card
@@ -60,7 +48,7 @@
               <b-card-img
                 id="sizepadding"
                 :src="thumbURL(item)"
-                :alt="item.postNo + '번째영상썸네일'"
+                :alt="item.videoNo + '번째영상썸네일'"
                 class="rounded w-100 h-100"
                 style=" border-width:2px; max-height:255px; padding-right:17px;"
                 @error="noimage"
@@ -101,65 +89,23 @@
                       class="d-flex justify-content-end col-5 col-md-3 col-lg-3 col-xl-3"
                       style="margin-right:0px; padding:0;"
                     >
-                      <div style="text-align:center; font-family:digital">
-                        <p
-                          style="color:red;font-weight:bold;display:inline; margin-right:3px; font-size:20px;"
-                        >{{item.mileage}}</p>
-                        <p style="font-weight:bold;display:inline;font-size:20px;">SOL</p>
-                      </div>
+                      <p style="font-size:2.5vh" v-if="item.isPrivate">
+                        <b-icon icon="lock-fill" />
+                      </p>
                     </div>
                   </div>
                 </div>
               </div>
               <b-card-body style="padding-top:0;">
-                <img
-                  class="max-small"
-                  v-if="isDeadLine(item)"
-                  src="http://j3a304.p.ssafy.io/imgup/images/votenow1.jpg"
-                  style=" position:absolute;
-                  width: auto; 
-                  height: auto;
-                  max-width: 60%;
-                  max-height: 60%; 
-                  margin-left:20%; 
-                  opacity:0.5;"
-                />
-                <img
-                  class="max-small"
-                  v-else
-                  src="http://j3a304.p.ssafy.io/imgup/images/closed.jpg"
-                  style=" position:absolute;
-                  width: auto; 
-                  height: auto;
-                  transform: rotate(-3deg);
-                  max-width: 70%;
-                  max-height: 90%; 
-                  margin-left:20%;
-                  margin-bottom:4%;
-                  margin-top:-5%;
-                  opacity:0.5;"
-                />
                 <b-row>
                   <b-col md="12">
                     <b-card-title>
                       <div class="row">
-                        <div class="col-0 col-sm-8 col-lg-8 col-xl-8">
+                        <div class="col-0 col-sm-12 col-lg-12 col-xl-12">
                           <h3
                             style="display: -webkit-box; font-weight: bold; padding-right:15px; overflow: hidden;width:100%; text-overflow: ellipsis;
                           -webkit-line-clamp: 1;-webkit-box-orient: vertical;word-wrap:break-word; line-height: 2em; height: 2em;margin-bottom:0;padding-left:10px;"
                           >{{ item.title }}</h3>
-                        </div>
-                        <div class="col-12 col-sm-4 col-lg-4 col-xl-4 d-flex justify-content-end">
-                          <div
-                            style="display: -webkit-box; font-weight: bold; padding-right:15px; overflow: hidden;width:100%; text-overflow: ellipsis;
-                          -webkit-line-clamp: 1;-webkit-box-orient: vertical;word-wrap:break-word; line-height: 2em; height: 2em;padding-right:5px;text-align:right;"
-                          >
-                            <h4 style="display:inline-block;font-weight: bold;">{{ item.option1 }}</h4>
-                            <h3
-                              style="display:inline-block;color:red;font-weight: bold; margin-left:5px;margin-right:5px;"
-                            >VS</h3>
-                            <h4 style="display:inline-block;font-weight: bold;">{{ item.option2 }}</h4>
-                          </div>
                         </div>
                       </div>
                     </b-card-title>
@@ -177,26 +123,18 @@
                     >의뢰번호</p>
                     <p
                       style="font-weight:font-size:2.2vh; bold; margin-bottom:0px; padding-top:10px; "
-                    >No. {{ item.postNo }}</p>
+                    >No. {{ item.videoNo }}</p>
                   </div>
                   <div
                     class="col-2 col-sm-4 col-lg-4 col-xl-5"
                     style="text-align:center; font-size:2em"
                   ></div>
                   <div
-                    class="btn btn-primary col-5 col-sm-4 col-lg-3 col-xl-3"
+                    class="btn btn-success col-5 col-sm-4 col-lg-3 col-xl-3"
                     style="width:100%; max-width:200px;height:40px; cursor:Pointer; "
                     no-gutters
-                    @click="toDetail(item.postNo)"
-                    v-if="isDeadLine(item)"
-                  >투표하러가기</div>
-                  <div
-                    v-else
-                    class="btn btn-danger col-5 col-sm-4 col-lg-3 col-xl-3"
-                    style="width:100%; max-width:200px;height:40px; cursor:Pointer; "
-                    no-gutters
-                    @click="toResult(item.postNo)"
-                  >결과보러가기</div>
+                    @click="toResult(item.videoNo)"
+                  >영상 분석 결과</div>
                 </div>
               </b-card-body>
             </b-col>
@@ -210,53 +148,30 @@
 <script>
 import axios from "axios";
 
-const limit = 3;
-
 export default {
   data() {
     return {
       offset: 0,
+      limit: 3,
       list: [],
-      main: [],
       isSearch: false,
       searchby: "title",
       searchOptions: [
         { value: "title", text: "제목" },
         { value: "userNickname", text: "닉네임" },
-        { value: "option", text: "투표대상" },
       ],
       searchText: "",
-      orderby: "postdate",
+      orderby: "date",
       orderOptions: [
-        { value: "postdate", text: "최신순" },
+        { value: "date", text: "최신순" },
         { value: "view", text: "조회수순" },
-        { value: "mileage", text: "SOL순" },
       ],
       state: "",
-      tabIndex: 0,
-      tabOption: "1=1",
     };
   },
 
   created() {
     window.scrollTo(0, 0);
-    this.dlTime = "00:00:00";
-    axios
-      .get(process.env.VUE_APP_API_URL + "/post/search", {
-        params: {
-          searchby: "all",
-          searchText: "",
-          orderby: "postdate",
-          limit: limit,
-          offset: this.offset,
-          tabOption: this.tabOption,
-        },
-      })
-      .then(({ data }) => {
-        if (data.object) {
-          this.main.push(...data.object);
-        }
-      });
   },
 
   computed: {},
@@ -264,26 +179,48 @@ export default {
   methods: {
     infiniteHandler($state) {
       this.state = $state;
+      this.list = [
+        {
+          videoNo: 1,
+          view: 30,
+          thumbnail: "/images/4066v0qe1urlfof.jpg",
+          title: "이런식으로 보입니다",
+          userNickname: "관리자",
+          userImage: "/images/3.jpg",
+          totalLikes: 10,
+          isPrivate: false,
+        },
+        {
+          videoNo: 2,
+          view: 22,
+          thumbnail: "",
+          title: "나만 보는 글은 자물쇠가 생겨요",
+          userNickname: "가렌",
+          userImage: "/images/2.jpg",
+          totalLikes: 10,
+          isPrivate: true,
+        },
+      ];
       axios
-        .get(process.env.VUE_APP_API_URL + "/post/search", {
+        .get(process.env.VUE_APP_API_URL + "/video/search", {
           params: {
             searchby: this.isSearch ? this.searchby : "all",
             searchText: this.searchText,
             orderby: this.orderby,
-            limit: limit,
+            limit: this.limit,
             offset: this.offset,
-            tabOption: this.tabOption,
           },
         })
         .then(({ data }) => {
           if (data.object) {
-            this.offset += limit;
+            this.offset += this.limit;
             this.list.push(...data.object);
             $state.loaded();
           } else {
             $state.complete();
           }
         });
+      $state.complete();
     },
     search() {
       if (!this.searchText) window.location.reload();
@@ -303,34 +240,8 @@ export default {
       return process.env.VUE_APP_IMGUP_URL + item.thumbnail;
     },
 
-    toDetail(postNo) {
-      // if (sessionStorage.getItem("user") == null) {
-      //   this.$router.push("/login");
-      // } else {
-      this.$router.push("/detail/" + postNo);
-      // }
-    },
-
-    toResult(postNo) {
-      this.$router.push("/result/" + postNo);
-    },
-
-    isDeadLine(item) {
-      let today = new Date();
-      let dd = new Date(item.deadLine);
-
-      if (today.getTime() > dd.getTime()) {
-        if (item.isFinished == 0) {
-          axios.get(process.env.VUE_APP_API_URL + "/update/mileage/", {
-            params: {
-              postNo: item.postNo,
-            },
-          });
-        }
-        return false;
-      } else {
-        return true;
-      }
+    toResult(videoNo) {
+      this.$router.push("/vdetail/" + videoNo);
     },
   }, //end of method
   watch: {
@@ -341,24 +252,6 @@ export default {
       this.state.reset();
       this.state.loaded();
       return option;
-    },
-    tabIndex(i) {
-      switch (i) {
-        case 0:
-          this.tabOption = "1=1";
-          break;
-        case 1:
-          this.tabOption = "NOW()<deadline";
-          break;
-        case 2:
-          this.tabOption = "NOW()>deadline";
-          break;
-      }
-      this.list = [];
-      this.offset = 0;
-      this.isSearch = true;
-      this.state.reset();
-      this.state.loaded();
     },
   }, // end watch
 };

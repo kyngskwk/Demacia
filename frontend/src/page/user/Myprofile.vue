@@ -274,7 +274,6 @@
           </b-row>
         </div>
         <div class="shadow1 col-10 col-xl-5 m-4 pt-4" style="background-color:white;">
-          <!-- <h3>라인 성향 분석기</h3> -->
           <!-- 솔로몬 활동 리스트 -->
           <h4 style="display:inline-block;">솔로몬 활동</h4>
           <h6 style="display:inline-block; float:right">적중률 : {{userhitrate}}%</h6>
@@ -310,11 +309,37 @@
         </div>
 
         <!-- MBTI -->
-
+        <div class="shadow1 col-10 col-xl-5 m-4 pt-4" style="background-color:white;">
+          <h4 style="display:inline-block;">내 MBTI 분석결과</h4>
+          <br />INFP
+        </div>
+        <!-- 추천 -->
+        <div class="shadow1 col-10 col-xl-5 m-4 pt-4" style="background-color:white;">
+          <h4 style="display:inline-block;">추천 챔피언과 조합</h4>
+          <br />코그모 티모 모모
+        </div>
         <!-- 활동 목록 -->
-        <div class="col-xl-11 p-2">
+        <div class="col-11 p-2">
           <div class="shadow1 m-4" style="background-color:white;">
-            <h2 class="p-4">활동 리스트</h2>
+            <h2 class="p-4">투표의뢰목록</h2>
+            <b-table hover :items="myPostList" :fields="myPostFields" table-variant="primary">
+              <template v-slot:cell(postDate)="data">{{ postDT(data.value) }}</template>
+              <template v-slot:cell(to)="data">
+                <b-icon
+                  class="icon"
+                  icon="arrow-right-circle"
+                  font-scale="2"
+                  style="cursor:pointer"
+                  @click="toDetail(data.item.postNo)"
+                ></b-icon>
+              </template>
+            </b-table>
+          </div>
+        </div>
+        <!-- 영상분석 -->
+        <div class="col-11 p-2">
+          <div class="shadow1 m-4" style="background-color:white;">
+            <h2 class="p-4">영상분석 의뢰목록</h2>
             <b-table hover :items="myPostList" :fields="myPostFields" table-variant="primary">
               <template v-slot:cell(postDate)="data">{{ postDT(data.value) }}</template>
               <template v-slot:cell(to)="data">

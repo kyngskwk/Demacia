@@ -6,7 +6,7 @@
       style="background-color: black;"
     >
       <div class="container">
-        <a class="navbar-brand mx-auto" href="/list" style="padding-top:5px; font-size:2em">DEMACIA</a>
+        <a class="navbar-brand mx-0" href="/" style="padding-top:5px; font-size:2em">DEMACIA</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -16,30 +16,66 @@
         >
           <b-icon icon="three-dots" animation="cylon" font-scale="2.5"></b-icon>
         </button>
-        <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+        <div class="navbar-collapse collapse w-100 order-3 dual-collapse2 text-right">
           <ul class="navbar-nav ml-auto" style="font-size:2.5hv" v-if="isLogin">
-            <li class="nav-item">
-              <a @click="logout" class="nav-link">로그아웃</a>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">추천</a>
+              <div class="dropdown-menu text-right" style="background-color: black;">
+                <router-link
+                  v-bind:to="{name:constants.URL_TYPE.USER.MYPROFILE}"
+                  class="dropdown-item"
+                >챔피언 추천</router-link>
+                <router-link
+                  v-bind:to="{name:constants.URL_TYPE.USER.MYPROFILE}"
+                  class="dropdown-item"
+                >조합 추천</router-link>
+              </div>
             </li>
             <li class="nav-item">
-              <router-link v-bind:to="{name:constants.URL_TYPE.POST.WRITE}" class="nav-link">글쓰기</router-link>
+              <router-link :to="{name:constants.URL_TYPE.POST.MAIN}" class="nav-link">투표</router-link>
             </li>
             <li class="nav-item">
-              <router-link v-bind:to="{name:constants.URL_TYPE.USER.MYPROFILE}" class="nav-link">프로필</router-link>
+              <router-link :to="{name:constants.URL_TYPE.VIDEO.MAIN}" class="nav-link">영상분석</router-link>
             </li>
-            <li class="nav-item">
-              <router-link to="/" class="nav-link">소개</router-link>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">
+                <b-avatar variant="secondary" :src="userImage" size="1.8em" class="mr-2"></b-avatar>
+                {{ user.userNickname }}
+              </a>
+              <div class="dropdown-menu text-right" style="background-color: black;">
+                <router-link
+                  v-bind:to="{name:constants.URL_TYPE.USER.MYPROFILE}"
+                  class="dropdown-item"
+                >내 프로필</router-link>
+                <a @click="logout" class="dropdown-item">로그아웃</a>
+              </div>
             </li>
           </ul>
           <ul class="navbar-nav ml-auto" style="font-size:2.5hv" v-else>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">추천</a>
+              <div class="dropdown-menu text-right" style="background-color: black;">
+                <router-link
+                  v-bind:to="{name:constants.URL_TYPE.USER.MYPROFILE}"
+                  class="dropdown-item"
+                >챔피언 추천</router-link>
+                <router-link
+                  v-bind:to="{name:constants.URL_TYPE.USER.MYPROFILE}"
+                  class="dropdown-item"
+                >조합 추천</router-link>
+              </div>
+            </li>
+            <li class="nav-item">
+              <router-link :to="{name:constants.URL_TYPE.POST.MAIN}" class="nav-link">투표</router-link>
+            </li>
+            <li class="nav-item">
+              <router-link :to="{name:constants.URL_TYPE.VIDEO.MAIN}" class="nav-link">영상분석</router-link>
+            </li>
             <li class="nav-item">
               <router-link v-bind:to="{name:constants.URL_TYPE.USER.LOGIN}" class="nav-link">로그인</router-link>
             </li>
             <li class="nav-item">
               <router-link v-bind:to="{name:constants.URL_TYPE.USER.JOIN}" class="nav-link">회원가입</router-link>
-            </li>
-            <li class="nav-item">
-              <router-link to="/" class="nav-link">소개</router-link>
             </li>
           </ul>
         </div>
@@ -58,15 +94,20 @@ export default {
   data() {
     return {
       constants,
-      keyword: "",
+      user: {},
     };
   },
   computed: {
+    userImage() {
+      return process.env.VUE_APP_IMGUP_URL + this.user.userImage;
+    },
     isLogin() {
-      return sessionStorage.getItem("user");
+      return this.user;
     },
   },
-  created() {},
+  created() {
+    this.user = JSON.parse(sessionStorage.getItem("user"));
+  },
   methods: {
     logout() {
       if (JSON.parse(sessionStorage.getItem("user")).accesstoken == null) {
@@ -94,7 +135,13 @@ export default {
   },
 };
 </script>
-<style >
+<style scoped>
+.dropdown-item {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+.dropdown-item:hover {
+  color: inherit !important;
+}
 @font-face {
   font-family: "Tmon";
   src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/TmoneyRoundWindExtraBold.woff")

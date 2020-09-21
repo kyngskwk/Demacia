@@ -6,7 +6,13 @@ export default {
       WRITE: "write",
       DETAIL: "detail",
       EDIT: "edit",
-      RESULT:"result",
+      RESULT: "result",
+    },
+    VIDEO: {
+      MAIN: "vmain",
+      WRITE: "vwrite",
+      DETAIL: "vdetail",
+      EDIT: "vedit",
     },
     USER: {
       LOGIN: "login",
