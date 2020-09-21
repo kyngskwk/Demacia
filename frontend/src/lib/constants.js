@@ -24,5 +24,10 @@ export default {
       PAGE_NOT_FOUND: "PageNotFound",
       ERROR: "Error",
     },
+    RECOMMEND:{
+      CHAMPION: "champion",
+      COMBINATION: "combination",
+      MBTI: "mbti",
+    },
   },
 };

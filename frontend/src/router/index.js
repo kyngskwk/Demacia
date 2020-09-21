@@ -29,11 +29,33 @@ import videoWrite from "../page/video/Write.vue";
 import videoDetail from "../page/video/Detail.vue";
 import videoEdit from "../page/video/Edit.vue";
 
+//추천
+import Champion from "../page/recommend/Champion.vue";
+import Combination from "../page/recommend/Combination.vue";
+import Mbti from "../page/recommend/Mbti.vue";
+
 Vue.use(Router);
 
 export default new Router({
   mode: "history",
   routes: [
+    //추천
+    {
+      path: "/champion",
+      name: constants.URL_TYPE.RECOMMEND.CHAMPION,
+      component: Champion,
+    },
+    {
+      path: "/combination",
+      name: constants.URL_TYPE.RECOMMEND.COMBINATION,
+      component: Combination,
+    },
+    {
+      path: "/mbti",
+      name: constants.URL_TYPE.RECOMMEND.MBTI,
+      component: Mbti,
+    },
+
     // 메인 페이지
     {
       path: "/",
