@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'demacia',
     'rest_framework',
+    'drf_yasg',
 ]
 
 REST_FRAMEWORK = {

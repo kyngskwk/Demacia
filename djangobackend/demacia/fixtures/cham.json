@@ -1,6 +1,6 @@
 [
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "266",
 		"fields": {
 			"chamkey": "266",
@@ -9,13 +9,13 @@
 			"dictionary": "[517, 122, 350, 35]",
 			"lane": "['top', 'mid']",
 			"mbti": "ISFP",
-			"winningRate": "0.4878048780487805",
+			"winning_rate": "0.4878048780487805",
 			"goodmbti": "ENTJ",
 			"badmbti": "ENTP"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "103",
 		"fields": {
 			"chamkey": "103",
@@ -24,13 +24,13 @@
 			"dictionary": "[80, 104, 777, 51]",
 			"lane": "['mid']",
 			"mbti": "INTJ",
-			"winningRate": "0.46",
+			"winning_rate": "0.46",
 			"goodmbti": "ESFP",
 			"badmbti": "ESFJ"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "84",
 		"fields": {
 			"chamkey": "84",
@@ -39,13 +39,13 @@
 			"dictionary": "[51, 76, 80, 30]",
 			"lane": "['top', 'mid']",
 			"mbti": "INTJ",
-			"winningRate": "0.4967866323907455",
+			"winning_rate": "0.4967866323907455",
 			"goodmbti": "ESFP",
 			"badmbti": "ESFJ"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "12",
 		"fields": {
 			"chamkey": "12",
@@ -54,13 +54,13 @@
 			"dictionary": "[876, 30, 350, 236]",
 			"lane": "['support']",
 			"mbti": "ESTP",
-			"winningRate": "0.3333333333333333",
+			"winning_rate": "0.3333333333333333",
 			"goodmbti": "INFJ",
 			"badmbti": "INFP"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "32",
 		"fields": {
 			"chamkey": "32",
@@ -69,13 +69,13 @@
 			"dictionary": "[51, 876, 142, 104]",
 			"lane": "['jungle']",
 			"mbti": "ENTJ",
-			"winningRate": "0.7272727272727273",
+			"winning_rate": "0.7272727272727273",
 			"goodmbti": "ISFP",
 			"badmbti": "ISFJ"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "34",
 		"fields": {
 			"chamkey": "34",
@@ -84,13 +84,13 @@
 			"dictionary": "[76, 51, 126, 9]",
 			"lane": "['mid']",
 			"mbti": "ISTP",
-			"winningRate": "0.35714285714285715",
+			"winning_rate": "0.35714285714285715",
 			"goodmbti": "ENFJ",
 			"badmbti": "ENFP"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "1",
 		"fields": {
 			"chamkey": "1",
@@ -99,13 +99,13 @@
 			"dictionary": "[30, 74, 133, 412]",
 			"lane": "['mid', 'support']",
 			"mbti": "ESFJ",
-			"winningRate": "0.4375",
+			"winning_rate": "0.4375",
 			"goodmbti": "INTP",
 			"badmbti": "INTJ"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "523",
 		"fields": {
 			"chamkey": "523",
@@ -114,13 +114,13 @@
 			"dictionary": "[76, 429, 81, 104]",
 			"lane": "['ad']",
 			"mbti": "ESTJ",
-			"winningRate": "0.45897435897435895",
+			"winning_rate": "0.45897435897435895",
 			"goodmbti": "INFP",
 			"badmbti": "INFJ"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "22",
 		"fields": {
 			"chamkey": "22",
@@ -129,13 +129,13 @@
 			"dictionary": "[51, 76, 80, 30]",
 			"lane": "['ad']",
 			"mbti": "ENTP",
-			"winningRate": "0.504406580493537",
+			"winning_rate": "0.504406580493537",
 			"goodmbti": "ISFJ",
 			"badmbti": "ISFP"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "136",
 		"fields": {
 			"chamkey": "136",
@@ -144,13 +144,13 @@
 			"dictionary": "[236, 777, 117, 58]",
 			"lane": "['mid']",
 			"mbti": "ISTP",
-			"winningRate": "0.4444444444444444",
+			"winning_rate": "0.4444444444444444",
 			"goodmbti": "ENFJ",
 			"badmbti": "ENFP"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "268",
 		"fields": {
 			"chamkey": "268",
@@ -159,13 +159,13 @@
 			"dictionary": "[76, 51, 104, 876]",
 			"lane": "['mid']",
 			"mbti": "ISFJ",
-			"winningRate": "0.5573770491803278",
+			"winning_rate": "0.5573770491803278",
 			"goodmbti": "ENTP",
 			"badmbti": "ENTJ"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "432",
 		"fields": {
 			"chamkey": "432",
@@ -174,13 +174,13 @@
 			"dictionary": "[76, 51, 80, 30]",
 			"lane": "['support']",
 			"mbti": "ESFP",
-			"winningRate": "0.4963072378138848",
+			"winning_rate": "0.4963072378138848",
 			"goodmbti": "INTJ",
 			"badmbti": "INTP"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "53",
 		"fields": {
 			"chamkey": "53",
@@ -189,13 +189,13 @@
 			"dictionary": "[51, 777, 76, 30]",
 			"lane": "['support']",
 			"mbti": "ESTP",
-			"winningRate": "0.5056497175141242",
+			"winning_rate": "0.5056497175141242",
 			"goodmbti": "INFJ",
 			"badmbti": "INFP"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "63",
 		"fields": {
 			"chamkey": "63",
@@ -204,13 +204,13 @@
 			"dictionary": "",
 			"lane": "['support', 'mid']",
 			"mbti": "ESFJ",
-			"winningRate": "0.0",
+			"winning_rate": "0.0",
 			"goodmbti": "INTP",
 			"badmbti": "INTJ"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "201",
 		"fields": {
 			"chamkey": "201",
@@ -219,13 +219,13 @@
 			"dictionary": "[875, 238, 122, 142]",
 			"lane": "['support']",
 			"mbti": "ESTP",
-			"winningRate": "0.375",
+			"winning_rate": "0.375",
 			"goodmbti": "INFJ",
 			"badmbti": "INFP"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "51",
 		"fields": {
 			"chamkey": "51",
@@ -234,13 +234,13 @@
 			"dictionary": "[76, 30, 80, 876]",
 			"lane": "['ad']",
 			"mbti": "ESTJ",
-			"winningRate": "0.500383393580896",
+			"winning_rate": "0.500383393580896",
 			"goodmbti": "INFP",
 			"badmbti": "INFJ"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "164",
 		"fields": {
 			"chamkey": "164",
@@ -249,13 +249,13 @@
 			"dictionary": "[51, 76, 80, 30]",
 			"lane": "['top', 'mid']",
 			"mbti": "ISFP",
-			"winningRate": "0.5123634272570443",
+			"winning_rate": "0.5123634272570443",
 			"goodmbti": "ENTJ",
 			"badmbti": "ENTP"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "69",
 		"fields": {
 			"chamkey": "69",
@@ -264,13 +264,13 @@
 			"dictionary": "[51, 76, 80, 777]",
 			"lane": "['mid', 'ad']",
 			"mbti": "ISTP",
-			"winningRate": "0.5487364620938628",
+			"winning_rate": "0.5487364620938628",
 			"goodmbti": "ENFJ",
 			"badmbti": "ENFP"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "31",
 		"fields": {
 			"chamkey": "31",
@@ -279,13 +279,13 @@
 			"dictionary": "[105, 350, 17, 51]",
 			"lane": "['mid', 'top', 'jungle']",
 			"mbti": "ENTJ",
-			"winningRate": "0.5",
+			"winning_rate": "0.5",
 			"goodmbti": "ISFP",
 			"badmbti": "ISFJ"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "42",
 		"fields": {
 			"chamkey": "42",
@@ -294,13 +294,13 @@
 			"dictionary": "[51, 876, 20, 157]",
 			"lane": "['mid', 'ad']",
 			"mbti": "ENTP",
-			"winningRate": "0.6",
+			"winning_rate": "0.6",
 			"goodmbti": "ISFJ",
 			"badmbti": "ISFP"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "122",
 		"fields": {
 			"chamkey": "122",
@@ -309,13 +309,13 @@
 			"dictionary": "[51, 777, 238, 76]",
 			"lane": "['top']",
 			"mbti": "INTP",
-			"winningRate": "0.4706896551724138",
+			"winning_rate": "0.4706896551724138",
 			"goodmbti": "ESFJ",
 			"badmbti": "ESFP"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "131",
 		"fields": {
 			"chamkey": "131",
@@ -324,13 +324,13 @@
 			"dictionary": "[62, 523, 64, 80]",
 			"lane": "['mid', 'top']",
 			"mbti": "INTJ",
-			"winningRate": "0.32142857142857145",
+			"winning_rate": "0.32142857142857145",
 			"goodmbti": "ESFP",
 			"badmbti": "ESFJ"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "119",
 		"fields": {
 			"chamkey": "119",
@@ -339,13 +339,13 @@
 			"dictionary": "[76, 51, 104, 777]",
 			"lane": "['ad']",
 			"mbti": "ESTJ",
-			"winningRate": "0.5555555555555556",
+			"winning_rate": "0.5555555555555556",
 			"goodmbti": "INFP",
 			"badmbti": "INFJ"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "36",
 		"fields": {
 			"chamkey": "36",
@@ -354,13 +354,13 @@
 			"dictionary": "[81, 67, 122, 236]",
 			"lane": "['top', 'jungle']",
 			"mbti": "INFP",
-			"winningRate": "0.375",
+			"winning_rate": "0.375",
 			"goodmbti": "ESTJ",
 			"badmbti": "ESTP"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "245",
 		"fields": {
 			"chamkey": "245",
@@ -369,13 +369,13 @@
 			"dictionary": "[76, 51, 80, 30]",
 			"lane": "['mid', 'jungle']",
 			"mbti": "ENFP",
-			"winningRate": "0.47761194029850745",
+			"winning_rate": "0.47761194029850745",
 			"goodmbti": "ISTJ",
 			"badmbti": "ISTP"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "60",
 		"fields": {
 			"chamkey": "60",
@@ -384,13 +384,13 @@
 			"dictionary": "[51, 76, 80, 30]",
 			"lane": "['jungle']",
 			"mbti": "INFJ",
-			"winningRate": "0.49517684887459806",
+			"winning_rate": "0.49517684887459806",
 			"goodmbti": "ESTP",
 			"badmbti": "ESTJ"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "28",
 		"fields": {
 			"chamkey": "28",
@@ -399,13 +399,13 @@
 			"dictionary": "[51, 80, 76, 30]",
 			"lane": "['jungle']",
 			"mbti": "ENFP",
-			"winningRate": "0.4865424430641822",
+			"winning_rate": "0.4865424430641822",
 			"goodmbti": "ISTJ",
 			"badmbti": "ISTP"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "81",
 		"fields": {
 			"chamkey": "81",
@@ -414,13 +414,13 @@
 			"dictionary": "[76, 51, 80, 30]",
 			"lane": "['ad']",
 			"mbti": "ENTP",
-			"winningRate": "0.5224014336917563",
+			"winning_rate": "0.5224014336917563",
 			"goodmbti": "ISFJ",
 			"badmbti": "ISFP"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "9",
 		"fields": {
 			"chamkey": "9",
@@ -429,13 +429,13 @@
 			"dictionary": "[76, 51, 80, 777]",
 			"lane": "['jungle']",
 			"mbti": "INFJ",
-			"winningRate": "0.5314285714285715",
+			"winning_rate": "0.5314285714285715",
 			"goodmbti": "ESTP",
 			"badmbti": "ESTJ"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "114",
 		"fields": {
 			"chamkey": "114",
@@ -444,13 +444,13 @@
 			"dictionary": "[51, 76, 80, 30]",
 			"lane": "['top']",
 			"mbti": "ISFP",
-			"winningRate": "0.47570621468926555",
+			"winning_rate": "0.47570621468926555",
 			"goodmbti": "ENTJ",
 			"badmbti": "ENTP"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "105",
 		"fields": {
 			"chamkey": "105",
@@ -459,13 +459,13 @@
 			"dictionary": "[51, 76, 80, 777]",
 			"lane": "['mid']",
 			"mbti": "INTJ",
-			"winningRate": "0.5115511551155115",
+			"winning_rate": "0.5115511551155115",
 			"goodmbti": "ESFP",
 			"badmbti": "ESFJ"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "3",
 		"fields": {
 			"chamkey": "3",
@@ -474,13 +474,13 @@
 			"dictionary": "[51, 76, 777, 80]",
 			"lane": "['mid', 'support']",
 			"mbti": "ENTJ",
-			"winningRate": "0.46957878315132606",
+			"winning_rate": "0.46957878315132606",
 			"goodmbti": "ISFP",
 			"badmbti": "ISFJ"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "41",
 		"fields": {
 			"chamkey": "41",
@@ -489,13 +489,13 @@
 			"dictionary": "[51, 76, 80, 104]",
 			"lane": "['top']",
 			"mbti": "ENTJ",
-			"winningRate": "0.5379939209726444",
+			"winning_rate": "0.5379939209726444",
 			"goodmbti": "ISFP",
 			"badmbti": "ISFJ"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "86",
 		"fields": {
 			"chamkey": "86",
@@ -504,13 +504,13 @@
 			"dictionary": "[777, 51, 76, 876]",
 			"lane": "['top']",
 			"mbti": "INTP",
-			"winningRate": "0.5012658227848101",
+			"winning_rate": "0.5012658227848101",
 			"goodmbti": "ESFJ",
 			"badmbti": "ESFP"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "150",
 		"fields": {
 			"chamkey": "150",
@@ -519,13 +519,13 @@
 			"dictionary": "[432, 876, 7, 517]",
 			"lane": "['top']",
 			"mbti": "INTP",
-			"winningRate": "0.2727272727272727",
+			"winning_rate": "0.2727272727272727",
 			"goodmbti": "ESFJ",
 			"badmbti": "ESFP"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "79",
 		"fields": {
 			"chamkey": "79",
@@ -534,13 +534,13 @@
 			"dictionary": "[51, 76, 58, 876]",
 			"lane": "['jungle', 'mid']",
 			"mbti": "ENFJ",
-			"winningRate": "0.6666666666666666",
+			"winning_rate": "0.6666666666666666",
 			"goodmbti": "ISTP",
 			"badmbti": "ISTJ"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "104",
 		"fields": {
 			"chamkey": "104",
@@ -549,13 +549,13 @@
 			"dictionary": "[51, 76, 80, 30]",
 			"lane": "['jungle']",
 			"mbti": "ENFP",
-			"winningRate": "0.47487370380218025",
+			"winning_rate": "0.47487370380218025",
 			"goodmbti": "ISTJ",
 			"badmbti": "ISTP"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "120",
 		"fields": {
 			"chamkey": "120",
@@ -564,13 +564,13 @@
 			"dictionary": "[51, 76, 876, 30]",
 			"lane": "['jungle', 'top']",
 			"mbti": "ENFJ",
-			"winningRate": "0.515451174289246",
+			"winning_rate": "0.515451174289246",
 			"goodmbti": "ISTP",
 			"badmbti": "ISTJ"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "74",
 		"fields": {
 			"chamkey": "74",
@@ -579,13 +579,13 @@
 			"dictionary": "[76, 777, 51, 876]",
 			"lane": "['top']",
 			"mbti": "ISTP",
-			"winningRate": "0.55",
+			"winning_rate": "0.55",
 			"goodmbti": "ENFJ",
 			"badmbti": "ENFP"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "420",
 		"fields": {
 			"chamkey": "420",
@@ -594,13 +594,13 @@
 			"dictionary": "[54, 157, 238, 25]",
 			"lane": "['top']",
 			"mbti": "INTP",
-			"winningRate": "0.6571428571428571",
+			"winning_rate": "0.6571428571428571",
 			"goodmbti": "ESFJ",
 			"badmbti": "ESFP"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "39",
 		"fields": {
 			"chamkey": "39",
@@ -609,13 +609,13 @@
 			"dictionary": "[51, 80, 76, 876]",
 			"lane": "['top',  'mid']",
 			"mbti": "ISFP",
-			"winningRate": "0.46998867497168745",
+			"winning_rate": "0.46998867497168745",
 			"goodmbti": "ENTJ",
 			"badmbti": "ENTP"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "427",
 		"fields": {
 			"chamkey": "427",
@@ -624,13 +624,13 @@
 			"dictionary": "[51, 76, 80, 236]",
 			"lane": "['jungle']",
 			"mbti": "ESFP",
-			"winningRate": "0.44545454545454544",
+			"winning_rate": "0.44545454545454544",
 			"goodmbti": "INTJ",
 			"badmbti": "INTP"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "40",
 		"fields": {
 			"chamkey": "40",
@@ -639,13 +639,13 @@
 			"dictionary": "[51, 25, 30, 76]",
 			"lane": "['support']",
 			"mbti": "ESFP",
-			"winningRate": "0.5614035087719298",
+			"winning_rate": "0.5614035087719298",
 			"goodmbti": "INTJ",
 			"badmbti": "INTP"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "59",
 		"fields": {
 			"chamkey": "59",
@@ -654,13 +654,13 @@
 			"dictionary": "[76, 876, 104, 80]",
 			"lane": "['jungle']",
 			"mbti": "ENFJ",
-			"winningRate": "0.3",
+			"winning_rate": "0.3",
 			"goodmbti": "ISTP",
 			"badmbti": "ISTJ"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "24",
 		"fields": {
 			"chamkey": "24",
@@ -669,13 +669,13 @@
 			"dictionary": "[51, 30, 76, 80]",
 			"lane": "['top', 'jungle']",
 			"mbti": "ISFP",
-			"winningRate": "0.4933884297520661",
+			"winning_rate": "0.4933884297520661",
 			"goodmbti": "ENTJ",
 			"badmbti": "ENTP"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "126",
 		"fields": {
 			"chamkey": "126",
@@ -684,13 +684,13 @@
 			"dictionary": "[51, 76, 80, 30]",
 			"lane": "['top', 'mid']",
 			"mbti": "INTJ",
-			"winningRate": "0.5014814814814815",
+			"winning_rate": "0.5014814814814815",
 			"goodmbti": "ESFP",
 			"badmbti": "ESFJ"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "202",
 		"fields": {
 			"chamkey": "202",
@@ -699,13 +699,13 @@
 			"dictionary": "[51, 76, 30, 22]",
 			"lane": "['ad']",
 			"mbti": "ENTP",
-			"winningRate": "0.5254237288135594",
+			"winning_rate": "0.5254237288135594",
 			"goodmbti": "ISFJ",
 			"badmbti": "ISFP"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "222",
 		"fields": {
 			"chamkey": "222",
@@ -714,13 +714,13 @@
 			"dictionary": "[51, 777, 80, 76]",
 			"lane": "['ad']",
 			"mbti": "ESTJ",
-			"winningRate": "0.45161290322580644",
+			"winning_rate": "0.45161290322580644",
 			"goodmbti": "INFP",
 			"badmbti": "INFJ"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "145",
 		"fields": {
 			"chamkey": "145",
@@ -729,13 +729,13 @@
 			"dictionary": "[51, 58, 246, 876]",
 			"lane": "['ad']",
 			"mbti": "ESTJ",
-			"winningRate": "0.43478260869565216",
+			"winning_rate": "0.43478260869565216",
 			"goodmbti": "INFP",
 			"badmbti": "INFJ"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "429",
 		"fields": {
 			"chamkey": "429",
@@ -744,13 +744,13 @@
 			"dictionary": "[76, 51, 80, 58]",
 			"lane": "['ad']",
 			"mbti": "ESTJ",
-			"winningRate": "0.5083114610673666",
+			"winning_rate": "0.5083114610673666",
 			"goodmbti": "INFP",
 			"badmbti": "INFJ"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "43",
 		"fields": {
 			"chamkey": "43",
@@ -759,13 +759,13 @@
 			"dictionary": "[76, 51, 80, 30]",
 			"lane": "['support']",
 			"mbti": "ESFJ",
-			"winningRate": "0.5052461662631155",
+			"winning_rate": "0.5052461662631155",
 			"goodmbti": "INTP",
 			"badmbti": "INTJ"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "30",
 		"fields": {
 			"chamkey": "30",
@@ -774,13 +774,13 @@
 			"dictionary": "[51, 76, 80, 876]",
 			"lane": "['jungle']",
 			"mbti": "ISTP",
-			"winningRate": "0.48825503355704697",
+			"winning_rate": "0.48825503355704697",
 			"goodmbti": "ENFJ",
 			"badmbti": "ENFP"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "38",
 		"fields": {
 			"chamkey": "38",
@@ -789,13 +789,13 @@
 			"dictionary": "[51, 76, 876, 80]",
 			"lane": "['mid']",
 			"mbti": "INTJ",
-			"winningRate": "0.5015673981191222",
+			"winning_rate": "0.5015673981191222",
 			"goodmbti": "ESFP",
 			"badmbti": "ESFJ"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "55",
 		"fields": {
 			"chamkey": "55",
@@ -804,13 +804,13 @@
 			"dictionary": "[51, 80, 30, 76]",
 			"lane": "['mid']",
 			"mbti": "INTJ",
-			"winningRate": "0.4775828460038986",
+			"winning_rate": "0.4775828460038986",
 			"goodmbti": "ESFP",
 			"badmbti": "ESFJ"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "10",
 		"fields": {
 			"chamkey": "10",
@@ -819,13 +819,13 @@
 			"dictionary": "[777, 60, 157, 39]",
 			"lane": "['top', 'mid']",
 			"mbti": "ENTP",
-			"winningRate": "0.5789473684210527",
+			"winning_rate": "0.5789473684210527",
 			"goodmbti": "ISFJ",
 			"badmbti": "ISFP"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "141",
 		"fields": {
 			"chamkey": "141",
@@ -834,13 +834,13 @@
 			"dictionary": "[51, 76, 80, 236]",
 			"lane": "['jungle']",
 			"mbti": "ENFP",
-			"winningRate": "0.5588235294117647",
+			"winning_rate": "0.5588235294117647",
 			"goodmbti": "ISTJ",
 			"badmbti": "ISTP"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "85",
 		"fields": {
 			"chamkey": "85",
@@ -849,13 +849,13 @@
 			"dictionary": "[76, 51, 80, 876]",
 			"lane": "['top']",
 			"mbti": "INTP",
-			"winningRate": "0.5345911949685535",
+			"winning_rate": "0.5345911949685535",
 			"goodmbti": "ESFJ",
 			"badmbti": "ESFP"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "121",
 		"fields": {
 			"chamkey": "121",
@@ -864,13 +864,13 @@
 			"dictionary": "[58, 76, 30, 432]",
 			"lane": "['jungle']",
 			"mbti": "ENFP",
-			"winningRate": "0.49122807017543857",
+			"winning_rate": "0.49122807017543857",
 			"goodmbti": "ISTJ",
 			"badmbti": "ISTP"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "203",
 		"fields": {
 			"chamkey": "203",
@@ -879,13 +879,13 @@
 			"dictionary": "[51, 76, 80, 30]",
 			"lane": "['jungle']",
 			"mbti": "ESTJ",
-			"winningRate": "0.5441176470588235",
+			"winning_rate": "0.5441176470588235",
 			"goodmbti": "INFP",
 			"badmbti": "INFJ"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "240",
 		"fields": {
 			"chamkey": "240",
@@ -894,13 +894,13 @@
 			"dictionary": "[51, 80, 876, 58]",
 			"lane": "['top']",
 			"mbti": "INTP",
-			"winningRate": "0.46551724137931033",
+			"winning_rate": "0.46551724137931033",
 			"goodmbti": "ESFJ",
 			"badmbti": "ESFP"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "96",
 		"fields": {
 			"chamkey": "96",
@@ -909,13 +909,13 @@
 			"dictionary": "[30, 76, 80, 876]",
 			"lane": "['ad']",
 			"mbti": "ENTP",
-			"winningRate": "0.4666666666666667",
+			"winning_rate": "0.4666666666666667",
 			"goodmbti": "ISFJ",
 			"badmbti": "ISFP"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "7",
 		"fields": {
 			"chamkey": "7",
@@ -924,13 +924,13 @@
 			"dictionary": "[51, 76, 80, 30]",
 			"lane": "['mid']",
 			"mbti": "INTJ",
-			"winningRate": "0.4888668975754577",
+			"winning_rate": "0.4888668975754577",
 			"goodmbti": "ESFP",
 			"badmbti": "ESFJ"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "64",
 		"fields": {
 			"chamkey": "64",
@@ -939,13 +939,13 @@
 			"dictionary": "[51, 80, 30, 876]",
 			"lane": "['jungle']",
 			"mbti": "ISFP",
-			"winningRate": "0.49763779527559054",
+			"winning_rate": "0.49763779527559054",
 			"goodmbti": "ENTJ",
 			"badmbti": "ENTP"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "89",
 		"fields": {
 			"chamkey": "89",
@@ -954,13 +954,13 @@
 			"dictionary": "[51, 76, 80, 876]",
 			"lane": "['support']",
 			"mbti": "ESTP",
-			"winningRate": "0.5886792452830188",
+			"winning_rate": "0.5886792452830188",
 			"goodmbti": "INFJ",
 			"badmbti": "INFP"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "876",
 		"fields": {
 			"chamkey": "876",
@@ -969,13 +969,13 @@
 			"dictionary": "[51, 76, 80, 30]",
 			"lane": "['jungle']",
 			"mbti": "INFJ",
-			"winningRate": "0.5033662477558348",
+			"winning_rate": "0.5033662477558348",
 			"goodmbti": "ESTP",
 			"badmbti": "ESTJ"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "127",
 		"fields": {
 			"chamkey": "127",
@@ -984,13 +984,13 @@
 			"dictionary": "[51, 58, 30, 104]",
 			"lane": "['mid']",
 			"mbti": "INFJ",
-			"winningRate": "0.5882352941176471",
+			"winning_rate": "0.5882352941176471",
 			"goodmbti": "ESTP",
 			"badmbti": "ESTJ"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "236",
 		"fields": {
 			"chamkey": "236",
@@ -999,13 +999,13 @@
 			"dictionary": "[51, 76, 80, 876]",
 			"lane": "['ad', 'mid', 'top']",
 			"mbti": "ESTJ",
-			"winningRate": "0.5002658160552897",
+			"winning_rate": "0.5002658160552897",
 			"goodmbti": "INFP",
 			"badmbti": "INFJ"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "117",
 		"fields": {
 			"chamkey": "117",
@@ -1014,13 +1014,13 @@
 			"dictionary": "[51, 76, 80, 236]",
 			"lane": "['support', 'top']",
 			"mbti": "ESFP",
-			"winningRate": "0.5198618307426598",
+			"winning_rate": "0.5198618307426598",
 			"goodmbti": "INTJ",
 			"badmbti": "INTP"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "99",
 		"fields": {
 			"chamkey": "99",
@@ -1029,13 +1029,13 @@
 			"dictionary": "[51, 777, 76, 80]",
 			"lane": "['support', 'mid']",
 			"mbti": "ESFJ",
-			"winningRate": "0.491725768321513",
+			"winning_rate": "0.491725768321513",
 			"goodmbti": "INTP",
 			"badmbti": "INTJ"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "54",
 		"fields": {
 			"chamkey": "54",
@@ -1044,13 +1044,13 @@
 			"dictionary": "[122, 157, 517, 777]",
 			"lane": "['top', 'mid', 'support']",
 			"mbti": "INFP",
-			"winningRate": "0.4393939393939394",
+			"winning_rate": "0.4393939393939394",
 			"goodmbti": "ESTJ",
 			"badmbti": "ESTP"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "90",
 		"fields": {
 			"chamkey": "90",
@@ -1059,13 +1059,13 @@
 			"dictionary": "[157, 777, 86, 104]",
 			"lane": "['mid']",
 			"mbti": "ISFJ",
-			"winningRate": "0.2857142857142857",
+			"winning_rate": "0.2857142857142857",
 			"goodmbti": "ENTP",
 			"badmbti": "ENTJ"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "57",
 		"fields": {
 			"chamkey": "57",
@@ -1074,13 +1074,13 @@
 			"dictionary": "[51, 876, 30, 80]",
 			"lane": "['top', 'support']",
 			"mbti": "INFP",
-			"winningRate": "0.5070422535211268",
+			"winning_rate": "0.5070422535211268",
 			"goodmbti": "ESTJ",
 			"badmbti": "ESTP"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "11",
 		"fields": {
 			"chamkey": "11",
@@ -1089,13 +1089,13 @@
 			"dictionary": "[44, 35, 39, 51]",
 			"lane": "['jungle']",
 			"mbti": "ENFP",
-			"winningRate": "0.46218487394957986",
+			"winning_rate": "0.46218487394957986",
 			"goodmbti": "ISTJ",
 			"badmbti": "ISTP"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "21",
 		"fields": {
 			"chamkey": "21",
@@ -1104,13 +1104,13 @@
 			"dictionary": "[51, 876, 76, 30]",
 			"lane": "['ad']",
 			"mbti": "ESTJ",
-			"winningRate": "0.5166666666666667",
+			"winning_rate": "0.5166666666666667",
 			"goodmbti": "INFP",
 			"badmbti": "INFJ"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "62",
 		"fields": {
 			"chamkey": "62",
@@ -1119,13 +1119,13 @@
 			"dictionary": "[76, 51, 104, 80]",
 			"lane": "['top', 'jungle']",
 			"mbti": "INTP",
-			"winningRate": "0.5160891089108911",
+			"winning_rate": "0.5160891089108911",
 			"goodmbti": "ESFJ",
 			"badmbti": "ESFP"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "82",
 		"fields": {
 			"chamkey": "82",
@@ -1134,13 +1134,13 @@
 			"dictionary": "[777, 51, 76, 80]",
 			"lane": "['top', 'mid']",
 			"mbti": "ENTJ",
-			"winningRate": "0.5252525252525253",
+			"winning_rate": "0.5252525252525253",
 			"goodmbti": "ISFP",
 			"badmbti": "ISFJ"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "25",
 		"fields": {
 			"chamkey": "25",
@@ -1149,13 +1149,13 @@
 			"dictionary": "[51, 76, 30, 80]",
 			"lane": "['support']",
 			"mbti": "ESFJ",
-			"winningRate": "0.4978768577494692",
+			"winning_rate": "0.4978768577494692",
 			"goodmbti": "INTP",
 			"badmbti": "INTJ"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "267",
 		"fields": {
 			"chamkey": "267",
@@ -1164,13 +1164,13 @@
 			"dictionary": "[76, 51, 80, 4]",
 			"lane": "['support']",
 			"mbti": "ESFP",
-			"winningRate": "0.5263157894736842",
+			"winning_rate": "0.5263157894736842",
 			"goodmbti": "INTJ",
 			"badmbti": "INTP"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "75",
 		"fields": {
 			"chamkey": "75",
@@ -1179,13 +1179,13 @@
 			"dictionary": "[24, 157, 20, 30]",
 			"lane": "['top']",
 			"mbti": "INFP",
-			"winningRate": "0.45544554455445546",
+			"winning_rate": "0.45544554455445546",
 			"goodmbti": "ESTJ",
 			"badmbti": "ESTP"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "111",
 		"fields": {
 			"chamkey": "111",
@@ -1194,13 +1194,13 @@
 			"dictionary": "[80, 76, 51, 30]",
 			"lane": "['support']",
 			"mbti": "ESTP",
-			"winningRate": "0.5026178010471204",
+			"winning_rate": "0.5026178010471204",
 			"goodmbti": "INFJ",
 			"badmbti": "INFP"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "518",
 		"fields": {
 			"chamkey": "518",
@@ -1209,13 +1209,13 @@
 			"dictionary": "[876, 105, 99, 25]",
 			"lane": "['mid', 'support']",
 			"mbti": "ESFJ",
-			"winningRate": "0.4583333333333333",
+			"winning_rate": "0.4583333333333333",
 			"goodmbti": "INTP",
 			"badmbti": "INTJ"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "76",
 		"fields": {
 			"chamkey": "76",
@@ -1224,13 +1224,13 @@
 			"dictionary": "[51, 80, 30, 777]",
 			"lane": "['jungle']",
 			"mbti": "ENFP",
-			"winningRate": "0.5056078380817326",
+			"winning_rate": "0.5056078380817326",
 			"goodmbti": "ISTJ",
 			"badmbti": "ISTP"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "56",
 		"fields": {
 			"chamkey": "56",
@@ -1239,13 +1239,13 @@
 			"dictionary": "[51, 246, 876, 80]",
 			"lane": "['jungle', 'mid']",
 			"mbti": "INTJ",
-			"winningRate": "0.5185185185185185",
+			"winning_rate": "0.5185185185185185",
 			"goodmbti": "ESFP",
 			"badmbti": "ESFJ"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "20",
 		"fields": {
 			"chamkey": "20",
@@ -1254,13 +1254,13 @@
 			"dictionary": "[76, 51, 80, 104]",
 			"lane": "['jungle', 'mid']",
 			"mbti": "ENFJ",
-			"winningRate": "0.49958088851634536",
+			"winning_rate": "0.49958088851634536",
 			"goodmbti": "ISTP",
 			"badmbti": "ISTJ"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "2",
 		"fields": {
 			"chamkey": "2",
@@ -1269,13 +1269,13 @@
 			"dictionary": "[76, 30, 51, 22]",
 			"lane": "['jungle', 'top']",
 			"mbti": "INTP",
-			"winningRate": "0.45",
+			"winning_rate": "0.45",
 			"goodmbti": "ESFJ",
 			"badmbti": "ESFP"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "61",
 		"fields": {
 			"chamkey": "61",
@@ -1284,13 +1284,13 @@
 			"dictionary": "[51, 76, 80, 876]",
 			"lane": "['mid']",
 			"mbti": "ESFJ",
-			"winningRate": "0.49850746268656715",
+			"winning_rate": "0.49850746268656715",
 			"goodmbti": "INTP",
 			"badmbti": "INTJ"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "516",
 		"fields": {
 			"chamkey": "516",
@@ -1299,13 +1299,13 @@
 			"dictionary": "[777, 80, 58, 30]",
 			"lane": "['top', 'mid']",
 			"mbti": "INFP",
-			"winningRate": "0.52",
+			"winning_rate": "0.52",
 			"goodmbti": "ESTJ",
 			"badmbti": "ESTP"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "80",
 		"fields": {
 			"chamkey": "80",
@@ -1314,13 +1314,13 @@
 			"dictionary": "[51, 76, 30, 876]",
 			"lane": "['support', 'mid']",
 			"mbti": "ISFP",
-			"winningRate": "0.5021780798048441",
+			"winning_rate": "0.5021780798048441",
 			"goodmbti": "ENTJ",
 			"badmbti": "ENTP"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "78",
 		"fields": {
 			"chamkey": "78",
@@ -1329,13 +1329,13 @@
 			"dictionary": "[76, 51, 30, 777]",
 			"lane": "['top', 'jungle', 'support']",
 			"mbti": "INFP",
-			"winningRate": "0.45",
+			"winning_rate": "0.45",
 			"goodmbti": "ESTJ",
 			"badmbti": "ESTP"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "555",
 		"fields": {
 			"chamkey": "555",
@@ -1344,13 +1344,13 @@
 			"dictionary": "[51, 76, 80, 30]",
 			"lane": "['support', 'mid']",
 			"mbti": "INTJ",
-			"winningRate": "0.5",
+			"winning_rate": "0.5",
 			"goodmbti": "ESFP",
 			"badmbti": "ESFJ"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "246",
 		"fields": {
 			"chamkey": "246",
@@ -1359,13 +1359,13 @@
 			"dictionary": "[51, 76, 80, 30]",
 			"lane": "['mid']",
 			"mbti": "INTJ",
-			"winningRate": "0.493953488372093",
+			"winning_rate": "0.493953488372093",
 			"goodmbti": "ESFP",
 			"badmbti": "ESFJ"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "133",
 		"fields": {
 			"chamkey": "133",
@@ -1374,13 +1374,13 @@
 			"dictionary": "[51, 80, 30, 876]",
 			"lane": "['top']",
 			"mbti": "ISTJ",
-			"winningRate": "0.5026737967914439",
+			"winning_rate": "0.5026737967914439",
 			"goodmbti": "ENFP",
 			"badmbti": "ENFJ"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "497",
 		"fields": {
 			"chamkey": "497",
@@ -1389,13 +1389,13 @@
 			"dictionary": "[51, 80, 76, 876]",
 			"lane": "['support']",
 			"mbti": "ESTP",
-			"winningRate": "0.4583333333333333",
+			"winning_rate": "0.4583333333333333",
 			"goodmbti": "INFJ",
 			"badmbti": "INFP"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "33",
 		"fields": {
 			"chamkey": "33",
@@ -1404,13 +1404,13 @@
 			"dictionary": "[51, 777, 76, 80]",
 			"lane": "['jungle']",
 			"mbti": "ENFJ",
-			"winningRate": "0.43661971830985913",
+			"winning_rate": "0.43661971830985913",
 			"goodmbti": "ISTP",
 			"badmbti": "ISTJ"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "421",
 		"fields": {
 			"chamkey": "421",
@@ -1419,13 +1419,13 @@
 			"dictionary": "[51, 76, 30, 777]",
 			"lane": "['jungle']",
 			"mbti": "ENFJ",
-			"winningRate": "0.4890909090909091",
+			"winning_rate": "0.4890909090909091",
 			"goodmbti": "ISTP",
 			"badmbti": "ISTJ"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "58",
 		"fields": {
 			"chamkey": "58",
@@ -1434,13 +1434,13 @@
 			"dictionary": "[51, 76, 80, 30]",
 			"lane": "['top', 'mid']",
 			"mbti": "INTP",
-			"winningRate": "0.5092158700406123",
+			"winning_rate": "0.5092158700406123",
 			"goodmbti": "ESFJ",
 			"badmbti": "ESFP"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "107",
 		"fields": {
 			"chamkey": "107",
@@ -1449,13 +1449,13 @@
 			"dictionary": "[51, 76, 80, 777]",
 			"lane": "['top', 'jungle']",
 			"mbti": "ENFP",
-			"winningRate": "0.53156146179402",
+			"winning_rate": "0.53156146179402",
 			"goodmbti": "ISTJ",
 			"badmbti": "ISTP"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "92",
 		"fields": {
 			"chamkey": "92",
@@ -1464,13 +1464,13 @@
 			"dictionary": "[876, 51, 58, 80]",
 			"lane": "['top']",
 			"mbti": "ISFP",
-			"winningRate": "0.5",
+			"winning_rate": "0.5",
 			"goodmbti": "ENTJ",
 			"badmbti": "ENTP"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "68",
 		"fields": {
 			"chamkey": "68",
@@ -1479,13 +1479,13 @@
 			"dictionary": "[876, 122, 777, 236]",
 			"lane": "['mid', 'top']",
 			"mbti": "INFJ",
-			"winningRate": "0.5",
+			"winning_rate": "0.5",
 			"goodmbti": "ESTP",
 			"badmbti": "ESTJ"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "13",
 		"fields": {
 			"chamkey": "13",
@@ -1494,13 +1494,13 @@
 			"dictionary": "[35, 134, 80, 20]",
 			"lane": "['mid', 'top']",
 			"mbti": "INFJ",
-			"winningRate": "0.4166666666666667",
+			"winning_rate": "0.4166666666666667",
 			"goodmbti": "ESTP",
 			"badmbti": "ESTJ"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "113",
 		"fields": {
 			"chamkey": "113",
@@ -1509,13 +1509,13 @@
 			"dictionary": "[51, 22, 104, 76]",
 			"lane": "['jungle']",
 			"mbti": "ENFJ",
-			"winningRate": "0.3333333333333333",
+			"winning_rate": "0.3333333333333333",
 			"goodmbti": "ISTP",
 			"badmbti": "ISTJ"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "235",
 		"fields": {
 			"chamkey": "235",
@@ -1524,13 +1524,13 @@
 			"dictionary": "[76, 51, 80, 58]",
 			"lane": "['ad', 'support']",
 			"mbti": "ENTP",
-			"winningRate": "0.47804878048780486",
+			"winning_rate": "0.47804878048780486",
 			"goodmbti": "ISFJ",
 			"badmbti": "ISFP"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "875",
 		"fields": {
 			"chamkey": "875",
@@ -1539,13 +1539,13 @@
 			"dictionary": "[76, 51, 80, 30]",
 			"lane": "['support', 'top', 'jungle']",
 			"mbti": "INFP",
-			"winningRate": "0.5049104563835933",
+			"winning_rate": "0.5049104563835933",
 			"goodmbti": "ESTJ",
 			"badmbti": "ESTP"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "35",
 		"fields": {
 			"chamkey": "35",
@@ -1554,13 +1554,13 @@
 			"dictionary": "[777, 517, 51, 157]",
 			"lane": "['jungle', 'support']",
 			"mbti": "ENFP",
-			"winningRate": "0.484375",
+			"winning_rate": "0.484375",
 			"goodmbti": "ISTJ",
 			"badmbti": "ISTP"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "98",
 		"fields": {
 			"chamkey": "98",
@@ -1569,13 +1569,13 @@
 			"dictionary": "[51, 80, 30, 76]",
 			"lane": "['top', 'support']",
 			"mbti": "INFP",
-			"winningRate": "0.5045871559633027",
+			"winning_rate": "0.5045871559633027",
 			"goodmbti": "ESTJ",
 			"badmbti": "ESTP"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "102",
 		"fields": {
 			"chamkey": "102",
@@ -1584,13 +1584,13 @@
 			"dictionary": "[350, 80, 35, 876]",
 			"lane": "['jugnle']",
 			"mbti": "ENFJ",
-			"winningRate": "0.2916666666666667",
+			"winning_rate": "0.2916666666666667",
 			"goodmbti": "ISTP",
 			"badmbti": "ISTJ"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "27",
 		"fields": {
 			"chamkey": "27",
@@ -1599,13 +1599,13 @@
 			"dictionary": "[51, 30, 76, 80]",
 			"lane": "['top']",
 			"mbti": "INFP",
-			"winningRate": "0.5659574468085107",
+			"winning_rate": "0.5659574468085107",
 			"goodmbti": "ESTJ",
 			"badmbti": "ESTP"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "14",
 		"fields": {
 			"chamkey": "14",
@@ -1614,13 +1614,13 @@
 			"dictionary": "[350, 35, 54, 777]",
 			"lane": "['top']",
 			"mbti": "INFP",
-			"winningRate": "0.6956521739130435",
+			"winning_rate": "0.6956521739130435",
 			"goodmbti": "ESTJ",
 			"badmbti": "ESTP"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "15",
 		"fields": {
 			"chamkey": "15",
@@ -1629,13 +1629,13 @@
 			"dictionary": "[58, 74, 91, 876]",
 			"lane": "['ad']",
 			"mbti": "ESTJ",
-			"winningRate": "0.16666666666666666",
+			"winning_rate": "0.16666666666666666",
 			"goodmbti": "INFP",
 			"badmbti": "INFJ"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "72",
 		"fields": {
 			"chamkey": "72",
@@ -1644,13 +1644,13 @@
 			"dictionary": "[104, 80, 86, 91]",
 			"lane": "['jungle']",
 			"mbti": "ENFJ",
-			"winningRate": "0.3888888888888889",
+			"winning_rate": "0.3888888888888889",
 			"goodmbti": "ISTP",
 			"badmbti": "ISTJ"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "37",
 		"fields": {
 			"chamkey": "37",
@@ -1659,13 +1659,13 @@
 			"dictionary": "[777, 25, 516, 86]",
 			"lane": "['support']",
 			"mbti": "ESFP",
-			"winningRate": "0.36363636363636365",
+			"winning_rate": "0.36363636363636365",
 			"goodmbti": "INTJ",
 			"badmbti": "INTP"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "16",
 		"fields": {
 			"chamkey": "16",
@@ -1674,13 +1674,13 @@
 			"dictionary": "[238, 51, 157, 7]",
 			"lane": "['support']",
 			"mbti": "ESFP",
-			"winningRate": "0.4642857142857143",
+			"winning_rate": "0.4642857142857143",
 			"goodmbti": "INTJ",
 			"badmbti": "INTP"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "50",
 		"fields": {
 			"chamkey": "50",
@@ -1689,13 +1689,13 @@
 			"dictionary": "[51, 76, 80, 104]",
 			"lane": "['support']",
 			"mbti": "INFJ",
-			"winningRate": "0.53125",
+			"winning_rate": "0.53125",
 			"goodmbti": "ESTP",
 			"badmbti": "ESTJ"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "517",
 		"fields": {
 			"chamkey": "517",
@@ -1704,13 +1704,13 @@
 			"dictionary": "[51, 76, 30, 80]",
 			"lane": "['mid', 'jungle', 'top']",
 			"mbti": "INFJ",
-			"winningRate": "0.4842436974789916",
+			"winning_rate": "0.4842436974789916",
 			"goodmbti": "ESTP",
 			"badmbti": "ESTJ"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "134",
 		"fields": {
 			"chamkey": "134",
@@ -1719,13 +1719,13 @@
 			"dictionary": "[76, 51, 876, 80]",
 			"lane": "['mid']",
 			"mbti": "ISFJ",
-			"winningRate": "0.529126213592233",
+			"winning_rate": "0.529126213592233",
 			"goodmbti": "ENTP",
 			"badmbti": "ENTJ"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "223",
 		"fields": {
 			"chamkey": "223",
@@ -1734,13 +1734,13 @@
 			"dictionary": "[876, 58, 51, 30]",
 			"lane": "['support', 'top']",
 			"mbti": "INFP",
-			"winningRate": "0.43548387096774194",
+			"winning_rate": "0.43548387096774194",
 			"goodmbti": "ESTJ",
 			"badmbti": "ESTP"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "163",
 		"fields": {
 			"chamkey": "163",
@@ -1749,13 +1749,13 @@
 			"dictionary": "[22, 80, 51, 30]",
 			"lane": "['jungle']",
 			"mbti": "ESFJ",
-			"winningRate": "0.6666666666666666",
+			"winning_rate": "0.6666666666666666",
 			"goodmbti": "INTP",
 			"badmbti": "INTJ"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "91",
 		"fields": {
 			"chamkey": "91",
@@ -1764,13 +1764,13 @@
 			"dictionary": "[51, 76, 80, 30]",
 			"lane": "['mid']",
 			"mbti": "INTJ",
-			"winningRate": "0.5167597765363129",
+			"winning_rate": "0.5167597765363129",
 			"goodmbti": "ESFP",
 			"badmbti": "ESFJ"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "44",
 		"fields": {
 			"chamkey": "44",
@@ -1779,13 +1779,13 @@
 			"dictionary": "[51, 76, 80, 236]",
 			"lane": "['support']",
 			"mbti": "ESTP",
-			"winningRate": "0.535",
+			"winning_rate": "0.535",
 			"goodmbti": "INFJ",
 			"badmbti": "INFP"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "17",
 		"fields": {
 			"chamkey": "17",
@@ -1794,13 +1794,13 @@
 			"dictionary": "[35, 7, 876, 777]",
 			"lane": "['top']",
 			"mbti": "ISTJ",
-			"winningRate": "0.5294117647058824",
+			"winning_rate": "0.5294117647058824",
 			"goodmbti": "ENFP",
 			"badmbti": "ENFJ"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "412",
 		"fields": {
 			"chamkey": "412",
@@ -1809,13 +1809,13 @@
 			"dictionary": "[76, 51, 80, 30]",
 			"lane": "['support']",
 			"mbti": "ESTP",
-			"winningRate": "0.5295566502463054",
+			"winning_rate": "0.5295566502463054",
 			"goodmbti": "INFJ",
 			"badmbti": "INFP"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "18",
 		"fields": {
 			"chamkey": "18",
@@ -1824,13 +1824,13 @@
 			"dictionary": "[76, 236, 58, 22]",
 			"lane": "['ad']",
 			"mbti": "ISTJ",
-			"winningRate": "0.3",
+			"winning_rate": "0.3",
 			"goodmbti": "ENFP",
 			"badmbti": "ENFJ"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "48",
 		"fields": {
 			"chamkey": "48",
@@ -1839,13 +1839,13 @@
 			"dictionary": "[350, 236, 777, 35]",
 			"lane": "['jungle']",
 			"mbti": "ENFJ",
-			"winningRate": "0.46296296296296297",
+			"winning_rate": "0.46296296296296297",
 			"goodmbti": "ISTP",
 			"badmbti": "ISTJ"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "23",
 		"fields": {
 			"chamkey": "23",
@@ -1854,13 +1854,13 @@
 			"dictionary": "[76, 51, 80, 876]",
 			"lane": "['top']",
 			"mbti": "ISFP",
-			"winningRate": "0.52734375",
+			"winning_rate": "0.52734375",
 			"goodmbti": "ENTJ",
 			"badmbti": "ENTP"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "4",
 		"fields": {
 			"chamkey": "4",
@@ -1869,13 +1869,13 @@
 			"dictionary": "[76, 51, 80, 30]",
 			"lane": "['mid']",
 			"mbti": "ISTP",
-			"winningRate": "0.5163283318623124",
+			"winning_rate": "0.5163283318623124",
 			"goodmbti": "ENFJ",
 			"badmbti": "ENFP"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "29",
 		"fields": {
 			"chamkey": "29",
@@ -1884,13 +1884,13 @@
 			"dictionary": "[51, 80, 236, 876]",
 			"lane": "['ad']",
 			"mbti": "ISTJ",
-			"winningRate": "0.4781420765027322",
+			"winning_rate": "0.4781420765027322",
 			"goodmbti": "ENFP",
 			"badmbti": "ENFJ"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "77",
 		"fields": {
 			"chamkey": "77",
@@ -1899,13 +1899,13 @@
 			"dictionary": "[876, 84, 104, 350]",
 			"lane": "['jungle']",
 			"mbti": "ENFP",
-			"winningRate": "0.5",
+			"winning_rate": "0.5",
 			"goodmbti": "ISTJ",
 			"badmbti": "ISTP"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "6",
 		"fields": {
 			"chamkey": "6",
@@ -1914,13 +1914,13 @@
 			"dictionary": "[876, 58, 236, 51]",
 			"lane": "['top']",
 			"mbti": "INFP",
-			"winningRate": "0.4117647058823529",
+			"winning_rate": "0.4117647058823529",
 			"goodmbti": "ESTJ",
 			"badmbti": "ESTP"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "110",
 		"fields": {
 			"chamkey": "110",
@@ -1929,13 +1929,13 @@
 			"dictionary": "[76, 81, 62, 875]",
 			"lane": "['ad']",
 			"mbti": "ENTP",
-			"winningRate": "0.5134328358208955",
+			"winning_rate": "0.5134328358208955",
 			"goodmbti": "ISFJ",
 			"badmbti": "ISFP"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "67",
 		"fields": {
 			"chamkey": "67",
@@ -1944,13 +1944,13 @@
 			"dictionary": "[777, 76, 517, 122]",
 			"lane": "['ad']",
 			"mbti": "ISTJ",
-			"winningRate": "0.53125",
+			"winning_rate": "0.53125",
 			"goodmbti": "ENFP",
 			"badmbti": "ENFJ"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "45",
 		"fields": {
 			"chamkey": "45",
@@ -1959,13 +1959,13 @@
 			"dictionary": "[517, 875, 25, 157]",
 			"lane": "['mid']",
 			"mbti": "ISFJ",
-			"winningRate": "0.49019607843137253",
+			"winning_rate": "0.49019607843137253",
 			"goodmbti": "ENTP",
 			"badmbti": "ENTJ"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "161",
 		"fields": {
 			"chamkey": "161",
@@ -1974,13 +1974,13 @@
 			"dictionary": "[25, 104, 111, 24]",
 			"lane": "['support', 'mid']",
 			"mbti": "ISFJ",
-			"winningRate": "0.5384615384615384",
+			"winning_rate": "0.5384615384615384",
 			"goodmbti": "ENTP",
 			"badmbti": "ENTJ"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "254",
 		"fields": {
 			"chamkey": "254",
@@ -1989,13 +1989,13 @@
 			"dictionary": "[51, 236, 30, 58]",
 			"lane": "['jungle']",
 			"mbti": "ISFP",
-			"winningRate": "0.325",
+			"winning_rate": "0.325",
 			"goodmbti": "ENTJ",
 			"badmbti": "ENTP"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "112",
 		"fields": {
 			"chamkey": "112",
@@ -2004,13 +2004,13 @@
 			"dictionary": "[111, 126, 51, 117]",
 			"lane": "['mid']",
 			"mbti": "ISFJ",
-			"winningRate": "0.5",
+			"winning_rate": "0.5",
 			"goodmbti": "ENTP",
 			"badmbti": "ENTJ"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "8",
 		"fields": {
 			"chamkey": "8",
@@ -2019,13 +2019,13 @@
 			"dictionary": "[51, 76, 80, 876]",
 			"lane": "['top' ,'mid']",
 			"mbti": "INFJ",
-			"winningRate": "0.48214285714285715",
+			"winning_rate": "0.48214285714285715",
 			"goodmbti": "ESTP",
 			"badmbti": "ESTJ"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "106",
 		"fields": {
 			"chamkey": "106",
@@ -2034,13 +2034,13 @@
 			"dictionary": "[76, 30, 51, 4]",
 			"lane": "['jungle', 'top']",
 			"mbti": "ENTJ",
-			"winningRate": "0.5141176470588236",
+			"winning_rate": "0.5141176470588236",
 			"goodmbti": "ISFP",
 			"badmbti": "ISFJ"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "19",
 		"fields": {
 			"chamkey": "19",
@@ -2049,13 +2049,13 @@
 			"dictionary": "[777, 238, 22, 246]",
 			"lane": "['jungle', 'top']",
 			"mbti": "INTP",
-			"winningRate": "0.4166666666666667",
+			"winning_rate": "0.4166666666666667",
 			"goodmbti": "ESFJ",
 			"badmbti": "ESFP"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "498",
 		"fields": {
 			"chamkey": "498",
@@ -2064,13 +2064,13 @@
 			"dictionary": "[876, 62, 57, 25]",
 			"lane": "['ad']",
 			"mbti": "ESTJ",
-			"winningRate": "0.6666666666666666",
+			"winning_rate": "0.6666666666666666",
 			"goodmbti": "INFP",
 			"badmbti": "INFJ"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "101",
 		"fields": {
 			"chamkey": "101",
@@ -2079,13 +2079,13 @@
 			"dictionary": "[51, 30, 76, 4]",
 			"lane": "['support', 'mid']",
 			"mbti": "ISFJ",
-			"winningRate": "0.47368421052631576",
+			"winning_rate": "0.47368421052631576",
 			"goodmbti": "ENTP",
 			"badmbti": "ENTJ"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "5",
 		"fields": {
 			"chamkey": "5",
@@ -2094,13 +2094,13 @@
 			"dictionary": "[31, 80, 76, 517]",
 			"lane": "['jungle']",
 			"mbti": "ISFP",
-			"winningRate": "0.25",
+			"winning_rate": "0.25",
 			"goodmbti": "ENTJ",
 			"badmbti": "ENTP"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "157",
 		"fields": {
 			"chamkey": "157",
@@ -2109,13 +2109,13 @@
 			"dictionary": "[51, 777, 76, 80]",
 			"lane": "['mid', 'ad', 'top']",
 			"mbti": "ISFP",
-			"winningRate": "0.4533508541392904",
+			"winning_rate": "0.4533508541392904",
 			"goodmbti": "ENTJ",
 			"badmbti": "ENTP"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "777",
 		"fields": {
 			"chamkey": "777",
@@ -2124,13 +2124,13 @@
 			"dictionary": "[51, 76, 80, 876]",
 			"lane": "['mid', 'top']",
 			"mbti": "ISFP",
-			"winningRate": "0.49815583218072845",
+			"winning_rate": "0.49815583218072845",
 			"goodmbti": "ENTJ",
 			"badmbti": "ENTP"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "83",
 		"fields": {
 			"chamkey": "83",
@@ -2139,13 +2139,13 @@
 			"dictionary": "[777, 876, 48, 77]",
 			"lane": "['top']",
 			"mbti": "INTP",
-			"winningRate": "0.2727272727272727",
+			"winning_rate": "0.2727272727272727",
 			"goodmbti": "ESFJ",
 			"badmbti": "ESFP"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "350",
 		"fields": {
 			"chamkey": "350",
@@ -2154,13 +2154,13 @@
 			"dictionary": "[76, 777, 51, 81]",
 			"lane": "['support']",
 			"mbti": "ESFP",
-			"winningRate": "0.5064655172413793",
+			"winning_rate": "0.5064655172413793",
 			"goodmbti": "INTJ",
 			"badmbti": "INTP"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "154",
 		"fields": {
 			"chamkey": "154",
@@ -2169,13 +2169,13 @@
 			"dictionary": "[76, 51, 777, 142]",
 			"lane": "['jungle', 'top', 'support']",
 			"mbti": "ENTJ",
-			"winningRate": "0.5047619047619047",
+			"winning_rate": "0.5047619047619047",
 			"goodmbti": "ISFP",
 			"badmbti": "ISFJ"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "238",
 		"fields": {
 			"chamkey": "238",
@@ -2184,13 +2184,13 @@
 			"dictionary": "[51, 76, 777, 30]",
 			"lane": "['mid']",
 			"mbti": "INTJ",
-			"winningRate": "0.4828042328042328",
+			"winning_rate": "0.4828042328042328",
 			"goodmbti": "ESFP",
 			"badmbti": "ESFJ"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "115",
 		"fields": {
 			"chamkey": "115",
@@ -2199,13 +2199,13 @@
 			"dictionary": "[876, 429, 114, 80]",
 			"lane": "['ad', 'mid']",
 			"mbti": "ISFJ",
-			"winningRate": "0.48",
+			"winning_rate": "0.48",
 			"goodmbti": "ENTP",
 			"badmbti": "ENTJ"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "26",
 		"fields": {
 			"chamkey": "26",
@@ -2214,13 +2214,13 @@
 			"dictionary": "[51, 777, 76, 53]",
 			"lane": "['support']",
 			"mbti": "ESFP",
-			"winningRate": "0.5454545454545454",
+			"winning_rate": "0.5454545454545454",
 			"goodmbti": "INTJ",
 			"badmbti": "INTP"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "142",
 		"fields": {
 			"chamkey": "142",
@@ -2229,13 +2229,13 @@
 			"dictionary": "[51, 76, 80, 30]",
 			"lane": "['mid']",
 			"mbti": "ISFJ",
-			"winningRate": "0.4981738495252009",
+			"winning_rate": "0.4981738495252009",
 			"goodmbti": "ENTP",
 			"badmbti": "ENTJ"
 		}
 	},
 	{
-		"models": "appname.champion",
+		"model": "demacia.champion",
 		"pk": "143",
 		"fields": {
 			"chamkey": "143",
@@ -2244,7 +2244,7 @@
 			"dictionary": "[236, 81, 80, 246]",
 			"lane": "['support']",
 			"mbti": "ESFJ",
-			"winningRate": "0.5",
+			"winning_rate": "0.5",
 			"goodmbti": "INTP",
 			"badmbti": "INTJ"
 		}
