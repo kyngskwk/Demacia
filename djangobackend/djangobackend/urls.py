@@ -22,7 +22,7 @@ from drf_yasg.views import get_schema_view
 from drf_yasg import openapi 
 
 schema_url_patterns = [ 
-    path('django/v1/', include('demacia.urls')), 
+    path('django/api/', include('demacia.urls')), 
     ] 
 schema_view = get_schema_view( 
     openapi.Info( 
@@ -36,10 +36,13 @@ schema_view = get_schema_view(
     )
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('django/v1/', include('demacia.urls')),
-    url(r'^swagger(?P<format>\.json|\.yaml)$', schema_view.without_ui(cache_timeout=0), name='schema-json'), 
-    url(r'^swagger/$', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'), 
-    url(r'^redoc/$', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
+    path('django/api/admin/', admin.site.urls),
+    path('django/api/', include('demacia.urls')),
+    path('django/api/v1/swagger<str:format>', schema_view.without_ui(cache_timeout=0), name='schema-json'),
+    path('django/api/v1/swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
+    path('django/api/v1/docs/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
+    # url(r'^swagger(?P<format>\.json|\.yaml)$', schema_view.without_ui(cache_timeout=0), name='schema-json'), 
+    # url(r'^swagger/$', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'), 
+    # url(r'^redoc/$', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
 
 ]
