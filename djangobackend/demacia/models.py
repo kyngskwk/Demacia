@@ -195,3 +195,18 @@ class Vote(models.Model):
     class Meta:
         managed = False
         db_table = 'vote'
+
+
+class Champion(models.Model):
+    chamkey = models.IntegerField()
+    chamname = models.CharField(max_length=100)
+    chamtags = models.CharField(max_length=200)
+    dictionary = models.CharField(max_length=200)
+    lane = models.CharField(max_length=200)
+    mbti = models.CharField(max_length=50)
+    winning_rate = models.FloatField()
+    goodmbti = models.CharField(max_length=50)
+    badmbti = models.CharField(max_length=50)
+
+    class Meta:
+        db_table = 'champion'

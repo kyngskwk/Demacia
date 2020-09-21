@@ -19,7 +19,7 @@ from django.conf import settings
 from rest_framework import routers
 from rest_framework_swagger.views import get_swagger_view
 
-import demacia.api
+# import demacia.api
 
 
 urlpatterns = [
