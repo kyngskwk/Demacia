@@ -16,8 +16,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
+from rest_framework import routers
+from rest_framework_swagger.views import get_swagger_view
+
+import demacia.api
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/doc', get_swagger_view(title = 'Rest API Document')),
     path('demacia/', include('demacia.urls')),
 ]
