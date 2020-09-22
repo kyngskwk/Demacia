@@ -1,4 +1,4 @@
-from .models import Champion, VideoPost , Match, ReplyLikes , VideoPostLikes
+from .models import Champion, Videopost , Match, Replylikes , Videopostlikes
 from rest_framework import serializers, viewsets
 # Seriallizer는 API를 통한 요청에 대한 응답의 형태를을 결정해주는 클래스이다. 
 # ViewSet은 요청을 처리하여 응답을 해주는 클래스이다. 
@@ -13,14 +13,14 @@ class ChampionViewSet(viewsets.ModelViewSet):
     queryset = Champion.objects.all()
     serializer_class = ChampionSerializer
 
-class VideoPostSerializer(serializers.ModelSerializer):
+class VideopostSerializer(serializers.ModelSerializer):
     class Meta:
-        model = VideoPost
+        model = Videopost
         fields = '__all__'    
 
-class VideoPostViewSet(viewsets.ModelViewSet):
-    queryset = VideoPost.objects.all()
-    serializer_class =  VideoPostSerializer
+class VideopostViewSet(viewsets.ModelViewSet):
+    queryset = Videopost.objects.all()
+    serializer_class =  VideopostSerializer
  
 class MatchSerializer(serializers.ModelSerializer):
     class Meta:
@@ -31,20 +31,20 @@ class MatchViewSet(viewsets.ModelViewSet):
     queryset = Match.objects.all()
     serializer_class =  MatchSerializer
 
-class ReplyLikesSerializer(serializers.ModelSerializer):
+class ReplylikesSerializer(serializers.ModelSerializer):
     class Meta:
-        model = ReplyLikes
+        model = Replylikes
         fields = '__all__'   
 
-class ReplyLikesViewSet(viewsets.ModelViewSet):
-    queryset = ReplyLikes.objects.all()
-    serializer_class =  ReplyLikesSerializer
+class ReplylikesViewSet(viewsets.ModelViewSet):
+    queryset = Replylikes.objects.all()
+    serializer_class =  ReplylikesSerializer
 
-class VideoPostLikesSerializer(serializers.ModelSerializer):
+class VideopostlikesSerializer(serializers.ModelSerializer):
     class Meta:
-        model = VideoPostLikes
+        model = Videopostlikes
         fields = '__all__'   
 
-class VideoPostLikesViewSet(viewsets.ModelViewSet):
-    queryset = VideoPostLikes.objects.all()
-    serializer_class =  VideoPostLikesSerializer
+class VideopostlikesViewSet(viewsets.ModelViewSet):
+    queryset = Videopostlikes.objects.all()
+    serializer_class =  VideopostlikesSerializer
