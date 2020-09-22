@@ -13,20 +13,20 @@ class ChampionViewSet(viewsets.ModelViewSet):
     queryset = Champion.objects.all()
     serializer_class = ChampionSerializer
 
-# class VideoPostSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = VideoPost
-#         fields = '__all__'    
+class VideoPostSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = VideoPost
+        fields = '__all__'    
 
-# class VideoPostViewSet(viewsets.ModelViewSet):
-#     queryset = VideoPost.objects.all()
-#     serializer_class =  VideoPostSerializer
+class VideoPostViewSet(viewsets.ModelViewSet):
+    queryset = VideoPost.objects.all()
+    serializer_class =  VideoPostSerializer
  
-# class MatchSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = Match
-#         fields = '__all__'   
+class MatchSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Match
+        fields = '__all__'   
 
-# class MatchViewSet(viewsets.ModelViewSet):
-#     queryset = Match.objects.all()
-#     serializer_class =  MatchSerializer
+class MatchViewSet(viewsets.ModelViewSet):
+    queryset = Match.objects.all()
+    serializer_class =  MatchSerializer
