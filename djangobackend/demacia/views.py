@@ -25,8 +25,8 @@ def champion_list(request):
 
 @api_view(['GET'])
 def videopost_list(request):
-    videoposts = VideoPost.objects.all()
-    serializers = VideoPostSerializer(videoposts, many=True)
+    videoposts = Videopost.objects.all()
+    serializers = VideopostSerializer(videoposts, many=True)
     return Response(serializers.data)
 
 @api_view(['GET'])
@@ -38,28 +38,28 @@ def match_list(request):
 @login_required
 @api_view(['GET'])
 def replylike_list(request):
-    replylikes = ReplyLikes.objects.all()
-    serializers = ReplyLikesSerializer(replylieks, many=True)
+    replylikes = Replylikes.objects.all()
+    serializers = ReplylikesSerializer(replylieks, many=True)
     return Response(serializers.data)
 
 @login_required
 @api_view(['POST','DELETE'])
 def replylike_create_and_delete(request):
-    replylikes = ReplyLikes.objects.all()
-    serializers = ReplyLikesSerializer(replylieks, many=True)
+    replylikes = Replylikes.objects.all()
+    serializers = ReplylikesSerializer(replylieks, many=True)
     return Response(serializers.data)
 
 
 @login_required
 @api_view(['GET'])
 def videopostlike_list(request):
-    videopostlikes = VideoPostLikes.objects.all()
-    serializers = VideoPostLikesSerializer(videopostlikes, many=True)
+    videopostlikes = Videopostlikes.objects.all()
+    serializers = VideopostlikesSerializer(videopostlikes, many=True)
     return Response(serializers.data)
 
 @login_required
 @api_view(['POST','DELETE'])
 def videopostlike_create_and_delete(request):
-    videopostlikes = VideoPostLikes.objects.all()
-    serializers = VideoPostLikesSerializer(videopostlikes, many=True)
+    videopostlikes = Videopostlikes.objects.all()
+    serializers = VideopostlikesSerializer(videopostlikes, many=True)
     return Response(serializers.data)
