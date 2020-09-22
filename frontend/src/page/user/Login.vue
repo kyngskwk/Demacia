@@ -61,6 +61,7 @@
         </div>
       </div>
     </div>
+    <img id="profile" :src="newImg" />
   </div>
 </template>
 
@@ -81,6 +82,7 @@ export default {
       kakaologo: process.env.VUE_APP_IMGUP_URL + "/images/login/kakaologo.PNG",
       naverlogo: process.env.VUE_APP_IMGUP_URL + "/images/login/naverlogo.png",
       logologin: process.env.VUE_APP_IMGUP_URL + "/images/login/loginlogo.PNG",
+      newImg: "",
     };
   },
 
@@ -98,12 +100,21 @@ export default {
         .then((res) => {
           if (res.data.status) {
             res.data.object.userPw = "";
-            // if (res.data.object.userImage.includes("http:")) {
-            //   let uploadImageFile = res.data.object.userImage;
+            // if (res.data.object.userImage) {
+            //   var canvas = document.createElement("CANVAS");
+            //   canvas.getContext("2d");
             //   const fd = new FormData();
             //   fd.append(
             //     "upLoadImage",
-            //     uploadImageFile,
+            //     canvas.toBlob(function (blob) {
+            //       var newImg = document.getElementById("profile");
+            //       var url = URL.createObjectURL(blob);
+            //       newImg.onload = function () {
+            //         URL.revokeObjectURL(url);
+            //       };
+            //       newImg.src = url;
+            //       document.body.appendChild(newImg);
+            //     }),
             //     res.data.object.userNo + ".jpg"
             //   );
             //   axios

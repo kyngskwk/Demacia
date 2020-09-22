@@ -110,15 +110,15 @@ export default {
   },
   methods: {
     logout() {
-      if (JSON.parse(sessionStorage.getItem("user")).accesstoken == null) {
+      if (!this.user.accessToken) {
+        console.log("not accesstoken");
         sessionStorage.removeItem("user");
         location.href = "/";
       } else {
         axios
           .get(process.env.VUE_APP_API_URL + "/logout/oauth", {
             params: {
-              accesstoken: JSON.parse(sessionStorage.getItem("user"))
-                .accesstoken,
+              accesstoken: this.user.accessToken,
             },
           })
           .then(() => {
@@ -128,7 +128,6 @@ export default {
           .catch((err) => {
             location.href =
               "/error/로그아웃 중 서버 오류가 발생했습니다. " + err;
-            window.location.reload();
           });
       }
     },
