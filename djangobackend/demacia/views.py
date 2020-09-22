@@ -14,15 +14,15 @@ def champion_list(request):
     serializers = ChampionSerializer(champions, many=True)
     return Response(serializers.data)
 
-# @api_view(['GET'])
-# def videopost_list(request):
-#     videoposts = VideoPost.objects.all()
-#     serializers = VideoPostSerializer(videoposts, many=True)
-#     return Response(serializers.data)
+@api_view(['GET'])
+def videopost_list(request):
+    videoposts = VideoPost.objects.all()
+    serializers = VideoPostSerializer(videoposts, many=True)
+    return Response(serializers.data)
 
-# @api_view(['GET'])
-# def match_list(request):
-#     matches = Match.objects.all()
-#     serializers = MatchSerializer(matches, many=True)
-#     return Response(serializers.data)
+@api_view(['GET'])
+def match_list(request):
+    matches = Match.objects.all()
+    serializers = MatchSerializer(matches, many=True)
+    return Response(serializers.data)
 

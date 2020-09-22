@@ -1,4 +1,4 @@
-from .models import Champion
+from .models import Champion, VideoPost , Match
 from rest_framework import serializers, viewsets
 # Seriallizer는 API를 통한 요청에 대한 응답의 형태를을 결정해주는 클래스이다. 
 # ViewSet은 요청을 처리하여 응답을 해주는 클래스이다. 
