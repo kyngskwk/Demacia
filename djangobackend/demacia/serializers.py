@@ -1,4 +1,4 @@
-from .models import Champion, VideoPost , Match
+from .models import Champion, VideoPost , Match, ReplyLikes , VideoPostLikes
 from rest_framework import serializers, viewsets
 # Seriallizer는 API를 통한 요청에 대한 응답의 형태를을 결정해주는 클래스이다. 
 # ViewSet은 요청을 처리하여 응답을 해주는 클래스이다. 
@@ -30,3 +30,21 @@ class MatchSerializer(serializers.ModelSerializer):
 class MatchViewSet(viewsets.ModelViewSet):
     queryset = Match.objects.all()
     serializer_class =  MatchSerializer
+
+class ReplyLikesSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ReplyLikes
+        fields = '__all__'   
+
+class ReplyLikesViewSet(viewsets.ModelViewSet):
+    queryset = ReplyLikes.objects.all()
+    serializer_class =  ReplyLikesSerializer
+
+class VideoPostLikesSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = VideoPostLikes
+        fields = '__all__'   
+
+class VideoPostLikesViewSet(viewsets.ModelViewSet):
+    queryset = VideoPostLikes.objects.all()
+    serializer_class =  VideoPostLikesSerializer
