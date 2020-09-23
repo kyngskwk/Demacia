@@ -9,6 +9,11 @@ class ChampionSerializer(serializers.ModelSerializer):
         model = Champion
         fields = '__all__'
 
+class ChampionDictionarySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Champion
+        fields = ['dictionary']
+
 class ChampionViewSet(viewsets.ModelViewSet):
     queryset = Champion.objects.all()
     serializer_class = ChampionSerializer
@@ -25,7 +30,7 @@ class VideopostViewSet(viewsets.ModelViewSet):
 class MatchSerializer(serializers.ModelSerializer):
     class Meta:
         model = Match
-        fields = '__all__'   
+        fields = '__all__'  
 
 class MatchViewSet(viewsets.ModelViewSet):
     queryset = Match.objects.all()
