@@ -52,6 +52,9 @@ def videopost_list(request):
     serializers = VideopostSerializer(videoposts, many=True)
     return Response(serializers.data)
 
+
+
+
 @api_view(['GET'])
 def match_list(request,userno):
     matches = Match.objects.filter(userno=userno)
