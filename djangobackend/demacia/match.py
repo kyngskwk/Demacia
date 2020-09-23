@@ -48,11 +48,20 @@ for game_id in game_ids:
 # print(champion_info)
 
 champion_winnig_rate = dict()
+real_cham_dict = dict()
 for champion_id in champion_info:
     champion_winnig_rate[champion_id] = champion_info[champion_id][0] / sum(champion_info[champion_id])
 
+champion_winnig_rate = sorted(champion_winnig_rate.items(), key=lambda x:x[1], reverse=True)
+
+for idx in range(len(champion_winnig_rate)):
+    if idx > 2:
+        break
+    else:
+        real_cham_dict[str(champion_winnig_rate[idx][0])] = str(champion_winnig_rate[idx][1])
+
 ### 승률 dict
-print(champion_winnig_rate)
+print(real_cham_dict)
 
 ### 최고 lane
 lane_dict = sorted(lane_dict.items(), key=lambda x:x[1], reverse=True)
