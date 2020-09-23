@@ -8,7 +8,7 @@ app_name = 'demacia'
 urlpatterns = [
     #챔피언추천
     path('recommand/<int:userno_pk>/champion', views.recommand_champion, name="recommand champion"),
-    path('recommand/<int:userno_pk>/group/<int:partyno_pk>', views.recommand_group, name="recommand group"),
+    path('recommand/group', views.recommand_group, name="recommand group"),
     path('champions/', views.champion_list, name="champion list"),
     path('videoposts/', views.videopost_list, name="video list"),
     path('matches/', views.match_list, name="match list"),
