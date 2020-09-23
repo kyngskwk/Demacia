@@ -6,7 +6,7 @@ game_ids = []
 lane_dict = {}
 champion_info = dict()
 
-account_id = "KKhWE3vkqayFG0oR4L3_sclBsvah8uemhQOtbILcGNsq4HE"
+account_id = "AGN2hOobPwktWqt0iEH6045fI7PlHsJ2MGcQT1oQheYSUO8FkKnU9pqx"
 match_v4_accountid = "https://kr.api.riotgames.com/lol/match/v4/matchlists/by-account/"+str(account_id)+"?api_key=RGAPI-4dcd2099-2605-4440-9864-f53a305141e7"
 account_results = requests.get(match_v4_accountid).json()["matches"]
 # print(results)
