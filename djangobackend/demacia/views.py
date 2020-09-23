@@ -59,6 +59,30 @@ def match_list(request,userno):
     return Response(serializers.data)
 
 
+@api_view(['POST'])
+# @permission_classes([IsAuthenticated])
+def mbti_update(request):
+    request_userno = request.data['userno']
+    request_mbti = request.data['mbti']
+    # print(request_userno, request_mbti)
+    # Userdata = User.objects.filter(userno=request_userno)
+    Userdata = User.objects.filter(userno=request_userno).update(mbti=request_mbti)
+    mbtiupdate = UserSerializer(Userdata, data={'mbti': request_mbti}, partial=True)
+    serializers = UserSerializer(data=request.data)
+    if serializers.is_valid():
+    #     serializers.save()
+        return Response(serializers.data)
+    # userdata = UserSerializer(data=request.data)
+    # print(userdata)
+    # if userdata.is_valid():
+    #     userdata.save()
+    #     return userdata.data
+    
+    # if userdata.is_valid():
+    #     userdata.save()
+    #     return Response(userdata.data)
+
+
 @api_view(['GET'])
 def mbti_cham(request, user_mbti):
     mbti_chams = Champion.objects.filter(mbti=user_mbti)
