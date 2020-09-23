@@ -30,7 +30,7 @@ class VideopostViewSet(viewsets.ModelViewSet):
 class MatchSerializer(serializers.ModelSerializer):
     class Meta:
         model = Match
-        fields = ['recommand_champion','lane']   
+        fields = '__all__'  
 
 class MatchViewSet(viewsets.ModelViewSet):
     queryset = Match.objects.all()
