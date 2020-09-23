@@ -46,6 +46,30 @@ def match_list(request):
     serializers = MatchSerializer(matches, many=True)
     return Response(serializers.data)
 
+
+@api_view(['GET'])
+def mbti_cham(request, user_mbti):
+    mbti_chams = Champion.objects.filter(mbti=user_mbti)
+
+    good_mbti = Champion.objects.filter(mbti=user_mbti).values('goodmbti').distinct()[0]['goodmbti']
+    good_chams = Champion.objects.filter(mbti=good_mbti)
+
+    bad_mbti = Champion.objects.filter(mbti=user_mbti).values('badmbti').distinct()[0]['badmbti']
+    bad_chams = Champion.objects.filter(mbti=bad_mbti)
+
+    mbti_serializers = ChampionSerializer(mbti_chams, many=True)
+    bad_serializers = ChampionSerializer(bad_chams, many=True)
+    good_serializers = ChampionSerializer(good_chams, many=True)
+
+    response_data = {
+        'mbti_chams': mbti_serializers.data,
+        'bad_chams': bad_serializers.data,
+        'good_chams': good_serializers.data
+    }
+
+    return Response(response_data)
+
+
 @login_required
 @api_view(['GET'])
 def replylike_list(request):
