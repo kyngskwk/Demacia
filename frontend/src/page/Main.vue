@@ -9,7 +9,7 @@
         <div class="box">
           <b-row>
             <b-col cols="12" class="m-2 text-left">
-              <router-link :to="{name:constants.URL_TYPE.USER.LOGIN}">
+              <router-link :to="{name:constants.URL_TYPE.RECOMMEND.COMBINATION}">
                 <kbd>조합 추천받기</kbd>
               </router-link>누르면 로그인 창으로 갑니다.
             </b-col>
@@ -29,7 +29,7 @@
         <div class="box">
           <b-row>
             <b-col cols="12" class="m-2 text-left">
-              <router-link :to="{name:constants.URL_TYPE.USER.LOGIN}">
+              <router-link :to="{name:constants.URL_TYPE.RECOMMEND.CHAMPION}">
                 <kbd>챔피언 추천받기</kbd>
               </router-link>누르면 로그인 창으로 갑니다.
             </b-col>
