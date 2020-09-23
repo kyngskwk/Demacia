@@ -1,6 +1,7 @@
 
 package com.web.blog.controller.lol;
 
+import com.web.blog.model.dao.lol.LOLDao;
 import com.web.blog.model.dto.lol.LeagueInfo;
 import com.web.blog.model.dto.lol.Summoner;
 import com.web.blog.model.service.lol.LoLService;
@@ -29,6 +30,8 @@ public class LOLController {
 
     @Autowired
     LoLService lolService;
+    @Autowired
+    LOLDao lolDao;
 
     @GetMapping("/rank")
     @ApiOperation(value = "소환사 검색")
@@ -39,27 +42,20 @@ public class LOLController {
         System.out.println(summoner.toString());
         System.out.println(leagueInfo.toString());
 
+        BasicResponse result = new BasicResponse();
         try {
-            BasicResponse result = new BasicResponse();
             if (leagueInfo != null) {
-
-                int update = lolService.lolUpdateRank(userNo, leagueInfo);
-                System.out.println(update);
-
-                if (update == 1) {
-                    result.status = true;
-                    result.data = "success";
-                    result.object = leagueInfo;
-                    response = new ResponseEntity<>(result, HttpStatus.OK);
-                } else {
-                    result.status = false;
-                    result.data = "소환사명이 존재하지 않습니다.";
-                    response = new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
-                }
+                System.out.println("acc update : " + lolDao.updateAccountId(userNo, summoner.getAccountId())
+                        + "\nrank update :" + lolService.lolUpdateRank(userNo, leagueInfo));
+                result.status = true;
+                result.data = "success";
+                result.object = leagueInfo;
+                response = new ResponseEntity<>(result, HttpStatus.OK);
             }
         } catch (Exception e) {
-            System.out.println("Fail to authentication");
-            response = new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
+            result.status = false;
+            result.data = "소환사명이 존재하지 않습니다.";
+            response = new ResponseEntity<>(result, HttpStatus.OK);
         }
 
         return response;

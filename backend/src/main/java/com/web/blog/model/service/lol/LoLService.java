@@ -10,9 +10,6 @@ public interface LoLService {
     // 소환사ID로 리그정보 조회
     public LeagueInfo lolLeagueInfo(Summoner summoner);
 
-    // 웹 랭크 업데이트
-    // public int solUpdateRank(int userNo, LeagueInfo info);
-
     // 게임 랭크 업데이트
     public int lolUpdateRank(int userNo, LeagueInfo info);
 

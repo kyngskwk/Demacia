@@ -30,7 +30,6 @@ public class LOLServiceImpl implements LoLService {
     LOLDao loldao;
 
     @Override
-    @RequestMapping(value = "/", method = RequestMethod.GET)
     public Summoner lolSummoner(String summonerName) {
         BufferedReader br = null;
         Summoner summoner = null;
@@ -69,7 +68,6 @@ public class LOLServiceImpl implements LoLService {
     }
 
     @Override
-    @RequestMapping(value = "/", method = RequestMethod.GET)
     public LeagueInfo lolLeagueInfo(Summoner summoner) {
         BufferedReader br = null;
         LeagueInfo leagueInfo = null;
