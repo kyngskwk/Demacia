@@ -19,10 +19,18 @@ def recommand_group(request,userno):
     champions = Match.objects.filter(userno=userno).values('recommand_champion')[0]['recommand_champion'] #{'티모':0.7,'아리':0.6,'럭스':0.3}
     json_champions = champions.replace("'","\"")
     groups = list(json.loads(json_champions).keys())
-
-    group1 = Champion.objects.filter(chamkey=int(groups[0]))
-    group2 = Champion.objects.filter(chamkey=int(groups[1]))
-    group3 = Champion.objects.filter(chamkey=int(groups[2]))
+    if len(groups) > 0:
+        group1 = Champion.objects.filter(chamkey=int(groups[0]))
+    else:
+        group1 = []
+    if len(groups) > 1:
+        group2 = Champion.objects.filter(chamkey=int(groups[1]))
+    else:
+        group2 = []
+    if len(groups) > 2:
+        group3 = Champion.objects.filter(chamkey=int(groups[2]))
+    else:
+        group3 = []
 
     response_data = {
         'First_cham': ChampionSerializer(group1, many=True).data,
