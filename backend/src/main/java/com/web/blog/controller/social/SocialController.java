@@ -100,23 +100,22 @@ public class SocialController {
         return response;
     }
 
-    @RequestMapping(value = "/logout/oauth")
-    @GetMapping
-    public Object logout(HttpSession session) {
-
+    @GetMapping(value = "/logout/oauth")
+    public Object logout(String accesstoken) {
         ResponseEntity response = null;
         final BasicResponse result = new BasicResponse();
 
         try {
-            kakao.kakaoLogout((String) session.getAttribute("access_Token"));
-
+            kakao.kakaoLogout(accesstoken);
+            System.out.println("Success logout");
             result.status = true;
             result.data = "Success logout";
 
             response = new ResponseEntity<>(result, HttpStatus.OK);
         } catch (Exception e) {
             result.status = false;
-            result.data = "socialLogin Fail";
+            result.data = "logout Fail";
+            System.out.println("logout Fail");
 
             response = new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
         }

@@ -61,6 +61,7 @@
         </div>
       </div>
     </div>
+    <img id="profile" :src="newImg" />
   </div>
 </template>
 
@@ -81,6 +82,7 @@ export default {
       kakaologo: process.env.VUE_APP_IMGUP_URL + "/images/login/kakaologo.PNG",
       naverlogo: process.env.VUE_APP_IMGUP_URL + "/images/login/naverlogo.png",
       logologin: process.env.VUE_APP_IMGUP_URL + "/images/login/loginlogo.PNG",
+      newImg: "",
     };
   },
 
@@ -98,26 +100,35 @@ export default {
         .then((res) => {
           if (res.data.status) {
             res.data.object.userPw = "";
-            // if (res.data.object.userImage.includes("http:")) {
-            //   let uploadImageFile = res.data.object.userImage;
-            //   const fd = new FormData();
-            //   fd.append(
-            //     "upLoadImage",
-            //     uploadImageFile,
-            //     res.data.object.userNo + ".jpg"
-            //   );
-            //   axios
-            //     .post(process.env.VUE_APP_IMGUP_URL + "/upload", fd, {
-            //       headers: {
-            //         "Content-Type": "multipart/form-data",
-            //       },
-            //     })
-            //     .then(() => {
-            //       console.log("succes");
-            //       res.data.object.userImage =
-            //         "/images/" + res.data.object.userNo + ".jpg";
-            //     });
-            // }
+            if (res.data.object.userImage) {
+              var canvas = document.createElement("CANVAS");
+              canvas.getContext("2d");
+              const fd = new FormData();
+              fd.append(
+                "upLoadImage",
+                canvas.toBlob(function (blob) {
+                  var newImg = document.getElementById("profile");
+                  var url = URL.createObjectURL(blob);
+                  newImg.onload = function () {
+                    URL.revokeObjectURL(url);
+                  };
+                  newImg.src = url;
+                  document.body.appendChild(newImg);
+                }),
+                res.data.object.userNo + ".jpg"
+              );
+              axios
+                .post(process.env.VUE_APP_IMGUP_URL + "/upload", fd, {
+                  headers: {
+                    "Content-Type": "multipart/form-data",
+                  },
+                })
+                .then(() => {
+                  console.log("succes");
+                  res.data.object.userImage =
+                    "/images/" + res.data.object.userNo + ".jpg";
+                });
+            }
             this.$store.commit("addUserInfo", res.data.object);
             // 세션에 로그인 정보 추가
             sessionStorage.setItem("user", JSON.stringify(res.data.object));
