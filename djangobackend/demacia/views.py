@@ -138,7 +138,7 @@ def match_update(request):
 
     # 전적 기록이 아직 없으면 save()
     if len(matchdata) == 0:
-        serializers = MatchSerializer.craete(data=input_data)
+        serializers = MatchSerializer(data=input_data)
         print(serializers)
         if serializers.is_valid():
             serializers.save()
