@@ -190,9 +190,9 @@ public class UserServiceImpl implements UserService {
         System.out.println(user.getUserNickname());
         try {
             final MimeMessage message = javaMailSender.createMimeMessage();
-            message.setSubject("회원가입을 축하합니다");
+            message.setSubject("데마시아 회원가입을 축하합니다");
             message.setRecipient(Message.RecipientType.TO, new InternetAddress(user.getUserEmail()));
-            message.setText(user.getUserNickname() + " 회원님의 가입을 축하드립니다!!!");
+            message.setText(user.getUserNickname() + " 님의 가입을 축하드립니다!!!");
             message.setSentDate(new Date());
             javaMailSender.send(message);
             System.out.println(message);
