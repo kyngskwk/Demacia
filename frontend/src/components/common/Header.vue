@@ -22,11 +22,11 @@
               <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">추천</a>
               <div class="dropdown-menu text-right" style="background-color: black;">
                 <router-link
-                  v-bind:to="{name:constants.URL_TYPE.USER.MYPROFILE}"
+                  v-bind:to="{name:constants.URL_TYPE.RECOMMEND.CHAMPION}"
                   class="dropdown-item"
                 >챔피언 추천</router-link>
                 <router-link
-                  v-bind:to="{name:constants.URL_TYPE.USER.MYPROFILE}"
+                  v-bind:to="{name:constants.URL_TYPE.RECOMMEND.COMBINATION}"
                   class="dropdown-item"
                 >조합 추천</router-link>
               </div>
@@ -56,11 +56,11 @@
               <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">추천</a>
               <div class="dropdown-menu text-right" style="background-color: black;">
                 <router-link
-                  v-bind:to="{name:constants.URL_TYPE.USER.MYPROFILE}"
+                  v-bind:to="{name:constants.URL_TYPE.RECOMMEND.CHAMPION}"
                   class="dropdown-item"
                 >챔피언 추천</router-link>
                 <router-link
-                  v-bind:to="{name:constants.URL_TYPE.USER.MYPROFILE}"
+                  v-bind:to="{name:constants.URL_TYPE.RECOMMEND.COMBINATION}"
                   class="dropdown-item"
                 >조합 추천</router-link>
               </div>
