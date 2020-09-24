@@ -236,7 +236,7 @@ with open('champions.json', 'r') as chams:
     cham_infos = json.load(chams)
     for cham_info in cham_infos:
         table = {}
-        table["models"] = "appname.champion"
+        table["model"] = "demacia.champion"
         table["pk"] = cham_info["key"]
         cham_id = cham_info["key"]
 
@@ -268,9 +268,9 @@ with open('champions.json', 'r') as chams:
 
         # 챔피언별 승률
         if int(cham_id) in champion_winnig_rate:
-            table["fields"]["winningRate"] = str(champion_winnig_rate[int(cham_id)])
+            table["fields"]["winning_rate"] = str(champion_winnig_rate[int(cham_id)])
         else:
-            table["fields"]["winningRate"] = ''
+            table["fields"]["winning_rate"] = ''
         # 코드 불러온 후
         # table["fields"]["winningRate"] = champion_winnig_rate[cham_id]
 
@@ -283,6 +283,11 @@ with open('champions.json', 'r') as chams:
         # table["fields"]["badmbti"] = '' 
         table["fields"]["badmbti"] = mbti_couple[cham_mbti.lower()][1].upper()
 
+        # 이미지 src
+        table["fields"]["imgsrc"] = "@/assets/img/tiles/" + str(chamname) + "_1.jpg"
+        
+        # 한글 이름
+        table["fields"]["korname"] = ""
 
         result.append(table)
 

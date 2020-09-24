@@ -29,6 +29,7 @@ export default {
       CHAMPION: "champion",
       COMBINATION: "combination",
       MBTI: "mbti",
+      DJANGOTEST: "djangotest"
     },
   },
 };

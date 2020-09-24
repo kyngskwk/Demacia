@@ -34,6 +34,7 @@ import videoEdit from "../page/video/Edit.vue";
 import Champion from "../page/recommend/Champion.vue";
 import Combination from "../page/recommend/Combination.vue";
 import Mbti from "../page/recommend/Mbti.vue";
+import DjangoTest from "../page/recommend/DjangoTest.vue";
 
 Vue.use(Router);
 
@@ -56,8 +57,11 @@ export default new Router({
       name: constants.URL_TYPE.RECOMMEND.MBTI,
       component: Mbti,
     },
-   
-
+    {
+      path: "/djangotest",
+      name: constants.URL_TYPE.RECOMMEND.DJANGOTEST,
+      component: DjangoTest,
+    },
     // 메인 페이지
     {
       path: "/",
