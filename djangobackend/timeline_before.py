@@ -50,6 +50,3 @@ for t in range(1, time):
             part_set[idx]["minionsKilled"] = part_info[str(idx)]["minionsKilled"]
 
 print(part_set)
-
-
-get_cham_url = "https://kr.api.riotgames.com/lol/match/v4/matches/4659518008?api_key=RGAPI-4dcd2099-2605-4440-9864-f53a305141e7"
