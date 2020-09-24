@@ -119,7 +119,7 @@ export default {
           (arr[3] > 0 ? "J" : "P");
 
         // 업데이트
-        axios.post(process.env.VUE_APP_DAPI_URL + "/mbti/update", {
+        axios.post(process.env.VUE_APP_DAPI_URL + "/mbti/update/", {
           userno: this.user.userNo,
           mbti: this.result,
         });
