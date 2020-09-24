@@ -22,6 +22,7 @@ import Login from "../page/user/Login.vue";
 import Join from "../page/user/Join.vue";
 import Mypage from "../page/user/Mypage.vue";
 import Myprofile from "../page/user/Myprofile.vue";
+import MbtiSurvey from "../page/user/MBTIsurvey.vue";
 
 // 영상분석
 import videoList from "../page/video/List.vue";
@@ -55,6 +56,7 @@ export default new Router({
       name: constants.URL_TYPE.RECOMMEND.MBTI,
       component: Mbti,
     },
+   
 
     // 메인 페이지
     {
@@ -128,6 +130,11 @@ export default new Router({
       path: "/myprofile",
       name: constants.URL_TYPE.USER.MYPROFILE,
       component: Myprofile,
+    },
+    {
+      path: "/mbtisurvey",
+      name: constants.URL_TYPE.USER.MBTISURVEY,
+      component: MbtiSurvey,
     },
     // Error
     {

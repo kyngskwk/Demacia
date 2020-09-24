@@ -19,12 +19,13 @@ export default {
       JOIN: "join",
       MYPAGE: "mypage",
       MYPROFILE: "myprofile",
+      MBTISURVEY: "mbtisurvey",
     },
     ERROR: {
       PAGE_NOT_FOUND: "PageNotFound",
       ERROR: "Error",
     },
-    RECOMMEND:{
+    RECOMMEND: {
       CHAMPION: "champion",
       COMBINATION: "combination",
       MBTI: "mbti",
