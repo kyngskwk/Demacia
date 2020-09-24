@@ -14,8 +14,29 @@ from drf_yasg import openapi
 def recommand_champion(request,userno):
     champions = Match.objects.filter(userno=userno)#{'티모':0.7,'아리':0.6,'럭스':0.3}
     serializers = MatchSerializer(champions, many=True) 
-    #비슷한 성향을 가진 챔들
-    return Response(serializers.data)
+    # 비슷한 성향을 가진 챔들
+    # step1 챔키로 해당 mbti 구하기
+    user_champions = Match.objects.filter(userno=userno).values('recommand_champion')[0]['recommand_champion']
+    json_champions = user_champions.replace("'","\"")
+
+    groups = list(json.loads(json_champions).keys())
+    chams_mbti = []
+    similar_cham_recommand = dict()
+    for key in groups:
+        cham_mbti = Champion.objects.filter(chamkey=int(key)).values('mbti')[0]['mbti']
+        similar_cham = list(Champion.objects.filter(mbti=cham_mbti).order_by("-winning_rate").values("chamkey")[:3])
+        group = [str(similar_cham[0]["chamkey"]),str(similar_cham[1]["chamkey"]),str(similar_cham[2]["chamkey"])]
+        similar_cham_recommand.setdefault(key,0)
+        similar_cham_recommand[key] = group
+    resonse_data = {
+        'recommand_cham_info': serializers.data,
+        'similar_cham_recommand': [similar_cham_recommand]
+    }
+
+
+    # ['ENTP', 'ESTJ', 'ESFJ']
+    
+    return Response(resonse_data)
 
 @api_view(['GET'])
 def recommand_group(request,userno):
