@@ -6,6 +6,8 @@ from .models import *
 from django.contrib.auth.decorators import login_required
 import requests
 import json
+from drf_yasg.utils import swagger_auto_schema
+from drf_yasg import openapi
 # Create your views here.
 
 @api_view(['GET'])
@@ -149,7 +151,7 @@ def match_list(request,userno):
     serializers = MatchSerializer(matches, many=True)
     return Response(serializers.data)
 
-
+@swagger_auto_schema(method='post', request_body=UserSerializer)
 @api_view(['POST'])
 # @permission_classes([IsAuthenticated])
 def mbti_update(request):
