@@ -11,7 +11,9 @@
 			"mbti": "ISFP",
 			"winning_rate": "0.4878048780487805",
 			"goodmbti": "ENTJ",
-			"badmbti": "ENTP"
+			"badmbti": "ENTP",
+			"imgsrc": "@/assets/img/tiles/Aatrox_1.jpg",
+			"korname": "아트록스"
 		}
 	},
 	{
@@ -26,7 +28,9 @@
 			"mbti": "INTJ",
 			"winning_rate": "0.46",
 			"goodmbti": "ESFP",
-			"badmbti": "ESFJ"
+			"badmbti": "ESFJ",
+			"imgsrc": "@/assets/img/tiles/Ahri_1.jpg",
+			"korname": "아리"
 		}
 	},
 	{
@@ -41,7 +45,9 @@
 			"mbti": "INTJ",
 			"winning_rate": "0.4967866323907455",
 			"goodmbti": "ESFP",
-			"badmbti": "ESFJ"
+			"badmbti": "ESFJ",
+			"imgsrc": "@/assets/img/tiles/Akali_1.jpg",
+			"korname": "아칼리"
 		}
 	},
 	{
@@ -56,7 +62,9 @@
 			"mbti": "ESTP",
 			"winning_rate": "0.3333333333333333",
 			"goodmbti": "INFJ",
-			"badmbti": "INFP"
+			"badmbti": "INFP",
+			"imgsrc": "@/assets/img/tiles/Alistar_1.jpg",
+			"korname": "알리스타"
 		}
 	},
 	{
@@ -71,7 +79,9 @@
 			"mbti": "ENTJ",
 			"winning_rate": "0.7272727272727273",
 			"goodmbti": "ISFP",
-			"badmbti": "ISFJ"
+			"badmbti": "ISFJ",
+			"imgsrc": "@/assets/img/tiles/Amumu_1.jpg",
+			"korname": "아무무"
 		}
 	},
 	{
@@ -86,7 +96,9 @@
 			"mbti": "ISTP",
 			"winning_rate": "0.35714285714285715",
 			"goodmbti": "ENFJ",
-			"badmbti": "ENFP"
+			"badmbti": "ENFP",
+			"imgsrc": "@/assets/img/tiles/Anivia_1.jpg",
+			"korname": "애니비아"
 		}
 	},
 	{
@@ -101,7 +113,9 @@
 			"mbti": "ESFJ",
 			"winning_rate": "0.4375",
 			"goodmbti": "INTP",
-			"badmbti": "INTJ"
+			"badmbti": "INTJ",
+			"imgsrc": "@/assets/img/tiles/Annie_1.jpg",
+			"korname": "애니"
 		}
 	},
 	{
@@ -116,7 +130,9 @@
 			"mbti": "ESTJ",
 			"winning_rate": "0.45897435897435895",
 			"goodmbti": "INFP",
-			"badmbti": "INFJ"
+			"badmbti": "INFJ",
+			"imgsrc": "@/assets/img/tiles/Aphelios_1.jpg",
+			"korname": "아펠리오스"
 		}
 	},
 	{
@@ -131,7 +147,9 @@
 			"mbti": "ENTP",
 			"winning_rate": "0.504406580493537",
 			"goodmbti": "ISFJ",
-			"badmbti": "ISFP"
+			"badmbti": "ISFP",
+			"imgsrc": "@/assets/img/tiles/Ashe_1.jpg",
+			"korname": "애쉬"
 		}
 	},
 	{
@@ -146,7 +164,9 @@
 			"mbti": "ISTP",
 			"winning_rate": "0.4444444444444444",
 			"goodmbti": "ENFJ",
-			"badmbti": "ENFP"
+			"badmbti": "ENFP",
+			"imgsrc": "@/assets/img/tiles/AurelionSol_1.jpg",
+			"korname": "아우렐리온 솔"
 		}
 	},
 	{
@@ -161,7 +181,9 @@
 			"mbti": "ISFJ",
 			"winning_rate": "0.5573770491803278",
 			"goodmbti": "ENTP",
-			"badmbti": "ENTJ"
+			"badmbti": "ENTJ",
+			"imgsrc": "@/assets/img/tiles/Azir_1.jpg",
+			"korname": "아지르"
 		}
 	},
 	{
@@ -176,7 +198,9 @@
 			"mbti": "ESFP",
 			"winning_rate": "0.4963072378138848",
 			"goodmbti": "INTJ",
-			"badmbti": "INTP"
+			"badmbti": "INTP",
+			"imgsrc": "@/assets/img/tiles/Bard_1.jpg",
+			"korname": "바드"
 		}
 	},
 	{
@@ -191,7 +215,9 @@
 			"mbti": "ESTP",
 			"winning_rate": "0.5056497175141242",
 			"goodmbti": "INFJ",
-			"badmbti": "INFP"
+			"badmbti": "INFP",
+			"imgsrc": "@/assets/img/tiles/Blitzcrank_1.jpg",
+			"korname": "블리츠크랭크"
 		}
 	},
 	{
@@ -206,7 +232,9 @@
 			"mbti": "ESFJ",
 			"winning_rate": "0.0",
 			"goodmbti": "INTP",
-			"badmbti": "INTJ"
+			"badmbti": "INTJ",
+			"imgsrc": "@/assets/img/tiles/Brand_1.jpg",
+			"korname": "브랜드"
 		}
 	},
 	{
@@ -221,7 +249,9 @@
 			"mbti": "ESTP",
 			"winning_rate": "0.375",
 			"goodmbti": "INFJ",
-			"badmbti": "INFP"
+			"badmbti": "INFP",
+			"imgsrc": "@/assets/img/tiles/Braum_1.jpg",
+			"korname": "브라움"
 		}
 	},
 	{
@@ -236,7 +266,9 @@
 			"mbti": "ESTJ",
 			"winning_rate": "0.500383393580896",
 			"goodmbti": "INFP",
-			"badmbti": "INFJ"
+			"badmbti": "INFJ",
+			"imgsrc": "@/assets/img/tiles/Caitlyn_1.jpg",
+			"korname": "케이틀린"
 		}
 	},
 	{
@@ -251,7 +283,9 @@
 			"mbti": "ISFP",
 			"winning_rate": "0.5123634272570443",
 			"goodmbti": "ENTJ",
-			"badmbti": "ENTP"
+			"badmbti": "ENTP",
+			"imgsrc": "@/assets/img/tiles/Camille_1.jpg",
+			"korname": "카밀"
 		}
 	},
 	{
@@ -266,7 +300,9 @@
 			"mbti": "ISTP",
 			"winning_rate": "0.5487364620938628",
 			"goodmbti": "ENFJ",
-			"badmbti": "ENFP"
+			"badmbti": "ENFP",
+			"imgsrc": "@/assets/img/tiles/Cassiopeia_1.jpg",
+			"korname": "카시오페아"
 		}
 	},
 	{
@@ -281,7 +317,9 @@
 			"mbti": "ENTJ",
 			"winning_rate": "0.5",
 			"goodmbti": "ISFP",
-			"badmbti": "ISFJ"
+			"badmbti": "ISFJ",
+			"imgsrc": "@/assets/img/tiles/Chogath_1.jpg",
+			"korname": "초가스"
 		}
 	},
 	{
@@ -296,7 +334,9 @@
 			"mbti": "ENTP",
 			"winning_rate": "0.6",
 			"goodmbti": "ISFJ",
-			"badmbti": "ISFP"
+			"badmbti": "ISFP",
+			"imgsrc": "@/assets/img/tiles/Corki_1.jpg",
+			"korname": "코르키"
 		}
 	},
 	{
@@ -311,7 +351,9 @@
 			"mbti": "INTP",
 			"winning_rate": "0.4706896551724138",
 			"goodmbti": "ESFJ",
-			"badmbti": "ESFP"
+			"badmbti": "ESFP",
+			"imgsrc": "@/assets/img/tiles/Darius_1.jpg",
+			"korname": "다리우스"
 		}
 	},
 	{
@@ -326,7 +368,9 @@
 			"mbti": "INTJ",
 			"winning_rate": "0.32142857142857145",
 			"goodmbti": "ESFP",
-			"badmbti": "ESFJ"
+			"badmbti": "ESFJ",
+			"imgsrc": "@/assets/img/tiles/Diana_1.jpg",
+			"korname": "다이애나"
 		}
 	},
 	{
@@ -341,7 +385,9 @@
 			"mbti": "ESTJ",
 			"winning_rate": "0.5555555555555556",
 			"goodmbti": "INFP",
-			"badmbti": "INFJ"
+			"badmbti": "INFJ",
+			"imgsrc": "@/assets/img/tiles/Draven_1.jpg",
+			"korname": "드레이븐"
 		}
 	},
 	{
@@ -356,7 +402,9 @@
 			"mbti": "INFP",
 			"winning_rate": "0.375",
 			"goodmbti": "ESTJ",
-			"badmbti": "ESTP"
+			"badmbti": "ESTP",
+			"imgsrc": "@/assets/img/tiles/DrMundo_1.jpg",
+			"korname": "문도 박사"
 		}
 	},
 	{
@@ -371,7 +419,9 @@
 			"mbti": "ENFP",
 			"winning_rate": "0.47761194029850745",
 			"goodmbti": "ISTJ",
-			"badmbti": "ISTP"
+			"badmbti": "ISTP",
+			"imgsrc": "@/assets/img/tiles/Ekko_1.jpg",
+			"korname": "에코"
 		}
 	},
 	{
@@ -386,7 +436,9 @@
 			"mbti": "INFJ",
 			"winning_rate": "0.49517684887459806",
 			"goodmbti": "ESTP",
-			"badmbti": "ESTJ"
+			"badmbti": "ESTJ",
+			"imgsrc": "@/assets/img/tiles/Elise_1.jpg",
+			"korname": "엘리스"
 		}
 	},
 	{
@@ -401,7 +453,9 @@
 			"mbti": "ENFP",
 			"winning_rate": "0.4865424430641822",
 			"goodmbti": "ISTJ",
-			"badmbti": "ISTP"
+			"badmbti": "ISTP",
+			"imgsrc": "@/assets/img/tiles/Evelynn_1.jpg",
+			"korname": "이블린"
 		}
 	},
 	{
@@ -416,7 +470,9 @@
 			"mbti": "ENTP",
 			"winning_rate": "0.5224014336917563",
 			"goodmbti": "ISFJ",
-			"badmbti": "ISFP"
+			"badmbti": "ISFP",
+			"imgsrc": "@/assets/img/tiles/Ezreal_1.jpg",
+			"korname": "이즈리얼"
 		}
 	},
 	{
@@ -431,7 +487,9 @@
 			"mbti": "INFJ",
 			"winning_rate": "0.5314285714285715",
 			"goodmbti": "ESTP",
-			"badmbti": "ESTJ"
+			"badmbti": "ESTJ",
+			"imgsrc": "@/assets/img/tiles/Fiddlesticks_1.jpg",
+			"korname": "피들스틱"
 		}
 	},
 	{
@@ -446,7 +504,9 @@
 			"mbti": "ISFP",
 			"winning_rate": "0.47570621468926555",
 			"goodmbti": "ENTJ",
-			"badmbti": "ENTP"
+			"badmbti": "ENTP",
+			"imgsrc": "@/assets/img/tiles/Fiora_1.jpg",
+			"korname": "피오라"
 		}
 	},
 	{
@@ -461,7 +521,9 @@
 			"mbti": "INTJ",
 			"winning_rate": "0.5115511551155115",
 			"goodmbti": "ESFP",
-			"badmbti": "ESFJ"
+			"badmbti": "ESFJ",
+			"imgsrc": "@/assets/img/tiles/Fizz_1.jpg",
+			"korname": "피즈"
 		}
 	},
 	{
@@ -476,7 +538,9 @@
 			"mbti": "ENTJ",
 			"winning_rate": "0.46957878315132606",
 			"goodmbti": "ISFP",
-			"badmbti": "ISFJ"
+			"badmbti": "ISFJ",
+			"imgsrc": "@/assets/img/tiles/Galio_1.jpg",
+			"korname": "갈리오"
 		}
 	},
 	{
@@ -491,7 +555,9 @@
 			"mbti": "ENTJ",
 			"winning_rate": "0.5379939209726444",
 			"goodmbti": "ISFP",
-			"badmbti": "ISFJ"
+			"badmbti": "ISFJ",
+			"imgsrc": "@/assets/img/tiles/Gangplank_1.jpg",
+			"korname": "갱플랭크"
 		}
 	},
 	{
@@ -506,7 +572,9 @@
 			"mbti": "INTP",
 			"winning_rate": "0.5012658227848101",
 			"goodmbti": "ESFJ",
-			"badmbti": "ESFP"
+			"badmbti": "ESFP",
+			"imgsrc": "@/assets/img/tiles/Garen_1.jpg",
+			"korname": "가렌"
 		}
 	},
 	{
@@ -521,7 +589,9 @@
 			"mbti": "INTP",
 			"winning_rate": "0.2727272727272727",
 			"goodmbti": "ESFJ",
-			"badmbti": "ESFP"
+			"badmbti": "ESFP",
+			"imgsrc": "@/assets/img/tiles/Gnar_1.jpg",
+			"korname": "나르"
 		}
 	},
 	{
@@ -536,7 +606,9 @@
 			"mbti": "ENFJ",
 			"winning_rate": "0.6666666666666666",
 			"goodmbti": "ISTP",
-			"badmbti": "ISTJ"
+			"badmbti": "ISTJ",
+			"imgsrc": "@/assets/img/tiles/Gragas_1.jpg",
+			"korname": "그라가스"
 		}
 	},
 	{
@@ -551,7 +623,9 @@
 			"mbti": "ENFP",
 			"winning_rate": "0.47487370380218025",
 			"goodmbti": "ISTJ",
-			"badmbti": "ISTP"
+			"badmbti": "ISTP",
+			"imgsrc": "@/assets/img/tiles/Graves_1.jpg",
+			"korname": "그레이브즈"
 		}
 	},
 	{
@@ -566,7 +640,9 @@
 			"mbti": "ENFJ",
 			"winning_rate": "0.515451174289246",
 			"goodmbti": "ISTP",
-			"badmbti": "ISTJ"
+			"badmbti": "ISTJ",
+			"imgsrc": "@/assets/img/tiles/Hecarim_1.jpg",
+			"korname": "헤카림"
 		}
 	},
 	{
@@ -581,7 +657,9 @@
 			"mbti": "ISTP",
 			"winning_rate": "0.55",
 			"goodmbti": "ENFJ",
-			"badmbti": "ENFP"
+			"badmbti": "ENFP",
+			"imgsrc": "@/assets/img/tiles/Heimerdinger_1.jpg",
+			"korname": "하이머딩거"
 		}
 	},
 	{
@@ -596,7 +674,9 @@
 			"mbti": "INTP",
 			"winning_rate": "0.6571428571428571",
 			"goodmbti": "ESFJ",
-			"badmbti": "ESFP"
+			"badmbti": "ESFP",
+			"imgsrc": "@/assets/img/tiles/Illaoi_1.jpg",
+			"korname": "일라오이"
 		}
 	},
 	{
@@ -611,7 +691,9 @@
 			"mbti": "ISFP",
 			"winning_rate": "0.46998867497168745",
 			"goodmbti": "ENTJ",
-			"badmbti": "ENTP"
+			"badmbti": "ENTP",
+			"imgsrc": "@/assets/img/tiles/Irelia_1.jpg",
+			"korname": "이렐리아"
 		}
 	},
 	{
@@ -626,7 +708,9 @@
 			"mbti": "ESFP",
 			"winning_rate": "0.44545454545454544",
 			"goodmbti": "INTJ",
-			"badmbti": "INTP"
+			"badmbti": "INTP",
+			"imgsrc": "@/assets/img/tiles/Ivern_1.jpg",
+			"korname": "아이번"
 		}
 	},
 	{
@@ -641,7 +725,9 @@
 			"mbti": "ESFP",
 			"winning_rate": "0.5614035087719298",
 			"goodmbti": "INTJ",
-			"badmbti": "INTP"
+			"badmbti": "INTP",
+			"imgsrc": "@/assets/img/tiles/Janna_1.jpg",
+			"korname": "잔나"
 		}
 	},
 	{
@@ -656,7 +742,9 @@
 			"mbti": "ENFJ",
 			"winning_rate": "0.3",
 			"goodmbti": "ISTP",
-			"badmbti": "ISTJ"
+			"badmbti": "ISTJ",
+			"imgsrc": "@/assets/img/tiles/JarvanIV_1.jpg",
+			"korname": "자르반 4세"
 		}
 	},
 	{
@@ -671,7 +759,9 @@
 			"mbti": "ISFP",
 			"winning_rate": "0.4933884297520661",
 			"goodmbti": "ENTJ",
-			"badmbti": "ENTP"
+			"badmbti": "ENTP",
+			"imgsrc": "@/assets/img/tiles/Jax_1.jpg",
+			"korname": "잭스"
 		}
 	},
 	{
@@ -686,7 +776,9 @@
 			"mbti": "INTJ",
 			"winning_rate": "0.5014814814814815",
 			"goodmbti": "ESFP",
-			"badmbti": "ESFJ"
+			"badmbti": "ESFJ",
+			"imgsrc": "@/assets/img/tiles/Jayce_1.jpg",
+			"korname": "제이스"
 		}
 	},
 	{
@@ -701,7 +793,9 @@
 			"mbti": "ENTP",
 			"winning_rate": "0.5254237288135594",
 			"goodmbti": "ISFJ",
-			"badmbti": "ISFP"
+			"badmbti": "ISFP",
+			"imgsrc": "@/assets/img/tiles/Jhin_1.jpg",
+			"korname": "진"
 		}
 	},
 	{
@@ -716,7 +810,9 @@
 			"mbti": "ESTJ",
 			"winning_rate": "0.45161290322580644",
 			"goodmbti": "INFP",
-			"badmbti": "INFJ"
+			"badmbti": "INFJ",
+			"imgsrc": "@/assets/img/tiles/Jinx_1.jpg",
+			"korname": "징크스"
 		}
 	},
 	{
@@ -731,7 +827,9 @@
 			"mbti": "ESTJ",
 			"winning_rate": "0.43478260869565216",
 			"goodmbti": "INFP",
-			"badmbti": "INFJ"
+			"badmbti": "INFJ",
+			"imgsrc": "@/assets/img/tiles/Kaisa_1.jpg",
+			"korname": "카이사"
 		}
 	},
 	{
@@ -746,7 +844,9 @@
 			"mbti": "ESTJ",
 			"winning_rate": "0.5083114610673666",
 			"goodmbti": "INFP",
-			"badmbti": "INFJ"
+			"badmbti": "INFJ",
+			"imgsrc": "@/assets/img/tiles/Kalista_1.jpg",
+			"korname": "칼리스타"
 		}
 	},
 	{
@@ -761,7 +861,9 @@
 			"mbti": "ESFJ",
 			"winning_rate": "0.5052461662631155",
 			"goodmbti": "INTP",
-			"badmbti": "INTJ"
+			"badmbti": "INTJ",
+			"imgsrc": "@/assets/img/tiles/Karma_1.jpg",
+			"korname": "카르마"
 		}
 	},
 	{
@@ -776,7 +878,9 @@
 			"mbti": "ISTP",
 			"winning_rate": "0.48825503355704697",
 			"goodmbti": "ENFJ",
-			"badmbti": "ENFP"
+			"badmbti": "ENFP",
+			"imgsrc": "@/assets/img/tiles/Karthus_1.jpg",
+			"korname": "카서스"
 		}
 	},
 	{
@@ -791,7 +895,9 @@
 			"mbti": "INTJ",
 			"winning_rate": "0.5015673981191222",
 			"goodmbti": "ESFP",
-			"badmbti": "ESFJ"
+			"badmbti": "ESFJ",
+			"imgsrc": "@/assets/img/tiles/Kassadin_1.jpg",
+			"korname": "카사딘"
 		}
 	},
 	{
@@ -806,7 +912,9 @@
 			"mbti": "INTJ",
 			"winning_rate": "0.4775828460038986",
 			"goodmbti": "ESFP",
-			"badmbti": "ESFJ"
+			"badmbti": "ESFJ",
+			"imgsrc": "@/assets/img/tiles/Katarina_1.jpg",
+			"korname": "카타리나"
 		}
 	},
 	{
@@ -821,7 +929,9 @@
 			"mbti": "ENTP",
 			"winning_rate": "0.5789473684210527",
 			"goodmbti": "ISFJ",
-			"badmbti": "ISFP"
+			"badmbti": "ISFP",
+			"imgsrc": "@/assets/img/tiles/Kayle_1.jpg",
+			"korname": "케일"
 		}
 	},
 	{
@@ -836,7 +946,9 @@
 			"mbti": "ENFP",
 			"winning_rate": "0.5588235294117647",
 			"goodmbti": "ISTJ",
-			"badmbti": "ISTP"
+			"badmbti": "ISTP",
+			"imgsrc": "@/assets/img/tiles/Kayn_1.jpg",
+			"korname": "케인"
 		}
 	},
 	{
@@ -851,7 +963,9 @@
 			"mbti": "INTP",
 			"winning_rate": "0.5345911949685535",
 			"goodmbti": "ESFJ",
-			"badmbti": "ESFP"
+			"badmbti": "ESFP",
+			"imgsrc": "@/assets/img/tiles/Kennen_1.jpg",
+			"korname": "케넨"
 		}
 	},
 	{
@@ -866,7 +980,9 @@
 			"mbti": "ENFP",
 			"winning_rate": "0.49122807017543857",
 			"goodmbti": "ISTJ",
-			"badmbti": "ISTP"
+			"badmbti": "ISTP",
+			"imgsrc": "@/assets/img/tiles/Khazix_1.jpg",
+			"korname": "카직스"
 		}
 	},
 	{
@@ -881,7 +997,9 @@
 			"mbti": "ESTJ",
 			"winning_rate": "0.5441176470588235",
 			"goodmbti": "INFP",
-			"badmbti": "INFJ"
+			"badmbti": "INFJ",
+			"imgsrc": "@/assets/img/tiles/Kindred_1.jpg",
+			"korname": "킨드레드"
 		}
 	},
 	{
@@ -896,7 +1014,9 @@
 			"mbti": "INTP",
 			"winning_rate": "0.46551724137931033",
 			"goodmbti": "ESFJ",
-			"badmbti": "ESFP"
+			"badmbti": "ESFP",
+			"imgsrc": "@/assets/img/tiles/Kled_1.jpg",
+			"korname": "클레드"
 		}
 	},
 	{
@@ -911,7 +1031,9 @@
 			"mbti": "ENTP",
 			"winning_rate": "0.4666666666666667",
 			"goodmbti": "ISFJ",
-			"badmbti": "ISFP"
+			"badmbti": "ISFP",
+			"imgsrc": "@/assets/img/tiles/KogMaw_1.jpg",
+			"korname": "코그모"
 		}
 	},
 	{
@@ -926,7 +1048,9 @@
 			"mbti": "INTJ",
 			"winning_rate": "0.4888668975754577",
 			"goodmbti": "ESFP",
-			"badmbti": "ESFJ"
+			"badmbti": "ESFJ",
+			"imgsrc": "@/assets/img/tiles/Leblanc_1.jpg",
+			"korname": "르블랑"
 		}
 	},
 	{
@@ -941,7 +1065,9 @@
 			"mbti": "ISFP",
 			"winning_rate": "0.49763779527559054",
 			"goodmbti": "ENTJ",
-			"badmbti": "ENTP"
+			"badmbti": "ENTP",
+			"imgsrc": "@/assets/img/tiles/LeeSin_1.jpg",
+			"korname": "리 신"
 		}
 	},
 	{
@@ -956,7 +1082,9 @@
 			"mbti": "ESTP",
 			"winning_rate": "0.5886792452830188",
 			"goodmbti": "INFJ",
-			"badmbti": "INFP"
+			"badmbti": "INFP",
+			"imgsrc": "@/assets/img/tiles/Leona_1.jpg",
+			"korname": "레오나"
 		}
 	},
 	{
@@ -971,7 +1099,9 @@
 			"mbti": "INFJ",
 			"winning_rate": "0.5033662477558348",
 			"goodmbti": "ESTP",
-			"badmbti": "ESTJ"
+			"badmbti": "ESTJ",
+			"imgsrc": "@/assets/img/tiles/Lillia_1.jpg",
+			"korname": "릴리아"
 		}
 	},
 	{
@@ -986,7 +1116,9 @@
 			"mbti": "INFJ",
 			"winning_rate": "0.5882352941176471",
 			"goodmbti": "ESTP",
-			"badmbti": "ESTJ"
+			"badmbti": "ESTJ",
+			"imgsrc": "@/assets/img/tiles/Lissandra_1.jpg",
+			"korname": "리산드라"
 		}
 	},
 	{
@@ -1001,7 +1133,9 @@
 			"mbti": "ESTJ",
 			"winning_rate": "0.5002658160552897",
 			"goodmbti": "INFP",
-			"badmbti": "INFJ"
+			"badmbti": "INFJ",
+			"imgsrc": "@/assets/img/tiles/Lucian_1.jpg",
+			"korname": "루시안"
 		}
 	},
 	{
@@ -1016,7 +1150,9 @@
 			"mbti": "ESFP",
 			"winning_rate": "0.5198618307426598",
 			"goodmbti": "INTJ",
-			"badmbti": "INTP"
+			"badmbti": "INTP",
+			"imgsrc": "@/assets/img/tiles/Lulu_1.jpg",
+			"korname": "룰루"
 		}
 	},
 	{
@@ -1031,7 +1167,9 @@
 			"mbti": "ESFJ",
 			"winning_rate": "0.491725768321513",
 			"goodmbti": "INTP",
-			"badmbti": "INTJ"
+			"badmbti": "INTJ",
+			"imgsrc": "@/assets/img/tiles/Lux_1.jpg",
+			"korname": "럭스"
 		}
 	},
 	{
@@ -1046,7 +1184,9 @@
 			"mbti": "INFP",
 			"winning_rate": "0.4393939393939394",
 			"goodmbti": "ESTJ",
-			"badmbti": "ESTP"
+			"badmbti": "ESTP",
+			"imgsrc": "@/assets/img/tiles/Malphite_1.jpg",
+			"korname": "말파이트"
 		}
 	},
 	{
@@ -1061,7 +1201,9 @@
 			"mbti": "ISFJ",
 			"winning_rate": "0.2857142857142857",
 			"goodmbti": "ENTP",
-			"badmbti": "ENTJ"
+			"badmbti": "ENTJ",
+			"imgsrc": "@/assets/img/tiles/Malzahar_1.jpg",
+			"korname": "말자하"
 		}
 	},
 	{
@@ -1076,7 +1218,9 @@
 			"mbti": "INFP",
 			"winning_rate": "0.5070422535211268",
 			"goodmbti": "ESTJ",
-			"badmbti": "ESTP"
+			"badmbti": "ESTP",
+			"imgsrc": "@/assets/img/tiles/Maokai_1.jpg",
+			"korname": "마오카이"
 		}
 	},
 	{
@@ -1091,7 +1235,9 @@
 			"mbti": "ENFP",
 			"winning_rate": "0.46218487394957986",
 			"goodmbti": "ISTJ",
-			"badmbti": "ISTP"
+			"badmbti": "ISTP",
+			"imgsrc": "@/assets/img/tiles/MasterYi_1.jpg",
+			"korname": "마스터 이"
 		}
 	},
 	{
@@ -1106,7 +1252,9 @@
 			"mbti": "ESTJ",
 			"winning_rate": "0.5166666666666667",
 			"goodmbti": "INFP",
-			"badmbti": "INFJ"
+			"badmbti": "INFJ",
+			"imgsrc": "@/assets/img/tiles/MissFortune_1.jpg",
+			"korname": "미스 포츈"
 		}
 	},
 	{
@@ -1121,7 +1269,9 @@
 			"mbti": "INTP",
 			"winning_rate": "0.5160891089108911",
 			"goodmbti": "ESFJ",
-			"badmbti": "ESFP"
+			"badmbti": "ESFP",
+			"imgsrc": "@/assets/img/tiles/MonkeyKing_1.jpg",
+			"korname": "오공"
 		}
 	},
 	{
@@ -1136,7 +1286,9 @@
 			"mbti": "ENTJ",
 			"winning_rate": "0.5252525252525253",
 			"goodmbti": "ISFP",
-			"badmbti": "ISFJ"
+			"badmbti": "ISFJ",
+			"imgsrc": "@/assets/img/tiles/Mordekaiser_1.jpg",
+			"korname": "모데카이저"
 		}
 	},
 	{
@@ -1151,7 +1303,9 @@
 			"mbti": "ESFJ",
 			"winning_rate": "0.4978768577494692",
 			"goodmbti": "INTP",
-			"badmbti": "INTJ"
+			"badmbti": "INTJ",
+			"imgsrc": "@/assets/img/tiles/Morgana_1.jpg",
+			"korname": "모르가나"
 		}
 	},
 	{
@@ -1166,7 +1320,9 @@
 			"mbti": "ESFP",
 			"winning_rate": "0.5263157894736842",
 			"goodmbti": "INTJ",
-			"badmbti": "INTP"
+			"badmbti": "INTP",
+			"imgsrc": "@/assets/img/tiles/Nami_1.jpg",
+			"korname": "나미"
 		}
 	},
 	{
@@ -1181,7 +1337,9 @@
 			"mbti": "INFP",
 			"winning_rate": "0.45544554455445546",
 			"goodmbti": "ESTJ",
-			"badmbti": "ESTP"
+			"badmbti": "ESTP",
+			"imgsrc": "@/assets/img/tiles/Nasus_1.jpg",
+			"korname": "나서스"
 		}
 	},
 	{
@@ -1196,7 +1354,9 @@
 			"mbti": "ESTP",
 			"winning_rate": "0.5026178010471204",
 			"goodmbti": "INFJ",
-			"badmbti": "INFP"
+			"badmbti": "INFP",
+			"imgsrc": "@/assets/img/tiles/Nautilus_1.jpg",
+			"korname": "노틸러스"
 		}
 	},
 	{
@@ -1211,7 +1371,9 @@
 			"mbti": "ESFJ",
 			"winning_rate": "0.4583333333333333",
 			"goodmbti": "INTP",
-			"badmbti": "INTJ"
+			"badmbti": "INTJ",
+			"imgsrc": "@/assets/img/tiles/Neeko_1.jpg",
+			"korname": "니코"
 		}
 	},
 	{
@@ -1226,7 +1388,9 @@
 			"mbti": "ENFP",
 			"winning_rate": "0.5056078380817326",
 			"goodmbti": "ISTJ",
-			"badmbti": "ISTP"
+			"badmbti": "ISTP",
+			"imgsrc": "@/assets/img/tiles/Nidalee_1.jpg",
+			"korname": "니달리"
 		}
 	},
 	{
@@ -1241,7 +1405,9 @@
 			"mbti": "INTJ",
 			"winning_rate": "0.5185185185185185",
 			"goodmbti": "ESFP",
-			"badmbti": "ESFJ"
+			"badmbti": "ESFJ",
+			"imgsrc": "@/assets/img/tiles/Nocturne_1.jpg",
+			"korname": "녹턴"
 		}
 	},
 	{
@@ -1256,7 +1422,9 @@
 			"mbti": "ENFJ",
 			"winning_rate": "0.49958088851634536",
 			"goodmbti": "ISTP",
-			"badmbti": "ISTJ"
+			"badmbti": "ISTJ",
+			"imgsrc": "@/assets/img/tiles/Nunu_1.jpg",
+			"korname": "누누"
 		}
 	},
 	{
@@ -1271,7 +1439,9 @@
 			"mbti": "INTP",
 			"winning_rate": "0.45",
 			"goodmbti": "ESFJ",
-			"badmbti": "ESFP"
+			"badmbti": "ESFP",
+			"imgsrc": "@/assets/img/tiles/Olaf_1.jpg",
+			"korname": "올라프"
 		}
 	},
 	{
@@ -1286,7 +1456,9 @@
 			"mbti": "ESFJ",
 			"winning_rate": "0.49850746268656715",
 			"goodmbti": "INTP",
-			"badmbti": "INTJ"
+			"badmbti": "INTJ",
+			"imgsrc": "@/assets/img/tiles/Orianna_1.jpg",
+			"korname": "오리아나"
 		}
 	},
 	{
@@ -1301,7 +1473,9 @@
 			"mbti": "INFP",
 			"winning_rate": "0.52",
 			"goodmbti": "ESTJ",
-			"badmbti": "ESTP"
+			"badmbti": "ESTP",
+			"imgsrc": "@/assets/img/tiles/Ornn_1.jpg",
+			"korname": "오른"
 		}
 	},
 	{
@@ -1316,7 +1490,9 @@
 			"mbti": "ISFP",
 			"winning_rate": "0.5021780798048441",
 			"goodmbti": "ENTJ",
-			"badmbti": "ENTP"
+			"badmbti": "ENTP",
+			"imgsrc": "@/assets/img/tiles/Pantheon_1.jpg",
+			"korname": "판테온"
 		}
 	},
 	{
@@ -1331,7 +1507,9 @@
 			"mbti": "INFP",
 			"winning_rate": "0.45",
 			"goodmbti": "ESTJ",
-			"badmbti": "ESTP"
+			"badmbti": "ESTP",
+			"imgsrc": "@/assets/img/tiles/Poppy_1.jpg",
+			"korname": "뽀삐"
 		}
 	},
 	{
@@ -1346,7 +1524,9 @@
 			"mbti": "INTJ",
 			"winning_rate": "0.5",
 			"goodmbti": "ESFP",
-			"badmbti": "ESFJ"
+			"badmbti": "ESFJ",
+			"imgsrc": "@/assets/img/tiles/Pyke_1.jpg",
+			"korname": "파이크"
 		}
 	},
 	{
@@ -1361,7 +1541,9 @@
 			"mbti": "INTJ",
 			"winning_rate": "0.493953488372093",
 			"goodmbti": "ESFP",
-			"badmbti": "ESFJ"
+			"badmbti": "ESFJ",
+			"imgsrc": "@/assets/img/tiles/Qiyana_1.jpg",
+			"korname": "키아나"
 		}
 	},
 	{
@@ -1376,7 +1558,9 @@
 			"mbti": "ISTJ",
 			"winning_rate": "0.5026737967914439",
 			"goodmbti": "ENFP",
-			"badmbti": "ENFJ"
+			"badmbti": "ENFJ",
+			"imgsrc": "@/assets/img/tiles/Quinn_1.jpg",
+			"korname": "퀸"
 		}
 	},
 	{
@@ -1391,7 +1575,9 @@
 			"mbti": "ESTP",
 			"winning_rate": "0.4583333333333333",
 			"goodmbti": "INFJ",
-			"badmbti": "INFP"
+			"badmbti": "INFP",
+			"imgsrc": "@/assets/img/tiles/Rakan_1.jpg",
+			"korname": "라칸"
 		}
 	},
 	{
@@ -1406,7 +1592,9 @@
 			"mbti": "ENFJ",
 			"winning_rate": "0.43661971830985913",
 			"goodmbti": "ISTP",
-			"badmbti": "ISTJ"
+			"badmbti": "ISTJ",
+			"imgsrc": "@/assets/img/tiles/Rammus_1.jpg",
+			"korname": "람머스"
 		}
 	},
 	{
@@ -1421,7 +1609,9 @@
 			"mbti": "ENFJ",
 			"winning_rate": "0.4890909090909091",
 			"goodmbti": "ISTP",
-			"badmbti": "ISTJ"
+			"badmbti": "ISTJ",
+			"imgsrc": "@/assets/img/tiles/RekSai_1.jpg",
+			"korname": "렉사이"
 		}
 	},
 	{
@@ -1436,7 +1626,9 @@
 			"mbti": "INTP",
 			"winning_rate": "0.5092158700406123",
 			"goodmbti": "ESFJ",
-			"badmbti": "ESFP"
+			"badmbti": "ESFP",
+			"imgsrc": "@/assets/img/tiles/Renekton_1.jpg",
+			"korname": "레넥톤"
 		}
 	},
 	{
@@ -1451,7 +1643,9 @@
 			"mbti": "ENFP",
 			"winning_rate": "0.53156146179402",
 			"goodmbti": "ISTJ",
-			"badmbti": "ISTP"
+			"badmbti": "ISTP",
+			"imgsrc": "@/assets/img/tiles/Rengar_1.jpg",
+			"korname": "렝가"
 		}
 	},
 	{
@@ -1466,7 +1660,9 @@
 			"mbti": "ISFP",
 			"winning_rate": "0.5",
 			"goodmbti": "ENTJ",
-			"badmbti": "ENTP"
+			"badmbti": "ENTP",
+			"imgsrc": "@/assets/img/tiles/Riven_1.jpg",
+			"korname": "리븐"
 		}
 	},
 	{
@@ -1481,7 +1677,9 @@
 			"mbti": "INFJ",
 			"winning_rate": "0.5",
 			"goodmbti": "ESTP",
-			"badmbti": "ESTJ"
+			"badmbti": "ESTJ",
+			"imgsrc": "@/assets/img/tiles/Rumble_1.jpg",
+			"korname": "럼블"
 		}
 	},
 	{
@@ -1496,7 +1694,9 @@
 			"mbti": "INFJ",
 			"winning_rate": "0.4166666666666667",
 			"goodmbti": "ESTP",
-			"badmbti": "ESTJ"
+			"badmbti": "ESTJ",
+			"imgsrc": "@/assets/img/tiles/Ryze_1.jpg",
+			"korname": "라이즈"
 		}
 	},
 	{
@@ -1511,7 +1711,9 @@
 			"mbti": "ENFJ",
 			"winning_rate": "0.3333333333333333",
 			"goodmbti": "ISTP",
-			"badmbti": "ISTJ"
+			"badmbti": "ISTJ",
+			"imgsrc": "@/assets/img/tiles/Sejuani_1.jpg",
+			"korname": "세주아니"
 		}
 	},
 	{
@@ -1526,7 +1728,9 @@
 			"mbti": "ENTP",
 			"winning_rate": "0.47804878048780486",
 			"goodmbti": "ISFJ",
-			"badmbti": "ISFP"
+			"badmbti": "ISFP",
+			"imgsrc": "@/assets/img/tiles/Senna_1.jpg",
+			"korname": "세나"
 		}
 	},
 	{
@@ -1541,7 +1745,9 @@
 			"mbti": "INFP",
 			"winning_rate": "0.5049104563835933",
 			"goodmbti": "ESTJ",
-			"badmbti": "ESTP"
+			"badmbti": "ESTP",
+			"imgsrc": "@/assets/img/tiles/Sett_1.jpg",
+			"korname": "세트"
 		}
 	},
 	{
@@ -1556,7 +1762,9 @@
 			"mbti": "ENFP",
 			"winning_rate": "0.484375",
 			"goodmbti": "ISTJ",
-			"badmbti": "ISTP"
+			"badmbti": "ISTP",
+			"imgsrc": "@/assets/img/tiles/Shaco_1.jpg",
+			"korname": "샤코"
 		}
 	},
 	{
@@ -1571,7 +1779,9 @@
 			"mbti": "INFP",
 			"winning_rate": "0.5045871559633027",
 			"goodmbti": "ESTJ",
-			"badmbti": "ESTP"
+			"badmbti": "ESTP",
+			"imgsrc": "@/assets/img/tiles/Shen_1.jpg",
+			"korname": "쉔"
 		}
 	},
 	{
@@ -1586,7 +1796,9 @@
 			"mbti": "ENFJ",
 			"winning_rate": "0.2916666666666667",
 			"goodmbti": "ISTP",
-			"badmbti": "ISTJ"
+			"badmbti": "ISTJ",
+			"imgsrc": "@/assets/img/tiles/Shyvana_1.jpg",
+			"korname": "쉬바나"
 		}
 	},
 	{
@@ -1601,7 +1813,9 @@
 			"mbti": "INFP",
 			"winning_rate": "0.5659574468085107",
 			"goodmbti": "ESTJ",
-			"badmbti": "ESTP"
+			"badmbti": "ESTP",
+			"imgsrc": "@/assets/img/tiles/Singed_1.jpg",
+			"korname": "신지드"
 		}
 	},
 	{
@@ -1616,7 +1830,9 @@
 			"mbti": "INFP",
 			"winning_rate": "0.6956521739130435",
 			"goodmbti": "ESTJ",
-			"badmbti": "ESTP"
+			"badmbti": "ESTP",
+			"imgsrc": "@/assets/img/tiles/Sion_1.jpg",
+			"korname": "사이온"
 		}
 	},
 	{
@@ -1631,7 +1847,9 @@
 			"mbti": "ESTJ",
 			"winning_rate": "0.16666666666666666",
 			"goodmbti": "INFP",
-			"badmbti": "INFJ"
+			"badmbti": "INFJ",
+			"imgsrc": "@/assets/img/tiles/Sivir_1.jpg",
+			"korname": "시비르"
 		}
 	},
 	{
@@ -1646,7 +1864,9 @@
 			"mbti": "ENFJ",
 			"winning_rate": "0.3888888888888889",
 			"goodmbti": "ISTP",
-			"badmbti": "ISTJ"
+			"badmbti": "ISTJ",
+			"imgsrc": "@/assets/img/tiles/Skarner_1.jpg",
+			"korname": "스카너"
 		}
 	},
 	{
@@ -1661,7 +1881,9 @@
 			"mbti": "ESFP",
 			"winning_rate": "0.36363636363636365",
 			"goodmbti": "INTJ",
-			"badmbti": "INTP"
+			"badmbti": "INTP",
+			"imgsrc": "@/assets/img/tiles/Sona_1.jpg",
+			"korname": "소나"
 		}
 	},
 	{
@@ -1676,7 +1898,9 @@
 			"mbti": "ESFP",
 			"winning_rate": "0.4642857142857143",
 			"goodmbti": "INTJ",
-			"badmbti": "INTP"
+			"badmbti": "INTP",
+			"imgsrc": "@/assets/img/tiles/Soraka_1.jpg",
+			"korname": "소라카"
 		}
 	},
 	{
@@ -1691,7 +1915,9 @@
 			"mbti": "INFJ",
 			"winning_rate": "0.53125",
 			"goodmbti": "ESTP",
-			"badmbti": "ESTJ"
+			"badmbti": "ESTJ",
+			"imgsrc": "@/assets/img/tiles/Swain_1.jpg",
+			"korname": "스웨인"
 		}
 	},
 	{
@@ -1706,7 +1932,9 @@
 			"mbti": "INFJ",
 			"winning_rate": "0.4842436974789916",
 			"goodmbti": "ESTP",
-			"badmbti": "ESTJ"
+			"badmbti": "ESTJ",
+			"imgsrc": "@/assets/img/tiles/Sylas_1.jpg",
+			"korname": "사일러스"
 		}
 	},
 	{
@@ -1721,7 +1949,9 @@
 			"mbti": "ISFJ",
 			"winning_rate": "0.529126213592233",
 			"goodmbti": "ENTP",
-			"badmbti": "ENTJ"
+			"badmbti": "ENTJ",
+			"imgsrc": "@/assets/img/tiles/Syndra_1.jpg",
+			"korname": "신드라"
 		}
 	},
 	{
@@ -1736,7 +1966,9 @@
 			"mbti": "INFP",
 			"winning_rate": "0.43548387096774194",
 			"goodmbti": "ESTJ",
-			"badmbti": "ESTP"
+			"badmbti": "ESTP",
+			"imgsrc": "@/assets/img/tiles/TahmKench_1.jpg",
+			"korname": "탐 켄치"
 		}
 	},
 	{
@@ -1751,7 +1983,9 @@
 			"mbti": "ESFJ",
 			"winning_rate": "0.6666666666666666",
 			"goodmbti": "INTP",
-			"badmbti": "INTJ"
+			"badmbti": "INTJ",
+			"imgsrc": "@/assets/img/tiles/Taliyah_1.jpg",
+			"korname": "탈리야"
 		}
 	},
 	{
@@ -1766,7 +2000,9 @@
 			"mbti": "INTJ",
 			"winning_rate": "0.5167597765363129",
 			"goodmbti": "ESFP",
-			"badmbti": "ESFJ"
+			"badmbti": "ESFJ",
+			"imgsrc": "@/assets/img/tiles/Talon_1.jpg",
+			"korname": "탈론"
 		}
 	},
 	{
@@ -1781,7 +2017,9 @@
 			"mbti": "ESTP",
 			"winning_rate": "0.535",
 			"goodmbti": "INFJ",
-			"badmbti": "INFP"
+			"badmbti": "INFP",
+			"imgsrc": "@/assets/img/tiles/Taric_1.jpg",
+			"korname": "타릭"
 		}
 	},
 	{
@@ -1796,7 +2034,9 @@
 			"mbti": "ISTJ",
 			"winning_rate": "0.5294117647058824",
 			"goodmbti": "ENFP",
-			"badmbti": "ENFJ"
+			"badmbti": "ENFJ",
+			"imgsrc": "@/assets/img/tiles/Teemo_1.jpg",
+			"korname": "티모"
 		}
 	},
 	{
@@ -1811,7 +2051,9 @@
 			"mbti": "ESTP",
 			"winning_rate": "0.5295566502463054",
 			"goodmbti": "INFJ",
-			"badmbti": "INFP"
+			"badmbti": "INFP",
+			"imgsrc": "@/assets/img/tiles/Thresh_1.jpg",
+			"korname": "쓰레쉬"
 		}
 	},
 	{
@@ -1826,7 +2068,9 @@
 			"mbti": "ISTJ",
 			"winning_rate": "0.3",
 			"goodmbti": "ENFP",
-			"badmbti": "ENFJ"
+			"badmbti": "ENFJ",
+			"imgsrc": "@/assets/img/tiles/Tristana_1.jpg",
+			"korname": "트리스타나"
 		}
 	},
 	{
@@ -1841,7 +2085,9 @@
 			"mbti": "ENFJ",
 			"winning_rate": "0.46296296296296297",
 			"goodmbti": "ISTP",
-			"badmbti": "ISTJ"
+			"badmbti": "ISTJ",
+			"imgsrc": "@/assets/img/tiles/Trundle_1.jpg",
+			"korname": "트런들"
 		}
 	},
 	{
@@ -1856,7 +2102,9 @@
 			"mbti": "ISFP",
 			"winning_rate": "0.52734375",
 			"goodmbti": "ENTJ",
-			"badmbti": "ENTP"
+			"badmbti": "ENTP",
+			"imgsrc": "@/assets/img/tiles/Tryndamere_1.jpg",
+			"korname": "트린다미어"
 		}
 	},
 	{
@@ -1871,7 +2119,9 @@
 			"mbti": "ISTP",
 			"winning_rate": "0.5163283318623124",
 			"goodmbti": "ENFJ",
-			"badmbti": "ENFP"
+			"badmbti": "ENFP",
+			"imgsrc": "@/assets/img/tiles/TwistedFate_1.jpg",
+			"korname": "트위스티드 페이트"
 		}
 	},
 	{
@@ -1886,7 +2136,9 @@
 			"mbti": "ISTJ",
 			"winning_rate": "0.4781420765027322",
 			"goodmbti": "ENFP",
-			"badmbti": "ENFJ"
+			"badmbti": "ENFJ",
+			"imgsrc": "@/assets/img/tiles/Twitch_1.jpg",
+			"korname": "트위치"
 		}
 	},
 	{
@@ -1901,7 +2153,9 @@
 			"mbti": "ENFP",
 			"winning_rate": "0.5",
 			"goodmbti": "ISTJ",
-			"badmbti": "ISTP"
+			"badmbti": "ISTP",
+			"imgsrc": "@/assets/img/tiles/Udyr_1.jpg",
+			"korname": "우디르"
 		}
 	},
 	{
@@ -1916,7 +2170,9 @@
 			"mbti": "INFP",
 			"winning_rate": "0.4117647058823529",
 			"goodmbti": "ESTJ",
-			"badmbti": "ESTP"
+			"badmbti": "ESTP",
+			"imgsrc": "@/assets/img/tiles/Urgot_1.jpg",
+			"korname": "우르곳"
 		}
 	},
 	{
@@ -1931,7 +2187,9 @@
 			"mbti": "ENTP",
 			"winning_rate": "0.5134328358208955",
 			"goodmbti": "ISFJ",
-			"badmbti": "ISFP"
+			"badmbti": "ISFP",
+			"imgsrc": "@/assets/img/tiles/Varus_1.jpg",
+			"korname": "바루스"
 		}
 	},
 	{
@@ -1946,7 +2204,9 @@
 			"mbti": "ISTJ",
 			"winning_rate": "0.53125",
 			"goodmbti": "ENFP",
-			"badmbti": "ENFJ"
+			"badmbti": "ENFJ",
+			"imgsrc": "@/assets/img/tiles/Vayne_1.jpg",
+			"korname": "베인"
 		}
 	},
 	{
@@ -1961,7 +2221,9 @@
 			"mbti": "ISFJ",
 			"winning_rate": "0.49019607843137253",
 			"goodmbti": "ENTP",
-			"badmbti": "ENTJ"
+			"badmbti": "ENTJ",
+			"imgsrc": "@/assets/img/tiles/Veigar_1.jpg",
+			"korname": "베이가"
 		}
 	},
 	{
@@ -1976,7 +2238,9 @@
 			"mbti": "ISFJ",
 			"winning_rate": "0.5384615384615384",
 			"goodmbti": "ENTP",
-			"badmbti": "ENTJ"
+			"badmbti": "ENTJ",
+			"imgsrc": "@/assets/img/tiles/Velkoz_1.jpg",
+			"korname": "벨코즈"
 		}
 	},
 	{
@@ -1991,7 +2255,9 @@
 			"mbti": "ISFP",
 			"winning_rate": "0.325",
 			"goodmbti": "ENTJ",
-			"badmbti": "ENTP"
+			"badmbti": "ENTP",
+			"imgsrc": "@/assets/img/tiles/Vi_1.jpg",
+			"korname": "바이"
 		}
 	},
 	{
@@ -2006,7 +2272,9 @@
 			"mbti": "ISFJ",
 			"winning_rate": "0.5",
 			"goodmbti": "ENTP",
-			"badmbti": "ENTJ"
+			"badmbti": "ENTJ",
+			"imgsrc": "@/assets/img/tiles/Viktor_1.jpg",
+			"korname": "빅토르"
 		}
 	},
 	{
@@ -2021,7 +2289,9 @@
 			"mbti": "INFJ",
 			"winning_rate": "0.48214285714285715",
 			"goodmbti": "ESTP",
-			"badmbti": "ESTJ"
+			"badmbti": "ESTJ",
+			"imgsrc": "@/assets/img/tiles/Vladimir_1.jpg",
+			"korname": "블라디미르"
 		}
 	},
 	{
@@ -2036,7 +2306,9 @@
 			"mbti": "ENTJ",
 			"winning_rate": "0.5141176470588236",
 			"goodmbti": "ISFP",
-			"badmbti": "ISFJ"
+			"badmbti": "ISFJ",
+			"imgsrc": "@/assets/img/tiles/Volibear_1.jpg",
+			"korname": "볼리베어"
 		}
 	},
 	{
@@ -2051,7 +2323,9 @@
 			"mbti": "INTP",
 			"winning_rate": "0.4166666666666667",
 			"goodmbti": "ESFJ",
-			"badmbti": "ESFP"
+			"badmbti": "ESFP",
+			"imgsrc": "@/assets/img/tiles/Warwick_1.jpg",
+			"korname": "워윅"
 		}
 	},
 	{
@@ -2066,7 +2340,9 @@
 			"mbti": "ESTJ",
 			"winning_rate": "0.6666666666666666",
 			"goodmbti": "INFP",
-			"badmbti": "INFJ"
+			"badmbti": "INFJ",
+			"imgsrc": "@/assets/img/tiles/Xayah_1.jpg",
+			"korname": "자야"
 		}
 	},
 	{
@@ -2081,7 +2357,9 @@
 			"mbti": "ISFJ",
 			"winning_rate": "0.47368421052631576",
 			"goodmbti": "ENTP",
-			"badmbti": "ENTJ"
+			"badmbti": "ENTJ",
+			"imgsrc": "@/assets/img/tiles/Xerath_1.jpg",
+			"korname": "제라스"
 		}
 	},
 	{
@@ -2096,7 +2374,9 @@
 			"mbti": "ISFP",
 			"winning_rate": "0.25",
 			"goodmbti": "ENTJ",
-			"badmbti": "ENTP"
+			"badmbti": "ENTP",
+			"imgsrc": "@/assets/img/tiles/XinZhao_1.jpg",
+			"korname": "신 짜오"
 		}
 	},
 	{
@@ -2111,7 +2391,9 @@
 			"mbti": "ISFP",
 			"winning_rate": "0.4533508541392904",
 			"goodmbti": "ENTJ",
-			"badmbti": "ENTP"
+			"badmbti": "ENTP",
+			"imgsrc": "@/assets/img/tiles/Yasuo_1.jpg",
+			"korname": "야스오"
 		}
 	},
 	{
@@ -2126,7 +2408,9 @@
 			"mbti": "ISFP",
 			"winning_rate": "0.49815583218072845",
 			"goodmbti": "ENTJ",
-			"badmbti": "ENTP"
+			"badmbti": "ENTP",
+			"imgsrc": "@/assets/img/tiles/Yone_1.jpg",
+			"korname": "요네"
 		}
 	},
 	{
@@ -2141,7 +2425,9 @@
 			"mbti": "INTP",
 			"winning_rate": "0.2727272727272727",
 			"goodmbti": "ESFJ",
-			"badmbti": "ESFP"
+			"badmbti": "ESFP",
+			"imgsrc": "@/assets/img/tiles/Yorick_1.jpg",
+			"korname": "요릭"
 		}
 	},
 	{
@@ -2156,7 +2442,9 @@
 			"mbti": "ESFP",
 			"winning_rate": "0.5064655172413793",
 			"goodmbti": "INTJ",
-			"badmbti": "INTP"
+			"badmbti": "INTP",
+			"imgsrc": "@/assets/img/tiles/Yuumi_1.jpg",
+			"korname": "유미"
 		}
 	},
 	{
@@ -2171,7 +2459,9 @@
 			"mbti": "ENTJ",
 			"winning_rate": "0.5047619047619047",
 			"goodmbti": "ISFP",
-			"badmbti": "ISFJ"
+			"badmbti": "ISFJ",
+			"imgsrc": "@/assets/img/tiles/Zac_1.jpg",
+			"korname": "자크"
 		}
 	},
 	{
@@ -2186,7 +2476,9 @@
 			"mbti": "INTJ",
 			"winning_rate": "0.4828042328042328",
 			"goodmbti": "ESFP",
-			"badmbti": "ESFJ"
+			"badmbti": "ESFJ",
+			"imgsrc": "@/assets/img/tiles/Zed_1.jpg",
+			"korname": "제드"
 		}
 	},
 	{
@@ -2201,7 +2493,9 @@
 			"mbti": "ISFJ",
 			"winning_rate": "0.48",
 			"goodmbti": "ENTP",
-			"badmbti": "ENTJ"
+			"badmbti": "ENTJ",
+			"imgsrc": "@/assets/img/tiles/Ziggs_1.jpg",
+			"korname": "직스"
 		}
 	},
 	{
@@ -2216,7 +2510,9 @@
 			"mbti": "ESFP",
 			"winning_rate": "0.5454545454545454",
 			"goodmbti": "INTJ",
-			"badmbti": "INTP"
+			"badmbti": "INTP",
+			"imgsrc": "@/assets/img/tiles/Zilean_1.jpg",
+			"korname": "질리언"
 		}
 	},
 	{
@@ -2231,7 +2527,9 @@
 			"mbti": "ISFJ",
 			"winning_rate": "0.4981738495252009",
 			"goodmbti": "ENTP",
-			"badmbti": "ENTJ"
+			"badmbti": "ENTJ",
+			"imgsrc": "@/assets/img/tiles/Zoe_1.jpg",
+			"korname": "조이"
 		}
 	},
 	{
@@ -2246,7 +2544,9 @@
 			"mbti": "ESFJ",
 			"winning_rate": "0.5",
 			"goodmbti": "INTP",
-			"badmbti": "INTJ"
+			"badmbti": "INTJ",
+			"imgsrc": "@/assets/img/tiles/Zyra_1.jpg",
+			"korname": "자이라"
 		}
 	}
 ]

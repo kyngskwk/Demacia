@@ -283,6 +283,11 @@ with open('champions.json', 'r') as chams:
         # table["fields"]["badmbti"] = '' 
         table["fields"]["badmbti"] = mbti_couple[cham_mbti.lower()][1].upper()
 
+        # 이미지 src
+        table["fields"]["imgsrc"] = "@/assets/img/tiles/" + str(chamname) + "_1.jpg"
+        
+        # 한글 이름
+        table["fields"]["korname"] = ""
 
         result.append(table)
 

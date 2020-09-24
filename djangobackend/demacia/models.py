@@ -84,6 +84,8 @@ class Champion(models.Model):
     winning_rate = models.FloatField()
     goodmbti = models.CharField(max_length=50)
     badmbti = models.CharField(max_length=50)
+    imgsrc = models.CharField(max_length=200, blank=True, null=True)
+    korname = models.CharField(max_length=200, blank=True, null=True)
 
     class Meta:
         managed = False
@@ -221,20 +223,6 @@ class User(models.Model):
     class Meta:
         managed = False
         db_table = 'user'
-
-
-class Video(models.Model):
-    videono = models.AutoField(primary_key=True)
-    userno = models.ForeignKey(User, models.DO_NOTHING, db_column='userno')
-    date = models.DateTimeField()
-    view = models.IntegerField(blank=True, null=True)
-    title = models.CharField(max_length=256)
-    video = models.CharField(max_length=256, blank=True, null=True)
-    thumbnail = models.CharField(max_length=256, blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'video'
 
 
 class Videopost(models.Model):
