@@ -1,27 +1,126 @@
 <template>
   <b-container>
     <b-card class="m-4">
-      <b-aspect aspect="4:2" class="text-left p-2">
+      <b-aspect aspect="3.5:2" class="text-left p-2">
         <h3>
-          <b-badge>Q. {{index+1}}</b-badge>
+          <b-row align-h="between">
+            <b-col> MBTI 테스트</b-col>
+            <b-col class="text-right">
+              <b-badge>Q. {{ index + 1 }}</b-badge>
+            </b-col>
+          </b-row>
         </h3>
         <h5>
-          <b-jumbotron>{{q[index].text}}</b-jumbotron>
-          <b-form-group :label="(index+1)+'. '+q[index].q">
-            <b-form-radio v-model="ans[index]" value="1" size="lg">{{q[index].a}}</b-form-radio>
-            <b-form-radio v-model="ans[index]" value="-1" size="lg">{{q[index].b}}</b-form-radio>
+          <b-jumbotron>{{ q[index].text }}</b-jumbotron>
+          <b-form-group :label="index + 1 + '. ' + q[index].q">
+            <b-form-radio v-model="ans[index]" value="1" size="lg">
+              {{ q[index].a }}
+            </b-form-radio>
+            <b-form-radio v-model="ans[index]" value="-1" size="lg">
+              {{ q[index].b }}
+            </b-form-radio>
           </b-form-group>
         </h5>
-        <div class="align-content-end">aasdasdasd</div>
+        <br />
       </b-aspect>
+      <template v-slot:footer>
+        <b-row align-v="end" class="text-center">
+          <b-col cols="12">
+            <b-button
+              variant="primary"
+              size="lg"
+              @click="prev"
+              class="mb-2 mr-2"
+              :disabled="index == 0"
+            >
+              이전
+            </b-button>
+            <b-button
+              variant="primary"
+              size="lg"
+              @click="next"
+              class="mb-2"
+              :disabled="ans[index] == 0"
+            >
+              다음
+            </b-button>
+          </b-col>
+          <b-col cols="12">
+            <b-progress :max="12" height="2px">
+              <b-progress-bar :value="index + 1"></b-progress-bar>
+            </b-progress>
+          </b-col>
+        </b-row>
+      </template>
     </b-card>
+    <b-modal
+      ref="result"
+      title="내 MBTI 결과"
+      size="lg"
+      centered
+      hide-footer
+      no-close-on-backdrop
+    >
+      <b-row class="text-center">
+        <b-col cols="12">
+          <h4>{{ user.userNickname }}님의 MBTI는</h4>
+          <br />
+          <h4>{{ result }} 입니다!</h4>
+          <br />
+        </b-col>
+        <b-col cols="12" class="mt-3">
+          <b-button size="lg" block href="/mbti">
+            내 MBTI와 잘 맞는 챔피언 추천받기
+          </b-button>
+        </b-col>
+        <b-col cols="12" class="mt-3">
+          <b-button size="lg" block href="/myprofile">
+            내 프로필 페이지로
+          </b-button>
+        </b-col>
+        <b-col cols="12" class="mt-3">
+          <b-button size="lg" block href="/mbtisurvey"> 다시 보기 </b-button>
+        </b-col>
+      </b-row>
+    </b-modal>
   </b-container>
 </template>
 
 <script>
+import axios from "axios";
 export default {
+  created() {
+    this.user = JSON.parse(sessionStorage.getItem("user"));
+  },
+
+  methods: {
+    prev() {
+      if (this.index != 0) this.index--;
+    },
+    next() {
+      if (this.index == 11) {
+        console.log(this.ans);
+        let arr = [
+          this.ans.slice(0, 3).reduce((a, b) => a + b),
+          this.ans.slice(3, 6).reduce((a, b) => a + b),
+          this.ans.slice(6, 9).reduce((a, b) => a + b),
+          this.ans.slice(9, 12).reduce((a, b) => a + b),
+        ];
+        this.result =
+          (arr[0] > 0 ? "E" : "I") +
+          (arr[1] > 0 ? "N" : "S") +
+          (arr[2] > 0 ? "T" : "F") +
+          (arr[3] > 0 ? "J" : "P");
+        axios.post().then();
+        this.$refs["result"].show();
+      } else this.index++;
+    },
+  },
+
   data() {
     return {
+      result: "",
+      user: {},
       index: 0,
       ans: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
       q: [
@@ -132,12 +231,6 @@ export default {
       ],
     };
   },
-
-  created() {},
-
-  computed: {},
-
-  methods: {},
 };
 </script>
 
