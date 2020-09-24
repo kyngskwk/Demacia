@@ -6,7 +6,7 @@ game_ids = []
 lane_dict = {}
 champion_info = dict()
 
-account_id = "AGN2hOobPwktWqt0iEH6045fI7PlHsJ2MGcQT1oQheYSUO8FkKnU9pqx"
+account_id = "VWNSbDLytNV47o6jJ0E9TtD5OEPG3ENocgp9Pro9Y3iQ6Tc"
 match_v4_accountid = "https://kr.api.riotgames.com/lol/match/v4/matchlists/by-account/"+str(account_id)+"?api_key=RGAPI-4dcd2099-2605-4440-9864-f53a305141e7"
 account_results = requests.get(match_v4_accountid).json()["matches"]
 # print(results)
@@ -52,7 +52,9 @@ real_cham_dict = dict()
 for champion_id in champion_info:
     champion_winnig_rate[champion_id] = champion_info[champion_id][0] / sum(champion_info[champion_id])
 
+print(champion_winnig_rate)
 champion_winnig_rate = sorted(champion_winnig_rate.items(), key=lambda x:x[1], reverse=True)
+
 
 for idx in range(len(champion_winnig_rate)):
     if idx > 2:
