@@ -111,7 +111,10 @@ export default {
           (arr[1] > 0 ? "N" : "S") +
           (arr[2] > 0 ? "T" : "F") +
           (arr[3] > 0 ? "J" : "P");
-        axios.post().then();
+        axios.post(process.env.VUE_APP_DAPI_URL + "/mbti/update", {
+          userno: this.user.userNo,
+          mbti: this.result,
+        });
         this.$refs["result"].show();
       } else this.index++;
     },
