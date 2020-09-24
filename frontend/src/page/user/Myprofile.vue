@@ -309,9 +309,19 @@
         </div>
 
         <!-- MBTI -->
-        <div class="shadow1 col-10 col-xl-5 m-4 pt-4" style="background-color:white;">
-          <h4 style="display:inline-block;">내 MBTI 분석결과</h4>
-          <br />INFP
+        <div class="shadow1 col-10 col-xl-5 m-4 p-4" style="background-color:white;">
+          <b-row>
+            <b-col cols="12">
+              <h4>내 MBTI</h4>
+            </b-col>
+            <b-col cols="12" v-if="!user.mbti">
+              아직 데마시아 전용 MBTI 측정을 하지 않았습니다.
+              <b-button size="lg" variant="secondary" href="/mbtisurvey">MBTI 설문하기</b-button>
+            </b-col>
+            <b-col cols="12" v-else>
+              <h4>{{user.mbti}}</h4>
+            </b-col>
+          </b-row>
         </div>
         <!-- 추천 -->
         <div class="shadow1 col-10 col-xl-5 m-4 pt-4" style="background-color:white;">
