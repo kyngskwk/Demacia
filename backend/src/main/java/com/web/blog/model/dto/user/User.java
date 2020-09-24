@@ -20,32 +20,8 @@ public class User {
     private int userMileage;
     private String accessToken;
     private String providerName;
-
-    public User() {
-
-    }
-
-    public User(int userNo, String userEmail, String userPw, String userNickname, String userImage,
-            LocalDateTime userCreateDate, int userSolRankNum, int userGameRankNum, String summonerName,
-            String userSolTierStr, String userSolRankStr, String userGameTierStr, String userGameRankStr,
-            int userMileage, String accessToken, String providerName) {
-        this.userNo = userNo;
-        this.userEmail = userEmail;
-        this.userPw = userPw;
-        this.userNickname = userNickname;
-        this.userImage = userImage;
-        this.userCreateDate = userCreateDate;
-        this.userSolRankNum = userSolRankNum;
-        this.userGameRankNum = userGameRankNum;
-        this.summonerName = summonerName;
-        this.userSolTierStr = userSolTierStr;
-        this.userSolRankStr = userSolRankStr;
-        this.userGameTierStr = userGameTierStr;
-        this.userGameRankStr = userGameRankStr;
-        this.userMileage = userMileage;
-        this.accessToken = accessToken;
-        this.providerName = providerName;
-    }
+    private String mbti;
+    private String accountid;
 
     public int getUserNo() {
         return userNo;
@@ -175,14 +151,58 @@ public class User {
         this.providerName = providerName;
     }
 
+    public String getMbti() {
+        return mbti;
+    }
+
+    public void setMbti(String mbti) {
+        this.mbti = mbti;
+    }
+
+    public String getAccountid() {
+        return accountid;
+    }
+
+    public void setAccountid(String accountid) {
+        this.accountid = accountid;
+    }
+
+    public User(int userNo, String userEmail, String userPw, String userNickname, String userImage,
+            LocalDateTime userCreateDate, int userSolRankNum, int userGameRankNum, String summonerName,
+            String userSolTierStr, String userSolRankStr, String userGameTierStr, String userGameRankStr,
+            int userMileage, String accessToken, String providerName, String mbti, String accountid) {
+        this.userNo = userNo;
+        this.userEmail = userEmail;
+        this.userPw = userPw;
+        this.userNickname = userNickname;
+        this.userImage = userImage;
+        this.userCreateDate = userCreateDate;
+        this.userSolRankNum = userSolRankNum;
+        this.userGameRankNum = userGameRankNum;
+        this.summonerName = summonerName;
+        this.userSolTierStr = userSolTierStr;
+        this.userSolRankStr = userSolRankStr;
+        this.userGameTierStr = userGameTierStr;
+        this.userGameRankStr = userGameRankStr;
+        this.userMileage = userMileage;
+        this.accessToken = accessToken;
+        this.providerName = providerName;
+        this.mbti = mbti;
+        this.accountid = accountid;
+    }
+
+    public User() {
+    }
+
     @Override
     public String toString() {
-        return "User [accessToken=" + accessToken + ", providerName=" + providerName + ", summonerName=" + summonerName
-                + ", userCreateDate=" + userCreateDate + ", userEmail=" + userEmail + ", userGameRankNum="
-                + userGameRankNum + ", userGameRankStr=" + userGameRankStr + ", userGameTierStr=" + userGameTierStr
-                + ", userImage=" + userImage + ", userMileage=" + userMileage + ", userNickname=" + userNickname
-                + ", userNo=" + userNo + ", userPw=" + userPw + ", userSolRankNum=" + userSolRankNum
-                + ", userSolRankStr=" + userSolRankStr + ", userSolTierStr=" + userSolTierStr + "]";
+        return "User [accessToken=" + accessToken + ", accountid=" + accountid + ", mbti=" + mbti + ", providerName="
+                + providerName + ", summonerName=" + summonerName + ", userCreateDate=" + userCreateDate
+                + ", userEmail=" + userEmail + ", userGameRankNum=" + userGameRankNum + ", userGameRankStr="
+                + userGameRankStr + ", userGameTierStr=" + userGameTierStr + ", userImage=" + userImage
+                + ", userMileage=" + userMileage + ", userNickname=" + userNickname + ", userNo=" + userNo + ", userPw="
+                + userPw + ", userSolRankNum=" + userSolRankNum + ", userSolRankStr=" + userSolRankStr
+                + ", userSolTierStr=" + userSolTierStr + "]";
     }
 
 }
