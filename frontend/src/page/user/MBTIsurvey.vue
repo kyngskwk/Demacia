@@ -1,6 +1,7 @@
 <template>
   <b-container>
     <b-card class="m-4">
+      <!-- 메인 -->
       <b-aspect aspect="3.5:2" class="text-left p-2">
         <h3>
           <b-row align-h="between">
@@ -23,6 +24,8 @@
         </h5>
         <br />
       </b-aspect>
+
+      <!-- 하단부 -->
       <template v-slot:footer>
         <b-row align-v="end" class="text-center">
           <b-col cols="12">
@@ -53,6 +56,8 @@
         </b-row>
       </template>
     </b-card>
+
+    <!-- 결과 모달 -->
     <b-modal
       ref="result"
       title="내 MBTI 결과"
@@ -99,22 +104,27 @@ export default {
     },
     next() {
       if (this.index == 11) {
-        console.log(this.ans);
+        // 셋 씩 나눠서 더함
         let arr = [
           this.ans.slice(0, 3).reduce((a, b) => a + b),
           this.ans.slice(3, 6).reduce((a, b) => a + b),
           this.ans.slice(6, 9).reduce((a, b) => a + b),
           this.ans.slice(9, 12).reduce((a, b) => a + b),
         ];
+        // 합계값이 양수면 왼쪽 음수면 오른쪽
         this.result =
           (arr[0] > 0 ? "E" : "I") +
           (arr[1] > 0 ? "N" : "S") +
           (arr[2] > 0 ? "T" : "F") +
           (arr[3] > 0 ? "J" : "P");
+
+        // 업데이트
         axios.post(process.env.VUE_APP_DAPI_URL + "/mbti/update", {
           userno: this.user.userNo,
           mbti: this.result,
         });
+
+        // 결과 모달창 팝업
         this.$refs["result"].show();
       } else this.index++;
     },
