@@ -8,6 +8,8 @@ import requests
 import json
 from drf_yasg.utils import swagger_auto_schema
 from drf_yasg import openapi
+from django.views.decorators.csrf import csrf_exempt
+from django.utils.decorators import method_decorator
 # Create your views here.
 
 @api_view(['GET'])
@@ -172,6 +174,7 @@ def match_list(request,userno):
     serializers = MatchSerializer(matches, many=True)
     return Response(serializers.data)
 
+@method_decorator(csrf_exempt)
 @swagger_auto_schema(method='post', request_body=UserSerializer)
 @api_view(['POST'])
 # @permission_classes([IsAuthenticated])
