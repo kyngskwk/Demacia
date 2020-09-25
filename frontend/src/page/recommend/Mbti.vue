@@ -10,7 +10,7 @@
           <h2>{{ user.userNickname }}님의 MBTI는 '{{ user.mbti }}' 입니다.</h2>
         </b-col>
       </b-row>
-      <h4 class="text-center"><br />[여기에 MBTI에 대한 설명 입력]</h4>
+      <h4 class="text-center"><br />[여기에 {{ user.mbti }}에 대한 설명 입력]</h4>
       <b-container class="p-4">
         <b-jumbotron class="m-4 p-4">
           <b-row align-v="start">
