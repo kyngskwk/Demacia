@@ -199,7 +199,7 @@ export default {
             console.log(this.$store.state.userInfo);
             // 세션에 로그인 정보 추가
             sessionStorage.setItem("user", JSON.stringify(res.data.object));
-            location.href = "/list";
+            location.href = "/";
           } else {
             this.emailValid = this.pwValid = false;
             this.errToast("아이디 또는 비밀번호를 확인해주세요");

@@ -618,6 +618,8 @@ export default {
             },
           })
           .then(({ data }) => {
+            sessionStorage.removeItem("user");
+            sessionStorage.setItem("user", JSON.stringify(data.object));
             this.user = data.object;
             axios
               .get(process.env.VUE_APP_API_URL + "/post/search", {
