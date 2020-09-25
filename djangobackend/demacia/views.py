@@ -174,7 +174,7 @@ def match_list(request,userno):
     serializers = MatchSerializer(matches, many=True)
     return Response(serializers.data)
 
-@method_decorator(csrf_exempt)
+# @method_decorator(csrf_exempt)
 @swagger_auto_schema(method='post', request_body=UserSerializer)
 @api_view(['POST'])
 # @permission_classes([IsAuthenticated])
