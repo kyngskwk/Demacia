@@ -1,6 +1,6 @@
 import requests
 import json
-
+import winrate_algo
 
 def live_and_before(time1,gameId):
     time = []
@@ -92,6 +92,6 @@ def live_and_before(time1,gameId):
                 # 해당 인덱스의 dict에 횟수를 누적한다
                 part_set1[event["killerId"]].setdefault(real_event, [])
                 part_set1[event["killerId"]][real_event] += [event["monsterType"]]
-        time_set1.setdefault(t,[])
-        time_set1[t] = part_set1
-    print(time_set1)
+
+    print(part_set1)
+    winrate_algo.winning_rate(part_set,part_set1)

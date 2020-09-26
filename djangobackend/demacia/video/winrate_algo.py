@@ -1,8 +1,7 @@
-# import data_front
-# import data_present
 
 # 해당 시간 이전의 승률 데이터로 승률 만들기
 # 요소 포탑처치, totalgold, 에픽몬스터, 
 # 토탈골드 차이 500당 1% 차이
 # 에픽몬스터 용이면 3%, 4용이면 3%*4 +3% = 15%, 바론이나 장로 +5%, 포탑 한개당 2%, 킬뎃1차이당 0.5%
 
+def winning_rate(part_set,part_set1):
