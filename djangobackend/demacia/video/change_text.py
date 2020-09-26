@@ -7,8 +7,9 @@ import cv2
 import pytesseract
 import pyautogui
 from albumentations import MedianBlur
+import timeline_live
 pytesseract.pytesseract.tesseract_cmd = r'C:\\Program Files\\Tesseract-OCR\\tesseract'
-def module():
+def module(gameId):
 # --------------------------------------------------------------------
 # 이미지 구역 나누기v
     time = []
@@ -89,8 +90,9 @@ def module():
             
             index += 1
 
-        # print('불루팀 타워, 레드팀 타워, 불루팀 골드, 레드팀 골드, 불루팀 kill, 레드팀 kill, 불루팀 cs, 레드팀 cs,시간, 분' )
-        # print(text_list)
+        print('불루팀 타워, 레드팀 타워, 불루팀 골드, 레드팀 골드, 불루팀 kill, 레드팀 kill, 불루팀 cs, 레드팀 cs,시간, 분' )
+        print(text_list)
         time.append(text_list[-2])
         time.append(text_list[-1])
     print(time)
+    timeline_live.live([time[0],time[2]],gameId) # 분 단위만 넘기기

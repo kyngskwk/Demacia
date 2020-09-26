@@ -4,12 +4,14 @@ import cv2
 import change_text 
  
 # 영상의 의미지를 연속적으로 캡쳐할 수 있게 하는 class
-vidcap = cv2.VideoCapture('./람머스.mp4')
- 
+videoname = '10-19_KR-4664501922_06.mp4'
+vidcap = cv2.VideoCapture('./%s' % videoname)
+gameId = videoname[9:-7]
+print(gameId)
+
 count = 0
 
 length = int(vidcap.get(cv2.CAP_PROP_FRAME_COUNT))
-print(length)
 while(vidcap.isOpened()):
     ret, image = vidcap.read()
     if int(vidcap.get(1)) == 50:
@@ -25,4 +27,4 @@ while(vidcap.isOpened()):
     elif int(vidcap.get(1)) == (length-10):
         break
 
-change_text.module()
+change_text.module(gameId)
