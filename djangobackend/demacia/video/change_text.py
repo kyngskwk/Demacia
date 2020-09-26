@@ -7,7 +7,7 @@ import cv2
 import pytesseract
 import pyautogui
 from albumentations import MedianBlur
-import timeline_live
+import timeline
 pytesseract.pytesseract.tesseract_cmd = r'C:\\Program Files\\Tesseract-OCR\\tesseract'
 def module(gameId):
 # --------------------------------------------------------------------
@@ -95,4 +95,4 @@ def module(gameId):
         time.append(text_list[-2])
         time.append(text_list[-1])
     print(time)
-    timeline_live.live([time[0],time[2]],gameId) # 분 단위만 넘기기
+    timeline.live_and_before([time[0],time[2]],gameId) # 분 단위만 넘기기
