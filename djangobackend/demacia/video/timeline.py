@@ -94,4 +94,4 @@ def live_and_before(time1,gameId):
                 part_set1[event["killerId"]][real_event] += [event["monsterType"]]
 
     print(part_set1)
-    winrate_algo.winning_rate(part_set,part_set1)
+    winrate_algo.winning_rate(part_set,part_set1,gameId)
