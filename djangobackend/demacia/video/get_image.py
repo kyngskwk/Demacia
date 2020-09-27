@@ -7,7 +7,6 @@ import change_text
 videoname = '10-19_KR-4664501922_06.mp4'
 vidcap = cv2.VideoCapture('./%s' % videoname)
 gameId = videoname[9:-7]
-print(gameId)
 
 count = 0
 
