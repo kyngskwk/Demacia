@@ -55,7 +55,7 @@
             class="btn"
             style="width:86%;"
             alt="naverlogo"
-            @click="naver"
+            @click="google"
             draggable="false"
           />
         </div>
@@ -80,7 +80,7 @@ export default {
       emailValid: null,
       pwValid: null,
       kakaologo: process.env.VUE_APP_IMGUP_URL + "/images/login/kakaologo.PNG",
-      naverlogo: process.env.VUE_APP_IMGUP_URL + "/images/login/naverlogo.png",
+      naverlogo: process.env.VUE_APP_IMGUP_URL + "/images/login/googlelogo.png",
       logologin: process.env.VUE_APP_IMGUP_URL + "/images/login/loginlogo.PNG",
       newImg: "",
     };
@@ -88,7 +88,33 @@ export default {
 
   created() {
     window.scrollTo(0, 0);
-    if (this.$route.query.code) {
+    if(this.$route.query.scope){
+      console.log("goolelogin:"+this.$route.query.code);
+      axios
+        .get(process.env.VUE_APP_API_URL + "/login/google", {
+          params: {
+            code: this.$route.query.code,
+            redirectUrl: process.env.VUE_APP_BASE_URL+"/login"
+          },
+        })
+        .then((res) => {
+            if (res.data.status) {
+              res.data.object.userPw = "";
+              this.$store.commit("addUserInfo", res.data.object);
+            // 세션에 로그인 정보 추가
+            sessionStorage.setItem("user", JSON.stringify(res.data.object));
+            location.href = "/";
+            }
+            else {
+            this.emailValid = this.pwValid = false;
+            this.errToast("구글 아이디 또는 비밀번호를 확인해주세요");
+          }
+        })
+        .catch((err) => {
+          location.href = "/error/로그인 중 서버 오류가 발생했습니다. " + err;
+        });
+  }
+  else if (this.$route.query.code) {
       console.log(this.$route.query.code);
       axios
         .get(process.env.VUE_APP_API_URL + "/login/oauth", {
@@ -142,6 +168,7 @@ export default {
           location.href = "/error/로그인 중 서버 오류가 발생했습니다. " + err;
         });
     }
+
   },
 
   methods: {
@@ -153,9 +180,19 @@ export default {
         process.env.VUE_APP_BASE_URL +
         "/login&response_type=code";
     },
-    naver() {
-      this.errToast("네이버와 계약에 실패해서 서비스를 제공할 수 없었습니다..");
+
+    google() {
+      location.href = 
+      "https://accounts.google.com/o/oauth2/v2/auth?" + 
+      "scope=https://www.googleapis.com/auth/userinfo.email&https://www.googleapis.com/auth/userinfo.profile&openid" +
+      "include_granted_scopes=true&" +
+      "response_type=code&" + 
+      "state=state_parameter_passthrough_value&" +
+      "redirect_uri=" +
+      process.env.VUE_APP_BASE_URL + "login&" +
+      "client_id=1023963510057-bijvog3gfp162178b7iqu978ruruqkq2.apps.googleusercontent.com"
     },
+
     loginCheck() {
       let err = false;
       this.emailValid = !(
