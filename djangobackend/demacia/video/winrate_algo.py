@@ -1,9 +1,7 @@
 
 # 해당 시간 이전의 승률 데이터로 승률 만들기
 # 요소 포탑처치, totalgold, 에픽몬스터, 와드설치, 킬수
-# 토탈골드 차이 1000당 1% 차이
-# 에픽몬스터 용이면 3%, 4용이면 3%*4 +3% = 15%, 바론이나 장로 +5%, 포탑 한개당 1%, 킬뎃1차이당 0.5%
-# 와드 5개당 1%차이
+
 import requests
 import json
 
@@ -43,11 +41,20 @@ for i in range(1,11):
                 redteam[key] +=part_set[i][key]
 print(blueteam)
 print(redteam)
-bluescore = 0
-redscore = 0
+bluescore = 50
+wardgap = blueteam['WARD_PLACED'] - redteam['WARD_PLACED']
+killgap = blueteam['CHAMPION_KILL'] - redteam['CHAMPION_KILL']
+levelgap = blueteam['level'] - redteam['level']
+goldgap = blueteam['totalGold'] - redteam['totalGold']
+buildinggap = blueteam['BUILDING_KILL'] - redteam['BUILDING_KILL']
+dragongap = len(blueteam['ELITE_MONSTER_KILL']) - len(redteam['ELITE_MONSTER_KILL'])
 
+print(wardgap,killgap,levelgap,goldgap,buildinggap,dragongap)
+bluescore += wardgap/5 + killgap*0.5 + levelgap*0.2 + goldgap/2000 + buildinggap*0.5 + dragongap*3
+bluescore = round(bluescore,2)
 
-
+redscore = 100-bluescore
+print(bluescore,'vs',redscore)
     # print(part)
 # print(part_set)
 # print(part_set1)
