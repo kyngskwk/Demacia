@@ -16,6 +16,8 @@
 
       <!-- Slides with image only -->
       <b-carousel-slide img-src="../../assets/img/ad1.png"></b-carousel-slide>
+      <b-carousel-slide img-src="../../assets/img/ad2.png"></b-carousel-slide>
+      <b-carousel-slide img-src="../../assets/img/ad3.png"></b-carousel-slide>
 
       <!-- Slide with blank fluid image to maintain slide aspect ratio -->
       <b-carousel-slide caption="Blank Image" img-blank img-alt="Blank image">
