@@ -13,7 +13,7 @@ import lombok.ToString;
 @ToString
 @NoArgsConstructor
 public class VideoPostItem {
-	private int videoNo;
+	private int videoPostNo;
 	private int userNo;
 	private String userNickname;
 	private String userImage;
@@ -24,9 +24,9 @@ public class VideoPostItem {
 	private int totalLike;
 
 	@Builder
-	public VideoPostItem(int videoNo, int userNo, String userNickname, String userImage, String thumbnail,
+	public VideoPostItem(int videoPostNo, int userNo, String userNickname, String userImage, String thumbnail,
 			int isPrivate, int view, LocalDateTime postdate, int totalLike) {
-		this.videoNo = videoNo;
+		this.videoPostNo = videoPostNo;
 		this.userNo = userNo;
 		this.userNickname = userNickname;
 		this.userImage = userImage;
