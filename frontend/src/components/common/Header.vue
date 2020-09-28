@@ -118,7 +118,24 @@ export default {
         console.log("not accesstoken");
         sessionStorage.removeItem("user");
         location.href = "/";
-      } else {
+      }
+      else if(this.user.providerName == "GOOGLE"){
+        axios
+          .get(process.env.VUE_APP_API_URL + "/logout/google", {
+            params: {
+              token: this.user.accessToken,
+            },
+          })
+          .then(() => {
+            sessionStorage.removeItem("user");
+            location.href = "/";
+          })
+          .catch((err) => {
+            location.href =
+              "/error/로그아웃 중 서버 오류가 발생했습니다. " + err;
+          });
+      } 
+      else {
         axios
           .get(process.env.VUE_APP_API_URL + "/logout/oauth", {
             params: {
