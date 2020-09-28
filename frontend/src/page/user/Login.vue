@@ -94,7 +94,7 @@ export default {
         .get(process.env.VUE_APP_API_URL + "/login/google", {
           params: {
             code: this.$route.query.code,
-            redirectUrl: process.env.VUE_APP_BASE_URL+"/login"
+            redirectUrl: process.env.VUE_APP_BASE_URL+"login"
           },
         })
         .then((res) => {

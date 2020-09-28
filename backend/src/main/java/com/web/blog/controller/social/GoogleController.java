@@ -52,10 +52,10 @@ public class GoogleController {
         final BasicResponse result = new BasicResponse();
 
         try {
-        System.out.println("test1");
+
         //HTTP Request를 위한 RestTemplate
         final RestTemplate restTemplate = new RestTemplate();
-        System.out.println("test2");
+
         //Google OAuth Access Token 요청을 위한 파라미터 세팅
         final GoogleOAuthRequest googleOAuthRequestParam = GoogleOAuthRequest
                 .builder()
