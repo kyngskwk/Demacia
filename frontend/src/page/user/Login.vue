@@ -204,7 +204,7 @@ export default {
         "state=state_parameter_passthrough_value&" +
         "redirect_uri=" +
         process.env.VUE_APP_BASE_URL +
-        "login&" +
+        "/login&" +
         "client_id=1023963510057-bijvog3gfp162178b7iqu978ruruqkq2.apps.googleusercontent.com";
     },
 
