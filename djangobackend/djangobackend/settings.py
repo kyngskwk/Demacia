@@ -132,12 +132,12 @@ USE_L10N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
+# Static files (CSS, JavaScript, Images)a
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = ':8181/static/'
 STATIC_DIR = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = [
-    STATIC_DIR,
+    "/home/ubuntu/.static_root/"
 ]
 STATIC_ROOT = os.path.join(ROOT_DIR, '.static_root')
