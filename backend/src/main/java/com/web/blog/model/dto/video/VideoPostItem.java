@@ -15,17 +15,17 @@ import lombok.ToString;
 public class VideoPostItem {
 	private int videoNo;
 	private int userNo;
-	private int userNickname;
-	private int userImage;
-	private int thumbnail;
+	private String userNickname;
+	private String userImage;
+	private String thumbnail;
 	private int isPrivate;
 	private int view;
 	private LocalDateTime postdate;
 	private int totalLike;
 
 	@Builder
-	public VideoPostItem(int videoNo, int userNo, int userNickname, int userImage, int thumbnail, int isPrivate,
-			int view, LocalDateTime postdate, int totalLike) {
+	public VideoPostItem(int videoNo, int userNo, String userNickname, String userImage, String thumbnail,
+			int isPrivate, int view, LocalDateTime postdate, int totalLike) {
 		this.videoNo = videoNo;
 		this.userNo = userNo;
 		this.userNickname = userNickname;
