@@ -138,7 +138,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 #STATIC_DIR = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = [
-    "/home/ubuntu/.static_root"
+    os.path.join(BASE_DIR, 'static')
+#   "/home/ubuntu/.static_root"
 ]
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+#STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 #os.path.join(ROOT_DIR, '.static_root')
