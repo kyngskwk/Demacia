@@ -141,9 +141,3 @@ STATICFILES_DIRS = [
     "/home/ubuntu/.static_root/"
 ]
 STATIC_ROOT = os.path.join(ROOT_DIR, '.static_root')
-
-STATICFILES_FINDERS= 
-[
-    'django.contrib.staticfiles.finders.FileSystemFinder',
-    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-]
