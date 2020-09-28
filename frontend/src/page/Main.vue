@@ -1,105 +1,112 @@
 <template>
-  <div class="container p-4">
-    <b-row class="maintitle text-center">
-      <b-col cols="12">DEMACIA</b-col>
-      <b-col cols="12" class="sub pb-4 mb-4">FOR JUSTICE</b-col>
-    </b-row>
-    <b-row class="part">
-      <b-col cols="12" lg="6">
-        <div class="box">
-          <b-row>
-            <b-col cols="12" class="m-2 text-left">
-              <router-link :to="{name:constants.URL_TYPE.RECOMMEND.COMBINATION}">
-                <kbd>조합 추천받기</kbd>
-              </router-link>누르면 로그인 창으로 갑니다.
-            </b-col>
-            <b-col>
-              <p>
-                Use this area to describe your project. Lorem ipsum dolor
-                sit amet, consectetur adipisicing elit. Est blanditiis
-                dolorem culpa incidunt minus dignissimos deserunt repellat
-                aperiam quasi sunt officia expedita beatae cupiditate,
-                maiores repudiandae, nostrum, reiciendis facere nemo!
-              </p>
-            </b-col>
-          </b-row>
-        </div>
-      </b-col>
-      <b-col cols="12" sm="6">
-        <div class="box">
-          <b-row>
-            <b-col cols="12" class="m-2 text-left">
-              <router-link :to="{name:constants.URL_TYPE.RECOMMEND.CHAMPION}">
-                <kbd>챔피언 추천받기</kbd>
-              </router-link>누르면 로그인 창으로 갑니다.
-            </b-col>
-            <b-col>
-              <p>
-                Use this area to describe your project. Lorem ipsum dolor
-                sit amet, consectetur adipisicing elit. Est blanditiis
-                dolorem culpa incidunt minus dignissimos deserunt repellat
-                aperiam quasi sunt officia expedita beatae cupiditate,
-                maiores repudiandae, nostrum, reiciendis facere nemo!
-              </p>
-            </b-col>
-          </b-row>
-        </div>
-      </b-col>
-      <b-col cols="12">
-        <div class="box">
-          <b-row>
-            <b-col cols="12" class="m-2 text-left">
-              <router-link :to="{name:constants.URL_TYPE.POST.MAIN}">
-                <kbd>진행중 투표</kbd>
-              </router-link>보이는게 없어서 그냥 최근 5개만 보이는 중입니다.
-            </b-col>
-            <b-col cols="12">
-              <b-table striped hover :items="lastPost" :fields="lastPostFields" v-if="lastPost">
-                <template v-slot:cell(postDate)="data">{{ postDT(data.value) }}</template>
-                <template v-slot:cell(to)="data">
-                  <router-link :to="'/detail/'+data.item.postNo">
-                    <b-icon icon="arrow-right-circle" font-scale="2"></b-icon>
-                  </router-link>
-                </template>
-              </b-table>
-              <div v-else>진행중인 투표글이 없습니다.</div>
-            </b-col>
-          </b-row>
-        </div>
-      </b-col>
-      <b-col cols="12">
-        <div class="box">
-          <b-row>
-            <b-col cols="12" class="m-2 text-left">
-              <router-link :to="{name:constants.URL_TYPE.VIDEO.MAIN}">
-                <kbd>영상분석</kbd>
-              </router-link>아무것도 없어서 더미데이터가 들어있습니다.
-            </b-col>
-            <b-col cols="12">
-              <b-table striped hover :items="lastVideo" :fields="lastVideoFields" v-if="lastVideo">
-                <template v-slot:cell(date)="data">{{ postDT(data.value) }}</template>
-                <template v-slot:cell(to)="data">
-                  <router-link :to="'/vdetail/'+data.item.videoNo">
-                    <b-icon icon="arrow-right-circle" font-scale="2"></b-icon>
-                  </router-link>
-                </template>
-              </b-table>
-              <div v-else>진행중인 투표글이 없습니다.</div>
-            </b-col>
-          </b-row>
-        </div>
-      </b-col>
-      <b-col cols="12">
-        <a href="/welcome" class="maintitle sub mt-4">About us</a>
-      </b-col>
-    </b-row>
+  <div>
+    <Carousel/>
+    <div class="container p-4">
+      <b-row class="maintitle text-center">
+        <b-col cols="12">DEMACIA</b-col>
+        <b-col cols="12" class="sub pb-4 mb-4">FOR JUSTICE</b-col>
+      </b-row>
+      <b-row class="part">
+        <b-col cols="12" lg="6">
+          <div class="box">
+            <b-row>
+              <b-col cols="12" class="m-2 text-left">
+                <router-link :to="{name:constants.URL_TYPE.RECOMMEND.COMBINATION}">
+                  <kbd>조합 추천받기</kbd>
+                </router-link>누르면 로그인 창으로 갑니다.
+              </b-col>
+              <b-col>
+                <p>
+                  Use this area to describe your project. Lorem ipsum dolor
+                  sit amet, consectetur adipisicing elit. Est blanditiis
+                  dolorem culpa incidunt minus dignissimos deserunt repellat
+                  aperiam quasi sunt officia expedita beatae cupiditate,
+                  maiores repudiandae, nostrum, reiciendis facere nemo!
+                </p>
+              </b-col>
+            </b-row>
+          </div>
+        </b-col>
+        <b-col cols="12" sm="6">
+          <div class="box">
+            <b-row>
+              <b-col cols="12" class="m-2 text-left">
+                <router-link :to="{name:constants.URL_TYPE.RECOMMEND.CHAMPION}">
+                  <kbd>챔피언 추천받기</kbd>
+                </router-link>누르면 로그인 창으로 갑니다.
+              </b-col>
+              <b-col>
+                <p>
+                  Use this area to describe your project. Lorem ipsum dolor
+                  sit amet, consectetur adipisicing elit. Est blanditiis
+                  dolorem culpa incidunt minus dignissimos deserunt repellat
+                  aperiam quasi sunt officia expedita beatae cupiditate,
+                  maiores repudiandae, nostrum, reiciendis facere nemo!
+                </p>
+              </b-col>
+            </b-row>
+          </div>
+        </b-col>
+        <b-col cols="12">
+          <div class="box">
+            <b-row>
+              <b-col cols="12" class="m-2 text-left">
+                <router-link :to="{name:constants.URL_TYPE.POST.MAIN}">
+                  <kbd>진행중 투표</kbd>
+                </router-link>보이는게 없어서 그냥 최근 5개만 보이는 중입니다.
+              </b-col>
+              <b-col cols="12">
+                <b-table striped hover :items="lastPost" :fields="lastPostFields" v-if="lastPost">
+                  <template v-slot:cell(postDate)="data">{{ postDT(data.value) }}</template>
+                  <template v-slot:cell(to)="data">
+                    <router-link :to="'/detail/'+data.item.postNo">
+                      <b-icon icon="arrow-right-circle" font-scale="2"></b-icon>
+                    </router-link>
+                  </template>
+                </b-table>
+                <div v-else>진행중인 투표글이 없습니다.</div>
+              </b-col>
+            </b-row>
+          </div>
+        </b-col>
+        <b-col cols="12">
+          <div class="box">
+            <b-row>
+              <b-col cols="12" class="m-2 text-left">
+                <router-link :to="{name:constants.URL_TYPE.VIDEO.MAIN}">
+                  <kbd>영상분석</kbd>
+                </router-link>아무것도 없어서 더미데이터가 들어있습니다.
+              </b-col>
+              <b-col cols="12">
+                <b-table striped hover :items="lastVideo" :fields="lastVideoFields" v-if="lastVideo">
+                  <template v-slot:cell(date)="data">{{ postDT(data.value) }}</template>
+                  <template v-slot:cell(to)="data">
+                    <router-link :to="'/vdetail/'+data.item.videoNo">
+                      <b-icon icon="arrow-right-circle" font-scale="2"></b-icon>
+                    </router-link>
+                  </template>
+                </b-table>
+                <div v-else>진행중인 투표글이 없습니다.</div>
+              </b-col>
+            </b-row>
+          </div>
+        </b-col>
+        <b-col cols="12">
+          <a href="/welcome" class="maintitle sub mt-4">About us</a>
+        </b-col>
+      </b-row>
+    </div>
   </div>
 </template>
 <script>
+import Carousel from '../components/common/Carousel.vue'
 import constants from "../lib/constants";
 import axios from "axios";
 
 export default {
+  components: {
+    Carousel
+  },
   data() {
     return {
       constants,
