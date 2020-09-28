@@ -138,6 +138,6 @@ USE_TZ = True
 STATIC_URL = '/static/'
 #STATIC_DIR = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = [
-    "/home/ubuntu/djangobackend/static"
+    "/home/ubuntu/.static_root"
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
