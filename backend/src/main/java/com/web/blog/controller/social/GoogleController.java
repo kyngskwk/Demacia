@@ -97,7 +97,8 @@ public class GoogleController {
                 user.setProviderName("GOOGLE");
                 user.setUserEmail(userEmail);
                 user.setAccessToken(access_token);
-
+                userService.userUpdate(user);
+                
                 result.status = true;
                 result.data = "Success";
                 result.object = user;
