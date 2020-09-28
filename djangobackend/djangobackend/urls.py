@@ -45,5 +45,4 @@ urlpatterns = [
     # url(r'^swagger(?P<format>\.json|\.yaml)$', schema_view.without_ui(cache_timeout=0), name='schema-json'), 
     # url(r'^swagger/$', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'), 
     # url(r'^redoc/$', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
-]
-urlpatterns += static('/static/', document_root='/home/ubuntu/.static_root')
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
