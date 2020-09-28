@@ -52,9 +52,10 @@ public class GoogleController {
         final BasicResponse result = new BasicResponse();
 
         try {
-
+        System.out.println("test1");
         //HTTP Request를 위한 RestTemplate
-	final RestTemplate restTemplate = new RestTemplate();
+        final RestTemplate restTemplate = new RestTemplate();
+        System.out.println("test2");
         //Google OAuth Access Token 요청을 위한 파라미터 세팅
         final GoogleOAuthRequest googleOAuthRequestParam = GoogleOAuthRequest
                 .builder()
@@ -63,22 +64,22 @@ public class GoogleController {
                 .code(code)
                 .redirectUri(redirectUrl)
                 .grantType("authorization_code").build();
-
+        System.out.println("test3");
         //JSON 파싱을 위한 기본값 세팅
 	//요청시 파라미터는 스네이크 케이스로 세팅되므로 Object mapper에 미리 설정해준다.
 	final ObjectMapper mapper = new ObjectMapper();
 	mapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
         mapper.setSerializationInclusion(Include.NON_NULL);
-                
+        System.out.println("test4");        
         //AccessToken 발급 요청
         final String GOOGLE_TOKEN_BASE_URL = "https://oauth2.googleapis.com/token";
         final ResponseEntity<String> resultEntity = restTemplate.postForEntity(GOOGLE_TOKEN_BASE_URL, googleOAuthRequestParam, String.class);
-
+        System.out.println("test5");
         //Token Request
         final GoogleOAuthResponse requestresult = mapper.readValue(resultEntity.getBody(), new TypeReference<GoogleOAuthResponse>() {});
         String access_token = requestresult.getAccessToken();
         System.out.println("google accesstoken : "+access_token);
-
+        
         //ID Token만 추출 (사용자의 정보는 jwt로 인코딩 되어있다)
 	String jwtToken = requestresult.getIdToken();
 	String requestUrl = UriComponentsBuilder.fromHttpUrl("https://oauth2.googleapis.com/tokeninfo")
@@ -131,6 +132,7 @@ public class GoogleController {
             }
                 
         } catch (Exception e) {
+                e.printStackTrace();
                 result.status = false;
                 result.data = "socialLogin Fail";
 
