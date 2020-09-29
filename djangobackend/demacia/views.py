@@ -12,7 +12,6 @@ from django.views.decorators.csrf import csrf_exempt
 from django.utils.decorators import method_decorator
 # Create your views here.
 
-
 @api_view(['GET'])
 def recommand_champion(request,userno):
     champions = Match.objects.filter(userno=userno)#{'티모':0.7,'아리':0.6,'럭스':0.3}
@@ -31,22 +30,15 @@ def recommand_champion(request,userno):
         group = [str(similar_cham[0]["chamkey"]),str(similar_cham[1]["chamkey"]),str(similar_cham[2]["chamkey"])]
         similar_cham_recommand.setdefault(key,0)
         similar_cham_recommand[key] = group
-    keylist = []
-    valuelist = []
-    for key, value in serializers.data[0]['recommand_champion'].items():
-        keylist.append(key)
-        valuelist.append(value)
-
     resonse_data = {
         'recommand_cham_info': serializers.data,
         'similar_cham_recommand': [similar_cham_recommand]
-        'key1' = keylist[0]
-        'value1' = valuelist[0]
-        'key2' = keylist[1]
-        'value2' = valuelist[1]
-        'key3' = keylist[2]
-        'value3' = valuelist[2]
     }
+
+
+    # ['ENTP', 'ESTJ', 'ESFJ']
+    
+    return Response(resonse_data)
 
 @api_view(['GET'])
 def recommand_group(request,userno):
