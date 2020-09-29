@@ -41,7 +41,7 @@
     <update id="userUpdate">
         update
             user
-        set userPw=#{userPw}, userNickname=#{userNickname}, userImage=#{userImage}
+        set userPw=#{userPw}, userNickname=#{userNickname}, userImage=#{userImage}, accessToken=#{accessToken}, providerName=#{providerName}
         where
            userEmail = #{userEmail}
     </update>

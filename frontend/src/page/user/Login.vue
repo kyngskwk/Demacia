@@ -1,12 +1,15 @@
 <template>
   <div class="block1 d-flex">
-    <div class="main" style="width:100%;">
+    <div class="main" style="width: 100%">
       <div class="col-xl-4 col-lg-4 col-md-8 col-sm-12 m-auto">
-        <div class="login-form border rounded" style="padding:50px;background-color: white;">
+        <div
+          class="login-form border rounded"
+          style="padding: 50px; background-color: white"
+        >
           <img
             :src="logologin"
             alt="logo2"
-            style="width:90%; margin-bottom:3em; margin-left:15px"
+            style="width: 90%; margin-bottom: 3em; margin-left: 15px"
             draggable="false"
           />
           <div class="form-group">
@@ -15,7 +18,12 @@
               placeholder="이메일"
               id="email"
               size="lg"
-              style="width:80%;margin-right:auto; margin-left:auto; margin-bottom:5%;"
+              style="
+                width: 80%;
+                margin-right: auto;
+                margin-left: auto;
+                margin-bottom: 5%;
+              "
               v-model="email"
               :state="emailValid"
             />
@@ -27,7 +35,12 @@
               id="password"
               v-model="password"
               size="lg"
-              style="width:80%;margin-right:auto; margin-left:auto;margin-bottom:5%;"
+              style="
+                width: 80%;
+                margin-right: auto;
+                margin-left: auto;
+                margin-bottom: 5%;
+              "
               :state="pwValid"
               @keydown.enter="loginCheck"
             />
@@ -35,17 +48,21 @@
           <div
             @click="loginCheck"
             class="btn btn-primary btn-lg"
-            style="width:80%; margin-bottom:5%"
-          >로그인</div>
+            style="width: 80%; margin-bottom: 5%"
+          >
+            로그인
+          </div>
           <div
             @click="signuppage"
             class="btn btn-secondary btn-lg"
-            style="width:80%;margin-bottom:2%;"
-          >회원가입</div>
+            style="width: 80%; margin-bottom: 2%"
+          >
+            회원가입
+          </div>
           <img
             :src="kakaologo"
             class="btn"
-            style="width:87%;"
+            style="width: 87%"
             alt="kakaologo"
             draggable="false"
             @click="kakao"
@@ -53,14 +70,15 @@
           <img
             :src="naverlogo"
             class="btn"
-            style="width:86%;"
+            style="width: 86%"
             alt="naverlogo"
-            @click="naver"
+            @click="google"
             draggable="false"
           />
         </div>
       </div>
     </div>
+    <img id="profile" :src="newImg" />
   </div>
 </template>
 
@@ -79,14 +97,39 @@ export default {
       emailValid: null,
       pwValid: null,
       kakaologo: process.env.VUE_APP_IMGUP_URL + "/images/login/kakaologo.PNG",
-      naverlogo: process.env.VUE_APP_IMGUP_URL + "/images/login/naverlogo.png",
+      naverlogo: process.env.VUE_APP_IMGUP_URL + "/images/login/googlelogo.png",
       logologin: process.env.VUE_APP_IMGUP_URL + "/images/login/loginlogo.PNG",
+      newImg: "",
     };
   },
 
   created() {
     window.scrollTo(0, 0);
-    if (this.$route.query.code) {
+    if (this.$route.query.scope) {
+      console.log("goolelogin:" + this.$route.query.code);
+      axios
+        .get(process.env.VUE_APP_API_URL + "/login/google", {
+          params: {
+            code: this.$route.query.code,
+            redirectUrl: process.env.VUE_APP_BASE_URL + "/login",
+          },
+        })
+        .then((res) => {
+          if (res.data.status) {
+            res.data.object.userPw = "";
+            this.$store.commit("addUserInfo", res.data.object);
+            // 세션에 로그인 정보 추가
+            sessionStorage.setItem("user", JSON.stringify(res.data.object));
+            location.href = "/";
+          } else {
+            this.emailValid = this.pwValid = false;
+            this.errToast("구글 아이디 또는 비밀번호를 확인해주세요");
+          }
+        })
+        .catch((err) => {
+          location.href = "/error/로그인 중 서버 오류가 발생했습니다. " + err;
+        });
+    } else if (this.$route.query.code) {
       console.log(this.$route.query.code);
       axios
         .get(process.env.VUE_APP_API_URL + "/login/oauth", {
@@ -98,26 +141,35 @@ export default {
         .then((res) => {
           if (res.data.status) {
             res.data.object.userPw = "";
-            // if (res.data.object.userImage.includes("http:")) {
-            //   let uploadImageFile = res.data.object.userImage;
-            //   const fd = new FormData();
-            //   fd.append(
-            //     "upLoadImage",
-            //     uploadImageFile,
-            //     res.data.object.userNo + ".jpg"
-            //   );
-            //   axios
-            //     .post(process.env.VUE_APP_IMGUP_URL + "/upload", fd, {
-            //       headers: {
-            //         "Content-Type": "multipart/form-data",
-            //       },
-            //     })
-            //     .then(() => {
-            //       console.log("succes");
-            //       res.data.object.userImage =
-            //         "/images/" + res.data.object.userNo + ".jpg";
-            //     });
-            // }
+            if (res.data.object.userImage) {
+              var canvas = document.createElement("CANVAS");
+              canvas.getContext("2d");
+              const fd = new FormData();
+              fd.append(
+                "upLoadImage",
+                canvas.toBlob(function (blob) {
+                  var newImg = document.getElementById("profile");
+                  var url = URL.createObjectURL(blob);
+                  newImg.onload = function () {
+                    URL.revokeObjectURL(url);
+                  };
+                  newImg.src = url;
+                  document.body.appendChild(newImg);
+                }),
+                res.data.object.userNo + ".jpg"
+              );
+              axios
+                .post(process.env.VUE_APP_IMGUP_URL + "/upload", fd, {
+                  headers: {
+                    "Content-Type": "multipart/form-data",
+                  },
+                })
+                .then(() => {
+                  console.log("succes");
+                  res.data.object.userImage =
+                    "/images/" + res.data.object.userNo + ".jpg";
+                });
+            }
             this.$store.commit("addUserInfo", res.data.object);
             // 세션에 로그인 정보 추가
             sessionStorage.setItem("user", JSON.stringify(res.data.object));
@@ -142,9 +194,20 @@ export default {
         process.env.VUE_APP_BASE_URL +
         "/login&response_type=code";
     },
-    naver() {
-      this.errToast("네이버와 계약에 실패해서 서비스를 제공할 수 없었습니다..");
+
+    google() {
+      location.href =
+        "https://accounts.google.com/o/oauth2/v2/auth?" +
+        "scope=https://www.googleapis.com/auth/userinfo.email&https://www.googleapis.com/auth/userinfo.profile&openid" +
+        "include_granted_scopes=true&" +
+        "response_type=code&" +
+        "state=state_parameter_passthrough_value&" +
+        "redirect_uri=" +
+        process.env.VUE_APP_BASE_URL +
+        "/login&" +
+        "client_id=1023963510057-bijvog3gfp162178b7iqu978ruruqkq2.apps.googleusercontent.com";
     },
+
     loginCheck() {
       let err = false;
       this.emailValid = !(
@@ -188,7 +251,7 @@ export default {
             console.log(this.$store.state.userInfo);
             // 세션에 로그인 정보 추가
             sessionStorage.setItem("user", JSON.stringify(res.data.object));
-            location.href = "/list";
+            location.href = "/";
           } else {
             this.emailValid = this.pwValid = false;
             this.errToast("아이디 또는 비밀번호를 확인해주세요");
