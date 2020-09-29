@@ -107,15 +107,10 @@ public class KakaoAPI {
             JsonParser parser = new JsonParser();
             JsonElement element = parser.parse(result);
 
-            JsonObject properties = element.getAsJsonObject().get("properties").getAsJsonObject();
             JsonObject kakao_account = element.getAsJsonObject().get("kakao_account").getAsJsonObject();
 
-            String nickname = properties.getAsJsonObject().get("nickname").getAsString();
             String email = kakao_account.getAsJsonObject().get("email").getAsString();
-            String image = properties.getAsJsonObject().get("thumbnail_image").getAsString();
-            userInfo.put("userNickname", nickname);
             userInfo.put("userEmail", email);
-            userInfo.put("thumbnail_image", image);
 
         } catch (IOException e) {
             // TODO Auto-generated catch block

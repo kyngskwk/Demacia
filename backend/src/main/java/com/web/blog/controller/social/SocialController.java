@@ -49,8 +49,6 @@ public class SocialController {
             System.out.println("login Controller : " + userInfo);
 
             String userEmail = userInfo.get("userEmail");
-            String userNickname = userInfo.get("userNickname");
-            String userImage = userInfo.get("thumbnail_image");
 
             // 기존에 정보를 저장한 회원정보가 있는 경우
             if (userService.socialuserByEmail(userEmail) != null) {
@@ -70,14 +68,15 @@ public class SocialController {
                 User OauthUser = new User();
                 OauthUser.setProviderName("KAKAO");
                 OauthUser.setUserEmail(userEmail);
-                OauthUser.setUserNickname(userNickname);
+                OauthUser.setUserNickname(userEmail);
                 OauthUser.setAccessToken(access_Token);
-                OauthUser.setUserImage(userImage);
                 System.out.println(" 소셜 유저 정보 " + OauthUser.toString());
                 int res = userService.socialuserInsert(OauthUser);
                 System.out.println("res : " + res);
                 if (res == 1) {
                     User user = userService.socialuserByEmail(userEmail);
+                    user.setUserNickname("user-" + user.getUserNo());
+                    userService.userUpdate(user);
                     result.status = true;
                     result.data = "Success";
                     result.object = user;
@@ -100,23 +99,22 @@ public class SocialController {
         return response;
     }
 
-    @RequestMapping(value = "/logout/oauth")
-    @GetMapping
-    public Object logout(HttpSession session) {
-
+    @GetMapping(value = "/logout/oauth")
+    public Object logout(String accesstoken) {
         ResponseEntity response = null;
         final BasicResponse result = new BasicResponse();
 
         try {
-            kakao.kakaoLogout((String) session.getAttribute("access_Token"));
-
+            kakao.kakaoLogout(accesstoken);
+            System.out.println("Success logout");
             result.status = true;
             result.data = "Success logout";
 
             response = new ResponseEntity<>(result, HttpStatus.OK);
         } catch (Exception e) {
             result.status = false;
-            result.data = "socialLogin Fail";
+            result.data = "logout Fail";
+            System.out.println("logout Fail");
 
             response = new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
         }
