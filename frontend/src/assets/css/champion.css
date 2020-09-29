@@ -1,3 +1,16 @@
-h1{
+#title{
+    text-align: center;
+    margin-bottom: 5%;
+}
+
+.rank{
     text-align: left;
+}
+
+.sub{
+    padding-top: 5%;
+}
+
+.article{
+    margin-bottom: 5%;
 }
