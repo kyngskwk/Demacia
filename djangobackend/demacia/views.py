@@ -258,11 +258,10 @@ def videopostlike_create_and_delete(request):
 
 @api_view(['GET'])
 def analyze_data(request,userno):
-
+    videopost = Videopost.objects.filter(userno=userno)
     videoid = Videopost.objects.filter(userno=userno).values('video').distinct()[0]['video']
-    # print(video.get_image(videoid))
-    print(get_image('10-19_KR-4659518008_01.mp4'))
-    # print(videoid)
+    # get_image.get_image_function('10-19_KR-4659518008_01.mp4')
+ 
     serializers = VideopostSerializer(videopost, many=True)
     return Response(serializers.data)
 

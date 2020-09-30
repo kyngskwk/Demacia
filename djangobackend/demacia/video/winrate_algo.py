@@ -96,8 +96,8 @@ def winning_rate(part_set,part_set1,gameId):
         for key,value in part_set1[i].items():
             champions_records[i-1].append([key,value])
 
-    # for i in range(10):
-    #     print(champions_records[i])
+    for i in range(10):
+        print(champions_records[i])
     return before_bluescore, before_redscore, after_bluescore, after_redscore, champions_records
 
 # winning_rate( [{}, {'WARD_PLACED': 4, 'totalGold': 4243, 'level': 10, 'totalminionsKilled': 90}, {'WARD_PLACED': 6, 'CHAMPION_KILL': 1, 'WARD_KILL': 1, 'totalGold': 5333, 'level': 9, 'totalminionsKilled': 90}, {'WARD_PLACED': 4, 'CHAMPION_KILL': 3, 'totalGold': 4974, 'level': 11, 'totalminionsKilled': 81}, {'WARD_PLACED': 9, 'CHAMPION_KILL': 1, 'WARD_KILL': 1, 'totalGold': 4311, 'level': 8, 'totalminionsKilled': 87}, {'WARD_PLACED': 

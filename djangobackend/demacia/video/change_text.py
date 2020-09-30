@@ -5,7 +5,7 @@ import numpy as np
 import re
 import cv2
 import pytesseract
-from . import timeline
+import timeline
 pytesseract.pytesseract.tesseract_cmd = r'C:\\Program Files\\Tesseract-OCR\\tesseract'
 def module(gameId):
 # --------------------------------------------------------------------
