@@ -1,29 +1,30 @@
 # -*- coding: utf-8 -*-
 
 import cv2
-import change_text 
+from . import change_text 
  
 # 영상의 의미지를 연속적으로 캡쳐할 수 있게 하는 class
-videoname = '10-19_KR-4664501922_06.mp4'
-vidcap = cv2.VideoCapture('./%s' % videoname)
-gameId = videoname[9:-7]
+def get_image_function(videoname):
+    # videoname = '10-19_KR-4664501922_06.mp4'
+    vidcap = cv2.VideoCapture('./%s' % videoname)
+    gameId = videoname[9:-7]
 
-count = 0
+    count = 0
 
-length = int(vidcap.get(cv2.CAP_PROP_FRAME_COUNT))
-while(vidcap.isOpened()):
-    ret, image = vidcap.read()
-    if int(vidcap.get(1)) == 50:
-        print('Saved frame number : ' + str(int(vidcap.get(1))))
-        cv2.imwrite("./images/frame%d.jpg" % count, image)
-        print('Saved frame%d.jpg' % count)
-        count += 1
-    elif int(vidcap.get(1)) % (length-50) == 0:
-        print('Saved frame number : ' + str(int(vidcap.get(1))))
-        cv2.imwrite("./images/frame%d.jpg" % count, image)
-        print('Saved frame%d.jpg' % count)
-        count += 1
-    elif int(vidcap.get(1)) == (length-10):
-        break
+    length = int(vidcap.get(cv2.CAP_PROP_FRAME_COUNT))
+    while(vidcap.isOpened()):
+        ret, image = vidcap.read()
+        if int(vidcap.get(1)) == 50:
+            print('Saved frame number : ' + str(int(vidcap.get(1))))
+            cv2.imwrite("./images/frame%d.jpg" % count, image)
+            print('Saved frame%d.jpg' % count)
+            count += 1
+        elif int(vidcap.get(1)) % (length-50) == 0:
+            print('Saved frame number : ' + str(int(vidcap.get(1))))
+            cv2.imwrite("./images/frame%d.jpg" % count, image)
+            print('Saved frame%d.jpg' % count)
+            count += 1
+        elif int(vidcap.get(1)) == (length-10):
+            break
 
-change_text.module(gameId)
+    change_text.module(gameId)

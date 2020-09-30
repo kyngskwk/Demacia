@@ -6,8 +6,8 @@ def live_and_before(time1,gameId):
     time = []
     for t in range(int(time1[0][0])+1,int(time1[1][0])+2):
         time.append(t)
-    print(time)
-    print(gameId)
+    # print(time)
+    # print(gameId)
     url = "https://kr.api.riotgames.com/lol/match/v4/timelines/by-match/"+str(gameId)+"?api_key=RGAPI-4dcd2099-2605-4440-9864-f53a305141e7"
     time_data = requests.get(url).json()["frames"]
     # print(time_data)
@@ -61,7 +61,7 @@ def live_and_before(time1,gameId):
                 part_set[idx]["totalminionsKilled"] = part_info[str(idx)]["minionsKilled"] + part_info[str(idx)]["jungleMinionsKilled"]
 
 
-    print(part_set)
+    # print(part_set)
 
 
 #---------------------------------------영상 실시간 기록---------------------------------
@@ -93,5 +93,5 @@ def live_and_before(time1,gameId):
                 part_set1[event["killerId"]].setdefault(real_event, [])
                 part_set1[event["killerId"]][real_event] += [event["monsterType"]]
 
-    print(part_set1)
+    # print(part_set1)
     winrate_algo.winning_rate(part_set,part_set1,gameId)
