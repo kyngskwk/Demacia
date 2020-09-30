@@ -1,6 +1,6 @@
 import requests
 import json
-import winrate_algo
+from . import winrate_algo
 
 def live_and_before(time1,gameId):
     time = []

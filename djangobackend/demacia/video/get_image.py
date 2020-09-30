@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import cv2
-from . import change_text 
+from . import change_text
  
 # 영상의 의미지를 연속적으로 캡쳐할 수 있게 하는 class
 def get_image_function(videoname):
@@ -27,4 +27,4 @@ def get_image_function(videoname):
         elif int(vidcap.get(1)) == (length-10):
             break
 
-    change_text.module(gameId)
+    return change_text.module(gameId)

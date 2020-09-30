@@ -41,8 +41,8 @@ def winning_rate(part_set,part_set1,gameId):
             for key,value in part_set[i].items():
                 if key in redteam:
                     redteam[key] +=part_set[i][key]
-    print(blueteam)
-    print(redteam)
+    # print(blueteam)
+    # print(redteam)
     bluescore = 50
     wardgap = blueteam['WARD_PLACED'] - redteam['WARD_PLACED']
     killgap = blueteam['CHAMPION_KILL'] - redteam['CHAMPION_KILL']
@@ -88,7 +88,7 @@ def winning_rate(part_set,part_set1,gameId):
     bluescore += wardgap/5 + killgap*0.5 + levelgap*0.2 + goldgap/7000 + buildinggap*0.5 + dragongap*3
     bluescore = round(bluescore,2)
     redscore = 100-bluescore
-    print(bluescore,'vs',redscore) # 영상 이후 승률
+    # print(bluescore,'vs',redscore) # 영상 이후 승률
     after_bluescore = bluescore
     after_redscore = redscore
 
