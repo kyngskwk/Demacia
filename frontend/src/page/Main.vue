@@ -1,9 +1,13 @@
 <template>
   <div class="container p-4">
     <b-row class="maintitle text-center">
-      <b-col cols="12">DEMACIA</b-col>
-      <b-col cols="12" class="sub pb-4 mb-4">FOR JUSTICE</b-col>
+      <img src="../assets/img/damacia.png" alt="" style="display:block; margin:100px auto 0px">
+      <b-col cols="12" class="sub pb-4 mb-4">
+        <img src="../assets/img/subtitle.png" alt="" style="display:block; margin:0px auto 50px">
+      </b-col>
     </b-row>
+
+    <img src="../assets/img/recommtitle.png" alt="" style="margin:50px 0px 0px">
     <b-row class="part">
       <b-col cols="12" lg="6">
         <div class="box">
@@ -46,13 +50,11 @@
         </div>
       </b-col>
       <b-col cols="12">
+        <router-link :to="{name:constants.URL_TYPE.POST.MAIN}">
+          <img src="../assets/img/votetitle.png" alt="" style="margin:50px 0px 0px">
+        </router-link>
         <div class="box">
           <b-row>
-            <b-col cols="12" class="m-2 text-left">
-              <router-link :to="{name:constants.URL_TYPE.POST.MAIN}">
-                <kbd>진행중 투표</kbd>
-              </router-link>보이는게 없어서 그냥 최근 5개만 보이는 중입니다.
-            </b-col>
             <b-col cols="12">
               <b-table striped hover :items="lastPost" :fields="lastPostFields" v-if="lastPost">
                 <template v-slot:cell(postDate)="data">{{ postDT(data.value) }}</template>
@@ -68,13 +70,11 @@
         </div>
       </b-col>
       <b-col cols="12">
+        <router-link :to="{name:constants.URL_TYPE.VIDEO.MAIN}">
+          <img src="../assets/img/videotittle.png" alt="" style="margin:50px 0px 0px">
+        </router-link>
         <div class="box">
           <b-row>
-            <b-col cols="12" class="m-2 text-left">
-              <router-link :to="{name:constants.URL_TYPE.VIDEO.MAIN}">
-                <kbd>영상분석</kbd>
-              </router-link>아무것도 없어서 더미데이터가 들어있습니다.
-            </b-col>
             <b-col cols="12">
               <b-table striped hover :items="lastVideo" :fields="lastVideoFields" v-if="lastVideo">
                 <template v-slot:cell(date)="data">{{ postDT(data.value) }}</template>
@@ -90,7 +90,9 @@
         </div>
       </b-col>
       <b-col cols="12">
-        <a href="/welcome" class="maintitle sub mt-4">About us</a>
+        <a href="/welcome" >
+          <img src="../assets/img/aboutus.png" alt="" style="display:block; margin:100px auto 50px">
+        </a>
       </b-col>
     </b-row>
   </div>

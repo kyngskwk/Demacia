@@ -3,10 +3,12 @@
     <nav
       class="navbar navbar-expand-lg navbar-dark fixed-top"
       id="mainNav"
-      style="background-color: black;"
+      style="opacity:0.8; background: linear-gradient(180deg, rgba(6,17,27,1) 0%, rgba(28,83,73,1) 100%);"
     >
       <div class="container">
-        <a class="navbar-brand mx-0" href="/" style="padding-top:5px; font-size:2em">DEMACIA</a>
+        <a class="navbar-brand mx-0" href="/" style="padding-top:5px; font-size:2em;">
+          <img src="../../assets/img/damacia.png" alt="" style="width:200px">
+        </a>
         <button
           class="navbar-toggler"
           type="button"
@@ -157,7 +159,7 @@ export default {
 </script>
 <style scoped>
 .dropdown-item {
-  color: rgba(255, 255, 255, 0.5) !important;
+  color: #e3d19e !important;
 }
 .dropdown-item:hover {
   color: inherit !important;
