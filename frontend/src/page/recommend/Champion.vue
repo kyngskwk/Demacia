@@ -1,232 +1,221 @@
 <template>
-<b-container class="bv-example-row bv-example-row-flex-cols">
-  <div><img src="../../assets/img/picktitle.png" alt="" class="mt-5 mb-3"></div>
-  <div><img src="../../assets/img/chamtitle.png" alt="" class="mb-5"></div>
-  <div class="box px-3 pb-3 chambox">
-    <div>
-      <div class="chamtitle pl-4"><p>FIRST PICK</p></div>
-    </div>
-    <b-row align-v="stretch" class="article mb-0">
-      <b-col cols="4" class="d-flex justify-content-center">
-        <div class="mt-5">
-          <img
-          class="chamimg"
-          thumbnail
-          width="300px"
-          :src="cham_no1.imgsrc.replace('@/assets/img', '').replace('_1.', '_0.')"
-          /> 
-          <b-badge pill variant="warning" class="pickname">{{cham_no1.chamname}} | {{cham_no1.korname}}</b-badge>
-          <b-progress class="mt-3">
-            <b-progress-bar :value="cham_no1_rate" variant="info" striped :animated="animate">
-              <span>승률: <strong>{{ cham_no1_rate }}%</strong></span>
-            </b-progress-bar>
-          </b-progress> 
-        </div>
-      </b-col>
-      <b-col cols="8" class="sub">
-        <b-row align-v="center" class="text-white">
-            <b-col><h3><span class="text-info">{{user.userNickname}}</span>님이 가장 잘하는 챔피언은 <span class="text-warning">{{cham_no1.korname}}</span></h3></b-col>
-        </b-row>
-        <b-row align-v="center" class="text-white">
-            <b-col><h3><span class="text-warning">{{cham_no1.korname}}</span>의 승률은 {{cham_no1_rate}}%</h3></b-col>
-        </b-row>
-        <div class="simchams mt-5">
-          <div class="simtitle mb-5"><p>비슷한 성향을 가진 챔피언들</p></div>
-          <b-row align-v="center">
-            <b-col>
-            <b-img
-              style="border-style:ridge; border: #fcd000 3px ridge;"
-              width="100%"
-              :src="sim_info[0].imgsrc.replace('@/assets/img', '').replace('_1.', '_0.')"
-            /> 
-          </b-col>
-          <b-col>
-            <b-img
-              style="border-style:ridge; border: #fcd000 3px ridge;"
-              width="100%"
-              :src="sim_info[1].imgsrc.replace('@/assets/img', '').replace('_1.', '_0.')"
-            /> 
-          </b-col>
-          <b-col>
-            <b-img
-              style="border-style:ridge; border: #fcd000 3px ridge;"
-              width="100%"
-              :src="sim_info[2].imgsrc.replace('@/assets/img', '').replace('_1.', '_0.')"
-            /> 
-          </b-col>
-          </b-row>
-          <b-row align-v="center">
-            <b-col>
-              <b-badge pill variant="warning" class="pickname">{{sim_info[0].chamname}} | {{sim_info[0].korname}}</b-badge>
-            </b-col>
-            <b-col>
-              <b-badge pill variant="warning" class="pickname">{{sim_info[1].chamname}} | {{sim_info[1].korname}}</b-badge>
-            </b-col>
-            <b-col>
-              <b-badge pill variant="warning" class="pickname">{{sim_info[2].chamname}} | {{sim_info[2].korname}}</b-badge>
-            </b-col>
-          </b-row>
-        </div>
+  <b-container class="bv-example-row bv-example-row-flex-cols">
+    <div><img src="../../assets/img/picktitle.png" alt="" class="mt-5 mb-3"></div>
+    <div><img src="../../assets/img/chamtitle.png" alt="" class="mb-5"></div>
 
-      </b-col>
-    </b-row>
-  </div>
-  <b-card class="m-2">
-  <b-row align-v="stretch" class="article">
-    <b-col cols="4">
-        <h3 class="rank">1위</h3>
-        <img
-                thumbnail
-                width="100%"
-                :src="cham_no1.imgsrc.replace('@/assets/img', '').replace('_1.', '_0.')"
-        />   
-    </b-col>
-    <b-col cols="8" class="sub">
-        <b-row align-v="center">
-            <b-col><h3>{{user.userNickname}}님이 가장 잘하는 챔피언은 {{cham_no1.korname}}</h3></b-col>
-        </b-row>
-        <b-row align-v="center">
-            <b-col><h3>{{cham_no1.korname}}의 승률은 {{cham_no1_rate}}%</h3></b-col>
-        </b-row>
-        <b-row align-v="center">
-            <b-col>비슷한 성향을 가진 챔피언들 : </b-col>
-        </b-row>
-        <b-row align-v="center">
-          <b-col>
-          <b-img
-                thumbnail
+  <!-- 1위 챔피언 -->
+    <div class="box px-3 pb-3 chambox mb-5">
+      <div>
+        <div class="chamtitle pl-4"><p>FIRST PICK</p></div>
+      </div>
+      <b-row align-v="stretch" class="article mb-0">
+        <b-col cols="4" class="d-flex justify-content-center">
+          <div class="mt-5">
+            <img
+            class="chamimg"
+            thumbnail
+            width="300px"
+            :src="cham_no1.imgsrc.replace('@/assets/img', '').replace('_1.', '_0.')"
+            /> 
+            <b-badge pill variant="warning" class="pickname">{{cham_no1.chamname}} | {{cham_no1.korname}}</b-badge>
+            <b-progress class="mt-3">
+              <b-progress-bar :value="cham_no1_rate" variant="info" striped :animated="animate">
+                <span>승률: <strong>{{ cham_no1_rate }}%</strong></span>
+              </b-progress-bar>
+            </b-progress> 
+          </div>
+        </b-col>
+        <b-col cols="8" class="sub">
+          <b-row align-v="center" class="text-white">
+              <b-col><h3><span class="text-warning">{{user.userNickname}}</span>님이 가장 잘하는 챔피언은 <span class="text-warning">{{cham_no1.korname}}</span></h3></b-col>
+          </b-row>
+          <b-row align-v="center" class="text-white">
+              <b-col><h3><span class="text-warning">{{cham_no1.korname}}</span>의 승률은 {{cham_no1_rate}}%</h3></b-col>
+          </b-row>
+          <div class="simchams mt-5">
+            <div class="simtitle mb-5"><p>비슷한 성향을 가진 챔피언들</p></div>
+            <b-row align-v="center">
+              <b-col>
+              <b-img
+                style="border-style:ridge; border: #fcd000 3px ridge;"
                 width="100%"
                 :src="sim_info[0].imgsrc.replace('@/assets/img', '').replace('_1.', '_0.')"
-          /> 
-        </b-col>
-        <b-col>
-          <b-img
-                thumbnail
+              /> 
+            </b-col>
+            <b-col>
+              <b-img
+                style="border-style:ridge; border: #fcd000 3px ridge;"
                 width="100%"
                 :src="sim_info[1].imgsrc.replace('@/assets/img', '').replace('_1.', '_0.')"
-          /> 
-        </b-col>
-        <b-col>
-          <b-img
-                thumbnail
+              /> 
+            </b-col>
+            <b-col>
+              <b-img
+                style="border-style:ridge; border: #fcd000 3px ridge;"
                 width="100%"
                 :src="sim_info[2].imgsrc.replace('@/assets/img', '').replace('_1.', '_0.')"
-          /> 
-        </b-col>
-        </b-row>
-          <b-row align-v="center">
-            <b-col><h5>{{sim_info[0].korname}}</h5></b-col>
-            <b-col><h5>{{sim_info[1].korname}}</h5></b-col>
-            <b-col><h5>{{sim_info[2].korname}}</h5></b-col>
-        </b-row>
-    </b-col>
-  </b-row>
+              /> 
+            </b-col>
+            </b-row>
+            <b-row align-v="center">
+              <b-col>
+                <b-badge pill variant="warning" class="pickname">{{sim_info[0].chamname}} | {{sim_info[0].korname}}</b-badge>
+              </b-col>
+              <b-col>
+                <b-badge pill variant="warning" class="pickname">{{sim_info[1].chamname}} | {{sim_info[1].korname}}</b-badge>
+              </b-col>
+              <b-col>
+                <b-badge pill variant="warning" class="pickname">{{sim_info[2].chamname}} | {{sim_info[2].korname}}</b-badge>
+              </b-col>
+            </b-row>
+          </div>
 
-  <b-row align-v="stretch" class="article">
-    <b-col cols="4">
-        <h3 class="rank">2위</h3>
-        <img
-                thumbnail
-                width="100%"
-                :src="cham_no2.imgsrc.replace('@/assets/img', '').replace('_1.', '_0.')"
-        />   
-    </b-col>
-    <b-col cols="8" class="sub">
-        <b-row align-v="center">
-            <b-col><h3>{{user.userNickname}}님이 가장 잘하는 챔피언은 {{cham_no2.korname}}</h3></b-col>
-        </b-row>
-        <b-row align-v="center">
-            <b-col><h3>{{cham_no2.korname}}의 승률은 {{cham_no2_rate}}%</h3></b-col>
-        </b-row>
-        <b-row align-v="center">
-            <b-col>비슷한 성향을 가진 챔피언들 : </b-col>
-        </b-row>
-        <b-row align-v="center">
-          <b-col>
-          <b-img
-                thumbnail
+        </b-col>
+      </b-row>
+    </div>
+
+  <!-- 2위 챔피언 -->
+    <div class="box px-3 pb-3 chambox mb-5">
+      <div>
+        <div class="chamtitle pl-3"><p>SECOND PICK</p></div>
+      </div>
+      <b-row align-v="stretch" class="article mb-0">
+        <b-col cols="4" class="d-flex justify-content-center">
+          <div class="mt-5">
+            <img
+            class="chamimg"
+            thumbnail
+            width="300px"
+            :src="cham_no2.imgsrc.replace('@/assets/img', '').replace('_1.', '_0.')"
+            /> 
+            <b-badge pill variant="warning" class="pickname">{{cham_no2.chamname}} | {{cham_no2.korname}}</b-badge>
+            <b-progress class="mt-3">
+              <b-progress-bar :value="cham_no2_rate" variant="info" striped :animated="animate">
+                <span>승률: <strong>{{ cham_no2_rate }}%</strong></span>
+              </b-progress-bar>
+            </b-progress> 
+          </div>
+        </b-col>
+        <b-col cols="8" class="sub">
+          <b-row align-v="center" class="text-white">
+              <b-col><h3><span class="text-warning">{{user.userNickname}}</span>님이 가장 잘하는 챔피언은 <span class="text-warning">{{cham_no2.korname}}</span></h3></b-col>
+          </b-row>
+          <b-row align-v="center" class="text-white">
+              <b-col><h3><span class="text-warning">{{cham_no2.korname}}</span>의 승률은 {{cham_no2_rate}}%</h3></b-col>
+          </b-row>
+          <div class="simchams mt-5">
+            <div class="simtitle mb-5"><p>비슷한 성향을 가진 챔피언들</p></div>
+            <b-row align-v="center">
+              <b-col>
+              <b-img
+                style="border-style:ridge; border: #fcd000 3px ridge;"
                 width="100%"
                 :src="sim_info[3].imgsrc.replace('@/assets/img', '').replace('_1.', '_0.')"
-          /> 
-        </b-col>
-        <b-col>
-          <b-img
-                thumbnail
+              /> 
+            </b-col>
+            <b-col>
+              <b-img
+                style="border-style:ridge; border: #fcd000 3px ridge;"
                 width="100%"
                 :src="sim_info[4].imgsrc.replace('@/assets/img', '').replace('_1.', '_0.')"
-          /> 
-        </b-col>
-        <b-col>
-          <b-img
-                thumbnail
+              /> 
+            </b-col>
+            <b-col>
+              <b-img
+                style="border-style:ridge; border: #fcd000 3px ridge;"
                 width="100%"
                 :src="sim_info[5].imgsrc.replace('@/assets/img', '').replace('_1.', '_0.')"
-          /> 
-        </b-col>
-        </b-row>
-          <b-row align-v="center">
-            <b-col><h5>{{sim_info[3].korname}}</h5></b-col>
-            <b-col><h5>{{sim_info[4].korname}}</h5></b-col>
-            <b-col><h5>{{sim_info[5].korname}}</h5></b-col>
-        </b-row>
-    </b-col>
-  </b-row>
+              /> 
+            </b-col>
+            </b-row>
+            <b-row align-v="center">
+              <b-col>
+                <b-badge pill variant="warning" class="pickname">{{sim_info[3].chamname}} | {{sim_info[3].korname}}</b-badge>
+              </b-col>
+              <b-col>
+                <b-badge pill variant="warning" class="pickname">{{sim_info[4].chamname}} | {{sim_info[4].korname}}</b-badge>
+              </b-col>
+              <b-col>
+                <b-badge pill variant="warning" class="pickname">{{sim_info[5].chamname}} | {{sim_info[5].korname}}</b-badge>
+              </b-col>
+            </b-row>
+          </div>
 
-  <b-row align-v="stretch" class="article">
-    <b-col cols="4">
-        <h3 class="rank">3위</h3>
-        <img
-                thumbnail
-                width="100%"
-                :src="cham_no3.imgsrc.replace('@/assets/img', '').replace('_1.', '_0.')"
-        />   
-    </b-col>
-    <b-col cols="8" class="sub">
-        <b-row align-v="center">
-            <b-col><h3>{{user.userNickname}}님이 가장 잘하는 챔피언은 {{cham_no3.korname}}</h3></b-col>
-        </b-row>
-        <b-row align-v="center">
-            <b-col><h3>{{cham_no3.korname}}의 승률은 {{cham_no3_rate}}%</h3></b-col>
-        </b-row>
-        <b-row align-v="center">
-            <b-col>비슷한 성향을 가진 챔피언들 : </b-col>
-        </b-row>
-        <b-row align-v="center">
-          <b-col>
-          <b-img
-                thumbnail
+        </b-col>
+      </b-row>
+    </div>
+
+  <!-- 3위 챔피언 -->
+    <div class="box px-3 pb-3 chambox mb-5">
+      <div>
+        <div class="chamtitle pl-4"><p>THIRD PICK</p></div>
+      </div>
+      <b-row align-v="stretch" class="article mb-0">
+        <b-col cols="4" class="d-flex justify-content-center">
+          <div class="mt-5">
+            <img
+            class="chamimg"
+            thumbnail
+            width="300px"
+            :src="cham_no3.imgsrc.replace('@/assets/img', '').replace('_1.', '_0.')"
+            /> 
+            <b-badge pill variant="warning" class="pickname">{{cham_no3.chamname}} | {{cham_no3.korname}}</b-badge>
+            <b-progress class="mt-3">
+              <b-progress-bar :value="cham_no3_rate" variant="info" striped :animated="animate">
+                <span>승률: <strong>{{ cham_no3_rate }}%</strong></span>
+              </b-progress-bar>
+            </b-progress> 
+          </div>
+        </b-col>
+        <b-col cols="8" class="sub">
+          <b-row align-v="center" class="text-white">
+              <b-col><h3><span class="text-warning">{{user.userNickname}}</span>님이 가장 잘하는 챔피언은 <span class="text-warning">{{cham_no3.korname}}</span></h3></b-col>
+          </b-row>
+          <b-row align-v="center" class="text-white">
+              <b-col><h3><span class="text-warning">{{cham_no3.korname}}</span>의 승률은 {{cham_no3_rate}}%</h3></b-col>
+          </b-row>
+          <div class="simchams mt-5">
+            <div class="simtitle mb-5"><p>비슷한 성향을 가진 챔피언들</p></div>
+            <b-row align-v="center">
+              <b-col>
+              <b-img
+                style="border-style:ridge; border: #fcd000 3px ridge;"
                 width="100%"
                 :src="sim_info[6].imgsrc.replace('@/assets/img', '').replace('_1.', '_0.')"
-          /> 
-        </b-col>
-        <b-col>
-          <b-img
-                thumbnail
+              /> 
+            </b-col>
+            <b-col>
+              <b-img
+                style="border-style:ridge; border: #fcd000 3px ridge;"
                 width="100%"
                 :src="sim_info[7].imgsrc.replace('@/assets/img', '').replace('_1.', '_0.')"
-          /> 
-        </b-col>
-        <b-col>
-          <b-img
-                thumbnail
+              /> 
+            </b-col>
+            <b-col>
+              <b-img
+                style="border-style:ridge; border: #fcd000 3px ridge;"
                 width="100%"
                 :src="sim_info[8].imgsrc.replace('@/assets/img', '').replace('_1.', '_0.')"
-          /> 
+              /> 
+            </b-col>
+            </b-row>
+            <b-row align-v="center">
+              <b-col>
+                <b-badge pill variant="warning" class="pickname">{{sim_info[6].chamname}} | {{sim_info[6].korname}}</b-badge>
+              </b-col>
+              <b-col>
+                <b-badge pill variant="warning" class="pickname">{{sim_info[7].chamname}} | {{sim_info[7].korname}}</b-badge>
+              </b-col>
+              <b-col>
+                <b-badge pill variant="warning" class="pickname">{{sim_info[8].chamname}} | {{sim_info[8].korname}}</b-badge>
+              </b-col>
+            </b-row>
+          </div>
+
         </b-col>
-        </b-row>
-          <b-row align-v="center">
-            <b-col><h5>{{sim_info[6].korname}}</h5></b-col>
-            <b-col><h5>{{sim_info[7].korname}}</h5></b-col>
-            <b-col><h5>{{sim_info[8].korname}}</h5></b-col>
-        </b-row>
-    </b-col>
-  </b-row>
-
-
-  </b-card>
-</b-container>
-
-
+      </b-row>
+    </div>
+  </b-container>
 </template>
 <style>
   @import "../../assets/css/champion.css";
