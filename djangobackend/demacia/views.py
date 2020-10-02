@@ -10,7 +10,10 @@ from drf_yasg.utils import swagger_auto_schema
 from drf_yasg import openapi
 from django.views.decorators.csrf import csrf_exempt
 from django.utils.decorators import method_decorator
+from .video import get_image
 # Create your views here.
+
+
 
 @api_view(['GET'])
 def recommand_champion(request,userno):
@@ -251,3 +254,17 @@ def videopostlike_create_and_delete(request):
     videopostlikes = Videopostlikes.objects.all()
     serializers = VideopostlikesSerializer(videopostlikes, many=True)
     return Response(serializers.data)
+
+
+@api_view(['GET'])
+def analyze_data(request,userno):
+    videopost = Videopost.objects.filter(userno=userno)
+    videoid = Videopost.objects.filter(userno=userno).values('video').distinct()[0]['video']
+    result = []
+
+    result = get_image.get_image_function(videoid) # return before_bluescore, before_redscore, after_bluescore, after_redscore, champions_records
+    # print(result)
+    serializers = VideopostSerializer(videopost, many=True) # 임시용 
+    return Response(serializers.data)
+
+
