@@ -33,7 +33,9 @@ public class videoPostService {
 
     // 상세 조회
     public VideoPostDetail detail(int videoPostNo) {
-        return dao.detail(videoPostNo);
+        VideoPostDetail video = dao.detail(videoPostNo);
+        dao.viewCount(videoPostNo, video.getView());
+        return video;
     }
 
     // 게시물 삭제
@@ -44,10 +46,5 @@ public class videoPostService {
     // 게시물 수정
     public int update(Video video) {
         return dao.update(video);
-    }
-
-    // 조회수
-    public int viewCount(int videoPostNo, int view) {
-        return dao.viewCount(videoPostNo, view);
     }
 }
