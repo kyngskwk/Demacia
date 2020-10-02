@@ -1,8 +1,9 @@
 import requests
 import json
-import winrate_algo
+from . import winrate_algo
 
 def live_and_before(time1,gameId):
+    print('33333')
     time = []
     for t in range(int(time1[0][0])+1,int(time1[1][0])+2):
         time.append(t)

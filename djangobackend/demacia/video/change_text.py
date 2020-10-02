@@ -5,9 +5,10 @@ import numpy as np
 import re
 import cv2
 import pytesseract
-import timeline
+from . import timeline
 pytesseract.pytesseract.tesseract_cmd = r'C:\\Program Files\\Tesseract-OCR\\tesseract'
 def module(gameId):
+    print('22222')
 # --------------------------------------------------------------------
 # 이미지 구역 나누기v
     time = []

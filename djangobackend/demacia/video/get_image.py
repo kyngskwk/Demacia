@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import cv2
-import change_text
+from . import change_text
  
 # 영상의 의미지를 연속적으로 캡쳐할 수 있게 하는 class
 def get_image_function(videoname):
