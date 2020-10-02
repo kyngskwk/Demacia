@@ -7,6 +7,7 @@ import cv2
 import pytesseract
 from . import timeline
 pytesseract.pytesseract.tesseract_cmd = r'C:\\Program Files\\Tesseract-OCR\\tesseract'
+# pytesseract.pytesseract.tesseract_cmd = r'\\home\\ubuntu\\tesseract'
 def module(gameId):
     print('22222')
 # --------------------------------------------------------------------
@@ -41,6 +42,7 @@ def module(gameId):
 
         ]
         index = 0
+
         for section in sections:
             x,y,w,h = section
             img_trim = image[y:y+h, x:x+w]
@@ -59,8 +61,9 @@ def module(gameId):
             thresh = cv2.threshold(binary,0,255, cv2.THRESH_BINARY)[1]
             thresh = cv2.threshold(binary,0,255, cv2.THRESH_BINARY_INV)[1]
             cv2.imwrite('result.jpg',thresh)
-
+            print('middle')
             custom_config = r'--oem 3 --psm 6 outputbase digits'
+            
             text = pytesseract.image_to_string(thresh,config=custom_config)
 
             tmp = list(map(str,text.split('\n')))
