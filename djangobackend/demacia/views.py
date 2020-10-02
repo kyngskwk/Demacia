@@ -262,9 +262,9 @@ def analyze_data(request,userno):
     videoid = Videopost.objects.filter(userno=userno).values('video').distinct()[0]['video']
     result = []
 
-    result = get_image.get_image_function(videoid)
-    print(result)
-    serializers = VideopostSerializer(videopost, many=True)
+    result = get_image.get_image_function(videoid) # return before_bluescore, before_redscore, after_bluescore, after_redscore, champions_records
+    # print(result)
+    serializers = VideopostSerializer(videopost, many=True) # 임시용 
     return Response(serializers.data)
 
 
