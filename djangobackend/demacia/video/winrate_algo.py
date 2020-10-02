@@ -41,8 +41,8 @@ def winning_rate(part_set,part_set1,gameId):
             for key,value in part_set[i].items():
                 if key in redteam:
                     redteam[key] +=part_set[i][key]
-    print(blueteam)
-    print(redteam)
+    # print(blueteam)
+    # print(redteam)
     bluescore = 50
     wardgap = blueteam['WARD_PLACED'] - redteam['WARD_PLACED']
     killgap = blueteam['CHAMPION_KILL'] - redteam['CHAMPION_KILL']
@@ -56,7 +56,9 @@ def winning_rate(part_set,part_set1,gameId):
     bluescore = round(bluescore,2)
 
     redscore = 100-bluescore
-    print(bluescore,'vs',redscore) # 영상 이전 승률
+    before_bluescore = bluescore
+    before_redscore = redscore
+    # print(bluescore,'vs',redscore) # 영상 이전 승률
 
     # ---------------------------------영상 내용이 승률에 영향을 미침 -------------#
     # 초기화
@@ -72,8 +74,8 @@ def winning_rate(part_set,part_set1,gameId):
                 if key in redteam:
                     redteam1[key] +=part_set1[i][key]
 
-    print(blueteam1)
-    print(redteam1)
+    # print(blueteam1)
+    # print(redteam1)
 
     wardgap = blueteam1['WARD_PLACED'] - redteam1['WARD_PLACED']
     killgap = blueteam1['CHAMPION_KILL'] - redteam1['CHAMPION_KILL']
@@ -81,12 +83,14 @@ def winning_rate(part_set,part_set1,gameId):
     goldgap = blueteam1['totalGold'] - redteam1['totalGold']
     buildinggap = blueteam1['BUILDING_KILL'] - redteam1['BUILDING_KILL']
     dragongap = len(blueteam1['ELITE_MONSTER_KILL']) - len(redteam1['ELITE_MONSTER_KILL'])
-    print(wardgap,killgap,levelgap,goldgap,buildinggap,dragongap)
-    print(bluescore,wardgap/5 + killgap*0.5 + levelgap*0.2 + goldgap/7000 + buildinggap*0.5 + dragongap*3)
+    # print(wardgap,killgap,levelgap,goldgap,buildinggap,dragongap)
+    # print(bluescore,wardgap/5 + killgap*0.5 + levelgap*0.2 + goldgap/7000 + buildinggap*0.5 + dragongap*3)
     bluescore += wardgap/5 + killgap*0.5 + levelgap*0.2 + goldgap/7000 + buildinggap*0.5 + dragongap*3
     bluescore = round(bluescore,2)
     redscore = 100-bluescore
-    print(bluescore,'vs',redscore) # 영상 이후 승률
+    # print(bluescore,'vs',redscore) # 영상 이후 승률
+    after_bluescore = bluescore
+    after_redscore = redscore
 
     for i in range(1,11):
         for key,value in part_set1[i].items():
@@ -94,4 +98,7 @@ def winning_rate(part_set,part_set1,gameId):
 
     for i in range(10):
         print(champions_records[i])
+    return before_bluescore, before_redscore, after_bluescore, after_redscore, champions_records
 
+# winning_rate( [{}, {'WARD_PLACED': 4, 'totalGold': 4243, 'level': 10, 'totalminionsKilled': 90}, {'WARD_PLACED': 6, 'CHAMPION_KILL': 1, 'WARD_KILL': 1, 'totalGold': 5333, 'level': 9, 'totalminionsKilled': 90}, {'WARD_PLACED': 4, 'CHAMPION_KILL': 3, 'totalGold': 4974, 'level': 11, 'totalminionsKilled': 81}, {'WARD_PLACED': 9, 'CHAMPION_KILL': 1, 'WARD_KILL': 1, 'totalGold': 4311, 'level': 8, 'totalminionsKilled': 87}, {'WARD_PLACED': 
+# 4, 'CHAMPION_KILL': 3, 'WARD_KILL': 4, 'ELITE_MONSTER_KILL': ['FIRE_DRAGON'], 'totalGold': 3448, 'level': 8, 'totalminionsKilled': 11}, {'WARD_PLACED': 7, 'CHAMPION_KILL': 4, 'WARD_KILL': 1, 'totalGold': 8153, 'level': 12, 'totalminionsKilled': 128}, {'WARD_PLACED': 5, 'WARD_KILL': 1, 'ELITE_MONSTER_KILL': ['RIFTHERALD', 'AIR_DRAGON'], 'BUILDING_KILL': 1, 'totalGold': 5783, 'level': 10, 'totalminionsKilled': 104}, {'WARD_PLACED': 7, 'WARD_KILL': 2, 'CHAMPION_KILL': 1, 'totalGold': 4883, 'level': 9, 'totalminionsKilled': 90}, {'CHAMPION_KILL': 8, 'WARD_PLACED': 5, 'BUILDING_KILL': 1, 'totalGold': 5832, 'level': 9, 'totalminionsKilled': 109}, {'WARD_PLACED': 7, 'WARD_KILL': 1, 'CHAMPION_KILL': 1, 'totalGold': 5395, 'level': 9, 'totalminionsKilled': 14}],[{}, {}, {}, {'CHAMPION_KILL': 1}, {'WARD_PLACED': 2}, {}, {'WARD_PLACED': 3, 'WARD_KILL': 1}, {'CHAMPION_KILL': 1, 'WARD_PLACED': 1}, {'WARD_PLACED': 2, 'BUILDING_KILL': 1}, {'WARD_PLACED': 2, 'CHAMPION_KILL': 5, 'BUILDING_KILL': 1}, {'WARD_PLACED': 1}],'4659518008')

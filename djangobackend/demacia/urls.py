@@ -19,5 +19,6 @@ urlpatterns = [
     path('videoposts/<int:videopost_pk>/likes/<int:userno>', views.videopostlike_create_and_delete, name="videopostlike create and delete"),
     path('videoposts/<int:videopost_pk>/reply/<int:reply_pk>', views.replylike_list, name="replylike list"),
     path('videoposts/<int:videopost_pk>/reply/<int:reply_pk>', views.replylike_create_and_delete, name="replylike created and delete"),
-
+    ##영상분석 url
+    path('analyze/<int:userno>/', views.analyze_data, name="analyze data"),
 ]
