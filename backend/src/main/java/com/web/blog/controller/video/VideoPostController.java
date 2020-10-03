@@ -1,13 +1,11 @@
-package com.web.blog.controller.post;
+package com.web.blog.controller.video;
 
 import java.util.List;
 
-import com.web.blog.model.dto.post.PostDetail;
 import com.web.blog.model.dto.video.Video;
-import com.web.blog.model.dto.video.VideoPostDetail;
 import com.web.blog.model.dto.video.VideoPostItem;
-import com.web.blog.model.service.post.LikesService;
-import com.web.blog.model.service.video.videoPostService;
+import com.web.blog.model.service.video.VideoPostLikesService;
+import com.web.blog.model.service.video.VideoPostService;
 import com.web.blog.util.BasicResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,9 +33,9 @@ import io.swagger.annotations.ApiResponses;
 public class VideoPostController {
 
     @Autowired
-    videoPostService videoPostService;
+    VideoPostService videoPostService;
     @Autowired
-    LikesService likesService;
+    VideoPostLikesService likesService;
 
     @PostMapping("/video/")
     @ApiOperation(value = "영상 등록")

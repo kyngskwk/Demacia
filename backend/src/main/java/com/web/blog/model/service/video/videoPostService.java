@@ -34,6 +34,7 @@ public class VideoPostService {
     // 상세 조회
     public VideoPostDetail detail(int videoPostNo) {
         VideoPostDetail video = dao.detail(videoPostNo);
+        // 조회수 + 1
         dao.viewCount(videoPostNo, video.getView());
         return video;
     }

@@ -19,7 +19,7 @@ public class VideoPostLikesService {
     }
 
     public int likesInsert(Likes likes) {
-        if (dao.likesStatus(likes.getPostNo(), likes.getUserNo()) == 0) {
+        if (dao.likesStatus(likes.getVideopostNo(), likes.getUserNo()) == 0) {
             return dao.likesInsert(likes);
         } else {
             return 0;
