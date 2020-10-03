@@ -14,7 +14,7 @@ export default {
   components: {
     Header,
   },
-  data: function () {
+  data: function() {
     return {
       constants,
     };
@@ -35,8 +35,9 @@ export default {
   position: fixed;
   width: 100%;
   height: 100%;
-  background-image: url("../src/assets/img/bg2.jpg");
-  background-position: center;
+  background-image: url("../src/assets/img/bg4.jpg");
+  background-position: top;
+
   background-size: cover;
 }
 </style>
