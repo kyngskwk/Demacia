@@ -66,17 +66,17 @@
             회원가입
           </div>
           <img
-            :src="kakaologo"
-            class="btn"
-            style="width: 87%"
+            src="../../assets/img/kakao1.png"
+            class="btn image"
+            style="width: 87%;border-radius: 20px;"
             alt="kakaologo"
             draggable="false"
             @click="kakao"
           />
           <img
-            :src="naverlogo"
-            class="btn"
-            style="width: 86%"
+            src="../../assets/img/google1.png"
+            class="btn image"
+            style="width: 87%;border-radius: 20px;"
             alt="naverlogo"
             @click="google"
             draggable="false"
@@ -274,6 +274,9 @@ export default {
 
 <style>
 .hoverbtn:hover {
-  background-color: #12394c !important;
+  opacity: 0.8;
+}
+.image:hover {
+  opacity: 0.9;
 }
 </style>

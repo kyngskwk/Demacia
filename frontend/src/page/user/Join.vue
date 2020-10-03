@@ -28,6 +28,7 @@
               <b-button
                 size="sm"
                 @click="emailCheck"
+                class="hoverbtn"
                 style="background: linear-gradient(180deg, #1b2831 0%, #12384b 100%); border-style:ridge; border:#95ede7 3px ridge;"
                 >중복확인</b-button
               >
@@ -55,6 +56,7 @@
               <b-button
                 size="sm"
                 variant="secondary"
+                class="hoverbtn"
                 @click="nicknameCheck"
                 style="background: linear-gradient(180deg, #1b2831 0%, #12384b 100%); border-style:ridge; border:#95ede7 3px ridge;"
                 >중복확인</b-button
@@ -367,7 +369,11 @@
               >
             </template>
           </b-modal>
-          <div @click="signup" class="btn btn-primary mt-3" style="width:100%">
+          <div
+            @click="signup"
+            class="btn mt-3 hoverbtn"
+            style="width:100%; color:white;background: linear-gradient(180deg, #1b2831 0%, #12384b 100%); border-style:ridge; border:#95ede7 3px ridge;"
+          >
             회원가입
           </div>
         </div>
@@ -621,3 +627,8 @@ export default {
   },
 };
 </script>
+<style>
+.hoverbtn:hover {
+  opacity: 0.8;
+}
+</style>
