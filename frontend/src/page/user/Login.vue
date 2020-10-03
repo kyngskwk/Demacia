@@ -1,13 +1,10 @@
 <template>
   <div class="block1 d-flex">
-    <div class="main" style="width: 100%">
+    <div class="main" style="width: 100%;">
       <div class="col-xl-4 col-lg-4 col-md-8 col-sm-12 m-auto">
-        <div
-          class="login-form border rounded"
-          style="padding: 50px; background-color: white"
-        >
+        <div class="login-form " style="padding: 50px; opacity:0.9; ">
           <img
-            :src="logologin"
+            src="../../assets/img/damacia.png"
             alt="logo2"
             style="width: 90%; margin-bottom: 3em; margin-left: 15px"
             draggable="false"
@@ -19,10 +16,13 @@
               id="email"
               size="lg"
               style="
-                width: 80%;
+                width:80%;
                 margin-right: auto;
                 margin-left: auto;
                 margin-bottom: 5%;
+                border-style:ridge;
+                border: #fcd000  4px ridge;
+
               "
               v-model="email"
               :state="emailValid"
@@ -40,6 +40,8 @@
                 margin-right: auto;
                 margin-left: auto;
                 margin-bottom: 5%;
+                border-style:ridge;
+                border: #fcd000  4px ridge;
               "
               :state="pwValid"
               @keydown.enter="loginCheck"
@@ -47,15 +49,15 @@
           </div>
           <div
             @click="loginCheck"
-            class="btn btn-primary btn-lg"
-            style="width: 80%; margin-bottom: 5%"
+            class="btn btn-dark btn-lg border border-warning"
+            style="width: 80%; margin-bottom: 5%; color:#cdbe91;"
           >
             로그인
           </div>
           <div
             @click="signuppage"
-            class="btn btn-secondary btn-lg"
-            style="width: 80%; margin-bottom: 2%"
+            class="btn btn-secondary btn-lg border border-warning hoverbtn"
+            style="width: 80%; margin-bottom: 2%; color:#cdbe91; background-color:#1a2b35;"
           >
             회원가입
           </div>
@@ -98,7 +100,7 @@ export default {
       pwValid: null,
       kakaologo: process.env.VUE_APP_IMGUP_URL + "/images/login/kakaologo.PNG",
       naverlogo: process.env.VUE_APP_IMGUP_URL + "/images/login/googlelogo.png",
-      logologin: process.env.VUE_APP_IMGUP_URL + "/images/login/loginlogo.PNG",
+
       newImg: "",
     };
   },
@@ -147,10 +149,10 @@ export default {
               const fd = new FormData();
               fd.append(
                 "upLoadImage",
-                canvas.toBlob(function (blob) {
+                canvas.toBlob(function(blob) {
                   var newImg = document.getElementById("profile");
                   var url = URL.createObjectURL(blob);
-                  newImg.onload = function () {
+                  newImg.onload = function() {
                     URL.revokeObjectURL(url);
                   };
                   newImg.src = url;
@@ -265,3 +267,9 @@ export default {
   },
 };
 </script>
+
+<style>
+.hoverbtn:hover {
+  background-color: #12394c !important;
+}
+</style>
