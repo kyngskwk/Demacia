@@ -1,7 +1,7 @@
 <template>
   <div
     class="pb-2"
-    style="background-color:white; width:90%; margin-left:auto; margin-right:auto;font-family:Tmon"
+    style="background: rgba( 0, 0, 0, 0.5 );width:96%; margin-left:auto; margin-right:auto;font-family:Tmon;color: white;"
   >
     <div
       class="d-flex justify-content-between"
@@ -27,7 +27,7 @@
             cols="9"
             lg="5"
             xl="6"
-            class="d-flex color1 justify-content-center"
+            class="d-flex justify-content-center"
             style="padding-top:3%;"
           >
             <p
@@ -61,7 +61,7 @@
     </div>
     <div class="container" style="width:100%; padding:0; margin-top:2%;">
       <video
-        style="width:100%; padding:0;"
+        style="width:100%; padding:0;max-width:900px;"
         controls
         autoplay="true"
         name="media"
@@ -74,7 +74,7 @@
     <div
       id="mainBody"
       class="container"
-      style="border-left:solid; border-right:solid;border-bottom:solid; padding-left:5px;padding-right:5px;padding-bottom:5px; margin-top:-7%; padding-top:6%; margin-bottom:5%;"
+      style="padding-left:5px;padding-right:5px;padding-bottom:5px; margin-top:-7%; padding-top:6%; margin-bottom:5%;"
     >
       <hr style="margin-left:2%;margin-right:2%;" />
       <div class="row">
@@ -192,13 +192,11 @@
         </template>
       </b-modal>
       <!-- 댓글 시작  -->
-      <div
-        style="background-color:white;width:96%; margin-left:2%; margin-top:3%;"
-      >
+      <div style="width:96%; margin-left:2%; margin-top:3%;">
         <!-- 댓글 입력 박스 -->
         <div class="CommentWriter" v-if="sessionUserNo">
           <div class="comment_inbox">
-            <div class="d-flex mb-4">
+            <div class="d-flex mb-4" style="color:black;">
               <b-avatar
                 variant="secondary"
                 :src="sessionUser.userImage"
