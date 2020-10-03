@@ -35,7 +35,7 @@ export default {
   position: fixed;
   width: 100%;
   height: 100%;
-  background-image: url("../src/assets/img/demacia-bg.jpg");
+  background-image: url("../src/assets/img/bg2.jpg");
   background-position: center;
   background-size: cover;
 }
