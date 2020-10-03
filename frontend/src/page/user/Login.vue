@@ -22,6 +22,8 @@
                 margin-bottom: 5%;
                 border-style:ridge;
                 border: #fcd000  4px ridge;
+                background-color:#1e2328;
+                color:#cdbe91;
 
               "
               v-model="email"
@@ -42,6 +44,8 @@
                 margin-bottom: 5%;
                 border-style:ridge;
                 border: #fcd000  4px ridge;
+                background-color:#1e2328;
+                color:#cdbe91;
               "
               :state="pwValid"
               @keydown.enter="loginCheck"
@@ -49,15 +53,15 @@
           </div>
           <div
             @click="loginCheck"
-            class="btn btn-dark btn-lg border border-warning"
-            style="width: 80%; margin-bottom: 5%; color:#cdbe91;"
+            class="btn btn-lg hoverbtn"
+            style="width: 80%; margin-bottom: 5%; color:white;background: linear-gradient(180deg, #1b2831 0%, #12384b 100%); border-style:ridge; border:#95ede7 3px ridge;"
           >
             로그인
           </div>
           <div
             @click="signuppage"
-            class="btn btn-secondary btn-lg border border-warning hoverbtn"
-            style="width: 80%; margin-bottom: 2%; color:#cdbe91; background-color:#1a2b35;"
+            class="btn btn-lg  hoverbtn"
+            style="width: 80%; margin-bottom: 2%; color:white;background: linear-gradient(180deg, #1b2831 0%, #12384b 100%); border-style:ridge; border:#95ede7 3px ridge;"
           >
             회원가입
           </div>
