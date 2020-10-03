@@ -19,7 +19,9 @@
             class="d-flex"
           >
             <p id="hide3" style="font-size:3vh;  padding-left:7%;">의뢰번호</p>
-            <p style="font-weight: bold; font-size:3.5vh; padding-left:5px; ">NO.{{ postNo }}</p>
+            <p style="font-weight: bold; font-size:3.5vh; padding-left:5px; ">
+              NO.{{ postNo }}
+            </p>
           </b-col>
           <b-col
             cols="9"
@@ -31,17 +33,26 @@
             <p
               style="font-weight: bold;font-size:3.5vh; max-width:100%;display: -webkit-box; overflow: hidden;width:100%; text-overflow: ellipsis;
                           -webkit-line-clamp: 1;-webkit-box-orient: vertical;word-wrap:break-word; line-height: 4vh; height: 4vh; "
-            >{{ writePost.title }}</p>
+            >
+              {{ writePost.title }}
+            </p>
           </b-col>
 
           <b-col id="hide2" cols="4" lg="4" xl="3" style=" ">
             <div class="row" style="margin-top:4%;">
               <div class="col-4" style="padding-right:2%;">
-                <b-icon icon="clock" animation="spin" font-scale="3" shift-v="0.7"></b-icon>
+                <b-icon
+                  icon="clock"
+                  animation="spin"
+                  font-scale="3"
+                  shift-v="0.7"
+                ></b-icon>
               </div>
               <div class="col-8" style="padding-left:0; text-align:center;">
-                <h4 style="margin-right:10px;font-weight: bold;">투표 종료시간</h4>
-                <h3 style="font-size:2vh;">{{deadLineTime}}</h3>
+                <h4 style="margin-right:10px;font-weight: bold;">
+                  투표 종료시간
+                </h4>
+                <h3 style="font-size:2vh;">{{ deadLineTime }}</h3>
               </div>
             </div>
           </b-col>
@@ -49,7 +60,13 @@
       </b-container>
     </div>
     <div class="container" style="width:100%; padding:0; margin-top:2%;">
-      <video style="width:100%; padding:0;" controls autoplay="true" name="media" id="vid">
+      <video
+        style="width:100%; padding:0;"
+        controls
+        autoplay="true"
+        name="media"
+        id="vid"
+      >
         <source :src="videolink" type="video/mp4" />
       </video>
     </div>
@@ -65,14 +82,22 @@
           <!-- 글쓴이 -->
           <div class="d-flex justify-content-between">
             <div class="d-flex" style=" margin-left:2%;">
-              <b-avatar variant="secondary" :src="writeUser.userImage" class="ml-3 mr-3"></b-avatar>
+              <b-avatar
+                variant="secondary"
+                :src="writeUser.userImage"
+                class="ml-3 mr-3"
+              ></b-avatar>
               <div>
                 <h4
                   style="margin-bottom:0; text-align:center; font-size:2.5vh; margin-top:12%;"
-                >{{ writeUser.userNickname }}</h4>
+                >
+                  {{ writeUser.userNickname }}
+                </h4>
                 <h4
                   style="margin-bottom:0; text-align:center;  font-size:1.2vh;"
-                >{{ writeUser.userTier }}</h4>
+                >
+                  {{ writeUser.userTier }}
+                </h4>
               </div>
             </div>
           </div>
@@ -90,7 +115,12 @@
             <!-- 좋아요 -->
             <div class="d-flex justify-content-end">
               <div v-show="likest" @click="likesup">
-                <b-icon-heart shift-v="5" class="btn" font-scale="3" style="cursor: pointer;" />
+                <b-icon-heart
+                  shift-v="5"
+                  class="btn"
+                  font-scale="3"
+                  style="cursor: pointer;"
+                />
               </div>
 
               <div v-show="!likest" @click="likesdown">
@@ -103,7 +133,7 @@
                 />
               </div>
 
-              <p style="font-size:2.5vh">{{likescnt}}</p>
+              <p style="font-size:2.5vh">{{ likescnt }}</p>
             </div>
           </div>
         </div>
@@ -117,20 +147,28 @@
             class="btn"
             style="background-color: #5e72e4;font-weight: bold;color:white;font-size:3.5vh; max-width:35%;display: -webkit-box; overflow: hidden;width:100%; text-overflow: ellipsis;
                           -webkit-line-clamp: 1;-webkit-box-orient: vertical;word-wrap:break-word; line-height: 4vh; height: 5vh; "
-          >{{ writePost.option1 }} 탓</h1>
+          >
+            {{ writePost.option1 }} 탓
+          </h1>
           <h2
             v-show="votest"
             style="color:red;font-weight: bold; margin-left:5%;margin-right:5%; font-size:3.5vh;"
-          >VS</h2>
+          >
+            VS
+          </h2>
           <h1
             v-show="votest"
             @click="vote2"
             class="btn btn-danger"
             style=" font-weight: bold;font-size:3.5vh; max-width:35%;display: -webkit-box; overflow: hidden;width:100%; text-overflow: ellipsis;
                           -webkit-line-clamp: 1;-webkit-box-orient: vertical;word-wrap:break-word; line-height: 4vh; height: 5vh;"
-          >{{ writePost.option2 }} 탓</h1>
+          >
+            {{ writePost.option2 }} 탓
+          </h1>
           <div class="d-flex justify-content-center">
-            <div @click="votedelt" class="btn btn-primary" v-show="!votest">다시 투표하기</div>
+            <div @click="votedelt" class="btn btn-primary" v-show="!votest">
+              다시 투표하기
+            </div>
           </div>
         </div>
       </div>
@@ -138,7 +176,9 @@
         class="d-flex justify-content-start"
         style="margin-top:2%; margin-left:2%; margin-right:2%; text-align:center; border:solid 5px gray; border-radius:10px;"
       >
-        <p style="font-size:2vh; text-align:left; margin:3%;">{{ writePost.content }}</p>
+        <p style="font-size:2vh; text-align:left; margin:3%;">
+          {{ writePost.content }}
+        </p>
       </div>
       <br />
 
@@ -152,16 +192,21 @@
         </template>
       </b-modal>
       <!-- 댓글 시작  -->
-      <div style="background-color:white;width:96%; margin-left:2%; margin-top:3%;">
+      <div
+        style="background-color:white;width:96%; margin-left:2%; margin-top:3%;"
+      >
         <!-- 댓글 입력 박스 -->
         <div class="CommentWriter" v-if="sessionUserNo">
           <div class="comment_inbox">
             <div class="d-flex mb-4">
-              <b-avatar variant="secondary" :src="sessionUser.userImage" class="ml-1 mr-3"></b-avatar>
-              <em
-                class="comment_inbox_name mt-2"
-                style="font-size:2vh;"
-              >{{sessionUser.userNickname}}</em>
+              <b-avatar
+                variant="secondary"
+                :src="sessionUser.userImage"
+                class="ml-1 mr-3"
+              ></b-avatar>
+              <em class="comment_inbox_name mt-2" style="font-size:2vh;">{{
+                sessionUser.userNickname
+              }}</em>
             </div>
             <textarea
               placeholder="댓글을 남겨보세요"
@@ -173,13 +218,17 @@
           </div>
           <!-- 댓글 등록 버튼 -->
           <div class="register_box row ml-4 mr-4 mb-3">
-            <div class="col-5 btn btn-primary" style="background-color: #5e72e4;">
+            <div
+              class="col-5 btn btn-primary"
+              style="background-color: #5e72e4;"
+            >
               <a
                 role="button"
                 @click="comment1"
                 class="button btn_register"
                 style="font-size:2vh;color:white;"
-              >{{writePost.option1}} 탓(으)로 댓글</a>
+                >{{ writePost.option1 }} 탓(으)로 댓글</a
+              >
             </div>
             <div class="col-2" />
             <div class="col-5 btn btn-danger">
@@ -188,7 +237,8 @@
                 @click="comment2"
                 class="button btn_register"
                 style="font-size:2vh;color:white;"
-              >{{writePost.option2}} 탓(으)로 댓글</a>
+                >{{ writePost.option2 }} 탓(으)로 댓글</a
+              >
             </div>
           </div>
         </div>
@@ -206,7 +256,7 @@
                 <div class="row">
                   <div class="col-12 col-md-5">
                     <div
-                      v-if="item.replyOpt==1"
+                      v-if="item.replyOpt == 1"
                       role="tooltip"
                       tabindex="-1"
                       class="popover b-popover b-popover-primary bs-popover-left"
@@ -220,25 +270,32 @@
                           :src="profile(item.userImage)"
                           class="ml-3 mr-3"
                         ></b-avatar>
-                        {{item.userNickname}}
-                        <span
-                          style="font-size:1vh;"
-                        >{{ item.userSolTierStr+" "+item.userSolRankStr }}</span>
+                        {{ item.userNickname }}
+                        <span style="font-size:1vh;">{{
+                          item.userSolTierStr + " " + item.userSolRankStr
+                        }}</span>
                       </h3>
                       <div class="popover-body">
                         <div class="comment_box">
                           <div class="d-flex"></div>
                           <div class="comment_text_box">
                             <p class="comment_text_view ml-2 mt-3">
-                              <span class="text_comment">{{item.content}}</span>
+                              <span class="text_comment">{{
+                                item.content
+                              }}</span>
                             </p>
                           </div>
                           <div class="comment_info_box row">
-                            <span class="comment_info_date col-10">{{replyTime(item.replyDate)}}</span>
+                            <span class="comment_info_date col-10">{{
+                              replyTime(item.replyDate)
+                            }}</span>
                             <span
                               class="col-1 ml-3"
                               style="cursor:pointer"
-                              v-if="sessionUserNo==item.userNo||sessionUserNo==3"
+                              v-if="
+                                sessionUserNo == item.userNo ||
+                                  sessionUserNo == 3
+                              "
                               @click="deleteReply(item)"
                             >
                               <b-icon icon="x-square-fill" variant="danger" />
@@ -250,12 +307,14 @@
                   </div>
                   <!-- 가운데 -->
                   <div id="hide3" class="col-0 col-md-2">
-                    <a :id="'replyCentre'+$index" :tabindex="$index">{{replyTime(item.replyDate)}}</a>
+                    <a :id="'replyCentre' + $index" :tabindex="$index">{{
+                      replyTime(item.replyDate)
+                    }}</a>
                   </div>
                   <!-- 오른쪽 -->
                   <div class="col-12 col-md-5">
                     <div
-                      v-if="item.replyOpt==2"
+                      v-if="item.replyOpt == 2"
                       role="tooltip"
                       tabindex="-1"
                       class="popover b-popover b-popover-danger bs-popover-right"
@@ -269,25 +328,32 @@
                           :src="profile(item.userImage)"
                           class="ml-3 mr-3"
                         ></b-avatar>
-                        {{item.userNickname}}
-                        <span
-                          style="font-size:1vh;"
-                        >{{ item.userSolTierStr+" "+item.userSolRankStr }}</span>
+                        {{ item.userNickname }}
+                        <span style="font-size:1vh;">{{
+                          item.userSolTierStr + " " + item.userSolRankStr
+                        }}</span>
                       </h3>
                       <div class="popover-body">
                         <div class="comment_box">
                           <div class="d-flex"></div>
                           <div class="comment_text_box">
                             <p class="comment_text_view ml-2 mt-3">
-                              <span class="text_comment">{{item.content}}</span>
+                              <span class="text_comment">{{
+                                item.content
+                              }}</span>
                             </p>
                           </div>
                           <div class="comment_info_box row">
-                            <span class="comment_info_date col-10">{{replyTime(item.replyDate)}}</span>
+                            <span class="comment_info_date col-10">{{
+                              replyTime(item.replyDate)
+                            }}</span>
                             <span
                               class="col-1 ml-3"
                               style="cursor:pointer"
-                              v-if="sessionUserNo==item.userNo||sessionUserNo==3"
+                              v-if="
+                                sessionUserNo == item.userNo ||
+                                  sessionUserNo == 3
+                              "
                               @click="deleteReply(item)"
                             >
                               <b-icon icon="x-square-fill" variant="danger" />
@@ -310,14 +376,18 @@
           class="btn btn-primary"
           style="width:15%;margin-right:5%; position:relative; bottom:5%;"
           v-if="checkaccess"
-        >수정</div>
+        >
+          수정
+        </div>
 
         <div
           @click="delt"
           class="btn btn-secondary"
           style="width:15%;margin-left:5%;"
           v-if="checkaccess"
-        >삭제</div>
+        >
+          삭제
+        </div>
       </div>
     </div>
   </div>
