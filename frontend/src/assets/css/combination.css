@@ -1,3 +1,12 @@
-h1{
-    text-align: left;
+#title{
+    text-align: center;
+}
+
+.section{
+    margin-bottom: 10%;
+}
+
+.article{
+    border-left: solid 2px;
+    border-right: solid 2px;
 }
