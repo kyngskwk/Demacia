@@ -10,10 +10,11 @@ from drf_yasg.utils import swagger_auto_schema
 from drf_yasg import openapi
 from django.views.decorators.csrf import csrf_exempt
 from django.utils.decorators import method_decorator
-from .video import get_image
+# from ..video.winrate_algo import before_bluescore, before_redscore, after_bluescore, after_redscore, champions_records
 # Create your views here.
 
 
+videoname = None
 
 @api_view(['GET'])
 def recommand_champion(request,userno):
@@ -76,11 +77,19 @@ def champion_list(request):
     return Response(serializers.data)
 
 @api_view(['GET'])
-def videopost_list(request):
-    videoposts = Videopost.objects.all()
+def videopost_list(request,videopostno):
+    videoid = Videopost.objects.filter(videopostno=videopostno)
     serializers = VideopostSerializer(videoposts, many=True)
     return Response(serializers.data)
 
+@api_view(['POST'])
+def videopost_update(request,videopostno):
+    videoname = Videopost.objects.filter(videopostno=videopostno).values('video').distinct()[0]['video']
+    videoposts = Videopost.objects.all() 
+    # result = 
+    Videodata = Videopost.objects.filter(videopostno=videopostno).update(data=result)
+    serializers = VideopostSerializer(videoposts, many=True)
+    return Response(serializers.data)
 
 @api_view(['POST'])
 def match_update(request):
@@ -256,15 +265,6 @@ def videopostlike_create_and_delete(request):
     return Response(serializers.data)
 
 
-@api_view(['GET'])
-def analyze_data(request,userno):
-    videopost = Videopost.objects.filter(userno=userno)
-    videoid = Videopost.objects.filter(userno=userno).values('video').distinct()[0]['video']
-    result = []
 
-    result = get_image.get_image_function(videoid) # return before_bluescore, before_redscore, after_bluescore, after_redscore, champions_records
-    # print(result)
-    serializers = VideopostSerializer(videopost, many=True) # 임시용 
-    return Response(serializers.data)
 
 

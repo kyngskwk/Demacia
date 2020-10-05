@@ -56,4 +56,4 @@ for game_id in game_ids:
 champion_winnig_rate = dict()
 for champion_id in champion_info:
     champion_winnig_rate[champion_id] = champion_info[champion_id][0] / sum(champion_info[champion_id])
-print(champion_winnig_rate)
+# print(champion_winnig_rate)
