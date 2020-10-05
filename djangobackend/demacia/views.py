@@ -79,7 +79,7 @@ def videopost_list(request,videopostno):
     serializers = VideopostSerializer(videoposts, many=True)
     return Response(serializers.data)
 
-@swagger_auto_schema(method='post', request_body=VideoUpdateSerializer)
+@swagger_auto_schema(method='post', request_body=VideopostSerializer)
 @api_view(['POST'])
 def videopost_update(request):
     request_videopostno = request.data['videopostno']
@@ -92,9 +92,10 @@ def videopost_update(request):
     # before_bluescore, before_redscore, after_bluescore, after_redscore, champions_records = winrate_algo.winrate_algo(time_part_set, new_part_set, gameId)
     # result = [before_bluescore, before_redscore, after_bluescore, after_redscore, champions_records]
     # Videodata = Videopost.objects.filter(videopostno=videopostno).update(data=result)
-    videoposts = Videopost.objects.all() 
-    serializers = VideopostSerializer(videoposts, many=True)
-    return Response(serializers.data)
+    # videoposts = Videopost.objects.all() 
+    serializers = VideopostSerializer(data=request.data)
+    if serializers.is_valid():
+        return Response(serializers.data)
 
 @api_view(['POST'])
 def match_update(request):

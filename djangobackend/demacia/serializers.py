@@ -21,7 +21,7 @@ class ChampionViewSet(viewsets.ModelViewSet):
 class VideopostSerializer(serializers.ModelSerializer):
     class Meta:
         model = Videopost
-        fields = '__all__'    
+        fields = ['videopostno']   
 
 class VideopostViewSet(viewsets.ModelViewSet):
     queryset = Videopost.objects.all()
