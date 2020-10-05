@@ -12,7 +12,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.utils.decorators import method_decorator
 from .video import get_image, change_text, timeline, winrate_algo
 # Create your views here.
-
+# .
 @api_view(['GET'])
 def recommand_champion(request,userno):
     champions = Match.objects.filter(userno=userno)#{'티모':0.7,'아리':0.6,'럭스':0.3}
