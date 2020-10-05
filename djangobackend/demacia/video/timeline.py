@@ -6,14 +6,11 @@ import json
 
 def timeline(time1, gameId):
     if time1 == None or gameId == None:
-        print('timeline 빈값')
         time_part_set = None
         new_part_set = None
         gameId = None
-        print(time_part_set, new_part_set, gameId)
     else:
     # def live_and_before(time1,gameId):
-        print('33333')
         time = []
         for t in range(int(time1[0][0])+1,int(time1[1][0])+2):
             time.append(t)

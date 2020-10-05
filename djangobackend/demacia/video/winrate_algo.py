@@ -13,8 +13,6 @@ import json
 def winrate_algo(time_part_set, new_part_set, gameId):
 # def final(time_part_set, new_part_set, gameId):
     if time_part_set!= None and new_part_set!= None and gameId != None :
-        print(time_part_set, gameId)
-        print('으악')
         url = "https://kr.api.riotgames.com/lol/match/v4/matches/"+str(gameId)+"?api_key=RGAPI-4dcd2099-2605-4440-9864-f53a305141e7"
         time_data = requests.get(url).json()["participants"]
         file_path = "./champions.json"
@@ -28,7 +26,7 @@ def winrate_algo(time_part_set, new_part_set, gameId):
             for i in range(len(json_data)):
                 if championId == int(json_data[i]["key"]):
                     champions_records.append([json_data[i]["id"]])
-        print(champions_records)
+        # print(champions_records)
 
 
         events_creator_id = ["WARD_PLACED"]
@@ -104,14 +102,14 @@ def winrate_algo(time_part_set, new_part_set, gameId):
             for key,value in new_part_set[i].items():
                 champions_records[i-1].append([key,value])
 
-        for i in range(10):
-            print(champions_records[i])
+        # for i in range(10):
+            # print(champions_records[i])
         # return [before_bluescore, before_redscore, after_bluescore, after_redscore, champions_records]
 
         # winning_rate( [{}, {'WARD_PLACED': 4, 'totalGold': 4243, 'level': 10, 'totalminionsKilled': 90}, {'WARD_PLACED': 6, 'CHAMPION_KILL': 1, 'WARD_KILL': 1, 'totalGold': 5333, 'level': 9, 'totalminionsKilled': 90}, {'WARD_PLACED': 4, 'CHAMPION_KILL': 3, 'totalGold': 4974, 'level': 11, 'totalminionsKilled': 81}, {'WARD_PLACED': 9, 'CHAMPION_KILL': 1, 'WARD_KILL': 1, 'totalGold': 4311, 'level': 8, 'totalminionsKilled': 87}, {'WARD_PLACED': 
         # 4, 'CHAMPION_KILL': 3, 'WARD_KILL': 4, 'ELITE_MONSTER_KILL': ['FIRE_DRAGON'], 'totalGold': 3448, 'level': 8, 'totalminionsKilled': 11}, {'WARD_PLACED': 7, 'CHAMPION_KILL': 4, 'WARD_KILL': 1, 'totalGold': 8153, 'level': 12, 'totalminionsKilled': 128}, {'WARD_PLACED': 5, 'WARD_KILL': 1, 'ELITE_MONSTER_KILL': ['RIFTHERALD', 'AIR_DRAGON'], 'BUILDING_KILL': 1, 'totalGold': 5783, 'level': 10, 'totalminionsKilled': 104}, {'WARD_PLACED': 7, 'WARD_KILL': 2, 'CHAMPION_KILL': 1, 'totalGold': 4883, 'level': 9, 'totalminionsKilled': 90}, {'CHAMPION_KILL': 8, 'WARD_PLACED': 5, 'BUILDING_KILL': 1, 'totalGold': 5832, 'level': 9, 'totalminionsKilled': 109}, {'WARD_PLACED': 7, 'WARD_KILL': 1, 'CHAMPION_KILL': 1, 'totalGold': 5395, 'level': 9, 'totalminionsKilled': 14}],[{}, {}, {}, {'CHAMPION_KILL': 1}, {'WARD_PLACED': 2}, {}, {'WARD_PLACED': 3, 'WARD_KILL': 1}, {'CHAMPION_KILL': 1, 'WARD_PLACED': 1}, {'WARD_PLACED': 2, 'BUILDING_KILL': 1}, {'WARD_PLACED': 2, 'CHAMPION_KILL': 5, 'BUILDING_KILL': 1}, {'WARD_PLACED': 1}],'4659518008')
 
-        print("최종결과물",[before_bluescore, before_redscore, after_bluescore, after_redscore, champions_records])
+        # print("최종결과물",[before_bluescore, before_redscore, after_bluescore, after_redscore, champions_records])
 
         # print(video('10-19_KR-4664501922_06.mp4'))
     else:
@@ -120,6 +118,6 @@ def winrate_algo(time_part_set, new_part_set, gameId):
         after_bluescore = None 
         after_redscore = None
         champions_records = None
-        print("빈값")
+        # print("빈값")
     return before_bluescore, before_redscore, after_bluescore, after_redscore, champions_records
 
