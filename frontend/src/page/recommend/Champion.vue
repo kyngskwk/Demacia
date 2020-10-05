@@ -10,7 +10,7 @@
       <div>
         <div class="chamtitle pl-4"><p>FIRST PICK</p></div>
       </div>
-      <b-row align-v="stretch" class="article mb-0">
+      <b-row align-v="stretch" class="mb-0">
         <b-col cols="4" class="d-flex justify-content-center">
           <div class="mt-5">
             <img
@@ -125,7 +125,7 @@
       <div>
         <div class="chamtitle pl-3"><p>SECOND PICK</p></div>
       </div>
-      <b-row align-v="stretch" class="article mb-0">
+      <b-row align-v="stretch" class="mb-0">
         <b-col cols="4" class="d-flex justify-content-center">
           <div class="mt-5">
             <img
@@ -240,7 +240,7 @@
       <div>
         <div class="chamtitle pl-4"><p>THIRD PICK</p></div>
       </div>
-      <b-row align-v="stretch" class="article mb-0">
+      <b-row align-v="stretch" class="mb-0">
         <b-col cols="4" class="d-flex justify-content-center">
           <div class="mt-5">
             <img
