@@ -12,7 +12,7 @@ export default {
   },
   methods: {
     test() {
-      axios.get('http://j3a304.p.ssafy.io/django/api/champions/')
+      axios.get('http://j3a304.p.ssafy.io:8181/django/api/videoposts/')
       .then(res => {
         console.log(res.data)
       })
