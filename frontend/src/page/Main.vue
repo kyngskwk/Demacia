@@ -1,12 +1,18 @@
 <template>
+<div>
+  <Carousel/>
+  <!-- <b-row class="maintitle text-center">
+      <img src="../assets/img/damacia.png" alt="" style="display:block; margin:100px auto 0px">
+      <b-col cols="12" class="sub pb-4 mb-4">
+        <img src="../assets/img/subtitle.png" alt="" style="display:block; margin:0px auto 50px">
+      </b-col>
+    </b-row> -->
   <div class="container p-4">
-    <b-row class="maintitle text-center">
-      <b-col cols="12">DEMACIA</b-col>
-      <b-col cols="12" class="sub pb-4 mb-4">FOR JUSTICE</b-col>
-    </b-row>
+    <img src="../assets/img/recommtitle.png" alt="" style="margin:50px 0px 0px">
     <b-row class="part">
       <b-col cols="12" lg="6">
-        <div class="box">
+        <div class="box" style="border-style:ridge; border: #fcd000 4px ridge; 
+        opacity:0.8; background: linear-gradient(180deg, rgba(6,17,27,1) 0%, rgba(28,83,73,1) 100%);">
           <b-row>
             <b-col cols="12" class="m-2 text-left">
               <router-link :to="{name:constants.URL_TYPE.RECOMMEND.COMBINATION}">
@@ -14,7 +20,7 @@
               </router-link>누르면 로그인 창으로 갑니다.
             </b-col>
             <b-col>
-              <p>
+              <p style="color: #e3d19e">
                 Use this area to describe your project. Lorem ipsum dolor
                 sit amet, consectetur adipisicing elit. Est blanditiis
                 dolorem culpa incidunt minus dignissimos deserunt repellat
@@ -26,7 +32,8 @@
         </div>
       </b-col>
       <b-col cols="12" sm="6">
-        <div class="box">
+        <div class="box" style="border-style:ridge; border: #fcd000 4px ridge; 
+        opacity:0.8; background: linear-gradient(180deg, rgba(6,17,27,1) 0%, rgba(28,83,73,1) 100%);">
           <b-row>
             <b-col cols="12" class="m-2 text-left">
               <router-link :to="{name:constants.URL_TYPE.RECOMMEND.CHAMPION}">
@@ -34,7 +41,7 @@
               </router-link>누르면 로그인 창으로 갑니다.
             </b-col>
             <b-col>
-              <p>
+              <p style="color: #e3d19e">
                 Use this area to describe your project. Lorem ipsum dolor
                 sit amet, consectetur adipisicing elit. Est blanditiis
                 dolorem culpa incidunt minus dignissimos deserunt repellat
@@ -46,19 +53,17 @@
         </div>
       </b-col>
       <b-col cols="12">
-        <div class="box">
+        <router-link :to="{name:constants.URL_TYPE.POST.MAIN}">
+          <img src="../assets/img/votetitle.png" alt="" style="margin:50px 0px 0px">
+        </router-link>
+        <div class="box" style="border: #fcd000 2px solid; opacity:0.8; background: linear-gradient(180deg, rgba(6,17,27,1) 0%, rgba(28,83,73,1) 100%);">
           <b-row>
-            <b-col cols="12" class="m-2 text-left">
-              <router-link :to="{name:constants.URL_TYPE.POST.MAIN}">
-                <kbd>진행중 투표</kbd>
-              </router-link>보이는게 없어서 그냥 최근 5개만 보이는 중입니다.
-            </b-col>
             <b-col cols="12">
-              <b-table striped hover :items="lastPost" :fields="lastPostFields" v-if="lastPost">
+              <b-table striped hover :items="lastPost" :fields="lastPostFields" v-if="lastPost" style="color: #e3d19e">
                 <template v-slot:cell(postDate)="data">{{ postDT(data.value) }}</template>
                 <template v-slot:cell(to)="data">
                   <router-link :to="'/detail/'+data.item.postNo">
-                    <b-icon icon="arrow-right-circle" font-scale="2"></b-icon>
+                    <b-icon icon="arrow-right-circle" font-scale="2" style="color: #e3d19e"></b-icon>
                   </router-link>
                 </template>
               </b-table>
@@ -68,19 +73,18 @@
         </div>
       </b-col>
       <b-col cols="12">
-        <div class="box">
+        <router-link :to="{name:constants.URL_TYPE.VIDEO.MAIN}">
+          <img src="../assets/img/videotittle.png" alt="" style="margin:50px 0px 0px">
+        </router-link>
+        <div class="box" style="border-style:ridge; border: #fcd000 4px ridge; 
+        opacity:0.8; background: linear-gradient(180deg, rgba(6,17,27,1) 0%, rgba(28,83,73,1) 100%);">
           <b-row>
-            <b-col cols="12" class="m-2 text-left">
-              <router-link :to="{name:constants.URL_TYPE.VIDEO.MAIN}">
-                <kbd>영상분석</kbd>
-              </router-link>아무것도 없어서 더미데이터가 들어있습니다.
-            </b-col>
             <b-col cols="12">
-              <b-table striped hover :items="lastVideo" :fields="lastVideoFields" v-if="lastVideo">
+              <b-table striped hover :items="lastVideo" :fields="lastVideoFields" v-if="lastVideo" style="color: #e3d19e">
                 <template v-slot:cell(date)="data">{{ postDT(data.value) }}</template>
                 <template v-slot:cell(to)="data">
                   <router-link :to="'/vdetail/'+data.item.videoNo">
-                    <b-icon icon="arrow-right-circle" font-scale="2"></b-icon>
+                    <b-icon icon="arrow-right-circle" font-scale="2" style="color: #e3d19e"></b-icon>
                   </router-link>
                 </template>
               </b-table>
@@ -90,16 +94,24 @@
         </div>
       </b-col>
       <b-col cols="12">
-        <a href="/welcome" class="maintitle sub mt-4">About us</a>
+        <a href="/welcome" >
+          <img src="../assets/img/aboutus.png" alt="" style="display:block; margin:100px auto 50px">
+        </a>
       </b-col>
     </b-row>
   </div>
+</div>
+
 </template>
 <script>
+import Carousel from '../components/common/Carousel.vue'
 import constants from "../lib/constants";
 import axios from "axios";
 
 export default {
+  components: {
+    Carousel
+  },
   data() {
     return {
       constants,
