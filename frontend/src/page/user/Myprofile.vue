@@ -8,7 +8,7 @@
       <div class="col-1"></div>
       <div
         id="pad2"
-        class="col-10 col-sm-8 col-md-6 col-lg-6 col-xl-5"
+        class="col-xl-5"
         style="
           padding-right: 0;
           padding-left: 0;
@@ -136,7 +136,7 @@
                 >{{ user.userEmail }}</b-col>
             </b-row>
 
-            <b-row class="mt-5 ml-3">
+            <b-row class="mt-0 ml-3">
               <b-col class="text-white">
                 <!-- 비밀번호 재입력 모달 -->
                 <b-modal
@@ -271,7 +271,7 @@
       <!-- 랭크 박스 -->
       <div class="row d-flex justify-content-center">
         <div
-          class="col-10 col-xl-5 m-4"
+          class="col-xl-5 m-4"
         >
           <!-- 솔 랭 -->
           <b-row>
@@ -286,30 +286,24 @@
                       class="rounded-0"
                     ></b-card-img>
                   </b-col>
-                  <b-col cols="6" md="8">
-                    <b-card-body>
-                      <b-card-text>
-                        <b-row cols="1" style="margin-top: 10%">
-                          <b-col>
-                            <p
-                              id="font1"
-                              style="font-size: 3vh; font-weight: bold"
-                              class="text-white"
-                            >
-                              SOLOMON RANK
-                            </p>
-                          </b-col>
-                          <b-col>
-                            <p
-                              id="font1"
-                              style="font-size: 3vh; font-weight: bold; color:#fcd000"
-                            >
-                              {{ solRank }}
-                            </p>
-                          </b-col>
-                        </b-row>
-                      </b-card-text>
-                    </b-card-body>
+                  <b-col cols="6" md="8" class="pt-3">
+                    <div class="mt-5">
+                      <p
+                        id="font1"
+                        style="font-size: 3vh; font-weight: bold"
+                        class="text-white"
+                      >
+                        SOLOMON RANK
+                      </p>
+                    </div>
+                    <div>
+                      <p
+                        id="font1"
+                        style="font-size: 3vh; font-weight: bold; color:#fcd000"
+                      >
+                        {{ solRank }}
+                      </p>
+                    </div>
                   </b-col>
                 </b-row>
               </b-card>
@@ -332,12 +326,8 @@
                   <b-col cols="6" md="8">
                     <b-card-body>
                       <b-card-text>
-                        <b-row
-                          cols="1"
-                          align-v="stretch"
-                          v-show="user.summonerName"
-                        >
-                          <b-col>
+                        <div v-show="user.summonerName">
+                          <div>
                             <p
                               id="font1"
                               style="font-size: 3vh; font-weight: bold"
@@ -345,15 +335,15 @@
                             >
                               GAME RANK
                             </p>
-                          </b-col>
-                          <b-col>
+                          </div>
+                          <div>
                             <p
                               id="font1"
                               style="font-size: 3vh; font-weight: bold; color:#fcd000"
                             >
                               {{ gameRank }}
                             </p>
-                          </b-col>
+                          </div>
                           <b-col class="d-flex justify-content-center">
                             <b-button
                               style="max-width: 200px; color:white;background: linear-gradient(180deg, #1b2831 0%, #12384b 100%); border-style:ridge; border:#95ede7 3px ridge;"
@@ -363,13 +353,13 @@
                               >초기화</b-button
                             >
                           </b-col>
-                        </b-row>
-                        <b-row
+                        </div>
+                        <div
                           align-v="center"
                           cols="1"
                           v-show="!user.summonerName"
                         >
-                          <b-col>
+                          <div>
                             <p
                               id="font1"
                               style="font-size: 3vh; font-weight: bold"
@@ -377,8 +367,8 @@
                             >
                               GAME RANK
                             </p>
-                          </b-col>
-                          <b-col>
+                          </div>
+                          <div>
                             <p
                               id="font1"
                               style="font-size: 3vh; font-weight: bold"
@@ -386,7 +376,7 @@
                             >
                               소환사 인증이 필요합니다!
                             </p>
-                          </b-col>
+                          </div>
                           <b-col>
                             <!-- 소환사 인증 폼 -->
                             <b-input-group>
@@ -414,7 +404,7 @@
                               }}</b-form-invalid-feedback>
                             </b-input-group>
                           </b-col>
-                        </b-row>
+                        </div>
                       </b-card-text>
                     </b-card-body>
                   </b-col>
@@ -424,7 +414,7 @@
           </b-row>
         </div>
         <div
-          class="shadow1 col-10 col-xl-5 m-4 pt-4"
+          class="shadow1 col-xl-5 m-4 pt-4"
           style="border: #fcd000 1px solid; opacity:0.8; opacity:0.8; background: linear-gradient(180deg, rgba(6,17,27,1) 0%, rgba(28,83,73,1) 100%);"
         >
           <!-- 솔로몬 활동 리스트 박스-->
@@ -469,7 +459,7 @@
 
         <!-- MBTI -->
         <div
-          class="shadow1 col-10 col-xl-5 m-4 p-4"
+          class="shadow1 col-xl-5 m-4 p-4"
           style="border: #fcd000 1px solid; opacity:0.8; opacity:0.8; background: linear-gradient(180deg, rgba(6,17,27,1) 0%, rgba(28,83,73,1) 100%);"
         >
           <b-row class="text-white">
@@ -500,7 +490,7 @@
         </div>
         <!-- 추천 -->
         <div
-          class="col-10 col-xl-5 m-4 pt-4 text-white"
+          class="col-xl-5 m-4 pt-4 text-white"
           style="border: #fcd000 1px solid; opacity:0.8; opacity:0.8; background: linear-gradient(180deg, rgba(6,17,27,1) 0%, rgba(28,83,73,1) 100%);"
         >
           <h4 style="display: inline-block">추천 챔피언과 조합</h4>

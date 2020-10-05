@@ -7,6 +7,7 @@ import { BootstrapVue, IconsPlugin } from "bootstrap-vue";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap-vue/dist/bootstrap-vue.css";
 import InfiniteLoading from "vue-infinite-loading";
+import vuetify from './plugins/vuetify';
 
 Vue.use(InfiniteLoading, {
   slots: {
@@ -26,5 +27,6 @@ Vue.config.productionTip = false;
 new Vue({
   router,
   store,
-  render: (h) => h(App),
+  vuetify,
+  render: (h) => h(App)
 }).$mount("#app");
