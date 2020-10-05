@@ -6,7 +6,6 @@
         <img src="../assets/img/subtitle.png" alt="" style="display:block; margin:0px auto 50px">
       </b-col>
     </b-row>
-
     <img src="../assets/img/recommtitle.png" alt="" style="margin:50px 0px 0px">
     <b-row class="part">
       <b-col cols="12" lg="6">
