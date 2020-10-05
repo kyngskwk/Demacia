@@ -9,6 +9,7 @@ var usersRouter = require('./routes/users');
 var uploadRouter = require('./routes/upload');
 var uploadthumRouter = require('./routes/uploadthum');
 var uploadvideoRouter = require('./routes/uploadvideo');
+var uploadvideo2Router = require('./routes/uploadvideo2');
 
 const cors = require('cors');
 
@@ -30,6 +31,7 @@ app.use('/users', usersRouter);
 app.use('/upload', uploadRouter);
 app.use('/uploadthum', uploadthumRouter);
 app.use('/uploadvideo', uploadvideoRouter);
+app.use('/uploadvideo2', uploadvideo2Router);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
