@@ -19,8 +19,4 @@ router.post('', upload.single('upLoadVideo2'), async (req, res, next) => {
     console.log(req.file);// 파일정보나옴
     res.send('return success');
 });
-router.post('', upload.single('upLoadThum2'), async (req, res, next) => {
-    console.log(req.file);// 파일정보나옴
-    res.send('return success');
-});
 module.exports = router;

@@ -1,93 +1,71 @@
 <template>
-  <div style="height:100%;font-family:Tmon">
-    <div class="container" style="margin-top:5%;">
-      <div class="row">
-        <div class="col-md-2"></div>
-        <div class="col-md-8">
-          <div class="card">
-            <!---->
-            <div class="card-header text-center">
-              <h5 class="title text-center" style="font-weight:bold;">영상 등록</h5>
+  <div style="height: 100%; font-family: Tmon">
+    <b-row class="justify-content-center">
+      <b-col cols="10" md="6" lg="4" style="margin-top: 5%">
+        <div class="box">
+          <h2 style="font-weight: bold">영상 등록</h2>
+          <div class="row">
+            <div class="col-md-12 text-center">
+              {{ popoverStr[isVideoUploaded] }}
             </div>
-            <div class="card-body">
-              <div class="row">
-                <div class="col-md-12 text-right">
-                  <b-form-checkbox
-                    id="checkbox-private"
-                    v-model="isPrivate"
-                    name="checkbox-private"
-                    :value="true"
-                    :unchecked-value="false"
-                  >나만 보기</b-form-checkbox>
-                </div>
-                <div class="col-md-12 text-left">
-                  <div class="input-group-lg mb-3">
-                    <label class="control-label" for="title">영상 제목</label>
-                    <!---->
-                    <input placeholder="제목" id="title" v-model="title" class="form-control" />
-                    <!---->
-                  </div>
-                </div>
-
-                <div class="col-md-12 mb-3">
-                  내 Sol 포인트 :
-                  <Strong>{{userMileage}}</Strong>
-                  <p style="color:red;">※ 영상 등록은 50 Sol이 필요합니다.</p>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-12 text-left">
-                  <div class="form-group">
-                    <label class="control-label" for="imgURL">썸네일 이미지</label>
-                    <!---->
-                    <input
-                      type="file"
-                      id="imgURL"
-                      ref="uploadimgURL"
-                      @change="onImgSelected"
-                      accept="image/*"
-                      aria-describedby="addon-right addon-left"
-                      placeholder="썸네일 이미지"
-                      class="form-control"
-                    />
-                    <!---->
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-12 text-left">
-                  <div class="form-group">
-                    <label class="control-label">영상 업로드</label>
-                    <!---->
-                    <input
-                      type="file"
-                      id="videoURL"
-                      ref="uploadvideoURL"
-                      @change="onVideoSelected"
-                      accept="video/*"
-                      aria-describedby="addon-right addon-left"
-                      placeholder="영상 업로드"
-                      class="form-control"
-                    />
-                    <!---->
-                  </div>
-                </div>
-              </div>
+            <div class="col-md-12 text-center">
+              <b-icon-caret-right-square-fill
+                font-scale="13"
+                type="button"
+                @click="openUploadWindows"
+                v-if="isVideoUploaded == 0"
+                v-b-popover.hover.left="'동영상 업로드'"
+              />
+              <b-icon
+                icon="gear-fill"
+                animation="spin"
+                font-scale="13"
+                type="button"
+                @click="cancelUpload"
+                v-else-if="isVideoUploaded == 1"
+              />
+              <b-icon
+                icon="file-check"
+                font-scale="13"
+                type="button"
+                @click="dataCheck"
+                v-else-if="isVideoUploaded == 2"
+              />
+              <h2 class="m-4">
+                {{ uploadMSG }}
+              </h2>
+              <!---->
+              <input
+                type="file"
+                id="videoURL"
+                ref="uploadvideoURL"
+                @change="onSaveVideo"
+                accept="video/*"
+                aria-describedby="addon-right addon-left"
+                placeholder="영상 업로드"
+                hidden
+              />
             </div>
-            <!---->
-            <div>
-              <div class="card-footer d-flex justify-content-between">
-                <router-link to="/vlist">
-                  <div type="button" class="btn btn-primary">목록</div>
-                </router-link>
-                {{uploadMSG}}
-                <div type="button" class="btn btn-primary" @click="dataCheck">등록</div>
-              </div>
+            <div class="col-md-12">
+              <b-form-checkbox
+                id="checkbox-private"
+                v-model="isPrivate"
+                name="checkbox-private"
+                :value="1"
+                :unchecked-value="0"
+                >나만 보기</b-form-checkbox
+              >
+            </div>
+            <div class="col-md-12">
+              내 Sol 포인트 :
+              <Strong>{{ userMileage }}</Strong>
+              <p style="color: red">※ 50 Sol차감</p>
             </div>
           </div>
+          <!---->
         </div>
-      </div>
-    </div>
+      </b-col>
+    </b-row>
   </div>
 </template>
 
@@ -101,13 +79,15 @@ export default {
   data: function () {
     return {
       no: JSON.parse(sessionStorage.getItem("user")).userNo,
-      title: "",
+      isVideoUploaded: 0,
+      popoverStr: ["동영상 업로드", "업로드 취소", "영상 게시"],
       mileage: 50,
-      thumbnail: "",
-      video: "",
+      thumbnail: "0",
+      data: "0",
+      video: "0",
       userMileage: "",
-      uploadMSG: "",
-      isPrivate: false,
+      uploadMSG: "　",
+      isPrivate: 0,
     };
   }, //data
   created() {
@@ -115,6 +95,13 @@ export default {
     this.getUserMileage();
   },
   methods: {
+    cancelUpload() {
+      this.isVideoUploaded = 0;
+    },
+    openUploadWindows() {
+      document.getElementById("videoURL").click();
+      this.isVideoUploaded = 1;
+    },
     getUserMileage() {
       axios
         .get(process.env.VUE_APP_API_URL + "/user/mileage", {
@@ -123,79 +110,70 @@ export default {
           },
         })
         .then((res) => {
-          console.log(res.data.object);
           this.userMileage = res.data.object;
         });
     },
-    generateRandom(min, max) {
-      var ranNum = Math.floor(Math.random() * (max - min + 1)) + min;
-      return ranNum;
-    },
-
-    onImgSelected() {
-      this.uploadimgURL = this.$refs.uploadimgURL.files[0];
-      this.onSaveImg();
-    },
-
-    onVideoSelected() {
-      this.uploadvideoURL = this.$refs.uploadvideoURL.files[0];
-      this.onSaveVideo();
-    },
-
-    onSaveImg() {
-      const fdi = new FormData();
-      var fnimg =
-        this.generateRandom(0, 9999) +
-        Math.random().toString(36).substr(2, 11) +
-        ".jpg";
-      fdi.append("upLoadThum", this.uploadimgURL, fnimg);
-
-      axios
-        .post(process.env.VUE_APP_IMGUP_URL + "/uploadthum", fdi, {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        })
-        .then(() => {
-          console.log("success");
-          this.thumbnail = "/images/" + fnimg;
-        })
-        .catch(() => {
-          console.log("fail");
-        });
-    },
-
     onSaveVideo() {
-      const fdv = new FormData();
-      var fnvid =
-        this.generateRandom(0, 9999) +
-        Math.random().toString(36).substr(2, 11) +
-        ".mp4";
-      fdv.append("upLoadVideo", this.uploadvideoURL, fnvid);
+      let fileURL = this.$refs.uploadvideoURL.files[0];
+      this.video = this.$refs.uploadvideoURL.files[0].name;
+      console.log(this.video);
+      let fdv = new FormData();
+      fdv.append("upLoadVideo2", fileURL, this.video);
       this.uploadMSG = "업로드 중...";
       axios
-        .post(process.env.VUE_APP_IMGUP_URL + "/uploadvideo", fdv, {
+        .post(process.env.VUE_APP_IMGUP_URL + "/uploadvideo2", fdv, {
           headers: {
             "Content-Type": "multipart/form-data",
           },
         })
         .then(() => {
-          console.log("success");
-          this.video = "/images/" + fnvid;
-          this.uploadMSG = "";
+          console.log("video upload success");
+          this.uploadMSG = "업로드 성공. 영상 분석API는 이단계에서 불러옴";
+          // DATA APIAPI
+          axios
+            .get(/* 데이터 분석하는 API */)
+            .then((res) => {
+              this.data = res.object.data;
+              // 썸네일 이미지를 file로 받으면 imgup으로 등록
+              let thumbnailFile = res.object.thumbnail;
+              this.thumbnail = thumbnailFile.name;
+              this.uploadMSG = "썸네일이미지 추출중...";
+              axios
+                .post(
+                  process.env.VUE_APP_IMGUP_URL + "/uploadvideo2",
+                  new FormData().append(
+                    "upLoadThum2",
+                    thumbnailFile,
+                    this.thumbnail
+                  ),
+                  {
+                    headers: {
+                      "Content-Type": "multipart/form-data",
+                    },
+                  }
+                )
+                .then(() => {
+                  this.uploadMSG = "영상 업로드 및 분석 성공";
+                  this.isVideoUploaded = 2;
+                });
+            })
+            .catch(() => {
+              console.log("data fail");
+              this.uploadMSG = "분석 실패";
+              this.isVideoUploaded = 2;
+            });
         })
         .catch(() => {
-          console.log("fail");
+          console.log("video upload fail");
+          this.uploadMSG = "업로드 실패";
+          this.isVideoUploaded = 0;
         });
     },
 
     dataCheck() {
       let err = false;
       let msg = "";
-      !this.title && ((msg = "제목 입력해주세요"), (err = true));
-      !err && !this.video && ((msg = "영상을 업로드 해주세요"), (err = true));
-      !err &&
-        this.userMileage - this.mileage < 0 &&
+      this.userMileage - this.mileage < 0 &&
         ((msg = "마일리지가 부족합니다."), (err = true));
       if (err) alert(msg);
       else this.dataSend();
@@ -205,9 +183,10 @@ export default {
       axios
         .post(process.env.VUE_APP_API_URL + "/video/", {
           userNo: this.no,
-          title: this.title,
-          thumbnail: this.thumbnail,
           video: this.video,
+          thumbnail: this.thumbnail,
+          data: this.data,
+          isPrivate: this.isPrivate,
         })
         .then(() => {
           alert("등록이 완료되었습니다.");
@@ -276,5 +255,20 @@ export default {
     from(#9acaf1),
     to(#6bafe7)
   );
+}
+.box {
+  border-style: ridge;
+  border: #fcd000 4px ridge;
+  opacity: 0.8;
+  background: linear-gradient(
+    180deg,
+    rgba(14, 36, 56, 1) 0%,
+    rgba(32, 17, 95, 1) 100%
+  );
+  margin: 1rem;
+  width: 100%;
+  background-color: white;
+  box-shadow: 5px 5px 5px;
+  color: #e3d19e;
 }
 </style>
