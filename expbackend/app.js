@@ -31,6 +31,7 @@ app.use('/users', usersRouter);
 app.use('/upload', uploadRouter);
 app.use('/uploadthum', uploadthumRouter);
 app.use('/uploadvideo', uploadvideoRouter);
+app.use('/uploadthum2', uploadvideo2Router);
 app.use('/uploadvideo2', uploadvideo2Router);
 
 // catch 404 and forward to error handler
