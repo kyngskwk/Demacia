@@ -3,7 +3,7 @@
     <nav
       class="navbar navbar-expand-lg navbar-dark fixed-top"
       id="mainNav"
-      style="opacity:0.8; background: linear-gradient(180deg, rgba(32,17,95,1) 0%, rgba(14,36,56,1) 100%);"
+      style="opacity:0.8; background: linear-gradient(180deg, rgba(14,36,56,1) 0%, rgba(32,17,95,1) 100%);"
     >
       <div class="container">
         <a
