@@ -73,13 +73,13 @@ def champion_list(request):
     serializers = ChampionSerializer(champions, many=True)
     return Response(serializers.data)
 
-@api_view(['GET'])
-def videopost_list(request,videopostno):
-    videoid = Videopost.objects.filter(videopostno=videopostno)
-    serializers = VideopostSerializer(videoposts, many=True)
-    return Response(serializers.data)
+# @api_view(['GET'])
+# def videopost_list(request,videopostno):
+#     videoid = Videopost.objects.filter(videopostno=videopostno)
+#     serializers = VideopostSerializer(videoposts, many=True)
+#     return Response(serializers.data)
 
-@swagger_auto_schema(method='post', request_body=VideopostSerializer)
+@swagger_auto_schema(method='post', request_body=VideoUpdateSerializer)
 @api_view(['POST'])
 def videopost_update(request):
     request_videopostno = request.data['videopostno']
@@ -87,14 +87,15 @@ def videopost_update(request):
     print(videoname)
     gameId = get_image.get_image(videoname)
     print("get_image호출",gameId)
-    # new_time,gameId = change_text.change_text(gameId)
-    # time_part_set, new_part_set, gameId = timeline.timeline(new_time,gameId)
-    # before_bluescore, before_redscore, after_bluescore, after_redscore, champions_records = winrate_algo.winrate_algo(time_part_set, new_part_set, gameId)
-    # result = [before_bluescore, before_redscore, after_bluescore, after_redscore, champions_records]
-    # Videodata = Videopost.objects.filter(videopostno=videopostno).update(data=result)
-    # videoposts = Videopost.objects.all() 
-    serializers = VideopostSerializer(data=request.data)
+    new_time,gameId = change_text.change_text(gameId)
+    time_part_set, new_part_set, gameId = timeline.timeline(new_time,gameId)
+    before_bluescore, before_redscore, after_bluescore, after_redscore, champions_records = winrate_algo.winrate_algo(time_part_set, new_part_set, gameId)
+    result = [before_bluescore, before_redscore, after_bluescore, after_redscore, champions_records]
+    videodata = Videopost.objects.filter(videopostno=request_videopostno).update(data=result)
+    serializers = VideoUpdateSerializer(data=request.data)
     if serializers.is_valid():
+        return Response(serializers.data)
+    else:
         return Response(serializers.data)
 
 @api_view(['POST'])
@@ -195,27 +196,13 @@ def match_list(request,userno):
 
 @swagger_auto_schema(method='post', request_body=UserSerializer)
 @api_view(['POST'])
-# @permission_classes([IsAuthenticated])
 def mbti_update(request):
     request_userno = request.data['userno']
     request_mbti = request.data['mbti']
-    # print(request_userno, request_mbti)
-    # Userdata = User.objects.filter(userno=request_userno)
     Userdata = User.objects.filter(userno=request_userno).update(mbti=request_mbti)
-    # mbtiupdate = UserSerializer(Userdata, data={'mbti': request_mbti}, partial=True)
     serializers = UserSerializer(data=request.data)
     if serializers.is_valid():
-    #     serializers.save()
         return Response(serializers.data)
-    # userdata = UserSerializer(data=request.data)
-    # print(userdata)
-    # if userdata.is_valid():
-    #     userdata.save()
-    #     return userdata.data
-    
-    # if userdata.is_valid():
-    #     userdata.save()
-    #     return Response(userdata.data)
 
 
 @api_view(['GET'])
