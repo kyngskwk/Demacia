@@ -10,10 +10,11 @@ from drf_yasg.utils import swagger_auto_schema
 from drf_yasg import openapi
 from django.views.decorators.csrf import csrf_exempt
 from django.utils.decorators import method_decorator
-from .video import get_image
+# from ..video.winrate_algo import before_bluescore, before_redscore, after_bluescore, after_redscore, champions_records
 # Create your views here.
 
 
+videoname = None
 
 @api_view(['GET'])
 def recommand_champion(request,userno):
@@ -83,12 +84,10 @@ def videopost_list(request,videopostno):
 
 @api_view(['POST'])
 def videopost_update(request,videopostno):
-    videoid = Videopost.objects.filter(videopostno=videopostno).values('video').distinct()[0]['video']
-
-    result = get_image.get_image_function(videoid)
-    print(result)
+    videoname = Videopost.objects.filter(videopostno=videopostno).values('video').distinct()[0]['video']
     videoposts = Videopost.objects.all() 
-    # Videodata = Videopost.objects.filter(videopostno=videopostno).update(data=result)
+    # result = 
+    Videodata = Videopost.objects.filter(videopostno=videopostno).update(data=result)
     serializers = VideopostSerializer(videoposts, many=True)
     return Response(serializers.data)
 
