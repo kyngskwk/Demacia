@@ -55,8 +55,7 @@
         <router-link :to="{name:constants.URL_TYPE.POST.MAIN}">
           <img src="../assets/img/votetitle.png" alt="" style="margin:50px 0px 0px">
         </router-link>
-        <div class="box" style="border-style:ridge; border: #fcd000 4px ridge; 
-        opacity:0.8; background: linear-gradient(180deg, rgba(6,17,27,1) 0%, rgba(28,83,73,1) 100%);">
+        <div class="box" style="border: #fcd000 2px solid; opacity:0.8; background: linear-gradient(180deg, rgba(6,17,27,1) 0%, rgba(28,83,73,1) 100%);">
           <b-row>
             <b-col cols="12">
               <b-table striped hover :items="lastPost" :fields="lastPostFields" v-if="lastPost" style="color: #e3d19e">

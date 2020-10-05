@@ -383,9 +383,23 @@ export default {
   },
 
   created() {
-    this.user = JSON.parse(sessionStorage.getItem("user"));
-    console.log(this.user);
-    axios
+    if(JSON.parse(sessionStorage.getItem("user"))){
+      this.user = JSON.parse(sessionStorage.getItem("user"));
+      console.log(this.user);
+      axios
+      .get(
+        process.env.VUE_APP_DAPI_URL +
+          "/matches/" +
+          this.user.userNo +
+          "/"
+      )
+      .then((res) => {        
+      if(res.data.length == "0"){
+        alert("전적기록을 먼저 가져와주세요!!")
+        location.href = "/myprofile";
+      }
+      else{
+      axios
       .get(
         process.env.VUE_APP_DAPI_URL +
           "/recommand/" +
@@ -416,8 +430,18 @@ export default {
         this.callchampion();
       })
       .catch((err) => {
-        location.href = "/error/로그인 중 서버 오류가 발생했습니다. " + err;
+        location.href = "/error/챔피언 추천 중 서버 오류가 발생했습니다. " + err;
       });
+      }
+      })
+      .catch((err) => {
+      location.href = "/error/챔피언 추전 중 서버 오류가 발생했습니다. " + err;
+      });
+    }
+    else{
+      location.href="/login";
+    }
+    
   },
 
   computed: {},
