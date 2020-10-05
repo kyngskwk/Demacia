@@ -79,6 +79,7 @@ def videopost_list(request,videopostno):
     serializers = VideopostSerializer(videoposts, many=True)
     return Response(serializers.data)
 
+@swagger_auto_schema(method='post', request_body=VideoUpdateSerializer)
 @api_view(['POST'])
 def videopost_update(request):
     request_videopostno = request.data['videopostno']

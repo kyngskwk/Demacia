@@ -7,7 +7,7 @@ def get_image(videoname):
         # videoname = ''
         print(11111111111111111)
         # videoname = '10-19_KR-4664501922_06.mp4'
-        vidcap = cv2.VideoCapture('./demacia/%s' % videoname)
+        vidcap = cv2.VideoCapture('../expbackend/public/videos/%s' % videoname)
         gameId = videoname[9:-7]
 
         count = 0
