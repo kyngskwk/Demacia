@@ -64,3 +64,8 @@ class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ['userno', 'mbti']
+class VideoUpdateSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Videopost
+        fields = ['videopostno']

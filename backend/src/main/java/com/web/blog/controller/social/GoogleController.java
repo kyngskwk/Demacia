@@ -64,17 +64,18 @@ public class GoogleController {
                 .code(code)
                 .redirectUri(redirectUrl)
                 .grantType("authorization_code").build();
-        System.out.println("test3");
+
+
         //JSON 파싱을 위한 기본값 세팅
 	//요청시 파라미터는 스네이크 케이스로 세팅되므로 Object mapper에 미리 설정해준다.
 	final ObjectMapper mapper = new ObjectMapper();
 	mapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
         mapper.setSerializationInclusion(Include.NON_NULL);
-        System.out.println("test4");        
+       
         //AccessToken 발급 요청
         final String GOOGLE_TOKEN_BASE_URL = "https://oauth2.googleapis.com/token";
         final ResponseEntity<String> resultEntity = restTemplate.postForEntity(GOOGLE_TOKEN_BASE_URL, googleOAuthRequestParam, String.class);
-        System.out.println("test5");
+
         //Token Request
         final GoogleOAuthResponse requestresult = mapper.readValue(resultEntity.getBody(), new TypeReference<GoogleOAuthResponse>() {});
         String access_token = requestresult.getAccessToken();

@@ -226,16 +226,19 @@ class User(models.Model):
 
 
 class Videopost(models.Model):
-    videopostno = models.AutoField(primary_key=True)
-    title = models.CharField(max_length=200)
-    video = models.CharField(max_length=250)
-    data = models.CharField(max_length=250)
-    isprivate = models.IntegerField()
+    videopostno = models.IntegerField(primary_key=True)
     userno = models.ForeignKey(User, models.DO_NOTHING, db_column='userno')
+    video = models.CharField(max_length=250)
+    thumbnail = models.CharField(max_length=250, blank=True, null=True)
+    data = models.CharField(max_length=500, blank=True, null=True)
+    isprivate = models.IntegerField()
+    view = models.IntegerField(blank=True, null=True)
+    postdate = models.DateTimeField()
 
     class Meta:
         managed = False
         db_table = 'videopost'
+
 
 
 class Videopostlikes(models.Model):

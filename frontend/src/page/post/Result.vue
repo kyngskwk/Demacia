@@ -1,14 +1,16 @@
 <template>
   <div
     class="pb-2"
-    style="background-color:white; width:90%; margin-left:auto; margin-right:auto;font-family:Tmon"
+    style="background: rgba( 0, 0, 0, 0.5 );width:96%; margin-left:auto; margin-right:auto;font-family:Tmon;color: white;"
   >
     <div
       class="d-flex justify-content-between"
       style="margin-right:1%;margin-left:1%; margin-top:1%;"
     >
       <b-container class="bv-example-row" style="padding:0;margin-top:3%;">
-        <b-row style="width:100%; border-top:solid; border-bottom:solid; margin:0; ">
+        <b-row
+          style="width:100%; border-top:solid; border-bottom:solid; margin:0; "
+        >
           <b-col
             cols="3"
             lg="3"
@@ -17,30 +19,44 @@
             class="d-flex"
           >
             <p id="hide3" style="font-size:3vh; padding-left:7%;">의뢰번호</p>
-            <p style="font-weight: bold; font-size:3vh; padding-left:5px; ">NO.{{ postNo }}</p>
+            <p style="font-weight: bold; font-size:3vh; padding-left:5px; ">
+              NO.{{ postNo }}
+            </p>
           </b-col>
-          <b-col cols="9" lg="6" xl="6" class="d-flex color1" style="padding-top:3%;">
+          <b-col cols="9" lg="6" xl="6" class="d-flex" style="padding-top:3%;">
             <p
               style="font-weight: bold;font-size:3.5vh; max-width:100%;display: -webkit-box; overflow: hidden;width:100%; text-overflow: ellipsis;
                           -webkit-line-clamp: 1;-webkit-box-orient: vertical;word-wrap:break-word; line-height: 4vh; height: 4vh; "
-            >{{ writePost.title }}</p>
+            >
+              {{ writePost.title }}
+            </p>
           </b-col>
           <b-col id="hide2" cols="4" lg="3" xl="3" style=" ">
-            <h4 style="font-size:5vh;font-weight: bold; color:red;margin-top:10%;">투표 종료</h4>
+            <h4
+              style="font-size:5vh;font-weight: bold; color:red;margin-top:10%;"
+            >
+              투표 종료
+            </h4>
           </b-col>
         </b-row>
       </b-container>
     </div>
 
     <div class="container" style="width:100%; padding:0; margin-top:2%;">
-      <video style="width:100%; padding:0;" controls autoplay="true" name="media" id="vid">
+      <video
+        style="width:100%; padding:0; max-width:900px;"
+        controls
+        autoplay="true"
+        name="media"
+        id="vid"
+      >
         <source :src="videolink" type="video/mp4" />
       </video>
     </div>
 
     <div
       class="container"
-      style="border-left:solid; border-right:solid; border-bottom:solid;  padding-left:5px;padding-right:5px;padding-bottom:5px; margin-top:-7%; padding-top:6%"
+      style="  padding-left:5px;padding-right:5px;padding-bottom:5px; margin-top:-7%; padding-top:6%"
     >
       <hr style="margin-left:2%;margin-right:2%;" />
       <div>
@@ -49,14 +65,22 @@
             <!-- 글쓴이 -->
             <div class="d-flex justify-content-between">
               <div class="d-flex" style=" margin-left:2%;">
-                <b-avatar variant="secondary" :src="writeUser.userImage" class="ml-3 mr-3"></b-avatar>
+                <b-avatar
+                  variant="secondary"
+                  :src="writeUser.userImage"
+                  class="ml-3 mr-3"
+                ></b-avatar>
                 <div>
                   <h4
                     style="margin-bottom:0; text-align:center; font-size:2.5vh; margin-top:12%;"
-                  >{{ writeUser.userNickname }}</h4>
+                  >
+                    {{ writeUser.userNickname }}
+                  </h4>
                   <h4
                     style="margin-bottom:0; text-align:center;  font-size:1.2vh;"
-                  >{{ writeUser.userTier }}</h4>
+                  >
+                    {{ writeUser.userTier }}
+                  </h4>
                 </div>
               </div>
             </div>
@@ -74,7 +98,12 @@
               <!-- 좋아요 -->
               <div class="d-flex justify-content-end">
                 <div v-show="likeStatus" @click="likesup">
-                  <b-icon-heart shift-v="5" class="btn" font-scale="3" style="cursor: pointer; " />
+                  <b-icon-heart
+                    shift-v="5"
+                    class="btn"
+                    font-scale="3"
+                    style="cursor: pointer; "
+                  />
                 </div>
 
                 <div v-show="!likeStatus" @click="likesdown">
@@ -87,7 +116,7 @@
                   />
                 </div>
 
-                <p style="font-size:2.5vh">{{likescnt}}</p>
+                <p style="font-size:2.5vh">{{ likescnt }}</p>
               </div>
             </div>
           </div>
@@ -99,33 +128,43 @@
               class="btn disabled"
               style="background-color: #5e72e4;font-weight: bold;color:white;font-size:3.2vh; max-width:35%;display: -webkit-box; overflow: hidden;width:100%; text-overflow: ellipsis;
                           -webkit-line-clamp: 1;-webkit-box-orient: vertical;word-wrap:break-word; line-height: 4vh; height: 5vh; "
-            >{{ this.writePost.option1 }} 탓</h1>
+            >
+              {{ this.writePost.option1 }} 탓
+            </h1>
             <h2
               style="color:red;font-weight: bold; margin-left:5%;margin-right:5%; font-size:3.5vh;"
-            >VS</h2>
+            >
+              VS
+            </h2>
             <h1
               class="btn btn-danger disabled"
               style=" font-weight: bold;font-size:3.2vh; max-width:35%;display: -webkit-box; overflow: hidden;width:100%; text-overflow: ellipsis;
                           -webkit-line-clamp: 1;-webkit-box-orient: vertical;word-wrap:break-word; line-height: 4vh; height: 5vh;"
-            >{{ this.writePost.option2 }} 탓</h1>
+            >
+              {{ this.writePost.option2 }} 탓
+            </h1>
           </div>
         </div>
         <div
           class="d-flex justify-content-start"
           style="margin-top:2%; margin-left:2%; margin-right:2%; text-align:center; border:solid 5px gray; border-radius:10px;"
         >
-          <p style="font-size:2vh; text-align:left; margin:3%;">{{ writePost.content }}</p>
+          <p style="font-size:2vh; text-align:left; margin:3%;">
+            {{ writePost.content }}
+          </p>
         </div>
         <br />
 
         <div class="d-flex justify-content-between">
           <p
             style="color:blue; font-weight: bold;font-size:3vh; margin-left:3%;"
-          >{{this.writePost.option1}} 탓 {{resOp1}} %</p>
+          >
+            {{ this.writePost.option1 }} 탓 {{ resOp1 }} %
+          </p>
 
-          <p
-            style="color:red;font-weight: bold;font-size:3vh;margin-right:3%;"
-          >{{this.writePost.option2}} 탓 {{resOp2}} %</p>
+          <p style="color:red;font-weight: bold;font-size:3vh;margin-right:3%;">
+            {{ this.writePost.option2 }} 탓 {{ resOp2 }} %
+          </p>
         </div>
 
         <div>
@@ -137,14 +176,26 @@
             class="mb-3"
             style="margin-left:1%; margin-right:1%"
           >
-            <b-progress-bar variant="primary" :value="values[0]" animated style="font-size:2.7vh"></b-progress-bar>
-            <b-progress-bar variant="danger" :value="values[1]" animated style="font-size:2.7vh"></b-progress-bar>
+            <b-progress-bar
+              variant="primary"
+              :value="values[0]"
+              animated
+              style="font-size:2.7vh"
+            ></b-progress-bar>
+            <b-progress-bar
+              variant="danger"
+              :value="values[1]"
+              animated
+              style="font-size:2.7vh"
+            ></b-progress-bar>
           </b-progress>
         </div>
         <div class="d-flex" style="padding-top:2%; margin-left:3%;">
-          <div v-if="op1bigger" style="color:blue; font-size:2.8vh;">{{resultOp}}</div>
-          <div v-else style="color:red; font-size:2.8vh;">{{resultOp}}</div>
-          <p style="font-size:2.8vh; ">{{resultMsg}}</p>
+          <div v-if="op1bigger" style="color:blue; font-size:2.8vh;">
+            {{ resultOp }}
+          </div>
+          <div v-else style="color:red; font-size:2.8vh;">{{ resultOp }}</div>
+          <p style="font-size:2.8vh; ">{{ resultMsg }}</p>
         </div>
 
         <!-- 로그인 확인하는 모달 -->
@@ -152,13 +203,17 @@
           로그인이 필요한 서비스입니다.
           <br />로그인 하시겠습니까?
           <template v-slot:modal-footer="{ cancel }">
-            <b-button size="sm" variant="primary" @click="toLogin">확인</b-button>
-            <b-button size="sm" variant="danger" @click="cancel()">취소</b-button>
+            <b-button size="sm" variant="primary" @click="toLogin"
+              >확인</b-button
+            >
+            <b-button size="sm" variant="danger" @click="cancel()"
+              >취소</b-button
+            >
           </template>
         </b-modal>
       </div>
       <!-- 댓글 시작  -->
-      <div style="background-color:white;width:96%; margin-left:2%; margin-top:3%;">
+      <div style="width:96%; margin-left:2%; margin-top:3%;">
         <!-- 댓글 리스트 시작 -->
         <div class="row">
           <div class="col-12">
@@ -173,7 +228,7 @@
                 <div class="row">
                   <div class="col-12 col-md-5">
                     <div
-                      v-if="item.replyOpt==1"
+                      v-if="item.replyOpt == 1"
                       role="tooltip"
                       tabindex="-1"
                       class="popover b-popover b-popover-primary bs-popover-left"
@@ -187,25 +242,32 @@
                           :src="profile(item.userImage)"
                           class="ml-3 mr-3"
                         ></b-avatar>
-                        {{item.userNickname}}
-                        <span
-                          style="font-size:1vh;"
-                        >{{ item.userSolTierStr+" "+item.userSolRankStr }}</span>
+                        {{ item.userNickname }}
+                        <span style="font-size:1vh;">{{
+                          item.userSolTierStr + " " + item.userSolRankStr
+                        }}</span>
                       </h3>
                       <div class="popover-body">
                         <div class="comment_box">
                           <div class="d-flex"></div>
                           <div class="comment_text_box">
                             <p class="comment_text_view ml-2 mt-3">
-                              <span class="text_comment">{{item.content}}</span>
+                              <span class="text_comment">{{
+                                item.content
+                              }}</span>
                             </p>
                           </div>
                           <div class="comment_info_box row">
-                            <span class="comment_info_date col-10">{{replyTime(item.replyDate)}}</span>
+                            <span class="comment_info_date col-10">{{
+                              replyTime(item.replyDate)
+                            }}</span>
                             <span
                               class="col-1 ml-3"
                               style="cursor:pointer"
-                              v-if="sessionUserNo==item.userNo||sessionUserNo==3"
+                              v-if="
+                                sessionUserNo == item.userNo ||
+                                  sessionUserNo == 3
+                              "
                               @click="deleteReply(item)"
                             >
                               <b-icon icon="x-square-fill" variant="danger" />
@@ -217,12 +279,14 @@
                   </div>
                   <!-- 가운데 -->
                   <div id="hide3" class="col-0 col-md-2">
-                    <a :id="'replyCentre'+$index" :tabindex="$index">{{replyTime(item.replyDate)}}</a>
+                    <a :id="'replyCentre' + $index" :tabindex="$index">{{
+                      replyTime(item.replyDate)
+                    }}</a>
                   </div>
                   <!-- 오른쪽 -->
                   <div class="col-12 col-md-5">
                     <div
-                      v-if="item.replyOpt==2"
+                      v-if="item.replyOpt == 2"
                       role="tooltip"
                       tabindex="-1"
                       class="popover b-popover b-popover-danger bs-popover-right"
@@ -236,25 +300,32 @@
                           :src="profile(item.userImage)"
                           class="ml-3 mr-3"
                         ></b-avatar>
-                        {{item.userNickname}}
-                        <span
-                          style="font-size:1vh;"
-                        >{{ item.userSolTierStr+" "+item.userSolRankStr }}</span>
+                        {{ item.userNickname }}
+                        <span style="font-size:1vh;">{{
+                          item.userSolTierStr + " " + item.userSolRankStr
+                        }}</span>
                       </h3>
                       <div class="popover-body">
                         <div class="comment_box">
                           <div class="d-flex"></div>
                           <div class="comment_text_box">
                             <p class="comment_text_view ml-2 mt-3">
-                              <span class="text_comment">{{item.content}}</span>
+                              <span class="text_comment">{{
+                                item.content
+                              }}</span>
                             </p>
                           </div>
                           <div class="comment_info_box row">
-                            <span class="comment_info_date col-10">{{replyTime(item.replyDate)}}</span>
+                            <span class="comment_info_date col-10">{{
+                              replyTime(item.replyDate)
+                            }}</span>
                             <span
                               class="col-1 ml-3"
                               style="cursor:pointer"
-                              v-if="sessionUserNo==item.userNo||sessionUserNo==3"
+                              v-if="
+                                sessionUserNo == item.userNo ||
+                                  sessionUserNo == 3
+                              "
                               @click="deleteReply(item)"
                             >
                               <b-icon icon="x-square-fill" variant="danger" />
@@ -271,14 +342,18 @@
         </div>
       </div>
       <infinite-loading @infinite="infiniteHandler"></infinite-loading>
-      <div style="background-color:rgb(222, 226, 228);width:96%; margin-left:2%; margin-top:3%;">
+      <div
+        style="background-color:rgb(222, 226, 228);width:96%; margin-left:2%; margin-top:3%;"
+      >
         <div>
           <div
             @click="delt"
             class="btn btn-secondary"
             style="width:15%;margin-left:5%;"
             v-if="checkaccess"
-          >삭제</div>
+          >
+            삭제
+          </div>
         </div>
       </div>
     </div>
