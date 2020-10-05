@@ -10,11 +10,9 @@ from drf_yasg.utils import swagger_auto_schema
 from drf_yasg import openapi
 from django.views.decorators.csrf import csrf_exempt
 from django.utils.decorators import method_decorator
-from .video import get_image
+from .video import get_image, change_text, timeline, winrate_algo
 # Create your views here.
-
-
-
+# .
 @api_view(['GET'])
 def recommand_champion(request,userno):
     champions = Match.objects.filter(userno=userno)#{'티모':0.7,'아리':0.6,'럭스':0.3}
@@ -76,11 +74,25 @@ def champion_list(request):
     return Response(serializers.data)
 
 @api_view(['GET'])
-def videopost_list(request):
-    videoposts = Videopost.objects.all()
+def videopost_list(request,videopostno):
+    videoid = Videopost.objects.filter(videopostno=videopostno)
     serializers = VideopostSerializer(videoposts, many=True)
     return Response(serializers.data)
 
+@api_view(['POST'])
+def videopost_update(request,videopostno):
+    videoname = Videopost.objects.filter(videopostno=videopostno).values('video').distinct()[0]['video']
+    print(videoname)
+    gameId = get_image.get_image(videoname)
+    print("get_image호출",gameId)
+    new_time,gameId = change_text.change_text(gameId)
+    time_part_set, new_part_set, gameId = timeline.timeline(new_time,gameId)
+    before_bluescore, before_redscore, after_bluescore, after_redscore, champions_records = winrate_algo.winrate_algo(time_part_set, new_part_set, gameId)
+    result = [before_bluescore, before_redscore, after_bluescore, after_redscore, champions_records]
+    Videodata = Videopost.objects.filter(videopostno=videopostno).update(data=result)
+    videoposts = Videopost.objects.all() 
+    serializers = VideopostSerializer(videoposts, many=True)
+    return Response(serializers.data)
 
 @api_view(['POST'])
 def match_update(request):
@@ -256,15 +268,6 @@ def videopostlike_create_and_delete(request):
     return Response(serializers.data)
 
 
-@api_view(['GET'])
-def analyze_data(request,userno):
-    videopost = Videopost.objects.filter(userno=userno)
-    videoid = Videopost.objects.filter(userno=userno).values('video').distinct()[0]['video']
-    result = []
 
-    result = get_image.get_image_function(videoid) # return before_bluescore, before_redscore, after_bluescore, after_redscore, champions_records
-    # print(result)
-    serializers = VideopostSerializer(videopost, many=True) # 임시용 
-    return Response(serializers.data)
 
 
