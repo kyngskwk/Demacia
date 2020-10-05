@@ -1,9 +1,9 @@
 <template>
   <div id="a" style="font-family:Tmon">
     <nav
-      class="navbar navbar-expand-lg navbar-dark fixed-top"
+      class="navbar navbar-expand-lg navbar-dark fixed-top pb-1"
       id="mainNav"
-      style="opacity:0.8; background: linear-gradient(180deg, rgba(14,36,56,1) 0%, rgba(32,17,95,1) 100%); height:70px"
+      style="opacity:0.8; background: linear-gradient(180deg, rgba(14,36,56,1) 0%, rgba(32,17,95,1) 100%); height:75px"
     >
       <div class="container">
         <a

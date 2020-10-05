@@ -1,54 +1,36 @@
+
 <template>
-  <div>
-    <b-carousel
-      id="carousel-1"
-      v-model="slide"
-      :interval="4000"
-      controls
-      indicators
-      background="#ababab"
-      img-width="1614"
-      img-height="312"
-      style="text-shadow: 1px 1px 2px #333;"
-      @sliding-start="onSlideStart"
-      @sliding-end="onSlideEnd"
-    >
-
-      <!-- Slides with image only -->
-      <b-carousel-slide img-src="../../assets/img/ad1.png"></b-carousel-slide>
-      <b-carousel-slide img-src="../../assets/img/ad2.png"></b-carousel-slide>
-      <b-carousel-slide img-src="../../assets/img/ad3.png"></b-carousel-slide>
-
-      <!-- Slide with blank fluid image to maintain slide aspect ratio -->
-      <b-carousel-slide caption="Blank Image" img-blank img-alt="Blank image">
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eros felis, tincidunt
-          a tincidunt eget, convallis vel est. Ut pellentesque ut lacus vel interdum.
-        </p>
-      </b-carousel-slide>
-    </b-carousel>
-  </div>
+  <v-carousel cycle height="312" :show-arrows="false">
+    <v-carousel-item
+      v-for="(item,i) in items"
+      :key="i"
+      :src="item.src"
+    ></v-carousel-item>
+  </v-carousel>
 </template>
 
 <script>
   export default {
-    data() {
+    data () {
       return {
-        slide: 0,
-        sliding: null
+        items: [
+          {
+            src: require("../../assets/img/ad1.png"),
+          },
+          {
+            src: require("../../assets/img/ad2.png"),
+          },
+          {
+            src: require("../../assets/img/ad3.png"),
+          },
+        ],
       }
     },
-    methods: {
-      onSlideStart() {
-        this.sliding = true
-      },
-      onSlideEnd() {
-        this.sliding = false
-      }
-    }
   }
 </script>
 
-<style>
-
+<style scoped>
+.v-icon {
+  
+}
 </style>

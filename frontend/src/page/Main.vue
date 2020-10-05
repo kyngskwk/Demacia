@@ -1,12 +1,13 @@
 <template>
-  <div class="container p-4">
-    <Carousel/>
-    <b-row class="maintitle text-center">
+<div>
+  <Carousel/>
+  <!-- <b-row class="maintitle text-center">
       <img src="../assets/img/damacia.png" alt="" style="display:block; margin:100px auto 0px">
       <b-col cols="12" class="sub pb-4 mb-4">
         <img src="../assets/img/subtitle.png" alt="" style="display:block; margin:0px auto 50px">
       </b-col>
-    </b-row>
+    </b-row> -->
+  <div class="container p-4">
     <img src="../assets/img/recommtitle.png" alt="" style="margin:50px 0px 0px">
     <b-row class="part">
       <b-col cols="12" lg="6">
@@ -99,6 +100,8 @@
       </b-col>
     </b-row>
   </div>
+</div>
+
 </template>
 <script>
 import Carousel from '../components/common/Carousel.vue'
