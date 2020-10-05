@@ -79,9 +79,11 @@ def videopost_list(request,videopostno):
     serializers = VideopostSerializer(videoposts, many=True)
     return Response(serializers.data)
 
+@swagger_auto_schema(method='post', request_body=VideoUpdateSerializer)
 @api_view(['POST'])
-def videopost_update(request,videopostno):
-    videoname = Videopost.objects.filter(videopostno=videopostno).values('video').distinct()[0]['video']
+def videopost_update(request):
+    request_videopostno = request.data['videopostno']
+    videoname = Videopost.objects.filter(videopostno=request_videopostno).values('video').distinct()[0]['video']
     print(videoname)
     gameId = get_image.get_image(videoname)
     print("get_image호출",gameId)
