@@ -499,8 +499,8 @@
             가져오기
           </b-button><br><br>
           <b-button variant="primary" v-if="loading" style="text-align:center;">
-          <b-spinner small type="grow"></b-spinner>
-          Loading...
+          <b-spinner small></b-spinner>
+          <span class="sr-only">Loading...</span>
         </b-button>
         </div>
 
