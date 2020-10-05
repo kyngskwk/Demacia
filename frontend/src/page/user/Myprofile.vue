@@ -481,13 +481,29 @@
           </b-row>
         </div>
         <!-- 추천 -->
-        <div
+        <!-- <div
           class="shadow1 col-10 col-xl-5 m-4 pt-4"
           style="background-color: white"
         >
           <h4 style="display: inline-block">추천 챔피언과 조합</h4>
           <br />코그모 티모 모모
+        </div> -->
+
+        <!-- 매치데이터 업데이트 -->
+        <div
+          class="shadow1 col-10 col-xl-5 m-4 pt-4"
+          style="background-color: white;"
+        >
+          <h4 style="display: inline-block">전적기록(MatchList)</h4><br>
+           <b-button size="lg" variant="primary" class="mr-2" @click="callmatch()">
+            가져오기
+          </b-button><br><br>
+          <b-button variant="primary" v-if="loading" style="text-align:center;">
+          <b-spinner small></b-spinner>
+          <span class="sr-only">Loading...</span>
+        </b-button>
         </div>
+
         <!-- 활동 목록 -->
         <div class="col-11 p-2">
           <div class="shadow1 m-4" style="background-color: white">
@@ -585,6 +601,7 @@ export default {
       userhitrate: "",
       usermilrank: "",
       usermilrankper: "",
+      loading: false,
     };
   },
   created() {
@@ -910,7 +927,27 @@ export default {
     toResult(postNo) {
       this.$router.push("/result/" + postNo);
     },
+
+    callmatch(){
+      this.loading = true;
+      axios
+          .post(process.env.VUE_APP_DAPI_URL + "/matches/update/", {
+            userno: this.userNo
+          })
+          .then((res) => {
+            console.log(res);
+            this.loading = false;
+            if(res.status==200){
+              alert("기록을 가져왔습니다!!");
+            }
+          })
+          .catch((err) => {
+            this.loading = false;
+            location.href = "/error/전적기록을 불러오던 중 서버 오류가 발생했습니다. " + err;
+          });
+    },
   },
+
   computed: {
     imgURL() {
       return this.user.userImage
