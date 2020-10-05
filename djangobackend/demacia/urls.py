@@ -11,6 +11,7 @@ urlpatterns = [
     path('recommand/<int:userno>/group', views.recommand_group, name="recommand group"),
     path('champions/', views.champion_list, name="champion list"),
     path('videoposts/', views.videopost_update, name="video update"),
+    path('videoposts/list/', views.videopost_list, name="video list"),
     path('matches/<int:userno>/', views.match_list, name="match list"),
     path('matches/update/', views.match_update, name="match update"),
     path('mbti/update/', views.mbti_update, name="mbti update"),

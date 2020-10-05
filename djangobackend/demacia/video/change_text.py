@@ -11,8 +11,6 @@ def change_text(gameId):
     if gameId != None:
         pytesseract.pytesseract.tesseract_cmd = r'C:\\Program Files\\Tesseract-OCR\\tesseract'
         # pytesseract.pytesseract.tesseract_cmd = r'\\home\\ubuntu\\tesseract'
-
-        print('22222')
         # --------------------------------------------------------------------
         # 이미지 구역 나누기v
         time = []
@@ -64,7 +62,7 @@ def change_text(gameId):
                 thresh = cv2.threshold(binary,0,255, cv2.THRESH_BINARY)[1]
                 thresh = cv2.threshold(binary,0,255, cv2.THRESH_BINARY_INV)[1]
                 cv2.imwrite('result.jpg',thresh)
-                print('middle')
+                # print('middle')
                 custom_config = r'--oem 3 --psm 6 outputbase digits'
                 
                 text = pytesseract.image_to_string(thresh,config=custom_config)
@@ -104,7 +102,7 @@ def change_text(gameId):
         # print(time)
             # return timeline.live_and_before([time[0],time[2]],gameId) # 분 단위만 넘기기
     else:
-        print('change_text none값')
+        # print('change_text none값')
         new_time = None
         gameId = None
     return new_time,gameId
