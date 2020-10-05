@@ -80,8 +80,9 @@ def videopost_list(request,videopostno):
     return Response(serializers.data)
 
 @api_view(['POST'])
-def videopost_update(request,videopostno):
-    videoname = Videopost.objects.filter(videopostno=videopostno).values('video').distinct()[0]['video']
+def videopost_update(request):
+    request_videopostno = request.data['videopostno']
+    videoname = Videopost.objects.filter(videopostno=request_videopostno).values('video').distinct()[0]['video']
     print(videoname)
     gameId = get_image.get_image(videoname)
     print("get_image호출",gameId)
