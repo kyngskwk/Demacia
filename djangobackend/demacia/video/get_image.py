@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-
 import cv2
-from . import change_text
- 
+from ..views import videoname
+# from winrate_algo import videoname
 # 영상의 의미지를 연속적으로 캡쳐할 수 있게 하는 class
-def get_image_function(videoname):
+if videoname != None:
+    # videoname = ''
     print(11111111111111111)
     # videoname = '10-19_KR-4664501922_06.mp4'
     vidcap = cv2.VideoCapture('./%s' % videoname)
@@ -28,4 +28,9 @@ def get_image_function(videoname):
         elif int(vidcap.get(1)) == (length-10):
             break
 
-    return change_text.module(gameId)
+        # return change_text.module(gameId)
+
+else:
+    print('gat_image None값이야')
+    gameId = None
+

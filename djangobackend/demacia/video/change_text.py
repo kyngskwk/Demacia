@@ -5,13 +5,16 @@ import numpy as np
 import re
 import cv2
 import pytesseract
-from . import timeline
-pytesseract.pytesseract.tesseract_cmd = r'C:\\Program Files\\Tesseract-OCR\\tesseract'
-# pytesseract.pytesseract.tesseract_cmd = r'\\home\\ubuntu\\tesseract'
-def module(gameId):
+from .get_image import gameId
+
+
+if gameId != None:
+    pytesseract.pytesseract.tesseract_cmd = r'C:\\Program Files\\Tesseract-OCR\\tesseract'
+    # pytesseract.pytesseract.tesseract_cmd = r'\\home\\ubuntu\\tesseract'
+
     print('22222')
-# --------------------------------------------------------------------
-# 이미지 구역 나누기v
+    # --------------------------------------------------------------------
+    # 이미지 구역 나누기v
     time = []
     for i in range(2):
         image = cv2.imread('./images/frame%d.jpg' % i)
@@ -96,5 +99,11 @@ def module(gameId):
         # print(text_list)
         time.append(text_list[-2])
         time.append(text_list[-1])
+
+    new_time = [time[0],time[2]]
     # print(time)
-    return timeline.live_and_before([time[0],time[2]],gameId) # 분 단위만 넘기기
+        # return timeline.live_and_before([time[0],time[2]],gameId) # 분 단위만 넘기기
+else:
+    print('change_text none값')
+    new_time = None
+    gameId = None
