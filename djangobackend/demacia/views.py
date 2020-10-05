@@ -87,11 +87,11 @@ def videopost_update(request):
     print(videoname)
     gameId = get_image.get_image(videoname)
     print("get_image호출",gameId)
-    new_time,gameId = change_text.change_text(gameId)
-    time_part_set, new_part_set, gameId = timeline.timeline(new_time,gameId)
-    before_bluescore, before_redscore, after_bluescore, after_redscore, champions_records = winrate_algo.winrate_algo(time_part_set, new_part_set, gameId)
-    result = [before_bluescore, before_redscore, after_bluescore, after_redscore, champions_records]
-    Videodata = Videopost.objects.filter(videopostno=videopostno).update(data=result)
+    # new_time,gameId = change_text.change_text(gameId)
+    # time_part_set, new_part_set, gameId = timeline.timeline(new_time,gameId)
+    # before_bluescore, before_redscore, after_bluescore, after_redscore, champions_records = winrate_algo.winrate_algo(time_part_set, new_part_set, gameId)
+    # result = [before_bluescore, before_redscore, after_bluescore, after_redscore, champions_records]
+    # Videodata = Videopost.objects.filter(videopostno=videopostno).update(data=result)
     videoposts = Videopost.objects.all() 
     serializers = VideopostSerializer(videoposts, many=True)
     return Response(serializers.data)
