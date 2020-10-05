@@ -3,7 +3,7 @@ package com.web.blog.model.service.video;
 import java.sql.SQLException;
 
 import com.web.blog.model.dao.video.VideoLikesDao;
-import com.web.blog.model.dto.video.Likes;
+import com.web.blog.model.dto.video.VideoLikes;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,7 +18,7 @@ public class VideoPostLikesService {
         return dao.likesCount(videoPostNo);
     }
 
-    public int likesInsert(Likes likes) {
+    public int likesInsert(VideoLikes likes) {
         if (dao.likesStatus(likes.getVideopostNo(), likes.getUserNo()) == 0) {
             return dao.likesInsert(likes);
         } else {

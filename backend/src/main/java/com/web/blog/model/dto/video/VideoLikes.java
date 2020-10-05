@@ -10,13 +10,13 @@ import lombok.ToString;
 @Setter
 @ToString
 @NoArgsConstructor
-public class Likes {
+public class VideoLikes {
     private int vpostlikeNo;
     private int userNo;
     private int videopostNo;
 
     @Builder
-    public Likes(int vpostlikeNo, int userNo, int videopostNo) {
+    public VideoLikes(int vpostlikeNo, int userNo, int videopostNo) {
         this.vpostlikeNo = vpostlikeNo;
         this.userNo = userNo;
         this.videopostNo = videopostNo;
