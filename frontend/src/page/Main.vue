@@ -29,7 +29,7 @@
             "
           >
             <b-row>
-              <b-col cols="12" class="m-2 text-left">
+              <b-col cols="12" class="m-2 text-center">
                 <br />
                 <h4 style="text-align: center">나랑 어울리는 꿀조합이</h4>
                 <h4 style="text-align: center">궁금하다면?</h4>
@@ -38,19 +38,12 @@
                 >
                   <b-button
                     size="lg"
-                    variant="primary"
-                    class="mr-2 mt-3"
+                    class="mr-2 mt-3 hoverbtn"
                     @click="callmatch()"
                     style="
-                      style=text-align: center;
-                      color: white;
-                      background: linear-gradient(
-                        180deg,
-                        #1b2831 0%,
-                        #12384b 100%
-                      );
-                      border-style: ridge;
-                      border: #95ede7 3px ridge;
+                    color:white;
+                    background: linear-gradient(180deg, #1b2831 0%, #12384b 100%); 
+                    border-style:ridge; border:#95ede7 3px ridge;
                     "
                   >
                     조합 추천 보러가기
@@ -75,7 +68,7 @@
             "
           >
             <b-row>
-              <b-col cols="12" class="m-2 text-left">
+              <b-col cols="12" class="m-2 text-center">
                 <br />
                 <h4 style="text-align: center">내가 가장 잘하는 챔피언이</h4>
                 <h4 style="text-align: center">궁금하다면?</h4>
@@ -84,19 +77,12 @@
                 >
                   <b-button
                     size="lg"
-                    variant="primary"
-                    class="mr-2 mt-3"
+                    class="mr-2 mt-3 hoverbtn"
                     @click="callmatch()"
                     style="
-                      style=text-align: center;
-                      color: white;
-                      background: linear-gradient(
-                        180deg,
-                        #1b2831 0%,
-                        #12384b 100%
-                      );
-                      border-style: ridge;
-                      border: #95ede7 3px ridge;
+                    color:white;
+                    background: linear-gradient(180deg, #1b2831 0%, #12384b 100%); 
+                    border-style:ridge; border:#95ede7 3px ridge;
                     "
                   >
                     챔피언 추천 보러가기
@@ -129,10 +115,12 @@
             <b-row>
               <b-col cols="12">
                 <b-table
+                  hover
                   striped
                   :items="lastPost"
                   :fields="lastPostFields"
                   v-if="lastPost"
+                  table-variant="dark"
                   style="color: #e3d19e"
                 >
                   <template v-slot:cell(postDate)="data">{{
@@ -177,10 +165,12 @@
             <b-row>
               <b-col cols="12">
                 <b-table
+                  hover
                   striped
                   :items="lastVideo"
                   :fields="lastVideoFields"
                   v-if="lastVideo"
+                  table-variant="dark"
                   style="color: #e3d19e"
                 >
                   <template v-slot:cell(date)="data">{{
@@ -296,6 +286,7 @@ export default {
   }, //methods end
 };
 </script>
+
 <style scoped>
 @font-face {
   font-family: "Tmon";
@@ -326,5 +317,11 @@ export default {
   background-color: white;
   box-shadow: 5px 5px 5px;
   color: #e3d19e;
+}
+
+.b-table {
+  /* border: #fcd000 2px solid; */
+  opacity: 0.8;
+  background: linear-gradient(180deg, rgba(6, 17, 27, 1) 0%, rgba(28, 83, 73, 1) 100%);
 }
 </style>
