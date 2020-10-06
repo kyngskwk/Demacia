@@ -33,7 +33,7 @@
           >
             <p id="hide3" style="font-size: 3vh; padding-left: 7%">의뢰번호</p>
             <p style="font-weight: bold; font-size: 3.5vh; padding-left: 5px">
-              NO.{{ videoNo }}
+              NO.{{ videoPostNo }}
             </p>
           </b-col>
           <b-col
@@ -109,7 +109,7 @@
             <div class="d-flex" style="margin-left: 2%">
               <b-avatar
                 variant="secondary"
-                :src="writeUser.userImage"
+                :src="writePost.userImage"
                 class="ml-3 mr-3"
               ></b-avatar>
               <div>
@@ -121,12 +121,13 @@
                     margin-top: 12%;
                   "
                 >
-                  {{ writeUser.userNickname }}
+                  {{ writePost.userNickname }}
                 </h4>
                 <h4
                   style="margin-bottom: 0; text-align: center; font-size: 1.2vh"
                 >
-                  {{ writeUser.userTier }}
+                  <p>{{ writePost.userRank }}</p>
+                  <p>{{ writePost.gameRank }}</p>
                 </h4>
               </div>
             </div>
@@ -136,72 +137,51 @@
           <!-- 조회수 -->
           <div class="d-flex justify-content-end" style="margin-right: 5%">
             <div class="d-flex">
+              <p style="font-size: 2.5vh">좋아요: {{ writePost.totalLike }}</p>
               <b-icon-caret-right-square-fill
                 class="h4"
                 style="margin-right: 10px; padding-top: 3%"
               />
               <p style="font-size: 2.5vh">{{ writePost.view }}</p>
             </div>
-            <!-- 좋아요 -->
-            <div class="d-flex justify-content-end">
-              <div v-show="likest" @click="likesup">
-                <b-icon-heart
-                  shift-v="5"
-                  class="btn"
-                  font-scale="3"
-                  style="cursor: pointer"
-                />
-              </div>
-
-              <div v-show="!likest" @click="likesdown">
-                <b-icon-heart-fill
-                  shift-v="5"
-                  variant="danger"
-                  font-scale="3"
-                  class="btn"
-                  style="cursor: pointer"
-                />
-              </div>
-
-              <p style="font-size: 2.5vh">{{ likescnt }}</p>
-            </div>
           </div>
         </div>
       </div>
-      <hr style="margin: 2%" />
-      <div
-        class="container"
-        style="
-          margin-top: 2%;
-          margin-left: 2%;
-          margin-right: 2%;
-          text-align: center;
-          border: solid 5px gray;
-          border-radius: 10px;
-        "
-      >
-        <div class="row row-cols-12">
-          <div class="col">
-            <h3>영상이전 승률</h3>
-            <pie-chart
-              :data="[
-                ['BLUETEAM', 44],
-                ['REDTEAM', 23],
-              ]"
-              :colors="['#23285c', '#d71616']"
-              suffix="%"
-            ></pie-chart>
-          </div>
-          <div class="col">
-            <h3>영상이후 승률</h3>
-            <pie-chart
-              :data="[
-                ['Blueberry', 44],
-                ['Strawberry', 23],
-              ]"
-            ></pie-chart>
-          </div>
+    </div>
+    <hr style="margin: 2%" />
+    <div
+      class="container"
+      style="
+        margin-top: 2%;
+        margin-left: 2%;
+        margin-right: 2%;
+        text-align: center;
+        border: solid 5px gray;
+        border-radius: 10px;
+      "
+    >
+      <div class="row row-cols-12">
+        <div class="col">
+          <h3>영상이전 승률</h3>
+          <pie-chart
+            :data="[
+              ['BLUETEAM', before_bluescore],
+              ['REDTEAM', before_redscore],
+            ]"
+            :colors="['#23285c', '#d71616']"
+            suffix="%"
+          ></pie-chart>
         </div>
+        <div class="col">
+          <h3>영상이후 승률</h3>
+          <pie-chart
+            :data="[
+              ['BLUETEAM', after_bluescore],
+              ['REDTEAM', after_redscore],
+            ]"
+          ></pie-chart>
+        </div>
+      </div>
 
         <div class="container">
           <div class="row justify-content-around listbox mt-3">
@@ -307,40 +287,40 @@
           </div>
         </div>
       </div>
-      <br />
+    </div>
+    <br />
 
-      <!-- 로그인 확인하는 모달 -->
-      <b-modal ref="loginChkModal" centered title="로그인 필요">
-        로그인이 필요한 서비스입니다.
-        <br />로그인 하시겠습니까?
-        <template v-slot:modal-footer="{ cancel }">
-          <b-button size="sm" variant="primary" @click="toLogin">확인</b-button>
-          <b-button size="sm" variant="danger" @click="cancel()">취소</b-button>
-        </template>
-      </b-modal>
-      <!-- 빙글빙글 모달 -->
-      <b-modal ref="binggleModal" centered title="분석중..">
-        <b-icon icon="arrow-clockwise" animation="spin" font-scale="4"></b-icon>
-      </b-modal>
-      <!-- 수정 삭제 -->
-      <div style="margin-top: 5%">
-        <div
-          @click="edit"
-          class="btn btn-primary"
-          style="width: 15%; margin-right: 5%; position: relative; bottom: 5%"
-          v-if="checkaccess"
-        >
-          수정
-        </div>
+    <!-- 로그인 확인하는 모달 -->
+    <b-modal ref="loginChkModal" centered title="로그인 필요">
+      로그인이 필요한 서비스입니다.
+      <br />로그인 하시겠습니까?
+      <template v-slot:modal-footer="{ cancel }">
+        <b-button size="sm" variant="primary" @click="toLogin">확인</b-button>
+        <b-button size="sm" variant="danger" @click="cancel()">취소</b-button>
+      </template>
+    </b-modal>
+    <!-- 빙글빙글 모달 -->
+    <b-modal ref="binggleModal" centered title="분석중..">
+      <b-icon icon="arrow-clockwise" animation="spin" font-scale="4"></b-icon>
+    </b-modal>
+    <!-- 수정 삭제 -->
+    <div style="margin-top: 5%">
+      <div
+        @click="edit"
+        class="btn btn-primary"
+        style="width: 15%; margin-right: 5%; position: relative; bottom: 5%"
+        v-if="checkaccess"
+      >
+        수정
+      </div>
 
-        <div
-          @click="delt"
-          class="btn btn-secondary"
-          style="width: 15%; margin-left: 5%"
-          v-if="checkaccess"
-        >
-          삭제
-        </div>
+      <div
+        @click="delt"
+        class="btn btn-secondary"
+        style="width: 15%; margin-left: 5%"
+        v-if="checkaccess"
+      >
+        삭제
       </div>
     </div>
   </div>
@@ -359,18 +339,26 @@ export default {
     return {
       sessionUserNo: "",
       sessionUser: {},
-      videoNo: this.$route.params.videoNo,
+      videoPostNo: this.$route.params.videoNo,
       writePost: {},
-      writeUser: {
-        userNickname: "",
-        userImage: "",
-        userTier: "",
-      },
       videolink: "",
-      votest: true,
-      likescnt: "",
-      likest: true,
       state: "",
+      videoData: "",
+      before_bluescore: "",
+      before_redscore: "",
+      after_bluescore: "",
+      after_redscore: "",
+      champ1: "",
+      champ2: "",
+      champ3: "",
+      champ4: "",
+      champ5: "",
+      champ6: "",
+      champ7: "",
+      champ8: "",
+      champ9: "",
+      champ10: "",
+      champion: "",
     };
   },
 
@@ -381,70 +369,51 @@ export default {
       ? JSON.parse(sessionStorage.getItem("user")).userNo
       : "";
     //처음 데이터 불러오기
-    axios
-      .get(process.env.VUE_APP_API_URL + "/post/detail", {
-        params: {
-          postNo: this.videoNo,
-        },
-      })
-      .then(({ data }) => {
-        this.writePost = data.object;
-        this.videolink = process.env.VUE_APP_IMGUP_URL + this.writePost.video;
-        let vd = document.querySelector("#vid");
-        vd.load();
-        // 글쓴이 정보 불러오기
-        axios
-          .get(process.env.VUE_APP_API_URL + "/account/user", {
-            params: {
-              userNo: this.writePost.userNo,
-            },
-          })
-          .then(({ data }) => {
-            this.writeUser = data.object;
-            this.writeUser.userImage =
-              process.env.VUE_APP_IMGUP_URL + this.writeUser.userImage;
-            this.writeUser.userTier =
-              this.writeUser.userGameTierStr +
-              " " +
-              this.writeUser.userGameRankStr;
-          });
-      });
-    this.likecount();
-
-    // 유저가 있을때만 도는 애들
-    if (this.sessionUserNo) {
-      //좋아요 여부 불러오기
-      // axios
-      //   .get(process.env.VUE_APP_API_URL + "/likes/status", {
-      //     params: {
-      //       videoNo: this.videoNo,
-      //       userNo: this.sessionUserNo,
-      //     },
-      //   })
-      //   .then(({ data }) => {
-      //     if (data.object == 1) {
-      //       this.likest = false;
-      //     } else {
-      //       this.likest = true;
-      //     }
-      //   })
-      //   .catch(() => {
-      //     location.href =
-      //       "/error/좋아요를 눌렀는지 알아보다 에러가 나버렸지 뭐야..";
-      //   });
-      // 유저 정보불러오기
+    console.log(this.$route.params);
+    console.log(this.videoPostNo);
+    axios.get(process.env.VUE_APP_DAPI_URL + "/champions/").then((res) => {
+      this.champion = res.data;
       axios
-        .get(process.env.VUE_APP_API_URL + "/account/user", {
+        .get(process.env.VUE_APP_API_URL + "/video/detail", {
           params: {
-            userNo: this.sessionUserNo,
+            videoPostNo: this.videoPostNo,
           },
         })
         .then(({ data }) => {
-          this.sessionUser = data.object;
-          this.sessionUser.userImage =
-            process.env.VUE_APP_IMGUP_URL + this.sessionUser.userImage;
+          console.log(data.object);
+          this.writePost = data.object;
+          this.data = JSON.parse(data.object.data.replaceAll("'", '"'));
+          this.before_bluescore = this.data.before_bluescore;
+          this.before_redscore = this.data.before_redscore;
+          this.after_bluescore = this.data.after_bluescore;
+          this.after_redscore = this.data.after_redscore;
+          this.champ1 = this.data["1"];
+          this.champ2 = this.data["2"];
+          this.champ3 = this.data["3"];
+          this.champ4 = this.data["4"];
+          this.champ5 = this.data["5"];
+          this.champ6 = this.data["6"];
+          this.champ7 = this.data["7"];
+          this.champ8 = this.data["8"];
+          this.champ9 = this.data["9"];
+          this.champ10 = this.data["10"];
+          this.champ1 = this.add(this.champ1);
+          this.champ2 = this.add(this.champ2);
+          this.champ3 = this.add(this.champ3);
+          this.champ4 = this.add(this.champ4);
+          this.champ5 = this.add(this.champ5);
+          this.champ6 = this.add(this.champ6);
+          this.champ7 = this.add(this.champ7);
+          this.champ8 = this.add(this.champ8);
+          this.champ9 = this.add(this.champ9);
+          this.champ10 = this.add(this.champ10);
+          console.log(this.champ5);
+          this.videolink =
+            process.env.VUE_APP_IMGUP_URL + "/videos/" + this.writePost.video;
+          let vd = document.querySelector("#vid");
+          vd.load();
         });
-    }
+    });
   },
 
   computed: {
@@ -454,12 +423,22 @@ export default {
 
     checkaccess() {
       return (
-        this.sessionUserNo == this.writeUser.userNo || this.sessionUserNo == 3
+        this.sessionUserNo == this.writePost.userNo || this.sessionUserNo == 3
       );
     },
   },
 
   methods: {
+    add(champ) {
+      champ = Object.assign(
+        champ,
+        this.champion.find((o) => o.chamname == champ.name)
+      );
+      champ.imgsrc = champ.imgsrc
+        .replace("@/assets/img", "")
+        .replace("_1.", "_0.");
+      return champ;
+    },
     toLogin() {
       this.$router.push("/login/");
     },
@@ -484,46 +463,6 @@ export default {
       }
     },
 
-    likesup() {
-      this.loginCheck() &&
-        axios
-          .post(process.env.VUE_APP_API_URL + "/likes/", {
-            videoNo: this.videoNo,
-            userNo: this.sessionUserNo,
-          })
-          .then(() => {
-            this.likest = !this.likest;
-            this.likescnt++;
-          });
-    },
-
-    likesdown() {
-      this.loginCheck() &&
-        axios
-          .delete(process.env.VUE_APP_API_URL + "/likes/", {
-            params: {
-              videoNo: this.videoNo,
-              userNo: this.sessionUserNo,
-            },
-          })
-          .then(() => {
-            this.likest = !this.likest;
-            this.likescnt--;
-          });
-    },
-
-    likecount() {
-      //좋아요 갯수 불러오기
-      axios
-        .get(process.env.VUE_APP_API_URL + "/likes/count", {
-          params: {
-            videoNo: this.videoNo,
-          },
-        })
-        .then(({ data }) => {
-          this.likescnt = data.object;
-        });
-    },
     analize() {
       this.$refs["binggleModal"].show();
     },

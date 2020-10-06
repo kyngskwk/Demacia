@@ -130,7 +130,6 @@
               <b-col cols="12">
                 <b-table
                   striped
-                  hover
                   :items="lastPost"
                   :fields="lastPostFields"
                   v-if="lastPost"
@@ -179,7 +178,6 @@
               <b-col cols="12">
                 <b-table
                   striped
-                  hover
                   :items="lastVideo"
                   :fields="lastVideoFields"
                   v-if="lastVideo"
