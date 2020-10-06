@@ -119,5 +119,5 @@ def winrate_algo(time_part_set, new_part_set, gameId):
         after_redscore = None
         champions_records = None
         # print("빈값")
-    return before_bluescore, before_redscore, after_bluescore, after_redscore, champions_records
+    return wardgap, killgap, levelgap, goldgap, buildinggap, dragongap, before_bluescore, before_redscore, after_bluescore, after_redscore, champions_records
 
