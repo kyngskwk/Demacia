@@ -1,253 +1,216 @@
 <template>
-  <div style="heigth: 100%; font-family: Tmon">
+  <div class="container" style="heigth: 100%; font-family: Tmon">
     <div>
       <img src="../../assets/img/damacia.png" alt="" class="mt-5 mb-3" />
     </div>
-    <div><img src="../../assets/img/mypage.png" alt="" class="mb-5" /></div>
-    <div class="d-flex row" style>
-      <div class="col-1"></div>
-      <div
-        id="pad2"
-        class="col-xl-5"
-        style="padding-right: 0; padding-left: 0; margin-top: 5%"
-      >
-        <div id="pad1" class="shadow1 d-flex justify-content-start">
-          <div class="box" style="height: 210px; width: 230px">
-            <div class="conainer" style="padding-top: 20px">
-              <!-- 프로필 이미지 -->
-              <div v-b-modal.modalProfileImage style="cursor: pointer">
-                <h2>
-                  <b-avatar
-                    badge-variant="dark"
-                    badge-offset="-10px"
-                    variant="secondary"
-                    :src="imgURL"
-                    size="10rem"
-                    class="md-4"
-                  >
-                    <template v-slot:badge>
-                      <b-icon icon="upload"></b-icon>
-                    </template>
-                  </b-avatar>
-                </h2>
-                <!-- 이미지 변경 모달 -->
-                <b-modal
-                  id="modalProfileImage"
-                  size="sm"
-                  title="프로필 사진 변경"
-                  centered
-                  hide-footer
-                >
-                  <b-list-group>
-                    <b-list-group-item @click="imgUp" href="#" variant="primary"
-                      >내 기기에서 파일 탐색</b-list-group-item
-                    >
-                    <b-list-group-item
-                      @click="imgDel"
-                      href="#"
-                      variant="primary"
-                      >프로필 사진 삭제</b-list-group-item
-                    >
-                    <b-list-group-item
-                      href="#"
-                      variant="secondary-outline"
-                      v-b-modal.imageRule
-                      >사진 업로드 이용규칙</b-list-group-item
-                    >
-                    <b-modal
-                      id="imageRule"
-                      title="프로필 사진 업로드 이용규칙"
-                      ok-only
-                      centered
-                    >
-                      프로필 사진은 회원 여러분의 개성을 드러낼 수 있는
-                      서비스입니다.
-                      <br />다만 원활한 서비스 제공에 문제를 일으키는 프로필
-                      사진은 규제될 수 있음을 알려드리오니, 업로드 시 유의하여
-                      주시기 바랍니다. <br />[규제 대상]
-                      <ol>
-                        <li>음란, 선정성 사진</li>
-                        <li>욕설 등 타인에게 불쾌감을 주는 이미지</li>
-                        <li>홍보 목적으로 URL이나 연락처가 기재된 이미지</li>
-                        <li>폭력 묘사, 신체훼손 등 혐오감을 주는 이미지</li>
-                        <li>
-                          명예훼손, 저작권 침해 등 타인의 권리를 침해하는 이미지
-                        </li>
-                        <li>그 외 법령 및 약관에 위배되는 사진 및 이미지</li>
-                      </ol>
-                      규제 대상으로 확인된 이미지는 발견 즉시 무통보 삭제되며,
-                      정도와 빈도에 따라 서비스 이용이 제한 될 수 있습니다.
-                      <br />이의 사항 발생 시 관리자에게 문의바랍니다.
-                      <br />
-                      <br />건전하고 멋진 프로필 사진 사용으로 여러분의 개성을
-                      뽐내주세요. 감사합니다.
-                    </b-modal>
-                  </b-list-group>
-                </b-modal>
-                <input
-                  type="file"
-                  class="form-control"
-                  placeholder="프로필 등록"
-                  id="profil"
-                  ref="uploadImageFile"
-                  @change="onFileSelected"
-                  accept="image/*"
-                  style="display: none"
+    <div>
+      <img src="../../assets/img/mypage.png" alt="" class="mb-5" />
+    </div>
+    <b-row align-h="end">
+      <b-col cols="12" md="4">
+        <!-- 프로필 이미지 -->
+        <div v-b-modal.modalProfileImage href="#">
+          <b-avatar
+            badge-variant="dark"
+            badge-offset="-10px"
+            variant="secondary"
+            :src="imgURL"
+            size="10rem"
+            class="mb-3"
+          >
+            <template v-slot:badge>
+              <b-icon icon="upload"></b-icon>
+            </template>
+          </b-avatar>
+          <!-- 이미지 변경 모달 -->
+          <b-modal
+            id="modalProfileImage"
+            size="sm"
+            title="프로필 사진 변경"
+            variant="dark"
+            centered
+            hide-footer
+          >
+            <b-list-group>
+              <b-list-group-item @click="imgUp" href="#" variant="primary"
+                >내 기기에서 파일 탐색</b-list-group-item
+              >
+              <b-list-group-item @click="imgDel" href="#" variant="primary"
+                >프로필 사진 삭제</b-list-group-item
+              >
+              <b-list-group-item
+                href="#"
+                variant="secondary-outline"
+                v-b-modal.imageRule
+                >사진 업로드 이용규칙</b-list-group-item
+              >
+              <b-modal
+                id="imageRule"
+                title="프로필 사진 업로드 이용규칙"
+                ok-only
+                centered
+              >
+                프로필 사진은 회원 여러분의 개성을 드러낼 수 있는 서비스입니다.
+                <br />다만 원활한 서비스 제공에 문제를 일으키는 프로필 사진은
+                규제될 수 있음을 알려드리오니, 업로드 시 유의하여 주시기
+                바랍니다. <br />[규제 대상]
+                <ol>
+                  <li>음란, 선정성 사진</li>
+                  <li>욕설 등 타인에게 불쾌감을 주는 이미지</li>
+                  <li>홍보 목적으로 URL이나 연락처가 기재된 이미지</li>
+                  <li>폭력 묘사, 신체훼손 등 혐오감을 주는 이미지</li>
+                  <li>
+                    명예훼손, 저작권 침해 등 타인의 권리를 침해하는 이미지
+                  </li>
+                  <li>그 외 법령 및 약관에 위배되는 사진 및 이미지</li>
+                </ol>
+                규제 대상으로 확인된 이미지는 발견 즉시 무통보 삭제되며, 정도와
+                빈도에 따라 서비스 이용이 제한 될 수 있습니다.
+                <br />이의 사항 발생 시 관리자에게 문의바랍니다.
+                <br />
+                <br />건전하고 멋진 프로필 사진 사용으로 여러분의 개성을
+                뽐내주세요. 감사합니다.
+              </b-modal>
+            </b-list-group>
+          </b-modal>
+          <input
+            type="file"
+            class="form-control"
+            placeholder="프로필 등록"
+            id="profil"
+            ref="uploadImageFile"
+            @change="onFileSelected"
+            accept="image/*"
+            style="display: none"
+          />
+        </div>
+        <!-- 유저정보 박스 -->
+        <div class="box" style="height: 210px">
+          <b-row class="mt-3" style="height: 3rem">
+            <b-col class="mr-2">
+              <!-- 닉네임 -->
+              <h2 v-show="nicknameCheck" style="color: #fcd000">
+                {{ user.userNickname }}
+              </h2>
+              <!-- 닉네임 수정시 입력박스 -->
+              <b-input-group v-show="!nicknameCheck">
+                <b-form-input
+                  type="text"
+                  placeholder="닉네임 입력"
+                  id="nickname"
+                  v-model="nickname"
+                  :state="nicknameValid"
+                  aria-describedby="nicknameFeedback"
                 />
-              </div>
-            </div>
-          </div>
-          <!-- 유저정보 박스 -->
-          <div class="box" style="height: 210px">
-            <b-row class="mt-3" style="height: 3rem">
-              <b-col class="mr-2">
-                <!-- 닉네임 -->
-                <h2 v-show="nicknameCheck" style="color: #fcd000">
-                  {{ user.userNickname }}
-                </h2>
-                <!-- 닉네임 수정시 입력박스 -->
-                <b-input-group v-show="!nicknameCheck">
+                <b-input-group-append>
+                  <b-button variant="light" @click="nicknameUpdate"
+                    >수정</b-button
+                  >
+                </b-input-group-append>
+                <b-form-invalid-feedback id="nicknameFeedback">{{
+                  nicknameMsg
+                }}</b-form-invalid-feedback>
+              </b-input-group>
+            </b-col>
+          </b-row>
+          <b-row>
+            <b-col style="font-size: 20px; color: #e3d19e">{{
+              user.userEmail
+            }}</b-col>
+          </b-row>
+
+          <b-row class="mt-0 ml-3">
+            <b-col class="text-white">
+              <!-- 비밀번호 재입력 모달 -->
+              <b-modal ref="passwordChkModal" centered title="비밀번호 재입력">
+                <b-input-group>
                   <b-form-input
-                    type="text"
-                    placeholder="닉네임 입력"
-                    id="nickname"
-                    v-model="nickname"
-                    :state="nicknameValid"
-                    aria-describedby="nicknameFeedback"
+                    type="password"
+                    class="form-control"
+                    placeholder="기존 비밀번호를 입력해주세요"
+                    id="passwordChk"
+                    v-model="passwordChk"
+                    :state="passwordChkValid"
+                    aria-describedby="passwordChkFeedback"
+                    @keyup.enter="passwordCheck"
                   />
-                  <b-input-group-append>
-                    <b-button variant="light" @click="nicknameUpdate"
-                      >수정</b-button
-                    >
-                  </b-input-group-append>
-                  <b-form-invalid-feedback id="nicknameFeedback">{{
-                    nicknameMsg
+                  <b-form-invalid-feedback id="passwordChkFeedback">{{
+                    passwordChkMsg
                   }}</b-form-invalid-feedback>
                 </b-input-group>
-              </b-col>
-            </b-row>
-            <b-row>
-              <b-col style="font-size: 20px; color: #e3d19e">{{
-                user.userEmail
-              }}</b-col>
-            </b-row>
-
-            <b-row class="mt-0 ml-3">
-              <b-col class="text-white">
-                <!-- 비밀번호 재입력 모달 -->
-                <b-modal
-                  ref="passwordChkModal"
-                  centered
-                  title="비밀번호 재입력"
+                <template v-slot:modal-footer>
+                  <b-button size="sm" variant="light" @click="passwordCheck"
+                    >확인</b-button
+                  >
+                </template>
+              </b-modal>
+              <!-- 비밀번호 변경 모달 -->
+              <b-modal ref="passwordUpdateModal" centered title="비밀번호 변경">
+                <div class="form-group">
+                  <b-form-input
+                    type="password"
+                    placeholder="비밀번호 : 영어, 숫자 혼용 8자 이상"
+                    id="password"
+                    v-model="password"
+                    :state="passwordValid"
+                    aria-describedby="pwFeedback"
+                  />
+                  <b-form-invalid-feedback id="pwFeedback">{{
+                    passwordMsg
+                  }}</b-form-invalid-feedback>
+                </div>
+                <div class="form-group">
+                  <b-form-input
+                    type="password"
+                    placeholder="비밀번호 확인"
+                    id="passwordconfirm"
+                    v-model="passwordConfirm"
+                    :state="passwordConfirmValid"
+                    aria-describedby="pwconFeedback"
+                    @keyup.enter="passwordUpdate"
+                  />
+                  <b-form-invalid-feedback id="pwconFeedback">{{
+                    passwordConfirmMsg
+                  }}</b-form-invalid-feedback>
+                </div>
+                <template v-slot:modal-footer>
+                  <b-button size="sm" variant="light" @click="passwordUpdate"
+                    >비밀번호 변경</b-button
+                  >
+                </template>
+              </b-modal>
+              <!-- 마일리지랭킹 조회 -->
+              <h6 class="mil">
+                마일리지 랭킹 :<span style="color: red">{{ usermilrank }}</span
+                >위
+              </h6>
+              <h6 class="mil">(상위 {{ usermilrankper }}%)</h6>
+            </b-col>
+            <b-col>
+              <!-- \닉네임, 비밀번호, 회원탈퇴 드랍다운 -->
+              <b-dropdown variant="light" text="더 보기" class="m-2">
+                <b-dropdown-item @click="nicknameCheck = !nicknameCheck"
+                  >닉네임 수정</b-dropdown-item
                 >
-                  <b-input-group>
-                    <b-form-input
-                      type="password"
-                      class="form-control"
-                      placeholder="기존 비밀번호를 입력해주세요"
-                      id="passwordChk"
-                      v-model="passwordChk"
-                      :state="passwordChkValid"
-                      aria-describedby="passwordChkFeedback"
-                      @keyup.enter="passwordCheck"
-                    />
-                    <b-form-invalid-feedback id="passwordChkFeedback">{{
-                      passwordChkMsg
-                    }}</b-form-invalid-feedback>
-                  </b-input-group>
-                  <template v-slot:modal-footer>
-                    <b-button size="sm" variant="light" @click="passwordCheck"
-                      >확인</b-button
-                    >
-                  </template>
-                </b-modal>
-                <!-- 비밀번호 변경 모달 -->
-                <b-modal
-                  ref="passwordUpdateModal"
-                  centered
-                  title="비밀번호 변경"
+                <b-dropdown-item @click="showPasswordChkModal"
+                  >비밀번호 변경</b-dropdown-item
                 >
-                  <div class="form-group">
-                    <b-form-input
-                      type="password"
-                      placeholder="비밀번호 : 영어, 숫자 혼용 8자 이상"
-                      id="password"
-                      v-model="password"
-                      :state="passwordValid"
-                      aria-describedby="pwFeedback"
-                    />
-                    <b-form-invalid-feedback id="pwFeedback">{{
-                      passwordMsg
-                    }}</b-form-invalid-feedback>
-                  </div>
-                  <div class="form-group">
-                    <b-form-input
-                      type="password"
-                      placeholder="비밀번호 확인"
-                      id="passwordconfirm"
-                      v-model="passwordConfirm"
-                      :state="passwordConfirmValid"
-                      aria-describedby="pwconFeedback"
-                      @keyup.enter="passwordUpdate"
-                    />
-                    <b-form-invalid-feedback id="pwconFeedback">{{
-                      passwordConfirmMsg
-                    }}</b-form-invalid-feedback>
-                  </div>
-                  <template v-slot:modal-footer>
-                    <b-button size="sm" variant="light" @click="passwordUpdate"
-                      >비밀번호 변경</b-button
-                    >
-                  </template>
-                </b-modal>
-                <!-- 마일리지랭킹 조회 -->
-                <h6 class="mil">
-                  마일리지 랭킹 :<span style="color: red">{{
-                    usermilrank
-                  }}</span
-                  >위
-                </h6>
-                <h6 class="mil">(상위 {{ usermilrankper }}%)</h6>
-              </b-col>
-              <b-col>
-                <!-- \닉네임, 비밀번호, 회원탈퇴 드랍다운 -->
-                <b-dropdown variant="light" text="더 보기" class="m-2">
-                  <b-dropdown-item @click="nicknameCheck = !nicknameCheck"
-                    >닉네임 수정</b-dropdown-item
-                  >
-                  <b-dropdown-item @click="showPasswordChkModal"
-                    >비밀번호 변경</b-dropdown-item
-                  >
-                  <b-dropdown-divider></b-dropdown-divider>
-                  <b-dropdown-item @click="deleteUser"
-                    >회원 탈퇴</b-dropdown-item
-                  >
-                </b-dropdown>
-              </b-col>
-            </b-row>
-          </div>
+                <b-dropdown-divider></b-dropdown-divider>
+                <b-dropdown-item @click="deleteUser">회원 탈퇴</b-dropdown-item>
+              </b-dropdown>
+            </b-col>
+          </b-row>
         </div>
-      </div>
+      </b-col>
 
       <!-- 마일리지 박스 -->
-      <div
-        class="d-flex align-items-center justify-content-center col-12 col-sm-8 col-md-12 col-lg-4 col-xl-4"
-        style="padding-left: 3%; padding-top: 5%"
-      >
+      <b-col cols="12" md="4" align-self="center">
         <div style="height: 120px">
           <div
-            class="shadow1 d-flex justify-content-center"
+            class="box shadow1 d-flex justify-content-center"
             style="
               width: 300px;
               height: 100px;
-              opacity: 0.8;
-              background: linear-gradient(
-                180deg,
-                rgba(6, 17, 27, 1) 0%,
-                rgba(28, 83, 73, 1) 100%
-              );
-              border-style: ridge;
-              border: #fcd000 3px ridge;
               margin: auto;
               top: 50%;
               font-family: digital;
@@ -279,230 +242,128 @@
             </p>
           </div>
         </div>
-      </div>
-    </div>
+      </b-col>
+    </b-row>
 
     <!-- 하단부 -->
-    <div style="margin: 5%">
+    <b-row class="mt-4" align-h="center">
       <!-- 랭크 박스 -->
-      <div class="row d-flex justify-content-center">
-        <div class="col-10 col-md-5 m-4">
-          <!-- 솔 랭 -->
-          <b-row>
-            <b-col>
-              <b-card
-                no-body
-                style="
-                  border: #fcd000 1px solid;
-                  opacity: 0.8;
-                  opacity: 0.8;
-                  background: linear-gradient(
-                    180deg,
-                    rgba(6, 17, 27, 1) 0%,
-                    rgba(28, 83, 73, 1) 100%
-                  );
-                "
-                class="shadow1"
+      <b-col cols="12" md="6" class="p-4">
+        <!-- 솔로몬 랭크 -->
+        <b-row no-gutters class="box mb-4">
+          <b-col cols="3" md="4">
+            <img
+              :src="solRankImg"
+              width="100%"
+              alt="게임랭크"
+              class="rounded-0"
+            />
+          </b-col>
+          <b-col cols="9" md="8" class="p-2" align-self="center">
+            <p
+              id="font1"
+              style="font-size: 3vh; font-weight: bold"
+              class="text-white"
+            >
+              SOLOMON RANK
+            </p>
+            <p
+              id="font1"
+              style="font-size: 2.5vh; font-weight: bold; color: #fcd000"
+            >
+              {{ solRank }}
+            </p>
+          </b-col>
+        </b-row>
+        <!-- 게임 랭-->
+        <b-row no-gutters class="box">
+          <b-col cols="3" md="4">
+            <img
+              :src="gameRankImg"
+              width="100%"
+              alt="게임랭크"
+              class="rounded-0"
+            />
+          </b-col>
+          <b-col cols="9" md="8" align-self="center">
+            <div v-show="user.summonerName">
+              <p style="font-size: 3vh; font-weight: bold" class="text-white">
+                GAME RANK
+              </p>
+              <p style="font-size: 2.5vh; font-weight: bold; color: #fcd000">
+                {{ gameRank }}
+              </p>
+              <b-col class="d-flex justify-content-center">
+                <b-button
+                  class="d-btn hoverbtn"
+                  style="max-width: 200px"
+                  block
+                  @click="summonerReset"
+                  >초기화</b-button
+                >
+              </b-col>
+            </div>
+            <div v-show="!user.summonerName">
+              <p
+                id="font1"
+                style="font-size: 3vh; font-weight: bold"
+                class="text-white"
               >
-                <b-row no-gutters>
-                  <b-col cols="6" md="4">
-                    <b-card-img
-                      :src="solRankImg"
-                      width="100%"
-                      alt="게임랭크"
-                      class="rounded-0"
-                    ></b-card-img>
-                  </b-col>
-                  <b-col cols="6" md="8" class="pt-3">
-                    <div class="mt-5">
-                      <p
-                        id="font1"
-                        style="font-size: 3vh; font-weight: bold"
-                        class="text-white"
-                      >
-                        SOLOMON RANK
-                      </p>
-                    </div>
-                    <div>
-                      <p
-                        id="font1"
-                        style="
-                          font-size: 3vh;
-                          font-weight: bold;
-                          color: #fcd000;
-                        "
-                      >
-                        {{ solRank }}
-                      </p>
-                    </div>
-                  </b-col>
-                </b-row>
-              </b-card>
+                GAME RANK
+              </p>
+              <p style="font-size: 2.5vh; font-weight: bold; color: #fcd000">
+                소환사 인증이 필요합니다!
+              </p>
+              <b-col>
+                <!-- 소환사 인증 폼 -->
+                <b-input-group>
+                  <b-form-input
+                    type="text"
+                    placeholder="소환사명 입력"
+                    id="summoner"
+                    v-model="summoner"
+                    :state="summonerValid"
+                    aria-describedby="summonerFeedback"
+                    class="pb-2"
+                    style="
+                      border-style: ridge;
+                      border: #fcd000 3px ridge;
+                      background-color: #1e2328;
+                      color: #cdbe91;
+                    "
+                  />
+                  <b-input-group-append class="dark">
+                    <b-button @click="summonerAuth" class="d-btn hoverbtn"
+                      >인증</b-button
+                    >
+                  </b-input-group-append>
+                  <b-form-invalid-feedback id="summonerFeedback">{{
+                    summonerMsg
+                  }}</b-form-invalid-feedback>
+                </b-input-group>
+              </b-col>
+            </div>
+          </b-col>
+        </b-row>
+      </b-col>
+      <b-col cols="12" md="6" class="p-4">
+        <div no-gutters class="box" style="height: 100%">
+          <b-row align-h="end" class="m-3">
+            <b-col cols="4">
+              <!-- 솔로몬 활동 리스트 박스-->
+              <h4 style="display: inline-block" class="text-white">
+                솔로몬 활동
+              </h4>
+            </b-col>
+            <b-col cols="4" class="p-3">
+              <h6
+                style="display: inline-block; float: right"
+                class="text-white"
+              >
+                적중률 : {{ userhitrate }}%
+              </h6>
             </b-col>
           </b-row>
-          <hr />
-          <!-- 게임 랭-->
-          <b-row>
-            <b-col>
-              <b-card
-                no-body
-                class="m-2"
-                style="
-                  border: #fcd000 1px solid;
-                  opacity: 0.8;
-                  opacity: 0.8;
-                  background: linear-gradient(
-                    180deg,
-                    rgba(6, 17, 27, 1) 0%,
-                    rgba(28, 83, 73, 1) 100%
-                  );
-                "
-              >
-                <b-row no-gutters>
-                  <b-col cols="6" md="4">
-                    <b-card-img
-                      :src="gameRankImg"
-                      width="100%"
-                      alt="게임랭크"
-                      class="rounded-0"
-                    ></b-card-img>
-                  </b-col>
-                  <b-col cols="6" md="8">
-                    <b-card-body>
-                      <b-card-text>
-                        <div v-show="user.summonerName">
-                          <div>
-                            <p
-                              id="font1"
-                              style="font-size: 3vh; font-weight: bold"
-                              class="text-white"
-                            >
-                              GAME RANK
-                            </p>
-                          </div>
-                          <div>
-                            <p
-                              id="font1"
-                              style="
-                                font-size: 3vh;
-                                font-weight: bold;
-                                color: #fcd000;
-                              "
-                            >
-                              {{ gameRank }}
-                            </p>
-                          </div>
-                          <b-col class="d-flex justify-content-center">
-                            <b-button
-                              style="
-                                max-width: 200px;
-                                color: white;
-                                background: linear-gradient(
-                                  180deg,
-                                  #1b2831 0%,
-                                  #12384b 100%
-                                );
-                                border-style: ridge;
-                                border: #95ede7 3px ridge;
-                              "
-                              variant="light"
-                              block
-                              @click="summonerReset"
-                              >초기화</b-button
-                            >
-                          </b-col>
-                        </div>
-                        <div
-                          align-v="center"
-                          cols="1"
-                          v-show="!user.summonerName"
-                        >
-                          <div>
-                            <p
-                              id="font1"
-                              style="font-size: 3vh; font-weight: bold"
-                              class="text-white"
-                            >
-                              GAME RANK
-                            </p>
-                          </div>
-                          <div>
-                            <p
-                              id="font1"
-                              style="font-size: 3vh; font-weight: bold"
-                              class="text-white"
-                            >
-                              소환사 인증이 필요합니다!
-                            </p>
-                          </div>
-                          <b-col>
-                            <!-- 소환사 인증 폼 -->
-                            <b-input-group>
-                              <b-form-input
-                                type="text"
-                                placeholder="소환사명 입력"
-                                id="summoner"
-                                v-model="summoner"
-                                :state="summonerValid"
-                                aria-describedby="summonerFeedback"
-                                class="pb-2"
-                                style="
-                                  border-style: ridge;
-                                  border: #fcd000 3px ridge;
-                                  background-color: #1e2328;
-                                  color: #cdbe91;
-                                "
-                              />
-                              <b-input-group-append class="dark">
-                                <b-button
-                                  variant="light"
-                                  @click="summonerAuth"
-                                  class="py-1"
-                                  style="
-                                    color: white;
-                                    background: linear-gradient(
-                                      180deg,
-                                      #1b2831 0%,
-                                      #12384b 100%
-                                    );
-                                    border-style: ridge;
-                                    border: #95ede7 3px ridge;
-                                  "
-                                  >인증</b-button
-                                >
-                              </b-input-group-append>
-                              <b-form-invalid-feedback id="summonerFeedback">{{
-                                summonerMsg
-                              }}</b-form-invalid-feedback>
-                            </b-input-group>
-                          </b-col>
-                        </div>
-                      </b-card-text>
-                    </b-card-body>
-                  </b-col>
-                </b-row>
-              </b-card>
-            </b-col>
-          </b-row>
-        </div>
-        <div
-          class="shadow1 col-10 col-md-5 m-4 pt-4"
-          style="
-            border: #fcd000 1px solid;
-            opacity: 0.8;
-            opacity: 0.8;
-            background: linear-gradient(
-              180deg,
-              rgba(6, 17, 27, 1) 0%,
-              rgba(28, 83, 73, 1) 100%
-            );
-          "
-        >
-          <!-- 솔로몬 활동 리스트 박스-->
-          <h4 style="display: inline-block" class="text-white">솔로몬 활동</h4>
-          <h6 style="display: inline-block; float: right" class="text-white">
-            적중률 : {{ userhitrate }}%
-          </h6>
           <ul class="solomonul text-white">
             <li v-for="(item, $index) in listsol" :key="$index">
               <div class="solomon">
@@ -537,187 +398,138 @@
             </li>
           </ul>
         </div>
+      </b-col>
 
-        <!-- MBTI -->
-        <div
-          class="shadow1 col-10 col-md-5 m-4 p-4"
+      <!-- MBTI -->
+      <b-col cols="12" md="6" class="p-4">
+        <b-row no-gutters class="box p-3">
+          <b-col cols="12">
+            <h4>내 MBTI</h4>
+          </b-col>
+          <b-col cols="12" v-if="!user.mbti">
+            아직 데마시아 전용 MBTI 측정을 하지 않았습니다.
+            <br />
+            <b-button
+              size="lg"
+              variant="secondary"
+              href="/mbtisurvey"
+              class="d-btn hoverbtn"
+              >MBTI 설문하기</b-button
+            >
+          </b-col>
+          <b-col cols="12" v-else>
+            <h2 style="color: #fcd000">{{ user.mbti.toUpperCase() }}</h2>
+            <br />
+            <b-button size="lg" href="/mbti" class="mr-2 d-btn hoverbtn">
+              챔피언 추천!
+            </b-button>
+            <b-button
+              size="lg"
+              variant="secondary"
+              href="/mbtisurvey"
+              class="ml-2 d-btn hoverbtn"
+            >
+              다시 설문하기
+            </b-button>
+          </b-col>
+        </b-row>
+      </b-col>
+
+      <!-- 매치데이터 업데이트 -->
+      <b-col cols="12" md="6" class="p-4">
+        <h4 style="display: inline-block" class="text-white">
+          전적기록(MatchList)
+        </h4>
+        <br />
+        <b-button
+          size="lg"
+          variant="primary"
+          class="mr-2 mt-3"
+          @click="callmatch()"
           style="
-            border: #fcd000 1px solid;
-            opacity: 0.8;
-            opacity: 0.8;
-            background: linear-gradient(
-              180deg,
-              rgba(6, 17, 27, 1) 0%,
-              rgba(28, 83, 73, 1) 100%
-            );
+            color: white;
+            background: linear-gradient(180deg, #1b2831 0%, #12384b 100%);
+            border-style: ridge;
+            border: #95ede7 3px ridge;
           "
         >
-          <b-row class="text-white">
-            <b-col cols="12">
-              <h4>내 MBTI</h4>
-            </b-col>
-            <b-col cols="12" v-if="!user.mbti">
-              아직 데마시아 전용 MBTI 측정을 하지 않았습니다.
-              <br />
-              <b-button
-                size="lg"
-                variant="secondary"
-                href="/mbtisurvey"
-                style="
-                  color: white;
-                  background: linear-gradient(180deg, #1b2831 0%, #12384b 100%);
-                  border-style: ridge;
-                  border: #fcd000 3px ridge;
-                "
-                >MBTI 설문하기</b-button
-              >
-            </b-col>
-            <b-col cols="12" v-else>
-              <h4 style="color: #fcd000">{{ user.mbti }}</h4>
-              <br />
-              <b-button
-                size="lg"
-                variant="primary"
-                href="/mbti"
-                class="mr-2"
-                style="
-                  color: white;
-                  background: linear-gradient(
-                    28deg,
-                    rgba(255, 234, 128, 1) 0%,
-                    rgba(200, 166, 0, 1) 100%
-                  );
-                  border-style: ridge;
-                  border: #fcd000 3px solid;
-                "
-              >
-                챔피언 추천!
-              </b-button>
-              <b-button
-                size="lg"
-                variant="secondary"
-                href="/mbtisurvey"
-                style="
-                  color: white;
-                  background: linear-gradient(180deg, #1b2831 0%, #12384b 100%);
-                  border-style: ridge;
-                  border: #95ede7 3px ridge;
-                "
-              >
-                다시 설문하기
-              </b-button>
-            </b-col>
-          </b-row>
-        </div>
+          가져오기 </b-button
+        ><br /><br />
+        <b-button variant="primary" v-if="loading" style="text-align: center">
+          <b-spinner small></b-spinner>
+          <span class="sr-only">Loading...</span>
+        </b-button>
+      </b-col>
 
-        <!-- 매치데이터 업데이트 -->
-        <div
-          class="shadow1 col-10 col-md-5 m-4 pt-4"
-          style="
-            border: #fcd000 1px solid;
-            opacity: 0.8;
-            opacity: 0.8;
-            background: linear-gradient(
-              180deg,
-              rgba(6, 17, 27, 1) 0%,
-              rgba(28, 83, 73, 1) 100%
-            );
-          "
-        >
-          <h4 style="display: inline-block" class="text-white">
-            전적기록(MatchList)
-          </h4>
-          <br />
-          <b-button
-            size="lg"
-            variant="primary"
-            class="mr-2 mt-3"
-            @click="callmatch()"
+      <!-- 활동 목록 -->
+      <div class="col-11 p-2">
+        <div class="shadow1 m-4">
+          <h2 class="p-4" style="color: #fcd000">투표의뢰목록</h2>
+          <b-table
+            hover
+            :items="myPostList"
+            :fields="myPostFields"
+            table-variant="dark"
             style="
-              color: white;
-              background: linear-gradient(180deg, #1b2831 0%, #12384b 100%);
-              border-style: ridge;
-              border: #95ede7 3px ridge;
+              border: #fcd000 2px solid;
+              opacity: 0.8;
+              background: linear-gradient(
+                180deg,
+                rgba(6, 17, 27, 1) 0%,
+                rgba(28, 83, 73, 1) 100%
+              );
             "
           >
-            가져오기 </b-button
-          ><br /><br />
-          <b-button variant="primary" v-if="loading" style="text-align: center">
-            <b-spinner small></b-spinner>
-            <span class="sr-only">Loading...</span>
-          </b-button>
-        </div>
-
-        <!-- 활동 목록 -->
-        <div class="col-11 p-2">
-          <div class="shadow1 m-4">
-            <h2 class="p-4" style="color: #fcd000">투표의뢰목록</h2>
-            <b-table
-              hover
-              :items="myPostList"
-              :fields="myPostFields"
-              table-variant="dark"
-              style="
-                border: #fcd000 2px solid;
-                opacity: 0.8;
-                background: linear-gradient(
-                  180deg,
-                  rgba(6, 17, 27, 1) 0%,
-                  rgba(28, 83, 73, 1) 100%
-                );
-              "
-            >
-              <template v-slot:cell(postDate)="data">{{
-                postDT(data.value)
-              }}</template>
-              <template v-slot:cell(to)="data">
-                <b-icon
-                  class="icon"
-                  icon="arrow-right-circle"
-                  font-scale="2"
-                  style="cursor: pointer"
-                  @click="toDetail(data.item.postNo)"
-                ></b-icon>
-              </template>
-            </b-table>
-          </div>
-        </div>
-        <!-- 영상분석 -->
-        <div class="col-11 p-2">
-          <div class="shadow1 m-4">
-            <h2 class="p-4" style="color: #fcd000">영상분석 의뢰목록</h2>
-            <b-table
-              hover
-              :items="myPostList"
-              :fields="myPostFields"
-              table-variant="dark"
-              style="
-                border: #fcd000 2px solid;
-                opacity: 0.8;
-                background: linear-gradient(
-                  180deg,
-                  rgba(6, 17, 27, 1) 0%,
-                  rgba(28, 83, 73, 1) 100%
-                );
-              "
-            >
-              <template v-slot:cell(postDate)="data">{{
-                postDT(data.value)
-              }}</template>
-              <template v-slot:cell(to)="data">
-                <b-icon
-                  class="icon"
-                  icon="arrow-right-circle"
-                  font-scale="2"
-                  style="cursor: pointer"
-                  @click="toDetail(data.item.postNo)"
-                ></b-icon>
-              </template>
-            </b-table>
-          </div>
+            <template v-slot:cell(postDate)="data">{{
+              postDT(data.value)
+            }}</template>
+            <template v-slot:cell(to)="data">
+              <b-icon
+                class="icon"
+                icon="arrow-right-circle"
+                font-scale="2"
+                style="cursor: pointer"
+                @click="toDetail(data.item.postNo)"
+              ></b-icon>
+            </template>
+          </b-table>
         </div>
       </div>
-    </div>
+      <!-- 영상분석 -->
+      <div class="col-11 p-2">
+        <div class="shadow1 m-4">
+          <h2 class="p-4" style="color: #fcd000">영상분석 의뢰목록</h2>
+          <b-table
+            hover
+            :items="myPostList"
+            :fields="myPostFields"
+            table-variant="dark"
+            style="
+              border: #fcd000 2px solid;
+              opacity: 0.8;
+              background: linear-gradient(
+                180deg,
+                rgba(6, 17, 27, 1) 0%,
+                rgba(28, 83, 73, 1) 100%
+              );
+            "
+          >
+            <template v-slot:cell(postDate)="data">{{
+              postDT(data.value)
+            }}</template>
+            <template v-slot:cell(to)="data">
+              <b-icon
+                class="icon"
+                icon="arrow-right-circle"
+                font-scale="2"
+                style="cursor: pointer"
+                @click="toDetail(data.item.postNo)"
+              ></b-icon>
+            </template>
+          </b-table>
+        </div>
+      </div>
+    </b-row>
   </div>
 </template>
 
@@ -1176,9 +988,14 @@ export default {
     rgba(6, 17, 27, 1) 0%,
     rgba(28, 83, 73, 1) 100%
   );
-  border-style: ridge;
   border: #fcd000 3px ridge;
-  border-left: 0px;
+  box-shadow: 5px 5px 5px;
+  color: #e3d19e;
+}
+.d-btn {
+  color: white !important;
+  background: linear-gradient(180deg, #1b2831 0%, #12384b 100%);
+  border: #95ede7 3px ridge !important;
 }
 .da {
   background-color: rgb(222, 226, 228);
