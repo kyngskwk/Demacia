@@ -74,8 +74,8 @@ def champion_list(request):
     return Response(serializers.data)
 
 @api_view(['GET'])
-def videopost_list(request):
-    videoposts = Videopost.objects.all()
+def videopost_list(request,videopostno):
+    videoposts = Videopost.objects.filter(videopostno=videopostno)
     serializers = VideopostSerializer(videoposts, many=True)
     return Response(serializers.data)
 
@@ -88,12 +88,13 @@ def videopost_update(request):
     gameId = get_image.get_image(request_video)
     new_time,gameId = change_text.change_text(gameId)
     time_part_set, new_part_set, gameId = timeline.timeline(new_time,gameId)
-    before_bluescore, before_redscore, after_bluescore, after_redscore, champions_records = winrate_algo.winrate_algo(time_part_set, new_part_set, gameId)
-    result = [before_bluescore, before_redscore, after_bluescore, after_redscore, champions_records]
-    videodata = Videopost.objects.filter(video=request_video).update(data = result)
-    videos = Videopost.objects.filter(video=request_video)
-    serializers = VideopostSerializer(videos, many=True)
-    return Response(serializers.data)
+    wardgap, killgap, levelgap, goldgap, buildinggap, dragongap, before_bluescore, before_redscore, after_bluescore, after_redscore, champions_records = winrate_algo.winrate_algo(time_part_set, new_part_set, gameId)
+    result = [wardgap, killgap, levelgap, goldgap, buildinggap, dragongap, before_bluescore, before_redscore, after_bluescore, after_redscore, champions_records]
+    #videodata = Videopost.objects.filter(video=request_video).update(data = result)
+    #videos = Videopost.objects.filter(video=request_video)
+    #serializers = VideopostSerializer(videos, many=True)
+    #return Response(serializers.data)
+    return Response(result)
 
 @api_view(['POST'])
 def match_update(request):

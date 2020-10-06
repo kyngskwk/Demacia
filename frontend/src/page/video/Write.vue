@@ -31,9 +31,14 @@
                 @click="dataCheck"
                 v-else-if="isVideoUploaded == 2"
               />
-              <h2 class="m-4">
-                {{ uploadMSG }}
-              </h2>
+              <b-icon
+                icon="x-circle-fill"
+                font-scale="13"
+                type="button"
+                v-else-if="isVideoUploaded == 3"
+                @click="reload"
+              />
+              <h2 class="m-4">{{ uploadMSG }}</h2>
               <!---->
               <input
                 type="file"
@@ -80,7 +85,7 @@ export default {
     return {
       no: JSON.parse(sessionStorage.getItem("user")).userNo,
       isVideoUploaded: 0,
-      popoverStr: ["동영상 업로드", "업로드 취소", "영상 게시"],
+      popoverStr: ["동영상 업로드", "업로드 취소", "영상 게시", "재시도"],
       mileage: 50,
       thumbnail: "0",
       data: "0",
@@ -95,6 +100,9 @@ export default {
     this.getUserMileage();
   },
   methods: {
+    reload() {
+      location.reload();
+    },
     cancelUpload() {
       this.isVideoUploaded = 0;
     },
@@ -116,6 +124,7 @@ export default {
     onSaveVideo() {
       let fileURL = this.$refs.uploadvideoURL.files[0];
       this.video = this.$refs.uploadvideoURL.files[0].name;
+      this.thumbnail = this.video.replace(".mp4", ".jpg");
       console.log(this.video);
       let fdv = new FormData();
       fdv.append("upLoadVideo2", fileURL, this.video);
@@ -128,45 +137,29 @@ export default {
         })
         .then(() => {
           console.log("video upload success");
-          this.uploadMSG = "업로드 성공. 영상 분석API는 이단계에서 불러옴";
+          this.uploadMSG = "영상 분석중...";
           // DATA APIAPI
           axios
-            .get(/* 데이터 분석하는 API */)
-            .then((res) => {
-              this.data = res.object.data;
-              // 썸네일 이미지를 file로 받으면 imgup으로 등록
-              let thumbnailFile = res.object.thumbnail;
-              this.thumbnail = thumbnailFile.name;
-              this.uploadMSG = "썸네일이미지 추출중...";
-              axios
-                .post(
-                  process.env.VUE_APP_IMGUP_URL + "/uploadvideo2",
-                  new FormData().append(
-                    "upLoadThum2",
-                    thumbnailFile,
-                    this.thumbnail
-                  ),
-                  {
-                    headers: {
-                      "Content-Type": "multipart/form-data",
-                    },
-                  }
-                )
-                .then(() => {
-                  this.uploadMSG = "영상 업로드 및 분석 성공";
-                  this.isVideoUploaded = 2;
-                });
+            .post(process.env.VUE_APP_DAPI_URL + "/videoposts/update/", {
+              video: this.video,
             })
-            .catch(() => {
-              console.log("data fail");
-              this.uploadMSG = "분석 실패";
+            .then((res) => {
+              console.log(res);
+              this.data = JSON.stringify(res.data);
+              this.uploadMSG = "영상 업로드 및 분석 성공";
               this.isVideoUploaded = 2;
+            })
+            .catch((e) => {
+              console.log("data fail : " + e);
+              this.uploadMSG =
+                "분석 실패 : 파일 형식을 지켜주세요. (예 : 00-00_KR-000000000_00.mp4)";
+              this.isVideoUploaded = 3;
             });
         })
-        .catch(() => {
-          console.log("video upload fail");
+        .catch((e) => {
+          console.log("video upload fail : " + e);
           this.uploadMSG = "업로드 실패";
-          this.isVideoUploaded = 0;
+          this.isVideoUploaded = 3;
         });
     },
 
@@ -200,7 +193,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .button1 {
   display: inline-block;
   outline: none;
@@ -260,11 +253,7 @@ export default {
   border-style: ridge;
   border: #fcd000 4px ridge;
   opacity: 0.8;
-  background: linear-gradient(
-    180deg,
-    rgba(14, 36, 56, 1) 0%,
-    rgba(32, 17, 95, 1) 100%
-  );
+  background: linear-gradient(180deg, #06111b, #1c5349);
   margin: 1rem;
   width: 100%;
   background-color: white;

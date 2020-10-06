@@ -2,7 +2,9 @@ package com.web.blog.model.dao.video;
 
 import java.util.List;
 
-import com.web.blog.model.dto.video.*;
+import com.web.blog.model.dto.video.Video;
+import com.web.blog.model.dto.video.VideoPostDetail;
+import com.web.blog.model.dto.video.VideoPostItem;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;

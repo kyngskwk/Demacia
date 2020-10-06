@@ -418,9 +418,12 @@ export default {
         this.cham_no1_id = this.champions[0][0];
         this.cham_no2_id = this.champions[1][0];
         this.cham_no3_id = this.champions[2][0];
-        this.cham_no1_rate = this.champions[0][1] * 100;
-        this.cham_no2_rate = this.champions[1][1] * 100;
-        this.cham_no3_rate = this.champions[2][1] * 100;
+        let tmp = this.champions[0][1] * 100;
+        this.cham_no1_rate = tmp.toFixed(2);
+        tmp = this.champions[1][1] * 100;
+        this.cham_no2_rate = tmp.toFixed(2);
+        tmp = this.champions[2][1] * 100;
+        this.cham_no3_rate =  tmp.toFixed(2);
         this.sim_no1 = this.similar_cham_recommand[this.cham_no1_id];
         this.sim_no2 = this.similar_cham_recommand[this.cham_no2_id];
         this.sim_no3 = this.similar_cham_recommand[this.cham_no3_id];

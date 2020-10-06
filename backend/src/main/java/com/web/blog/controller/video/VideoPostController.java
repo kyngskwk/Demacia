@@ -66,7 +66,7 @@ public class VideoPostController {
             result.object = list;
             return new ResponseEntity<>(result, HttpStatus.OK);
         } catch (Exception e) {
-            System.out.println("Fail to get video post list");
+            System.out.println("Fail to get video post list : " + e);
             result.status = false;
             result.data = "fail";
             result.object = e;
@@ -77,6 +77,7 @@ public class VideoPostController {
     @GetMapping("/video/detail")
     @ApiOperation(value = "영상 상세조회")
     public Object postDetail(int videoPostNo) {
+        System.out.println(videoPostNo);
         BasicResponse result = new BasicResponse();
         try {
             result.object = videoPostService.detail(videoPostNo);
