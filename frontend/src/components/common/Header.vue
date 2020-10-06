@@ -1,31 +1,43 @@
 <template>
-  <div id="a" style="font-family:Tmon">
+  <div id="a" style="font-family: Tmon">
     <nav
       class="navbar navbar-expand-lg navbar-dark fixed-top pb-1"
       id="mainNav"
-      style="opacity:0.8; background: linear-gradient(180deg, rgba(14,36,56,1) 0%, rgba(32,17,95,1) 100%); height:75px"
+      style="
+        opacity: 0.8;
+        background: linear-gradient(
+          180deg,
+          rgba(14, 36, 56, 1) 0%,
+          rgba(32, 17, 95, 1) 100%
+        );
+        height: 75px;
+      "
     >
       <div class="container">
         <a
           class="navbar-brand mx-0"
           href="/"
-          style="padding-top:5px; font-size:2em;"
+          style="padding-top: 5px; font-size: 2em"
         >
-          <img src="../../assets/img/damacia.png" alt="" style="width:200px" />
+          <img src="../../assets/img/damacia.png" alt="" style="width: 200px" />
         </a>
         <button
           class="navbar-toggler"
           type="button"
           data-toggle="collapse"
           data-target=".dual-collapse2"
-          style="margin-left:50px; border:none;"
+          style="margin-left: 50px; border: none"
         >
           <b-icon icon="three-dots" animation="cylon" font-scale="2.5"></b-icon>
         </button>
         <div
           class="navbar-collapse collapse w-100 order-3 dual-collapse2 text-right"
         >
-          <ul class="navbar-nav ml-auto" style="font-size:2.5hv" v-if="isLogin">
+          <ul
+            class="navbar-nav ml-auto"
+            style="font-size: 2.5hv"
+            v-if="isLogin"
+          >
             <li class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle"
@@ -35,7 +47,7 @@
               >
               <div
                 class="dropdown-menu text-right"
-                style="background-color: black;"
+                style="background-color: black"
               >
                 <router-link
                   v-bind:to="{ name: constants.URL_TYPE.RECOMMEND.CHAMPION }"
@@ -46,6 +58,11 @@
                   v-bind:to="{ name: constants.URL_TYPE.RECOMMEND.COMBINATION }"
                   class="dropdown-item"
                   >조합 추천</router-link
+                >
+                <router-link
+                  v-bind:to="{ name: constants.URL_TYPE.RECOMMEND.MBTI }"
+                  class="dropdown-item"
+                  >MBTI 추천</router-link
                 >
               </div>
             </li>
@@ -79,7 +96,7 @@
               </a>
               <div
                 class="dropdown-menu text-right"
-                style="background-color: black;"
+                style="background-color: black"
               >
                 <router-link
                   v-bind:to="{ name: constants.URL_TYPE.USER.MYPROFILE }"
@@ -90,7 +107,7 @@
               </div>
             </li>
           </ul>
-          <ul class="navbar-nav ml-auto" style="font-size:2.5hv" v-else>
+          <ul class="navbar-nav ml-auto" style="font-size: 2.5hv" v-else>
             <li class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle"
@@ -100,7 +117,7 @@
               >
               <div
                 class="dropdown-menu text-right"
-                style="background-color: black;"
+                style="background-color: black"
               >
                 <router-link
                   v-bind:to="{ name: constants.URL_TYPE.RECOMMEND.CHAMPION }"
@@ -111,6 +128,11 @@
                   v-bind:to="{ name: constants.URL_TYPE.RECOMMEND.COMBINATION }"
                   class="dropdown-item"
                   >조합 추천</router-link
+                >
+                <router-link
+                  v-bind:to="{ name: constants.URL_TYPE.RECOMMEND.MBTI }"
+                  class="dropdown-item"
+                  >MBTI 추천</router-link
                 >
               </div>
             </li>
@@ -146,7 +168,7 @@
         </div>
       </div>
     </nav>
-    <div style="height:74px">.</div>
+    <div style="height: 74px">.</div>
   </div>
 </template>
 
