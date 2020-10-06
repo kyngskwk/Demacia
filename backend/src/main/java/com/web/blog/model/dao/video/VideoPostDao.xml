@@ -23,7 +23,7 @@
             (select count(*) from videopostlikes l where l.videoPostNo = v.videoPostNo) totalLike 
         from videopost v inner join user u on v.userNo = u.userNo 
         where ${option}
-        order by ${orderby} desc
+        order by ${orderBy} desc
 	    limit #{limit} offset #{offset}
     </select>
 
