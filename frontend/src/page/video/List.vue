@@ -1,9 +1,30 @@
 <template>
   <div class="container m-auto" id="body" style="font-family: Tmon">
-    <b-row align-h="center">
-      <b-col cols="12" md="5">
-        <div class="box p-3 mr-2">
-          <div style="display: inline; text-align: right">
+    <b-row align-h="center" class="mt-4">
+      <div class="mt-4" style="display: center;">
+        <b-button
+          pill
+          size="lg"
+          variant="dark"
+          class="d-btn p-3 mt-4"
+          href="/vwrite"
+        >
+          <b-icon icon="camera-video-fill" />&nbsp;영상 분석 요청
+        </b-button>
+      </div>
+
+      <b-col cols="4" md="12">
+        <div
+          class=" d-flex justify-content-end"
+          style="display: inline; text-align: right"
+        >
+          <div>
+            <b-form-select
+              v-model="orderby"
+              style="width:300px;"
+              :options="orderOptions"
+              class="shadow1"
+            />
             <b-form-checkbox
               id="checkbox-private"
               v-model="isSearch"
@@ -12,23 +33,10 @@
               :unchecked-value="false"
               size="lg"
               class="m-2"
+              style="color:white"
             >
-              내 영상만
+              내 영상만 보기
             </b-form-checkbox>
-            <b-form-select
-              v-model="orderby"
-              :options="orderOptions"
-              class="shadow1"
-            />
-            <b-button
-              pill
-              size="lg"
-              variant="dark"
-              class="d-btn p-3 mt-4"
-              href="/vwrite"
-            >
-              <b-icon icon="camera-video-fill" />&nbsp;영상 의뢰
-            </b-button>
           </div>
         </div>
       </b-col>
@@ -68,7 +76,7 @@
             </h5>
           </b-col>
           <b-col cols="12" class="pt-0"
-            >의뢰번호 No. {{ item.videoPostNo }}</b-col
+            >영상번호 No. {{ item.videoPostNo }}</b-col
           >
         </b-row>
       </b-col>
@@ -242,7 +250,10 @@ export default {
 }
 .d-btn {
   color: white;
-  background: linear-gradient(rgb(27, 40, 49) 0%, rgb(18, 56, 75) 100%);
-  border: 3px ridge rgb(149, 237, 231);
+  background: black;
+  border: 3px ridge red;
+}
+.d-btn:hover {
+  background: #b6b650;
 }
 </style>
