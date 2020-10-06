@@ -101,7 +101,36 @@ def winrate_algo(time_part_set, new_part_set, gameId):
         for i in range(1,11):
             for key,value in new_part_set[i].items():
                 champions_records[i-1].append([key,value])
+        
+        group_data = OrderedDict()
+        group_data["before_bluescore"] = before_bluescore
+        group_data["before_redscore"] = before_redscore
+        group_data["after_bluescore"] = after_bluescore
+        group_data["after_redscore"] = after_redscore
+        data = []
+        for i in range(1,11):
+            data.append(str(i))
+        for i in range(10):
+            champ = data[i]
+            champ = OrderedDict()
+            champ["name"] = str(champions_records[i][0])
+            champ["WARD_PLACED"] = 0
+            champ["WARD_KILL"] = 0
+            champ["CHAMPION_KILL"] = 0
+            champ["ELITE_MONSTER_KILL"] = []
+            champ["BUILDING_KILL"] = 0
+            group_data[data[i]] = champ
 
+            if len(champions_records[i])>= 2:
+                length = len(champions_records[i])
+                for k in range(length):
+                    if champions_records[i][k][0] == "ELITE_MONSTER_KILL":
+
+                        champ[champions_records[i][k][0]]+=champions_records[i][k][1]
+                    elif champions_records[i][k][0] in champ:
+                        champ[champions_records[i][k][0]] += 1
+        dict_result = json.dumps(group_data, ensure_ascii=False, indent="\t")
+        return dict_result
         # for i in range(10):
             # print(champions_records[i])
         # return [before_bluescore, before_redscore, after_bluescore, after_redscore, champions_records]
@@ -119,5 +148,5 @@ def winrate_algo(time_part_set, new_part_set, gameId):
         after_redscore = None
         champions_records = None
         # print("빈값")
-    return wardgap, killgap, levelgap, goldgap, buildinggap, dragongap, before_bluescore, before_redscore, after_bluescore, after_redscore, champions_records
+        return 0
 

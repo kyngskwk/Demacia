@@ -206,10 +206,7 @@
         <div class="container">
           <div class="row">
             <div class="col">
-              <b-img
-                style="border-style: ridge; border: #fcd000 3px ridge"
-                width="100%"
-              />Column
+              Column
             </div>
             <div class="col">Column</div>
             <div class="w-100"></div>
