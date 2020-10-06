@@ -1,13 +1,7 @@
 <template>
   <div
     class="pb-2"
-    style="
-      background-color: white;
-      width: 90%;
-      margin-left: auto;
-      margin-right: auto;
-      font-family: Tmon;
-    "
+    style="background: rgba( 0, 0, 0, 0.5 );width:96%; margin-left:auto; margin-right:auto;font-family:Tmon;color: white;"
   >
     <div
       class="d-flex justify-content-between"
@@ -30,8 +24,8 @@
             style="text-align: left; padding-top: 2%; padding-left: 1%"
             class="d-flex"
           >
-            <p id="hide3" style="font-size: 3vh; padding-left: 7%">의뢰번호</p>
-            <p style="font-weight: bold; font-size: 3.5vh; padding-left: 5px">
+            <p id="hide3" style="font-size:3vh;  padding-left:7%;">의뢰번호</p>
+            <p style="font-weight: bold; font-size:3.5vh; padding-left:5px; ">
               NO.{{ videoNo }}
             </p>
           </b-col>
@@ -39,45 +33,29 @@
             cols="9"
             lg="5"
             xl="6"
-            class="d-flex color1 justify-content-center"
-            style="padding-top: 3%"
+            class="d-flex justify-content-center"
+            style="padding-top:3%;"
           >
             <p
-              style="
-                font-weight: bold;
-                font-size: 3.5vh;
-                max-width: 100%;
-                display: -webkit-box;
-                overflow: hidden;
-                width: 100%;
-                text-overflow: ellipsis;
-                -webkit-line-clamp: 1;
-                -webkit-box-orient: vertical;
-                word-wrap: break-word;
-                line-height: 4vh;
-                height: 4vh;
-              "
+              style="font-weight: bold;font-size:3.5vh; max-width:100%;display: -webkit-box; overflow: hidden;width:100%; text-overflow: ellipsis;
+                          -webkit-line-clamp: 1;-webkit-box-orient: vertical;word-wrap:break-word; line-height: 4vh; height: 4vh; "
             >
               {{ writePost.title }}
             </p>
           </b-col>
-          <b-col>
-            <b-button
-              pill
-              size="lg"
-              variant="dark"
-              class="p-3"
-              @click="analize"
+          <b-col id="hide2" cols="4" lg="3" xl="3" style=" ">
+            <h4
+              style="font-size:5vh;font-weight: bold; color:red;margin-top:10%;"
             >
-              <b-icon icon="exclude" />&nbsp;영상 분석
-            </b-button>
+              분석 완료
+            </h4>
           </b-col>
         </b-row>
       </b-container>
     </div>
-    <div class="container" style="width: 100%; padding: 0; margin-top: 2%">
+    <div class="container" style="width:100%; padding:0; margin-top:2%;">
       <video
-        style="width: 100%; padding: 0"
+        style="width:100%; padding:0; max-width:900px;"
         controls
         autoplay="true"
         name="media"
@@ -90,24 +68,14 @@
     <div
       id="mainBody"
       class="container"
-      style="
-        border-left: solid;
-        border-right: solid;
-        border-bottom: solid;
-        padding-left: 5px;
-        padding-right: 5px;
-        padding-bottom: 5px;
-        margin-top: -7%;
-        padding-top: 6%;
-        margin-bottom: 5%;
-      "
+      style=" padding-left:5px;padding-right:5px;padding-bottom:5px; margin-top:-7%; padding-top:6%; margin-bottom:5%;"
     >
       <hr style="margin-left: 2%; margin-right: 2%" />
       <div class="row">
         <div class="col-7 col-xl-8" style="padding: 0">
           <!-- 글쓴이 -->
           <div class="d-flex justify-content-between">
-            <div class="d-flex" style="margin-left: 2%">
+            <div class="d-flex" style=" margin-left:2%;">
               <b-avatar
                 variant="secondary"
                 :src="writeUser.userImage"
@@ -115,17 +83,12 @@
               ></b-avatar>
               <div>
                 <h4
-                  style="
-                    margin-bottom: 0;
-                    text-align: center;
-                    font-size: 2.5vh;
-                    margin-top: 12%;
-                  "
+                  style="margin-bottom:0; text-align:center; font-size:2.5vh; margin-top:12%;"
                 >
                   {{ writeUser.userNickname }}
                 </h4>
                 <h4
-                  style="margin-bottom: 0; text-align: center; font-size: 1.2vh"
+                  style="margin-bottom:0; text-align:center;  font-size:1.2vh;"
                 >
                   {{ writeUser.userTier }}
                 </h4>
@@ -150,7 +113,7 @@
                   shift-v="5"
                   class="btn"
                   font-scale="3"
-                  style="cursor: pointer"
+                  style="cursor: pointer;"
                 />
               </div>
 
@@ -164,34 +127,49 @@
                 />
               </div>
 
-              <p style="font-size: 2.5vh">{{ likescnt }}</p>
+              <p style="font-size:2.5vh">{{ likescnt }}</p>
             </div>
           </div>
         </div>
       </div>
       <hr style="margin: 2%" />
       <div
-        class="d-flex justify-content-start"
-        style="
-          margin-top: 2%;
-          margin-left: 2%;
-          margin-right: 2%;
-          text-align: center;
-          border: solid 5px gray;
-          border-radius: 10px;
-        "
+        class="container"
+        style="margin-top:2%; margin-left:2%; margin-right:2%; text-align:center; border:solid 5px gray; border-radius:10px;"
       >
-        <p style="font-size: 2vh; text-align: left; margin: 3%">
-          분석결과
-          <br />
-        </p>
-        <hr />
-        <p style="font-size: 2vh; text-align: left; margin: 3%">
-          여기에 여러가지 그래프들이 들어갈 겁니다.
-          <br />
-          <img src="http://j3a304.p.ssafy.io/imgup/images/gongsaing.jpg" />
-          <br />
-        </p>
+        <div class="row row-cols-12">
+          <div class="col">
+            <h3>영상이전 승률</h3>
+            <pie-chart
+              :data="[
+                ['BLUETEAM', 44],
+                ['REDTEAM', 23],
+              ]"
+              :colors="['#23285c', '#d71616']"
+              suffix="%"
+            ></pie-chart>
+          </div>
+          <div class="col">
+            <h3>영상이후 승률</h3>
+            <pie-chart
+              :data="[
+                ['Blueberry', 44],
+                ['Strawberry', 23],
+              ]"
+            ></pie-chart>
+          </div>
+        </div>
+
+        <div class="container">
+          <div class="row">
+            <div class="col">
+            </div>
+            <div class="col">Column</div>
+            <div class="w-100"></div>
+            <div class="col">Column</div>
+            <div class="col">Column</div>
+          </div>
+        </div>
       </div>
       <br />
 
@@ -235,7 +213,11 @@
 <script>
 import axios from "axios";
 import "../../assets/css/comment.css";
+import Vue from "vue";
+import Chartkick from "vue-chartkick";
+import Chart from "chart.js";
 
+Vue.use(Chartkick.use(Chart));
 export default {
   data() {
     return {
