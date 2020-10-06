@@ -77,6 +77,7 @@ public class VideoPostController {
     @GetMapping("/video/detail")
     @ApiOperation(value = "영상 상세조회")
     public Object postDetail(int videoPostNo) {
+        System.out.println(videoPostNo);
         BasicResponse result = new BasicResponse();
         try {
             result.object = videoPostService.detail(videoPostNo);
