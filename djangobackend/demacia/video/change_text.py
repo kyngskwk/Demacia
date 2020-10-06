@@ -9,7 +9,7 @@ import pytesseract
 
 def change_text(gameId):
     if gameId != None:
-        pytesseract.pytesseract.tesseract_cmd = r'/usr/share/man/man1/tesseract'
+        pytesseract.pytesseract.tesseract_cmd = r'//usr//bin//tesseract'
         # pytesseract.pytesseract.tesseract_cmd = r'\\home\\ubuntu\\tesseract'
         # --------------------------------------------------------------------
         # 이미지 구역 나누기v
