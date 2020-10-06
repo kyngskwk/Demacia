@@ -186,11 +186,7 @@
       <div class="container">
         <div class="row justify-content-around listbox mt-3">
           <div class="col-5 chambox1">
-<<<<<<< HEAD
-            <div class="d-flex ">
-=======
             <div class="d-flex">
->>>>>>> 4c80310e6d8baffaecc35cead8de6130a6f9324d
               <img class="imgrelative" src="../../assets/img/3badge.png" />
               <div class="mt-3 ml-3">
                 <h2>챔피언 킬 +1</h2>
@@ -199,11 +195,7 @@
             </div>
           </div>
           <div class="col-5 chambox1">
-<<<<<<< HEAD
             <div class="d-flex ">
-=======
-            <div class="d-flex">
->>>>>>> 4c80310e6d8baffaecc35cead8de6130a6f9324d
               <img class="imgrelative" src="../../assets/img/3badge.png" />
               <div class="mt-3 ml-3">
                 <h2>챔피언 킬 +1</h2>
@@ -214,11 +206,7 @@
         </div>
         <div class="row justify-content-around listbox mt-3">
           <div class="col-5 chambox1">
-<<<<<<< HEAD
             <div class="d-flex ">
-=======
-            <div class="d-flex">
->>>>>>> 4c80310e6d8baffaecc35cead8de6130a6f9324d
               <img class="imgrelative" src="../../assets/img/3badge.png" />
               <div class="mt-3 ml-3">
                 <h2>챔피언 킬 +1</h2>
@@ -227,11 +215,7 @@
             </div>
           </div>
           <div class="col-5 chambox1">
-<<<<<<< HEAD
-            <div class="d-flex ">
-=======
             <div class="d-flex">
->>>>>>> 4c80310e6d8baffaecc35cead8de6130a6f9324d
               <img class="imgrelative" src="../../assets/img/3badge.png" />
               <div class="mt-3 ml-3">
                 <h2>챔피언 킬 +1</h2>
@@ -243,11 +227,7 @@
 
         <div class="row justify-content-around listbox mt-3">
           <div class="col-5 chambox1">
-<<<<<<< HEAD
-            <div class="d-flex ">
-=======
             <div class="d-flex">
->>>>>>> 4c80310e6d8baffaecc35cead8de6130a6f9324d
               <img class="imgrelative" src="../../assets/img/3badge.png" />
               <div class="mt-3 ml-3">
                 <h2>챔피언 킬 +1</h2>
@@ -256,11 +236,7 @@
             </div>
           </div>
           <div class="col-5 chambox1">
-<<<<<<< HEAD
-            <div class="d-flex ">
-=======
             <div class="d-flex">
->>>>>>> 4c80310e6d8baffaecc35cead8de6130a6f9324d
               <img class="imgrelative" src="../../assets/img/3badge.png" />
               <div class="mt-3 ml-3">
                 <h2>챔피언 킬 +1</h2>
@@ -271,11 +247,7 @@
         </div>
         <div class="row justify-content-around listbox mt-3">
           <div class="col-5 chambox1">
-<<<<<<< HEAD
-            <div class="d-flex ">
-=======
             <div class="d-flex">
->>>>>>> 4c80310e6d8baffaecc35cead8de6130a6f9324d
               <img class="imgrelative" src="../../assets/img/3badge.png" />
               <div class="mt-3 ml-3">
                 <h2>챔피언 킬 +1</h2>
@@ -284,11 +256,7 @@
             </div>
           </div>
           <div class="col-5 chambox1">
-<<<<<<< HEAD
-            <div class="d-flex ">
-=======
             <div class="d-flex">
->>>>>>> 4c80310e6d8baffaecc35cead8de6130a6f9324d
               <img class="imgrelative" src="../../assets/img/3badge.png" />
               <div class="mt-3 ml-3">
                 <h2>챔피언 킬 +1</h2>
@@ -299,11 +267,7 @@
         </div>
         <div class="row justify-content-around listbox mt-3">
           <div class="col-5 chambox1">
-<<<<<<< HEAD
-            <div class="d-flex ">
-=======
             <div class="d-flex">
->>>>>>> 4c80310e6d8baffaecc35cead8de6130a6f9324d
               <img class="imgrelative" src="../../assets/img/3badge.png" />
               <div class="mt-3 ml-3">
                 <h2>챔피언 킬 +1</h2>
@@ -312,11 +276,7 @@
             </div>
           </div>
           <div class="col-5 chambox1">
-<<<<<<< HEAD
-            <div class="d-flex ">
-=======
             <div class="d-flex">
->>>>>>> 4c80310e6d8baffaecc35cead8de6130a6f9324d
               <img class="imgrelative" src="../../assets/img/3badge.png" />
               <div class="mt-3 ml-3">
                 <h2>챔피언 킬 +1</h2>
