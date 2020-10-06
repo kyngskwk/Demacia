@@ -69,4 +69,4 @@ class VideoUpdateSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Videopost
-        fields = ['videopostno']
+        fields = ['video']

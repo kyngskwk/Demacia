@@ -11,18 +11,26 @@
             </b-col>
           </b-row>
         </h3>
-        <h5>
-          <b-jumbotron>{{ q[index].text }}</b-jumbotron>
-          <b-form-group :label="index + 1 + '. ' + q[index].q">
-            <b-form-radio v-model="ans[index]" value="1" size="lg">
-              {{ q[index].a }}
-            </b-form-radio>
-            <b-form-radio v-model="ans[index]" value="-1" size="lg">
-              {{ q[index].b }}
-            </b-form-radio>
-          </b-form-group>
-        </h5>
-        <br />
+        <b-jumbotron>
+          <h3 style="color:white; margin-bottom:15px;">
+            <b-form-group :label="index + 1 + '. ' + q[index].q">
+              <h5 style="color:white; margin-left:30px;">
+                <b-form-radio
+                  v-model="ans[index]"
+                  value="1"
+                  size="lg"
+                  style="margin-bottom:15px;"
+                >
+                  {{ q[index].a }}
+                </b-form-radio>
+                <b-form-radio v-model="ans[index]" value="-1" size="lg">
+                  {{ q[index].b }}
+                </b-form-radio>
+              </h5>
+            </b-form-group>
+          </h3>
+          <br />
+        </b-jumbotron>
       </b-aspect>
 
       <!-- 하단부 -->
@@ -261,5 +269,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style></style>
