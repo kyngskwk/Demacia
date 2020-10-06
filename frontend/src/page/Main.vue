@@ -319,9 +319,14 @@ export default {
     "Noto Color Emoji";
 }
 .part .box {
+  border-style: ridge;
+  border: #fcd000 4px ridge;
+  opacity: 0.8;
+  background: linear-gradient(180deg, #06111b, #1c5349);
   margin: 1rem;
   width: 100%;
   background-color: white;
   box-shadow: 5px 5px 5px;
+  color: #e3d19e;
 }
 </style>
