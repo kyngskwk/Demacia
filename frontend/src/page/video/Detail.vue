@@ -204,14 +204,106 @@
         </div>
 
         <div class="container">
-          <div class="row">
-            <div class="col">
-              Column
+          <div class="row justify-content-around listbox mt-3">
+            <div class="col-5 chambox1">
+              <div class="d-flex ">
+                <img class="imgrelative" src="../../assets/img/3badge.png" />
+                <div class="mt-3 ml-3">
+                  <h2>챔피언 킬 +1</h2>
+                  <h2>와드 파괴 +2</h2>
+                </div>
+              </div>
             </div>
-            <div class="col">Column</div>
-            <div class="w-100"></div>
-            <div class="col">Column</div>
-            <div class="col">Column</div>
+            <div class="col-5 chambox1">
+              <div class="d-flex ">
+                <img class="imgrelative" src="../../assets/img/3badge.png" />
+                <div class="mt-3 ml-3">
+                  <h2>챔피언 킬 +1</h2>
+                  <h2>와드 파괴 +2</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row justify-content-around listbox mt-3">
+            <div class="col-5 chambox1">
+              <div class="d-flex ">
+                <img class="imgrelative" src="../../assets/img/3badge.png" />
+                <div class="mt-3 ml-3">
+                  <h2>챔피언 킬 +1</h2>
+                  <h2>와드 파괴 +2</h2>
+                </div>
+              </div>
+            </div>
+            <div class="col-5 chambox1">
+              <div class="d-flex ">
+                <img class="imgrelative" src="../../assets/img/3badge.png" />
+                <div class="mt-3 ml-3">
+                  <h2>챔피언 킬 +1</h2>
+                  <h2>와드 파괴 +2</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row justify-content-around listbox mt-3">
+            <div class="col-5 chambox1">
+              <div class="d-flex ">
+                <img class="imgrelative" src="../../assets/img/3badge.png" />
+                <div class="mt-3 ml-3">
+                  <h2>챔피언 킬 +1</h2>
+                  <h2>와드 파괴 +2</h2>
+                </div>
+              </div>
+            </div>
+            <div class="col-5 chambox1">
+              <div class="d-flex ">
+                <img class="imgrelative" src="../../assets/img/3badge.png" />
+                <div class="mt-3 ml-3">
+                  <h2>챔피언 킬 +1</h2>
+                  <h2>와드 파괴 +2</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row justify-content-around listbox mt-3">
+            <div class="col-5 chambox1">
+              <div class="d-flex ">
+                <img class="imgrelative" src="../../assets/img/3badge.png" />
+                <div class="mt-3 ml-3">
+                  <h2>챔피언 킬 +1</h2>
+                  <h2>와드 파괴 +2</h2>
+                </div>
+              </div>
+            </div>
+            <div class="col-5 chambox1">
+              <div class="d-flex ">
+                <img class="imgrelative" src="../../assets/img/3badge.png" />
+                <div class="mt-3 ml-3">
+                  <h2>챔피언 킬 +1</h2>
+                  <h2>와드 파괴 +2</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row justify-content-around listbox mt-3">
+            <div class="col-5 chambox1">
+              <div class="d-flex ">
+                <img class="imgrelative" src="../../assets/img/3badge.png" />
+                <div class="mt-3 ml-3">
+                  <h2>챔피언 킬 +1</h2>
+                  <h2>와드 파괴 +2</h2>
+                </div>
+              </div>
+            </div>
+            <div class="col-5 chambox1">
+              <div class="d-flex ">
+                <img class="imgrelative" src="../../assets/img/3badge.png" />
+                <div class="mt-3 ml-3">
+                  <h2>챔피언 킬 +1</h2>
+                  <h2>와드 파괴 +2</h2>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -474,5 +566,25 @@ export default {
   position: relative !important;
   max-width: 90% !important;
   width: 90% !important;
+}
+.listbox {
+  height: 130px;
+}
+.imgrelative {
+  position: relative;
+  top: 10px;
+  border-style: ridge;
+  border: #fcd000 3px ridge;
+  height: 100px;
+}
+.chambox1 {
+  padding-left: 10px;
+  background: linear-gradient(
+    180deg,
+    rgba(14, 36, 56, 1) 0%,
+    rgba(32, 17, 95, 1) 100%
+  );
+  border-style: ridge;
+  border: #fcd000 3px ridge;
 }
 </style>

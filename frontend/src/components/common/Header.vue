@@ -58,13 +58,6 @@
             </li>
             <li class="nav-item">
               <router-link
-                :to="{ name: constants.URL_TYPE.RECOMMEND.DJANGOTEST }"
-                class="nav-link"
-                >장고테스트</router-link
-              >
-            </li>
-            <li class="nav-item">
-              <router-link
                 :to="{ name: constants.URL_TYPE.VIDEO.MAIN }"
                 class="nav-link"
                 >영상분석</router-link
