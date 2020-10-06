@@ -149,13 +149,7 @@
       </div>
     </div>
     <hr style="margin: 2%" />
-    <div
-      class="container"
-      style="
-        border: solid 5px gray;
-        border-radius: 10px;
-      "
-    >
+    <div class="container" style="border: solid 5px gray; border-radius: 10px">
       <div class="row justify-content-center">
         <div class="col">
           <h3>영상이전 승률</h3>
@@ -617,6 +611,13 @@ export default {
         .then(({ data }) => {
           console.log(data.object);
           this.writePost = data.object;
+          if (
+            this.writePost.isPrivate != 0 &&
+            this.writePost.userNo != this.sessionUserNo
+          ) {
+            alert("비밀글입니다.");
+            location.href = "/vlist";
+          }
           this.data = JSON.parse(data.object.data.replaceAll("'", '"'));
           this.before_bluescore = this.data.before_bluescore;
           this.before_redscore = this.data.before_redscore;
