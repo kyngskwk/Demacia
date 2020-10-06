@@ -98,7 +98,6 @@
         padding-bottom: 5px;
         margin-top: -7%;
         padding-top: 6%;
-        margin-bottom: 5%;
       "
     >
       <hr style="margin-left: 2%; margin-right: 2%" />
@@ -148,12 +147,20 @@
         </div>
       </div>
     </div>
-    <hr style="margin: 2%" />
-    <div class="container" style="border: solid 5px gray; border-radius: 10px">
+
+    <div
+      class="container py-3"
+      style="border: solid 5px gray; border-radius: 10px"
+    >
       <div class="row justify-content-center">
         <div class="col">
           <h3>영상이전 승률</h3>
+          <h3>
+            <strong style="color:#646ac8">{{ before_bluescore }}</strong> vs
+            <strong style="color:#d71616">{{ before_redscore }}</strong>
+          </h3>
           <pie-chart
+            :donut="true"
             :data="[
               ['BLUETEAM', before_bluescore],
               ['REDTEAM', before_redscore],
@@ -164,19 +171,26 @@
         </div>
         <div class="col">
           <h3>영상이후 승률</h3>
+          <h3>
+            <strong style="color:#646ac8">{{ after_bluescore }}</strong> vs
+            <strong style="color:#d71616">{{ after_redscore }}</strong>
+          </h3>
           <pie-chart
+            :donut="true"
             :data="[
               ['BLUETEAM', after_bluescore],
               ['REDTEAM', after_redscore],
             ]"
+            :colors="['#23285c', '#d71616']"
+            suffix="%"
           ></pie-chart>
         </div>
       </div>
-
+      <h3 class="my-3">영상내의 챔피언별 기록</h3>
       <div class="container">
         <div class="row justify-content-around mt-3">
           <div class="col-5 chambox1">
-            <div class="d-flex">
+            <div class="d-flex ">
               <b-row>
                 <b-col cols="3" class="text-center">
                   <img
@@ -190,20 +204,32 @@
                     champ1.korname
                   }}</b-badge>
                 </b-col>
-                <b-col col="5" class="text-left">
-                  <h6>챔피언 킬 {{ champ1.CHAMPION_KILL }}</h6>
-                  <h6>포탑 파괴 {{ champ1.BUILDING_KILL }}</h6>
-                  <h6>와드 파괴 {{ champ1.WARD_KILL }}</h6>
-                  <h6>와드 설치 {{ champ1.WARD_PLACED }}</h6>
+                <b-col col="5" class="text-left mt-3">
+                  <h6>
+                    <b-icon icon="people"></b-icon>
+                    챔피언 킬
+
+                    {{ champ1.CHAMPION_KILL }}
+                  </h6>
+                  <h6>
+                    <b-icon icon="x-circle"></b-icon>
+                    와드 파괴 {{ champ1.WARD_KILL }}
+                  </h6>
+                  <h6>
+                    <b-icon icon="geo"> </b-icon> 와드 설치
+                    {{ champ1.WARD_PLACED }}
+                  </h6>
                 </b-col>
-                <b-col col="4" class="text-left">
-                  <h6>잡은 몬스터</h6>
+                <b-col col="4" class="text-left mt-3">
+                  <h6>
+                    <b-icon icon="shield-slash"> </b-icon>포탑 파괴
+                    {{ champ1.BUILDING_KILL }}
+                  </h6>
+                  <h6><b-icon icon="star"> </b-icon>에픽 몬스터</h6>
                   <h6
                     v-for="(item, $index) in champ1.ELITE_MONSTER_KILL"
                     :key="$index"
-                  >
-                    {{ item }}
-                  </h6>
+                  ></h6>
                 </b-col>
               </b-row>
             </div>
@@ -223,15 +249,29 @@
                     champ6.korname
                   }}</b-badge>
                 </b-col>
-                <b-col col="5" class="text-left">
-                  <h6>챔피언 킬 {{ champ6.CHAMPION_KILL }}</h6>
-                  <h6>포탑 파괴 {{ champ6.BUILDING_KILL }}</h6>
-                  <h6>와드 파괴 {{ champ6.WARD_KILL }}</h6>
-                  <h6>와드 설치 {{ champ6.WARD_PLACED }}</h6>
+                <b-col col="5" class="text-left mt-3">
+                  <h6>
+                    <b-icon icon="people"></b-icon>챔피언 킬
+                    {{ champ6.CHAMPION_KILL }}
+                  </h6>
+
+                  <h6>
+                    <b-icon icon="x-circle"></b-icon>와드 파괴
+                    {{ champ6.WARD_KILL }}
+                  </h6>
+                  <h6>
+                    <b-icon icon="geo"> </b-icon>와드 설치
+                    {{ champ6.WARD_PLACED }}
+                  </h6>
                 </b-col>
-                <b-col col="4" class="text-left">
-                  <h6>잡은 몬스터</h6>
+                <b-col col="4" class="text-left mt-3">
+                  <h6>
+                    <b-icon icon="shield-slash"> </b-icon>포탑 파괴
+                    {{ champ6.BUILDING_KILL }}
+                  </h6>
+                  <h6><b-icon icon="star"> </b-icon>에픽몬스터</h6>
                   <h6
+                    style="color:yellow;"
                     v-for="(item, $index) in champ6.ELITE_MONSTER_KILL"
                     :key="$index"
                   >
@@ -258,15 +298,29 @@
                     champ2.korname
                   }}</b-badge>
                 </b-col>
-                <b-col col="5" class="text-left">
-                  <h6>챔피언 킬 {{ champ2.CHAMPION_KILL }}</h6>
-                  <h6>포탑 파괴 {{ champ2.BUILDING_KILL }}</h6>
-                  <h6>와드 파괴 {{ champ2.WARD_KILL }}</h6>
-                  <h6>와드 설치 {{ champ2.WARD_PLACED }}</h6>
+                <b-col col="5" class="text-left mt-3">
+                  <h6>
+                    <b-icon icon="people"></b-icon>챔피언 킬
+                    {{ champ2.CHAMPION_KILL }}
+                  </h6>
+
+                  <h6>
+                    <b-icon icon="x-circle"></b-icon>와드 파괴
+                    {{ champ2.WARD_KILL }}
+                  </h6>
+                  <h6>
+                    <b-icon icon="geo"> </b-icon>와드 설치
+                    {{ champ2.WARD_PLACED }}
+                  </h6>
                 </b-col>
-                <b-col col="4" class="text-left">
-                  <h6>잡은 몬스터</h6>
+                <b-col col="4" class="text-left mt-3">
+                  <h6>
+                    <b-icon icon="shield-slash"> </b-icon>포탑 파괴
+                    {{ champ2.BUILDING_KILL }}
+                  </h6>
+                  <h6><b-icon icon="star"> </b-icon>에픽 몬스터</h6>
                   <h6
+                    style="color:yellow;"
                     v-for="(item, $index) in champ2.ELITE_MONSTER_KILL"
                     :key="$index"
                   >
@@ -291,15 +345,29 @@
                     champ7.korname
                   }}</b-badge>
                 </b-col>
-                <b-col col="5" class="text-left">
-                  <h6>챔피언 킬 {{ champ7.CHAMPION_KILL }}</h6>
-                  <h6>포탑 파괴 {{ champ7.BUILDING_KILL }}</h6>
-                  <h6>와드 파괴 {{ champ7.WARD_KILL }}</h6>
-                  <h6>와드 설치 {{ champ7.WARD_PLACED }}</h6>
+                <b-col col="5" class="text-left mt-3">
+                  <h6>
+                    <b-icon icon="people"></b-icon>챔피언 킬
+                    {{ champ7.CHAMPION_KILL }}
+                  </h6>
+
+                  <h6>
+                    <b-icon icon="x-circle"></b-icon>와드 파괴
+                    {{ champ7.WARD_KILL }}
+                  </h6>
+                  <h6>
+                    <b-icon icon="geo"> </b-icon>와드 설치
+                    {{ champ7.WARD_PLACED }}
+                  </h6>
                 </b-col>
-                <b-col col="4" class="text-left">
-                  <h6>잡은 몬스터</h6>
+                <b-col col="4" class="text-left mt-3">
+                  <h6>
+                    <b-icon icon="shield-slash"> </b-icon>포탑 파괴
+                    {{ champ7.BUILDING_KILL }}
+                  </h6>
+                  <h6><b-icon icon="star"> </b-icon>에픽 몬스터</h6>
                   <h6
+                    style="color:yellow;"
                     v-for="(item, $index) in champ7.ELITE_MONSTER_KILL"
                     :key="$index"
                   >
@@ -327,15 +395,29 @@
                     champ3.korname
                   }}</b-badge>
                 </b-col>
-                <b-col col="5" class="text-left">
-                  <h6>챔피언 킬 {{ champ3.CHAMPION_KILL }}</h6>
-                  <h6>포탑 파괴 {{ champ3.BUILDING_KILL }}</h6>
-                  <h6>와드 파괴 {{ champ3.WARD_KILL }}</h6>
-                  <h6>와드 설치 {{ champ3.WARD_PLACED }}</h6>
+                <b-col col="5" class="text-left mt-3">
+                  <h6>
+                    <b-icon icon="people"></b-icon>챔피언 킬
+                    {{ champ3.CHAMPION_KILL }}
+                  </h6>
+
+                  <h6>
+                    <b-icon icon="x-circle"></b-icon>와드 파괴
+                    {{ champ3.WARD_KILL }}
+                  </h6>
+                  <h6>
+                    <b-icon icon="geo"> </b-icon>와드 설치
+                    {{ champ3.WARD_PLACED }}
+                  </h6>
                 </b-col>
-                <b-col col="4" class="text-left">
-                  <h6>잡은 몬스터</h6>
+                <b-col col="4" class="text-left mt-3">
+                  <h6>
+                    <b-icon icon="shield-slash"> </b-icon>포탑 파괴
+                    {{ champ3.BUILDING_KILL }}
+                  </h6>
+                  <h6><b-icon icon="star"> </b-icon>에픽 몬스터</h6>
                   <h6
+                    style="color:yellow;"
                     v-for="(item, $index) in champ3.ELITE_MONSTER_KILL"
                     :key="$index"
                   >
@@ -360,15 +442,29 @@
                     champ8.korname
                   }}</b-badge>
                 </b-col>
-                <b-col col="5" class="text-left">
-                  <h6>챔피언 킬 {{ champ8.CHAMPION_KILL }}</h6>
-                  <h6>포탑 파괴 {{ champ8.BUILDING_KILL }}</h6>
-                  <h6>와드 파괴 {{ champ8.WARD_KILL }}</h6>
-                  <h6>와드 설치 {{ champ8.WARD_PLACED }}</h6>
+                <b-col col="5" class="text-left mt-3">
+                  <h6>
+                    <b-icon icon="people"></b-icon>챔피언 킬
+                    {{ champ8.CHAMPION_KILL }}
+                  </h6>
+
+                  <h6>
+                    <b-icon icon="x-circle"></b-icon>와드 파괴
+                    {{ champ8.WARD_KILL }}
+                  </h6>
+                  <h6>
+                    <b-icon icon="geo"> </b-icon>와드 설치
+                    {{ champ8.WARD_PLACED }}
+                  </h6>
                 </b-col>
-                <b-col col="4" class="text-left">
-                  <h6>잡은 몬스터</h6>
+                <b-col col="4" class="text-left mt-3">
+                  <h6>
+                    <b-icon icon="shield-slash"> </b-icon>포탑 파괴
+                    {{ champ8.BUILDING_KILL }}
+                  </h6>
+                  <h6><b-icon icon="star"> </b-icon>에픽 몬스터</h6>
                   <h6
+                    style="color:yellow;"
                     v-for="(item, $index) in champ8.ELITE_MONSTER_KILL"
                     :key="$index"
                   >
@@ -395,15 +491,29 @@
                     champ4.korname
                   }}</b-badge>
                 </b-col>
-                <b-col col="5" class="text-left">
-                  <h6>챔피언 킬 {{ champ4.CHAMPION_KILL }}</h6>
-                  <h6>포탑 파괴 {{ champ4.BUILDING_KILL }}</h6>
-                  <h6>와드 파괴 {{ champ4.WARD_KILL }}</h6>
-                  <h6>와드 설치 {{ champ4.WARD_PLACED }}</h6>
+                <b-col col="5" class="text-left mt-3">
+                  <h6>
+                    <b-icon icon="people"></b-icon>챔피언 킬
+                    {{ champ4.CHAMPION_KILL }}
+                  </h6>
+
+                  <h6>
+                    <b-icon icon="x-circle"></b-icon>와드 파괴
+                    {{ champ4.WARD_KILL }}
+                  </h6>
+                  <h6>
+                    <b-icon icon="geo"> </b-icon>와드 설치
+                    {{ champ4.WARD_PLACED }}
+                  </h6>
                 </b-col>
-                <b-col col="4" class="text-left">
-                  <h6>잡은 몬스터</h6>
+                <b-col col="4" class="text-left mt-3">
+                  <h6>
+                    <b-icon icon="shield-slash"> </b-icon>포탑 파괴
+                    {{ champ4.BUILDING_KILL }}
+                  </h6>
+                  <h6><b-icon icon="star"> </b-icon>에픽 몬스터</h6>
                   <h6
+                    style="color:yellow;"
                     v-for="(item, $index) in champ4.ELITE_MONSTER_KILL"
                     :key="$index"
                   >
@@ -428,15 +538,29 @@
                     champ9.korname
                   }}</b-badge>
                 </b-col>
-                <b-col col="5" class="text-left">
-                  <h6>챔피언 킬 {{ champ9.CHAMPION_KILL }}</h6>
-                  <h6>포탑 파괴 {{ champ9.BUILDING_KILL }}</h6>
-                  <h6>와드 파괴 {{ champ9.WARD_KILL }}</h6>
-                  <h6>와드 설치 {{ champ9.WARD_PLACED }}</h6>
+                <b-col col="5" class="text-left mt-3">
+                  <h6>
+                    <b-icon icon="people"></b-icon>챔피언 킬
+                    {{ champ9.CHAMPION_KILL }}
+                  </h6>
+
+                  <h6>
+                    <b-icon icon="x-circle"></b-icon>와드 파괴
+                    {{ champ9.WARD_KILL }}
+                  </h6>
+                  <h6>
+                    <b-icon icon="geo"> </b-icon>와드 설치
+                    {{ champ9.WARD_PLACED }}
+                  </h6>
                 </b-col>
-                <b-col col="4" class="text-left">
-                  <h6>잡은 몬스터</h6>
+                <b-col col="4" class="text-left mt-3">
+                  <h6>
+                    <b-icon icon="shield-slash"> </b-icon>포탑 파괴
+                    {{ champ9.BUILDING_KILL }}
+                  </h6>
+                  <h6><b-icon icon="star"> </b-icon>에픽 몬스터</h6>
                   <h6
+                    style="color:yellow;"
                     v-for="(item, $index) in champ9.ELITE_MONSTER_KILL"
                     :key="$index"
                   >
@@ -463,15 +587,29 @@
                     champ5.korname
                   }}</b-badge>
                 </b-col>
-                <b-col col="5" class="text-left">
-                  <h6>챔피언 킬 {{ champ5.CHAMPION_KILL }}</h6>
-                  <h6>포탑 파괴 {{ champ5.BUILDING_KILL }}</h6>
-                  <h6>와드 파괴 {{ champ5.WARD_KILL }}</h6>
-                  <h6>와드 설치 {{ champ5.WARD_PLACED }}</h6>
+                <b-col col="5" class="text-left mt-3">
+                  <h6>
+                    <b-icon icon="people"></b-icon>챔피언 킬
+                    {{ champ5.CHAMPION_KILL }}
+                  </h6>
+
+                  <h6>
+                    <b-icon icon="x-circle"></b-icon>와드 파괴
+                    {{ champ5.WARD_KILL }}
+                  </h6>
+                  <h6>
+                    <b-icon icon="geo"> </b-icon>와드 설치
+                    {{ champ5.WARD_PLACED }}
+                  </h6>
                 </b-col>
-                <b-col col="4" class="text-left">
-                  <h6>잡은 몬스터</h6>
+                <b-col col="4" class="text-left mt-3">
+                  <h6>
+                    <b-icon icon="shield-slash"> </b-icon>포탑 파괴
+                    {{ champ5.BUILDING_KILL }}
+                  </h6>
+                  <h6><b-icon icon="star"> </b-icon>에픽 몬스터</h6>
                   <h6
+                    style="color:yellow;"
                     v-for="(item, $index) in champ5.ELITE_MONSTER_KILL"
                     :key="$index"
                   >
@@ -496,15 +634,29 @@
                     champ10.korname
                   }}</b-badge>
                 </b-col>
-                <b-col col="5" class="text-left">
-                  <h6>챔피언 킬 {{ champ10.CHAMPION_KILL }}</h6>
-                  <h6>포탑 파괴 {{ champ10.BUILDING_KILL }}</h6>
-                  <h6>와드 파괴 {{ champ10.WARD_KILL }}</h6>
-                  <h6>와드 설치 {{ champ10.WARD_PLACED }}</h6>
+                <b-col col="5" class="text-left mt-3">
+                  <h6>
+                    <b-icon icon="people"></b-icon>챔피언 킬
+                    {{ champ10.CHAMPION_KILL }}
+                  </h6>
+
+                  <h6>
+                    <b-icon icon="x-circle"></b-icon>와드 파괴
+                    {{ champ10.WARD_KILL }}
+                  </h6>
+                  <h6>
+                    <b-icon icon="geo"> </b-icon>와드 설치
+                    {{ champ10.WARD_PLACED }}
+                  </h6>
                 </b-col>
-                <b-col col="4" class="text-left">
-                  <h6>잡은 몬스터</h6>
+                <b-col col="4" class="text-left mt-3">
+                  <h6>
+                    <b-icon icon="shield-slash"> </b-icon>포탑 파괴
+                    {{ champ10.BUILDING_KILL }}
+                  </h6>
+                  <h6><b-icon icon="star"> </b-icon>에픽 몬스터</h6>
                   <h6
+                    style="color:yellow;"
                     v-for="(item, $index) in champ10.ELITE_MONSTER_KILL"
                     :key="$index"
                   >
@@ -534,15 +686,6 @@
     </b-modal>
     <!-- 수정 삭제 -->
     <div style="margin-top: 5%">
-      <div
-        @click="edit"
-        class="btn btn-primary"
-        style="width: 15%; margin-right: 5%; position: relative; bottom: 5%"
-        v-if="checkaccess"
-      >
-        수정
-      </div>
-
       <div
         @click="delt"
         class="btn btn-secondary"
@@ -684,9 +827,9 @@ export default {
     delt() {
       if (confirm("글을 삭제하시겠습니까?")) {
         axios
-          .delete(process.env.VUE_APP_API_URL + "/video/", {
+          .delete(process.env.VUE_APP_API_URL + "/videoposts/", {
             params: {
-              videoNo: this.videoNo,
+              videoPostNo: this.videoPostNo,
             },
           })
           .then(() => {
