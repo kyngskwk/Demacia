@@ -1,9 +1,8 @@
 <template>
   <div class="container m-auto" id="body" style="font-family: Tmon">
-    <b-row align-h="between">
-      <b-col cols="0" />
+    <b-row align-h="center">
       <b-col cols="12" md="5">
-        <div class="box p-3 mr-4">
+        <div class="box p-3 mr-2">
           <div style="display: inline; text-align: right">
             <b-form-checkbox
               id="checkbox-private"
@@ -35,17 +34,11 @@
       </b-col>
     </b-row>
     <b-row align-h="center">
-      <b-col
-        cols="12"
-        md="3"
-        class="m-3"
-        v-for="(item, $index) in list"
-        :key="$index"
-      >
+      <b-col cols="12" md="4" v-for="(item, $index) in list" :key="$index">
         <!-- 리스트 시작 -->
         <b-row
           id="hhh"
-          class="box text-left shadow1"
+          class="box text-left shadow1 m-2"
           style="margin-top: 10px; margin-bottom: 5%; cursor: Pointer"
           align-h="between"
           @click="toResult(item.videoPostNo)"
@@ -89,22 +82,17 @@ import axios from "axios";
 export default {
   data() {
     return {
-      userNo: JSON.parse(sessionStorage.getItem("user")).userNo,
+      userNo: "",
       offset: 0,
       limit: 3,
       list: [],
       isSearch: false,
-      searchby: "title",
-      searchOptions: [
-        { value: "title", text: "제목" },
-        { value: "userNickname", text: "닉네임" },
-      ],
-      searchText: "",
       orderby: "postdate",
       orderOptions: [
         { value: "postdate", text: "최신순" },
         { value: "!postdate", text: "오래된순" },
-        { value: "view", text: "조회수순" },
+        { value: "view", text: "조회순" },
+        { value: "totalLike", text: "추천순" },
       ],
       state: "",
     };
@@ -112,6 +100,9 @@ export default {
 
   created() {
     window.scrollTo(0, 0);
+    this.userNo = JSON.parse(sessionStorage.getItem("user"))
+      ? JSON.parse(sessionStorage.getItem("user")).userNo
+      : "";
   },
 
   computed: {},
@@ -119,14 +110,17 @@ export default {
   methods: {
     infiniteHandler($state) {
       this.state = $state;
+      let op = !this.userNo
+        ? " isPrivate=0 "
+        : this.isSearch
+        ? " v.userNo = " + this.userNo
+        : " isPrivate=0 OR v.userNo = " + this.userNo;
       axios
         .get(process.env.VUE_APP_API_URL + "/video/search", {
           params: {
             limit: this.limit,
             offset: this.offset,
-            option: this.isSearch
-              ? " v.userno = " + this.userNo
-              : " isPrivate=0 OR v.userNo = " + this.userNo,
+            option: op,
             orderBy: this.orderby,
           },
         })
@@ -134,7 +128,6 @@ export default {
           if (data.object.length) {
             this.offset += this.limit;
             this.list.push(...data.object);
-            console.log(this.list);
             $state.loaded();
           } else {
             $state.complete();
@@ -184,7 +177,7 @@ export default {
 
 <style scoped>
 #hhh:hover {
-  opacity: 0.4;
+  opacity: 0.6;
 }
 .shadow1 {
   box-shadow: 5px 5px 5px;
@@ -244,7 +237,6 @@ export default {
   border: #fcd000 4px ridge;
   opacity: 0.8;
   background: linear-gradient(180deg, #06111b, #1c5349);
-  background-color: white;
   box-shadow: 5px 5px 5px;
   color: #e3d19e;
 }
