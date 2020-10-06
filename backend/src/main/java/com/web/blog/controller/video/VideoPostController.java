@@ -66,7 +66,7 @@ public class VideoPostController {
             result.object = list;
             return new ResponseEntity<>(result, HttpStatus.OK);
         } catch (Exception e) {
-            System.out.println("Fail to get video post list");
+            System.out.println("Fail to get video post list : " + e);
             result.status = false;
             result.data = "fail";
             result.object = e;

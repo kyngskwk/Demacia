@@ -1,48 +1,88 @@
 <template>
   <div
     class="pb-2"
-    style="background-color:white; width:90%; margin-left:auto; margin-right:auto;font-family:Tmon"
+    style="
+      background-color: white;
+      width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+      font-family: Tmon;
+    "
   >
     <div
       class="d-flex justify-content-between"
-      style="margin-right:1%;margin-left:1%; margin-top:1%;"
+      style="margin-right: 1%; margin-left: 1%; margin-top: 1%"
     >
-      <b-container class="bv-example-row" style="padding:0;margin-top:3%;">
+      <b-container class="bv-example-row" style="padding: 0; margin-top: 3%">
         <b-row
-          style="max-height:475px; width:100%; border-top:solid; border-bottom:solid; margin:0; "
+          style="
+            max-height: 475px;
+            width: 100%;
+            border-top: solid;
+            border-bottom: solid;
+            margin: 0;
+          "
         >
           <b-col
             cols="3"
             lg="3"
             xl="3"
-            style="text-align:left; padding-top:2%; padding-left:1%;"
+            style="text-align: left; padding-top: 2%; padding-left: 1%"
             class="d-flex"
           >
-            <p id="hide3" style="font-size:3vh;  padding-left:7%;">의뢰번호</p>
-            <p style="font-weight: bold; font-size:3.5vh; padding-left:5px; ">NO.{{ videoNo }}</p>
+            <p id="hide3" style="font-size: 3vh; padding-left: 7%">의뢰번호</p>
+            <p style="font-weight: bold; font-size: 3.5vh; padding-left: 5px">
+              NO.{{ videoNo }}
+            </p>
           </b-col>
           <b-col
             cols="9"
             lg="5"
             xl="6"
             class="d-flex color1 justify-content-center"
-            style="padding-top:3%;"
+            style="padding-top: 3%"
           >
             <p
-              style="font-weight: bold;font-size:3.5vh; max-width:100%;display: -webkit-box; overflow: hidden;width:100%; text-overflow: ellipsis;
-                          -webkit-line-clamp: 1;-webkit-box-orient: vertical;word-wrap:break-word; line-height: 4vh; height: 4vh; "
-            >{{ writePost.title }}</p>
+              style="
+                font-weight: bold;
+                font-size: 3.5vh;
+                max-width: 100%;
+                display: -webkit-box;
+                overflow: hidden;
+                width: 100%;
+                text-overflow: ellipsis;
+                -webkit-line-clamp: 1;
+                -webkit-box-orient: vertical;
+                word-wrap: break-word;
+                line-height: 4vh;
+                height: 4vh;
+              "
+            >
+              {{ writePost.title }}
+            </p>
           </b-col>
           <b-col>
-            <b-button pill size="lg" variant="dark" class="p-3" @click="analize">
+            <b-button
+              pill
+              size="lg"
+              variant="dark"
+              class="p-3"
+              @click="analize"
+            >
               <b-icon icon="exclude" />&nbsp;영상 분석
             </b-button>
           </b-col>
         </b-row>
       </b-container>
     </div>
-    <div class="container" style="width:100%; padding:0; margin-top:2%;">
-      <video style="width:100%; padding:0;" controls autoplay="true" name="media" id="vid">
+    <div class="container" style="width: 100%; padding: 0; margin-top: 2%">
+      <video
+        style="width: 100%; padding: 0"
+        controls
+        autoplay="true"
+        name="media"
+        id="vid"
+      >
         <source :src="videolink" type="video/mp4" />
       </video>
     </div>
@@ -50,40 +90,68 @@
     <div
       id="mainBody"
       class="container"
-      style="border-left:solid; border-right:solid;border-bottom:solid; padding-left:5px;padding-right:5px;padding-bottom:5px; margin-top:-7%; padding-top:6%; margin-bottom:5%;"
+      style="
+        border-left: solid;
+        border-right: solid;
+        border-bottom: solid;
+        padding-left: 5px;
+        padding-right: 5px;
+        padding-bottom: 5px;
+        margin-top: -7%;
+        padding-top: 6%;
+        margin-bottom: 5%;
+      "
     >
-      <hr style="margin-left:2%;margin-right:2%;" />
+      <hr style="margin-left: 2%; margin-right: 2%" />
       <div class="row">
-        <div class="col-7 col-xl-8" style="padding:0;">
+        <div class="col-7 col-xl-8" style="padding: 0">
           <!-- 글쓴이 -->
           <div class="d-flex justify-content-between">
-            <div class="d-flex" style=" margin-left:2%;">
-              <b-avatar variant="secondary" :src="writeUser.userImage" class="ml-3 mr-3"></b-avatar>
+            <div class="d-flex" style="margin-left: 2%">
+              <b-avatar
+                variant="secondary"
+                :src="writeUser.userImage"
+                class="ml-3 mr-3"
+              ></b-avatar>
               <div>
                 <h4
-                  style="margin-bottom:0; text-align:center; font-size:2.5vh; margin-top:12%;"
-                >{{ writeUser.userNickname }}</h4>
+                  style="
+                    margin-bottom: 0;
+                    text-align: center;
+                    font-size: 2.5vh;
+                    margin-top: 12%;
+                  "
+                >
+                  {{ writeUser.userNickname }}
+                </h4>
                 <h4
-                  style="margin-bottom:0; text-align:center;  font-size:1.2vh;"
-                >{{ writeUser.userTier }}</h4>
+                  style="margin-bottom: 0; text-align: center; font-size: 1.2vh"
+                >
+                  {{ writeUser.userTier }}
+                </h4>
               </div>
             </div>
           </div>
         </div>
         <div class="col-5 col-xl-4">
           <!-- 조회수 -->
-          <div class="d-flex justify-content-end" style="margin-right:5%;">
+          <div class="d-flex justify-content-end" style="margin-right: 5%">
             <div class="d-flex">
               <b-icon-caret-right-square-fill
                 class="h4"
-                style=" margin-right:10px; padding-top:3%;"
+                style="margin-right: 10px; padding-top: 3%"
               />
-              <p style=" font-size:2.5vh ">{{ writePost.view }}</p>
+              <p style="font-size: 2.5vh">{{ writePost.view }}</p>
             </div>
             <!-- 좋아요 -->
             <div class="d-flex justify-content-end">
               <div v-show="likest" @click="likesup">
-                <b-icon-heart shift-v="5" class="btn" font-scale="3" style="cursor: pointer;" />
+                <b-icon-heart
+                  shift-v="5"
+                  class="btn"
+                  font-scale="3"
+                  style="cursor: pointer"
+                />
               </div>
 
               <div v-show="!likest" @click="likesdown">
@@ -92,26 +160,33 @@
                   variant="danger"
                   font-scale="3"
                   class="btn"
-                  style="cursor: pointer;"
+                  style="cursor: pointer"
                 />
               </div>
 
-              <p style="font-size:2.5vh">{{likescnt}}</p>
+              <p style="font-size: 2.5vh">{{ likescnt }}</p>
             </div>
           </div>
         </div>
       </div>
-      <hr style="margin:2%;" />
+      <hr style="margin: 2%" />
       <div
         class="d-flex justify-content-start"
-        style="margin-top:2%; margin-left:2%; margin-right:2%; text-align:center; border:solid 5px gray; border-radius:10px;"
+        style="
+          margin-top: 2%;
+          margin-left: 2%;
+          margin-right: 2%;
+          text-align: center;
+          border: solid 5px gray;
+          border-radius: 10px;
+        "
       >
-        <p style="font-size:2vh; text-align:left; margin:3%;">
+        <p style="font-size: 2vh; text-align: left; margin: 3%">
           분석결과
           <br />
         </p>
         <hr />
-        <p style="font-size:2vh; text-align:left; margin:3%;">
+        <p style="font-size: 2vh; text-align: left; margin: 3%">
           여기에 여러가지 그래프들이 들어갈 겁니다.
           <br />
           <img src="http://j3a304.p.ssafy.io/imgup/images/gongsaing.jpg" />
@@ -134,20 +209,24 @@
         <b-icon icon="arrow-clockwise" animation="spin" font-scale="4"></b-icon>
       </b-modal>
       <!-- 수정 삭제 -->
-      <div style="margin-top:5%;">
+      <div style="margin-top: 5%">
         <div
           @click="edit"
           class="btn btn-primary"
-          style="width:15%;margin-right:5%; position:relative; bottom:5%;"
+          style="width: 15%; margin-right: 5%; position: relative; bottom: 5%"
           v-if="checkaccess"
-        >수정</div>
+        >
+          수정
+        </div>
 
         <div
           @click="delt"
           class="btn btn-secondary"
-          style="width:15%;margin-left:5%;"
+          style="width: 15%; margin-left: 5%"
           v-if="checkaccess"
-        >삭제</div>
+        >
+          삭제
+        </div>
       </div>
     </div>
   </div>
@@ -174,6 +253,7 @@ export default {
       likescnt: "",
       likest: true,
       state: "",
+      data: "",
     };
   },
 
@@ -184,10 +264,13 @@ export default {
       ? JSON.parse(sessionStorage.getItem("user")).userNo
       : "";
     //처음 데이터 불러오기
+    this.data = `[-7,-5,0,0,-2,0,40.49,59.51,35.59,64.41,[["Quinn"],["Alistar"],["Zed",["CHAMPION_KILL",1]],["Jhin",["WARD_PLACED",2]],["MasterYi"],["Velkoz",["WARD_PLACED",3],["WARD_KILL",1]],["Jax",["CHAMPION_KILL",1],["WARD_PLACED",1]],["Kalista",["WARD_PLACED",2],["BUILDING_KILL",1]],["Camille",["WARD_PLACED",2],["CHAMPION_KILL",5],["BUILDING_KILL",1]],["Lucian",["WARD_PLACED",1]]]]`;
+    console.log(this.data);
+    console.log(JSON.parse(this.data));
     axios
-      .get(process.env.VUE_APP_API_URL + "/post/detail", {
+      .get(process.env.VUE_APP_API_URL + "/video/detail", {
         params: {
-          postNo: this.videoNo,
+          videoPostNo: this.videoNo,
         },
       })
       .then(({ data }) => {
