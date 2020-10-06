@@ -1,7 +1,7 @@
 <template>
   <div
     class="pb-2"
-    style="background-color:white; width:90%; margin-left:auto; margin-right:auto;font-family:Tmon"
+    style="background: rgba( 0, 0, 0, 0.5 );width:96%; margin-left:auto; margin-right:auto;font-family:Tmon;color: white;"
   >
     <div
       class="d-flex justify-content-between"
@@ -19,30 +19,42 @@
             class="d-flex"
           >
             <p id="hide3" style="font-size:3vh;  padding-left:7%;">의뢰번호</p>
-            <p style="font-weight: bold; font-size:3.5vh; padding-left:5px; ">NO.{{ videoNo }}</p>
+            <p style="font-weight: bold; font-size:3.5vh; padding-left:5px; ">
+              NO.{{ videoNo }}
+            </p>
           </b-col>
           <b-col
             cols="9"
             lg="5"
             xl="6"
-            class="d-flex color1 justify-content-center"
+            class="d-flex justify-content-center"
             style="padding-top:3%;"
           >
             <p
               style="font-weight: bold;font-size:3.5vh; max-width:100%;display: -webkit-box; overflow: hidden;width:100%; text-overflow: ellipsis;
                           -webkit-line-clamp: 1;-webkit-box-orient: vertical;word-wrap:break-word; line-height: 4vh; height: 4vh; "
-            >{{ writePost.title }}</p>
+            >
+              {{ writePost.title }}
+            </p>
           </b-col>
-          <b-col>
-            <b-button pill size="lg" variant="dark" class="p-3" @click="analize">
-              <b-icon icon="exclude" />&nbsp;영상 분석
-            </b-button>
+          <b-col id="hide2" cols="4" lg="3" xl="3" style=" ">
+            <h4
+              style="font-size:5vh;font-weight: bold; color:red;margin-top:10%;"
+            >
+              분석 완료
+            </h4>
           </b-col>
         </b-row>
       </b-container>
     </div>
     <div class="container" style="width:100%; padding:0; margin-top:2%;">
-      <video style="width:100%; padding:0;" controls autoplay="true" name="media" id="vid">
+      <video
+        style="width:100%; padding:0; max-width:900px;"
+        controls
+        autoplay="true"
+        name="media"
+        id="vid"
+      >
         <source :src="videolink" type="video/mp4" />
       </video>
     </div>
@@ -50,7 +62,7 @@
     <div
       id="mainBody"
       class="container"
-      style="border-left:solid; border-right:solid;border-bottom:solid; padding-left:5px;padding-right:5px;padding-bottom:5px; margin-top:-7%; padding-top:6%; margin-bottom:5%;"
+      style=" padding-left:5px;padding-right:5px;padding-bottom:5px; margin-top:-7%; padding-top:6%; margin-bottom:5%;"
     >
       <hr style="margin-left:2%;margin-right:2%;" />
       <div class="row">
@@ -58,14 +70,22 @@
           <!-- 글쓴이 -->
           <div class="d-flex justify-content-between">
             <div class="d-flex" style=" margin-left:2%;">
-              <b-avatar variant="secondary" :src="writeUser.userImage" class="ml-3 mr-3"></b-avatar>
+              <b-avatar
+                variant="secondary"
+                :src="writeUser.userImage"
+                class="ml-3 mr-3"
+              ></b-avatar>
               <div>
                 <h4
                   style="margin-bottom:0; text-align:center; font-size:2.5vh; margin-top:12%;"
-                >{{ writeUser.userNickname }}</h4>
+                >
+                  {{ writeUser.userNickname }}
+                </h4>
                 <h4
                   style="margin-bottom:0; text-align:center;  font-size:1.2vh;"
-                >{{ writeUser.userTier }}</h4>
+                >
+                  {{ writeUser.userTier }}
+                </h4>
               </div>
             </div>
           </div>
@@ -83,7 +103,12 @@
             <!-- 좋아요 -->
             <div class="d-flex justify-content-end">
               <div v-show="likest" @click="likesup">
-                <b-icon-heart shift-v="5" class="btn" font-scale="3" style="cursor: pointer;" />
+                <b-icon-heart
+                  shift-v="5"
+                  class="btn"
+                  font-scale="3"
+                  style="cursor: pointer;"
+                />
               </div>
 
               <div v-show="!likest" @click="likesdown">
@@ -96,27 +121,54 @@
                 />
               </div>
 
-              <p style="font-size:2.5vh">{{likescnt}}</p>
+              <p style="font-size:2.5vh">{{ likescnt }}</p>
             </div>
           </div>
         </div>
       </div>
       <hr style="margin:2%;" />
       <div
-        class="d-flex justify-content-start"
+        class="container"
         style="margin-top:2%; margin-left:2%; margin-right:2%; text-align:center; border:solid 5px gray; border-radius:10px;"
       >
-        <p style="font-size:2vh; text-align:left; margin:3%;">
-          분석결과
-          <br />
-        </p>
-        <hr />
-        <p style="font-size:2vh; text-align:left; margin:3%;">
-          여기에 여러가지 그래프들이 들어갈 겁니다.
-          <br />
-          <img src="http://j3a304.p.ssafy.io/imgup/images/gongsaing.jpg" />
-          <br />
-        </p>
+        <div class="row row-cols-12">
+          <div class="col">
+            <h3>영상이전 승률</h3>
+            <pie-chart
+              :data="[
+                ['BLUETEAM', 44],
+                ['REDTEAM', 23],
+              ]"
+              :colors="['#23285c', '#d71616']"
+              suffix="%"
+            ></pie-chart>
+          </div>
+          <div class="col">
+            <h3>영상이후 승률</h3>
+            <pie-chart
+              :data="[
+                ['Blueberry', 44],
+                ['Strawberry', 23],
+              ]"
+            ></pie-chart>
+          </div>
+        </div>
+
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <b-img
+                style="border-style:ridge; border: #fcd000 3px ridge;"
+                width="100%"
+                :src=""
+              />Column
+            </div>
+            <div class="col">Column</div>
+            <div class="w-100"></div>
+            <div class="col">Column</div>
+            <div class="col">Column</div>
+          </div>
+        </div>
       </div>
       <br />
 
@@ -140,14 +192,18 @@
           class="btn btn-primary"
           style="width:15%;margin-right:5%; position:relative; bottom:5%;"
           v-if="checkaccess"
-        >수정</div>
+        >
+          수정
+        </div>
 
         <div
           @click="delt"
           class="btn btn-secondary"
           style="width:15%;margin-left:5%;"
           v-if="checkaccess"
-        >삭제</div>
+        >
+          삭제
+        </div>
       </div>
     </div>
   </div>
@@ -156,7 +212,11 @@
 <script>
 import axios from "axios";
 import "../../assets/css/comment.css";
+import Vue from "vue";
+import Chartkick from "vue-chartkick";
+import Chart from "chart.js";
 
+Vue.use(Chartkick.use(Chart));
 export default {
   data() {
     return {
