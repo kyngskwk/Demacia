@@ -5,16 +5,18 @@
         <div class="box">
           <h2 style="font-weight: bold">영상 등록</h2>
           <div class="row">
-            <div class="col-md-12 text-center">
-              {{ popoverStr[isVideoUploaded] }}
+            <div class="col-md-12 text-center" style="height: 20px">
+              <p v-show="isHover">{{ popoverStr[isVideoUploaded] }}</p>
             </div>
             <div class="col-md-12 text-center">
-              <b-icon-caret-right-square-fill
+              <b-icon
+                icon="caret-right-square-fill"
                 font-scale="13"
                 type="button"
                 @click="openUploadWindows"
+                @mouseover="isHover = true"
+                @mouseleave="isHover = false"
                 v-if="isVideoUploaded == 0"
-                v-b-popover.hover.left="'동영상 업로드'"
               />
               <b-icon
                 icon="gear-fill"
@@ -22,6 +24,8 @@
                 font-scale="13"
                 type="button"
                 @click="cancelUpload"
+                @mouseover="isHover = true"
+                @mouseleave="isHover = false"
                 v-else-if="isVideoUploaded == 1"
               />
               <b-icon
@@ -29,6 +33,8 @@
                 font-scale="13"
                 type="button"
                 @click="dataCheck"
+                @mouseover="isHover = true"
+                @mouseleave="isHover = false"
                 v-else-if="isVideoUploaded == 2"
               />
               <b-icon
@@ -36,6 +42,8 @@
                 font-scale="13"
                 type="button"
                 v-else-if="isVideoUploaded == 3"
+                @mouseover="isHover = true"
+                @mouseleave="isHover = false"
                 @click="reload"
               />
               <h2 class="m-4">{{ uploadMSG }}</h2>
@@ -51,7 +59,7 @@
                 hidden
               />
             </div>
-            <div class="col-md-12">
+            <div class="col-md-12 p-0">
               <b-form-checkbox
                 id="checkbox-private"
                 v-model="isPrivate"
@@ -62,6 +70,9 @@
               >
             </div>
             <div class="col-md-12">
+              파일 업로드 시 녹화한 파일명 그대로
+              <br />
+              (00-00_KR-000000000_00.mp4) 올려주세요!<br /><br />
               내 Sol 포인트 :
               <Strong>{{ userMileage }}</Strong>
               <p style="color: red">※ 50 Sol차감</p>
@@ -86,6 +97,7 @@ export default {
       no: JSON.parse(sessionStorage.getItem("user")).userNo,
       isVideoUploaded: 0,
       popoverStr: ["동영상 업로드", "업로드 취소", "영상 게시", "재시도"],
+      isHover: false,
       mileage: 50,
       thumbnail: "0",
       data: "0",
@@ -152,8 +164,7 @@ export default {
             })
             .catch((e) => {
               console.log("data fail : " + e);
-              this.uploadMSG =
-                "분석 실패 : 파일 형식을 지켜주세요. (예 : 00-00_KR-000000000_00.mp4)";
+              this.uploadMSG = "분석 실패! 파일 형식을 지켜주세요.";
               this.isVideoUploaded = 3;
             });
         })
@@ -260,5 +271,8 @@ export default {
   background-color: white;
   box-shadow: 5px 5px 5px;
   color: #e3d19e;
+}
+.b-icon:hover {
+  color: #faf3e1;
 }
 </style>
