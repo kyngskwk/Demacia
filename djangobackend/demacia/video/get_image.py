@@ -5,7 +5,6 @@ import cv2
 def get_image(videoname):
     if videoname != None:
         # videoname = ''
-        print(11111111111111111)
         # videoname = '10-19_KR-4664501922_06.mp4'
         vidcap = cv2.VideoCapture('../expbackend/public/videos/%s' % videoname)
         gameId = videoname[9:-7]
@@ -16,14 +15,14 @@ def get_image(videoname):
         while(vidcap.isOpened()):
             ret, image = vidcap.read()
             if int(vidcap.get(1)) == 50:
-                print('Saved frame number : ' + str(int(vidcap.get(1))))
+                # print('Saved frame number : ' + str(int(vidcap.get(1))))
                 cv2.imwrite("./demacia/images/frame%d.jpg" % count, image)
-                print('Saved frame%d.jpg' % count)
+                # print('Saved frame%d.jpg' % count)
                 count += 1
             elif int(vidcap.get(1)) % (length-50) == 0:
-                print('Saved frame number : ' + str(int(vidcap.get(1))))
+                # print('Saved frame number : ' + str(int(vidcap.get(1))))
                 cv2.imwrite("./demacia/images/frame%d.jpg" % count, image)
-                print('Saved frame%d.jpg' % count)
+                # print('Saved frame%d.jpg' % count)
                 count += 1
             elif int(vidcap.get(1)) == (length-10):
                 break
@@ -31,7 +30,7 @@ def get_image(videoname):
             # return change_text.module(gameId)
 
     else:
-        print('gat_image None값이야')
+        # print('gat_image None값이야')
         gameId = None
     return gameId
 

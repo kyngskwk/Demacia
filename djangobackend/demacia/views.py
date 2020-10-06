@@ -73,30 +73,27 @@ def champion_list(request):
     serializers = ChampionSerializer(champions, many=True)
     return Response(serializers.data)
 
-# @api_view(['GET'])
-# def videopost_list(request,videopostno):
-#     videoid = Videopost.objects.filter(videopostno=videopostno)
-#     serializers = VideopostSerializer(videoposts, many=True)
-#     return Response(serializers.data)
+@api_view(['GET'])
+def videopost_list(request):
+    videoposts = Videopost.objects.all()
+    serializers = VideopostSerializer(videoposts, many=True)
+    return Response(serializers.data)
 
 @swagger_auto_schema(method='post', request_body=VideoUpdateSerializer)
 @api_view(['POST'])
 def videopost_update(request):
-    request_videopostno = request.data['videopostno']
-    videoname = Videopost.objects.filter(videopostno=request_videopostno).values('video').distinct()[0]['video']
-    print(videoname)
-    gameId = get_image.get_image(videoname)
-    print("get_image호출",gameId)
+    request_video = request.data['video']
+    # print(request_video)
+    # videoname = Videopost.objects.filter(video=request_videopostno).values('video').distinct()[0]['video']
+    gameId = get_image.get_image(request_video)
     new_time,gameId = change_text.change_text(gameId)
     time_part_set, new_part_set, gameId = timeline.timeline(new_time,gameId)
     before_bluescore, before_redscore, after_bluescore, after_redscore, champions_records = winrate_algo.winrate_algo(time_part_set, new_part_set, gameId)
     result = [before_bluescore, before_redscore, after_bluescore, after_redscore, champions_records]
-    videodata = Videopost.objects.filter(videopostno=request_videopostno).update(data=result)
-    serializers = VideoUpdateSerializer(data=request.data)
-    if serializers.is_valid():
-        return Response(serializers.data)
-    else:
-        return Response(serializers.data)
+    videodata = Videopost.objects.filter(video=request_video).update(data = result)
+    videos = Videopost.objects.filter(video=request_video)
+    serializers = VideopostSerializer(videos, many=True)
+    return Response(serializers.data)
 
 @api_view(['POST'])
 def match_update(request):

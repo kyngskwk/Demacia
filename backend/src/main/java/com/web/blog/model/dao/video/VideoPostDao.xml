@@ -5,8 +5,8 @@
 
     <!-- 게시물 등록 -->
     <insert id="insert">
-        insert into videopost(userNo,video,isprivate)
-        values (#{userNo},#{video},#{isPrivate})
+        insert into videopost(userNo,video,thumbnail,data,isprivate)
+        values (#{userNo},#{video},#{thumbnail},#{data},#{isPrivate})
     </insert>
 
     <!-- 리스트 검색 -->
