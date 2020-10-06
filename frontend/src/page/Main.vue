@@ -41,9 +41,14 @@
                     class="mr-2 mt-3 hoverbtn"
                     @click="callmatch()"
                     style="
-                    color:white;
-                    background: linear-gradient(180deg, #1b2831 0%, #12384b 100%); 
-                    border-style:ridge; border:#95ede7 3px ridge;
+                      color: white;
+                      background: linear-gradient(
+                        180deg,
+                        #1b2831 0%,
+                        #12384b 100%
+                      );
+                      border-style: ridge;
+                      border: #95ede7 3px ridge;
                     "
                   >
                     조합 추천 보러가기
@@ -80,9 +85,14 @@
                     class="mr-2 mt-3 hoverbtn"
                     @click="callmatch()"
                     style="
-                    color:white;
-                    background: linear-gradient(180deg, #1b2831 0%, #12384b 100%); 
-                    border-style:ridge; border:#95ede7 3px ridge;
+                      color: white;
+                      background: linear-gradient(
+                        180deg,
+                        #1b2831 0%,
+                        #12384b 100%
+                      );
+                      border-style: ridge;
+                      border: #95ede7 3px ridge;
                     "
                   >
                     챔피언 추천 보러가기
@@ -149,47 +159,52 @@
               style="margin: 50px 0px 0px"
             />
           </router-link>
-          <div
-            class="box"
-            style="
-              border-style: ridge;
-              border: #fcd000 4px ridge;
-              opacity: 0.8;
-              background: linear-gradient(
-                180deg,
-                rgba(6, 17, 27, 1) 0%,
-                rgba(28, 83, 73, 1) 100%
-              );
-            "
-          >
-            <b-row>
-              <b-col cols="12">
-                <b-table
-                  hover
-                  striped
-                  :items="lastVideo"
-                  :fields="lastVideoFields"
-                  v-if="lastVideo"
-                  table-variant="dark"
-                  style="color: #e3d19e"
+          <!-- 영상분석 글 -->
+          <b-row align-h="center">
+            <b-col
+              cols="12"
+              md="4"
+              v-for="(item, $index) in lastVideo"
+              :key="$index"
+            >
+              <!-- 리스트 시작 -->
+              <b-row
+                id="hhh"
+                class="box text-left"
+                style="margin-top: 10px; margin-bottom: 5%; cursor: Pointer"
+                align-h="between"
+                @click="toResult(item.videoPostNo)"
+              >
+                <b-col cols="12" class="m-0 p-2">
+                  <b-img
+                    id="sizepadding"
+                    :src="thumbURL(item)"
+                    :alt="item.videoPostNo + '번째영상썸네일'"
+                    class="rounded w-100 h-100"
+                    @error="noimage"
+                  />
+                </b-col>
+                <b-col cols="6">
+                  <div>
+                    <b-avatar variant="secondary" :src="uImgURL(item)" />
+                    {{ item.userNickname }}
+                  </div>
+                </b-col>
+                <b-col cols="6">
+                  <h5 class="text-right mt-1">
+                    <b-icon-hand-thumbs-up />
+                    {{ item.totalLike }}
+                    <b-icon-caret-right-square-fill />
+                    {{ item.view }}
+                    <b-icon icon="lock-fill" v-if="item.isPrivate" />
+                  </h5>
+                </b-col>
+                <b-col cols="12" class="pt-0"
+                  >의뢰번호 No. {{ item.videoPostNo }}</b-col
                 >
-                  <template v-slot:cell(date)="data">{{
-                    postDT(data.value)
-                  }}</template>
-                  <template v-slot:cell(to)="data">
-                    <router-link :to="'/vdetail/' + data.item.videoNo">
-                      <b-icon
-                        icon="arrow-right-circle"
-                        font-scale="2"
-                        style="color: #e3d19e"
-                      ></b-icon>
-                    </router-link>
-                  </template>
-                </b-table>
-                <div v-else>진행중인 투표글이 없습니다.</div>
-              </b-col>
-            </b-row>
-          </div>
+              </b-row>
+            </b-col>
+          </b-row>
         </b-col>
         <b-col cols="12">
           <a href="/welcome">
@@ -253,35 +268,35 @@ export default {
       .then(({ data }) => {
         this.lastPost = data.object;
       });
-    this.lastVideo = [
-      {
-        videoNo: 1,
-        view: 30,
-        thumbnail: "/images/4066v0qe1urlfof.jpg",
-        title: "이런식으로 보입니다",
-        userNickname: "관리자",
-        userImage: "/images/3.jpg",
-        date: "2020-08-21 11:40:30",
-        totalLikes: 10,
-        isPrivate: false,
-      },
-      {
-        videoNo: 2,
-        view: 22,
-        thumbnail: "",
-        title: "나만 보는 글은 자물쇠가 생겨요",
-        userNickname: "가렌",
-        userImage: "/images/2.jpg",
-        date: "2020-08-24 21:22:11",
-        totalLikes: 10,
-        isPrivate: true,
-      },
-    ];
+    axios
+      .get(process.env.VUE_APP_API_URL + "/video/search", {
+        params: {
+          limit: 3,
+          offset: 0,
+          option: " isPrivate=0 ",
+          orderBy: "postDate",
+        },
+      })
+      .then(({ data }) => {
+        this.lastVideo = data.object;
+      });
   }, //created end
   methods: {
     postDT(item) {
       let date = new Date(item);
       return date.toLocaleDateString();
+    },
+    noimage(event) {
+      event.target.src = process.env.VUE_APP_IMGUP_URL + "/images/noimage.png";
+    },
+    uImgURL(item) {
+      return process.env.VUE_APP_IMGUP_URL + item.userImage;
+    },
+    thumbURL(item) {
+      return process.env.VUE_APP_IMGUP_URL + "/videos/" + item.thumbnail;
+    },
+    toResult(videoNo) {
+      this.$router.push("/vdetail/" + videoNo);
     },
   }, //methods end
 };
@@ -322,6 +337,13 @@ export default {
 .b-table {
   /* border: #fcd000 2px solid; */
   opacity: 0.8;
-  background: linear-gradient(180deg, rgba(6, 17, 27, 1) 0%, rgba(28, 83, 73, 1) 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(6, 17, 27, 1) 0%,
+    rgba(28, 83, 73, 1) 100%
+  );
+}
+#hhh:hover {
+  opacity: 0.6;
 }
 </style>
