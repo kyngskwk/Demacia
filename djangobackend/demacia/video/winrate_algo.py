@@ -99,6 +99,8 @@ def winrate_algo(time_part_set, new_part_set, gameId):
         after_bluescore = bluescore
         after_redscore = redscore
 
+
+        print(champions_records)
         for i in range(1,11):
             for key,value in new_part_set[i].items():
                 champions_records[i-1].append([key,value])
@@ -129,7 +131,7 @@ def winrate_algo(time_part_set, new_part_set, gameId):
 
                         champ[champions_records[i][k][0]]+=champions_records[i][k][1]
                     elif champions_records[i][k][0] in champ:
-                        champ[champions_records[i][k][0]] += 1
+                        champ[champions_records[i][k][0]] = champions_records[i][k][1]
         # dict_result = json.dumps(group_data, ensure_ascii=False, indent="\t")
         return group_data
         # for i in range(10):
