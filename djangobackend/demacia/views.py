@@ -82,15 +82,15 @@ def videopost_list(request):
 @swagger_auto_schema(method='post', request_body=VideoUpdateSerializer)
 @api_view(['POST'])
 def videopost_update(request):
-    request_videopostno = request.data['videopostno']
-    videoname = Videopost.objects.filter(videopostno=request_videopostno).values('video').distinct()[0]['video']
-    gameId = get_image.get_image(videoname)
+    request_video = request.data['video']
+    # videoname = Videopost.objects.filter(video=request_videopostno).values('video').distinct()[0]['video']
+    gameId = get_image.get_image(request_video)
     new_time,gameId = change_text.change_text(gameId)
     time_part_set, new_part_set, gameId = timeline.timeline(new_time,gameId)
     before_bluescore, before_redscore, after_bluescore, after_redscore, champions_records = winrate_algo.winrate_algo(time_part_set, new_part_set, gameId)
     result = [before_bluescore, before_redscore, after_bluescore, after_redscore, champions_records]
-    videodata = Videopost.objects.filter(videopostno=request_videopostno).update(data = result)
-    videos = Videopost.objects.filter(videopostno=request_videopostno)
+    videodata = Videopost.objects.filter(video=request_video).update(data = result)
+    videos = Videopost.objects.filter(video=request_video)
     serializers = VideopostSerializer(videos, many=True)
     return Response(serializers.data)
 
