@@ -130,8 +130,8 @@ def winrate_algo(time_part_set, new_part_set, gameId):
                         champ[champions_records[i][k][0]]+=champions_records[i][k][1]
                     elif champions_records[i][k][0] in champ:
                         champ[champions_records[i][k][0]] += 1
-        dict_result = json.dumps(group_data, ensure_ascii=False, indent="\t")
-        return dict_result
+        # dict_result = json.dumps(group_data, ensure_ascii=False, indent="\t")
+        return group_data
         # for i in range(10):
             # print(champions_records[i])
         # return [before_bluescore, before_redscore, after_bluescore, after_redscore, champions_records]
