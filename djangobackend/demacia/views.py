@@ -83,6 +83,7 @@ def videopost_list(request):
 @api_view(['POST'])
 def videopost_update(request):
     request_video = request.data['video']
+    # print(request_video)
     # videoname = Videopost.objects.filter(video=request_videopostno).values('video').distinct()[0]['video']
     gameId = get_image.get_image(request_video)
     new_time,gameId = change_text.change_text(gameId)
