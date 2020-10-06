@@ -99,6 +99,8 @@ def winrate_algo(time_part_set, new_part_set, gameId):
         after_bluescore = bluescore
         after_redscore = redscore
 
+
+        print(champions_records)
         for i in range(1,11):
             for key,value in new_part_set[i].items():
                 champions_records[i-1].append([key,value])
