@@ -5,23 +5,17 @@
   >
     <div
       class="d-flex justify-content-between"
-      style="margin-right: 1%; margin-left: 1%; margin-top: 1%"
+      style="margin-right:1%;margin-left:1%; margin-top:1%;"
     >
-      <b-container class="bv-example-row" style="padding: 0; margin-top: 3%">
+      <b-container class="bv-example-row" style="padding:0;margin-top:3%;">
         <b-row
-          style="
-            max-height: 475px;
-            width: 100%;
-            border-top: solid;
-            border-bottom: solid;
-            margin: 0;
-          "
+          style="max-height:475px; width:100%; border-top:solid; border-bottom:solid; margin:0; "
         >
           <b-col
             cols="3"
             lg="3"
             xl="3"
-            style="text-align: left; padding-top: 2%; padding-left: 1%"
+            style="text-align:left; padding-top:2%; padding-left:1%;"
             class="d-flex"
           >
             <p id="hide3" style="font-size:3vh;  padding-left:7%;">의뢰번호</p>
@@ -70,9 +64,9 @@
       class="container"
       style=" padding-left:5px;padding-right:5px;padding-bottom:5px; margin-top:-7%; padding-top:6%; margin-bottom:5%;"
     >
-      <hr style="margin-left: 2%; margin-right: 2%" />
+      <hr style="margin-left:2%;margin-right:2%;" />
       <div class="row">
-        <div class="col-7 col-xl-8" style="padding: 0">
+        <div class="col-7 col-xl-8" style="padding:0;">
           <!-- 글쓴이 -->
           <div class="d-flex justify-content-between">
             <div class="d-flex" style=" margin-left:2%;">
@@ -98,13 +92,13 @@
         </div>
         <div class="col-5 col-xl-4">
           <!-- 조회수 -->
-          <div class="d-flex justify-content-end" style="margin-right: 5%">
+          <div class="d-flex justify-content-end" style="margin-right:5%;">
             <div class="d-flex">
               <b-icon-caret-right-square-fill
                 class="h4"
-                style="margin-right: 10px; padding-top: 3%"
+                style=" margin-right:10px; padding-top:3%;"
               />
-              <p style="font-size: 2.5vh">{{ writePost.view }}</p>
+              <p style=" font-size:2.5vh ">{{ writePost.view }}</p>
             </div>
             <!-- 좋아요 -->
             <div class="d-flex justify-content-end">
@@ -123,7 +117,7 @@
                   variant="danger"
                   font-scale="3"
                   class="btn"
-                  style="cursor: pointer"
+                  style="cursor: pointer;"
                 />
               </div>
 
@@ -132,7 +126,7 @@
           </div>
         </div>
       </div>
-      <hr style="margin: 2%" />
+      <hr style="margin:2%;" />
       <div
         class="container"
         style="margin-top:2%; margin-left:2%; margin-right:2%; text-align:center; border:solid 5px gray; border-radius:10px;"
@@ -163,6 +157,11 @@
         <div class="container">
           <div class="row">
             <div class="col">
+              <b-img
+                style="border-style:ridge; border: #fcd000 3px ridge;"
+                width="100%"
+                :src=""
+              />Column
             </div>
             <div class="col">Column</div>
             <div class="w-100"></div>
@@ -187,11 +186,11 @@
         <b-icon icon="arrow-clockwise" animation="spin" font-scale="4"></b-icon>
       </b-modal>
       <!-- 수정 삭제 -->
-      <div style="margin-top: 5%">
+      <div style="margin-top:5%;">
         <div
           @click="edit"
           class="btn btn-primary"
-          style="width: 15%; margin-right: 5%; position: relative; bottom: 5%"
+          style="width:15%;margin-right:5%; position:relative; bottom:5%;"
           v-if="checkaccess"
         >
           수정
@@ -200,7 +199,7 @@
         <div
           @click="delt"
           class="btn btn-secondary"
-          style="width: 15%; margin-left: 5%"
+          style="width:15%;margin-left:5%;"
           v-if="checkaccess"
         >
           삭제
@@ -235,7 +234,6 @@ export default {
       likescnt: "",
       likest: true,
       state: "",
-      data: "",
     };
   },
 
@@ -246,13 +244,10 @@ export default {
       ? JSON.parse(sessionStorage.getItem("user")).userNo
       : "";
     //처음 데이터 불러오기
-    this.data = `[-7,-5,0,0,-2,0,40.49,59.51,35.59,64.41,[["Quinn"],["Alistar"],["Zed",["CHAMPION_KILL",1]],["Jhin",["WARD_PLACED",2]],["MasterYi"],["Velkoz",["WARD_PLACED",3],["WARD_KILL",1]],["Jax",["CHAMPION_KILL",1],["WARD_PLACED",1]],["Kalista",["WARD_PLACED",2],["BUILDING_KILL",1]],["Camille",["WARD_PLACED",2],["CHAMPION_KILL",5],["BUILDING_KILL",1]],["Lucian",["WARD_PLACED",1]]]]`;
-    console.log(this.data);
-    console.log(JSON.parse(this.data));
     axios
-      .get(process.env.VUE_APP_API_URL + "/video/detail", {
+      .get(process.env.VUE_APP_API_URL + "/post/detail", {
         params: {
-          videoPostNo: this.videoNo,
+          postNo: this.videoNo,
         },
       })
       .then(({ data }) => {
