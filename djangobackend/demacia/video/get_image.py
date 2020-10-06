@@ -17,6 +17,7 @@ def get_image(videoname):
             if int(vidcap.get(1)) == 50:
                 # print('Saved frame number : ' + str(int(vidcap.get(1))))
                 cv2.imwrite("./demacia/images/frame%d.jpg" % count, image)
+                cv2.imwrite('../expbackend/public/videos/%s' % videoname.replace('.mp4','.jpg'), image)
                 # print('Saved frame%d.jpg' % count)
                 count += 1
             elif int(vidcap.get(1)) % (length-50) == 0:
