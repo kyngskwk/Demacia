@@ -15,7 +15,7 @@
         opacity:0.8; background: linear-gradient(180deg, rgba(6,17,27,1) 0%, rgba(28,83,73,1) 100%);">
           <b-row>
             <b-col cols="12" class="m-2 text-left">
-              <br><h4 style="text-align:center;">나랑 어울리는 꿀조합이<h4>
+              <br><h4 style="text-align:center;">나랑 어울리는 꿀조합이</h4>
               <h4 style="text-align:center;">궁금하다면?</h4>
               <router-link :to="{name:constants.URL_TYPE.RECOMMEND.COMBINATION}">
                 <b-button size="lg" variant="primary" class="mr-2 mt-3" @click="callmatch()" 
@@ -32,7 +32,7 @@
         opacity:0.8; background: linear-gradient(180deg, rgba(6,17,27,1) 0%, rgba(28,83,73,1) 100%);">
           <b-row>
             <b-col cols="12" class="m-2 text-left">
-              <br><h4 style="text-align:center;">내가 가장 잘하는 챔피언이<h4>
+              <br><h4 style="text-align:center;">내가 가장 잘하는 챔피언이</h4>
               <h4 style="text-align:center;">궁금하다면?</h4>
               <router-link :to="{name:constants.URL_TYPE.RECOMMEND.CHAMPION}">
                 <b-button size="lg" variant="primary" class="mr-2 mt-3" @click="callmatch()" 

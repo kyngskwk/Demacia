@@ -1,26 +1,39 @@
 <template>
   <div
     class="pb-2"
-    style="background: rgba( 0, 0, 0, 0.5 );width:96%; margin-left:auto; margin-right:auto;font-family:Tmon;color: white;"
+    style="
+      background: rgba(0, 0, 0, 0.5);
+      width: 96%;
+      margin-left: auto;
+      margin-right: auto;
+      font-family: Tmon;
+      color: white;
+    "
   >
     <div
       class="d-flex justify-content-between"
-      style="margin-right:1%;margin-left:1%; margin-top:1%;"
+      style="margin-right: 1%; margin-left: 1%; margin-top: 1%"
     >
-      <b-container class="bv-example-row" style="padding:0;margin-top:3%;">
+      <b-container class="bv-example-row" style="padding: 0; margin-top: 3%">
         <b-row
-          style="max-height:475px; width:100%; border-top:solid; border-bottom:solid; margin:0; "
+          style="
+            max-height: 475px;
+            width: 100%;
+            border-top: solid;
+            border-bottom: solid;
+            margin: 0;
+          "
         >
           <b-col
             cols="3"
             lg="3"
             xl="3"
-            style="text-align:left; padding-top:2%; padding-left:1%;"
+            style="text-align: left; padding-top: 2%; padding-left: 1%"
             class="d-flex"
           >
-            <p id="hide3" style="font-size:3vh;  padding-left:7%;">의뢰번호</p>
-            <p style="font-weight: bold; font-size:3.5vh; padding-left:5px; ">
-              NO.{{ videoNo }}
+            <p id="hide3" style="font-size: 3vh; padding-left: 7%">의뢰번호</p>
+            <p style="font-weight: bold; font-size: 3.5vh; padding-left: 5px">
+              NO.{{ videoPostNo }}
             </p>
           </b-col>
           <b-col
@@ -28,18 +41,35 @@
             lg="5"
             xl="6"
             class="d-flex justify-content-center"
-            style="padding-top:3%;"
+            style="padding-top: 3%"
           >
             <p
-              style="font-weight: bold;font-size:3.5vh; max-width:100%;display: -webkit-box; overflow: hidden;width:100%; text-overflow: ellipsis;
-                          -webkit-line-clamp: 1;-webkit-box-orient: vertical;word-wrap:break-word; line-height: 4vh; height: 4vh; "
+              style="
+                font-weight: bold;
+                font-size: 3.5vh;
+                max-width: 100%;
+                display: -webkit-box;
+                overflow: hidden;
+                width: 100%;
+                text-overflow: ellipsis;
+                -webkit-line-clamp: 1;
+                -webkit-box-orient: vertical;
+                word-wrap: break-word;
+                line-height: 4vh;
+                height: 4vh;
+              "
             >
               {{ writePost.title }}
             </p>
           </b-col>
-          <b-col id="hide2" cols="4" lg="3" xl="3" style=" ">
+          <b-col id="hide2" cols="4" lg="3" xl="3" style="">
             <h4
-              style="font-size:5vh;font-weight: bold; color:red;margin-top:10%;"
+              style="
+                font-size: 5vh;
+                font-weight: bold;
+                color: red;
+                margin-top: 10%;
+              "
             >
               분석 완료
             </h4>
@@ -47,9 +77,9 @@
         </b-row>
       </b-container>
     </div>
-    <div class="container" style="width:100%; padding:0; margin-top:2%;">
+    <div class="container" style="width: 100%; padding: 0; margin-top: 2%">
       <video
-        style="width:100%; padding:0; max-width:900px;"
+        style="width: 100%; padding: 0; max-width: 900px"
         controls
         autoplay="true"
         name="media"
@@ -62,29 +92,42 @@
     <div
       id="mainBody"
       class="container"
-      style=" padding-left:5px;padding-right:5px;padding-bottom:5px; margin-top:-7%; padding-top:6%; margin-bottom:5%;"
+      style="
+        padding-left: 5px;
+        padding-right: 5px;
+        padding-bottom: 5px;
+        margin-top: -7%;
+        padding-top: 6%;
+        margin-bottom: 5%;
+      "
     >
-      <hr style="margin-left:2%;margin-right:2%;" />
+      <hr style="margin-left: 2%; margin-right: 2%" />
       <div class="row">
-        <div class="col-7 col-xl-8" style="padding:0;">
+        <div class="col-7 col-xl-8" style="padding: 0">
           <!-- 글쓴이 -->
           <div class="d-flex justify-content-between">
-            <div class="d-flex" style=" margin-left:2%;">
+            <div class="d-flex" style="margin-left: 2%">
               <b-avatar
                 variant="secondary"
-                :src="writeUser.userImage"
+                :src="writePost.userImage"
                 class="ml-3 mr-3"
               ></b-avatar>
               <div>
                 <h4
-                  style="margin-bottom:0; text-align:center; font-size:2.5vh; margin-top:12%;"
+                  style="
+                    margin-bottom: 0;
+                    text-align: center;
+                    font-size: 2.5vh;
+                    margin-top: 12%;
+                  "
                 >
-                  {{ writeUser.userNickname }}
+                  {{ writePost.userNickname }}
                 </h4>
                 <h4
-                  style="margin-bottom:0; text-align:center;  font-size:1.2vh;"
+                  style="margin-bottom: 0; text-align: center; font-size: 1.2vh"
                 >
-                  {{ writeUser.userTier }}
+                  <p>{{ writePost.userRank }}</p>
+                  <p>{{ writePost.gameRank }}</p>
                 </h4>
               </div>
             </div>
@@ -92,118 +135,97 @@
         </div>
         <div class="col-5 col-xl-4">
           <!-- 조회수 -->
-          <div class="d-flex justify-content-end" style="margin-right:5%;">
+          <div class="d-flex justify-content-end" style="margin-right: 5%">
             <div class="d-flex">
+              <p style="font-size: 2.5vh">좋아요: {{ writePost.totalLike }}</p>
               <b-icon-caret-right-square-fill
                 class="h4"
-                style=" margin-right:10px; padding-top:3%;"
+                style="margin-right: 10px; padding-top: 3%"
               />
-              <p style=" font-size:2.5vh ">{{ writePost.view }}</p>
-            </div>
-            <!-- 좋아요 -->
-            <div class="d-flex justify-content-end">
-              <div v-show="likest" @click="likesup">
-                <b-icon-heart
-                  shift-v="5"
-                  class="btn"
-                  font-scale="3"
-                  style="cursor: pointer;"
-                />
-              </div>
-
-              <div v-show="!likest" @click="likesdown">
-                <b-icon-heart-fill
-                  shift-v="5"
-                  variant="danger"
-                  font-scale="3"
-                  class="btn"
-                  style="cursor: pointer;"
-                />
-              </div>
-
-              <p style="font-size:2.5vh">{{ likescnt }}</p>
+              <p style="font-size: 2.5vh">{{ writePost.view }}</p>
             </div>
           </div>
         </div>
       </div>
-      <hr style="margin:2%;" />
+    </div>
+    <hr style="margin: 2%" />
+    <div
+      class="container"
+      style="
+        margin-top: 2%;
+        margin-left: 2%;
+        margin-right: 2%;
+        text-align: center;
+        border: solid 5px gray;
+        border-radius: 10px;
+      "
+    >
+      <div class="row row-cols-12">
+        <div class="col">
+          <h3>영상이전 승률</h3>
+          <pie-chart
+            :data="[
+              ['BLUETEAM', 44],
+              ['REDTEAM', 23],
+            ]"
+            :colors="['#23285c', '#d71616']"
+            suffix="%"
+          ></pie-chart>
+        </div>
+        <div class="col">
+          <h3>영상이후 승률</h3>
+          <pie-chart
+            :data="[
+              ['Blueberry', 44],
+              ['Strawberry', 23],
+            ]"
+          ></pie-chart>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="row">
+          <div class="col">Column</div>
+          <div class="col">Column</div>
+          <div class="w-100"></div>
+          <div class="col">Column</div>
+          <div class="col">Column</div>
+        </div>
+      </div>
+    </div>
+    <br />
+
+    <!-- 로그인 확인하는 모달 -->
+    <b-modal ref="loginChkModal" centered title="로그인 필요">
+      로그인이 필요한 서비스입니다.
+      <br />로그인 하시겠습니까?
+      <template v-slot:modal-footer="{ cancel }">
+        <b-button size="sm" variant="primary" @click="toLogin">확인</b-button>
+        <b-button size="sm" variant="danger" @click="cancel()">취소</b-button>
+      </template>
+    </b-modal>
+    <!-- 빙글빙글 모달 -->
+    <b-modal ref="binggleModal" centered title="분석중..">
+      <b-icon icon="arrow-clockwise" animation="spin" font-scale="4"></b-icon>
+    </b-modal>
+    <!-- 수정 삭제 -->
+    <div style="margin-top: 5%">
       <div
-        class="container"
-        style="margin-top:2%; margin-left:2%; margin-right:2%; text-align:center; border:solid 5px gray; border-radius:10px;"
+        @click="edit"
+        class="btn btn-primary"
+        style="width: 15%; margin-right: 5%; position: relative; bottom: 5%"
+        v-if="checkaccess"
       >
-        <div class="row row-cols-12">
-          <div class="col">
-            <h3>영상이전 승률</h3>
-            <pie-chart
-              :data="[
-                ['BLUETEAM', 44],
-                ['REDTEAM', 23],
-              ]"
-              :colors="['#23285c', '#d71616']"
-              suffix="%"
-            ></pie-chart>
-          </div>
-          <div class="col">
-            <h3>영상이후 승률</h3>
-            <pie-chart
-              :data="[
-                ['Blueberry', 44],
-                ['Strawberry', 23],
-              ]"
-            ></pie-chart>
-          </div>
-        </div>
-
-        <div class="container">
-          <div class="row">
-            <div class="col">
-              <b-img
-                style="border-style:ridge; border: #fcd000 3px ridge;"
-                width="100%"
-                :src=""
-              />Column
-            </div>
-            <div class="col">Column</div>
-            <div class="w-100"></div>
-            <div class="col">Column</div>
-            <div class="col">Column</div>
-          </div>
-        </div>
+        수정
       </div>
-      <br />
 
-      <!-- 로그인 확인하는 모달 -->
-      <b-modal ref="loginChkModal" centered title="로그인 필요">
-        로그인이 필요한 서비스입니다.
-        <br />로그인 하시겠습니까?
-        <template v-slot:modal-footer="{ cancel }">
-          <b-button size="sm" variant="primary" @click="toLogin">확인</b-button>
-          <b-button size="sm" variant="danger" @click="cancel()">취소</b-button>
-        </template>
-      </b-modal>
-      <!-- 빙글빙글 모달 -->
-      <b-modal ref="binggleModal" centered title="분석중..">
-        <b-icon icon="arrow-clockwise" animation="spin" font-scale="4"></b-icon>
-      </b-modal>
-      <!-- 수정 삭제 -->
-      <div style="margin-top:5%;">
-        <div
-          @click="edit"
-          class="btn btn-primary"
-          style="width:15%;margin-right:5%; position:relative; bottom:5%;"
-          v-if="checkaccess"
-        >
-          수정
-        </div>
-
-        <div
-          @click="delt"
-          class="btn btn-secondary"
-          style="width:15%;margin-left:5%;"
-          v-if="checkaccess"
-        >
-          삭제
-        </div>
+      <div
+        @click="delt"
+        class="btn btn-secondary"
+        style="width: 15%; margin-left: 5%"
+        v-if="checkaccess"
+      >
+        삭제
       </div>
     </div>
   </div>
@@ -222,18 +244,11 @@ export default {
     return {
       sessionUserNo: "",
       sessionUser: {},
-      videoNo: this.$route.params.videoNo,
+      videoPostNo: this.$route.params.videoNo,
       writePost: {},
-      writeUser: {
-        userNickname: "",
-        userImage: "",
-        userTier: "",
-      },
       videolink: "",
-      votest: true,
-      likescnt: "",
-      likest: true,
       state: "",
+      videoData: "",
     };
   },
 
@@ -244,70 +259,24 @@ export default {
       ? JSON.parse(sessionStorage.getItem("user")).userNo
       : "";
     //처음 데이터 불러오기
+    console.log(this.$route.params);
+    console.log(this.videoPostNo);
     axios
-      .get(process.env.VUE_APP_API_URL + "/post/detail", {
+      .get(process.env.VUE_APP_API_URL + "/video/detail", {
         params: {
-          postNo: this.videoNo,
+          videoPostNo: this.videoPostNo,
         },
       })
       .then(({ data }) => {
+        console.log(data.object);
         this.writePost = data.object;
-        this.videolink = process.env.VUE_APP_IMGUP_URL + this.writePost.video;
+        this.data = JSON.parse(data.object.data.replaceAll("'",'"'));
+        console.log(this.data);
+        this.videolink =
+          process.env.VUE_APP_IMGUP_URL + "/videos/" + this.writePost.video;
         let vd = document.querySelector("#vid");
         vd.load();
-        // 글쓴이 정보 불러오기
-        axios
-          .get(process.env.VUE_APP_API_URL + "/account/user", {
-            params: {
-              userNo: this.writePost.userNo,
-            },
-          })
-          .then(({ data }) => {
-            this.writeUser = data.object;
-            this.writeUser.userImage =
-              process.env.VUE_APP_IMGUP_URL + this.writeUser.userImage;
-            this.writeUser.userTier =
-              this.writeUser.userGameTierStr +
-              " " +
-              this.writeUser.userGameRankStr;
-          });
       });
-    this.likecount();
-
-    // 유저가 있을때만 도는 애들
-    if (this.sessionUserNo) {
-      //좋아요 여부 불러오기
-      // axios
-      //   .get(process.env.VUE_APP_API_URL + "/likes/status", {
-      //     params: {
-      //       videoNo: this.videoNo,
-      //       userNo: this.sessionUserNo,
-      //     },
-      //   })
-      //   .then(({ data }) => {
-      //     if (data.object == 1) {
-      //       this.likest = false;
-      //     } else {
-      //       this.likest = true;
-      //     }
-      //   })
-      //   .catch(() => {
-      //     location.href =
-      //       "/error/좋아요를 눌렀는지 알아보다 에러가 나버렸지 뭐야..";
-      //   });
-      // 유저 정보불러오기
-      axios
-        .get(process.env.VUE_APP_API_URL + "/account/user", {
-          params: {
-            userNo: this.sessionUserNo,
-          },
-        })
-        .then(({ data }) => {
-          this.sessionUser = data.object;
-          this.sessionUser.userImage =
-            process.env.VUE_APP_IMGUP_URL + this.sessionUser.userImage;
-        });
-    }
   },
 
   computed: {
@@ -317,7 +286,7 @@ export default {
 
     checkaccess() {
       return (
-        this.sessionUserNo == this.writeUser.userNo || this.sessionUserNo == 3
+        this.sessionUserNo == this.writePost.userNo || this.sessionUserNo == 3
       );
     },
   },
@@ -347,46 +316,6 @@ export default {
       }
     },
 
-    likesup() {
-      this.loginCheck() &&
-        axios
-          .post(process.env.VUE_APP_API_URL + "/likes/", {
-            videoNo: this.videoNo,
-            userNo: this.sessionUserNo,
-          })
-          .then(() => {
-            this.likest = !this.likest;
-            this.likescnt++;
-          });
-    },
-
-    likesdown() {
-      this.loginCheck() &&
-        axios
-          .delete(process.env.VUE_APP_API_URL + "/likes/", {
-            params: {
-              videoNo: this.videoNo,
-              userNo: this.sessionUserNo,
-            },
-          })
-          .then(() => {
-            this.likest = !this.likest;
-            this.likescnt--;
-          });
-    },
-
-    likecount() {
-      //좋아요 갯수 불러오기
-      axios
-        .get(process.env.VUE_APP_API_URL + "/likes/count", {
-          params: {
-            videoNo: this.videoNo,
-          },
-        })
-        .then(({ data }) => {
-          this.likescnt = data.object;
-        });
-    },
     analize() {
       this.$refs["binggleModal"].show();
     },

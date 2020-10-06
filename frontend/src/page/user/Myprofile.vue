@@ -9,15 +9,10 @@
       <div
         id="pad2"
         class="col-xl-5"
-        style="
-          padding-right: 0;
-          padding-left: 0;
-          margin-top: 5%;
-        "
+        style="padding-right: 0; padding-left: 0; margin-top: 5%"
       >
         <div id="pad1" class="shadow1 d-flex justify-content-start">
-          <div style="opacity:0.8; background: linear-gradient(180deg, rgba(6,17,27,1) 0%, rgba(28,83,73,1) 100%);
-          height: 210px; width: 230px; border-style: ridge;  border: #fcd000 3px ridge; border-right:0px;">
+          <div class="box" style="height: 210px; width: 230px">
             <div class="conainer" style="padding-top: 20px">
               <!-- 프로필 이미지 -->
               <div v-b-modal.modalProfileImage style="cursor: pointer">
@@ -103,12 +98,13 @@
             </div>
           </div>
           <!-- 유저정보 박스 -->
-          <div style="opacity:0.8; background: linear-gradient(180deg, rgba(6,17,27,1) 0%, rgba(28,83,73,1) 100%);
-          border-style: ridge;  border: #fcd000 3px ridge; border-left:0px; height: 210px">
+          <div class="box" style="height: 210px">
             <b-row class="mt-3" style="height: 3rem">
               <b-col class="mr-2">
                 <!-- 닉네임 -->
-                <h2 v-show="nicknameCheck" style="color:#fcd000">{{ user.userNickname }}</h2>
+                <h2 v-show="nicknameCheck" style="color: #fcd000">
+                  {{ user.userNickname }}
+                </h2>
                 <!-- 닉네임 수정시 입력박스 -->
                 <b-input-group v-show="!nicknameCheck">
                   <b-form-input
@@ -129,11 +125,11 @@
                   }}</b-form-invalid-feedback>
                 </b-input-group>
               </b-col>
-            </b-row>            
+            </b-row>
             <b-row>
-              <b-col
-                style="font-size: 20px; color: #e3d19e"
-                >{{ user.userEmail }}</b-col>
+              <b-col style="font-size: 20px; color: #e3d19e">{{
+                user.userEmail
+              }}</b-col>
             </b-row>
 
             <b-row class="mt-0 ml-3">
@@ -205,7 +201,12 @@
                   </template>
                 </b-modal>
                 <!-- 마일리지랭킹 조회 -->
-                <h6 class="mil">마일리지 랭킹 :<span style="color:red">{{ usermilrank }}</span>위</h6>
+                <h6 class="mil">
+                  마일리지 랭킹 :<span style="color: red">{{
+                    usermilrank
+                  }}</span
+                  >위
+                </h6>
                 <h6 class="mil">(상위 {{ usermilrankper }}%)</h6>
               </b-col>
               <b-col>
@@ -239,16 +240,29 @@
             style="
               width: 300px;
               height: 100px;
-              opacity:0.8; 
-              background: linear-gradient(180deg, rgba(6,17,27,1) 0%, rgba(28,83,73,1) 100%);
-              border-style: ridge;  
+              opacity: 0.8;
+              background: linear-gradient(
+                180deg,
+                rgba(6, 17, 27, 1) 0%,
+                rgba(28, 83, 73, 1) 100%
+              );
+              border-style: ridge;
               border: #fcd000 3px ridge;
               margin: auto;
               top: 50%;
               font-family: digital;
             "
-          > 
-            <img src="../../assets/img/gold.png" alt="" style="width:50px; height:50px; margin-top: 7%; margin-right:10px;">
+          >
+            <img
+              src="../../assets/img/gold.png"
+              alt=""
+              style="
+                width: 50px;
+                height: 50px;
+                margin-top: 7%;
+                margin-right: 10px;
+              "
+            />
             <p
               style="
                 font-size: 3vh;
@@ -260,7 +274,9 @@
             >
               {{ user.userMileage }}
             </p>
-            <p style="font-size: 3vh; margin-top: 10%" class="text-white">SOL</p>
+            <p style="font-size: 3vh; margin-top: 10%" class="text-white">
+              SOL
+            </p>
           </div>
         </div>
       </div>
@@ -270,13 +286,24 @@
     <div style="margin: 5%">
       <!-- 랭크 박스 -->
       <div class="row d-flex justify-content-center">
-        <div
-          class="col-xl-5 m-4"
-        >
+        <div class="col-10 col-md-5 m-4">
           <!-- 솔 랭 -->
           <b-row>
             <b-col>
-              <b-card no-body style="border: #fcd000 1px solid; opacity:0.8; opacity:0.8; background: linear-gradient(180deg, rgba(6,17,27,1) 0%, rgba(28,83,73,1) 100%);" class="shadow1">
+              <b-card
+                no-body
+                style="
+                  border: #fcd000 1px solid;
+                  opacity: 0.8;
+                  opacity: 0.8;
+                  background: linear-gradient(
+                    180deg,
+                    rgba(6, 17, 27, 1) 0%,
+                    rgba(28, 83, 73, 1) 100%
+                  );
+                "
+                class="shadow1"
+              >
                 <b-row no-gutters>
                   <b-col cols="6" md="4">
                     <b-card-img
@@ -299,7 +326,11 @@
                     <div>
                       <p
                         id="font1"
-                        style="font-size: 3vh; font-weight: bold; color:#fcd000"
+                        style="
+                          font-size: 3vh;
+                          font-weight: bold;
+                          color: #fcd000;
+                        "
                       >
                         {{ solRank }}
                       </p>
@@ -313,7 +344,20 @@
           <!-- 게임 랭-->
           <b-row>
             <b-col>
-              <b-card no-body class="m-2" style="border: #fcd000 1px solid; opacity:0.8; opacity:0.8; background: linear-gradient(180deg, rgba(6,17,27,1) 0%, rgba(28,83,73,1) 100%);">
+              <b-card
+                no-body
+                class="m-2"
+                style="
+                  border: #fcd000 1px solid;
+                  opacity: 0.8;
+                  opacity: 0.8;
+                  background: linear-gradient(
+                    180deg,
+                    rgba(6, 17, 27, 1) 0%,
+                    rgba(28, 83, 73, 1) 100%
+                  );
+                "
+              >
                 <b-row no-gutters>
                   <b-col cols="6" md="4">
                     <b-card-img
@@ -339,14 +383,28 @@
                           <div>
                             <p
                               id="font1"
-                              style="font-size: 3vh; font-weight: bold; color:#fcd000"
+                              style="
+                                font-size: 3vh;
+                                font-weight: bold;
+                                color: #fcd000;
+                              "
                             >
                               {{ gameRank }}
                             </p>
                           </div>
                           <b-col class="d-flex justify-content-center">
                             <b-button
-                              style="max-width: 200px; color:white;background: linear-gradient(180deg, #1b2831 0%, #12384b 100%); border-style:ridge; border:#95ede7 3px ridge;"
+                              style="
+                                max-width: 200px;
+                                color: white;
+                                background: linear-gradient(
+                                  180deg,
+                                  #1b2831 0%,
+                                  #12384b 100%
+                                );
+                                border-style: ridge;
+                                border: #95ede7 3px ridge;
+                              "
                               variant="light"
                               block
                               @click="summonerReset"
@@ -388,14 +446,28 @@
                                 :state="summonerValid"
                                 aria-describedby="summonerFeedback"
                                 class="pb-2"
-                                style="border-style:ridge;
-                                border: #fcd000  3px ridge;
-                                background-color:#1e2328;
-                                color:#cdbe91;"
+                                style="
+                                  border-style: ridge;
+                                  border: #fcd000 3px ridge;
+                                  background-color: #1e2328;
+                                  color: #cdbe91;
+                                "
                               />
                               <b-input-group-append class="dark">
-                                <b-button variant="light" @click="summonerAuth" class="py-1"
-                                style="color:white; background: linear-gradient(180deg, #1b2831 0%, #12384b 100%); border-style:ridge; border:#95ede7 3px ridge;"
+                                <b-button
+                                  variant="light"
+                                  @click="summonerAuth"
+                                  class="py-1"
+                                  style="
+                                    color: white;
+                                    background: linear-gradient(
+                                      180deg,
+                                      #1b2831 0%,
+                                      #12384b 100%
+                                    );
+                                    border-style: ridge;
+                                    border: #95ede7 3px ridge;
+                                  "
                                   >인증</b-button
                                 >
                               </b-input-group-append>
@@ -414,8 +486,17 @@
           </b-row>
         </div>
         <div
-          class="shadow1 col-xl-5 m-4 pt-4"
-          style="border: #fcd000 1px solid; opacity:0.8; opacity:0.8; background: linear-gradient(180deg, rgba(6,17,27,1) 0%, rgba(28,83,73,1) 100%);"
+          class="shadow1 col-10 col-md-5 m-4 pt-4"
+          style="
+            border: #fcd000 1px solid;
+            opacity: 0.8;
+            opacity: 0.8;
+            background: linear-gradient(
+              180deg,
+              rgba(6, 17, 27, 1) 0%,
+              rgba(28, 83, 73, 1) 100%
+            );
+          "
         >
           <!-- 솔로몬 활동 리스트 박스-->
           <h4 style="display: inline-block" class="text-white">솔로몬 활동</h4>
@@ -459,8 +540,17 @@
 
         <!-- MBTI -->
         <div
-          class="shadow1 col-xl-5 m-4 p-4"
-          style="border: #fcd000 1px solid; opacity:0.8; opacity:0.8; background: linear-gradient(180deg, rgba(6,17,27,1) 0%, rgba(28,83,73,1) 100%);"
+          class="shadow1 col-10 col-md-5 m-4 p-4"
+          style="
+            border: #fcd000 1px solid;
+            opacity: 0.8;
+            opacity: 0.8;
+            background: linear-gradient(
+              180deg,
+              rgba(6, 17, 27, 1) 0%,
+              rgba(28, 83, 73, 1) 100%
+            );
+          "
         >
           <b-row class="text-white">
             <b-col cols="12">
@@ -469,60 +559,113 @@
             <b-col cols="12" v-if="!user.mbti">
               아직 데마시아 전용 MBTI 측정을 하지 않았습니다.
               <br />
-              <b-button size="lg" variant="secondary" href="/mbtisurvey"
-              style="color:white;background: linear-gradient(180deg, #1b2831 0%, #12384b 100%); border-style:ridge; border:#fcd000 3px ridge;"
+              <b-button
+                size="lg"
+                variant="secondary"
+                href="/mbtisurvey"
+                style="
+                  color: white;
+                  background: linear-gradient(180deg, #1b2831 0%, #12384b 100%);
+                  border-style: ridge;
+                  border: #fcd000 3px ridge;
+                "
                 >MBTI 설문하기</b-button
               >
             </b-col>
             <b-col cols="12" v-else>
-              <h4 style="color:#fcd000">{{ user.mbti }}</h4>
+              <h4 style="color: #fcd000">{{ user.mbti }}</h4>
               <br />
-              <b-button size="lg" variant="primary" href="/mbti" class="mr-2" 
-              style="color:white; background: linear-gradient(28deg, rgba(255,234,128,1) 0%, rgba(200,166,0,1) 100%); border-style:ridge; border:#fcd000 3px solid;">
+              <b-button
+                size="lg"
+                variant="primary"
+                href="/mbti"
+                class="mr-2"
+                style="
+                  color: white;
+                  background: linear-gradient(
+                    28deg,
+                    rgba(255, 234, 128, 1) 0%,
+                    rgba(200, 166, 0, 1) 100%
+                  );
+                  border-style: ridge;
+                  border: #fcd000 3px solid;
+                "
+              >
                 챔피언 추천!
               </b-button>
-              <b-button size="lg" variant="secondary" href="/mbtisurvey"
-              style="color:white;background: linear-gradient(180deg, #1b2831 0%, #12384b 100%); border-style:ridge; border:#95ede7 3px ridge;">
+              <b-button
+                size="lg"
+                variant="secondary"
+                href="/mbtisurvey"
+                style="
+                  color: white;
+                  background: linear-gradient(180deg, #1b2831 0%, #12384b 100%);
+                  border-style: ridge;
+                  border: #95ede7 3px ridge;
+                "
+              >
                 다시 설문하기
               </b-button>
             </b-col>
           </b-row>
         </div>
-        <!-- 추천 -->
-        <div
-          class="col-xl-5 m-4 pt-4 text-white"
-          style="border: #fcd000 1px solid; opacity:0.8; opacity:0.8; background: linear-gradient(180deg, rgba(6,17,27,1) 0%, rgba(28,83,73,1) 100%);"
-        >
-          <h4 style="display: inline-block">추천 챔피언과 조합</h4>
-          <br />코그모 티모 모모
-        </div> -->
 
         <!-- 매치데이터 업데이트 -->
         <div
-          class="shadow1 col-10 col-xl-5 m-4 pt-4"
-          style="border: #fcd000 1px solid; opacity:0.8; opacity:0.8; background: linear-gradient(180deg, rgba(6,17,27,1) 0%, rgba(28,83,73,1) 100%);"
+          class="shadow1 col-10 col-md-5 m-4 pt-4"
+          style="
+            border: #fcd000 1px solid;
+            opacity: 0.8;
+            opacity: 0.8;
+            background: linear-gradient(
+              180deg,
+              rgba(6, 17, 27, 1) 0%,
+              rgba(28, 83, 73, 1) 100%
+            );
+          "
         >
-          <h4 style="display: inline-block" class="text-white">전적기록(MatchList)</h4><br>
-           <b-button size="lg" variant="primary" class="mr-2 mt-3" @click="callmatch()" 
-           style="color:white;background: linear-gradient(180deg, #1b2831 0%, #12384b 100%); border-style:ridge; border:#95ede7 3px ridge;">
-            가져오기
-          </b-button><br><br>
-          <b-button variant="primary" v-if="loading" style="text-align:center;">
-          <b-spinner small></b-spinner>
-          <span class="sr-only">Loading...</span>
-        </b-button>
+          <h4 style="display: inline-block" class="text-white">
+            전적기록(MatchList)
+          </h4>
+          <br />
+          <b-button
+            size="lg"
+            variant="primary"
+            class="mr-2 mt-3"
+            @click="callmatch()"
+            style="
+              color: white;
+              background: linear-gradient(180deg, #1b2831 0%, #12384b 100%);
+              border-style: ridge;
+              border: #95ede7 3px ridge;
+            "
+          >
+            가져오기 </b-button
+          ><br /><br />
+          <b-button variant="primary" v-if="loading" style="text-align: center">
+            <b-spinner small></b-spinner>
+            <span class="sr-only">Loading...</span>
+          </b-button>
         </div>
 
         <!-- 활동 목록 -->
         <div class="col-11 p-2">
           <div class="shadow1 m-4">
-            <h2 class="p-4" style="color:#fcd000">투표의뢰목록</h2>
+            <h2 class="p-4" style="color: #fcd000">투표의뢰목록</h2>
             <b-table
               hover
               :items="myPostList"
               :fields="myPostFields"
               table-variant="dark"
-              style="border: #fcd000 2px solid; opacity:0.8; background: linear-gradient(180deg, rgba(6,17,27,1) 0%, rgba(28,83,73,1) 100%);"
+              style="
+                border: #fcd000 2px solid;
+                opacity: 0.8;
+                background: linear-gradient(
+                  180deg,
+                  rgba(6, 17, 27, 1) 0%,
+                  rgba(28, 83, 73, 1) 100%
+                );
+              "
             >
               <template v-slot:cell(postDate)="data">{{
                 postDT(data.value)
@@ -542,13 +685,21 @@
         <!-- 영상분석 -->
         <div class="col-11 p-2">
           <div class="shadow1 m-4">
-            <h2 class="p-4" style="color:#fcd000">영상분석 의뢰목록</h2>
+            <h2 class="p-4" style="color: #fcd000">영상분석 의뢰목록</h2>
             <b-table
               hover
               :items="myPostList"
               :fields="myPostFields"
               table-variant="dark"
-              style="border: #fcd000 2px solid; opacity:0.8; background: linear-gradient(180deg, rgba(6,17,27,1) 0%, rgba(28,83,73,1) 100%);"
+              style="
+                border: #fcd000 2px solid;
+                opacity: 0.8;
+                background: linear-gradient(
+                  180deg,
+                  rgba(6, 17, 27, 1) 0%,
+                  rgba(28, 83, 73, 1) 100%
+                );
+              "
             >
               <template v-slot:cell(postDate)="data">{{
                 postDT(data.value)
@@ -939,23 +1090,24 @@ export default {
       this.$router.push("/result/" + postNo);
     },
 
-    callmatch(){
+    callmatch() {
       this.loading = true;
       axios
-          .post(process.env.VUE_APP_DAPI_URL + "/matches/update/", {
-            userno: this.userNo
-          })
-          .then((res) => {
-            console.log(res);
-            this.loading = false;
-            if(res.status==200){
-              alert("기록을 가져왔습니다!!");
-            }
-          })
-          .catch((err) => {
-            this.loading = false;
-            location.href = "/error/전적기록을 불러오던 중 서버 오류가 발생했습니다. " + err;
-          });
+        .post(process.env.VUE_APP_DAPI_URL + "/matches/update/", {
+          userno: this.userNo,
+        })
+        .then((res) => {
+          console.log(res);
+          this.loading = false;
+          if (res.status == 200) {
+            alert("기록을 가져왔습니다!!");
+          }
+        })
+        .catch((err) => {
+          this.loading = false;
+          location.href =
+            "/error/전적기록을 불러오던 중 서버 오류가 발생했습니다. " + err;
+        });
     },
   },
 
@@ -1017,7 +1169,17 @@ export default {
     font-size: 15px !important;
   }
 }
-
+.box {
+  opacity: 0.8;
+  background: linear-gradient(
+    180deg,
+    rgba(6, 17, 27, 1) 0%,
+    rgba(28, 83, 73, 1) 100%
+  );
+  border-style: ridge;
+  border: #fcd000 3px ridge;
+  border-left: 0px;
+}
 .da {
   background-color: rgb(222, 226, 228);
 }
