@@ -1,108 +1,229 @@
 <template>
-<div>
-  <Carousel/>
-  <!-- <b-row class="maintitle text-center">
+  <div>
+    <Carousel />
+    <!-- <b-row class="maintitle text-center">
       <img src="../assets/img/damacia.png" alt="" style="display:block; margin:100px auto 0px">
       <b-col cols="12" class="sub pb-4 mb-4">
         <img src="../assets/img/subtitle.png" alt="" style="display:block; margin:0px auto 50px">
       </b-col>
     </b-row> -->
-  <div class="container p-4">
-    <img src="../assets/img/recommtitle.png" alt="" style="margin:50px 0px 0px">
-    <b-row class="part">
-      <b-col cols="12" lg="6">
-        <div class="box" style="border-style:ridge; border: #fcd000 4px ridge; 
-        opacity:0.8; background: linear-gradient(180deg, rgba(6,17,27,1) 0%, rgba(28,83,73,1) 100%);">
-          <b-row>
-            <b-col cols="12" class="m-2 text-left">
-              <br><h4 style="text-align:center;">나랑 어울리는 꿀조합이<h4>
-              <h4 style="text-align:center;">궁금하다면?</h4>
-              <router-link :to="{name:constants.URL_TYPE.RECOMMEND.COMBINATION}">
-                <b-button size="lg" variant="primary" class="mr-2 mt-3" @click="callmatch()" 
-                style="style=text-align:center;color:white;background: linear-gradient(180deg, #1b2831 0%, #12384b 100%); border-style:ridge; border:#95ede7 3px ridge;">
-                  조합 추천 보러가기
-                </b-button>
-              </router-link>
-            </b-col>
-          </b-row>
-        </div>
-      </b-col>
-      <b-col cols="12" sm="6">
-        <div class="box" style="border-style:ridge; border: #fcd000 4px ridge; 
-        opacity:0.8; background: linear-gradient(180deg, rgba(6,17,27,1) 0%, rgba(28,83,73,1) 100%);">
-          <b-row>
-            <b-col cols="12" class="m-2 text-left">
-              <br><h4 style="text-align:center;">내가 가장 잘하는 챔피언이<h4>
-              <h4 style="text-align:center;">궁금하다면?</h4>
-              <router-link :to="{name:constants.URL_TYPE.RECOMMEND.CHAMPION}">
-                <b-button size="lg" variant="primary" class="mr-2 mt-3" @click="callmatch()" 
-                style="style=text-align:center;color:white;background: linear-gradient(180deg, #1b2831 0%, #12384b 100%); border-style:ridge; border:#95ede7 3px ridge;">
-                  챔피언 추천 보러가기
-                </b-button>
-              </router-link>
-            </b-col>
-          </b-row>
-        </div>
-      </b-col>
-      <b-col cols="12">
-        <router-link :to="{name:constants.URL_TYPE.POST.MAIN}">
-          <img src="../assets/img/votetitle.png" alt="" style="margin:50px 0px 0px">
-        </router-link>
-        <div class="box" style="border: #fcd000 2px solid; opacity:0.8; background: linear-gradient(180deg, rgba(6,17,27,1) 0%, rgba(28,83,73,1) 100%);">
-          <b-row>
-            <b-col cols="12">
-              <b-table striped hover :items="lastPost" :fields="lastPostFields" v-if="lastPost" style="color: #e3d19e">
-                <template v-slot:cell(postDate)="data">{{ postDT(data.value) }}</template>
-                <template v-slot:cell(to)="data">
-                  <router-link :to="'/detail/'+data.item.postNo">
-                    <b-icon icon="arrow-right-circle" font-scale="2" style="color: #e3d19e"></b-icon>
-                  </router-link>
-                </template>
-              </b-table>
-              <div v-else>진행중인 투표글이 없습니다.</div>
-            </b-col>
-          </b-row>
-        </div>
-      </b-col>
-      <b-col cols="12">
-        <router-link :to="{name:constants.URL_TYPE.VIDEO.MAIN}">
-          <img src="../assets/img/videotittle.png" alt="" style="margin:50px 0px 0px">
-        </router-link>
-        <div class="box" style="border-style:ridge; border: #fcd000 4px ridge; 
-        opacity:0.8; background: linear-gradient(180deg, rgba(6,17,27,1) 0%, rgba(28,83,73,1) 100%);">
-          <b-row>
-            <b-col cols="12">
-              <b-table striped hover :items="lastVideo" :fields="lastVideoFields" v-if="lastVideo" style="color: #e3d19e">
-                <template v-slot:cell(date)="data">{{ postDT(data.value) }}</template>
-                <template v-slot:cell(to)="data">
-                  <router-link :to="'/vdetail/'+data.item.videoNo">
-                    <b-icon icon="arrow-right-circle" font-scale="2" style="color: #e3d19e"></b-icon>
-                  </router-link>
-                </template>
-              </b-table>
-              <div v-else>진행중인 투표글이 없습니다.</div>
-            </b-col>
-          </b-row>
-        </div>
-      </b-col>
-      <b-col cols="12">
-        <a href="/welcome" >
-          <img src="../assets/img/aboutus.png" alt="" style="display:block; margin:100px auto 50px">
-        </a>
-      </b-col>
-    </b-row>
+    <div class="container p-4">
+      <img
+        src="../assets/img/recommtitle.png"
+        alt=""
+        style="margin: 50px 0px 0px"
+      />
+      <b-row class="part">
+        <b-col cols="12" lg="6">
+          <div
+            class="box"
+            style="
+              border-style: ridge;
+              border: #fcd000 4px ridge;
+              opacity: 0.8;
+              background: linear-gradient(
+                180deg,
+                rgba(6, 17, 27, 1) 0%,
+                rgba(28, 83, 73, 1) 100%
+              );
+            "
+          >
+            <b-row>
+              <b-col cols="12" class="m-2 text-left">
+                <br />
+                <h4 style="text-align: center">나랑 어울리는 꿀조합이</h4>
+                <h4 style="text-align: center">궁금하다면?</h4>
+                <router-link
+                  :to="{ name: constants.URL_TYPE.RECOMMEND.COMBINATION }"
+                >
+                  <b-button
+                    size="lg"
+                    variant="primary"
+                    class="mr-2 mt-3"
+                    @click="callmatch()"
+                    style="
+                      style=text-align: center;
+                      color: white;
+                      background: linear-gradient(
+                        180deg,
+                        #1b2831 0%,
+                        #12384b 100%
+                      );
+                      border-style: ridge;
+                      border: #95ede7 3px ridge;
+                    "
+                  >
+                    조합 추천 보러가기
+                  </b-button>
+                </router-link>
+              </b-col>
+            </b-row>
+          </div>
+        </b-col>
+        <b-col cols="12" sm="6">
+          <div
+            class="box"
+            style="
+              border-style: ridge;
+              border: #fcd000 4px ridge;
+              opacity: 0.8;
+              background: linear-gradient(
+                180deg,
+                rgba(6, 17, 27, 1) 0%,
+                rgba(28, 83, 73, 1) 100%
+              );
+            "
+          >
+            <b-row>
+              <b-col cols="12" class="m-2 text-left">
+                <br />
+                <h4 style="text-align: center">내가 가장 잘하는 챔피언이</h4>
+                <h4 style="text-align: center">궁금하다면?</h4>
+                <router-link
+                  :to="{ name: constants.URL_TYPE.RECOMMEND.CHAMPION }"
+                >
+                  <b-button
+                    size="lg"
+                    variant="primary"
+                    class="mr-2 mt-3"
+                    @click="callmatch()"
+                    style="
+                      style=text-align: center;
+                      color: white;
+                      background: linear-gradient(
+                        180deg,
+                        #1b2831 0%,
+                        #12384b 100%
+                      );
+                      border-style: ridge;
+                      border: #95ede7 3px ridge;
+                    "
+                  >
+                    챔피언 추천 보러가기
+                  </b-button>
+                </router-link>
+              </b-col>
+            </b-row>
+          </div>
+        </b-col>
+        <b-col cols="12">
+          <router-link :to="{ name: constants.URL_TYPE.POST.MAIN }">
+            <img
+              src="../assets/img/votetitle.png"
+              alt=""
+              style="margin: 50px 0px 0px"
+            />
+          </router-link>
+          <div
+            class="box"
+            style="
+              border: #fcd000 2px solid;
+              opacity: 0.8;
+              background: linear-gradient(
+                180deg,
+                rgba(6, 17, 27, 1) 0%,
+                rgba(28, 83, 73, 1) 100%
+              );
+            "
+          >
+            <b-row>
+              <b-col cols="12">
+                <b-table
+                  striped
+                  hover
+                  :items="lastPost"
+                  :fields="lastPostFields"
+                  v-if="lastPost"
+                  style="color: #e3d19e"
+                >
+                  <template v-slot:cell(postDate)="data">{{
+                    postDT(data.value)
+                  }}</template>
+                  <template v-slot:cell(to)="data">
+                    <router-link :to="'/detail/' + data.item.postNo">
+                      <b-icon
+                        icon="arrow-right-circle"
+                        font-scale="2"
+                        style="color: #e3d19e"
+                      ></b-icon>
+                    </router-link>
+                  </template>
+                </b-table>
+                <div v-else>진행중인 투표글이 없습니다.</div>
+              </b-col>
+            </b-row>
+          </div>
+        </b-col>
+        <b-col cols="12">
+          <router-link :to="{ name: constants.URL_TYPE.VIDEO.MAIN }">
+            <img
+              src="../assets/img/videotittle.png"
+              alt=""
+              style="margin: 50px 0px 0px"
+            />
+          </router-link>
+          <div
+            class="box"
+            style="
+              border-style: ridge;
+              border: #fcd000 4px ridge;
+              opacity: 0.8;
+              background: linear-gradient(
+                180deg,
+                rgba(6, 17, 27, 1) 0%,
+                rgba(28, 83, 73, 1) 100%
+              );
+            "
+          >
+            <b-row>
+              <b-col cols="12">
+                <b-table
+                  striped
+                  hover
+                  :items="lastVideo"
+                  :fields="lastVideoFields"
+                  v-if="lastVideo"
+                  style="color: #e3d19e"
+                >
+                  <template v-slot:cell(date)="data">{{
+                    postDT(data.value)
+                  }}</template>
+                  <template v-slot:cell(to)="data">
+                    <router-link :to="'/vdetail/' + data.item.videoNo">
+                      <b-icon
+                        icon="arrow-right-circle"
+                        font-scale="2"
+                        style="color: #e3d19e"
+                      ></b-icon>
+                    </router-link>
+                  </template>
+                </b-table>
+                <div v-else>진행중인 투표글이 없습니다.</div>
+              </b-col>
+            </b-row>
+          </div>
+        </b-col>
+        <b-col cols="12">
+          <a href="/welcome">
+            <img
+              src="../assets/img/aboutus.png"
+              alt=""
+              style="display: block; margin: 100px auto 50px"
+            />
+          </a>
+        </b-col>
+      </b-row>
+    </div>
   </div>
-</div>
-
 </template>
 <script>
-import Carousel from '../components/common/Carousel.vue'
+import Carousel from "../components/common/Carousel.vue";
 import constants from "../lib/constants";
 import axios from "axios";
 
 export default {
   components: {
-    Carousel
+    Carousel,
   },
   data() {
     return {
@@ -203,5 +324,4 @@ export default {
   background-color: white;
   box-shadow: 5px 5px 5px;
 }
-
 </style>
