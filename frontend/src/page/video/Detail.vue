@@ -165,8 +165,8 @@
           <h3>영상이전 승률</h3>
           <pie-chart
             :data="[
-              ['BLUETEAM', 44],
-              ['REDTEAM', 23],
+              ['BLUETEAM', before_bluescore],
+              ['REDTEAM', before_redscore],
             ]"
             :colors="['#23285c', '#d71616']"
             suffix="%"
@@ -176,8 +176,8 @@
           <h3>영상이후 승률</h3>
           <pie-chart
             :data="[
-              ['Blueberry', 44],
-              ['Strawberry', 23],
+              ['BLUETEAM', after_bluescore],
+              ['REDTEAM', after_redscore],
             ]"
           ></pie-chart>
         </div>
@@ -185,11 +185,13 @@
 
       <div class="container">
         <div class="row">
-          <div class="col">Column</div>
-          <div class="col">Column</div>
+          <div class="col">
+            <b-avatar :src="champ1.imgsrc" />{{ champ1.korname }}
+          </div>
+          <div class="col">bbb</div>
           <div class="w-100"></div>
-          <div class="col">Column</div>
-          <div class="col">Column</div>
+          <div class="col">ccc</div>
+          <div class="col">ddd</div>
         </div>
       </div>
     </div>
@@ -249,6 +251,21 @@ export default {
       videolink: "",
       state: "",
       videoData: "",
+      before_bluescore: "",
+      before_redscore: "",
+      after_bluescore: "",
+      after_redscore: "",
+      champ1: "",
+      champ2: "",
+      champ3: "",
+      champ4: "",
+      champ5: "",
+      champ6: "",
+      champ7: "",
+      champ8: "",
+      champ9: "",
+      champ10: "",
+      champion: "",
     };
   },
 
@@ -261,22 +278,49 @@ export default {
     //처음 데이터 불러오기
     console.log(this.$route.params);
     console.log(this.videoPostNo);
-    axios
-      .get(process.env.VUE_APP_API_URL + "/video/detail", {
-        params: {
-          videoPostNo: this.videoPostNo,
-        },
-      })
-      .then(({ data }) => {
-        console.log(data.object);
-        this.writePost = data.object;
-        this.data = JSON.parse(data.object.data.replaceAll("'",'"'));
-        console.log(this.data);
-        this.videolink =
-          process.env.VUE_APP_IMGUP_URL + "/videos/" + this.writePost.video;
-        let vd = document.querySelector("#vid");
-        vd.load();
-      });
+    axios.get(process.env.VUE_APP_DAPI_URL + "/champions/").then((res) => {
+      this.champion = res.data;
+      axios
+        .get(process.env.VUE_APP_API_URL + "/video/detail", {
+          params: {
+            videoPostNo: this.videoPostNo,
+          },
+        })
+        .then(({ data }) => {
+          console.log(data.object);
+          this.writePost = data.object;
+          this.data = JSON.parse(data.object.data.replaceAll("'", '"'));
+          this.before_bluescore = this.data.before_bluescore;
+          this.before_redscore = this.data.before_redscore;
+          this.after_bluescore = this.data.after_bluescore;
+          this.after_redscore = this.data.after_redscore;
+          this.champ1 = this.data["1"];
+          this.champ2 = this.data["2"];
+          this.champ3 = this.data["3"];
+          this.champ4 = this.data["4"];
+          this.champ5 = this.data["5"];
+          this.champ6 = this.data["6"];
+          this.champ7 = this.data["7"];
+          this.champ8 = this.data["8"];
+          this.champ9 = this.data["9"];
+          this.champ10 = this.data["10"];
+          this.champ1 = this.add(this.champ1);
+          this.champ2 = this.add(this.champ2);
+          this.champ3 = this.add(this.champ3);
+          this.champ4 = this.add(this.champ4);
+          this.champ5 = this.add(this.champ5);
+          this.champ6 = this.add(this.champ6);
+          this.champ7 = this.add(this.champ7);
+          this.champ8 = this.add(this.champ8);
+          this.champ9 = this.add(this.champ9);
+          this.champ10 = this.add(this.champ10);
+          console.log(this.champ5);
+          this.videolink =
+            process.env.VUE_APP_IMGUP_URL + "/videos/" + this.writePost.video;
+          let vd = document.querySelector("#vid");
+          vd.load();
+        });
+    });
   },
 
   computed: {
@@ -292,6 +336,16 @@ export default {
   },
 
   methods: {
+    add(champ) {
+      champ = Object.assign(
+        champ,
+        this.champion.find((o) => o.chamname == champ.name)
+      );
+      champ.imgsrc = champ.imgsrc
+        .replace("@/assets/img", "")
+        .replace("_1.", "_0.");
+      return champ;
+    },
     toLogin() {
       this.$router.push("/login/");
     },
