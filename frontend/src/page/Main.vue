@@ -15,18 +15,14 @@
         opacity:0.8; background: linear-gradient(180deg, rgba(6,17,27,1) 0%, rgba(28,83,73,1) 100%);">
           <b-row>
             <b-col cols="12" class="m-2 text-left">
+              <br><h4 style="text-align:center;">나랑 어울리는 꿀조합이<h4>
+              <h4 style="text-align:center;">궁금하다면?</h4>
               <router-link :to="{name:constants.URL_TYPE.RECOMMEND.COMBINATION}">
-                <kbd>조합 추천받기</kbd>
-              </router-link>누르면 로그인 창으로 갑니다.
-            </b-col>
-            <b-col>
-              <p style="color: #e3d19e">
-                Use this area to describe your project. Lorem ipsum dolor
-                sit amet, consectetur adipisicing elit. Est blanditiis
-                dolorem culpa incidunt minus dignissimos deserunt repellat
-                aperiam quasi sunt officia expedita beatae cupiditate,
-                maiores repudiandae, nostrum, reiciendis facere nemo!
-              </p>
+                <b-button size="lg" variant="primary" class="mr-2 mt-3" @click="callmatch()" 
+                style="style=text-align:center;color:white;background: linear-gradient(180deg, #1b2831 0%, #12384b 100%); border-style:ridge; border:#95ede7 3px ridge;">
+                  조합 추천 보러가기
+                </b-button>
+              </router-link>
             </b-col>
           </b-row>
         </div>
@@ -36,18 +32,14 @@
         opacity:0.8; background: linear-gradient(180deg, rgba(6,17,27,1) 0%, rgba(28,83,73,1) 100%);">
           <b-row>
             <b-col cols="12" class="m-2 text-left">
+              <br><h4 style="text-align:center;">내가 가장 잘하는 챔피언이<h4>
+              <h4 style="text-align:center;">궁금하다면?</h4>
               <router-link :to="{name:constants.URL_TYPE.RECOMMEND.CHAMPION}">
-                <kbd>챔피언 추천받기</kbd>
-              </router-link>누르면 로그인 창으로 갑니다.
-            </b-col>
-            <b-col>
-              <p style="color: #e3d19e">
-                Use this area to describe your project. Lorem ipsum dolor
-                sit amet, consectetur adipisicing elit. Est blanditiis
-                dolorem culpa incidunt minus dignissimos deserunt repellat
-                aperiam quasi sunt officia expedita beatae cupiditate,
-                maiores repudiandae, nostrum, reiciendis facere nemo!
-              </p>
+                <b-button size="lg" variant="primary" class="mr-2 mt-3" @click="callmatch()" 
+                style="style=text-align:center;color:white;background: linear-gradient(180deg, #1b2831 0%, #12384b 100%); border-style:ridge; border:#95ede7 3px ridge;">
+                  챔피언 추천 보러가기
+                </b-button>
+              </router-link>
             </b-col>
           </b-row>
         </div>
@@ -211,4 +203,5 @@ export default {
   background-color: white;
   box-shadow: 5px 5px 5px;
 }
+
 </style>
