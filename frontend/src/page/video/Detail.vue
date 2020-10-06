@@ -152,15 +152,11 @@
     <div
       class="container"
       style="
-        margin-top: 2%;
-        margin-left: 2%;
-        margin-right: 2%;
-        text-align: center;
         border: solid 5px gray;
         border-radius: 10px;
       "
     >
-      <div class="row row-cols-12">
+      <div class="row justify-content-center">
         <div class="col">
           <h3>영상이전 승률</h3>
           <pie-chart
@@ -184,104 +180,344 @@
       </div>
 
       <div class="container">
-        <div class="row justify-content-around listbox mt-3">
+        <div class="row justify-content-around mt-3">
           <div class="col-5 chambox1">
             <div class="d-flex">
-              <img class="imgrelative" src="../../assets/img/3badge.png" />
-              <div class="mt-3 ml-3">
-                <h2>챔피언 킬 +1</h2>
-                <h2>와드 파괴 +2</h2>
-              </div>
+              <b-row>
+                <b-col cols="3" class="text-center">
+                  <img
+                    class="chamimg"
+                    thumbnail
+                    width="100%"
+                    :src="champ1.imgsrc"
+                  />
+                  <br />
+                  <b-badge pill variant="warning" class="pickname">{{
+                    champ1.korname
+                  }}</b-badge>
+                </b-col>
+                <b-col col="5" class="text-left">
+                  <h6>챔피언 킬 {{ champ1.CHAMPION_KILL }}</h6>
+                  <h6>포탑 파괴 {{ champ1.BUILDING_KILL }}</h6>
+                  <h6>와드 파괴 {{ champ1.WARD_KILL }}</h6>
+                  <h6>와드 설치 {{ champ1.WARD_PLACED }}</h6>
+                </b-col>
+                <b-col col="4" class="text-left">
+                  <h6>잡은 몬스터</h6>
+                  <h6
+                    v-for="(item, $index) in champ1.ELITE_MONSTER_KILL"
+                    :key="$index"
+                  >
+                    {{ item }}
+                  </h6>
+                </b-col>
+              </b-row>
             </div>
           </div>
           <div class="col-5 chambox1">
             <div class="d-flex">
-              <img class="imgrelative" src="../../assets/img/3badge.png" />
-              <div class="mt-3 ml-3">
-                <h2>챔피언 킬 +1</h2>
-                <h2>와드 파괴 +2</h2>
-              </div>
+              <b-row>
+                <b-col cols="3" class="text-center">
+                  <img
+                    class="chamimg"
+                    thumbnail
+                    width="100%"
+                    :src="champ6.imgsrc"
+                  />
+                  <br />
+                  <b-badge pill variant="warning" class="pickname">{{
+                    champ6.korname
+                  }}</b-badge>
+                </b-col>
+                <b-col col="5" class="text-left">
+                  <h6>챔피언 킬 {{ champ6.CHAMPION_KILL }}</h6>
+                  <h6>포탑 파괴 {{ champ6.BUILDING_KILL }}</h6>
+                  <h6>와드 파괴 {{ champ6.WARD_KILL }}</h6>
+                  <h6>와드 설치 {{ champ6.WARD_PLACED }}</h6>
+                </b-col>
+                <b-col col="4" class="text-left">
+                  <h6>잡은 몬스터</h6>
+                  <h6
+                    v-for="(item, $index) in champ6.ELITE_MONSTER_KILL"
+                    :key="$index"
+                  >
+                    {{ item }}
+                  </h6>
+                </b-col>
+              </b-row>
             </div>
           </div>
         </div>
-        <div class="row justify-content-around listbox mt-3">
+        <div class="row justify-content-around mt-3">
           <div class="col-5 chambox1">
             <div class="d-flex">
-              <img class="imgrelative" src="../../assets/img/3badge.png" />
-              <div class="mt-3 ml-3">
-                <h2>챔피언 킬 +1</h2>
-                <h2>와드 파괴 +2</h2>
-              </div>
+              <b-row>
+                <b-col cols="3" class="text-center">
+                  <img
+                    class="chamimg"
+                    thumbnail
+                    width="100%"
+                    :src="champ2.imgsrc"
+                  />
+                  <br />
+                  <b-badge pill variant="warning" class="pickname">{{
+                    champ2.korname
+                  }}</b-badge>
+                </b-col>
+                <b-col col="5" class="text-left">
+                  <h6>챔피언 킬 {{ champ2.CHAMPION_KILL }}</h6>
+                  <h6>포탑 파괴 {{ champ2.BUILDING_KILL }}</h6>
+                  <h6>와드 파괴 {{ champ2.WARD_KILL }}</h6>
+                  <h6>와드 설치 {{ champ2.WARD_PLACED }}</h6>
+                </b-col>
+                <b-col col="4" class="text-left">
+                  <h6>잡은 몬스터</h6>
+                  <h6
+                    v-for="(item, $index) in champ2.ELITE_MONSTER_KILL"
+                    :key="$index"
+                  >
+                    {{ item }}
+                  </h6>
+                </b-col>
+              </b-row>
             </div>
           </div>
           <div class="col-5 chambox1">
             <div class="d-flex">
-              <img class="imgrelative" src="../../assets/img/3badge.png" />
-              <div class="mt-3 ml-3">
-                <h2>챔피언 킬 +1</h2>
-                <h2>와드 파괴 +2</h2>
-              </div>
+              <b-row>
+                <b-col cols="3" class="text-center">
+                  <img
+                    class="chamimg"
+                    thumbnail
+                    width="100%"
+                    :src="champ7.imgsrc"
+                  />
+                  <br />
+                  <b-badge pill variant="warning" class="pickname">{{
+                    champ7.korname
+                  }}</b-badge>
+                </b-col>
+                <b-col col="5" class="text-left">
+                  <h6>챔피언 킬 {{ champ7.CHAMPION_KILL }}</h6>
+                  <h6>포탑 파괴 {{ champ7.BUILDING_KILL }}</h6>
+                  <h6>와드 파괴 {{ champ7.WARD_KILL }}</h6>
+                  <h6>와드 설치 {{ champ7.WARD_PLACED }}</h6>
+                </b-col>
+                <b-col col="4" class="text-left">
+                  <h6>잡은 몬스터</h6>
+                  <h6
+                    v-for="(item, $index) in champ7.ELITE_MONSTER_KILL"
+                    :key="$index"
+                  >
+                    {{ item }}
+                  </h6>
+                </b-col>
+              </b-row>
             </div>
           </div>
         </div>
 
-        <div class="row justify-content-around listbox mt-3">
+        <div class="row justify-content-around mt-3">
           <div class="col-5 chambox1">
             <div class="d-flex">
-              <img class="imgrelative" src="../../assets/img/3badge.png" />
-              <div class="mt-3 ml-3">
-                <h2>챔피언 킬 +1</h2>
-                <h2>와드 파괴 +2</h2>
-              </div>
+              <b-row>
+                <b-col cols="3" class="text-center">
+                  <img
+                    class="chamimg"
+                    thumbnail
+                    width="100%"
+                    :src="champ3.imgsrc"
+                  />
+                  <br />
+                  <b-badge pill variant="warning" class="pickname">{{
+                    champ3.korname
+                  }}</b-badge>
+                </b-col>
+                <b-col col="5" class="text-left">
+                  <h6>챔피언 킬 {{ champ3.CHAMPION_KILL }}</h6>
+                  <h6>포탑 파괴 {{ champ3.BUILDING_KILL }}</h6>
+                  <h6>와드 파괴 {{ champ3.WARD_KILL }}</h6>
+                  <h6>와드 설치 {{ champ3.WARD_PLACED }}</h6>
+                </b-col>
+                <b-col col="4" class="text-left">
+                  <h6>잡은 몬스터</h6>
+                  <h6
+                    v-for="(item, $index) in champ3.ELITE_MONSTER_KILL"
+                    :key="$index"
+                  >
+                    {{ item }}
+                  </h6>
+                </b-col>
+              </b-row>
             </div>
           </div>
           <div class="col-5 chambox1">
             <div class="d-flex">
-              <img class="imgrelative" src="../../assets/img/3badge.png" />
-              <div class="mt-3 ml-3">
-                <h2>챔피언 킬 +1</h2>
-                <h2>와드 파괴 +2</h2>
-              </div>
+              <b-row>
+                <b-col cols="3" class="text-center">
+                  <img
+                    class="chamimg"
+                    thumbnail
+                    width="100%"
+                    :src="champ8.imgsrc"
+                  />
+                  <br />
+                  <b-badge pill variant="warning" class="pickname">{{
+                    champ8.korname
+                  }}</b-badge>
+                </b-col>
+                <b-col col="5" class="text-left">
+                  <h6>챔피언 킬 {{ champ8.CHAMPION_KILL }}</h6>
+                  <h6>포탑 파괴 {{ champ8.BUILDING_KILL }}</h6>
+                  <h6>와드 파괴 {{ champ8.WARD_KILL }}</h6>
+                  <h6>와드 설치 {{ champ8.WARD_PLACED }}</h6>
+                </b-col>
+                <b-col col="4" class="text-left">
+                  <h6>잡은 몬스터</h6>
+                  <h6
+                    v-for="(item, $index) in champ8.ELITE_MONSTER_KILL"
+                    :key="$index"
+                  >
+                    {{ item }}
+                  </h6>
+                </b-col>
+              </b-row>
             </div>
           </div>
         </div>
-        <div class="row justify-content-around listbox mt-3">
+        <div class="row justify-content-around mt-3">
           <div class="col-5 chambox1">
             <div class="d-flex">
-              <img class="imgrelative" src="../../assets/img/3badge.png" />
-              <div class="mt-3 ml-3">
-                <h2>챔피언 킬 +1</h2>
-                <h2>와드 파괴 +2</h2>
-              </div>
+              <b-row>
+                <b-col cols="3" class="text-center">
+                  <img
+                    class="chamimg"
+                    thumbnail
+                    width="100%"
+                    :src="champ4.imgsrc"
+                  />
+                  <br />
+                  <b-badge pill variant="warning" class="pickname">{{
+                    champ4.korname
+                  }}</b-badge>
+                </b-col>
+                <b-col col="5" class="text-left">
+                  <h6>챔피언 킬 {{ champ4.CHAMPION_KILL }}</h6>
+                  <h6>포탑 파괴 {{ champ4.BUILDING_KILL }}</h6>
+                  <h6>와드 파괴 {{ champ4.WARD_KILL }}</h6>
+                  <h6>와드 설치 {{ champ4.WARD_PLACED }}</h6>
+                </b-col>
+                <b-col col="4" class="text-left">
+                  <h6>잡은 몬스터</h6>
+                  <h6
+                    v-for="(item, $index) in champ4.ELITE_MONSTER_KILL"
+                    :key="$index"
+                  >
+                    {{ item }}
+                  </h6>
+                </b-col>
+              </b-row>
             </div>
           </div>
           <div class="col-5 chambox1">
             <div class="d-flex">
-              <img class="imgrelative" src="../../assets/img/3badge.png" />
-              <div class="mt-3 ml-3">
-                <h2>챔피언 킬 +1</h2>
-                <h2>와드 파괴 +2</h2>
-              </div>
+              <b-row>
+                <b-col cols="3" class="text-center">
+                  <img
+                    class="chamimg"
+                    thumbnail
+                    width="100%"
+                    :src="champ9.imgsrc"
+                  />
+                  <br />
+                  <b-badge pill variant="warning" class="pickname">{{
+                    champ9.korname
+                  }}</b-badge>
+                </b-col>
+                <b-col col="5" class="text-left">
+                  <h6>챔피언 킬 {{ champ9.CHAMPION_KILL }}</h6>
+                  <h6>포탑 파괴 {{ champ9.BUILDING_KILL }}</h6>
+                  <h6>와드 파괴 {{ champ9.WARD_KILL }}</h6>
+                  <h6>와드 설치 {{ champ9.WARD_PLACED }}</h6>
+                </b-col>
+                <b-col col="4" class="text-left">
+                  <h6>잡은 몬스터</h6>
+                  <h6
+                    v-for="(item, $index) in champ9.ELITE_MONSTER_KILL"
+                    :key="$index"
+                  >
+                    {{ item }}
+                  </h6>
+                </b-col>
+              </b-row>
             </div>
           </div>
         </div>
-        <div class="row justify-content-around listbox mt-3">
+        <div class="row justify-content-around mt-3">
           <div class="col-5 chambox1">
             <div class="d-flex">
-              <img class="imgrelative" src="../../assets/img/3badge.png" />
-              <div class="mt-3 ml-3">
-                <h2>챔피언 킬 +1</h2>
-                <h2>와드 파괴 +2</h2>
-              </div>
+              <b-row>
+                <b-col cols="3" class="text-center">
+                  <img
+                    class="chamimg"
+                    thumbnail
+                    width="100%"
+                    :src="champ5.imgsrc"
+                  />
+                  <br />
+                  <b-badge pill variant="warning" class="pickname">{{
+                    champ5.korname
+                  }}</b-badge>
+                </b-col>
+                <b-col col="5" class="text-left">
+                  <h6>챔피언 킬 {{ champ5.CHAMPION_KILL }}</h6>
+                  <h6>포탑 파괴 {{ champ5.BUILDING_KILL }}</h6>
+                  <h6>와드 파괴 {{ champ5.WARD_KILL }}</h6>
+                  <h6>와드 설치 {{ champ5.WARD_PLACED }}</h6>
+                </b-col>
+                <b-col col="4" class="text-left">
+                  <h6>잡은 몬스터</h6>
+                  <h6
+                    v-for="(item, $index) in champ5.ELITE_MONSTER_KILL"
+                    :key="$index"
+                  >
+                    {{ item }}
+                  </h6>
+                </b-col>
+              </b-row>
             </div>
           </div>
           <div class="col-5 chambox1">
             <div class="d-flex">
-              <img class="imgrelative" src="../../assets/img/3badge.png" />
-              <div class="mt-3 ml-3">
-                <h2>챔피언 킬 +1</h2>
-                <h2>와드 파괴 +2</h2>
-              </div>
+              <b-row>
+                <b-col cols="3" class="text-center">
+                  <img
+                    class="chamimg"
+                    thumbnail
+                    width="100%"
+                    :src="champ10.imgsrc"
+                  />
+                  <br />
+                  <b-badge pill variant="warning" class="pickname">{{
+                    champ10.korname
+                  }}</b-badge>
+                </b-col>
+                <b-col col="5" class="text-left">
+                  <h6>챔피언 킬 {{ champ10.CHAMPION_KILL }}</h6>
+                  <h6>포탑 파괴 {{ champ10.BUILDING_KILL }}</h6>
+                  <h6>와드 파괴 {{ champ10.WARD_KILL }}</h6>
+                  <h6>와드 설치 {{ champ10.WARD_PLACED }}</h6>
+                </b-col>
+                <b-col col="4" class="text-left">
+                  <h6>잡은 몬스터</h6>
+                  <h6
+                    v-for="(item, $index) in champ10.ELITE_MONSTER_KILL"
+                    :key="$index"
+                  >
+                    {{ item }}
+                  </h6>
+                </b-col>
+              </b-row>
             </div>
           </div>
         </div>
