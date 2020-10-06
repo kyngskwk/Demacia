@@ -74,8 +74,8 @@ def champion_list(request):
     return Response(serializers.data)
 
 @api_view(['GET'])
-def videopost_list(request):
-    videoposts = Videopost.objects.all()
+def videopost_list(request,videopostno):
+    videoposts = Videopost.objects.filter(videopostno=videopostno)
     serializers = VideopostSerializer(videoposts, many=True)
     return Response(serializers.data)
 
