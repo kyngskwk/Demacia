@@ -144,8 +144,9 @@ export default {
               video: this.video,
             })
             .then((res) => {
-              console.log(res);
-              this.data = JSON.stringify(res.data);
+              console.log(res.data);
+              this.data = JSON.stringify(res.data[0]);
+              console.log(this.data);
               this.uploadMSG = "영상 업로드 및 분석 성공";
               this.isVideoUploaded = 2;
             })
