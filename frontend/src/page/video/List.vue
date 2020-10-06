@@ -177,7 +177,7 @@ export default {
 
 <style scoped>
 #hhh:hover {
-  opacity: 0.4;
+  opacity: 0.6;
 }
 .shadow1 {
   box-shadow: 5px 5px 5px;
