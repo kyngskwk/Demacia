@@ -815,7 +815,7 @@ export default {
       );
       champ.imgsrc = champ.imgsrc
         .replace("@/assets/img", "")
-        .replace("_1.", ".");
+        .replace("_1.jpg", ".png");
       return champ;
     },
     toLogin() {
