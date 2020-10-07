@@ -177,8 +177,6 @@ export default {
     return {
       constants,
       user: {},
-      recommendChampion: [],
-      recommendCombination: [],
       lastPost: [],
       lastPostFields: [
         { key: "postNo", label: "의뢰번호" },
@@ -190,12 +188,6 @@ export default {
         { key: "to", label: "바로가기" },
       ],
       lastVideo: [],
-      lastVideoFields: [
-        { key: "videoNo", label: "의뢰번호" },
-        { key: "title", label: "영상제목" },
-        { key: "date", label: "작성일" },
-        { key: "to", label: "바로가기" },
-      ],
     };
   }, // data end
   created() {
@@ -254,18 +246,6 @@ export default {
     format("woff");
   font-weight: normal;
   font-style: normal;
-}
-.maintitle {
-  color: aliceblue;
-  font-size: 6rem;
-  font-family: "Tmon";
-  text-shadow: 4px 4px 4px black;
-}
-.sub {
-  font-size: 3rem;
-  font-family: "Droid Serif", "Segoe UI", Roboto, "Helvetica Neue", Arial,
-    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
-    "Noto Color Emoji";
 }
 .part .box {
   border: #fcd000 3px ridge;

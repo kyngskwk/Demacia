@@ -37,7 +37,9 @@
                 thumbnail
                 width="100%"
                 :src="
-                  item.imgsrc.replace('@/assets/img', '').replace('_1.jpg', '.png')
+                  item.imgsrc
+                    .replace('@/assets/img', '')
+                    .replace('_1.jpg', '.png')
                 "
               />
               {{ item.korname }}
@@ -70,7 +72,9 @@
                 thumbnail
                 width="100%"
                 :src="
-                  item.imgsrc.replace('@/assets/img', '').replace('_1.jpg', '.png')
+                  item.imgsrc
+                    .replace('@/assets/img', '')
+                    .replace('_1.jpg', '.png')
                 "
               />
               {{ item.korname }}
@@ -103,7 +107,9 @@
                 thumbnail
                 width="100%"
                 :src="
-                  item.imgsrc.replace('@/assets/img', '').replace('_1.jpg', '.png')
+                  item.imgsrc
+                    .replace('@/assets/img', '')
+                    .replace('_1.jpg', '.png')
                 "
               />
               {{ item.korname }}
@@ -238,11 +244,12 @@ export default {
 .chambox {
   border-style: ridge;
   border: #e3d19e 1px ridge;
+  height: 80%;
   opacity: 0.8;
   background: linear-gradient(
     180deg,
-    rgba(6, 17, 27, 1) 0%,
-    rgba(28, 83, 73, 1) 100%
+    rgba(14, 36, 56, 1) 0%,
+    rgba(32, 17, 95, 1) 100%
   );
 }
 .chamimg {
