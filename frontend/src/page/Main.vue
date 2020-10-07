@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="font-family: Tmon">
     <Carousel />
     <!-- <b-row class="maintitle text-center">
       <img src="../assets/img/damacia.png" alt="" style="display:block; margin:100px auto 0px">
@@ -13,93 +13,51 @@
         alt=""
         style="margin: 50px 0px 0px"
       />
-      <b-row class="part">
-        <b-col cols="12" lg="6">
-          <div
-            class="box"
-            style="
-              border-style: ridge;
-              border: #fcd000 4px ridge;
-              opacity: 0.8;
-              background: linear-gradient(
-                180deg,
-                rgba(6, 17, 27, 1) 0%,
-                rgba(28, 83, 73, 1) 100%
-              );
-            "
-          >
-            <b-row>
-              <b-col cols="12" class="m-2 text-center">
-                <br />
-                <h4 style="text-align: center">나랑 어울리는 꿀조합이</h4>
-                <h4 style="text-align: center">궁금하다면?</h4>
-                <router-link
-                  :to="{ name: constants.URL_TYPE.RECOMMEND.COMBINATION }"
-                >
-                  <b-button
-                    size="lg"
-                    class="mr-2 mt-3 hoverbtn"
-                    @click="callmatch()"
-                    style="
-                      color: white;
-                      background: linear-gradient(
-                        180deg,
-                        #1b2831 0%,
-                        #12384b 100%
-                      );
-                      border-style: ridge;
-                      border: #95ede7 3px ridge;
-                    "
-                  >
-                    조합 추천 보러가기
-                  </b-button>
-                </router-link>
-              </b-col>
-            </b-row>
+      <b-row class="part" align-h="between">
+        <b-col cols="12" md="6">
+          <div class="box m-2 p-2 text-center">
+            <br />
+            <h4 style="text-align: center">나랑 어울리는 꿀조합이</h4>
+            <h4 style="text-align: center">궁금하다면?</h4>
+            <router-link
+              :to="{ name: constants.URL_TYPE.RECOMMEND.COMBINATION }"
+            >
+              <b-button
+                size="lg"
+                class="mr-2 mt-3 hoverbtn"
+                @click="callmatch()"
+                style="
+                  color: white;
+                  background: linear-gradient(180deg, #1b2831 0%, #12384b 100%);
+                  border-style: ridge;
+                  border: #95ede7 3px ridge;
+                "
+              >
+                조합 추천 보러가기
+              </b-button>
+            </router-link>
           </div>
         </b-col>
-        <b-col cols="12" sm="6">
-          <div
-            class="box"
-            style="
-              border-style: ridge;
-              border: #fcd000 4px ridge;
-              opacity: 0.8;
-              background: linear-gradient(
-                180deg,
-                rgba(6, 17, 27, 1) 0%,
-                rgba(28, 83, 73, 1) 100%
-              );
-            "
-          >
-            <b-row>
-              <b-col cols="12" class="m-2 text-center">
-                <br />
-                <h4 style="text-align: center">내가 가장 잘하는 챔피언이</h4>
-                <h4 style="text-align: center">궁금하다면?</h4>
-                <router-link
-                  :to="{ name: constants.URL_TYPE.RECOMMEND.CHAMPION }"
-                >
-                  <b-button
-                    size="lg"
-                    class="mr-2 mt-3 hoverbtn"
-                    @click="callmatch()"
-                    style="
-                      color: white;
-                      background: linear-gradient(
-                        180deg,
-                        #1b2831 0%,
-                        #12384b 100%
-                      );
-                      border-style: ridge;
-                      border: #95ede7 3px ridge;
-                    "
-                  >
-                    챔피언 추천 보러가기
-                  </b-button>
-                </router-link>
-              </b-col>
-            </b-row>
+        <b-col cols="12" md="6">
+          <div class="box m-2 p-2 text-center">
+            <br />
+            <h4 style="text-align: center">내가 가장 잘하는 챔피언이</h4>
+            <h4 style="text-align: center">궁금하다면?</h4>
+            <router-link :to="{ name: constants.URL_TYPE.RECOMMEND.CHAMPION }">
+              <b-button
+                size="lg"
+                class="mr-2 mt-3 hoverbtn"
+                @click="callmatch()"
+                style="
+                  color: white;
+                  background: linear-gradient(180deg, #1b2831 0%, #12384b 100%);
+                  border-style: ridge;
+                  border: #95ede7 3px ridge;
+                "
+              >
+                챔피언 추천 보러가기
+              </b-button>
+            </router-link>
           </div>
         </b-col>
 
@@ -166,45 +124,30 @@
               style="margin: 50px 0px 0px"
             />
           </router-link>
-          <div
-            class="box"
-            style="
-              border: #fcd000 2px solid;
-              opacity: 0.8;
-              background: linear-gradient(
-                180deg,
-                rgba(6, 17, 27, 1) 0%,
-                rgba(28, 83, 73, 1) 100%
-              );
-            "
-          >
-            <b-row>
-              <b-col cols="12">
-                <b-table
-                  hover
-                  striped
-                  :items="lastPost"
-                  :fields="lastPostFields"
-                  v-if="lastPost"
-                  table-variant="dark"
-                  style="color: #e3d19e"
-                >
-                  <template v-slot:cell(postDate)="data">{{
-                    postDT(data.value)
-                  }}</template>
-                  <template v-slot:cell(to)="data">
-                    <router-link :to="'/detail/' + data.item.postNo">
-                      <b-icon
-                        icon="arrow-right-circle"
-                        font-scale="2"
-                        style="color: #e3d19e"
-                      ></b-icon>
-                    </router-link>
-                  </template>
-                </b-table>
-                <div v-else>진행중인 투표글이 없습니다.</div>
-              </b-col>
-            </b-row>
+          <div class="box">
+            <b-table
+              hover
+              striped
+              :items="lastPost"
+              :fields="lastPostFields"
+              v-if="lastPost"
+              table-variant="dark"
+              style="color: #e3d19e"
+            >
+              <template v-slot:cell(postDate)="data">{{
+                postDT(data.value)
+              }}</template>
+              <template v-slot:cell(to)="data">
+                <router-link :to="'/detail/' + data.item.postNo">
+                  <b-icon
+                    icon="arrow-right-circle"
+                    font-scale="2"
+                    style="color: #e3d19e"
+                  ></b-icon>
+                </router-link>
+              </template>
+            </b-table>
+            <div v-else>진행중인 투표글이 없습니다.</div>
           </div>
         </b-col>
 
