@@ -18,7 +18,7 @@
               thumbnail
               width="300px"
               :src="
-                cham_no1.imgsrc.replace('@/assets/img', '').replace('_1.', '.')
+                cham_no1.imgsrc.replace('@/assets/img', '').replace('_1.jpg', '.png')
               "
             />
             <b-badge pill variant="warning" class="pickname"
@@ -66,7 +66,7 @@
                   :src="
                     sim_info[0].imgsrc
                       .replace('@/assets/img', '')
-                      .replace('_1.', '.')
+                      .replace('_1.jpg', '.png')
                   "
                 />
               </b-col>
@@ -77,7 +77,7 @@
                   :src="
                     sim_info[1].imgsrc
                       .replace('@/assets/img', '')
-                      .replace('_1.', '.')
+                      .replace('_1.jpg', '.png')
                   "
                 />
               </b-col>
@@ -88,7 +88,7 @@
                   :src="
                     sim_info[2].imgsrc
                       .replace('@/assets/img', '')
-                      .replace('_1.', '.')
+                      .replace('_1.jpg', '.png')
                   "
                 />
               </b-col>
@@ -131,7 +131,7 @@
               thumbnail
               width="300px"
               :src="
-                cham_no2.imgsrc.replace('@/assets/img', '').replace('_1.', '.')
+                cham_no2.imgsrc.replace('@/assets/img', '').replace('_1.jpg', '.png')
               "
             />
             <b-badge pill variant="warning" class="pickname"
@@ -179,7 +179,7 @@
                   :src="
                     sim_info[3].imgsrc
                       .replace('@/assets/img', '')
-                      .replace('_1.', '.')
+                      .replace('_1.jpg', '.png')
                   "
                 />
               </b-col>
@@ -190,7 +190,7 @@
                   :src="
                     sim_info[4].imgsrc
                       .replace('@/assets/img', '')
-                      .replace('_1.', '.')
+                      .replace('_1.jpg', '.png')
                   "
                 />
               </b-col>
@@ -201,7 +201,7 @@
                   :src="
                     sim_info[5].imgsrc
                       .replace('@/assets/img', '')
-                      .replace('_1.', '.')
+                      .replace('_1.jpg', '.png')
                   "
                 />
               </b-col>
@@ -244,7 +244,7 @@
               thumbnail
               width="300px"
               :src="
-                cham_no3.imgsrc.replace('@/assets/img', '').replace('_1.', '.')
+                cham_no3.imgsrc.replace('@/assets/img', '').replace('_1.jpg', '.png')
               "
             />
             <b-badge pill variant="warning" class="pickname"
@@ -292,7 +292,7 @@
                   :src="
                     sim_info[6].imgsrc
                       .replace('@/assets/img', '')
-                      .replace('_1.', '.')
+                      .replace('_1.jpg', '.png')
                   "
                 />
               </b-col>
@@ -303,7 +303,7 @@
                   :src="
                     sim_info[7].imgsrc
                       .replace('@/assets/img', '')
-                      .replace('_1.', '.')
+                      .replace('_1.jpg', '.png')
                   "
                 />
               </b-col>
@@ -314,7 +314,7 @@
                   :src="
                     sim_info[8].imgsrc
                       .replace('@/assets/img', '')
-                      .replace('_1.', '.')
+                      .replace('_1.jpg', '.png')
                   "
                 />
               </b-col>

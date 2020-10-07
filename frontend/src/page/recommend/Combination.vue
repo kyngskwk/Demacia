@@ -28,7 +28,7 @@
                 :src="
                   first_cham.imgsrc
                     .replace('@/assets/img', '')
-                    .replace('_1.', '.')
+                    .replace('_1.jpg', '.png')
                 "
               />
               <h5>
@@ -44,7 +44,7 @@
                 :src="
                   comb_info[0].imgsrc
                     .replace('@/assets/img', '')
-                    .replace('_1.', '.')
+                    .replace('_1.jpg', '.png')
                 "
               />
               <h5>
@@ -69,7 +69,7 @@
                 :src="
                   second_cham.imgsrc
                     .replace('@/assets/img', '')
-                    .replace('_1.', '.')
+                    .replace('_1.jpg', '.png')
                 "
               />
               <h5>
@@ -86,7 +86,7 @@
                 :src="
                   comb_info[4].imgsrc
                     .replace('@/assets/img', '')
-                    .replace('_1.', '.')
+                    .replace('_1.jpg', '.png')
                 "
               />
               <h5>
@@ -111,7 +111,7 @@
                 :src="
                   third_cham.imgsrc
                     .replace('@/assets/img', '')
-                    .replace('_1.', '.')
+                    .replace('_1.jpg', '.png')
                 "
               />
               <h5>
@@ -127,7 +127,7 @@
                 :src="
                   comb_info[8].imgsrc
                     .replace('@/assets/img', '')
-                    .replace('_1.', '.')
+                    .replace('_1.jpg', '.png')
                 "
               />
               <h5>
@@ -162,7 +162,7 @@
                 :src="
                   first_cham.imgsrc
                     .replace('@/assets/img', '')
-                    .replace('_1.', '.')
+                    .replace('_1.jpg', '.png')
                 "
               />
               <div class="mb-3">
@@ -181,7 +181,7 @@
                 :src="
                   comb_info[0].imgsrc
                     .replace('@/assets/img', '')
-                    .replace('_1.', '.')
+                    .replace('_1.jpg', '.png')
                 "
               />
               <b-badge pill variant="warning" class="pickname"
@@ -197,7 +197,7 @@
                 :src="
                   comb_info[1].imgsrc
                     .replace('@/assets/img', '')
-                    .replace('_1.', '.')
+                    .replace('_1.jpg', '.png')
                 "
               />
               <b-badge pill variant="warning" class="pickname"
@@ -220,7 +220,7 @@
                 :src="
                   second_cham.imgsrc
                     .replace('@/assets/img', '')
-                    .replace('_1.', '.')
+                    .replace('_1.jpg', '.png')
                 "
               />
               <div>
@@ -240,7 +240,7 @@
                 :src="
                   comb_info[4].imgsrc
                     .replace('@/assets/img', '')
-                    .replace('_1.', '.')
+                    .replace('_1.jpg', '.png')
                 "
               />
               <b-badge pill variant="warning" class="pickname"
@@ -256,7 +256,7 @@
                 :src="
                   comb_info[5].imgsrc
                     .replace('@/assets/img', '')
-                    .replace('_1.', '.')
+                    .replace('_1.jpg', '.png')
                 "
               />
               <b-badge pill variant="warning" class="pickname"
@@ -279,7 +279,7 @@
                 :src="
                   third_cham.imgsrc
                     .replace('@/assets/img', '')
-                    .replace('_1.', '.')
+                    .replace('_1.jpg', '.png')
                 "
               />
               <div class="mb-3">
@@ -298,7 +298,7 @@
                 :src="
                   comb_info[8].imgsrc
                     .replace('@/assets/img', '')
-                    .replace('_1.', '.')
+                    .replace('_1.jpg', '.png')
                 "
               />
               <b-badge pill variant="warning" class="pickname"
@@ -314,7 +314,7 @@
                 :src="
                   comb_info[9].imgsrc
                     .replace('@/assets/img', '')
-                    .replace('_1.', '.')
+                    .replace('_1.jpg', '.png')
                 "
               />
               <b-badge pill variant="warning" class="pickname"
@@ -345,7 +345,7 @@
                 :src="
                   first_cham.imgsrc
                     .replace('@/assets/img', '')
-                    .replace('_1.', '.')
+                    .replace('_1.jpg', '.png')
                 "
               />
               <b-badge pill variant="warning" class="pickname"
@@ -359,7 +359,7 @@
                 :src="
                   comb_info[0].imgsrc
                     .replace('@/assets/img', '')
-                    .replace('_1.', '.')
+                    .replace('_1.jpg', '.png')
                 "
               />
               <b-badge pill variant="warning" class="pickname"
@@ -377,7 +377,7 @@
                 :src="
                   comb_info[1].imgsrc
                     .replace('@/assets/img', '')
-                    .replace('_1.', '.')
+                    .replace('_1.jpg', '.png')
                 "
               />
               <div class="mb-3">
@@ -397,7 +397,7 @@
                 :src="
                   comb_info[2].imgsrc
                     .replace('@/assets/img', '')
-                    .replace('_1.', '.')
+                    .replace('_1.jpg', '.png')
                 "
               />
               <b-badge pill variant="warning" class="pickname"
@@ -412,7 +412,7 @@
                 :src="
                   comb_info[3].imgsrc
                     .replace('@/assets/img', '')
-                    .replace('_1.', '.')
+                    .replace('_1.jpg', '.png')
                 "
               />
               <b-badge pill variant="warning" class="pickname"
@@ -436,7 +436,7 @@
                 :src="
                   second_cham.imgsrc
                     .replace('@/assets/img', '')
-                    .replace('_1.', '.')
+                    .replace('_1.jpg', '.png')
                 "
               />
               <b-badge pill variant="warning" class="pickname"
@@ -451,7 +451,7 @@
                 :src="
                   comb_info[4].imgsrc
                     .replace('@/assets/img', '')
-                    .replace('_1.', '.')
+                    .replace('_1.jpg', '.png')
                 "
               />
               <b-badge pill variant="warning" class="pickname"
@@ -469,7 +469,7 @@
                 :src="
                   comb_info[5].imgsrc
                     .replace('@/assets/img', '')
-                    .replace('_1.', '.')
+                    .replace('_1.jpg', '.png')
                 "
               />
               <div class="mb-3">
@@ -489,7 +489,7 @@
                 :src="
                   comb_info[6].imgsrc
                     .replace('@/assets/img', '')
-                    .replace('_1.', '.')
+                    .replace('_1.jpg', '.png')
                 "
               />
               <b-badge pill variant="warning" class="pickname"
@@ -504,7 +504,7 @@
                 :src="
                   comb_info[7].imgsrc
                     .replace('@/assets/img', '')
-                    .replace('_1.', '.')
+                    .replace('_1.jpg', '.png')
                 "
               />
               <b-badge pill variant="warning" class="pickname"
@@ -528,7 +528,7 @@
                 :src="
                   third_cham.imgsrc
                     .replace('@/assets/img', '')
-                    .replace('_1.', '.')
+                    .replace('_1.jpg', '.png')
                 "
               />
               <b-badge pill variant="warning" class="pickname"
@@ -542,7 +542,7 @@
                 :src="
                   comb_info[8].imgsrc
                     .replace('@/assets/img', '')
-                    .replace('_1.', '.')
+                    .replace('_1.jpg', '.png')
                 "
               />
               <b-badge pill variant="warning" class="pickname"
@@ -560,7 +560,7 @@
                 :src="
                   comb_info[9].imgsrc
                     .replace('@/assets/img', '')
-                    .replace('_1.', '.')
+                    .replace('_1.jpg', '.png')
                 "
               />
               <div class="mb-3">
@@ -580,7 +580,7 @@
                 :src="
                   comb_info[10].imgsrc
                     .replace('@/assets/img', '')
-                    .replace('_1.', '.')
+                    .replace('_1.jpg', '.png')
                 "
               />
               <b-badge pill variant="warning" class="pickname"
@@ -595,7 +595,7 @@
                 :src="
                   comb_info[11].imgsrc
                     .replace('@/assets/img', '')
-                    .replace('_1.', '.')
+                    .replace('_1.jpg', '.png')
                 "
               />
               <b-badge pill variant="warning" class="pickname"
