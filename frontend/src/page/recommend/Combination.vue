@@ -330,7 +330,9 @@
     <!-- 5명 파티 -->
     <div class="box px-3 chambox mb-5 pb-0">
       <div class="mb-5">
-        <div class="chamtitle pl-4"><p>5 PLAYER</p></div>
+        <div class="chamtitle pl-4 px-auto">
+          <h5 style="color: black">나만의 5인 최고 조합 추천</h5>
+        </div>
       </div>
       <b-row align-v="stretch" class="section mb-0">
         <b-col>
@@ -710,7 +712,18 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+.box {
+  opacity: 0.8;
+  background: linear-gradient(
+    180deg,
+    rgba(14, 36, 56, 1) 0%,
+    rgba(32, 17, 95, 1) 100%
+  );
+  border: #fcd000 3px ridge;
+  box-shadow: 5px 5px 5px;
+  color: #e3d19e;
+}
 .rankimg {
   width: 150px;
 }

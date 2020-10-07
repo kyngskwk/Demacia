@@ -18,7 +18,9 @@
               thumbnail
               width="300px"
               :src="
-                cham_no1.imgsrc.replace('@/assets/img', '').replace('_1.jpg', '.png')
+                cham_no1.imgsrc
+                  .replace('@/assets/img', '')
+                  .replace('_1.jpg', '.png')
               "
             />
             <b-badge pill variant="warning" class="pickname"
@@ -131,7 +133,9 @@
               thumbnail
               width="300px"
               :src="
-                cham_no2.imgsrc.replace('@/assets/img', '').replace('_1.jpg', '.png')
+                cham_no2.imgsrc
+                  .replace('@/assets/img', '')
+                  .replace('_1.jpg', '.png')
               "
             />
             <b-badge pill variant="warning" class="pickname"
@@ -244,7 +248,9 @@
               thumbnail
               width="300px"
               :src="
-                cham_no3.imgsrc.replace('@/assets/img', '').replace('_1.jpg', '.png')
+                cham_no3.imgsrc
+                  .replace('@/assets/img', '')
+                  .replace('_1.jpg', '.png')
               "
             />
             <b-badge pill variant="warning" class="pickname"
@@ -473,7 +479,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .chambox {
   border-style: ridge;
   border: #e3d19e 1px ridge;
@@ -481,8 +487,8 @@ export default {
   opacity: 0.8;
   background: linear-gradient(
     180deg,
-    rgba(6, 17, 27, 1) 0%,
-    rgba(28, 83, 73, 1) 100%
+    rgba(14, 36, 56, 1) 0%,
+    rgba(32, 17, 95, 1) 100%
   );
 }
 
