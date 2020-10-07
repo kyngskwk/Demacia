@@ -7,12 +7,17 @@
       <img src="../../assets/img/picktitle.png" alt="" class="mt-5 mb-3" />
     </div>
     <div><img src="../../assets/img/chamtitle.png" alt="" class="mb-5" /></div>
-
+    <h2 style="color:#8ab7f7">
+      유저의 경기 기록을 바탕으로 가장 승률이 높은 챔피언과
+    </h2>
+    <h2 style="color:#8ab7f7">
+      함께 플레이하기 좋은 챔피언들을 추천해줘요
+    </h2>
     <!-- 1위 챔피언 -->
     <div class="box px-3 pb-3 chambox mb-5">
       <div class="mb-2">
         <div class="chamtitle pl-4 px-auto">
-          <h5 style="color: black">나만의 2인 최고 조합 추천</h5>
+          <h5 style="color: black">나의 승률 No.1 챔피언</h5>
         </div>
       </div>
       <b-row align-v="stretch" class="mb-0">
@@ -131,7 +136,7 @@
     <div class="box px-3 pb-3 chambox mb-5">
       <div>
         <div class="chamtitle pl-4 px-auto">
-          <h5 style="color: black">나만의 2인 최고 조합 추천</h5>
+          <h5 style="color: black">나의 승률 No.2 챔피언</h5>
         </div>
       </div>
       <b-row align-v="stretch" class="mb-0">
@@ -250,7 +255,7 @@
     <div class="box px-3 pb-3 chambox mb-5">
       <div>
         <div class="chamtitle pl-4 px-auto">
-          <h5 style="color: black">나만의 2인 최고 조합 추천</h5>
+          <h5 style="color: black">나의 승률 No.3 챔피언</h5>
         </div>
       </div>
       <b-row align-v="stretch" class="mb-0">
