@@ -156,8 +156,8 @@
         <div class="col">
           <h3>영상이전 승률</h3>
           <h3>
-            <strong style="color:#646ac8">{{ before_bluescore }}</strong> vs
-            <strong style="color:#d71616">{{ before_redscore }}</strong>
+            <strong style="color: #646ac8">{{ before_bluescore }}</strong> vs
+            <strong style="color: #d71616">{{ before_redscore }}</strong>
           </h3>
           <pie-chart
             :donut="true"
@@ -172,8 +172,8 @@
         <div class="col">
           <h3>영상이후 승률</h3>
           <h3>
-            <strong style="color:#646ac8">{{ after_bluescore }}</strong> vs
-            <strong style="color:#d71616">{{ after_redscore }}</strong>
+            <strong style="color: #646ac8">{{ after_bluescore }}</strong> vs
+            <strong style="color: #d71616">{{ after_redscore }}</strong>
           </h3>
           <pie-chart
             :donut="true"
@@ -190,7 +190,7 @@
       <div class="container">
         <div class="row justify-content-around mt-3">
           <div class="col-5 chambox1">
-            <div class="d-flex ">
+            <div class="d-flex">
               <b-row>
                 <b-col cols="3" class="text-center">
                   <img
@@ -271,7 +271,7 @@
                   </h6>
                   <h6><b-icon icon="star"> </b-icon>에픽몬스터</h6>
                   <h6
-                    style="color:yellow;"
+                    style="color: yellow"
                     v-for="(item, $index) in champ6.ELITE_MONSTER_KILL"
                     :key="$index"
                   >
@@ -320,7 +320,7 @@
                   </h6>
                   <h6><b-icon icon="star"> </b-icon>에픽 몬스터</h6>
                   <h6
-                    style="color:yellow;"
+                    style="color: yellow"
                     v-for="(item, $index) in champ2.ELITE_MONSTER_KILL"
                     :key="$index"
                   >
@@ -367,7 +367,7 @@
                   </h6>
                   <h6><b-icon icon="star"> </b-icon>에픽 몬스터</h6>
                   <h6
-                    style="color:yellow;"
+                    style="color: yellow"
                     v-for="(item, $index) in champ7.ELITE_MONSTER_KILL"
                     :key="$index"
                   >
@@ -417,7 +417,7 @@
                   </h6>
                   <h6><b-icon icon="star"> </b-icon>에픽 몬스터</h6>
                   <h6
-                    style="color:yellow;"
+                    style="color: yellow"
                     v-for="(item, $index) in champ3.ELITE_MONSTER_KILL"
                     :key="$index"
                   >
@@ -464,7 +464,7 @@
                   </h6>
                   <h6><b-icon icon="star"> </b-icon>에픽 몬스터</h6>
                   <h6
-                    style="color:yellow;"
+                    style="color: yellow"
                     v-for="(item, $index) in champ8.ELITE_MONSTER_KILL"
                     :key="$index"
                   >
@@ -513,7 +513,7 @@
                   </h6>
                   <h6><b-icon icon="star"> </b-icon>에픽 몬스터</h6>
                   <h6
-                    style="color:yellow;"
+                    style="color: yellow"
                     v-for="(item, $index) in champ4.ELITE_MONSTER_KILL"
                     :key="$index"
                   >
@@ -560,7 +560,7 @@
                   </h6>
                   <h6><b-icon icon="star"> </b-icon>에픽 몬스터</h6>
                   <h6
-                    style="color:yellow;"
+                    style="color: yellow"
                     v-for="(item, $index) in champ9.ELITE_MONSTER_KILL"
                     :key="$index"
                   >
@@ -609,7 +609,7 @@
                   </h6>
                   <h6><b-icon icon="star"> </b-icon>에픽 몬스터</h6>
                   <h6
-                    style="color:yellow;"
+                    style="color: yellow"
                     v-for="(item, $index) in champ5.ELITE_MONSTER_KILL"
                     :key="$index"
                   >
@@ -656,7 +656,7 @@
                   </h6>
                   <h6><b-icon icon="star"> </b-icon>에픽 몬스터</h6>
                   <h6
-                    style="color:yellow;"
+                    style="color: yellow"
                     v-for="(item, $index) in champ10.ELITE_MONSTER_KILL"
                     :key="$index"
                   >
@@ -815,7 +815,7 @@ export default {
       );
       champ.imgsrc = champ.imgsrc
         .replace("@/assets/img", "")
-        .replace("_1.", "_0.");
+        .replace("_1.", ".");
       return champ;
     },
     toLogin() {

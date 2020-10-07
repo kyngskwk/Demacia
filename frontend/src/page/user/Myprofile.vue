@@ -554,6 +554,9 @@ export default {
       myVideoPostList: [],
       myVideoPostFields: [
         { key: "videoPostNo", label: "의뢰번호" },
+        { key: "video", label: "파일명" },
+        { key: "videoPostNo", label: "의뢰번호" },
+        { key: "videoPostNo", label: "의뢰번호" },
         { key: "postDate", label: "작성일" },
         { key: "to", label: "바로가기" },
       ],

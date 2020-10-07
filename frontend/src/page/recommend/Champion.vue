@@ -18,9 +18,7 @@
               thumbnail
               width="300px"
               :src="
-                cham_no1.imgsrc
-                  .replace('@/assets/img', '')
-                  .replace('_1.', '_0.')
+                cham_no1.imgsrc.replace('@/assets/img', '').replace('_1.', '.')
               "
             />
             <b-badge pill variant="warning" class="pickname"
@@ -63,34 +61,34 @@
             <b-row align-v="center">
               <b-col>
                 <b-img
-                  style="border-style:ridge; border: #fcd000 3px ridge;"
+                  style="border-style: ridge; border: #fcd000 3px ridge"
                   width="100%"
                   :src="
                     sim_info[0].imgsrc
                       .replace('@/assets/img', '')
-                      .replace('_1.', '_0.')
+                      .replace('_1.', '.')
                   "
                 />
               </b-col>
               <b-col>
                 <b-img
-                  style="border-style:ridge; border: #fcd000 3px ridge;"
+                  style="border-style: ridge; border: #fcd000 3px ridge"
                   width="100%"
                   :src="
                     sim_info[1].imgsrc
                       .replace('@/assets/img', '')
-                      .replace('_1.', '_0.')
+                      .replace('_1.', '.')
                   "
                 />
               </b-col>
               <b-col>
                 <b-img
-                  style="border-style:ridge; border: #fcd000 3px ridge;"
+                  style="border-style: ridge; border: #fcd000 3px ridge"
                   width="100%"
                   :src="
                     sim_info[2].imgsrc
                       .replace('@/assets/img', '')
-                      .replace('_1.', '_0.')
+                      .replace('_1.', '.')
                   "
                 />
               </b-col>
@@ -133,9 +131,7 @@
               thumbnail
               width="300px"
               :src="
-                cham_no2.imgsrc
-                  .replace('@/assets/img', '')
-                  .replace('_1.', '_0.')
+                cham_no2.imgsrc.replace('@/assets/img', '').replace('_1.', '.')
               "
             />
             <b-badge pill variant="warning" class="pickname"
@@ -178,34 +174,34 @@
             <b-row align-v="center">
               <b-col>
                 <b-img
-                  style="border-style:ridge; border: #fcd000 3px ridge;"
+                  style="border-style: ridge; border: #fcd000 3px ridge"
                   width="100%"
                   :src="
                     sim_info[3].imgsrc
                       .replace('@/assets/img', '')
-                      .replace('_1.', '_0.')
+                      .replace('_1.', '.')
                   "
                 />
               </b-col>
               <b-col>
                 <b-img
-                  style="border-style:ridge; border: #fcd000 3px ridge;"
+                  style="border-style: ridge; border: #fcd000 3px ridge"
                   width="100%"
                   :src="
                     sim_info[4].imgsrc
                       .replace('@/assets/img', '')
-                      .replace('_1.', '_0.')
+                      .replace('_1.', '.')
                   "
                 />
               </b-col>
               <b-col>
                 <b-img
-                  style="border-style:ridge; border: #fcd000 3px ridge;"
+                  style="border-style: ridge; border: #fcd000 3px ridge"
                   width="100%"
                   :src="
                     sim_info[5].imgsrc
                       .replace('@/assets/img', '')
-                      .replace('_1.', '_0.')
+                      .replace('_1.', '.')
                   "
                 />
               </b-col>
@@ -248,9 +244,7 @@
               thumbnail
               width="300px"
               :src="
-                cham_no3.imgsrc
-                  .replace('@/assets/img', '')
-                  .replace('_1.', '_0.')
+                cham_no3.imgsrc.replace('@/assets/img', '').replace('_1.', '.')
               "
             />
             <b-badge pill variant="warning" class="pickname"
@@ -293,34 +287,34 @@
             <b-row align-v="center">
               <b-col>
                 <b-img
-                  style="border-style:ridge; border: #fcd000 3px ridge;"
+                  style="border-style: ridge; border: #fcd000 3px ridge"
                   width="100%"
                   :src="
                     sim_info[6].imgsrc
                       .replace('@/assets/img', '')
-                      .replace('_1.', '_0.')
+                      .replace('_1.', '.')
                   "
                 />
               </b-col>
               <b-col>
                 <b-img
-                  style="border-style:ridge; border: #fcd000 3px ridge;"
+                  style="border-style: ridge; border: #fcd000 3px ridge"
                   width="100%"
                   :src="
                     sim_info[7].imgsrc
                       .replace('@/assets/img', '')
-                      .replace('_1.', '_0.')
+                      .replace('_1.', '.')
                   "
                 />
               </b-col>
               <b-col>
                 <b-img
-                  style="border-style:ridge; border: #fcd000 3px ridge;"
+                  style="border-style: ridge; border: #fcd000 3px ridge"
                   width="100%"
                   :src="
                     sim_info[8].imgsrc
                       .replace('@/assets/img', '')
-                      .replace('_1.', '_0.')
+                      .replace('_1.', '.')
                   "
                 />
               </b-col>
@@ -383,68 +377,68 @@ export default {
   },
 
   created() {
-    if(JSON.parse(sessionStorage.getItem("user"))){
+    if (JSON.parse(sessionStorage.getItem("user"))) {
       this.user = JSON.parse(sessionStorage.getItem("user"));
       console.log(this.user);
       axios
-      .get(
-        process.env.VUE_APP_DAPI_URL +
-          "/matches/" +
-          this.user.userNo +
-          "/"
-      )
-      .then((res) => {        
-      if(res.data.length == "0"){
-        alert("전적기록을 먼저 가져와주세요!!")
-        location.href = "/myprofile";
-      }
-      else{
-      axios
-      .get(
-        process.env.VUE_APP_DAPI_URL +
-          "/recommand/" +
-          this.user.userNo +
-          "/champion"
-      )
-      .then((res) => {
-        this.recommand_cham_info = res.data.recommand_cham_info;
-        this.similar_cham_recommand = res.data.similar_cham_recommand[0];
-        let temp = JSON.parse(
-          this.recommand_cham_info[0].recommand_champion.replaceAll("'", '"')
-        );
-        this.champions = Object.entries(temp).sort((a, b) =>
-          b[1].localeCompare(a[1])
-        );
-        this.cham_no1_id = this.champions[0][0];
-        this.cham_no2_id = this.champions[1][0];
-        this.cham_no3_id = this.champions[2][0];
-        let tmp = this.champions[0][1] * 100;
-        this.cham_no1_rate = tmp.toFixed(2);
-        tmp = this.champions[1][1] * 100;
-        this.cham_no2_rate = tmp.toFixed(2);
-        tmp = this.champions[2][1] * 100;
-        this.cham_no3_rate =  tmp.toFixed(2);
-        this.sim_no1 = this.similar_cham_recommand[this.cham_no1_id];
-        this.sim_no2 = this.similar_cham_recommand[this.cham_no2_id];
-        this.sim_no3 = this.similar_cham_recommand[this.cham_no3_id];
-        this.callsim(this.sim_no1);
-        this.callsim(this.sim_no2);
-        this.callsim(this.sim_no3);
-        this.callchampion();
-      })
-      .catch((err) => {
-        location.href = "/error/챔피언 추천 중 서버 오류가 발생했습니다. " + err;
-      });
-      }
-      })
-      .catch((err) => {
-      location.href = "/error/챔피언 추전 중 서버 오류가 발생했습니다. " + err;
-      });
+        .get(
+          process.env.VUE_APP_DAPI_URL + "/matches/" + this.user.userNo + "/"
+        )
+        .then((res) => {
+          if (res.data.length == "0") {
+            alert("전적기록을 먼저 가져와주세요!!");
+            location.href = "/myprofile";
+          } else {
+            axios
+              .get(
+                process.env.VUE_APP_DAPI_URL +
+                  "/recommand/" +
+                  this.user.userNo +
+                  "/champion"
+              )
+              .then((res) => {
+                this.recommand_cham_info = res.data.recommand_cham_info;
+                this.similar_cham_recommand =
+                  res.data.similar_cham_recommand[0];
+                let temp = JSON.parse(
+                  this.recommand_cham_info[0].recommand_champion.replaceAll(
+                    "'",
+                    '"'
+                  )
+                );
+                this.champions = Object.entries(temp).sort((a, b) =>
+                  b[1].localeCompare(a[1])
+                );
+                this.cham_no1_id = this.champions[0][0];
+                this.cham_no2_id = this.champions[1][0];
+                this.cham_no3_id = this.champions[2][0];
+                let tmp = this.champions[0][1] * 100;
+                this.cham_no1_rate = tmp.toFixed(2);
+                tmp = this.champions[1][1] * 100;
+                this.cham_no2_rate = tmp.toFixed(2);
+                tmp = this.champions[2][1] * 100;
+                this.cham_no3_rate = tmp.toFixed(2);
+                this.sim_no1 = this.similar_cham_recommand[this.cham_no1_id];
+                this.sim_no2 = this.similar_cham_recommand[this.cham_no2_id];
+                this.sim_no3 = this.similar_cham_recommand[this.cham_no3_id];
+                this.callsim(this.sim_no1);
+                this.callsim(this.sim_no2);
+                this.callsim(this.sim_no3);
+                this.callchampion();
+              })
+              .catch((err) => {
+                location.href =
+                  "/error/챔피언 추천 중 서버 오류가 발생했습니다. " + err;
+              });
+          }
+        })
+        .catch((err) => {
+          location.href =
+            "/error/챔피언 추전 중 서버 오류가 발생했습니다. " + err;
+        });
+    } else {
+      location.href = "/login";
     }
-    else{
-      location.href="/login";
-    }
-    
   },
 
   computed: {},
