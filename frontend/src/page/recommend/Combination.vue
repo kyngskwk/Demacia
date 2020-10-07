@@ -22,7 +22,7 @@
       </div>
       <b-row align-v="stretch" class="section mb-0">
         <b-col>
-          <div class="mb-5">
+          <div class="mb-3">
             <img src="../../assets/img/1badge.png" alt="" class="rankimg" />
           </div>
           <b-row align-v="center">
@@ -63,7 +63,7 @@
         </b-col>
 
         <b-col class="article">
-          <div class="mb-5">
+          <div class="mb-3">
             <img src="../../assets/img/2badge.png" alt="" class="rankimg" />
           </div>
           <b-row align-v="center">
@@ -105,7 +105,7 @@
         </b-col>
 
         <b-col>
-          <div class="mb-5">
+          <div class="mb-3">
             <img src="../../assets/img/3badge.png" alt="" class="rankimg" />
           </div>
           <b-row align-v="center">
