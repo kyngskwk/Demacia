@@ -684,7 +684,7 @@
     <b-modal ref="binggleModal" centered title="분석중..">
       <b-icon icon="arrow-clockwise" animation="spin" font-scale="4"></b-icon>
     </b-modal>
-    <!-- 수정 삭제 -->
+    <!-- 영상분석글 삭제 -->
     <div style="margin-top: 5%">
       <div
         @click="delt"
@@ -827,14 +827,14 @@ export default {
     delt() {
       if (confirm("글을 삭제하시겠습니까?")) {
         axios
-          .delete(process.env.VUE_APP_API_URL + "/videoposts/", {
+          .delete(process.env.VUE_APP_API_URL + "/video/", {
             params: {
               videoPostNo: this.videoPostNo,
             },
           })
           .then(() => {
             alert("삭제 완료");
-            location.href = "/";
+            location.href = "/vlist";
           })
           .catch(() => {
             location.href = "/error/글 삭제 중 서버에서 문제가 발생했습니다.";
