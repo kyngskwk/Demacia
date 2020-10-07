@@ -37,7 +37,7 @@
                 thumbnail
                 width="100%"
                 :src="
-                  item.imgsrc.replace('@/assets/img', '').replace('_1.', '_0.')
+                  item.imgsrc.replace('@/assets/img', '').replace('_1.jpg', '.png')
                 "
               />
               {{ item.korname }}
@@ -70,7 +70,7 @@
                 thumbnail
                 width="100%"
                 :src="
-                  item.imgsrc.replace('@/assets/img', '').replace('_1.', '_0.')
+                  item.imgsrc.replace('@/assets/img', '').replace('_1.jpg', '.png')
                 "
               />
               {{ item.korname }}
@@ -103,7 +103,7 @@
                 thumbnail
                 width="100%"
                 :src="
-                  item.imgsrc.replace('@/assets/img', '').replace('_1.', '_0.')
+                  item.imgsrc.replace('@/assets/img', '').replace('_1.jpg', '.png')
                 "
               />
               {{ item.korname }}

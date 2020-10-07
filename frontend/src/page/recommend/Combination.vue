@@ -15,9 +15,7 @@
     <div class="box px-3 chambox mb-5 pb-0">
       <div class="mb-2">
         <div class="chamtitle pl-4 px-auto">
-          <h5 style="color:black;">
-            나만의 2인 최고 조합 추천
-          </h5>
+          <h5 style="color: black">나만의 2인 최고 조합 추천</h5>
         </div>
       </div>
       <b-row align-v="stretch" class="section mb-0">
@@ -33,7 +31,7 @@
                 :src="
                   first_cham.imgsrc
                     .replace('@/assets/img', '')
-                    .replace('_1.', '_0.')
+                    .replace('_1.jpg', '.png')
                 "
               />
               <h5>
@@ -49,7 +47,7 @@
                 :src="
                   comb_info[0].imgsrc
                     .replace('@/assets/img', '')
-                    .replace('_1.', '_0.')
+                    .replace('_1.jpg', '.png')
                 "
               />
               <h5>
@@ -74,7 +72,7 @@
                 :src="
                   second_cham.imgsrc
                     .replace('@/assets/img', '')
-                    .replace('_1.', '_0.')
+                    .replace('_1.jpg', '.png')
                 "
               />
               <h5>
@@ -91,7 +89,7 @@
                 :src="
                   comb_info[4].imgsrc
                     .replace('@/assets/img', '')
-                    .replace('_1.', '_0.')
+                    .replace('_1.jpg', '.png')
                 "
               />
               <h5>
@@ -116,7 +114,7 @@
                 :src="
                   third_cham.imgsrc
                     .replace('@/assets/img', '')
-                    .replace('_1.', '_0.')
+                    .replace('_1.jpg', '.png')
                 "
               />
               <h5>
@@ -132,7 +130,7 @@
                 :src="
                   comb_info[8].imgsrc
                     .replace('@/assets/img', '')
-                    .replace('_1.', '_0.')
+                    .replace('_1.jpg', '.png')
                 "
               />
               <h5>
@@ -151,9 +149,7 @@
     <div class="box px-3 chambox mb-5 pb-0">
       <div>
         <div class="chamtitle pl-4 px-auto">
-          <h5 style="color:black;">
-            나만의 3인 최고 조합 추천
-          </h5>
+          <h5 style="color: black">나만의 3인 최고 조합 추천</h5>
         </div>
       </div>
       <b-row align-v="stretch" class="section mb-0">
@@ -169,7 +165,7 @@
                 :src="
                   first_cham.imgsrc
                     .replace('@/assets/img', '')
-                    .replace('_1.', '_0.')
+                    .replace('_1.jpg', '.png')
                 "
               />
               <div class="mb-3">
@@ -191,7 +187,7 @@
                 :src="
                   comb_info[0].imgsrc
                     .replace('@/assets/img', '')
-                    .replace('_1.', '_0.')
+                    .replace('_1.jpg', '.png')
                 "
               />
               <b-badge pill variant="warning" class="pickname"
@@ -207,7 +203,7 @@
                 :src="
                   comb_info[1].imgsrc
                     .replace('@/assets/img', '')
-                    .replace('_1.', '_0.')
+                    .replace('_1.jpg', '.png')
                 "
               />
               <h5>
@@ -232,7 +228,7 @@
                 :src="
                   second_cham.imgsrc
                     .replace('@/assets/img', '')
-                    .replace('_1.', '_0.')
+                    .replace('_1.jpg', '.png')
                 "
               />
               <div>
@@ -254,7 +250,7 @@
                 :src="
                   comb_info[4].imgsrc
                     .replace('@/assets/img', '')
-                    .replace('_1.', '_0.')
+                    .replace('_1.jpg', '.png')
                 "
               />
               <h5>
@@ -272,7 +268,7 @@
                 :src="
                   comb_info[5].imgsrc
                     .replace('@/assets/img', '')
-                    .replace('_1.', '_0.')
+                    .replace('_1.jpg', '.png')
                 "
               />
               <h5>
@@ -297,7 +293,7 @@
                 :src="
                   third_cham.imgsrc
                     .replace('@/assets/img', '')
-                    .replace('_1.', '_0.')
+                    .replace('_1.jpg', '.png')
                 "
               />
               <div class="mb-3">
@@ -319,7 +315,7 @@
                 :src="
                   comb_info[8].imgsrc
                     .replace('@/assets/img', '')
-                    .replace('_1.', '_0.')
+                    .replace('_1.jpg', '.png')
                 "
               />
               <h5>
@@ -337,7 +333,7 @@
                 :src="
                   comb_info[9].imgsrc
                     .replace('@/assets/img', '')
-                    .replace('_1.', '_0.')
+                    .replace('_1.jpg', '.png')
                 "
               />
               <h5>
@@ -374,7 +370,7 @@
                 :src="
                   first_cham.imgsrc
                     .replace('@/assets/img', '')
-                    .replace('_1.', '_0.')
+                    .replace('_1.jpg', '.png')
                 "
               />
               <h5>
@@ -390,7 +386,7 @@
                 :src="
                   comb_info[0].imgsrc
                     .replace('@/assets/img', '')
-                    .replace('_1.', '_0.')
+                    .replace('_1.jpg', '.png')
                 "
               />
               <h5>
@@ -410,7 +406,7 @@
                 :src="
                   comb_info[1].imgsrc
                     .replace('@/assets/img', '')
-                    .replace('_1.', '_0.')
+                    .replace('_1.jpg', '.png')
                 "
               />
 
@@ -433,7 +429,7 @@
                 :src="
                   comb_info[2].imgsrc
                     .replace('@/assets/img', '')
-                    .replace('_1.', '_0.')
+                    .replace('_1.jpg', '.png')
                 "
               />
               <h5>
@@ -450,7 +446,7 @@
                 :src="
                   comb_info[3].imgsrc
                     .replace('@/assets/img', '')
-                    .replace('_1.', '_0.')
+                    .replace('_1.jpg', '.png')
                 "
               />
               <h5>
@@ -476,7 +472,7 @@
                 :src="
                   second_cham.imgsrc
                     .replace('@/assets/img', '')
-                    .replace('_1.', '_0.')
+                    .replace('_1.jpg', '.png')
                 "
               />
               <h5>
@@ -494,7 +490,7 @@
                 :src="
                   comb_info[4].imgsrc
                     .replace('@/assets/img', '')
-                    .replace('_1.', '_0.')
+                    .replace('_1.jpg', '.png')
                 "
               />
               <h5>
@@ -514,7 +510,7 @@
                 :src="
                   comb_info[5].imgsrc
                     .replace('@/assets/img', '')
-                    .replace('_1.', '_0.')
+                    .replace('_1.jpg', '.png')
                 "
               />
               <div class="mb-3">
@@ -536,7 +532,7 @@
                 :src="
                   comb_info[6].imgsrc
                     .replace('@/assets/img', '')
-                    .replace('_1.', '_0.')
+                    .replace('_1.jpg', '.png')
                 "
               />
               <h5>
@@ -553,7 +549,7 @@
                 :src="
                   comb_info[7].imgsrc
                     .replace('@/assets/img', '')
-                    .replace('_1.', '_0.')
+                    .replace('_1.jpg', '.png')
                 "
               />
               <h5>
@@ -579,7 +575,7 @@
                 :src="
                   third_cham.imgsrc
                     .replace('@/assets/img', '')
-                    .replace('_1.', '_0.')
+                    .replace('_1.jpg', '.png')
                 "
               />
               <h5>
@@ -595,7 +591,7 @@
                 :src="
                   comb_info[8].imgsrc
                     .replace('@/assets/img', '')
-                    .replace('_1.', '_0.')
+                    .replace('_1.jpg', '.png')
                 "
               />
               <h5>
@@ -615,7 +611,7 @@
                 :src="
                   comb_info[9].imgsrc
                     .replace('@/assets/img', '')
-                    .replace('_1.', '_0.')
+                    .replace('_1.jpg', '.png')
                 "
               />
               <div class="mb-3">
@@ -637,7 +633,7 @@
                 :src="
                   comb_info[10].imgsrc
                     .replace('@/assets/img', '')
-                    .replace('_1.', '_0.')
+                    .replace('_1.jpg', '.png')
                 "
               />
               <h5>
@@ -654,7 +650,7 @@
                 :src="
                   comb_info[11].imgsrc
                     .replace('@/assets/img', '')
-                    .replace('_1.', '_0.')
+                    .replace('_1.jpg', '.png')
                 "
               />
               <h5>
@@ -771,7 +767,18 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+.box {
+  opacity: 0.8;
+  background: linear-gradient(
+    180deg,
+    rgba(14, 36, 56, 1) 0%,
+    rgba(32, 17, 95, 1) 100%
+  );
+  border: #fcd000 3px ridge;
+  box-shadow: 5px 5px 5px;
+  color: #e3d19e;
+}
 .rankimg {
   width: 150px;
 }

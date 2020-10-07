@@ -327,7 +327,11 @@ export default {
 .part .box {
   border: #fcd000 3px ridge;
   opacity: 0.8;
-  background: linear-gradient(180deg, #06111b, #1c5349);
+  background: linear-gradient(
+    180deg,
+    rgba(14, 36, 56, 1) 0%,
+    rgba(32, 17, 95, 1) 100%
+  );
   margin: 1rem;
   box-shadow: 5px 5px 5px;
   color: #e3d19e;
@@ -338,8 +342,8 @@ export default {
   opacity: 0.8;
   background: linear-gradient(
     180deg,
-    rgba(6, 17, 27, 1) 0%,
-    rgba(28, 83, 73, 1) 100%
+    rgba(14, 36, 56, 1) 0%,
+    rgba(32, 17, 95, 1) 100%
   );
 }
 #hhh:hover {

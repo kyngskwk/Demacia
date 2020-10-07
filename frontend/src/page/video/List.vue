@@ -15,13 +15,13 @@
 
       <b-col cols="4" md="12">
         <div
-          class=" d-flex justify-content-end"
+          class="d-flex justify-content-end"
           style="display: inline; text-align: right"
         >
           <div>
             <b-form-select
               v-model="orderby"
-              style="width:300px;"
+              style="width: 300px"
               :options="orderOptions"
               class="shadow1"
             />
@@ -33,7 +33,7 @@
               :unchecked-value="false"
               size="lg"
               class="m-2"
-              style="color:white"
+              style="color: white"
             >
               내 영상만 보기
             </b-form-checkbox>
@@ -244,7 +244,11 @@ export default {
   border-style: ridge;
   border: #fcd000 4px ridge;
   opacity: 0.8;
-  background: linear-gradient(180deg, #06111b, #1c5349);
+  background: linear-gradient(
+    180deg,
+    rgba(14, 36, 56, 1) 0%,
+    rgba(32, 17, 95, 1) 100%
+  );
   box-shadow: 5px 5px 5px;
   color: #e3d19e;
 }
