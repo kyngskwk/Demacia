@@ -102,55 +102,7 @@
             </b-row>
           </div>
         </b-col>
-        <b-col cols="12">
-          <router-link :to="{ name: constants.URL_TYPE.POST.MAIN }">
-            <img
-              src="../assets/img/votetitle.png"
-              alt=""
-              style="margin: 50px 0px 0px"
-            />
-          </router-link>
-          <div
-            class="box"
-            style="
-              border: #fcd000 2px solid;
-              opacity: 0.8;
-              background: linear-gradient(
-                180deg,
-                rgba(6, 17, 27, 1) 0%,
-                rgba(28, 83, 73, 1) 100%
-              );
-            "
-          >
-            <b-row>
-              <b-col cols="12">
-                <b-table
-                  hover
-                  striped
-                  :items="lastPost"
-                  :fields="lastPostFields"
-                  v-if="lastPost"
-                  table-variant="dark"
-                  style="color: #e3d19e"
-                >
-                  <template v-slot:cell(postDate)="data">{{
-                    postDT(data.value)
-                  }}</template>
-                  <template v-slot:cell(to)="data">
-                    <router-link :to="'/detail/' + data.item.postNo">
-                      <b-icon
-                        icon="arrow-right-circle"
-                        font-scale="2"
-                        style="color: #e3d19e"
-                      ></b-icon>
-                    </router-link>
-                  </template>
-                </b-table>
-                <div v-else>진행중인 투표글이 없습니다.</div>
-              </b-col>
-            </b-row>
-          </div>
-        </b-col>
+
         <b-col cols="12">
           <router-link :to="{ name: constants.URL_TYPE.VIDEO.MAIN }">
             <img
@@ -206,6 +158,56 @@
             </b-col>
           </b-row>
         </b-col>
+        <b-col cols="12">
+          <router-link :to="{ name: constants.URL_TYPE.POST.MAIN }">
+            <img
+              src="../assets/img/votetitle.png"
+              alt=""
+              style="margin: 50px 0px 0px"
+            />
+          </router-link>
+          <div
+            class="box"
+            style="
+              border: #fcd000 2px solid;
+              opacity: 0.8;
+              background: linear-gradient(
+                180deg,
+                rgba(6, 17, 27, 1) 0%,
+                rgba(28, 83, 73, 1) 100%
+              );
+            "
+          >
+            <b-row>
+              <b-col cols="12">
+                <b-table
+                  hover
+                  striped
+                  :items="lastPost"
+                  :fields="lastPostFields"
+                  v-if="lastPost"
+                  table-variant="dark"
+                  style="color: #e3d19e"
+                >
+                  <template v-slot:cell(postDate)="data">{{
+                    postDT(data.value)
+                  }}</template>
+                  <template v-slot:cell(to)="data">
+                    <router-link :to="'/detail/' + data.item.postNo">
+                      <b-icon
+                        icon="arrow-right-circle"
+                        font-scale="2"
+                        style="color: #e3d19e"
+                      ></b-icon>
+                    </router-link>
+                  </template>
+                </b-table>
+                <div v-else>진행중인 투표글이 없습니다.</div>
+              </b-col>
+            </b-row>
+          </div>
+        </b-col>
+
         <b-col cols="12">
           <a href="/welcome">
             <img

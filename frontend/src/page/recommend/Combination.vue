@@ -1,5 +1,8 @@
 <template>
-  <b-container class="bv-example-row bv-example-row-flex-cols">
+  <b-container
+    class="bv-example-row bv-example-row-flex-cols"
+    style="font-family: Tmon"
+  >
     <div>
       <img src="../../assets/img/picktitle.png" alt="" class="mt-5 mb-3" />
     </div>
@@ -7,8 +10,12 @@
 
     <!-- 2명 파티 -->
     <div class="box px-3 chambox mb-5 pb-0">
-      <div class="mb-5">
-        <div class="chamtitle pl-4"><p>2 PLAYER</p></div>
+      <div class="mb-2">
+        <div class="chamtitle pl-4 px-auto">
+          <h5 style="color:black;">
+            나만의 2인 최고 조합 추천
+          </h5>
+        </div>
       </div>
       <b-row align-v="stretch" class="section mb-0">
         <b-col>
@@ -26,9 +33,11 @@
                     .replace('_1.', '_0.')
                 "
               />
-              <b-badge pill variant="warning" class="pickname"
-                >{{ first_cham.korname }} | {{ first_cham.chamname }}</b-badge
-              >
+              <h5>
+                <b-badge pill variant="warning" class="pickname"
+                  >{{ first_cham.korname }} | {{ first_cham.chamname }}</b-badge
+                >
+              </h5>
             </b-col>
             <b-col>
               <b-img
@@ -40,10 +49,12 @@
                     .replace('_1.', '_0.')
                 "
               />
-              <b-badge pill variant="warning" class="pickname"
-                >{{ comb_info[0].korname }} |
-                {{ comb_info[0].chamname }}</b-badge
-              >
+              <h5>
+                <b-badge pill variant="warning" class="pickname"
+                  >{{ comb_info[0].korname }} |
+                  {{ comb_info[0].chamname }}</b-badge
+                >
+              </h5>
             </b-col>
           </b-row>
         </b-col>
@@ -63,9 +74,12 @@
                     .replace('_1.', '_0.')
                 "
               />
-              <b-badge pill variant="warning" class="pickname"
-                >{{ second_cham.korname }} | {{ second_cham.chamname }}</b-badge
-              >
+              <h5>
+                <b-badge pill variant="warning" class="pickname"
+                  >{{ second_cham.korname }} |
+                  {{ second_cham.chamname }}</b-badge
+                >
+              </h5>
             </b-col>
             <b-col>
               <b-img
@@ -77,10 +91,12 @@
                     .replace('_1.', '_0.')
                 "
               />
-              <b-badge pill variant="warning" class="pickname"
-                >{{ comb_info[4].korname }} |
-                {{ comb_info[4].chamname }}</b-badge
-              >
+              <h5>
+                <b-badge pill variant="warning" class="pickname"
+                  >{{ comb_info[4].korname }} |
+                  {{ comb_info[4].chamname }}</b-badge
+                >
+              </h5>
             </b-col>
           </b-row>
         </b-col>
@@ -100,9 +116,11 @@
                     .replace('_1.', '_0.')
                 "
               />
-              <b-badge pill variant="warning" class="pickname"
-                >{{ third_cham.korname }} | {{ third_cham.chamname }}</b-badge
-              >
+              <h5>
+                <b-badge pill variant="warning" class="pickname"
+                  >{{ third_cham.korname }} | {{ third_cham.chamname }}</b-badge
+                >
+              </h5>
             </b-col>
             <b-col>
               <b-img
@@ -114,10 +132,12 @@
                     .replace('_1.', '_0.')
                 "
               />
-              <b-badge pill variant="warning" class="pickname"
-                >{{ comb_info[8].korname }} |
-                {{ comb_info[8].chamname }}</b-badge
-              >
+              <h5>
+                <b-badge pill variant="warning" class="pickname"
+                  >{{ comb_info[8].korname }} |
+                  {{ comb_info[8].chamname }}</b-badge
+                >
+              </h5>
             </b-col>
           </b-row>
         </b-col>
@@ -127,11 +147,15 @@
     <!-- 3명 파티 -->
     <div class="box px-3 chambox mb-5 pb-0">
       <div class="mb-5">
-        <div class="chamtitle pl-4"><p>3 PLAYER</p></div>
+        <div class="chamtitle pl-4 px-auto">
+          <h5 style="color:black;">
+            나만의 3인 최고 조합 추천
+          </h5>
+        </div>
       </div>
       <b-row align-v="stretch" class="section mb-0">
         <b-col>
-          <div class="mb-5">
+          <div>
             <img src="../../assets/img/1badge.png" alt="" class="rankimg" />
           </div>
           <b-row align-v="center">
