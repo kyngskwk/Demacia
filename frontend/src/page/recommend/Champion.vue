@@ -371,7 +371,7 @@
     </div>
   </b-container>
 </template>
-<style>
+<style scoped>
 @import "../../assets/css/champion.css";
 </style>
 

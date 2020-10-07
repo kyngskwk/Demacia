@@ -643,7 +643,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .color1 {
   background-color: rgb(243, 241, 239);
 }

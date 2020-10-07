@@ -147,7 +147,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .border1 {
   border-left-width: 50px !important;
 }

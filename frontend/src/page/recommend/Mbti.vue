@@ -234,7 +234,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .chambox {
   border-style: ridge;
   border: #e3d19e 1px ridge;

@@ -303,7 +303,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .button1 {
   display: inline-block;
   outline: none;

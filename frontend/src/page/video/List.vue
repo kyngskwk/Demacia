@@ -1,44 +1,38 @@
 <template>
   <div class="container m-auto" id="body" style="font-family: Tmon">
     <b-row align-h="center" class="mt-4">
-      <div class="mt-4" style="display: center;">
-        <b-button
-          pill
-          size="lg"
-          variant="dark"
-          class="d-btn1 p-3 mt-4"
-          href="/vwrite"
-        >
-          <b-icon icon="camera-video-fill" />&nbsp;영상 분석 요청
-        </b-button>
-      </div>
-
-      <b-col cols="4" md="12">
-        <div
-          class="d-flex justify-content-end"
-          style="display: inline; text-align: right"
-        >
-          <div>
-            <b-form-select
-              v-model="orderby"
-              style="width: 300px"
-              :options="orderOptions"
-              class="shadow1"
-            />
-            <b-form-checkbox
-              id="checkbox-private"
-              v-model="isSearch"
-              name="checkbox-private"
-              :value="true"
-              :unchecked-value="false"
-              size="lg"
-              class="m-2"
-              style="color: white"
-            >
-              내 영상만 보기
-            </b-form-checkbox>
-          </div>
+      <b-col cols="12">
+        <div class="mt-4" style="display: center">
+          <b-button
+            pill
+            size="lg"
+            variant="dark"
+            class="d-btn1 p-3 mt-4"
+            href="/vwrite"
+          >
+            <b-icon icon="camera-video-fill" />&nbsp;영상 분석 요청
+          </b-button>
         </div>
+      </b-col>
+      <b-col cols="12" class="text-right">
+        <b-form-select
+          v-model="orderby"
+          style="width: 300px"
+          :options="orderOptions"
+          class="shadow1"
+        />
+        <b-form-checkbox
+          id="checkbox-private"
+          v-model="isSearch"
+          name="checkbox-private"
+          :value="true"
+          :unchecked-value="false"
+          size="lg"
+          class="m-2"
+          style="color: white"
+        >
+          내 영상만 보기
+        </b-form-checkbox>
       </b-col>
     </b-row>
     <b-row align-h="center">

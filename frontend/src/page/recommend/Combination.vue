@@ -667,7 +667,7 @@
   </b-container>
 </template>
 
-<style>
+<style scoped>
 @import "../../assets/css/combination.css";
 </style>
 

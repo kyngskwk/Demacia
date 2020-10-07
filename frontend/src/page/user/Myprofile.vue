@@ -1,10 +1,10 @@
 <template>
   <div class="container" style="heigth: 100%; font-family: Tmon">
-    <b-row align-h="end">
-      <b-col cols="12" md="4">
+    <b-row align-h="end" class="mb-4">
+      <b-col cols="12" md="4" class="p-4">
         <!-- 유저정보 박스 -->
-        <div class="box mt-4" style="height: 400px">
-          <h2 style="color:rgb(252, 208, 0);">MY PAGE</h2>
+        <div class="box mt-4">
+          <h2 style="color: rgb(252, 208, 0)">MY PAGE</h2>
           <!-- 프로필 이미지 -->
           <div v-b-modal.modalProfileImage href="#">
             <b-avatar
@@ -19,68 +19,6 @@
                 <b-icon icon="upload"></b-icon>
               </template>
             </b-avatar>
-            <!-- 이미지 변경 모달 -->
-            <b-modal
-              id="modalProfileImage"
-              size="sm"
-              title="프로필 사진 변경"
-              variant="dark"
-              centered
-              hide-footer
-            >
-              <b-list-group-item>
-                <b-list-group-item @click="imgUp" href="#" variant="primary"
-                  >내 기기에서 파일 탐색</b-list-group-item
-                >
-                <b-list-group-item @click="imgDel" href="#" variant="primary"
-                  >프로필 사진 삭제</b-list-group-item
-                >
-                <b-list-group-item
-                  href="#"
-                  variant="secondary-outline"
-                  v-b-modal.imageRule
-                  >사진 업로드 이용규칙</b-list-group-item
-                >
-                <b-modal
-                  id="imageRule"
-                  title="프로필 사진 업로드 이용규칙"
-                  ok-only
-                  centered
-                >
-                  프로필 사진은 회원 여러분의 개성을 드러낼 수 있는
-                  서비스입니다.
-                  <br />다만 원활한 서비스 제공에 문제를 일으키는 프로필 사진은
-                  규제될 수 있음을 알려드리오니, 업로드 시 유의하여 주시기
-                  바랍니다. <br />[규제 대상]
-                  <ol>
-                    <li>음란, 선정성 사진</li>
-                    <li>욕설 등 타인에게 불쾌감을 주는 이미지</li>
-                    <li>홍보 목적으로 URL이나 연락처가 기재된 이미지</li>
-                    <li>폭력 묘사, 신체훼손 등 혐오감을 주는 이미지</li>
-                    <li>
-                      명예훼손, 저작권 침해 등 타인의 권리를 침해하는 이미지
-                    </li>
-                    <li>그 외 법령 및 약관에 위배되는 사진 및 이미지</li>
-                  </ol>
-                  규제 대상으로 확인된 이미지는 발견 즉시 무통보 삭제되며,
-                  정도와 빈도에 따라 서비스 이용이 제한 될 수 있습니다.
-                  <br />이의 사항 발생 시 관리자에게 문의바랍니다.
-                  <br />
-                  <br />건전하고 멋진 프로필 사진 사용으로 여러분의 개성을
-                  뽐내주세요. 감사합니다.
-                </b-modal>
-              </b-list-group-item>
-            </b-modal>
-            <input
-              type="file"
-              class="form-control"
-              placeholder="프로필 등록"
-              id="profil"
-              ref="uploadImageFile"
-              @change="onFileSelected"
-              accept="image/*"
-              style="display: none"
-            />
           </div>
           <b-row class="mt-3" style="height: 3rem">
             <b-col class="mr-2">
@@ -115,8 +53,98 @@
             }}</b-col>
           </b-row>
 
-          <b-row class="mt-0 ml-3">
-            <b-col class="text-white">
+          <b-row class="pr-4 pl-4">
+            <b-col cols="7" class="text-white">
+              <!-- 마일리지랭킹 조회 -->
+              <h6 class="mil">
+                마일리지 랭킹 :
+                <span style="color: red">
+                  {{ usermilrank }}
+                </span>
+                위
+              </h6>
+              <h6 class="mil">(상위 {{ usermilrankper }}%)</h6>
+            </b-col>
+            <b-col class="p-0">
+              <!-- \닉네임, 비밀번호, 회원탈퇴 드랍다운 -->
+              <b-dropdown
+                text="더 보기"
+                dropright
+                variant="outline-light"
+                class="d-btn m-2"
+                style="z-index: auto"
+              >
+                <b-dropdown-item @click="nicknameCheck = !nicknameCheck"
+                  >닉네임 수정</b-dropdown-item
+                >
+                <b-dropdown-item @click="showPasswordChkModal"
+                  >비밀번호 변경</b-dropdown-item
+                >
+                <b-dropdown-divider></b-dropdown-divider>
+                <b-dropdown-item @click="deleteUser">회원 탈퇴</b-dropdown-item>
+              </b-dropdown>
+              <!-- 이미지 변경 모달 -->
+              <b-modal
+                id="modalProfileImage"
+                size="sm"
+                title="프로필 사진 변경"
+                variant="dark"
+                centered
+                hide-footer
+              >
+                <b-list-group-item>
+                  <b-list-group-item @click="imgUp" href="#" variant="primary"
+                    >내 기기에서 파일 탐색</b-list-group-item
+                  >
+                  <b-list-group-item @click="imgDel" href="#" variant="primary"
+                    >프로필 사진 삭제</b-list-group-item
+                  >
+                  <b-list-group-item
+                    href="#"
+                    variant="secondary-outline"
+                    v-b-modal.imageRule
+                    >사진 업로드 이용규칙</b-list-group-item
+                  >
+                  <b-modal
+                    id="imageRule"
+                    title="프로필 사진 업로드 이용규칙"
+                    ok-only
+                    centered
+                  >
+                    프로필 사진은 회원 여러분의 개성을 드러낼 수 있는
+                    서비스입니다.
+                    <br />다만 원활한 서비스 제공에 문제를 일으키는 프로필
+                    사진은 규제될 수 있음을 알려드리오니, 업로드 시 유의하여
+                    주시기 바랍니다. <br />[규제 대상]
+                    <ol>
+                      <li>음란, 선정성 사진</li>
+                      <li>욕설 등 타인에게 불쾌감을 주는 이미지</li>
+                      <li>홍보 목적으로 URL이나 연락처가 기재된 이미지</li>
+                      <li>폭력 묘사, 신체훼손 등 혐오감을 주는 이미지</li>
+                      <li>
+                        명예훼손, 저작권 침해 등 타인의 권리를 침해하는 이미지
+                      </li>
+                      <li>그 외 법령 및 약관에 위배되는 사진 및 이미지</li>
+                    </ol>
+                    규제 대상으로 확인된 이미지는 발견 즉시 무통보 삭제되며,
+                    정도와 빈도에 따라 서비스 이용이 제한 될 수 있습니다.
+                    <br />이의 사항 발생 시 관리자에게 문의바랍니다.
+                    <br />
+                    <br />건전하고 멋진 프로필 사진 사용으로 여러분의 개성을
+                    뽐내주세요. 감사합니다.
+                  </b-modal>
+                </b-list-group-item>
+              </b-modal>
+              <input
+                type="file"
+                class="form-control"
+                placeholder="프로필 등록"
+                id="profil"
+                ref="uploadImageFile"
+                @change="onFileSelected"
+                accept="image/*"
+                style="display: none"
+              />
               <!-- 비밀번호 재입력 모달 -->
               <b-modal ref="passwordChkModal" centered title="비밀번호 재입력">
                 <b-input-group>
@@ -175,25 +203,6 @@
                   >
                 </template>
               </b-modal>
-              <!-- 마일리지랭킹 조회 -->
-              <h6 class="mil">
-                마일리지 랭킹 :<span style="color: red">{{ usermilrank }}</span
-                >위
-              </h6>
-              <h6 class="mil">(상위 {{ usermilrankper }}%)</h6>
-            </b-col>
-            <b-col>
-              <!-- \닉네임, 비밀번호, 회원탈퇴 드랍다운 -->
-              <b-dropdown variant="light" text="더 보기" class="m-2">
-                <b-dropdown-item @click="nicknameCheck = !nicknameCheck"
-                  >닉네임 수정</b-dropdown-item
-                >
-                <b-dropdown-item @click="showPasswordChkModal"
-                  >비밀번호 변경</b-dropdown-item
-                >
-                <b-dropdown-divider></b-dropdown-divider>
-                <b-dropdown-item @click="deleteUser">회원 탈퇴</b-dropdown-item>
-              </b-dropdown>
             </b-col>
           </b-row>
         </div>
@@ -201,48 +210,44 @@
 
       <!-- 마일리지 박스 -->
       <b-col cols="12" md="4" align-self="center">
-        <div style="height: 120px">
-          <div
-            class="box shadow1 d-flex justify-content-center"
+        <div
+          class="box shadow1 d-flex justify-content-center"
+          style="
+            width: 300px;
+            height: 100px;
+            margin: auto;
+            top: 50%;
+            font-family: digital;
+          "
+        >
+          <img
+            src="../../assets/img/gold.png"
+            alt=""
             style="
-              width: 300px;
-              height: 100px;
-              margin: auto;
-              top: 50%;
-              font-family: digital;
+              width: 50px;
+              height: 50px;
+              margin-top: 7%;
+              margin-right: 10px;
+            "
+          />
+          <p
+            style="
+              font-size: 3vh;
+              margin-top: 10%;
+              color: red;
+              font-weight: bold;
+              padding-right: 4px;
             "
           >
-            <img
-              src="../../assets/img/gold.png"
-              alt=""
-              style="
-                width: 50px;
-                height: 50px;
-                margin-top: 7%;
-                margin-right: 10px;
-              "
-            />
-            <p
-              style="
-                font-size: 3vh;
-                margin-top: 10%;
-                color: red;
-                font-weight: bold;
-                padding-right: 4px;
-              "
-            >
-              {{ user.userMileage }}
-            </p>
-            <p style="font-size: 3vh; margin-top: 10%" class="text-white">
-              SOL
-            </p>
-          </div>
+            {{ user.userMileage }}
+          </p>
+          <p style="font-size: 3vh; margin-top: 10%" class="text-white">SOL</p>
         </div>
       </b-col>
     </b-row>
 
     <!-- 하단부 -->
-    <b-row class="mt-4" align-h="center">
+    <b-row class="mt-4">
       <!-- 랭크 박스 -->
       <b-col cols="12" md="6" class="p-4">
         <!-- 솔로몬 랭크 -->
@@ -492,9 +497,12 @@
           class="box"
           table-variant="dark"
         >
-          <template v-slot:cell(postDate)="data">{{
-            postDT(data.value)
-          }}</template>
+          <template v-slot:cell(thumbnail)="data">
+            {{ data.item.thumbnail.replace(".jpg", "") }}
+          </template>
+          <template v-slot:cell(postdate)="data">
+            {{ postDT(data.item.postdate) }}
+          </template>
           <template v-slot:cell(to)="data">
             <b-icon
               class="icon"
@@ -550,8 +558,7 @@ export default {
       myVideoPostList: [],
       myVideoPostFields: [
         { key: "videoPostNo", label: "의뢰번호" },
-        { key: "video", label: "파일명" },
-        { key: "videoPostNo", label: "의뢰번호" },
+        { key: "thumbnail", label: "파일명" },
         { key: "videoPostNo", label: "의뢰번호" },
         { key: "postDate", label: "작성일" },
         { key: "to", label: "바로가기" },
@@ -612,6 +619,19 @@ export default {
               .then(({ data }) => {
                 this.myPostList = data.object;
                 this.solomonhire();
+              });
+            axios
+              .get(process.env.VUE_APP_API_URL + "/video/search", {
+                params: {
+                  limit: 5,
+                  offset: 0,
+                  option: " v.userNo = " + this.userNo,
+                  orderBy: "postDate",
+                },
+              })
+              .then(({ data }) => {
+                this.myVideoPostList = data.object;
+                console.log(this.myVideoPostList);
               });
           });
       })
@@ -953,7 +973,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 @media screen and (min-width: 1024px) {
   #pad1 {
     margin-left: 15%;

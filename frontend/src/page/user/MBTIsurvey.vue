@@ -269,4 +269,4 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped></style>

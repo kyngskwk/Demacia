@@ -62,8 +62,8 @@
       </b-col>
       <!-- 리스트 시작 -->
       <b-col cols="12" v-for="(item, $index) in list" :key="$index">
-        <b-row class="overflow-hidden box text-left mb-3">
-          <b-col cols="12" md="4" class="p-2">
+        <b-row class="overflow-hidden box text-left mb-3 p-2">
+          <b-col cols="12" md="4" class="p-0">
             <b-img
               id="sizepadding"
               :src="thumbURL(item)"
@@ -417,10 +417,10 @@ export default {
 .d-btn {
   color: white;
   background: black;
-  border: 3px ridge red;
+  border: 5px ridge #8ab7f7;
 }
 .d-btn:hover {
-  background: #b6b650;
+  background: #8ab7f7;
 }
 .box {
   border-style: ridge;

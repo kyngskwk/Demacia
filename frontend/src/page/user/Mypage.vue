@@ -250,7 +250,7 @@ export default {
   },
 };
 </script>
-<style>
+<style scoped>
 .shadow1 {
   box-shadow: 7px 7px 7px;
 }

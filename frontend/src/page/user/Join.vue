@@ -627,7 +627,7 @@ export default {
   },
 };
 </script>
-<style>
+<style scoped>
 .hoverbtn:hover {
   opacity: 0.8;
 }
