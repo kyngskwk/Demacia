@@ -6,16 +6,17 @@
           <h2>
             <strong style="color: yellow">{{ user.userNickname }}</strong
             >님의 MBTI는
-            <strong style="color: red">'{{ user.mbti }}'</strong> 입니다.
+            <strong style="color: red">'{{ user.mbti.toUpperCase() }}'</strong>
+            입니다.
           </h2>
         </b-col>
       </b-row>
-      <h1 class="text-center"><br />{{ user.mbti }}</h1>
+      <h1 class="text-center"><br />{{ user.mbti.toUpperCase() }}</h1>
       <h2 class="text-center">
-        {{ MBTI.find((o) => o.mbti == user.mbti).mbti_info }}
+        {{ MBTI.find((o) => o.mbti == user.mbti.toUpperCase()).mbti_info }}
       </h2>
       <h3 class="text-center">
-        {{ MBTI.find((o) => o.mbti == user.mbti).mbti_text }}
+        {{ MBTI.find((o) => o.mbti == user.mbti.toUpperCase()).mbti_text }}
       </h3>
       <b-container class="p-4">
         <b-jumbotron class="m-4 p-4">

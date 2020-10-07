@@ -404,7 +404,7 @@
       <b-col cols="12" md="6" class="p-4">
         <b-row no-gutters class="box p-3">
           <b-col cols="12">
-            <h4>내 MBTI</h4>
+            <h4 class="text-white">내 MBTI</h4>
           </b-col>
           <b-col cols="12" v-if="!user.mbti">
             아직 데마시아 전용 MBTI 측정을 하지 않았습니다.
@@ -437,98 +437,79 @@
 
       <!-- 매치데이터 업데이트 -->
       <b-col cols="12" md="6" class="p-4">
-        <h4 style="display: inline-block" class="text-white">
-          전적기록(MatchList)
-        </h4>
-        <br />
-        <b-button
-          size="lg"
-          variant="primary"
-          class="mr-2 mt-3"
-          @click="callmatch()"
-          style="
-            color: white;
-            background: linear-gradient(180deg, #1b2831 0%, #12384b 100%);
-            border-style: ridge;
-            border: #95ede7 3px ridge;
-          "
-        >
-          가져오기 </b-button
-        ><br /><br />
-        <b-button variant="primary" v-if="loading" style="text-align: center">
-          <b-spinner small></b-spinner>
-          <span class="sr-only">Loading...</span>
-        </b-button>
+        <b-row no-gutters class="box p-3" style="height: 100%">
+          <b-col cols="12">
+            <h4 style="display: inline-block" class="text-white">
+              전적기록(MatchList)
+            </h4>
+          </b-col>
+          <b-col cols="12">
+            <br />
+            <b-button
+              size="lg"
+              variant="primary"
+              class="d-btn mr-2 mt-3"
+              @click="callmatch()"
+              v-if="!loading"
+            >
+              가져오기
+            </b-button>
+            <b-spinner v-else large />
+            <!-- <b-button variant="primary" v-else style="text-align: center">
+              <span class="sr-only">Loading...</span>
+            </b-button> -->
+          </b-col>
+        </b-row>
       </b-col>
 
       <!-- 활동 목록 -->
-      <div class="col-11 p-2">
-        <div class="shadow1 m-4">
-          <h2 class="p-4" style="color: #fcd000">투표의뢰목록</h2>
-          <b-table
-            hover
-            :items="myPostList"
-            :fields="myPostFields"
-            table-variant="dark"
-            style="
-              border: #fcd000 2px solid;
-              opacity: 0.8;
-              background: linear-gradient(
-                180deg,
-                rgba(6, 17, 27, 1) 0%,
-                rgba(28, 83, 73, 1) 100%
-              );
-            "
-          >
-            <template v-slot:cell(postDate)="data">{{
-              postDT(data.value)
-            }}</template>
-            <template v-slot:cell(to)="data">
-              <b-icon
-                class="icon"
-                icon="arrow-right-circle"
-                font-scale="2"
-                style="cursor: pointer"
-                @click="toDetail(data.item.postNo)"
-              ></b-icon>
-            </template>
-          </b-table>
-        </div>
-      </div>
+      <b-col cols="12" class="p-4">
+        <h2 class="p-4" style="color: #fcd000">투표의뢰목록</h2>
+        <b-table
+          hover
+          :items="myPostList"
+          :fields="myPostFields"
+          class="box"
+          table-variant="dark"
+        >
+          <template v-slot:cell(postDate)="data">{{
+            postDT(data.value)
+          }}</template>
+          <template v-slot:cell(to)="data">
+            <b-icon
+              class="icon"
+              icon="arrow-right-circle"
+              font-scale="2"
+              style="cursor: pointer"
+              @click="toDetail(data.item.postNo)"
+            ></b-icon>
+          </template>
+        </b-table>
+      </b-col>
       <!-- 영상분석 -->
-      <div class="col-11 p-2">
-        <div class="shadow1 m-4">
-          <h2 class="p-4" style="color: #fcd000">영상분석 의뢰목록</h2>
-          <b-table
-            hover
-            :items="myPostList"
-            :fields="myPostFields"
-            table-variant="dark"
-            style="
-              border: #fcd000 2px solid;
-              opacity: 0.8;
-              background: linear-gradient(
-                180deg,
-                rgba(6, 17, 27, 1) 0%,
-                rgba(28, 83, 73, 1) 100%
-              );
-            "
-          >
-            <template v-slot:cell(postDate)="data">{{
-              postDT(data.value)
-            }}</template>
-            <template v-slot:cell(to)="data">
-              <b-icon
-                class="icon"
-                icon="arrow-right-circle"
-                font-scale="2"
-                style="cursor: pointer"
-                @click="toDetail(data.item.postNo)"
-              ></b-icon>
-            </template>
-          </b-table>
-        </div>
-      </div>
+      <b-col cols="12" class="p-4">
+        <h2 class="p-4" style="color: #fcd000">영상분석 의뢰목록</h2>
+        <b-table
+          hover
+          :items="myVideoPostList"
+          :fields="myVideoPostFields"
+          class="box"
+          table-variant="dark"
+        >
+          <template v-slot:cell(postDate)="data">{{
+            postDT(data.value)
+          }}</template>
+          <template v-slot:cell(to)="data">
+            <b-icon
+              class="icon"
+              icon="arrow-right-circle"
+              font-scale="2"
+              style="cursor: pointer"
+              @click="toVideoDetail(data.item.videoPostNo)"
+            ></b-icon>
+          </template>
+        </b-table>
+      </b-col>
     </b-row>
   </div>
 </template>
@@ -567,6 +548,12 @@ export default {
         { key: "title", label: "글제목" },
         { key: "option1", label: "VS" },
         { key: "option2", label: "VS" },
+        { key: "postDate", label: "작성일" },
+        { key: "to", label: "바로가기" },
+      ],
+      myVideoPostList: [],
+      myVideoPostFields: [
+        { key: "videoPostNo", label: "의뢰번호" },
         { key: "postDate", label: "작성일" },
         { key: "to", label: "바로가기" },
       ],
@@ -894,6 +881,9 @@ export default {
       }
     },
 
+    toVideoDetail(videoPostNo) {
+      this.$router.push("/vdetail/" + videoPostNo);
+    },
     toDetail(postNo) {
       this.$router.push("/detail/" + postNo);
     },
