@@ -1,91 +1,87 @@
 <template>
   <div class="container" style="heigth: 100%; font-family: Tmon">
-    <div>
-      <img src="../../assets/img/damacia.png" alt="" class="mt-5 mb-3" />
-    </div>
-    <div>
-      <img src="../../assets/img/mypage.png" alt="" class="mb-5" />
-    </div>
     <b-row align-h="end">
       <b-col cols="12" md="4">
-        <!-- 프로필 이미지 -->
-        <div v-b-modal.modalProfileImage href="#">
-          <b-avatar
-            badge-variant="dark"
-            badge-offset="-10px"
-            variant="secondary"
-            :src="imgURL"
-            size="10rem"
-            class="mb-3"
-          >
-            <template v-slot:badge>
-              <b-icon icon="upload"></b-icon>
-            </template>
-          </b-avatar>
-          <!-- 이미지 변경 모달 -->
-          <b-modal
-            id="modalProfileImage"
-            size="sm"
-            title="프로필 사진 변경"
-            variant="dark"
-            centered
-            hide-footer
-          >
-            <b-list-group>
-              <b-list-group-item @click="imgUp" href="#" variant="primary"
-                >내 기기에서 파일 탐색</b-list-group-item
-              >
-              <b-list-group-item @click="imgDel" href="#" variant="primary"
-                >프로필 사진 삭제</b-list-group-item
-              >
-              <b-list-group-item
-                href="#"
-                variant="secondary-outline"
-                v-b-modal.imageRule
-                >사진 업로드 이용규칙</b-list-group-item
-              >
-              <b-modal
-                id="imageRule"
-                title="프로필 사진 업로드 이용규칙"
-                ok-only
-                centered
-              >
-                프로필 사진은 회원 여러분의 개성을 드러낼 수 있는 서비스입니다.
-                <br />다만 원활한 서비스 제공에 문제를 일으키는 프로필 사진은
-                규제될 수 있음을 알려드리오니, 업로드 시 유의하여 주시기
-                바랍니다. <br />[규제 대상]
-                <ol>
-                  <li>음란, 선정성 사진</li>
-                  <li>욕설 등 타인에게 불쾌감을 주는 이미지</li>
-                  <li>홍보 목적으로 URL이나 연락처가 기재된 이미지</li>
-                  <li>폭력 묘사, 신체훼손 등 혐오감을 주는 이미지</li>
-                  <li>
-                    명예훼손, 저작권 침해 등 타인의 권리를 침해하는 이미지
-                  </li>
-                  <li>그 외 법령 및 약관에 위배되는 사진 및 이미지</li>
-                </ol>
-                규제 대상으로 확인된 이미지는 발견 즉시 무통보 삭제되며, 정도와
-                빈도에 따라 서비스 이용이 제한 될 수 있습니다.
-                <br />이의 사항 발생 시 관리자에게 문의바랍니다.
-                <br />
-                <br />건전하고 멋진 프로필 사진 사용으로 여러분의 개성을
-                뽐내주세요. 감사합니다.
-              </b-modal>
-            </b-list-group>
-          </b-modal>
-          <input
-            type="file"
-            class="form-control"
-            placeholder="프로필 등록"
-            id="profil"
-            ref="uploadImageFile"
-            @change="onFileSelected"
-            accept="image/*"
-            style="display: none"
-          />
-        </div>
         <!-- 유저정보 박스 -->
-        <div class="box" style="height: 210px">
+        <div class="box mt-4" style="height: 400px">
+          <h2 style="color:rgb(252, 208, 0);">MY PAGE</h2>
+          <!-- 프로필 이미지 -->
+          <div v-b-modal.modalProfileImage href="#">
+            <b-avatar
+              badge-variant="dark"
+              badge-offset="-10px"
+              variant="secondary"
+              :src="imgURL"
+              size="10rem"
+              class="mb-3"
+            >
+              <template v-slot:badge>
+                <b-icon icon="upload"></b-icon>
+              </template>
+            </b-avatar>
+            <!-- 이미지 변경 모달 -->
+            <b-modal
+              id="modalProfileImage"
+              size="sm"
+              title="프로필 사진 변경"
+              variant="dark"
+              centered
+              hide-footer
+            >
+              <b-list-group-item>
+                <b-list-group-item @click="imgUp" href="#" variant="primary"
+                  >내 기기에서 파일 탐색</b-list-group-item
+                >
+                <b-list-group-item @click="imgDel" href="#" variant="primary"
+                  >프로필 사진 삭제</b-list-group-item
+                >
+                <b-list-group-item
+                  href="#"
+                  variant="secondary-outline"
+                  v-b-modal.imageRule
+                  >사진 업로드 이용규칙</b-list-group-item
+                >
+                <b-modal
+                  id="imageRule"
+                  title="프로필 사진 업로드 이용규칙"
+                  ok-only
+                  centered
+                >
+                  프로필 사진은 회원 여러분의 개성을 드러낼 수 있는
+                  서비스입니다.
+                  <br />다만 원활한 서비스 제공에 문제를 일으키는 프로필 사진은
+                  규제될 수 있음을 알려드리오니, 업로드 시 유의하여 주시기
+                  바랍니다. <br />[규제 대상]
+                  <ol>
+                    <li>음란, 선정성 사진</li>
+                    <li>욕설 등 타인에게 불쾌감을 주는 이미지</li>
+                    <li>홍보 목적으로 URL이나 연락처가 기재된 이미지</li>
+                    <li>폭력 묘사, 신체훼손 등 혐오감을 주는 이미지</li>
+                    <li>
+                      명예훼손, 저작권 침해 등 타인의 권리를 침해하는 이미지
+                    </li>
+                    <li>그 외 법령 및 약관에 위배되는 사진 및 이미지</li>
+                  </ol>
+                  규제 대상으로 확인된 이미지는 발견 즉시 무통보 삭제되며,
+                  정도와 빈도에 따라 서비스 이용이 제한 될 수 있습니다.
+                  <br />이의 사항 발생 시 관리자에게 문의바랍니다.
+                  <br />
+                  <br />건전하고 멋진 프로필 사진 사용으로 여러분의 개성을
+                  뽐내주세요. 감사합니다.
+                </b-modal>
+              </b-list-group-item>
+            </b-modal>
+            <input
+              type="file"
+              class="form-control"
+              placeholder="프로필 등록"
+              id="profil"
+              ref="uploadImageFile"
+              @change="onFileSelected"
+              accept="image/*"
+              style="display: none"
+            />
+          </div>
           <b-row class="mt-3" style="height: 3rem">
             <b-col class="mr-2">
               <!-- 닉네임 -->
@@ -978,8 +974,8 @@ export default {
   opacity: 0.8;
   background: linear-gradient(
     180deg,
-    rgba(6, 17, 27, 1) 0%,
-    rgba(28, 83, 73, 1) 100%
+    rgba(14, 36, 56, 1) 0%,
+    rgba(32, 17, 95, 1) 100%
   );
   border: #fcd000 3px ridge;
   box-shadow: 5px 5px 5px;
