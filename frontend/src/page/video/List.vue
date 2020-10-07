@@ -1,19 +1,18 @@
 <template>
   <div class="container m-auto" id="body" style="font-family: Tmon">
     <b-row align-h="center" class="mt-4">
-      <b-col cols="12">
-        <div class="mt-4" style="display: center">
-          <b-button
-            pill
-            size="lg"
-            variant="dark"
-            class="d-btn p-3 mt-4"
-            href="/vwrite"
-          >
-            <b-icon icon="camera-video-fill" />&nbsp;영상 분석 요청
-          </b-button>
-        </div>
-      </b-col>
+      <div class="mt-4" style="display: center;">
+        <b-button
+          pill
+          size="lg"
+          variant="dark"
+          class="d-btn1 p-3 mt-4"
+          href="/vwrite"
+        >
+          <b-icon icon="camera-video-fill" />&nbsp;영상 분석 요청
+        </b-button>
+      </div>
+
       <b-col cols="4" md="12">
         <div
           class="d-flex justify-content-end"
@@ -253,12 +252,12 @@ export default {
   box-shadow: 5px 5px 5px;
   color: #e3d19e;
 }
-.d-btn {
+.d-btn1 {
   color: white;
   background: black;
-  border: 3px ridge red;
+  border: 5px ridge #8ab7f7;
 }
-.d-btn:hover {
-  background: #b6b650;
+.d-btn1:hover {
+  background: #8ab7f7;
 }
 </style>

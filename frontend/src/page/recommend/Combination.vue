@@ -7,6 +7,9 @@
       <img src="../../assets/img/picktitle.png" alt="" class="mt-5 mb-3" />
     </div>
     <div><img src="../../assets/img/combititle.png" alt="" class="mb-5" /></div>
+    <h2 style="color:#8ab7f7">
+      최근 가장 인기있는 메타기반으로 최고의 승률을 자랑하는 조합을 추천드려요
+    </h2>
 
     <!-- 2명 파티 -->
     <div class="box px-3 chambox mb-5 pb-0">
@@ -17,7 +20,7 @@
       </div>
       <b-row align-v="stretch" class="section mb-0">
         <b-col>
-          <div class="mb-5">
+          <div class="mb-3">
             <img src="../../assets/img/1badge.png" alt="" class="rankimg" />
           </div>
           <b-row align-v="center">
@@ -58,7 +61,7 @@
         </b-col>
 
         <b-col class="article">
-          <div class="mb-5">
+          <div class="mb-3">
             <img src="../../assets/img/2badge.png" alt="" class="rankimg" />
           </div>
           <b-row align-v="center">
@@ -100,7 +103,7 @@
         </b-col>
 
         <b-col>
-          <div class="mb-5">
+          <div class="mb-3">
             <img src="../../assets/img/3badge.png" alt="" class="rankimg" />
           </div>
           <b-row align-v="center">
@@ -144,14 +147,14 @@
 
     <!-- 3명 파티 -->
     <div class="box px-3 chambox mb-5 pb-0">
-      <div class="mb-5">
+      <div>
         <div class="chamtitle pl-4 px-auto">
           <h5 style="color: black">나만의 3인 최고 조합 추천</h5>
         </div>
       </div>
       <b-row align-v="stretch" class="section mb-0">
         <b-col>
-          <div>
+          <div class="mb-3">
             <img src="../../assets/img/1badge.png" alt="" class="rankimg" />
           </div>
           <b-row align-v="center">
@@ -166,9 +169,12 @@
                 "
               />
               <div class="mb-3">
-                <b-badge pill variant="warning" class="pickname"
-                  >{{ first_cham.korname }} | {{ first_cham.chamname }}</b-badge
-                >
+                <h5>
+                  <b-badge pill variant="warning" class="pickname"
+                    >{{ first_cham.korname }} |
+                    {{ first_cham.chamname }}</b-badge
+                  >
+                </h5>
               </div>
             </b-col>
           </b-row>
@@ -200,16 +206,18 @@
                     .replace('_1.jpg', '.png')
                 "
               />
-              <b-badge pill variant="warning" class="pickname"
-                >{{ comb_info[1].korname }} |
-                {{ comb_info[1].chamname }}</b-badge
-              >
+              <h5>
+                <b-badge pill variant="warning" class="pickname"
+                  >{{ comb_info[1].korname }} |
+                  {{ comb_info[1].chamname }}</b-badge
+                >
+              </h5>
             </b-col>
           </b-row>
         </b-col>
 
         <b-col class="article">
-          <div class="mb-5">
+          <div class="mb-3">
             <img src="../../assets/img/2badge.png" alt="" class="rankimg" />
           </div>
           <b-row align-v="center">
@@ -224,10 +232,12 @@
                 "
               />
               <div>
-                <b-badge pill variant="warning" class="pickname mb-3"
-                  >{{ second_cham.korname }} |
-                  {{ second_cham.chamname }}</b-badge
-                >
+                <h5>
+                  <b-badge pill variant="warning" class="pickname mb-3"
+                    >{{ second_cham.korname }} |
+                    {{ second_cham.chamname }}</b-badge
+                  >
+                </h5>
               </div>
             </b-col>
           </b-row>
@@ -243,10 +253,12 @@
                     .replace('_1.jpg', '.png')
                 "
               />
-              <b-badge pill variant="warning" class="pickname"
-                >{{ comb_info[4].korname }} |
-                {{ comb_info[4].chamname }}</b-badge
-              >
+              <h5>
+                <b-badge pill variant="warning" class="pickname"
+                  >{{ comb_info[4].korname }} |
+                  {{ comb_info[4].chamname }}</b-badge
+                >
+              </h5>
             </b-col>
 
             <b-col>
@@ -259,16 +271,18 @@
                     .replace('_1.jpg', '.png')
                 "
               />
-              <b-badge pill variant="warning" class="pickname"
-                >{{ comb_info[5].korname }} |
-                {{ comb_info[5].chamname }}</b-badge
-              >
+              <h5>
+                <b-badge pill variant="warning" class="pickname"
+                  >{{ comb_info[5].korname }} |
+                  {{ comb_info[5].chamname }}</b-badge
+                >
+              </h5>
             </b-col>
           </b-row>
         </b-col>
 
         <b-col>
-          <div class="mb-5">
+          <div class="mb-3">
             <img src="../../assets/img/3badge.png" alt="" class="rankimg" />
           </div>
           <b-row align-v="center">
@@ -283,9 +297,12 @@
                 "
               />
               <div class="mb-3">
-                <b-badge pill variant="warning" class="pickname"
-                  >{{ third_cham.korname }} | {{ third_cham.chamname }}</b-badge
-                >
+                <h5>
+                  <b-badge pill variant="warning" class="pickname"
+                    >{{ third_cham.korname }} |
+                    {{ third_cham.chamname }}</b-badge
+                  >
+                </h5>
               </div>
             </b-col>
           </b-row>
@@ -301,10 +318,12 @@
                     .replace('_1.jpg', '.png')
                 "
               />
-              <b-badge pill variant="warning" class="pickname"
-                >{{ comb_info[8].korname }} |
-                {{ comb_info[8].chamname }}</b-badge
-              >
+              <h5>
+                <b-badge pill variant="warning" class="pickname"
+                  >{{ comb_info[8].korname }} |
+                  {{ comb_info[8].chamname }}</b-badge
+                >
+              </h5>
             </b-col>
 
             <b-col>
@@ -317,10 +336,12 @@
                     .replace('_1.jpg', '.png')
                 "
               />
-              <b-badge pill variant="warning" class="pickname"
-                >{{ comb_info[9].korname }} |
-                {{ comb_info[9].chamname }}</b-badge
-              >
+              <h5>
+                <b-badge pill variant="warning" class="pickname"
+                  >{{ comb_info[9].korname }} |
+                  {{ comb_info[9].chamname }}</b-badge
+                >
+              </h5>
             </b-col>
           </b-row>
         </b-col>
@@ -331,12 +352,14 @@
     <div class="box px-3 chambox mb-5 pb-0">
       <div class="mb-5">
         <div class="chamtitle pl-4 px-auto">
-          <h5 style="color: black">나만의 5인 최고 조합 추천</h5>
+          <h5 style="color:black;">
+            나만의 5인 최고 조합 추천
+          </h5>
         </div>
       </div>
       <b-row align-v="stretch" class="section mb-0">
         <b-col>
-          <div class="mb-5">
+          <div class="mb-3">
             <img src="../../assets/img/1badge.png" alt="" class="rankimg" />
           </div>
           <b-row align-v="center" class="mb-3">
@@ -350,9 +373,11 @@
                     .replace('_1.jpg', '.png')
                 "
               />
-              <b-badge pill variant="warning" class="pickname"
-                >{{ first_cham.korname }} | {{ first_cham.chamname }}</b-badge
-              >
+              <h5>
+                <b-badge pill variant="warning" class="pickname"
+                  >{{ first_cham.korname }} | {{ first_cham.chamname }}</b-badge
+                >
+              </h5>
             </b-col>
             <b-col>
               <b-img
@@ -364,10 +389,12 @@
                     .replace('_1.jpg', '.png')
                 "
               />
-              <b-badge pill variant="warning" class="pickname"
-                >{{ comb_info[0].korname }} |
-                {{ comb_info[0].chamname }}</b-badge
-              >
+              <h5>
+                <b-badge pill variant="warning" class="pickname"
+                  >{{ comb_info[0].korname }} |
+                  {{ comb_info[0].chamname }}</b-badge
+                >
+              </h5>
             </b-col>
           </b-row>
 
@@ -382,11 +409,14 @@
                     .replace('_1.jpg', '.png')
                 "
               />
+
               <div class="mb-3">
-                <b-badge pill variant="warning" class="pickname"
-                  >{{ comb_info[1].korname }} |
-                  {{ comb_info[1].chamname }}</b-badge
-                >
+                <h5>
+                  <b-badge pill variant="warning" class="pickname"
+                    >{{ comb_info[1].korname }} |
+                    {{ comb_info[1].chamname }}</b-badge
+                  >
+                </h5>
               </div>
             </b-col>
           </b-row>
@@ -402,10 +432,12 @@
                     .replace('_1.jpg', '.png')
                 "
               />
-              <b-badge pill variant="warning" class="pickname"
-                >{{ comb_info[2].korname }} |
-                {{ comb_info[2].chamname }}</b-badge
-              >
+              <h5>
+                <b-badge pill variant="warning" class="pickname"
+                  >{{ comb_info[2].korname }} |
+                  {{ comb_info[2].chamname }}</b-badge
+                >
+              </h5>
             </b-col>
             <b-col>
               <b-img
@@ -417,16 +449,18 @@
                     .replace('_1.jpg', '.png')
                 "
               />
-              <b-badge pill variant="warning" class="pickname"
-                >{{ comb_info[3].korname }} |
-                {{ comb_info[3].chamname }}</b-badge
-              >
+              <h5>
+                <b-badge pill variant="warning" class="pickname"
+                  >{{ comb_info[3].korname }} |
+                  {{ comb_info[3].chamname }}</b-badge
+                >
+              </h5>
             </b-col>
           </b-row>
         </b-col>
 
         <b-col class="article">
-          <div class="mb-5">
+          <div class="mb-3">
             <img src="../../assets/img/2badge.png" alt="" class="rankimg" />
           </div>
 
@@ -441,9 +475,12 @@
                     .replace('_1.jpg', '.png')
                 "
               />
-              <b-badge pill variant="warning" class="pickname"
-                >{{ second_cham.korname }} | {{ second_cham.chamname }}</b-badge
-              >
+              <h5>
+                <b-badge pill variant="warning" class="pickname"
+                  >{{ second_cham.korname }} |
+                  {{ second_cham.chamname }}</b-badge
+                >
+              </h5>
             </b-col>
 
             <b-col>
@@ -456,10 +493,12 @@
                     .replace('_1.jpg', '.png')
                 "
               />
-              <b-badge pill variant="warning" class="pickname"
-                >{{ comb_info[4].korname }} |
-                {{ comb_info[4].chamname }}</b-badge
-              >
+              <h5>
+                <b-badge pill variant="warning" class="pickname"
+                  >{{ comb_info[4].korname }} |
+                  {{ comb_info[4].chamname }}</b-badge
+                >
+              </h5>
             </b-col>
           </b-row>
 
@@ -475,10 +514,12 @@
                 "
               />
               <div class="mb-3">
-                <b-badge pill variant="warning" class="pickname"
-                  >{{ comb_info[5].korname }} |
-                  {{ comb_info[5].chamname }}</b-badge
-                >
+                <h5>
+                  <b-badge pill variant="warning" class="pickname"
+                    >{{ comb_info[5].korname }} |
+                    {{ comb_info[5].chamname }}</b-badge
+                  >
+                </h5>
               </div>
             </b-col>
           </b-row>
@@ -494,10 +535,12 @@
                     .replace('_1.jpg', '.png')
                 "
               />
-              <b-badge pill variant="warning" class="pickname"
-                >{{ comb_info[6].korname }} |
-                {{ comb_info[6].chamname }}</b-badge
-              >
+              <h5>
+                <b-badge pill variant="warning" class="pickname"
+                  >{{ comb_info[6].korname }} |
+                  {{ comb_info[6].chamname }}</b-badge
+                >
+              </h5>
             </b-col>
             <b-col>
               <b-img
@@ -509,16 +552,18 @@
                     .replace('_1.jpg', '.png')
                 "
               />
-              <b-badge pill variant="warning" class="pickname"
-                >{{ comb_info[7].korname }} |
-                {{ comb_info[7].chamname }}</b-badge
-              >
+              <h5>
+                <b-badge pill variant="warning" class="pickname"
+                  >{{ comb_info[7].korname }} |
+                  {{ comb_info[7].chamname }}</b-badge
+                >
+              </h5>
             </b-col>
           </b-row>
         </b-col>
 
         <b-col>
-          <div class="mb-5">
+          <div class="mb-3">
             <img src="../../assets/img/3badge.png" alt="" class="rankimg" />
           </div>
 
@@ -533,9 +578,11 @@
                     .replace('_1.jpg', '.png')
                 "
               />
-              <b-badge pill variant="warning" class="pickname"
-                >{{ third_cham.korname }} | {{ third_cham.chamname }}</b-badge
-              >
+              <h5>
+                <b-badge pill variant="warning" class="pickname"
+                  >{{ third_cham.korname }} | {{ third_cham.chamname }}</b-badge
+                >
+              </h5>
             </b-col>
             <b-col>
               <b-img
@@ -547,10 +594,12 @@
                     .replace('_1.jpg', '.png')
                 "
               />
-              <b-badge pill variant="warning" class="pickname"
-                >{{ comb_info[8].korname }} |
-                {{ comb_info[8].chamname }}</b-badge
-              >
+              <h5>
+                <b-badge pill variant="warning" class="pickname"
+                  >{{ comb_info[8].korname }} |
+                  {{ comb_info[8].chamname }}</b-badge
+                >
+              </h5>
             </b-col>
           </b-row>
 
@@ -566,10 +615,12 @@
                 "
               />
               <div class="mb-3">
-                <b-badge pill variant="warning" class="pickname"
-                  >{{ comb_info[9].korname }} |
-                  {{ comb_info[9].chamname }}</b-badge
-                >
+                <h5>
+                  <b-badge pill variant="warning" class="pickname"
+                    >{{ comb_info[9].korname }} |
+                    {{ comb_info[9].chamname }}</b-badge
+                  >
+                </h5>
               </div>
             </b-col>
           </b-row>
@@ -585,10 +636,12 @@
                     .replace('_1.jpg', '.png')
                 "
               />
-              <b-badge pill variant="warning" class="pickname"
-                >{{ comb_info[10].korname }} |
-                {{ comb_info[10].chamname }}</b-badge
-              >
+              <h5>
+                <b-badge pill variant="warning" class="pickname"
+                  >{{ comb_info[10].korname }} |
+                  {{ comb_info[10].chamname }}</b-badge
+                >
+              </h5>
             </b-col>
             <b-col>
               <b-img
@@ -600,10 +653,12 @@
                     .replace('_1.jpg', '.png')
                 "
               />
-              <b-badge pill variant="warning" class="pickname"
-                >{{ comb_info[11].korname }} |
-                {{ comb_info[11].chamname }}</b-badge
-              >
+              <h5>
+                <b-badge pill variant="warning" class="pickname"
+                  >{{ comb_info[11].korname }} |
+                  {{ comb_info[11].chamname }}</b-badge
+                >
+              </h5>
             </b-col>
           </b-row>
         </b-col>
