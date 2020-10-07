@@ -265,10 +265,11 @@ export default {
   border-style: ridge;
   border: #fcd000 4px ridge;
   opacity: 0.8;
-  background: linear-gradient(180deg, #06111b, #1c5349);
-  margin: 1rem;
-  width: 100%;
-  background-color: white;
+  background: linear-gradient(
+    180deg,
+    rgba(14, 36, 56, 1) 0%,
+    rgba(32, 17, 95, 1) 100%
+  );
   box-shadow: 5px 5px 5px;
   color: #e3d19e;
 }

@@ -1,46 +1,43 @@
 <template>
-  <div class="col-12 col-xl-10 m-auto" id="body" style="font-family:Tmon">
-    <div class="row">
-      <div class="col-12" style="padding:2em;">
-        <b-button pill size="lg" variant="dark" class="p-3" href="/write">
-          <b-icon icon="archive-fill" />&nbsp;투표 의뢰
-        </b-button>
-      </div>
-      <div class="col-0 col-lg-1 col-xl-1 mt-4"></div>
-      <div class="col-12 col-lg-10 col-xl-10 mt-4">
+  <div class="container m-auto" id="body" style="font-family: Tmon">
+    <b-row align-h="center" class="mt-4">
+      <b-col cols="12">
+        <div class="mt-4" style="display: center">
+          <b-button
+            pill
+            size="lg"
+            variant="dark"
+            class="d-btn p-3 mt-4"
+            href="/write"
+          >
+            <b-icon icon="archive-fill" />&nbsp;투표 의뢰
+          </b-button>
+        </div>
+      </b-col>
+      <b-col cols="12">
         <b-row align-h="between">
-          <b-col cols="12" sm="6" lg="5" xl="4">
-            <b-input-group>
-              <template v-slot:prepend style="width:100px; ">
+          <b-col cols="12" md="5">
+            <b-input-group class="shadow1">
+              <template v-slot:prepend style="width: 100px">
                 <b-form-select
                   v-model="searchby"
                   :options="searchOptions"
-                  class="shadow1"
                 ></b-form-select>
               </template>
               <b-form-input
                 v-model="searchText"
                 placeholder="검색"
                 @keyup.enter="search"
-                class="shadow1"
-                style="padding-right:20px; border-radius:4px; margin-right:-7px;"
               ></b-form-input>
               <b-input-group-append>
-                <b-button variant="dark" class="shadow1" @click="search">
+                <b-button variant="dark" @click="search">
                   <b-icon-search />
                 </b-button>
               </b-input-group-append>
             </b-input-group>
           </b-col>
-          <b-col cols="6" sm="3" lg="4" xl="6"></b-col>
           <!-- 정렬 드롭다운 -->
-          <b-col
-            cols="4"
-            sm="3"
-            lg="3"
-            xl="2"
-            style="margin-top:20px; margin-bottom:20px;"
-          >
+          <b-col cols="12" md="3">
             <b-form-select
               v-model="orderby"
               :options="orderOptions"
@@ -48,213 +45,162 @@
             ></b-form-select>
           </b-col>
         </b-row>
+      </b-col>
+      <b-col cols="12">
         <b-tabs
+          class="p-0"
           card
           v-model="tabIndex"
           noody
-          style="color:white; font-size:2.5vh;"
-          content-class="mt-3"
+          style="font-size: 2.5vh"
           fill
         >
           <b-tab title="전체" />
           <b-tab title="진행중" />
           <b-tab title="마감" />
         </b-tabs>
-
-        <!-- 리스트 시작 -->
-        <b-card
-          no-body
-          class="overflow-hidden box-shadow text-left shadow1"
-          style="margin-top:10px; margin-bottom:5%;"
-          v-for="(item, $index) in list"
-          :key="$index"
-        >
-          <b-row style="">
-            <b-col xl="4" class="p-2 pl-4">
-              <b-card-img
-                id="sizepadding"
-                :src="thumbURL(item)"
-                :alt="item.postNo + '번째영상썸네일'"
-                class="rounded w-100 h-100"
-                style=" border-width:2px; max-height:255px; padding-right:17px;"
-                @error="noimage"
-              ></b-card-img>
-            </b-col>
-            <b-col style="padding-left:0">
-              <div class="m-3">
-                <div class="row" style="padding-right:7px;">
-                  <div class="col-6 col-sm-5 col-md-5 col-lg-4 d-inline-block">
-                    <b-avatar
-                      variant="secondary"
-                      :src="uImgURL(item)"
-                      class="ml-3 mr-3"
-                    ></b-avatar>
-                    <strong>{{ item.userNickname }}</strong>
-                  </div>
-
-                  <div
-                    class="col-6 col-sm-7 col-md-7 col-lg-8 d-flex row justify-content-end"
-                    style="margin-right:0; padding-right:0px; "
+      </b-col>
+      <!-- 리스트 시작 -->
+      <b-col cols="12" v-for="(item, $index) in list" :key="$index">
+        <b-row class="overflow-hidden box text-left mb-3">
+          <b-col cols="12" md="4" class="p-2">
+            <b-img
+              id="sizepadding"
+              :src="thumbURL(item)"
+              :alt="item.postNo + '번째영상썸네일'"
+              rounded
+              style="width: 100%; max-height: 200px"
+              @error="noimage"
+            ></b-img>
+          </b-col>
+          <b-col cols="12" md="8">
+            <b-row align-h="between">
+              <b-col cols="12" md="4" class="d-inline-block pb-0 pt-0">
+                <b-avatar
+                  variant="secondary"
+                  :src="uImgURL(item)"
+                  class="ml-3 mr-3"
+                ></b-avatar>
+                <strong>{{ item.userNickname }}</strong>
+              </b-col>
+              <b-col cols="12" md="8" class="text-right pb-0 pt-0">
+                <p class="m-0" style="font-size: 2.5vh">
+                  <b-icon-hand-thumbs-up />
+                  {{ item.totalLikes }}
+                  <strong class="m-4" />
+                  <b-icon-caret-right-square-fill />
+                  {{ item.view }}
+                  <strong class="m-4" />
+                  <strong
+                    style="color: red; font-weight: bold; font-family: digital"
                   >
-                    <div class="col-0 col-md-2 col-lg-2 col-xl-2"></div>
-                    <div
-                      class="d-flex justify-content-end col-5 col-md-3 col-lg-3 col-xl-3"
-                    >
-                      <div class="d-flex justify-content-end">
-                        <b-icon-hand-thumbs-up
-                          class="h4"
-                          style="margin-right:5px; padding-top:3%; padding:0;"
-                        />
-                        <p style=" font-size:2.5vh ">{{ item.totalLikes }}</p>
-                      </div>
-                    </div>
-                    <div
-                      class="d-flex justify-content-end col-5 col-md-3 col-lg-3 col-xl-3"
-                      style="margin-right:0px; padding:0;"
-                    >
-                      <div class="d-flex" style>
-                        <b-icon-caret-right-square-fill
-                          class="h4"
-                          style=" margin-right:10px;"
-                        />
-                        <p style=" font-size:2.5vh ">{{ item.view }}</p>
-                      </div>
-                    </div>
-                    <div
-                      class="d-flex justify-content-end col-5 col-md-3 col-lg-3 col-xl-3"
-                      style="margin-right:0px; padding:0;"
-                    >
-                      <div style="text-align:center; font-family:digital">
-                        <p
-                          style="color:red;font-weight:bold;display:inline; margin-right:3px; font-size:20px;"
-                        >
-                          {{ item.mileage }}
-                        </p>
-                        <p
-                          style="font-weight:bold;display:inline;font-size:20px;"
-                        >
-                          SOL
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <b-card-body style="padding-top:0;">
-                <img
-                  class="max-small"
+                    {{ item.mileage }}
+                  </strong>
+                  <strong style="font-family: digital; font-weight: bold">
+                    SOL
+                  </strong>
+                </p>
+              </b-col>
+            </b-row>
+            <img
+              class="max-small"
+              v-if="isDeadLine(item)"
+              src="../../assets/img/votenow1.png"
+              style="
+                position: absolute;
+                width: auto;
+                height: auto;
+                max-width: 60%;
+                max-height: 60%;
+                margin-left: 20%;
+                opacity: 0.5;
+              "
+            />
+            <img
+              class="max-small"
+              v-else
+              src="../../assets/img/closed.png"
+              style="
+                position: absolute;
+                width: auto;
+                height: auto;
+                transform: rotate(-3deg);
+                max-width: 70%;
+                max-height: 90%;
+                margin-left: 20%;
+                margin-bottom: 4%;
+                margin-top: -5%;
+                opacity: 0.5;
+              "
+            />
+            <b-row class="pb-0 pt-0">
+              <b-col cols="12" md="8">
+                <h3
+                  style="
+                    display: -webkit-box;
+                    font-weight: bold;
+                    overflow: hidden;
+                    width: 100%;
+                    text-overflow: ellipsis;
+                    -webkit-line-clamp: 1;
+                    -webkit-box-orient: vertical;
+                    word-wrap: break-word;
+                    line-height: 2em;
+                    height: 2em;
+                  "
+                >
+                  {{ item.title }}
+                </h3>
+              </b-col>
+
+              <b-col cols="12" md="4" class="text-right">
+                <h4 style="font-weight: bold; line-height: 2em">
+                  {{ item.option1 }}
+                  <strong style="color: red"> VS </strong>
+                  {{ item.option2 }}
+                </h4>
+              </b-col>
+            </b-row>
+
+            <b-row align-h="between">
+              <b-col> 의뢰번호 No. {{ item.postNo }} </b-col>
+
+              <b-col class="text-right">
+                <div
                   v-if="isDeadLine(item)"
-                  src="http://j3a304.p.ssafy.io/imgup/images/votenow1.jpg"
-                  style=" position:absolute;
-                  width: auto; 
-                  height: auto;
-                  max-width: 60%;
-                  max-height: 60%; 
-                  margin-left:20%; 
-                  opacity:0.5;"
-                />
-                <img
-                  class="max-small"
-                  v-else
-                  src="http://j3a304.p.ssafy.io/imgup/images/closed.jpg"
-                  style=" position:absolute;
-                  width: auto; 
-                  height: auto;
-                  transform: rotate(-3deg);
-                  max-width: 70%;
-                  max-height: 90%; 
-                  margin-left:20%;
-                  margin-bottom:4%;
-                  margin-top:-5%;
-                  opacity:0.5;"
-                />
-                <b-row>
-                  <b-col md="12">
-                    <b-card-title>
-                      <div class="row">
-                        <div class="col-0 col-sm-8 col-lg-8 col-xl-8">
-                          <h3
-                            style="display: -webkit-box; font-weight: bold; padding-right:15px; overflow: hidden;width:100%; text-overflow: ellipsis;
-                          -webkit-line-clamp: 1;-webkit-box-orient: vertical;word-wrap:break-word; line-height: 2em; height: 2em;margin-bottom:0;padding-left:10px;"
-                          >
-                            {{ item.title }}
-                          </h3>
-                        </div>
-                        <div
-                          class="col-12 col-sm-4 col-lg-4 col-xl-4 d-flex justify-content-end"
-                        >
-                          <div
-                            style="display: -webkit-box; font-weight: bold; padding-right:15px; overflow: hidden;width:100%; text-overflow: ellipsis;
-                          -webkit-line-clamp: 1;-webkit-box-orient: vertical;word-wrap:break-word; line-height: 2em; height: 2em;padding-right:5px;text-align:right;"
-                          >
-                            <h4 style="display:inline-block;font-weight: bold;">
-                              {{ item.option1 }}
-                            </h4>
-                            <h3
-                              style="display:inline-block;color:red;font-weight: bold; margin-left:5px;margin-right:5px;"
-                            >
-                              VS
-                            </h3>
-                            <h4 style="display:inline-block;font-weight: bold;">
-                              {{ item.option2 }}
-                            </h4>
-                          </div>
-                        </div>
-                      </div>
-                    </b-card-title>
-                  </b-col>
-
-                  <b-card-text style="width:90%; margin-left:5%">
-                    <div style="width:100%"></div>
-                  </b-card-text>
-                </b-row>
-                <div class="row mr-1" style="margin-top:5%;">
-                  <div
-                    class="d-flex col-5 col-sm-4 col-lg-4 col-xl-4"
-                    style="padding-left:25px;"
-                  >
-                    <p
-                      id="hide1"
-                      style="font-weight: font-size:2.2vh; bold; margin-bottom:0px; padding-top:10px; padding-right:5px;"
-                    >
-                      의뢰번호
-                    </p>
-                    <p
-                      style="font-weight:font-size:2.2vh; bold; margin-bottom:0px; padding-top:10px; "
-                    >
-                      No. {{ item.postNo }}
-                    </p>
-                  </div>
-                  <div
-                    class="col-2 col-sm-4 col-lg-4 col-xl-5"
-                    style="text-align:center; font-size:2em"
-                  ></div>
-                  <div
-                    class="btn btn-primary col-5 col-sm-4 col-lg-3 col-xl-3"
-                    style="width:100%; max-width:200px;height:40px; cursor:Pointer; "
-                    no-gutters
-                    @click="toDetail(item.postNo)"
-                    v-if="isDeadLine(item)"
-                  >
-                    투표하러가기
-                  </div>
-                  <div
-                    v-else
-                    class="btn btn-danger col-5 col-sm-4 col-lg-3 col-xl-3"
-                    style="width:100%; max-width:200px;height:40px; cursor:Pointer; "
-                    no-gutters
-                    @click="toResult(item.postNo)"
-                  >
-                    결과보러가기
-                  </div>
+                  class="btn btn-primary"
+                  style="
+                    width: 100%;
+                    max-width: 200px;
+                    height: 40px;
+                    cursor: Pointer;
+                  "
+                  no-gutters
+                  @click="toDetail(item.postNo)"
+                >
+                  투표하러가기
                 </div>
-              </b-card-body>
-            </b-col>
-          </b-row>
-        </b-card>
-        <infinite-loading @infinite="infiniteHandler"></infinite-loading>
-      </div>
-    </div>
+                <div
+                  v-else
+                  class="btn btn-danger"
+                  style="
+                    width: 100%;
+                    max-width: 200px;
+                    height: 40px;
+                    cursor: Pointer;
+                  "
+                  no-gutters
+                  @click="toResult(item.postNo)"
+                >
+                  결과보러가기
+                </div>
+              </b-col>
+            </b-row>
+          </b-col>
+        </b-row>
+      </b-col>
+    </b-row>
+    <infinite-loading @infinite="infiniteHandler"></infinite-loading>
   </div>
 </template>
 <script>
@@ -414,7 +360,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .shadow1 {
   box-shadow: 5px 5px 5px;
 }
@@ -467,5 +413,25 @@ export default {
 }
 .tab-pane {
   padding: 0;
+}
+.d-btn {
+  color: white;
+  background: black;
+  border: 3px ridge red;
+}
+.d-btn:hover {
+  background: #b6b650;
+}
+.box {
+  border-style: ridge;
+  border: #fcd000 4px ridge;
+  opacity: 0.8;
+  background: linear-gradient(
+    180deg,
+    rgba(14, 36, 56, 1) 0%,
+    rgba(32, 17, 95, 1) 100%
+  );
+  box-shadow: 5px 5px 5px;
+  color: #e3d19e;
 }
 </style>
