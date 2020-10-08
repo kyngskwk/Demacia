@@ -131,6 +131,16 @@ public class VideoPostController {
         }
     }
 
+    @GetMapping("/vlikes/")
+    @ApiOperation(value = "좋아요 상태조회")
+    public Object likesStatus(int videoPostNo, int userNo) {
+        BasicResponse result = new BasicResponse();
+        result.status = true;
+        result.data = "success";
+        result.object = likesService.likesStatus(videoPostNo, userNo);
+        return new ResponseEntity<>(result, HttpStatus.OK);
+    }
+
     @PostMapping("/vlikes/")
     @ApiOperation(value = "좋아요")
     public Object likesInsert(@RequestBody VideoLikes likes) {
@@ -154,16 +164,5 @@ public class VideoPostController {
         result.status = true;
         result.data = "success";
         return new ResponseEntity<>(result, HttpStatus.OK);
-    }
-
-    @GetMapping("/vlikes/")
-    @ApiOperation(value = "좋아요 상태조회")
-    public Object likesStatus(int videoPostNo, int userNo) {
-        BasicResponse result = new BasicResponse();
-        result.status = true;
-        result.data = "success";
-        result.object = likesService.likesStatus(videoPostNo, userNo);
-        return new ResponseEntity<>(result, HttpStatus.OK);
-
     }
 }
