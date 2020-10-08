@@ -3,6 +3,7 @@ package com.web.blog.controller.video;
 import java.util.List;
 
 import com.web.blog.model.dto.video.Video;
+import com.web.blog.model.dto.video.VideoLikes;
 import com.web.blog.model.dto.video.VideoPostItem;
 import com.web.blog.model.service.video.VideoPostLikesService;
 import com.web.blog.model.service.video.VideoPostService;
@@ -130,4 +131,46 @@ public class VideoPostController {
         }
     }
 
+    @PostMapping("/vlikes/")
+    @ApiOperation(value = "좋아요")
+    public Object likesInsert(@RequestBody VideoLikes likes) {
+        final BasicResponse result = new BasicResponse();
+        if (likesService.likesInsert(likes) != 0) {
+            result.status = true;
+            result.data = "success";
+            return new ResponseEntity<>(result, HttpStatus.OK);
+        } else {
+            result.status = false;
+            result.data = "Duplicated";
+            return new ResponseEntity<>(result, HttpStatus.NOT_ACCEPTABLE);
+        }
+    }
+
+    @DeleteMapping("/vlikes/")
+    @ApiOperation(value = "좋아요 취소")
+    public Object likesDelete(int videoPostNo, int userNo) {
+        BasicResponse result = new BasicResponse();
+        likesService.likesDelete(videoPostNo, userNo);
+        result.status = true;
+        result.data = "success";
+        return new ResponseEntity<>(result, HttpStatus.OK);
+    }
+
+    @GetMapping("/vlikes/")
+    @ApiOperation(value = "좋아요 상태조회")
+    public Object likesStatus(int videoPostNo, int userNo) {
+        int res = likesService.likesStatus(videoPostNo, userNo);
+        BasicResponse result = new BasicResponse();
+        if (res != 0) {
+            result.status = true;
+            result.data = "success";
+            result.object = 1;
+            return new ResponseEntity<>(result, HttpStatus.OK);
+        } else {
+            result.status = true;
+            result.data = "success";
+            result.object = 0;
+            return new ResponseEntity<>(result, HttpStatus.OK);
+        }
+    }
 }

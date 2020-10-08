@@ -133,16 +133,29 @@
           </div>
         </div>
         <div class="col-5 col-xl-4">
-          <!-- 조회수 -->
-          <div class="d-flex justify-content-end" style="margin-right: 5%">
-            <div class="d-flex">
-              <p style="font-size: 2.5vh">좋아요: {{ writePost.totalLike }}</p>
-              <b-icon-caret-right-square-fill
-                class="h4"
-                style="margin-right: 10px; padding-top: 3%"
-              />
-              <p style="font-size: 2.5vh">{{ writePost.view }}</p>
-            </div>
+          <div
+            class="d-flex justify-content-end"
+            style="margin-right: 5%; font-size: 2.5vh"
+          >
+            <!-- 좋아요 -->
+            <b-icon-heart
+              class="m-2"
+              style="cursor: pointer"
+              v-show="likeStatus"
+              @click="likesup"
+            />
+            <b-icon-heart-fill
+              class="m-2"
+              variant="danger"
+              style="cursor: pointer"
+              v-show="!likeStatus"
+              @click="likesdown"
+            />
+            {{ writePost.totalLike }}
+            <strong class="m-3" />
+            <!-- 조회수 -->
+            <b-icon-caret-right-square-fill class="m-2" />
+            {{ writePost.view }}
           </div>
         </div>
       </div>
@@ -731,6 +744,7 @@ export default {
       champ9: "",
       champ10: "",
       champion: "",
+      likeStatus: true,
     };
   },
 
@@ -760,6 +774,23 @@ export default {
           ) {
             alert("비밀글입니다.");
             location.href = "/vlist";
+          }
+          if (this.sessionUserNo) {
+            //좋아요 여부 불러오기
+            axios
+              .get(process.env.VUE_APP_API_URL + "/vlikes", {
+                params: {
+                  videoPostNo: this.videoPostNo,
+                  userNo: this.sessionUserNo,
+                },
+              })
+              .then(({ data }) => {
+                if (data.object == 1) {
+                  this.likeStatus = false;
+                } else {
+                  this.likeStatus = true;
+                }
+              });
           }
           this.data = JSON.parse(data.object.data.replaceAll("'", '"'));
           this.before_bluescore = this.data.before_bluescore;
@@ -850,6 +881,33 @@ export default {
       return this.sessionUserNo
         ? true
         : this.$refs["loginChkModal"].show() && false;
+    },
+    likesup() {
+      this.loginCheck() &&
+        axios
+          .post(process.env.VUE_APP_API_URL + "/vlikes/", {
+            videoPostNo: this.videoPostNo,
+            userNo: this.sessionUserNo,
+          })
+          .then(() => {
+            this.likeStatus = !this.likeStatus;
+            this.likescnt++;
+          });
+    },
+
+    likesdown() {
+      this.loginCheck() &&
+        axios
+          .delete(process.env.VUE_APP_API_URL + "/likes/", {
+            params: {
+              videoPostNo: this.videoPostNo,
+              userNo: this.sessionUserNo,
+            },
+          })
+          .then(() => {
+            this.likeStatus = !this.likeStatus;
+            this.likescnt--;
+          });
     },
   },
 };
