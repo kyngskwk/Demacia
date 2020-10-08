@@ -778,14 +778,14 @@ export default {
           if (this.sessionUserNo) {
             //좋아요 여부 불러오기
             axios
-              .get(process.env.VUE_APP_API_URL + "/vlikes", {
+              .get(process.env.VUE_APP_API_URL + "/vlikes/", {
                 params: {
                   videoPostNo: this.videoPostNo,
                   userNo: this.sessionUserNo,
                 },
               })
-              .then(({ data }) => {
-                if (data.object == 1) {
+              .then(({ res2 }) => {
+                if (res2.object == 1) {
                   this.likeStatus = false;
                 } else {
                   this.likeStatus = true;
@@ -891,14 +891,14 @@ export default {
           })
           .then(() => {
             this.likeStatus = !this.likeStatus;
-            this.likescnt++;
+            this.writePost.totalLike++;
           });
     },
 
     likesdown() {
       this.loginCheck() &&
         axios
-          .delete(process.env.VUE_APP_API_URL + "/likes/", {
+          .delete(process.env.VUE_APP_API_URL + "/vlikes/", {
             params: {
               videoPostNo: this.videoPostNo,
               userNo: this.sessionUserNo,
@@ -906,7 +906,7 @@ export default {
           })
           .then(() => {
             this.likeStatus = !this.likeStatus;
-            this.likescnt--;
+            this.writePost.totalLike--;
           });
     },
   },
