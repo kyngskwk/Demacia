@@ -6,10 +6,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-@Getter
-@Setter
-@ToString
-@NoArgsConstructor
 public class VideoLikes {
     private int vpostlikeNo;
     private int userNo;
@@ -21,4 +17,37 @@ public class VideoLikes {
         this.userNo = userNo;
         this.videopostNo = videopostNo;
     }
+
+    public int getVpostlikeNo() {
+        return vpostlikeNo;
+    }
+
+    public void setVpostlikeNo(int vpostlikeNo) {
+        this.vpostlikeNo = vpostlikeNo;
+    }
+
+    public int getUserNo() {
+        return userNo;
+    }
+
+    public void setUserNo(int userNo) {
+        this.userNo = userNo;
+    }
+
+    public int getVideopostNo() {
+        return videopostNo;
+    }
+
+    public void setVideopostNo(int videopostNo) {
+        this.videopostNo = videopostNo;
+    }
+
+    @Override
+    public String toString() {
+        return "VideoLikes [userNo=" + userNo + ", videopostNo=" + videopostNo + ", vpostlikeNo=" + vpostlikeNo + "]";
+    }
+
+    public VideoLikes() {
+    }
+
 }
