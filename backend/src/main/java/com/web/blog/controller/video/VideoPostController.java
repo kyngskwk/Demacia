@@ -159,18 +159,11 @@ public class VideoPostController {
     @GetMapping("/vlikes/")
     @ApiOperation(value = "좋아요 상태조회")
     public Object likesStatus(int videoPostNo, int userNo) {
-        int res = likesService.likesStatus(videoPostNo, userNo);
         BasicResponse result = new BasicResponse();
-        if (res != 0) {
-            result.status = true;
-            result.data = "success";
-            result.object = 1;
-            return new ResponseEntity<>(result, HttpStatus.OK);
-        } else {
-            result.status = true;
-            result.data = "success";
-            result.object = 0;
-            return new ResponseEntity<>(result, HttpStatus.OK);
-        }
+        result.status = true;
+        result.data = "success";
+        result.object = likesService.likesStatus(videoPostNo, userNo);
+        return new ResponseEntity<>(result, HttpStatus.OK);
+
     }
 }
