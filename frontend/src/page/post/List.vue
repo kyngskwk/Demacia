@@ -14,7 +14,7 @@
           </b-button>
         </div>
       </b-col>
-      <b-col cols="12">
+      <b-col cols="12" class="mb-4">
         <b-row align-h="between">
           <b-col cols="12" md="5">
             <b-input-group class="shadow1">
@@ -46,7 +46,7 @@
           </b-col>
         </b-row>
       </b-col>
-      <b-col cols="12">
+      <b-col cols="12" class="mb-4">
         <b-tabs
           class="p-0"
           card
@@ -61,7 +61,7 @@
         </b-tabs>
       </b-col>
       <!-- 리스트 시작 -->
-      <b-col cols="12" v-for="(item, $index) in list" :key="$index">
+      <b-col cols="12" v-for="(item, $index) in list" :key="$index" class="p-3">
         <b-row class="overflow-hidden box text-left mb-3 p-2">
           <b-col cols="12" md="4" class="p-0">
             <b-img
