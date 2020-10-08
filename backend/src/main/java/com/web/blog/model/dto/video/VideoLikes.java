@@ -1,21 +1,17 @@
 package com.web.blog.model.dto.video;
 
 import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
 
 public class VideoLikes {
     private int vpostlikeNo;
     private int userNo;
-    private int videopostNo;
+    private int videoPostNo;
 
     @Builder
-    public VideoLikes(int vpostlikeNo, int userNo, int videopostNo) {
+    public VideoLikes(int vpostlikeNo, int userNo, int videoPostNo) {
         this.vpostlikeNo = vpostlikeNo;
         this.userNo = userNo;
-        this.videopostNo = videopostNo;
+        this.videoPostNo = videoPostNo;
     }
 
     public int getVpostlikeNo() {
@@ -35,16 +31,16 @@ public class VideoLikes {
     }
 
     public int getVideopostNo() {
-        return videopostNo;
+        return videoPostNo;
     }
 
-    public void setVideopostNo(int videopostNo) {
-        this.videopostNo = videopostNo;
+    public void setVideopostNo(int videoPostNo) {
+        this.videoPostNo = videoPostNo;
     }
 
     @Override
     public String toString() {
-        return "VideoLikes [userNo=" + userNo + ", videopostNo=" + videopostNo + ", vpostlikeNo=" + vpostlikeNo + "]";
+        return "VideoLikes [userNo=" + userNo + ", videoPostNo=" + videoPostNo + ", vpostlikeNo=" + vpostlikeNo + "]";
     }
 
     public VideoLikes() {
