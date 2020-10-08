@@ -778,14 +778,13 @@ export default {
           if (this.sessionUserNo) {
             //좋아요 여부 불러오기
             axios
-              .get(process.env.VUE_APP_API_URL + "/vlikes/", {
-                params: {
-                  videoPostNo: this.videoPostNo,
-                  userNo: this.sessionUserNo,
-                },
+              .post(process.env.VUE_APP_API_URL + "/vlikes/status", {
+                videoPostNo: this.videoPostNo,
+                userNo: this.sessionUserNo,
               })
-              .then(({ res2 }) => {
-                if (res2.object == 1) {
+              .then((like) => {
+                console.log(like);
+                if (like.data.object) {
                   this.likeStatus = false;
                 } else {
                   this.likeStatus = true;

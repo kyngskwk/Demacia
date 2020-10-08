@@ -130,39 +130,4 @@ public class VideoPostController {
             return new ResponseEntity<>(result, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
-
-    @GetMapping("/vlikes/")
-    @ApiOperation(value = "좋아요 상태조회")
-    public Object likesStatus(int videoPostNo, int userNo) {
-        BasicResponse result = new BasicResponse();
-        result.status = true;
-        result.data = "success";
-        result.object = likesService.likesStatus(videoPostNo, userNo);
-        return new ResponseEntity<>(result, HttpStatus.OK);
-    }
-
-    @PostMapping("/vlikes/")
-    @ApiOperation(value = "좋아요")
-    public Object likesInsert(@RequestBody VideoLikes likes) {
-        final BasicResponse result = new BasicResponse();
-        if (likesService.likesInsert(likes) != 0) {
-            result.status = true;
-            result.data = "success";
-            return new ResponseEntity<>(result, HttpStatus.OK);
-        } else {
-            result.status = false;
-            result.data = "Duplicated";
-            return new ResponseEntity<>(result, HttpStatus.NOT_ACCEPTABLE);
-        }
-    }
-
-    @DeleteMapping("/vlikes/")
-    @ApiOperation(value = "좋아요 취소")
-    public Object likesDelete(int videoPostNo, int userNo) {
-        BasicResponse result = new BasicResponse();
-        likesService.likesDelete(videoPostNo, userNo);
-        result.status = true;
-        result.data = "success";
-        return new ResponseEntity<>(result, HttpStatus.OK);
-    }
 }
