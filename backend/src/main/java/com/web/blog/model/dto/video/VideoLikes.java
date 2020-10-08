@@ -1,13 +1,10 @@
 package com.web.blog.model.dto.video;
 
-import lombok.Builder;
-
 public class VideoLikes {
     private int vpostlikeNo;
     private int userNo;
     private int videoPostNo;
 
-    @Builder
     public VideoLikes(int vpostlikeNo, int userNo, int videoPostNo) {
         this.vpostlikeNo = vpostlikeNo;
         this.userNo = userNo;
@@ -30,11 +27,11 @@ public class VideoLikes {
         this.userNo = userNo;
     }
 
-    public int getVideopostNo() {
+    public int getVideoPostNo() {
         return videoPostNo;
     }
 
-    public void setVideopostNo(int videoPostNo) {
+    public void setVideoPostNo(int videoPostNo) {
         this.videoPostNo = videoPostNo;
     }
 
