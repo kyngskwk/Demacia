@@ -40,7 +40,7 @@
             </v-list-item-icon>
             <v-list-item-title>나의 전적기록</v-list-item-title>
         </v-list-item>
-        <v-list-item link>
+        <v-list-item link @click="goMessage">
             <v-list-item-icon>
             <v-icon>mdi-message-text-outline</v-icon>
             </v-list-item-icon>
@@ -59,7 +59,11 @@
 <script>
 export default {
     name: "SideNavi",
-
+    methods: {
+        goMessage() {
+            this.$router.push({name: 'Message'})
+        }
+    }
 }
 </script>
 

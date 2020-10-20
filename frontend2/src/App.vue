@@ -2,12 +2,16 @@
   <v-app>
     <v-app-bar
       app
-      color="primary"
+      color="indigo darken-1"
       dark
     >
-      <div class="d-flex align-center">
-        데마시아
-      </div>
+      <a
+        class="navbar-brand mx-0"
+        href="/"
+        style="padding-top: 5px; font-size: 2em"
+      >
+        <img src="./assets/img/damacia.png" alt="" style="width: 200px" />
+      </a>
 
       <v-spacer></v-spacer>
     </v-app-bar>
