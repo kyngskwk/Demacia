@@ -64,7 +64,7 @@ export default {
 </script>
 
 <style>
-.v-navigation-drawer {
+/* .v-navigation-drawer {
     margin: 60px 0 0 0;
-}
+} */
 </style>
