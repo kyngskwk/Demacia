@@ -5,7 +5,7 @@
       <v-list>
         <v-list-item>
           <v-list-item-avatar>
-              <v-icon large color="error">mdi-email</v-icon>
+              <v-icon large color="primary">mdi-email</v-icon>
           </v-list-item-avatar>
         </v-list-item>
 
@@ -26,7 +26,7 @@
           <v-list-item
             v-for="(item, i) in items"
             :key="i"
-            color="#ff5252"
+            color="primary"
             @click="change(item.text)"
           >
             <v-list-item-icon>
@@ -438,54 +438,5 @@ button, .dot {
     top: -5px;
     cursor: pointer;
   }
-    .header .search-box {
-    float: right;
-    width: 150px;
-    height: 40px;
-    position: relative;
-  }
-  .header .search-box input,
-  .header .search-box .icon {
-    transition-duration: 0.3s;
-  }
-  .header .search-box input {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    border: 0;
-    padding: 0;
-    margin: 0;
-    text-indent: 15px;
-    height: 40px;
-    z-index: 1;
-    outline: none;
-    color: #999;
-    background: transparent;
-    border: 2px solid #efefef;
-    border-radius: 5px;
-    transition-timing-function: cubic-bezier(0.3, 1.5, 0.6, 1);
-  }
-  .header .search-box input:focus {
-    color: #333;
-    border-color: #d6d6d6;
-    width: 150%;
-  }
-  .header .search-box input:focus ~ .icon {
-    opacity: 1;
-    z-index: 2;
-    color: #61c7b3;
-  }
-  .header .search-box .icon {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    width: 40px;
-    text-align: center;
-    line-height: 40px;
-    cursor: pointer;
-    opacity: 0.5;
-  }
+  
 </style>
