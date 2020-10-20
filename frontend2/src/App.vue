@@ -2,59 +2,44 @@
   <v-app>
     <v-app-bar
       app
-      color="primary"
+      color="blue-grey"
       dark
     >
-      <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
-
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
-      </div>
+      <a
+        class="navbar-brand mx-0"
+        href="/"
+        style="padding-top: 5px; font-size: 2em"
+      >
+        <img src="./assets/img/damacia.png" alt="" style="width: 200px" />
+      </a>
 
       <v-spacer></v-spacer>
-
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
     </v-app-bar>
 
-    <v-main>
-      <HelloWorld/>
+    <v-main> 
+      <SideNavi style="z-index:6; position:fixed; margin:64px 0 0 0;"/>
+      <router-view></router-view>
     </v-main>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld';
+import SideNavi from './components/common/SideNavi.vue'
+// import HelloWorld from './components/HelloWorld';
 
 export default {
   name: 'App',
 
   components: {
-    HelloWorld,
+    SideNavi,
+    // HelloWorld,
   },
-
   data: () => ({
     //
   }),
 };
 </script>
+
+<style>
+
+</style>
