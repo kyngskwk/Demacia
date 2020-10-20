@@ -36,6 +36,7 @@
         <v-icon>mdi-open-in-new</v-icon>
       </v-btn>
     </v-app-bar>
+    <SideNavi/>
 
     <v-main>
       <HelloWorld/>
@@ -44,12 +45,14 @@
 </template>
 
 <script>
+import SideNavi from './components/common/SideNavi.vue'
 import HelloWorld from './components/HelloWorld';
 
 export default {
   name: 'App',
 
   components: {
+    SideNavi,
     HelloWorld,
   },
 
