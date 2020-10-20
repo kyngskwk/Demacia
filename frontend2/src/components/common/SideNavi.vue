@@ -15,9 +15,9 @@
         <v-list-item link>
             <v-list-item-content>
             <v-list-item-title class="title">
-                Sandra Adams
+                DEMACIA
             </v-list-item-title>
-            <v-list-item-subtitle>sandra_a88@gmail.com</v-list-item-subtitle>
+            <v-list-item-subtitle>demacia@gmail.com</v-list-item-subtitle>
             </v-list-item-content>
         </v-list-item>
         </v-list>
@@ -68,7 +68,4 @@ export default {
 </script>
 
 <style>
-/* .v-navigation-drawer {
-    margin: 60px 0 0 0;
-} */
 </style>

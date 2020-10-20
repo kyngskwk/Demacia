@@ -2,7 +2,7 @@
   <v-app>
     <v-app-bar
       app
-      color="indigo darken-1"
+      color="blue-grey"
       dark
     >
       <a
@@ -17,7 +17,7 @@
     </v-app-bar>
 
     <v-main> 
-      <SideNavi style="z-index:6"/>
+      <SideNavi style="z-index:6; position:fixed; margin:64px 0 0 0;"/>
       <router-view></router-view>
     </v-main>
   </v-app>
@@ -39,3 +39,7 @@ export default {
   }),
 };
 </script>
+
+<style>
+
+</style>
