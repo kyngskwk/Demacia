@@ -29,6 +29,7 @@
             </v-row>
             <VideoAritcle />
         </div>
+        <MessageForm/>
     </div>
 </template>
 
@@ -37,6 +38,7 @@ import Carousel from "../components/common/Carousel.vue";
 import BestArticle from "../components/main/BestArticle.vue";
 import VoteArticle from "../components/main/VoteArticle.vue";
 import VideoAritcle from "../components/main/VideoArticle";
+import MessageForm from "../components/message/MessageForm.vue";
 
 export default {
     name: 'Main',
@@ -45,6 +47,7 @@ export default {
         BestArticle,
         VoteArticle,
         VideoAritcle,
+        MessageForm,
     },
 }
 </script>
