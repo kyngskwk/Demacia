@@ -1,7 +1,7 @@
 <template>
     <div>
         <Carousel />
-        <div class="container mt-5">
+        <div class="container mt-5 mb-10">
             <v-toolbar
                 dark
                 color="blue-grey"

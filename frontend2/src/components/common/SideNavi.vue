@@ -52,16 +52,43 @@
             </v-list-item-icon>
             <v-list-item-title>설정</v-list-item-title>
         </v-list-item>
+        <v-list-item link @click="openform">
+            <v-list-item-icon>
+            <v-icon> mdi-flash</v-icon>
+            </v-list-item-icon>
+            <v-list-item-title>쪽지 보내기 - 임시</v-list-item-title>
+        </v-list-item>
         </v-list>
+        <MessageForm :dialog="dialog" @close="close" @send="send"/>
     </v-navigation-drawer>
 </template>
 
 <script>
+import MessageForm from "../message/MessageForm.vue"
+
+
 export default {
     name: "SideNavi",
+    components: {
+        MessageForm,
+    },
+    data() {
+        return {
+            dialog: false,
+        }
+    },
     methods: {
         goMessage() {
             this.$router.push({name: 'Message'})
+        },
+        openform() {
+            this.dialog = true
+        },
+        close() {
+            this.dialog = false
+        },
+        send() {
+            this.dialog = false
         }
     }
 }
