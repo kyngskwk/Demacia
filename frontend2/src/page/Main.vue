@@ -28,6 +28,7 @@
                 <v-col cols="6"><VoteArticle/></v-col>
             </v-row>
         </div>
+        <MessageForm/>
     </div>
 </template>
 
@@ -35,13 +36,14 @@
 import Carousel from "../components/common/Carousel.vue";
 import BestArticle from "../components/main/BestArticle.vue";
 import VoteArticle from "../components/main/VoteArticle.vue";
-
+import MessageForm from "../components/message/MessageForm.vue";
 export default {
     name: 'Main',
     components: {
         Carousel,
         BestArticle,
         VoteArticle,
+        MessageForm,
     },
 }
 </script>
