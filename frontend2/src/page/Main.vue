@@ -1,7 +1,7 @@
 <template>
     <div>
         <Carousel />
-        <div class="container">
+        <div class="container mt-5">
             <v-toolbar
                 dark
                 color="blue-grey"
@@ -27,6 +27,7 @@
                 <v-col cols="6"><BestArticle/></v-col>
                 <v-col cols="6"><VoteArticle/></v-col>
             </v-row>
+            <VideoAritcle />
         </div>
     </div>
 </template>
@@ -35,6 +36,7 @@
 import Carousel from "../components/common/Carousel.vue";
 import BestArticle from "../components/main/BestArticle.vue";
 import VoteArticle from "../components/main/VoteArticle.vue";
+import VideoAritcle from "../components/main/VideoArticle";
 
 export default {
     name: 'Main',
@@ -42,6 +44,7 @@ export default {
         Carousel,
         BestArticle,
         VoteArticle,
+        VideoAritcle,
     },
 }
 </script>
