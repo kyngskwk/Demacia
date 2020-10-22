@@ -258,3 +258,5 @@ def videopostlike_create_and_delete(request):
 
 
 
+def index(request):
+    return render(request, 'index.html', {})
