@@ -216,7 +216,7 @@ class User(models.Model):
     summonername = models.CharField(db_column='summonerName', max_length=255, blank=True, null=True)  # Field name made lowercase.
     usermileage = models.IntegerField(db_column='userMileage', blank=True, null=True)  # Field name made lowercase.
     providername = models.CharField(db_column='providerName', max_length=128, blank=True, null=True)  # Field name made lowercase.
-    accesstoken = models.CharField(max_length=128, blank=True, null=True)
+    accesstoken = models.CharField(max_length=256, blank=True, null=True)
     accountid = models.CharField(max_length=128, blank=True, null=True)
     mbti = models.CharField(max_length=128, blank=True, null=True)
 
@@ -226,11 +226,11 @@ class User(models.Model):
 
 
 class Videopost(models.Model):
-    videopostno = models.IntegerField(primary_key=True)
+    videopostno = models.AutoField(primary_key=True)
     userno = models.ForeignKey(User, models.DO_NOTHING, db_column='userno')
     video = models.CharField(max_length=250)
     thumbnail = models.CharField(max_length=250, blank=True, null=True)
-    data = models.CharField(max_length=500, blank=True, null=True)
+    data = models.TextField(blank=True, null=True)
     isprivate = models.IntegerField()
     view = models.IntegerField(blank=True, null=True)
     postdate = models.DateTimeField()
@@ -238,7 +238,6 @@ class Videopost(models.Model):
     class Meta:
         managed = False
         db_table = 'videopost'
-
 
 
 class Videopostlikes(models.Model):
