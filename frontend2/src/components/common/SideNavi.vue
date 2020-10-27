@@ -59,18 +59,18 @@
             <v-list-item-title>쪽지 보내기 - 임시</v-list-item-title>
         </v-list-item>
         </v-list>
-        <MessageForm :dialog="dialog" @close="close" @send="send"/>
+        <ChatList :dialog="dialog" @close="close" @send="send"/>
     </v-navigation-drawer>
 </template>
 
 <script>
-import MessageForm from "../message/MessageForm.vue"
-
+// import MessageForm from "../message/MessageForm.vue"
+import ChatList from "../chat/ChatList.vue"
 
 export default {
     name: "SideNavi",
     components: {
-        MessageForm,
+        ChatList,
     },
     data() {
         return {

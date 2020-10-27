@@ -5,6 +5,7 @@
       active-class="blue--text"
       multiple
     >
+
       <MessageList v-for="msg in msgs" :key="msg.pk" :msg="msg"/>
     </v-list-item-group>
   </v-list>
