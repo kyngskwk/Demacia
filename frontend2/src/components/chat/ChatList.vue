@@ -1,66 +1,50 @@
 <template>
-  <v-dialog v-model="dialog" persistent width="900">
-    <v-card>
-    <v-toolbar
-        color="primary"
-        cards
-        dark
-        flat
+  <v-list>
+    <v-list-item-group
+      v-model="selected"
+      active-class="blue--text"
+      multiple
     >
-        <v-btn icon @click="$emit('close')">
-        <v-icon>mdi-arrow-left</v-icon>
-        </v-btn>
-        <v-card-title class="title font-weight-regular">
-        메세지 보내기
-        </v-card-title>
-    </v-toolbar>
-    
-    <v-divider></v-divider>
-    <v-card-actions>
-        <v-btn
-        text
-        @click="$refs.form.reset()"
-        >
-        Clear
-        </v-btn>
-        <v-spacer></v-spacer>
-        <v-btn
-        class="white--text"
-        color="primary"
-        depressed
-        @click="send"
-        >
-        전송
-        </v-btn>
-    </v-card-actions>
-    </v-card>
-  </v-dialog>
+
+      <ChatListItem v-for="msg in msgs" :key="msg.pk" :msg="msg"/>
+    </v-list-item-group>
+  </v-list>
 </template>
 
-<script>
-export default {
-    name: "ChatList",
-    props: {
-        dialog: {
-            type: Object,
-            required: true
-        }
-    },
-    data() {
-        return { 
-            title: '',
-            content: '',
-        }
-    },
-    methods: {
-        send() {
-            this.$emit('send')
-        }
-    }
-}
 
+<script>
+import ChatListItem from "./ChatListItem.vue"
+
+export default {
+  name: 'ChatList',
+  components: {
+    ChatListItem
+  },
+  data: () => ({
+      selected: [2],
+      msgs: [
+        {
+          pk: 4,
+          action: '12 hr',
+          headline: 'Birthday gift',
+          subtitle: 'Have any ideas about what we should get Heidi for her birthday?',
+          title: 'Trevor Hansen',
+        },
+        {
+          pk: 5,
+          action: '18hr',
+          headline: 'Recipe to try',
+          subtitle: 'We should eat this: Grate, Squash, Corn, and tomatillo Tacos.',
+          title: 'Britta Holt',
+        },
+      ],
+    }),
+
+}
 </script>
 
 <style>
-
+.v-list {
+  padding:0 30px
+}
 </style>
