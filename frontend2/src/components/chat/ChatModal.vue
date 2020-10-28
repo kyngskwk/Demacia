@@ -6,32 +6,31 @@
         cards
         dark
         flat
-        class="d-flex justify-space-between"
     >   
+        <!-- <v-btn icon @click="$emit('close')">
+        <v-icon>mdi-close</v-icon>
+        </v-btn> -->
         <v-card-title class="title font-weight-regular">
         채팅창
         </v-card-title>
-        <v-btn icon @click="$emit('close')">
-        <v-icon>mdi-close</v-icon>
-        </v-btn>
     </v-toolbar>
-    <ChatList/>
+    <ChatList v-if="list"/>
     <v-divider></v-divider>
     <v-card-actions>
-        <v-btn
+        <!-- <v-btn
         text
         @click="$refs.form.reset()"
         >
         Clear
-        </v-btn>
+        </v-btn> -->
         <v-spacer></v-spacer>
         <v-btn
         class="white--text"
         color="primary"
         depressed
-        @click="send"
+        @click="close"
         >
-        전송
+        닫기
         </v-btn>
     </v-card-actions>
     </v-card>
@@ -56,11 +55,20 @@ export default {
         return { 
             title: '',
             content: '',
+            list: true,
         }
     },
     methods: {
         send() {
             this.$emit('send')
+        },
+        // gochat() {
+        //     this.list = false
+        //     console.log(this.list)
+        // },
+        close() {
+            this.list = true
+            this.$emit('close')
         }
     }
 }

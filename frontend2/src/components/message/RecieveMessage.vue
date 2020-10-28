@@ -20,7 +20,7 @@ export default {
     MessageList
   },
   data: () => ({
-      selected: [2],
+      selected: [],
       msgs: [
         {
           pk: 4,
