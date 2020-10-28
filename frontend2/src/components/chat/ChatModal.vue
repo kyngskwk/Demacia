@@ -6,13 +6,14 @@
         cards
         dark
         flat
-    >
-        <v-btn icon @click="$emit('close')">
-        <v-icon>mdi-arrow-left</v-icon>
-        </v-btn>
+        class="d-flex justify-space-between"
+    >   
         <v-card-title class="title font-weight-regular">
         채팅창
         </v-card-title>
+        <v-btn icon @click="$emit('close')">
+        <v-icon>mdi-close</v-icon>
+        </v-btn>
     </v-toolbar>
     <ChatList/>
     <v-divider></v-divider>
