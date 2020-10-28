@@ -47,4 +47,5 @@ export default {
 .v-list {
   padding:0 30px
 }
+
 </style>
