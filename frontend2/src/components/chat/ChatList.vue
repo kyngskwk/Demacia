@@ -6,18 +6,19 @@
       multiple
     >
 
-      <MessageList v-for="msg in msgs" :key="msg.pk" :msg="msg"/>
+      <ChatListItem v-for="msg in msgs" :key="msg.pk" :msg="msg"/>
     </v-list-item-group>
   </v-list>
 </template>
 
+
 <script>
-import MessageList from "./MessageList.vue"
+import ChatListItem from "./ChatListItem.vue"
 
 export default {
-  name: 'RecieveMessage',
+  name: 'ChatList',
   components: {
-    MessageList
+    ChatListItem
   },
   data: () => ({
       selected: [2],
@@ -44,6 +45,7 @@ export default {
 
 <style scoped>
 .v-list {
-  padding:0 100px 0 30px
+  padding:0 30px
 }
+
 </style>

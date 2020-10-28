@@ -56,21 +56,21 @@
             <v-list-item-icon>
             <v-icon> mdi-flash</v-icon>
             </v-list-item-icon>
-            <v-list-item-title>쪽지 보내기 - 임시</v-list-item-title>
+            <v-list-item-title>채팅창</v-list-item-title>
         </v-list-item>
         </v-list>
-        <MessageForm :dialog="dialog" @close="close" @send="send"/>
+        <ChatModal :dialog="dialog" @close="close" @send="send"/>
     </v-navigation-drawer>
 </template>
 
 <script>
-import MessageForm from "../message/MessageForm.vue"
-
+// import MessageForm from "../message/MessageForm.vue"
+import ChatModal from "../chat/ChatModal.vue"
 
 export default {
     name: "SideNavi",
     components: {
-        MessageForm,
+        ChatModal,
     },
     data() {
         return {
