@@ -24,6 +24,7 @@ from django.conf.urls.static import static
 
 schema_url_patterns = [ 
     path('django/api/', include('demacia.urls')), 
+    path('django/api/', include('chat.urls')), 
     ] 
 schema_view = get_schema_view( 
     openapi.Info( 
