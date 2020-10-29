@@ -6,7 +6,7 @@
       multiple
     >
 
-      <ChatListItem v-for="msg in msgs" :key="msg.pk" :msg="msg"/>
+      <ChatListItem v-for="msg in msgs" :key="msg.pk" :msg="msg" @gochat='gochat'/>
     </v-list-item-group>
   </v-list>
 </template>
@@ -20,8 +20,13 @@ export default {
   components: {
     ChatListItem
   },
+  methods: {
+    gochat() {
+      this.$emit('gochat')
+    }
+  },
   data: () => ({
-      selected: [2],
+      selected: [],
       msgs: [
         {
           pk: 4,
