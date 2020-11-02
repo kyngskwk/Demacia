@@ -88,6 +88,7 @@ export default {
             // 세션에 로그인 정보 추가
             sessionStorage.setItem("user", JSON.stringify(res.data.object));
             this.$router.push({ path: "/" });
+            window.location.reload();
           } else {
             this.snackbar = true;
             this.errMsg = "구글 아이디 또는 비밀번호를 확인해주세요";
@@ -114,6 +115,7 @@ export default {
             res.data.object.userPw = "";
             sessionStorage.setItem("user", JSON.stringify(res.data.object));
             this.$router.push({ path: "/" });
+            window.location.reload();
           } else {
             this.snackbar = true;
             this.errMsg = "아이디 또는 비밀번호를 확인해주세요";
@@ -185,8 +187,8 @@ export default {
             res.data.object.userPw = "";
             // 세션에 로그인 정보 추가
             sessionStorage.setItem("user", JSON.stringify(res.data.object));
-            console.log(res.data.object);
             this.$router.push({ path: "/" });
+            window.location.reload();
           } else {
             this.snackbar = true;
             this.errMsg = "아이디 또는 비밀번호를 확인해주세요";
