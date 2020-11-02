@@ -1,97 +1,149 @@
 <template>
-    <v-navigation-drawer
-        absolute
-        permanent
-        right
-        expand-on-hover
-    >
-        <v-list>
-        <v-list-item class="px-2">
-            <v-list-item-avatar>
-            <v-img src="https://randomuser.me/api/portraits/women/85.jpg"></v-img>
-            </v-list-item-avatar>
-        </v-list-item>
+  <v-navigation-drawer absolute permanent right expand-on-hover>
+    <v-list v-if="!user">
+      <v-list-item link @click="goLogin">
+        <v-list-item-content>
+          <v-list-item-icon>
+            <v-icon>mdi-login</v-icon>
+          </v-list-item-icon>
+        </v-list-item-content>
+        <v-list-item-title class="title">
+          <v-icon>mdi-login</v-icon> 로그인 하세요
+        </v-list-item-title>
+      </v-list-item>
+    </v-list>
+    <v-list v-else>
+      <v-list-item link>
+        <v-list-item-avatar>
+          <v-img :src="userImg"></v-img>
+        </v-list-item-avatar>
+        <v-list-item-content>
+          <v-list-item-title class="title">
+            {{ user.userNickname }}
+          </v-list-item-title>
+          <v-list-item-subtitle>{{ user.userEmail }}</v-list-item-subtitle>
+        </v-list-item-content>
+        <v-chip @click="logout">로그아웃</v-chip>
+      </v-list-item>
+    </v-list>
 
-        <v-list-item link>
-            <v-list-item-content>
-            <v-list-item-title class="title">
-                DEMACIA
-            </v-list-item-title>
-            <v-list-item-subtitle>demacia@gmail.com</v-list-item-subtitle>
-            </v-list-item-content>
-        </v-list-item>
-        </v-list>
+    <v-divider></v-divider>
 
-        <v-divider></v-divider>
-
-        <v-list
-        nav
-        dense
-        >
-        <v-list-item link>
-            <v-list-item-icon>
-            <v-icon>mdi-account</v-icon>
-            </v-list-item-icon>
-            <v-list-item-title>마이페이지</v-list-item-title>
-        </v-list-item>
-        <v-list-item link>
-            <v-list-item-icon>
-            <v-icon>mdi-chart-bar</v-icon>
-            </v-list-item-icon>
-            <v-list-item-title>나의 전적기록</v-list-item-title>
-        </v-list-item>
-        <v-list-item link @click="goMessage">
-            <v-list-item-icon>
-            <v-icon>mdi-message-text-outline</v-icon>
-            </v-list-item-icon>
-            <v-list-item-title>쪽지</v-list-item-title>
-        </v-list-item>
-        <v-list-item link>
-            <v-list-item-icon>
-            <v-icon>mdi-dots-horizontal</v-icon>
-            </v-list-item-icon>
-            <v-list-item-title>설정</v-list-item-title>
-        </v-list-item>
-        <v-list-item link @click="openform">
-            <v-list-item-icon>
-            <v-icon> mdi-flash</v-icon>
-            </v-list-item-icon>
-            <v-list-item-title>채팅창</v-list-item-title>
-        </v-list-item>
-        </v-list>
-        <ChatModal :dialog="dialog" @close="close" @send="send"/>
-    </v-navigation-drawer>
+    <v-list nav dense>
+      <v-list-item>
+        <v-list-item-icon>
+          <v-icon>mdi-account</v-icon>
+        </v-list-item-icon>
+        <v-list-item-title>마이페이지</v-list-item-title>
+      </v-list-item>
+      <v-list-item disabled>
+        <v-list-item-icon>
+          <v-icon>mdi-chart-bar</v-icon>
+        </v-list-item-icon>
+        <v-list-item-title>나의 전적기록</v-list-item-title>
+      </v-list-item>
+      <v-list-item disabled>
+        <v-list-item-icon>
+          <v-icon>mdi-message-text-outline</v-icon>
+        </v-list-item-icon>
+        <v-list-item-title>쪽지</v-list-item-title>
+      </v-list-item>
+      <v-list-item link>
+        <v-list-item-icon>
+          <v-icon>mdi-dots-horizontal</v-icon>
+        </v-list-item-icon>
+        <v-list-item-title>설정</v-list-item-title>
+      </v-list-item>
+      <v-list-item link @click="openform">
+        <v-list-item-icon>
+          <v-icon> mdi-flash</v-icon>
+        </v-list-item-icon>
+        <v-list-item-title>채팅창</v-list-item-title>
+      </v-list-item>
+    </v-list>
+    <ChatModal :dialog="dialog" @close="close" @send="send" />
+    <v-snackbar v-model="snackbar">{{ errMsg }}</v-snackbar>
+  </v-navigation-drawer>
 </template>
 
 <script>
-// import MessageForm from "../message/MessageForm.vue"
-import ChatModal from "../chat/ChatModal.vue"
+import axios from "axios";
+import ChatModal from "../chat/ChatModal.vue";
 
 export default {
-    name: "SideNavi",
-    components: {
-        ChatModal,
+  name: "SideNavi",
+  components: {
+    ChatModal,
+  },
+  data() {
+    return {
+      dialog: false,
+      user: JSON.parse(sessionStorage.getItem("user")),
+      userImg:
+        process.env.VUE_APP_IMGUP_URL +
+        JSON.parse(sessionStorage.getItem("user")).userImage,
+      snackbar: false,
+      errMsg: "",
+    };
+  },
+  methods: {
+    goLogin() {
+      this.$router.push({ name: "Login" });
     },
-    data() {
-        return {
-            dialog: false,
-        }
+    goMessage() {
+      this.$router.push({ name: "Message" });
     },
-    methods: {
-        goMessage() {
-            this.$router.push({name: 'Message'})
-        },
-        openform() {
-            this.dialog = true
-        },
-        close() {
-            this.dialog = false
-        },
-        send() {
-            this.dialog = false
-        }
-    }
-}
+    openform() {
+      this.dialog = true;
+    },
+    close() {
+      this.dialog = false;
+    },
+    send() {
+      this.dialog = false;
+    },
+    logout() {
+      if (!this.user.accessToken) {
+        console.log("not accesstoken");
+        sessionStorage.removeItem("user");
+        this.$router.push({ path: "/" });
+        window.location.reload();
+      } else if (this.user.providerName == "GOOGLE") {
+        axios
+          .get(process.env.VUE_APP_API_URL + "/logout/google", {
+            params: {
+              token: this.user.accessToken,
+            },
+          })
+          .then(() => {
+            sessionStorage.removeItem("user");
+            this.$router.push({ path: "/" });
+            window.location.reload();
+          })
+          .catch((err) => {
+            this.snackbar = true;
+            this.errMsg = "로그아웃 중 서버 오류가 발생했습니다. " + err;
+          });
+      } else {
+        axios
+          .get(process.env.VUE_APP_API_URL + "/logout/oauth", {
+            params: {
+              accesstoken: this.user.accessToken,
+            },
+          })
+          .then(() => {
+            sessionStorage.removeItem("user");
+            this.$router.push({ path: "/" });
+            window.location.reload();
+          })
+          .catch((err) => {
+            this.snackbar = true;
+            this.errMsg = "로그아웃 중 서버 오류가 발생했습니다. " + err;
+          });
+      }
+    },
+  },
+};
 </script>
 
 <style>
