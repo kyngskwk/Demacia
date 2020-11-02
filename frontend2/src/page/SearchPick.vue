@@ -8,8 +8,9 @@
         outlined>
     </v-textarea>
     <v-btn class="searchbtn blue-grey">검색하기</v-btn>
+    <!-- 결과 안내창 -->
     <v-card class="mt-5">
-        결과나옴
+      <img src="../assets/img/pickinfo.png" alt="" class="pt-5 pb-3">
     </v-card>
   </div>
 </template>
