@@ -226,7 +226,7 @@ public class UserController {
     @GetMapping("/account/userhitrate")
     @ApiOperation(value = "사용자 적중률")
     public Object userHitRate(@RequestParam int userNo) {
-        
+
         ResponseEntity response = null;
         final BasicResponse result = new BasicResponse();
         Double ret = userService.userHitRate(userNo);
@@ -247,4 +247,17 @@ public class UserController {
 
     }
 
+    @PutMapping("/email/")
+    @ApiOperation(value = "이메일인증")
+    public Object update(@RequestBody String Email, @RequestBody String code) throws MessagingException {
+        int res = userService.sendCheckMail(Email, code);
+        final BasicResponse result = new BasicResponse();
+        result.status = false;
+        result.data = "fail";
+        if (res != 0) {
+            result.status = true;
+            result.data = "success";
+        }
+        return new ResponseEntity<>(result, result.status ? HttpStatus.OK : HttpStatus.valueOf(500));
+    }
 }
