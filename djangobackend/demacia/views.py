@@ -13,9 +13,10 @@ from django.utils.decorators import method_decorator
 from .video import get_image, change_text, timeline, winrate_algo
 # Create your views here.
 # .
-@api_view(['POST'])
-def users_info(request):
-    
+# @api_view(['POST'])
+# def users_info(request):
+#     request_userno = request.data['userno']
+
 
 @api_view(['GET'])
 def recommand_champion(request,userno):
