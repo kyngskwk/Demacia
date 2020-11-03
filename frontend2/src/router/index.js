@@ -7,6 +7,9 @@ import main from "../page/Main"
 // 사이드 네브바
 import Message from "../page/Message.vue"
 
+// 대기실 전적검색
+import SearchPick from "../page/SearchPick.vue"
+
 Vue.use(Router);
 
 export default new Router({
@@ -23,5 +26,10 @@ export default new Router({
             name: "Message",
             component: Message
         },
+        {
+            path: "/searchpick",
+            name: "SearchPick",
+            component: SearchPick
+        }
     ],
   });
