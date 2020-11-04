@@ -1,6 +1,6 @@
 <template>
   <div>
-      <UserInfoItem v-for="(info, i) in userinfo" :key="i" :info="info"/>
+      <UserInfoItem v-for="(info, i) in userinfo" :key="i" :info="info" class="mb-5"/>
   </div>
 </template>
 

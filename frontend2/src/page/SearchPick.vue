@@ -13,8 +13,8 @@
     <!-- 결과 안내창 -->
     <v-card class="mt-5">
       <img v-if="infoshow" src="../assets/img/pickinfo.png" alt="" class="pt-5 pb-3">
-      <UserInfoList v-if="!infoshow" :userinfo="userinfo"/>
     </v-card>
+    <UserInfoList v-if="!infoshow" :userinfo="userinfo"/>
   </div>
 </template>
 
