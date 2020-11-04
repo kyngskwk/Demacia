@@ -203,4 +203,21 @@ public class UserServiceImpl implements UserService {
         }
     }
 
+    @Override
+    public int sendCheckMail(String Email, String code) throws MessagingException {
+        try {
+            final MimeMessage message = javaMailSender.createMimeMessage();
+            message.setSubject("DEMACIA 비밀번호 변경 인증번호");
+            message.setRecipient(Message.RecipientType.TO, new InternetAddress(Email));
+            message.setText("인증코드는 [" + code + "] 입니다.");
+            message.setSentDate(new Date());
+            javaMailSender.send(message);
+            System.out.println(message);
+            return 1;
+        } catch (MessagingException e) {
+            e.printStackTrace();
+            return 0;
+        }
+    }
+
 }
