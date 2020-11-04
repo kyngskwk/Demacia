@@ -3,13 +3,15 @@ import requests
 import json
 
 sys.stdin = open("input.txt", "r", encoding='utf-8')
+inputtxt = "시간은또금세흘러님이 로비에 참가하였습니다.\n크고우람한요들님이 로비에 참가하였습니다.\n추억에잠긴거북이님이 로비에 참가하였습니다.\n미쳐놈님이 로비에 참가하였습니다.\n튀자튀자아님이 로비에 참가하였습니다."
+target = inputtxt.split("\n")
 
 # print(input())
 accounts = {}
 info_set = {}
-for _ in range(5):
+for idx in range(5):
     try:
-        other = list(input())
+        other = target[idx]
         if len(other) > 15:
             name = ''.join(other[:-15])
             ### 닉네임 -> accountid
