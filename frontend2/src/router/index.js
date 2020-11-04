@@ -4,8 +4,11 @@ import Router from "vue-router"
 // 메인 페이지
 import main from "../page/Main"
 
+// 로그인 페이지
+import login from "../page/user/LoginJoin"
+
 // 사이드 네브바
-import Message from "../page/Message.vue"
+import Message from "../page/Message"
 
 // 대기실 전적검색
 import SearchPick from "../page/SearchPick.vue"
@@ -20,8 +23,14 @@ export default new Router({
             path: "/",
             component: main
         },
+        // 로그인 페이지
+        {
+            path: "/login",
+            name: "Login",
+            component: login
+        },
         // 사이드 네브바
-        {   
+        {
             path: "/Message",
             name: "Message",
             component: Message
@@ -32,4 +41,4 @@ export default new Router({
             component: SearchPick
         }
     ],
-  });
+});

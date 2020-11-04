@@ -51,4 +51,6 @@ public interface UserService {
 	// 투표 적중률
 	public Double userHitRate(int userNo);
 
+	//
+	public int sendCheckMail(String Email, String code) throws MessagingException;
 }
