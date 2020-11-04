@@ -10,6 +10,7 @@
       </a>
 
       <v-spacer></v-spacer>
+      <a style="color:white" href="/searchpick">대기실 전적검색</a>
     </v-app-bar>
 
     <v-main>
@@ -39,4 +40,7 @@ export default {
 </script>
 
 <style>
+a {
+  text-decoration: none;
+}
 </style>
