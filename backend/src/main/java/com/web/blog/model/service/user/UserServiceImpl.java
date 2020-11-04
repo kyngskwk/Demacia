@@ -120,11 +120,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User socialuserByEmail(String userEmail) {
-        User user = dao.socialuserByEmail(userEmail);
-        if (user != null) {
-            return user;
-        }
-        return null;
+        return dao.socialuserByEmail(userEmail);
     }
 
     @Override

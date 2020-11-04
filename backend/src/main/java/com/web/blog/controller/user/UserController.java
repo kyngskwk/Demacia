@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 import javax.mail.MessagingException;
 
+import com.web.blog.model.dto.user.EmailCode;
 import com.web.blog.model.dto.user.User;
 import com.web.blog.model.dto.user.UserVote;
 import com.web.blog.model.service.user.UserService;
@@ -129,10 +130,11 @@ public class UserController {
         BasicResponse result = new BasicResponse();
         System.out.println("확인 email : " + userEmail);
 
-        int res = userService.userByEmail(userEmail);
+        User res = userService.socialuserByEmail(userEmail);
 
-        if (res == 1) { // 이메일이 있다면 (중복)
+        if (res != null) { // 이메일이 있다면 (중복)
             result.status = false;
+            result.object = res.getProviderName();
             response = new ResponseEntity<>(result, HttpStatus.OK);
         } else { // 중복 아님
             result.status = true;
@@ -247,11 +249,12 @@ public class UserController {
 
     }
 
-    @PutMapping("/email/")
+    @PostMapping("/email")
     @ApiOperation(value = "이메일인증")
-    public Object update(@RequestBody String Email, @RequestBody String code) throws MessagingException {
-        int res = userService.sendCheckMail(Email, code);
-        final BasicResponse result = new BasicResponse();
+    public Object sendEmail(@RequestBody EmailCode ec) throws MessagingException {
+        System.out.println(ec.getEmail() + " : " + ec.getCode());
+        int res = userService.sendCheckMail(ec.getEmail(), ec.getCode());
+        BasicResponse result = new BasicResponse();
         result.status = false;
         result.data = "fail";
         if (res != 0) {
