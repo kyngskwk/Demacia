@@ -129,10 +129,11 @@ public class UserController {
         BasicResponse result = new BasicResponse();
         System.out.println("확인 email : " + userEmail);
 
-        int res = userService.userByEmail(userEmail);
+        User res = userService.socialuserByEmail(userEmail);
 
-        if (res == 1) { // 이메일이 있다면 (중복)
+        if (res != null) { // 이메일이 있다면 (중복)
             result.status = false;
+            result.object = res.getProviderName();
             response = new ResponseEntity<>(result, HttpStatus.OK);
         } else { // 중복 아님
             result.status = true;

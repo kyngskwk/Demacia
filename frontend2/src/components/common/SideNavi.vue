@@ -62,7 +62,6 @@
       </v-list-item>
     </v-list>
     <ChatModal :dialog="dialog" @close="close" @send="send" />
-    <v-snackbar v-model="snackbar">{{ errMsg }}</v-snackbar>
   </v-navigation-drawer>
 </template>
 
@@ -81,7 +80,9 @@ export default {
       user: JSON.parse(sessionStorage.getItem("user")),
       userImg:
         process.env.VUE_APP_IMGUP_URL +
-        JSON.parse(sessionStorage.getItem("user")).userImage,
+        (this.user
+          ? JSON.parse(sessionStorage.getItem("user")).userImage
+          : "noimage.png"),
       snackbar: false,
       errMsg: "",
     };
@@ -121,8 +122,9 @@ export default {
             window.location.reload();
           })
           .catch((err) => {
-            this.snackbar = true;
-            this.errMsg = "로그아웃 중 서버 오류가 발생했습니다. " + err;
+            this.$root.$children[0].snackbar = true;
+            this.$root.$children[0].errMsg =
+              "로그아웃 중 서버 오류가 발생했습니다. " + err;
           });
       } else {
         axios
@@ -137,8 +139,9 @@ export default {
             window.location.reload();
           })
           .catch((err) => {
-            this.snackbar = true;
-            this.errMsg = "로그아웃 중 서버 오류가 발생했습니다. " + err;
+            this.$root.$children[0].snackbar = true;
+            this.$root.$children[0].errMsg =
+              "로그아웃 중 서버 오류가 발생했습니다. " + err;
           });
       }
     },
