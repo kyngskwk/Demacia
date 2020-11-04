@@ -8,32 +8,50 @@
         outlined
         v-model="realtxt"
     ></v-textarea>
+    <p v-if="infoerror">{{ userinfo }}</p>
     <v-btn class="searchbtn blue-grey" @click="gosearch">검색하기</v-btn>
     <!-- 결과 안내창 -->
     <v-card class="mt-5">
       <img v-if="infoshow" src="../assets/img/pickinfo.png" alt="" class="pt-5 pb-3">
+      <UserInfoList v-if="!infoshow" :userinfo="userinfo"/>
     </v-card>
   </div>
 </template>
 
 <script>
 import axios from 'axios'
+import UserInfoList from '../components/pick/UserInfoList.vue'
 
 export default {
     name: 'SearchPick',
+    components: {
+      UserInfoList
+    },
     data() {
       return {
-        realtxt:'',
-        infoshow:true,
-        inputtxt:'',
+        realtxt: '',
+        infoshow: true,
+        inputtxt: '',
+        userinfo: '',
+        infoerror: false,
       }
     },
     methods: {
       gosearch() {
-        this.infoshow=false
         this.inputtxt=this.realtxt.split('\n')
         console.log(this.inputtxt)
-        axios.post(`localhost:8000/django/api/usersinfo/`)
+        axios.post(`http://127.0.0.1:8000/django/api/usersinfo/`, {
+          inputtxt: this.inputtxt
+        }).then(response => {
+          this.userinfo = response.data
+          if (typeof this.userinfo == 'string') {
+            this.infoerror = true
+            this.infoshow = true
+          } else {
+            this.infoerror = false
+            this.infoshow = false
+          }
+        })
       }
     }
 }

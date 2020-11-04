@@ -37,14 +37,15 @@ def users_info(request):
         except EOFError:
             break
 
+
     for key,val in accounts.items():
-        info_set[key] = {}
+        info_set[key] = {'name':key, 'games': {}}
         accidtogameid = "https://kr.api.riotgames.com/lol/match/v4/matchlists/by-account/"+str(val)+"?endIndex=10&api_key=RGAPI-4dcd2099-2605-4440-9864-f53a305141e7"
         try:
             results = requests.get(accidtogameid).json()["matches"]
             for idx in range(len(results)):
                 game_id = results[idx]["gameId"]
-                info_set[key][game_id] = results[idx]
+                info_set[key]['games'][game_id] = results[idx]
 
                 info = "https://kr.api.riotgames.com/lol/match/v4/matches/"+str(game_id)+"?api_key=RGAPI-4dcd2099-2605-4440-9864-f53a305141e7"
                 result = requests.get(info).json()
@@ -58,7 +59,7 @@ def users_info(request):
                             playerid = int(findplayerid[k]["participantId"]) - 1
                             break
                     
-                    info_set[key][game_id]["win"] = findwin[playerid]["stats"]["win"]
+                    info_set[key]['games'][game_id]["win"] = findwin[playerid]["stats"]["win"]
 
                 except KeyError:
                     return Response("사용자가 너무 많아 조금 후 다시 시도해주세요ㅠㅠ")
@@ -66,6 +67,7 @@ def users_info(request):
 
         except KeyError:
                     return Response("사용자가 너무 많아 조금 후 다시 시도해주세요ㅠㅠ")
+
 
     return Response(info_set)
 
