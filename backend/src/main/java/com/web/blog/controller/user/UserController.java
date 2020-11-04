@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 import javax.mail.MessagingException;
 
+import com.web.blog.model.dto.user.EmailCode;
 import com.web.blog.model.dto.user.User;
 import com.web.blog.model.dto.user.UserVote;
 import com.web.blog.model.service.user.UserService;
@@ -248,12 +249,12 @@ public class UserController {
 
     }
 
-    @PutMapping("/email")
+    @PostMapping("/email")
     @ApiOperation(value = "이메일인증")
-    public Object update(@RequestBody String Email, @RequestBody String code) throws MessagingException {
-        System.out.println(Email + " : " + code);
-        int res = userService.sendCheckMail(Email, code);
-        final BasicResponse result = new BasicResponse();
+    public Object sendEmail(@RequestBody EmailCode ec) throws MessagingException {
+        System.out.println(ec.getEmail() + " : " + ec.getCode());
+        int res = userService.sendCheckMail(ec.getEmail(), ec.getCode());
+        BasicResponse result = new BasicResponse();
         result.status = false;
         result.data = "fail";
         if (res != 0) {
