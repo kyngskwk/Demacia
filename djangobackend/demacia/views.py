@@ -13,6 +13,63 @@ from django.utils.decorators import method_decorator
 from .video import get_image, change_text, timeline, winrate_algo
 # Create your views here.
 # .
+@api_view(['POST'])
+def users_info(request):
+    request_others = request.data['inputtxt']
+    # target = request_others.split("\n")
+
+    # print(input())
+    accounts = {}
+    info_set = {}
+    for idx in range(5):
+        try:
+            other = request_others[idx]
+            if len(other) > 15:
+                name = ''.join(other[:-15])
+                ### 닉네임 -> accountid
+                nicktoid = "https://kr.api.riotgames.com/lol/summoner/v4/summoners/by-name/"+ str(name)+ "?api_key=RGAPI-4dcd2099-2605-4440-9864-f53a305141e7"
+                results = requests.get(nicktoid).json()
+                try:
+                    accounts[name] = results['accountId']
+                except KeyError:
+                    return Response("사용자가 너무 많아 조금 후 다시 시도해주세요ㅠㅠ")
+
+        except EOFError:
+            break
+
+    for key,val in accounts.items():
+        info_set[key] = {}
+        accidtogameid = "https://kr.api.riotgames.com/lol/match/v4/matchlists/by-account/"+str(val)+"?endIndex=10&api_key=RGAPI-4dcd2099-2605-4440-9864-f53a305141e7"
+        try:
+            results = requests.get(accidtogameid).json()["matches"]
+            for idx in range(len(results)):
+                game_id = results[idx]["gameId"]
+                info_set[key][game_id] = results[idx]
+
+                info = "https://kr.api.riotgames.com/lol/match/v4/matches/"+str(game_id)+"?api_key=RGAPI-4dcd2099-2605-4440-9864-f53a305141e7"
+                result = requests.get(info).json()
+                try:
+                    findwin = result["participants"]
+                    findplayerid = result["participantIdentities"]
+                    ## participantId 찾기
+                    playerid = 0
+                    for k in range(len(findwin)):
+                        if findplayerid[k]["player"]["summonerName"] == key:
+                            playerid = int(findplayerid[k]["participantId"]) - 1
+                            break
+                    
+                    info_set[key][game_id]["win"] = findwin[playerid]["stats"]["win"]
+
+                except KeyError:
+                    return Response("사용자가 너무 많아 조금 후 다시 시도해주세요ㅠㅠ")
+                
+
+        except KeyError:
+                    return Response("사용자가 너무 많아 조금 후 다시 시도해주세요ㅠㅠ")
+
+    return Response(info_set)
+
+
 @api_view(['GET'])
 def recommand_champion(request,userno):
     champions = Match.objects.filter(userno=userno)#{'티모':0.7,'아리':0.6,'럭스':0.3}
