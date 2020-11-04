@@ -250,7 +250,7 @@ public class UserController {
 
     @PutMapping("/email")
     @ApiOperation(value = "이메일인증")
-    public Object update(@RequestBody String Email, @RequestBody String code) throws MessagingException {
+    public Object update(String Email, String code) throws MessagingException {
         System.out.println(Email + " : " + code);
         int res = userService.sendCheckMail(Email, code);
         final BasicResponse result = new BasicResponse();
