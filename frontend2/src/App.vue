@@ -1,10 +1,6 @@
 <template>
   <v-app>
-    <v-app-bar
-      app
-      color="blue-grey"
-      dark
-    >
+    <v-app-bar app color="blue-grey" dark>
       <a
         class="navbar-brand mx-0"
         href="/"
@@ -16,30 +12,31 @@
       <v-spacer></v-spacer>
     </v-app-bar>
 
-    <v-main> 
-      <SideNavi style="z-index:6; position:fixed; margin:64px 0 0 0;"/>
+    <v-main>
+      <SideNavi style="z-index: 6; position: fixed; margin: 64px 0 0 0" />
       <router-view></router-view>
+      <v-snackbar v-model="snackbar">{{ errMsg }}</v-snackbar>
     </v-main>
   </v-app>
 </template>
 
 <script>
-import SideNavi from './components/common/SideNavi.vue'
+import SideNavi from "./components/common/SideNavi.vue";
 // import HelloWorld from './components/HelloWorld';
 
 export default {
-  name: 'App',
+  name: "App",
 
   components: {
     SideNavi,
     // HelloWorld,
   },
   data: () => ({
-    //
+    snackbar: false,
+    errMsg: "",
   }),
 };
 </script>
 
 <style>
-
 </style>
