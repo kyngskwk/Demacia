@@ -46,7 +46,7 @@ export default {
         this.infoshow = false
         this.isloading = true
         this.inputtxt=this.realtxt.split('\n')
-        console.log(this.inputtxt)
+        // console.log(this.inputtxt)
         // axios.post(`http://127.0.0.1:8000/django/api/usersinfo/`, {
         axios.post(`http://k3a502.p.ssafy.io/django/api/usersinfo/`, {
           inputtxt: this.inputtxt 
