@@ -1,7 +1,10 @@
 <template>
-    <div>
-    <div>챔피언 : {{ game.champion }} | 이겼니? : {{ game.win }} | 롤 : {{ game.role }} | 라인 : {{ game.lane }}</div>
-    </div>
+    <v-card outlined class="gameinfo mb-1">
+        <div v-if="game.win == true" style="background:#FFCDD2">{{ game.champion }} | {{ game.role }} | {{ game.lane }}
+        </div>
+        <div v-if="game.win == false" style="background:#BBDEFB">{{ game.champion }} | {{ game.role }} | {{ game.lane }}
+        </div>
+    </v-card>
 </template>
 
 <script>
@@ -16,5 +19,4 @@ export default {
 </script>
 
 <style>
-
 </style>
