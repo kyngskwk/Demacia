@@ -134,7 +134,7 @@ public class UserController {
 
         if (res != null) { // 이메일이 있다면 (중복)
             result.status = false;
-            result.object = res.getProviderName();
+            result.object = (String) (res.getUserNo() + " " + res.getProviderName());
             response = new ResponseEntity<>(result, HttpStatus.OK);
         } else { // 중복 아님
             result.status = true;
