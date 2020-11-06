@@ -3,9 +3,11 @@
         <v-card-title>
             <v-icon class="mr-2">mdi-account-circle</v-icon>
             <span>{{ info.name }}</span>
+            <span style="font-size:13px; color:grey;" class="ml-3">
+                ※ 최근 10개의 경기에서 가져온 데이터 입니다.</span>
         </v-card-title>
         <v-row class="pa-3">
-            <v-col class="col-3 rate">
+            <v-col class="col-6 rate mt-5">
                 <v-progress-circular
                     :rotate="-90"
                     :size="100"
@@ -14,12 +16,26 @@
                     color="blue-grey">
                     {{ wingamerate }}%
                 </v-progress-circular>
-                <div class="mt-2">총 {{ totalgame }}개의 게임중 <br> {{ wingame }}게임을 이겼습니다.</div>
+
+                <div class="mt-3 mb-3">총 {{ totalgame }}개의 게임중 {{ wingame }}게임을 이겼습니다.</div>
+
+                <v-row class="px-3 mt-5">
+                    <v-chip color="blue-grey mt-2 mr-3" style="color:white;">MAIN LANE</v-chip>
+                    <li v-for="(lane, idx) in lanelist" :key="idx" style="list-style:none; width:50px; float:left;">
+                        <img :src="lane" alt=""
+                        style="width:50px; height:50px;">
+                    </li>
+                </v-row>
+                <v-row class="px-3 mt-5">
+                    <v-chip color="blue-grey mt-2 mr-3" style="color:white;">CHAMPION</v-chip>
+                    {{ chamlist }}
+                    <!-- <li v-for="(lane, idx) in lanelist" :key="idx" style="list-style:none; width:50px; float:left;">
+                        <img :src="lane" alt=""
+                        style="width:50px; height:50px;">
+                    </li> -->
+                </v-row>
             </v-col>
-            <v-col class="col-3 infoset">
-                라인<br>{{ this.lanelist }}<br>
-                챔피언<br>{{ this.chamlist }}
-            </v-col>
+
             <v-col class="col-6">
                 <InfoList v-for="(game, i) in info.games" :key="i" :game="game"/>
             </v-col>
@@ -70,6 +86,10 @@ export default {
             }
 
         }
+        for (var idx in this.lanelist) {
+            this.lanelist[idx] = require(`../../assets/lane/` + this.lanelist[idx] + `.png`)
+        }
+
         this.totalgame = k
         this.wingame = t
         this.wingamerate = (t / k) * 100 
@@ -87,5 +107,9 @@ export default {
 }
 .infoset {
     border-right: 1px solid #607D8B
+}
+.laneinfo {
+    background: #607D8B;
+
 }
 </style>
