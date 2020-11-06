@@ -204,7 +204,7 @@ public class UserServiceImpl implements UserService {
         try {
             final MimeMessage message = javaMailSender.createMimeMessage();
             message.setSubject("DEMACIA 비밀번호 변경 인증번호");
-            message.setRecipient(Message.RecipientType.TO, new InternetAddress(Email));
+            message.setRecipient(Message.RecipientType.TO, new InternetAddress(Email, "데마시아"));
             message.setText("인증코드는 [" + code + "] 입니다.");
             message.setSentDate(new Date());
             javaMailSender.send(message);
