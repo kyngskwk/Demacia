@@ -1,5 +1,6 @@
 package com.web.blog.model.service.user;
 
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -210,7 +211,7 @@ public class UserServiceImpl implements UserService {
             javaMailSender.send(message);
             System.out.println(message);
             return 1;
-        } catch (MessagingException e) {
+        } catch (MessagingException | UnsupportedEncodingException e) {
             e.printStackTrace();
             return 0;
         }
