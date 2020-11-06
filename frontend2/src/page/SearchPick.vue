@@ -11,11 +11,11 @@
     <p v-if="infoerror">{{ userinfo }}</p>
     <v-btn class="searchbtn blue-grey" @click="gosearch">검색하기</v-btn>
     <!-- 결과 안내창 -->
+    <div class="loading-container" v-if="isloading">
+      <div class="loading"></div>
+      <div id="loading-text">loading</div>
+    </div>
     <v-card class="mt-5">
-      <div class="loading-container mt-5 mb-5" v-if="isloading">
-          <div class="loading"></div>
-          <div id="loading-text">loading</div>
-      </div>
       <img v-if="infoshow" src="../assets/img/pickinfo.png" alt="" class="pt-5 pb-3">
     </v-card>
     <UserInfoList v-if="!infoshow" :userinfo="userinfo"/>
@@ -150,7 +150,7 @@ export default {
 }
 
 
-.loading-container { margin: 40px auto }
+.loading-container { margin:140px auto }
 
 .loading {
     border: 2px solid transparent;
