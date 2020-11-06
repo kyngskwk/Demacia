@@ -1,6 +1,5 @@
 package com.web.blog.model.service.user;
 
-import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -205,13 +204,13 @@ public class UserServiceImpl implements UserService {
         try {
             final MimeMessage message = javaMailSender.createMimeMessage();
             message.setSubject("DEMACIA 비밀번호 변경 인증번호");
-            message.setRecipient(Message.RecipientType.TO, new InternetAddress(Email, "데마시아"));
+            message.setRecipient(Message.RecipientType.TO, new InternetAddress(Email));
             message.setText("인증코드는 [" + code + "] 입니다.");
             message.setSentDate(new Date());
             javaMailSender.send(message);
             System.out.println(message);
             return 1;
-        } catch (MessagingException | UnsupportedEncodingException e) {
+        } catch (MessagingException e) {
             e.printStackTrace();
             return 0;
         }
