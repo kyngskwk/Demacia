@@ -15,6 +15,8 @@ def change_text(gameId):
         # --------------------------------------------------------------------
         # 이미지 구역 나누기v
         time = []
+        index = 0
+        text_list = []
         for i in range(2):
             image = cv2.imread('./demacia/images/frame%d.jpg' % i)
 
@@ -46,15 +48,14 @@ def change_text(gameId):
 
 
             ]
-            index = 0
 
             for section in sections:
                 x, y, w, h = section
                 img_trim = image[y:y+h, x:x+w]
-                cv2.imwrite('org_trim.jpg', img_trim)
-                org_image = cv2.imread('org_trim.jpg')
+                cv2.imwrite(f'org_trim{index}.jpg', img_trim)
+                org_image = cv2.imread(f'org_trim{index}.jpg')
                 # ------------------------------------------------------------------------------
-                src = cv2.imread('org_trim.jpg', cv2.IMREAD_COLOR)
+                src = cv2.imread(f'org_trim{index}.jpg', cv2.IMREAD_COLOR)
                 big_src = cv2.resize(src, None, fx=8, fy=8,
                                      interpolation=cv2.INTER_CUBIC)
                 gray = cv2.cvtColor(big_src, cv2.COLOR_BGR2GRAY)
@@ -69,46 +70,38 @@ def change_text(gameId):
                 thresh = cv2.threshold(binary, 0, 255, cv2.THRESH_BINARY)[1]
                 thresh = cv2.threshold(
                     binary, 0, 255, cv2.THRESH_BINARY_INV)[1]
-                cv2.imwrite('result.jpg', thresh)
+                resized_image = cv2.resize(thresh, (28, 28))
+                cv2.imwrite(f'result{index}.jpg', resized_image)
                 # print('middle')
                 custom_config = r'--oem 3 --psm 6 outputbase digits'
 
                 text = pytesseract.image_to_string(
                     thresh, config=custom_config)
+                print(text)
 
                 tmp = list(map(str, text.split('\n')))
-                tmp1 = []
-                for num in tmp:
-                    if num:
-                        if num[0].isdigit():
-                            if index == 2 or index == 3:
-                                # 골드를 표현하는 부분일때
-                                if len(num) == 3 and num.isdigit():  # 3자리고 숫자만으로 구성되어 있으면
-                                    num = num[:2] + '.' + num[2:]
-                            if index == 8:
-                                if int(num) >= 90:
-                                    num = str(int(num)-80)
-                                elif int(num) >= 70:
-                                    num = str(int(num)-60)
-                            if index == 9:
-                                if len(num) >= 3:
-                                    num = num[:2]
-                                elif int(num) > 60:
-                                    num = '59'
-                            tmp1.append(num)
 
-                text_list.append(tmp1)
-
+                if len(text_list) >= 4 and tmp[0] == '4' and int(text_list[index-4]) > int(tmp[0]):
+                    if index != 6:
+                        tmp[0] = '6'
+                text_list.append(tmp[0])
                 index += 1
 
-            # print('불루팀 타워, 레드팀 타워, 불루팀 골드, 레드팀 골드, 불루팀 kill, 레드팀 kill, 불루팀 cs, 레드팀 cs,시간, 분' )
-            # print(text_list)
-            time.append(text_list[-2])
-            time.append(text_list[-1])
+        for i in range(8):
+            try:
+                int(text_list[i])
+            except ValueError:
+                text_list[i] = '0'
+        text_list = list(map(int, text_list))
 
-        new_time = [time[0], time[2]]
-        # print(time)
-        # return timeline.live_and_before([time[0],time[2]],gameId) # 분 단위만 넘기기
+        for i in range(4):
+            if text_list[i] == 0:
+                if abs(text_list[i] - text_list[i+4]) > 1:
+                    if i == 1:
+                        if text_list[2] > text_list[6]:
+                            text_list[i] = text_list[i+4] - 1
+        new_time = [[str(text_list[0])+str(text_list[1]), str(text_list[2])+str(text_list[3])],
+                    [str(text_list[4])+str(text_list[5]), str(text_list[6])+str(text_list[7])]]
     else:
         # print('change_text none값')
         new_time = None
