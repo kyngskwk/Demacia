@@ -120,26 +120,31 @@
           <v-card-text>
       <v-layout wrap row>
        
-        <v-flex xs12 sm6 md6 class="pb-2" v-for="i in 4" :key="i">
+        <v-flex xs12 sm6 md6 class="pb-2" v-for="i in 2" :key="i">
           <v-card>
             <v-container pa-1>
               <v-layout row>
+              
+                <v-flex xs5>
+                  <v-card-title primary-title>
+                  </v-card-title>
+                                    <img
+                    
+                    thumbnail
+                    width=50
+                    height=50
+                    :src="champ1.imgsrc"
+                  />
+                </v-flex>
                 <v-flex xs5>
                   <v-card-title primary-title>
                     <div>
-                      <div class="grey--text">전체 사용자</div>
+                      <div class="grey                                                                                                                                                                                                                                                                                                                                                                --text">전체 사용자</div>
                       <h3 class="headline">123</h3>
                     </div>
                   </v-card-title>
                 </v-flex>
 
-                <v-flex xs5>
-                  <v-card-title primary-title>
-                    <v-avatar>
-                      <v-icon medium color="success">person</v-icon>
-                    </v-avatar>
-                  </v-card-title>
-                </v-flex>
               </v-layout>
                             <v-divider light></v-divider>
               <v-card-actions class="pa-2">
