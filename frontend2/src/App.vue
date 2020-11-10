@@ -10,7 +10,30 @@
       </a>
 
       <v-spacer></v-spacer>
-      <a style="color:white" href="/searchpick">대기실 전적검색</a>
+      <v-menu
+        transition="slide-y-transition"
+        bottom
+      >
+        <template v-slot:activator="{ on, attrs }">
+          <v-chip
+            class="purple"
+            color="blue-grey darken-2"
+            dark
+            v-bind="attrs"
+            v-on="on"
+          >
+            전적 검색
+          </v-chip>
+        </template>
+        <v-list>
+          <v-list-item>
+            <a style="color:#607D8B" href="">유저 검색</a>
+          </v-list-item>
+          <v-list-item @click="gopick">
+            <a style="color:#607D8B" href="/searchpick">대기실 검색</a>
+          </v-list-item>
+        </v-list>
+      </v-menu>
     </v-app-bar>
 
     <v-main>
