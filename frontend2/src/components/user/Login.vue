@@ -1,9 +1,9 @@
 <template>
   <v-row align="center" class="ma-3">
     <v-col cols="12" md="6">
-      <v-card-title class="my-3"
-        ><v-img src="../../assets/img/damacia.png"
-      /></v-card-title>
+      <v-card-title class="my-3">
+        <v-img src="../../assets/img/damacia.png" draggable="false" />
+      </v-card-title>
       <v-card-text>
         <v-text-field
           v-model="email"
@@ -58,7 +58,7 @@ export default {
     return {
       show1: false,
       baseURL: window.location.hostname,
-      email: "",
+      email: localStorage.getItem("email"),
       password: "",
       rules: {
         required: (value) => !!value || "내용을 입력해주세요",
@@ -66,7 +66,7 @@ export default {
           EmailValidator.validate(value) || "이메일 형식을 지켜주세요",
         emailMatch: () => "아이디 또는 비밀번호를 확인해주세요",
       },
-      saveEmail: false,
+      saveEmail: localStorage.getItem("email"),
     };
   },
   created() {
@@ -175,6 +175,11 @@ export default {
       if (!err) this.dataSend();
     },
     dataSend() {
+      if (this.saveEmail) {
+        localStorage.setItem("email", this.email);
+      } else {
+        localStorage.removeItem("email");
+      }
       axios
         .get(process.env.VUE_APP_API_URL + "/account/login", {
           params: {
