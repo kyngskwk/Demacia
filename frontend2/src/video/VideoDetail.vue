@@ -52,23 +52,23 @@
         <source src="./4659518008_01.mp4" type="video/mp4" />
       </video>
     <v-tabs vertical>
-      <v-tab>
+      <v-tab class="pl-0">
         <v-icon left>
           mdi-account
         </v-icon>
         TIME LINE
       </v-tab>
-      <v-tab>
+      <v-tab >
         <v-icon left>
           mdi-lock
         </v-icon>
         Champions
       </v-tab>
-      <v-tab>
+      <v-tab class="pl-2">
         <v-icon left>
           mdi-access-point
         </v-icon>
-        Option 3
+        Snapshot
       </v-tab>
 
       <v-tab-item>
