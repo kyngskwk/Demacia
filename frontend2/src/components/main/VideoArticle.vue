@@ -20,19 +20,18 @@
             </v-img>
 
             <v-card-actions>
+            
+    <v-btn
+      class="ma-2"
+      :loading="loading"
+      :disabled="loading"
+      color="secondary"
+      @click="videodetail1"
+    >
+      <h2><strong>자세히 보기</strong></h2>  
+    </v-btn>
+
               <v-spacer></v-spacer>
-
-              <v-btn icon>
-                <v-icon>mdi-heart</v-icon>
-              </v-btn>
-
-              <v-btn icon>
-                <v-icon>mdi-bookmark</v-icon>
-              </v-btn>
-
-              <v-btn icon>
-                <v-icon>mdi-share-variant</v-icon>
-              </v-btn>
             </v-card-actions>
           </v-card>
         </v-col>
@@ -45,11 +44,16 @@ export default {
     name: 'VideoAritcle',
     data: () => ({
       cards: [
-        { title: 'Pre-fab homes', src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg', flex: 4 },
+        { title: 'No.1', src: require('../../assets/img/video1img0.jpg'),  flex: 4 },
         { title: 'Favorite road trips', src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg', flex: 4 },
         { title: 'Best airlines', src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg', flex: 4 },
       ],
-    }),
+    }),        
+    methods: {
+    videodetail1() {
+      this.$router.push({ name: "VideoDetail" });
+    },
+    }
 }
 </script>
 
