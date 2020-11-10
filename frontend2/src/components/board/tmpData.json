@@ -1,0 +1,22 @@
+{
+    "boardList": [
+        {
+            "boardNo": 1,
+            "boardTitle": "첫글",
+            "boardContent": "<p><strong>HTML</strong>가능</p>",
+            "boardView": 5,
+            "boardDate": "2020-11-11 12:34:56",
+            "userNo": 3,
+            "category": 1
+        },
+        {
+            "boardNo": 2,
+            "boardTitle": "두번째 글",
+            "boardContent": "<p><strong>HTML</strong>가능</p>",
+            "boardView": 5,
+            "boardDate": "2020-11-11 12:34:57",
+            "userNo": 3,
+            "category": 1
+        }
+    ]
+}
