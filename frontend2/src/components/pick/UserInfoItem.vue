@@ -28,11 +28,10 @@
                 </v-row>
                 <v-row class="px-3 mt-5">
                     <v-chip color="blue-grey mt-2 mr-3" style="color:white;">CHAMPION</v-chip>
-                    {{ chamlist }}
-                    <!-- <li v-for="(lane, idx) in lanelist" :key="idx" style="list-style:none; width:50px; float:left;">
-                        <img :src="lane" alt=""
+                    <li v-for="(cham, idx) in chamlist" :key="idx" style="list-style:none; width:50px; float:left;" class="mr-2">
+                        <img :src="cham" alt=""
                         style="width:50px; height:50px;">
-                    </li> -->
+                    </li>
                 </v-row>
             </v-col>
 
@@ -88,6 +87,11 @@ export default {
         }
         for (var idx in this.lanelist) {
             this.lanelist[idx] = require(`../../assets/lane/` + this.lanelist[idx] + `.png`)
+        }
+
+        // console.log(this.chamlist)
+        for (var p in this.chamlist) {
+            this.chamlist[p] = require(`../../assets/tiles/` + this.chamlist[p] + `.png`)
         }
 
         this.totalgame = k
