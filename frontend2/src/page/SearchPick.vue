@@ -67,6 +67,11 @@ export default {
               this.infoerror = false
               this.infoshow = false
             }
+          }).catch(function (error) {
+            console.log(error.response.data)
+              this.isloading = false
+              this.infoerror = true
+              this.infoshow = true
           })
         }
       }
