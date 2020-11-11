@@ -31,7 +31,7 @@ def user_search(request):
         return Response("사용자가 너무 많아 조금 후 다시 시도해주세요ㅠㅠ")
     
     # print(accountid)
-    accidtogameid = "https://kr.api.riotgames.com/lol/match/v4/matchlists/by-account/" + str(accountid) + "?endIndex=10&api_key=" + str(api)
+    accidtogameid = "https://kr.api.riotgames.com/lol/match/v4/matchlists/by-account/" + str(accountid) + "?endIndex=12&api_key=" + str(api)
     try:
         results = requests.get(accidtogameid).json()["matches"]
         for idx in range(len(results)):

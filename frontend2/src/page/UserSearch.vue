@@ -1,5 +1,5 @@
 <template>
-  <div class="container text-center">
+  <div class="container text-center mb-10">
     <h1 class="mb-5">유저 전적기록 검색</h1>
 
     <v-textarea 
@@ -16,22 +16,32 @@ ex) Hide on Bush"
       <div class="loading"></div>
       <div id="loading-text">loading</div>
     </div>
-    <v-card class="mt-5">
-    </v-card>
+    <div class="mt-5" v-if="isresult">
+        <v-row>
+            <UserSearchList v-for="(info, i) in result" :key="i" :info="info"/>
+        </v-row>
+    </div>
+    <div>
 
+    </div>
   </div>
 </template>
 
 <script>
 import axios from 'axios'
+import UserSearchList from '../components/pick/UserSearchList.vue'
 
 export default {
     name: 'UserSearch',
+    components: {
+        UserSearchList,
+    },
     data() {
         return {
             nickname: '',
             isloading: false,
             infoerror: false,
+            isresult: false,
             result: '',
         }
     },
@@ -44,18 +54,21 @@ export default {
                     nickname: this.nickname
                 }).then(response => {
                     this.result = response.data
-                    console.log(this.result)
+                    // console.log(this.result)
                     if (typeof this.result == 'string') {
                         this.loading = false
                         this.infoerror = true
+                        this.isresult = false
                     } else {
                         this.isloading = false
                         this.infoerror = false
+                        this.isresult = true
                     }
                 }).catch(function (error) {
                     console.log(error.response.data)
                     this.isloading = false
                     this.infoerror = true
+                    this.isresult = false
                 })
             } 
         }
