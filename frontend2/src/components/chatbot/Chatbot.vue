@@ -5,9 +5,7 @@
       width="500"
     >
     <template v-slot:activator="{ on, attrs }">
-    <v-btn height="40" width="40" v-on="on" v-bind="attrs">
-    <v-img src="../../assets/img/banner2.png" draggable="false" class="fixed"/>
-    </v-btn>
+    <v-img v-on="on" v-bind="attrs" src="../../assets/img/banner2.png" draggable="false" class="fixed"/>
     </template>
     <v-card>
         <v-card-title class="headline">
