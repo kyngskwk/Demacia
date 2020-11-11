@@ -4,7 +4,12 @@
 
     <v-textarea 
         label="대기실 전적기록 검색하기"
-        placeholder="대기실의 입장 안내 문구를 붙여넣기 해주세요!"
+        placeholder="대기실의 입장 안내 문구를 붙여넣기 해주세요!
+ex) ○○○님이 로비에 참가하셨습니다.
+      ☆☆☆님이 로비에 참가하셨습니다.
+      △△님이 로비에 참가하셨습니다.
+      ★★★★님이 로비에 참가하셨습니다.
+      □□□님이 로비에 참가하셨습니다."
         outlined
         v-model="realtxt"
     ></v-textarea>
@@ -48,8 +53,8 @@ export default {
           this.isloading = true
           this.inputtxt=this.realtxt.split('\n')
           // console.log(this.inputtxt)
-          // axios.post(`http://127.0.0.1:8000/django/api/usersinfo/`, {
-          axios.post(`http://k3a502.p.ssafy.io/django/api/usersinfo/`, {
+          axios.post(`http://127.0.0.1:8000/django/api/usersinfo/`, {
+          // axios.post(`http://k3a502.p.ssafy.io/django/api/usersinfo/`, {
             inputtxt: this.inputtxt 
           }).then(response => {
             this.userinfo = response.data

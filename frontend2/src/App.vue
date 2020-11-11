@@ -11,6 +11,7 @@
 
       <v-spacer></v-spacer>
       <v-menu
+        offset-y
         transition="slide-y-transition"
         bottom
       >
@@ -27,7 +28,7 @@
         </template>
         <v-list>
           <v-list-item>
-            <a style="color:#607D8B" href="">유저 검색</a>
+            <a style="color:#607D8B" href="/usersearch">유저 검색</a>
           </v-list-item>
           <v-list-item @click="gopick">
             <a style="color:#607D8B" href="/searchpick">대기실 검색</a>
