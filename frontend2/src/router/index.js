@@ -13,6 +13,7 @@ import Message from "../page/Message"
 // 대기실 전적검색
 import SearchPick from "../page/SearchPick.vue"
 
+
 Vue.use(Router);
 
 export default new Router({
@@ -39,6 +40,6 @@ export default new Router({
             path: "/searchpick",
             name: "SearchPick",
             component: SearchPick
-        }
+        },
     ],
 });
