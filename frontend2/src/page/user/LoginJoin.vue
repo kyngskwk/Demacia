@@ -5,10 +5,10 @@
         <v-tab> 로그인 </v-tab>
         <v-tab> 회원가입 </v-tab>
         <v-tab-item>
-          <login></login>
+          <Login />
         </v-tab-item>
         <v-tab-item>
-          <join></join>
+          <Join />
         </v-tab-item>
       </v-tabs>
     </v-card>
@@ -16,12 +16,12 @@
 </template>
 
 <script>
-import login from "../../components/user/Login";
-import join from "../../components/user/Join";
+import Login from "@/components/user/Login";
+import Join from "@/components/user/Join";
 export default {
   components: {
-    login,
-    join,
+    Login,
+    Join,
   },
 };
 </script>
