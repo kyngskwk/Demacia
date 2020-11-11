@@ -16,8 +16,8 @@
 </template>
 
 <script>
-import Login from "@/components/user/Login";
-import Join from "@/components/user/Join";
+import login from "@/components/user/Login";
+import join from "@/components/user/Join";
 export default {
   components: {
     Login,
