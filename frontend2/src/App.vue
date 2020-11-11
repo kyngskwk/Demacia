@@ -10,10 +10,7 @@
       </a>
 
       <v-spacer></v-spacer>
-      <v-menu
-        transition="slide-y-transition"
-        bottom
-      >
+      <v-menu transition="slide-y-transition" bottom>
         <template v-slot:activator="{ on, attrs }">
           <v-chip
             class="purple"
@@ -27,10 +24,10 @@
         </template>
         <v-list>
           <v-list-item>
-            <a style="color:#607D8B" href="">유저 검색</a>
+            <a style="color: #607d8b" href="">유저 검색</a>
           </v-list-item>
           <v-list-item @click="gopick">
-            <a style="color:#607D8B" href="/searchpick">대기실 검색</a>
+            <a style="color: #607d8b" href="/searchpick">대기실 검색</a>
           </v-list-item>
         </v-list>
       </v-menu>
@@ -40,12 +37,15 @@
       <SideNavi style="z-index: 6; position: fixed; margin: 64px 0 0 0" />
       <router-view></router-view>
       <v-snackbar v-model="snackbar">{{ errMsg }}</v-snackbar>
+      <Chatbot />
     </v-main>
   </v-app>
 </template>
 
 <script>
 import SideNavi from "./components/common/SideNavi.vue";
+import Chatbot from "./components/chatbot/Chatbot.vue";
+
 // import HelloWorld from './components/HelloWorld';
 
 export default {
@@ -54,6 +54,7 @@ export default {
   components: {
     SideNavi,
     // HelloWorld,
+    Chatbot,
   },
   data: () => ({
     snackbar: false,
