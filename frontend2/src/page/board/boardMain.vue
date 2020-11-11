@@ -46,8 +46,7 @@ export default {
   },
   methods: {
     write() {
-      alert("글을 쓸 것임");
-      this.$route.push({ name: "postWrite" });
+      this.$router.push({ name: "boardWrite" });
     },
   },
 };
