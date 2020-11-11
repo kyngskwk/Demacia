@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-app-bar app color="blue-grey" dark>
+    <v-app-bar app style="background:linear-gradient(to right, rgb(247,202,201), rgb(146,168,209))" dark>
       <a
         class="navbar-brand mx-0"
         href="/"
@@ -14,7 +14,7 @@
         <template v-slot:activator="{ on, attrs }">
           <v-chip
             class="purple"
-            color="blue-grey darken-2"
+            style="background:linear-gradient(to right, rgb(247,202,201), rgb(146,168,209))"
             dark
             v-bind="attrs"
             v-on="on"

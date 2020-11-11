@@ -4,7 +4,7 @@
     tile
   >
     <v-list dense class="pt-0">
-      <v-toolbar color="blue-grey" dark class="mb-5">
+      <v-toolbar style="background:linear-gradient(to right, rgb(247,202,201), rgb(146,168,209))" dark class="mb-5">
         <v-toolbar-title>금주의 인기 게시글</v-toolbar-title>
       </v-toolbar>
       <v-list-item-group

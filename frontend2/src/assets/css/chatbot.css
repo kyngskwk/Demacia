@@ -5,7 +5,8 @@
   }
 
   .headline{
-    background-color: rgb(96,125,139) !important;
+    /* background-color: rgb(96,125,139) !important; */
+    background:linear-gradient(to right, rgb(247,202,201), rgb(146,168,209));
   }
 
   .close{
@@ -27,16 +28,19 @@
 .other .msg {
   border-top-left-radius: 0px;
   display:inline-table;
-  max-width: 50%;
+  max-width: 55%;
 }
 
 .msg {
-  background: #f2f2f2;
+  /* background: #f2f2f2; */
+  background:  rgb(247,202,201);
   padding: 10px;
   border-radius: 12px;
   word-wrap: break-word;
   margin-bottom:10px;
   margin-left:10px;
+  color:white;
+  font-weight: bold;
 }
 
 
@@ -47,10 +51,10 @@
 .select {
   width:150px;
   height:30px;
-  background-color: white;
-  border:2px solid rgb(96,125,139) !important;
+  background-color: rgb(146,168,209) !important;
+  border:2px solid rgb(146,168,209) !important;
   border-radius: 12px;
-  color: rgb(96,125,139) !important;
+  color: white;
   font-weight:bold;
   margin-bottom: 5px;
 }
@@ -61,13 +65,14 @@
 }
 
 .self .msg {
-  background: rgb(96,125,139) !important;
+  background:rgb(247,202,201) !important;
   border-bottom-right-radius: 0px;
   color: #fff;
   max-width: 33%;
   margin-right:0;
   border-top-left-radius: 12px;
   margin-bottom: 0;
+  font-weight: bold;
 }
 
 .other_date{
@@ -85,10 +90,10 @@
 .link{
   width:180px;
   height:30px;
-  background-color: white;
-  border:2px solid rgb(96,125,139) !important;
+  background-color: rgb(146,168,209) !important;;
+  border:2px solid rgb(146,168,209) !important;
   border-radius: 12px;
-  color: rgb(96,125,139) !important;
+  color: white;
   font-weight:bold;
   margin-bottom: 5px;
 }

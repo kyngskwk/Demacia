@@ -28,7 +28,7 @@
                   <div class="profileImg">
                     <img src="../../assets/img/chatProfile.png" class="profile">
                     </div>
-                    <div class="msg">{{item.text}}</div>
+                    <div class="msg" v-html="item.text"></div>
                     <div class="btn_suggestion" v-for="(itembtn, $index) in item.suggestions" :key="$index">
                         <button class="select" style="cursor: pointer" v-on:click="select(itembtn)">{{itembtn}}</button>
                     </div>
@@ -52,7 +52,7 @@
                   label="메세지를 입력하세요:)"
                   required
                 ></v-text-field>
-                <v-icon large color="blue-grey" v-on:click="sendinput(message)">mdi-arrow-top-right-thick</v-icon>
+                <v-icon large color="rgb(146,168,209)" v-on:click="sendinput(message)">mdi-arrow-top-right-thick</v-icon>
           <v-btn
             text
             @click="dialog = false"
