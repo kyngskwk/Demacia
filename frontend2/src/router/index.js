@@ -16,6 +16,9 @@ import SearchPick from "../page/SearchPick.vue"
 // 유저 전적검색
 import UserSearch from "../page/UserSearch.vue"
 
+// 게시판
+import Board from "../page/board/boardMain"
+
 Vue.use(Router);
 
 export default new Router({
@@ -25,6 +28,12 @@ export default new Router({
         {
             path: "/",
             component: main
+        },
+        // 게시판
+        {
+            path: "/board",
+            name: "board",
+            component: Board,
         },
         // 로그인 페이지
         {
