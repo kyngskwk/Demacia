@@ -18,7 +18,7 @@ import java.util.UUID;
 
 @Service
 public class SessionServiceImpl implements SessionService {
-    private final String KEY_JSON_FILE = "C:\\ssafy\\demacia-final\\s03p31a502\\backend\\src\\main\\resources\\demacia-yhjx-973f6e2974eb.json";
+    private final String KEY_JSON_FILE = "/home/ubuntu/demacia-yhjx-973f6e2974eb.json";
 
     @Override
     public void createChatSessionID(HttpSession session) throws Exception {
