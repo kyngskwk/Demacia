@@ -1,17 +1,13 @@
 <template>
-  <div class="container text-center">
-    <h1 class="mb-5">대기실 전적기록 검색</h1>
+  <div class="container text-center mb-10">
+    <h1 class="mb-5">유저 전적기록 검색</h1>
 
     <v-textarea 
-        label="대기실 전적기록 검색하기"
-        placeholder="대기실의 입장 안내 문구를 붙여넣기 해주세요!
-ex) ○○○님이 로비에 참가하셨습니다.
-      ☆☆☆님이 로비에 참가하셨습니다.
-      △△님이 로비에 참가하셨습니다.
-      ★★★★님이 로비에 참가하셨습니다.
-      □□□님이 로비에 참가하셨습니다."
+        label="유저 전적기록 검색하기"
+        placeholder="검색하고 싶은 유저의 소환사를 입력해주세요!
+ex) Hide on Bush"
         outlined
-        v-model="realtxt"
+        v-model="nickname"
     ></v-textarea>
     <p v-if="infoerror">{{ userinfo }}</p>
     <v-btn class="searchbtn blue-grey" @click="gosearch">검색하기</v-btn>
@@ -20,62 +16,64 @@ ex) ○○○님이 로비에 참가하셨습니다.
       <div class="loading"></div>
       <div id="loading-text">loading</div>
     </div>
-    <v-card class="mt-5">
-      <img v-if="infoshow" src="../assets/img/pickinfo.png" alt="" class="pt-5 pb-3">
-    </v-card>
-    <UserInfoList v-if="!infoshow" :userinfo="userinfo"/>
+    <div class="mt-5" v-if="isresult">
+        <v-row>
+            <UserSearchList v-for="(info, i) in result" :key="i" :info="info"/>
+        </v-row>
+    </div>
+    <div>
+
+    </div>
   </div>
 </template>
 
 <script>
 import axios from 'axios'
-import UserInfoList from '../components/pick/UserInfoList.vue'
+import UserSearchList from '../components/pick/UserSearchList.vue'
 
 export default {
-    name: 'SearchPick',
+    name: 'UserSearch',
     components: {
-      UserInfoList
+        UserSearchList,
     },
     data() {
-      return {
-        realtxt: '',
-        isloading: false,
-        infoshow: true,
-        inputtxt: '',
-        userinfo: '',
-        infoerror: false,
-      }
+        return {
+            nickname: '',
+            isloading: false,
+            infoerror: false,
+            isresult: false,
+            result: '',
+        }
     },
     methods: {
-      gosearch() {
-        if (this.realtxt != '') {
-          this.infoshow = false
-          this.isloading = true
-          this.inputtxt=this.realtxt.split('\n')
-          // console.log(this.inputtxt)
-          axios.post(`http://127.0.0.1:8000/django/api/usersinfo/`, {
-          // axios.post(`http://k3a502.p.ssafy.io/django/api/usersinfo/`, {
-            inputtxt: this.inputtxt 
-          }).then(response => {
-            this.userinfo = response.data
-            if (typeof this.userinfo == 'string') {
-              this.isloading = false
-              this.infoerror = true
-              this.infoshow = true
-            } else {
-              this.isloading = false
-              this.infoerror = false
-              this.infoshow = false
-            }
-          }).catch(function (error) {
-            console.log(error.response.data)
-              this.isloading = false
-              this.infoerror = true
-              this.infoshow = true
-          })
+        gosearch() {
+            if (this.nickname != '') {
+                this.isloading = true
+                axios.post(`http://127.0.0.1:8000/django/api/usersearch/`, {
+                // axios.post(`http://k3a502.p.ssafy.io/django/api/usersearch/`, {
+                    nickname: this.nickname
+                }).then(response => {
+                    this.result = response.data
+                    // console.log(this.result)
+                    if (typeof this.result == 'string') {
+                        this.loading = false
+                        this.infoerror = true
+                        this.isresult = false
+                    } else {
+                        this.isloading = false
+                        this.infoerror = false
+                        this.isresult = true
+                    }
+                }).catch(function (error) {
+                    console.log(error.response.data)
+                    this.isloading = false
+                    this.infoerror = true
+                    this.isresult = false
+                })
+            } 
         }
-      }
     }
+
 }
 </script>
 

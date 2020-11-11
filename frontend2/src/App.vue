@@ -14,7 +14,11 @@
       </router-link>
 
       <v-spacer></v-spacer>
-      <v-menu transition="slide-y-transition" bottom>
+      <v-menu
+        offset-y
+        transition="slide-y-transition"
+        bottom
+      >
         <template v-slot:activator="{ on, attrs }">
           <v-chip
             class="purple"
@@ -28,7 +32,7 @@
         </template>
         <v-list>
           <v-list-item>
-            <a style="color: #607d8b" href="">유저 검색</a>
+            <a style="color:#607D8B" href="/usersearch">유저 검색</a>
           </v-list-item>
           <v-list-item @click="gopick">
             <a style="color: #607d8b" href="/searchpick">대기실 검색</a>

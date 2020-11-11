@@ -14,6 +14,9 @@ import Message from "../page/Message"
 // 대기실 전적검색
 import SearchPick from "../page/SearchPick.vue"
 
+// 유저 전적검색
+import UserSearch from "../page/UserSearch.vue"
+
 // 게시판
 import Board from "../page/board/boardMain"
 // 게시판
@@ -58,5 +61,10 @@ export default new Router({
             name: "SearchPick",
             component: SearchPick
         },
+        {
+            path: "/usersearch",
+            name: "UserSearch",
+            component: UserSearch
+        }
     ],
 });
