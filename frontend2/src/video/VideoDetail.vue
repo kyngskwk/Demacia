@@ -1,199 +1,182 @@
 <template>
   <div>
-
-
-  <v-container>
-    <v-row justify="space-around">
-      <v-card width="1000" >
-                <v-card-title class="black--text mt-2" >
+    <v-container>
+      <v-row justify="space-around">
+        <v-card width="1000">
+          <v-card-title class="black--text mt-2">
             <v-avatar size="56">
               <img
                 alt="user"
                 src="https://cdn.pixabay.com/photo/2020/06/24/19/12/cabbage-5337431_1280.jpg"
-              >
+              />
             </v-avatar>
             <v-row justify="space-between">
-                <div>
-                    <p class="ml-7 mt-2">
-                        John Doe
-                    </p>
-                </div>
-                <div>
-                    <p class="mr-5 mt-2">
-                    영상분석 No.1
-                    </p>
-                </div>
+              <div>
+                <p class="ml-7 mt-2">John Doe</p>
+              </div>
+              <div>
+                <p class="mr-5 mt-2">영상분석 No.1</p>
+              </div>
             </v-row>
           </v-card-title>
-       <video
-        style="width: 100%; padding: 0; max-width: 1000px"
-        controls
-        autoplay="true"
-        name="media"
-        id="vid"
-      >
-        
-       
-          <v-app-bar
-            flat
-            color="rgba(0, 0, 0, 0)"
+          <video
+            style="width: 100%; padding: 0; max-width: 1000px"
+            controls
+            autoplay="true"
+            name="media"
+            id="vid"
           >
-            <v-app-bar-nav-icon color="white"></v-app-bar-nav-icon>
+            <v-app-bar flat color="rgba(0, 0, 0, 0)">
+              <v-app-bar-nav-icon color="white"></v-app-bar-nav-icon>
 
-            <v-toolbar-title class="title white--text pl-0">
-              Messages
-            </v-toolbar-title>
+              <v-toolbar-title class="title white--text pl-0">
+                Messages
+              </v-toolbar-title>
 
-            <v-spacer></v-spacer>
+              <v-spacer></v-spacer>
 
-            <v-btn
-              color="white"
-              icon
-            >
-              <v-icon>mdi-dots-vertical</v-icon>
-            </v-btn>
-          </v-app-bar>
+              <v-btn color="white" icon>
+                <v-icon>mdi-dots-vertical</v-icon>
+              </v-btn>
+            </v-app-bar>
 
-
-        <source src="./4659518008_01.mp4" type="video/mp4" />
-      </video>
-    <v-tabs vertical>
-      <v-tab class="pl-0">
-        <v-icon left>
-          mdi-clock-time-four-outline
-        </v-icon>
-        TIME LINE
-      </v-tab>
-      <v-tab >
-        <v-icon left>
-          mdi-account-group
-        </v-icon>
-        Champions
-      </v-tab>
-      <v-tab class="pl-2">
-        <v-icon left>
-          mdi-camera
-        </v-icon>
-        Snapshot
-      </v-tab>
+            <source src="./4659518008_01.mp4" type="video/mp4" />
+          </video>
+          <v-tabs vertical>
+            <v-tab class="pl-0">
+              <v-icon left> mdi-clock-time-four-outline </v-icon>
+              TIME LINE
+            </v-tab>
+            <v-tab>
+              <v-icon left> mdi-account-group </v-icon>
+              Champions
+            </v-tab>
             <v-tab class="pl-2">
-        <v-icon left>
-          mdi-camera
-        </v-icon>
-        Chart
-      </v-tab>
+              <v-icon left> mdi-camera </v-icon>
+              Snapshot
+            </v-tab>
+            <v-tab class="pl-2">
+              <v-icon left> mdi-camera </v-icon>
+              Chart
+            </v-tab>
 
-      <v-tab-item>
-        <v-card flat>
-         <v-card-text>
-          <div class="font-weight-bold ml-8 mb-2">
-            TIME LINE
-          </div>
+            <v-tab-item>
+              <v-card flat>
+                <v-card-text>
+                  <div class="font-weight-bold ml-8 mb-2">TIME LINE</div>
 
-          <v-timeline
-            align-top
-            dense
-          >
+                  <v-timeline align-top dense>
+                    <v-timeline-item
+                      v-for="message in messages"
+                      :key="message.time"
+                      :color="message.color"
+                      small
+                    >
+                      <div>
+                        <div class="font-weight-normal">
+                          <strong>{{ message.from }}</strong> @{{
+                            message.time
+                          }}
+                        </div>
+                        <div>{{ message.message }}</div>
+                      </div>
+                    </v-timeline-item>
+                  </v-timeline>
+                </v-card-text>
+              </v-card>
+            </v-tab-item>
+            <v-tab-item>
+              <v-card flat>
+                <v-card-text>
+                  <v-layout wrap row>
+                    <v-flex xs12 sm6 md6 class="pb-2" v-for="i in 2" :key="i">
+                      <v-card>
+                        <v-container pa-1>
+                          <v-layout row>
+                            <v-flex xs5>
+                              <v-card-title primary-title> </v-card-title>
+                              <img
+                                thumbnail
+                                width="50"
+                                height="50"
+                                :src="champ1.imgsrc"
+                              />
+                            </v-flex>
+                            <v-flex xs5>
+                              <v-card-title primary-title>
+                                <div>
+                                  <div class="grey --text">전체 사용자</div>
+                                  <h3 class="headline">123</h3>
+                                </div>
+                              </v-card-title>
+                            </v-flex>
+                          </v-layout>
+                          <v-divider light></v-divider>
+                          <v-card-actions class="pa-2">
+                            <v-icon small color="primary">update</v-icon>
+                            <span class="grey--text caption font-italic"
+                              >&nbsp;5분전</span
+                            >
+                            <v-spacer></v-spacer>
+                          </v-card-actions>
+                        </v-container>
+                      </v-card>
+                    </v-flex>
+                  </v-layout>
+                </v-card-text>
+              </v-card>
+            </v-tab-item>
+            <v-tab-item>
+              <v-card flat class="text-center mt-4">
+                <h2>AI SNAPSHOT</h2>
+                <v-expansion-panels>
+                  <v-expansion-panel v-for="panel in panels" :key="panel.id">
+                    <v-expansion-panel-header>
+                      <v-flex>
+                        <h3>Duration Time {{ panel.time }}</h3>
+                        <v-img
+                          :src="panel.src"
+                          width="800"
+                          height="400"
+                          class="mt-4"
+                        />
+                      </v-flex>
+                    </v-expansion-panel-header>
+                    <v-expansion-panel-content>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </v-expansion-panel-content>
+                  </v-expansion-panel>
+                </v-expansion-panels>
+              </v-card>
+            </v-tab-item>
+            <v-tab-item>
+              <v-card flat>
+                <v-card-text>
+                  <p>
+                    Fusce a quam. Phasellus nec sem in justo pellentesque
+                    facilisis. Nam eget dui. Proin viverra, ligula sit amet
+                    ultrices semper, ligula arcu tristique sapien, a accumsan
+                    nisi mauris ac eros. In dui magna, posuere eget, vestibulum
+                    et, tempor auctor, justo.
+                  </p>
 
-
-
-          
-            <v-timeline-item
-              v-for="message in messages"
-              :key="message.time"
-              :color="message.color"
-              small
-            >
-              <div>
-                <div class="font-weight-normal">
-                  <strong>{{ message.from }}</strong> @{{ message.time }}
-                </div>
-                <div>{{ message.message }}</div>
-              </div>
-            </v-timeline-item>
-          </v-timeline>
-        </v-card-text>
+                  <p class="mb-0">
+                    Cras sagittis. Phasellus nec sem in justo pellentesque
+                    facilisis. Proin sapien ipsum, porta a, auctor quis, euismod
+                    ut, mi. Donec quam felis, ultricies nec, pellentesque eu,
+                    pretium quis, sem. Nam at tortor in tellus interdum
+                    sagittis.
+                  </p>
+                </v-card-text>
+              </v-card>
+            </v-tab-item>
+          </v-tabs>
         </v-card>
-      </v-tab-item>
-      <v-tab-item>
-        <v-card flat>
-          <v-card-text>
-      <v-layout wrap row>
-       
-        <v-flex xs12 sm6 md6 class="pb-2" v-for="i in 2" :key="i">
-          <v-card>
-            <v-container pa-1>
-              <v-layout row>
-              
-                <v-flex xs5>
-                  <v-card-title primary-title>
-                  </v-card-title>
-                                    <img
-                    
-                    thumbnail
-                    width=50
-                    height=50
-                    :src="champ1.imgsrc"
-                  />
-                </v-flex>
-                <v-flex xs5>
-                  <v-card-title primary-title>
-                    <div>
-                      <div class="grey                                                                                                                                                                                                                                                                                                                                                                --text">전체 사용자</div>
-                      <h3 class="headline">123</h3>
-                    </div>
-                  </v-card-title>
-                </v-flex>
-
-              </v-layout>
-                            <v-divider light></v-divider>
-              <v-card-actions class="pa-2">
-                <v-icon small color="primary">update</v-icon>
-                <span class="grey--text caption font-italic">&nbsp;5분전</span>
-                <v-spacer></v-spacer>
-              </v-card-actions>
-            </v-container>
-        </v-card>
-      </v-flex>
-      
-      
-          </v-layout>
-          
-          </v-card-text>
-        </v-card>
-      </v-tab-item>
-      <v-tab-item>
-        <v-card flat>
-          <v-card-text>
-            <p>
-              Fusce a quam. Phasellus nec sem in justo pellentesque facilisis. Nam eget dui. Proin viverra, ligula sit amet ultrices semper, ligula arcu tristique sapien, a accumsan nisi mauris ac eros. In dui magna, posuere eget, vestibulum et, tempor auctor, justo.
-            </p>
-
-            <p class="mb-0">
-              Cras sagittis. Phasellus nec sem in justo pellentesque facilisis. Proin sapien ipsum, porta a, auctor quis, euismod ut, mi. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nam at tortor in tellus interdum sagittis.
-            </p>
-          </v-card-text>
-        </v-card>
-      </v-tab-item>
-       <v-tab-item>
-        <v-card flat>
-          <v-card-text>
-            <p>
-              Fusce a quam. Phasellus nec sem in justo pellentesque facilisis. Nam eget dui. Proin viverra, ligula sit amet ultrices semper, ligula arcu tristique sapien, a accumsan nisi mauris ac eros. In dui magna, posuere eget, vestibulum et, tempor auctor, justo.
-            </p>
-
-            <p class="mb-0">
-              Cras sagittis. Phasellus nec sem in justo pellentesque facilisis. Proin sapien ipsum, porta a, auctor quis, euismod ut, mi. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nam at tortor in tellus interdum sagittis.
-            </p>
-          </v-card-text>
-        </v-card>
-      </v-tab-item>
-    </v-tabs>
-       
-      </v-card>
-    </v-row>
-  </v-container>
-
+      </v-row>
+    </v-container>
   </div>
 </template>
 
@@ -208,13 +191,69 @@ import axios from "axios";
 export default {
   data() {
     return {
-        messages: [
-        { time: '15:43', from:"샤코", color:"#3F51B5",  message: "대지 드래곤 KILL" },
-        { time: '15:45', from:"노틸러스", color:"#F44336",  message: "스웨인 KILL" },
-        { time: '15:54', from:"노틸러스", color:"#F44336",  message: "샤코 KILL" },
-        { time: '16:02', from:"아리", color:"#3F51B5",  message: "헤카림 KILL" },
-        { time: '16:05', from:"아리", color:"#3F51B5",  message: "노틸러스 KILL" },
-
+      messages: [
+        {
+          time: "15:43",
+          from: "샤코",
+          color: "#3F51B5",
+          message: "대지 드래곤 KILL",
+        },
+        {
+          time: "15:45",
+          from: "노틸러스",
+          color: "#F44336",
+          message: "스웨인 KILL",
+        },
+        {
+          time: "15:54",
+          from: "노틸러스",
+          color: "#F44336",
+          message: "샤코 KILL",
+        },
+        {
+          time: "16:02",
+          from: "아리",
+          color: "#3F51B5",
+          message: "헤카림 KILL",
+        },
+        {
+          time: "16:05",
+          from: "아리",
+          color: "#3F51B5",
+          message: "노틸러스 KILL",
+        },
+      ],
+      panels: [
+        {
+          id: 1,
+          time: "15:37",
+          src: require("@/assets/img/a1.png"),
+          content: "shaco:",
+        },
+        {
+          id: 2,
+          time: "15:45",
+          src: require("@/assets/img/a2.png"),
+          content: 4,
+        },
+        {
+          id: 3,
+          time: "15:53",
+          src: require("@/assets/img/a3.png"),
+          content: 4,
+        },
+        {
+          id: 4,
+          time: "16:01",
+          src: require("@/assets/img/a4.png"),
+          content: 4,
+        },
+        {
+          id: 5,
+          time: "16:06",
+          src: require("@/assets/img/a5.png"),
+          content: 4,
+        },
       ],
       sessionUserNo: "",
       sessionUser: {},
@@ -407,5 +446,4 @@ export default {
 </script>
 
 <style>
-
 </style>
