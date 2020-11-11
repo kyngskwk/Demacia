@@ -4,7 +4,7 @@
         <div class="container mt-5 mb-10">
             <v-toolbar
                 dark
-                color="blue-grey"
+                style="background:linear-gradient(to right, rgb(247,202,201), rgb(146,168,209))"
             >
                 <v-toolbar-title>전적기록 검색하기</v-toolbar-title>
                 <v-autocomplete
@@ -30,6 +30,7 @@
             <VideoAritcle />
         </div>
         <MessageForm/>
+        
     </div>
 </template>
 

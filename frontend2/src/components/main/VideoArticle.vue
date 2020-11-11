@@ -1,6 +1,6 @@
 <template>
     <v-card class="mt-5">
-      <v-toolbar color="blue-grey" dark class="mb-5">
+      <v-toolbar style="background:linear-gradient(to right, rgb(247,202,201), rgb(146,168,209))" dark class="mb-5">
         <v-toolbar-title>영상 분석</v-toolbar-title>
       </v-toolbar>
       <v-row dense class="pa-3">

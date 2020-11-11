@@ -4,7 +4,12 @@
 
     <v-textarea 
         label="대기실 전적기록 검색하기"
-        placeholder="대기실의 입장 안내 문구를 붙여넣기 해주세요!"
+        placeholder="대기실의 입장 안내 문구를 붙여넣기 해주세요!
+ex) ○○○님이 로비에 참가하셨습니다.
+      ☆☆☆님이 로비에 참가하셨습니다.
+      △△님이 로비에 참가하셨습니다.
+      ★★★★님이 로비에 참가하셨습니다.
+      □□□님이 로비에 참가하셨습니다."
         outlined
         v-model="realtxt"
     ></v-textarea>
@@ -62,6 +67,11 @@ export default {
               this.infoerror = false
               this.infoshow = false
             }
+          }).catch(function (error) {
+            console.log(error.response.data)
+              this.isloading = false
+              this.infoerror = true
+              this.infoshow = true
           })
         }
       }

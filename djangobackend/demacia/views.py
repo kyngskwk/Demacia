@@ -6,6 +6,7 @@ from .models import *
 from django.contrib.auth.decorators import login_required
 import requests
 import json
+import random
 from drf_yasg.utils import swagger_auto_schema
 from drf_yasg import openapi
 from django.views.decorators.csrf import csrf_exempt
@@ -13,9 +14,64 @@ from django.utils.decorators import method_decorator
 from .video import get_image, change_text, timeline, winrate_algo
 # Create your views here.
 # .
+
+api_list = ['RGAPI-4dcd2099-2605-4440-9864-f53a305141e7', 'RGAPI-aced2823-ded5-4dce-89a6-c71484eb1227', 'RGAPI-268abef3-0d99-4311-b006-c5c9a9fc8120']
+
+@api_view(['POST'])
+def user_search(request):
+    request_user = request.data['nickname']
+    api = random.choice(api_list)
+
+    ### 닉네임 -> accountid
+    nicktoid = "https://kr.api.riotgames.com/lol/summoner/v4/summoners/by-name/"+ str(request_user)+ "?api_key=" + str(api)
+    results = requests.get(nicktoid).json()
+    try:
+        accountid = results['accountId']
+    except KeyError:
+        return Response("사용자가 너무 많아 조금 후 다시 시도해주세요ㅠㅠ")
+    
+    # print(accountid)
+    accidtogameid = "https://kr.api.riotgames.com/lol/match/v4/matchlists/by-account/" + str(accountid) + "?endIndex=12&api_key=" + str(api)
+    try:
+        results = requests.get(accidtogameid).json()["matches"]
+        for idx in range(len(results)):
+            game_id = results[idx]["gameId"]
+            # print(game_id)
+
+            info = "https://kr.api.riotgames.com/lol/match/v4/matches/"+str(game_id)+"?api_key=" + str(api)
+            result = requests.get(info).json()
+            try:
+                findwin = result["participants"]
+                findplayerid = result["participantIdentities"]
+                ## participantId 찾기
+                playerid = 0
+                for k in range(len(findwin)):
+                    if findplayerid[k]["player"]["summonerName"] == request_user:
+                        playerid = int(findplayerid[k]["participantId"]) - 1
+                        break
+                
+                results[idx]["win"] = findwin[playerid]["stats"]["win"]
+                results[idx]["kills"] = findwin[playerid]["stats"]["kills"]
+                results[idx]["deaths"] = findwin[playerid]["stats"]["deaths"]
+                results[idx]["assists"] = findwin[playerid]["stats"]["assists"]
+
+            except KeyError:
+                return Response("사용자가 너무 많아 조금 후 다시 시도해주세요ㅠㅠ")
+                
+
+    except KeyError:
+        return Response("사용자가 너무 많아 조금 후 다시 시도해주세요ㅠㅠ")
+    
+    return Response(results)
+
+
+
+
+
 @api_view(['POST'])
 def users_info(request):
     request_others = request.data['inputtxt']
+    api = random.choice(api_list)
     # target = request_others.split("\n")
 
     # print(input())
@@ -27,12 +83,14 @@ def users_info(request):
             if len(other) > 15:
                 name = ''.join(other[:-15])
                 ### 닉네임 -> accountid
-                nicktoid = "https://kr.api.riotgames.com/lol/summoner/v4/summoners/by-name/"+ str(name)+ "?api_key=RGAPI-4dcd2099-2605-4440-9864-f53a305141e7"
+                nicktoid = "https://kr.api.riotgames.com/lol/summoner/v4/summoners/by-name/"+ str(name)+ "?api_key=" + str(api)
                 results = requests.get(nicktoid).json()
                 try:
                     accounts[name] = results['accountId']
                 except KeyError:
                     return Response("사용자가 너무 많아 조금 후 다시 시도해주세요ㅠㅠ")
+            else:
+                return Response("입력이 잘못되었습니다ㅠㅠ")
 
         except EOFError:
             break
@@ -40,14 +98,14 @@ def users_info(request):
 
     for key,val in accounts.items():
         info_set[key] = {'name':key, 'games': {}}
-        accidtogameid = "https://kr.api.riotgames.com/lol/match/v4/matchlists/by-account/"+str(val)+"?endIndex=10&api_key=RGAPI-4dcd2099-2605-4440-9864-f53a305141e7"
+        accidtogameid = "https://kr.api.riotgames.com/lol/match/v4/matchlists/by-account/"+str(val)+"?endIndex=10&api_key=" + str(api)
         try:
             results = requests.get(accidtogameid).json()["matches"]
             for idx in range(len(results)):
                 game_id = results[idx]["gameId"]
                 info_set[key]['games'][game_id] = results[idx]
 
-                info = "https://kr.api.riotgames.com/lol/match/v4/matches/"+str(game_id)+"?api_key=RGAPI-4dcd2099-2605-4440-9864-f53a305141e7"
+                info = "https://kr.api.riotgames.com/lol/match/v4/matches/"+str(game_id)+"?api_key=" + str(api)
                 result = requests.get(info).json()
                 try:
                     findwin = result["participants"]
