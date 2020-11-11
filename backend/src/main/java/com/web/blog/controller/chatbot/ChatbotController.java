@@ -9,6 +9,7 @@ import com.google.cloud.dialogflow.v2.SessionsClient;
 import com.google.cloud.dialogflow.v2.TextInput;
 import com.google.common.collect.Maps;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -50,14 +51,22 @@ public class ChatbotController {
   private SessionService sessionService;
 
   @GetMapping("/chatbot")
-  public Object chatbot(String input) {
+  public Object chatbot(String input, int check, HttpSession session) {
     System.out.println("User input : " + input);
-    ResponseEntity response = null;
+    
     final BasicResponse result = new BasicResponse();
 
     try {
-            Session createdChatSession = sessionService.createChatSessionID();
+                Session createdChatSession;
 
+            if((Session) session.getAttribute("createdChatSession") != null) {
+                createdChatSession = (Session) session.getAttribute("createdChatSession");
+            }
+            else{
+                sessionService.createChatSessionID(session);
+                createdChatSession = (Session) session.getAttribute("createdChatSession");
+            }
+            
             SessionsClient sessionsClient = createdChatSession.getSessionsClient();
             SessionName userSession = createdChatSession.getUserSession();
 
@@ -70,8 +79,33 @@ public class ChatbotController {
             QueryResult queryResult = res.getQueryResult();
 
             HashMap<String, Object> resultMap = new HashMap();
+
             resultMap.put("intent", queryResult.getIntent().getDisplayName());
-            resultMap.put("output", queryResult.getFulfillmentText());
+            
+            if(check != 0){
+                resultMap.put("input", input);
+            }
+
+            for(int i=0; i<queryResult.getFulfillmentMessagesCount(); i++){
+                if(queryResult.getFulfillmentMessages(i).hasSimpleResponses()){
+                    resultMap.put("text", queryResult.getFulfillmentMessages(i).getSimpleResponses().getSimpleResponses(0).getTextToSpeech().toString());
+                }
+                else if(queryResult.getFulfillmentMessages(i).hasSuggestions()){
+                    int cnt = queryResult.getFulfillmentMessages(i).getSuggestions().getSuggestionsCount();
+                    List<String> list = new ArrayList<>();
+                    for(int j=0; j<cnt; j++){
+                        list.add(queryResult.getFulfillmentMessages(i).getSuggestions().getSuggestions(j).getTitle().toString());
+                    }
+                    resultMap.put("suggestions", list);
+                }
+                else if(queryResult.getFulfillmentMessages(i).hasLinkOutSuggestion()){
+                    resultMap.put("linkname", queryResult.getFulfillmentMessages(i).getLinkOutSuggestion().getDestinationName().toString());
+                    resultMap.put("link", queryResult.getFulfillmentMessages(i).getLinkOutSuggestion().getUri().toString());
+                }
+            }
+            
+            //  resultMap.put("output", queryResult.getFulfillmentMessagesList().toString());
+            //System.out.println(queryResult.getFulfillmentMessages(1));
             ResponseEntity<HashMap<String, Object>> responseEntity = new ResponseEntity<>(resultMap, HttpStatus.OK);
 
             System.out.println("====================");
@@ -90,8 +124,7 @@ public class ChatbotController {
         result.data = "calldialogflow Fail";
         System.out.println("calldialogflow Fail");
 
-        response = new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
-        return response;
+        return new ResponseEntity<>(result, HttpStatus.NOT_FOUND);
     }
     
   }

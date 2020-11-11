@@ -21,7 +21,7 @@ public class SessionServiceImpl implements SessionService {
     private final String KEY_JSON_FILE = "C:\\ssafy\\demacia-final\\s03p31a502\\backend\\src\\main\\resources\\demacia-yhjx-973f6e2974eb.json";
 
     @Override
-    public Session createChatSessionID() throws Exception {
+    public void createChatSessionID(HttpSession session) throws Exception {
         Session createdChatSession = new Session();
 
         // uuid 생성
@@ -33,9 +33,8 @@ public class SessionServiceImpl implements SessionService {
             GoogleCredentials credentials = GoogleCredentials
                     .fromStream(new FileInputStream(KEY_JSON_FILE));
         // new FileInputStream(KEY_JSON_FILE));
-        System.out.println("eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee");
         String projectId = ((ServiceAccountCredentials) credentials).getProjectId();
-        System.out.println(projectId);
+        System.out.println("projectId : "+ projectId);
         createdChatSession.setProjectId(projectId);
 
         SessionName userSession = SessionName.of(projectId, sessionId);
@@ -52,6 +51,6 @@ public class SessionServiceImpl implements SessionService {
         SessionsClient sessionsClient = SessionsClient.create(sessionsSettings);
         createdChatSession.setSessionsClient(sessionsClient);
 
-        return createdChatSession;
+        session.setAttribute("createdChatSession", createdChatSession);
     }
 }

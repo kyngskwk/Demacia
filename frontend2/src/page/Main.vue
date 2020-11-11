@@ -30,6 +30,7 @@
             <VideoAritcle />
         </div>
         <MessageForm/>
+        <Chatbot/>
     </div>
 </template>
 
@@ -39,6 +40,7 @@ import BestArticle from "../components/main/BestArticle.vue";
 import VoteArticle from "../components/main/VoteArticle.vue";
 import VideoAritcle from "../components/main/VideoArticle";
 import MessageForm from "../components/message/MessageForm.vue";
+import Chatbot from "../components/chatbot/Chatbot.vue";
 
 export default {
     name: 'Main',
@@ -48,6 +50,7 @@ export default {
         VoteArticle,
         VideoAritcle,
         MessageForm,
+        Chatbot,
     },
 }
 </script>
