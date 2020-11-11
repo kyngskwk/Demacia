@@ -266,7 +266,7 @@ import Chart from "chart.js";
 const gradients = [
   ["#C62828"],
   ["#303F9F"],
-  ["red", "orange", "yellow"],
+  ["#2196F3", "#9575CD", "#F44336"],
   ["purple", "violet"],
   ["#00c6ff", "#F0F", "#FF0"],
   ["#f72047", "#ffd200", "#1feaea"],
@@ -280,7 +280,7 @@ export default {
       radius: 10,
       padding: 8,
       lineCap: "round",
-      gradient: gradients[1],
+      gradient: gradients[2],
       value: [48.95, 47, 45, 46, 47, 47.85],
       labels: [
         "0 sec",
