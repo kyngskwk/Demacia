@@ -85,7 +85,7 @@ export default {
 
 created(){
     axios
-              .get("process.env.VUE_APP_API_URL" + "/chatbot", {
+              .get(process.env.VUE_APP_API_URL + "/chatbot", {
                 params: {
                   input: "다른 질문하기",
                   check: this.check,
@@ -110,7 +110,7 @@ methods: {
   select(itembtn){
      console.log(itembtn);
             axios
-                  .get("process.env.VUE_APP_API_URL" + "/chatbot", {
+                  .get(process.env.VUE_APP_API_URL + "/chatbot", {
                     params: {
                       input: itembtn,
                       check: this.check,
@@ -148,7 +148,7 @@ methods: {
 
   sendinput(msg){
     axios
-                  .get("process.env.VUE_APP_API_URL" + "/chatbot", {
+                  .get(process.env.VUE_APP_API_URL + "/chatbot", {
                     params: {
                       input: msg,
                       check: this.check,
