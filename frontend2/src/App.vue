@@ -6,7 +6,7 @@
         href="/"
         style="padding-top: 5px; font-size: 2em"
       >
-        <img src="./assets/img/damacia.png" alt="" style="width: 200px" />
+        <img src="./assets/img/logo2.png" alt="" style="width: 250px; margin-top:9%;" />
       </a>
 
       <v-spacer></v-spacer>

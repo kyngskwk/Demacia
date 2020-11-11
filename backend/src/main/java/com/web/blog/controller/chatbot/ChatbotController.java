@@ -103,7 +103,7 @@ public class ChatbotController {
                     resultMap.put("link", queryResult.getFulfillmentMessages(i).getLinkOutSuggestion().getUri().toString());
                 }
             }
-            
+            //session을 담아보내려면 get으로 요소를 따로 담아서 보내야 한다.
             //  resultMap.put("output", queryResult.getFulfillmentMessagesList().toString());
             //System.out.println(queryResult.getFulfillmentMessages(1));
             ResponseEntity<HashMap<String, Object>> responseEntity = new ResponseEntity<>(resultMap, HttpStatus.OK);
