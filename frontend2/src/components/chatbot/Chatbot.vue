@@ -85,17 +85,15 @@ export default {
 
 created(){
     axios
-              .get("http://localhost:8080" + "/chatbot", {
+              .get(process.env.VUE_APP_API_URL + "/chatbot", {
                 params: {
                   input: "다른 질문하기",
                   check: this.check,
                 },
               })
               .then((res) => {
-                  console.log(res.data);
                   this.list = [];
                   this.list.push(res.data);
-                  console.log(this.list);
                   this.check = 1;
                   this.time = this.chatTime();
                   this.hours = this.time.hours;
@@ -112,14 +110,13 @@ methods: {
   select(itembtn){
      console.log(itembtn);
             axios
-                  .get("http://localhost:8080" + "/chatbot", {
+                  .get(process.env.VUE_APP_API_URL + "/chatbot", {
                     params: {
                       input: itembtn,
                       check: this.check,
                     },
                   })
                   .then((res) => {
-                      console.log(res.data);
                       this.list.push(res.data);
                   })
                   .catch((err) => {
@@ -151,14 +148,13 @@ methods: {
 
   sendinput(msg){
     axios
-                  .get("http://localhost:8080" + "/chatbot", {
+                  .get(process.env.VUE_APP_API_URL + "/chatbot", {
                     params: {
                       input: msg,
                       check: this.check,
                     },
                   })
                   .then((res) => {
-                      console.log(res.data);
                       this.list.push(res.data);
                       this.message = "";
                   })
