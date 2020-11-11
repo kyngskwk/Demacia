@@ -55,8 +55,8 @@
               <v-icon left> mdi-camera </v-icon>
               Snapshot
             </v-tab>
-            <v-tab class="pl-2">
-              <v-icon left> mdi-camera </v-icon>
+            <v-tab class="pl-0 pr-5">
+              <v-icon left> mdi-chart-areaspline </v-icon>
               Chart
             </v-tab>
 
@@ -143,10 +143,8 @@
                       </v-flex>
                     </v-expansion-panel-header>
                     <v-expansion-panel-content>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      <h3 v-html="panel.content"></h3>
+                      <p v-html="panel.info"></p>
                     </v-expansion-panel-content>
                   </v-expansion-panel>
                 </v-expansion-panels>
@@ -155,21 +153,99 @@
             <v-tab-item>
               <v-card flat>
                 <v-card-text>
-                  <p>
-                    Fusce a quam. Phasellus nec sem in justo pellentesque
-                    facilisis. Nam eget dui. Proin viverra, ligula sit amet
-                    ultrices semper, ligula arcu tristique sapien, a accumsan
-                    nisi mauris ac eros. In dui magna, posuere eget, vestibulum
-                    et, tempor auctor, justo.
-                  </p>
+                  <!--line chart-->
+                  <v-card class="mx-auto" width="800">
+                    <v-card-title>
+                      <v-icon
+                        :color="checking ? 'red lighten-2' : 'indigo'"
+                        class="mr-12"
+                        size="64"
+                        @click="takePulse"
+                      >
+                        mdi-heart-half-full
+                      </v-icon>
+                      <v-row align="start">
+                        <div class="caption grey--text text-uppercase">
+                          BATTLE STATE
+                        </div>
+                        <div>
+                          <span
+                            class="display-2 font-weight-black"
+                            v-text="avg || '—'"
+                          ></span>
+                          <strong v-if="avg">BPM</strong>
+                        </div>
+                      </v-row>
 
-                  <p class="mb-0">
-                    Cras sagittis. Phasellus nec sem in justo pellentesque
-                    facilisis. Proin sapien ipsum, porta a, auctor quis, euismod
-                    ut, mi. Donec quam felis, ultricies nec, pellentesque eu,
-                    pretium quis, sem. Nam at tortor in tellus interdum
-                    sagittis.
-                  </p>
+                      <v-spacer></v-spacer>
+
+                      <v-btn icon class="align-self-start" size="28">
+                        <v-icon>mdi-arrow-right-thick</v-icon>
+                      </v-btn>
+                    </v-card-title>
+                    <v-sparkline
+                      :value="value"
+                      :labels="labels"
+                      :gradient="gradient"
+                      :smooth="radius || false"
+                      :padding="padding"
+                      :line-width="width"
+                      :stroke-linecap="lineCap"
+                      :gradient-direction="gradientDirection"
+                      :fill="fill"
+                      :type="type"
+                      :auto-line-width="autoLineWidth"
+                      auto-draw
+                    ></v-sparkline>
+                  </v-card>
+                  <!-- pie chart-->
+                  <v-card class="mt-4">
+                    <v-layout wrap row>
+                      <v-flex xs12 sm6 md6 text-center>
+                        <h3>영상이전 승률</h3>
+                        <h3>
+                          <strong style="color: #646ac8">{{
+                            before_bluescore
+                          }}</strong>
+                          vs
+                          <strong style="color: #d71616">{{
+                            before_redscore
+                          }}</strong>
+                        </h3>
+                        <pie-chart
+                          :donut="true"
+                          :data="[
+                            ['BLUETEAM', before_bluescore],
+                            ['REDTEAM', before_redscore],
+                          ]"
+                          :colors="['#23285c', '#d71616']"
+                          suffix="%"
+                        ></pie-chart>
+                      </v-flex>
+                      <v-flex xs12 sm6 md6 text-center>
+                        <h3>영상이후 승률</h3>
+                        <h3>
+                          <strong style="color: #646ac8">{{
+                            after_bluescore
+                          }}</strong>
+                          vs
+                          <strong style="color: #d71616">{{
+                            after_redscore
+                          }}</strong>
+                        </h3>
+                        <pie-chart
+                          :donut="true"
+                          :data="[
+                            ['BLUETEAM', after_bluescore],
+                            ['REDTEAM', after_redscore],
+                          ]"
+                          :colors="['#23285c', '#d71616']"
+                          suffix="%"
+                        ></pie-chart>
+                      </v-flex>
+                    </v-layout>
+                  </v-card>
+                  <!--another chart-->
                 </v-card-text>
               </v-card>
             </v-tab-item>
@@ -183,14 +259,44 @@
 <script>
 import axios from "axios";
 //import "../../assets/css/comment.css";
-// import Vue from "vue";
-// import Chartkick from "vue-chartkick";
-// import Chart from "chart.js";
+import Vue from "vue";
+import Chartkick from "vue-chartkick";
+import Chart from "chart.js";
 
-// Vue.use(Chartkick.use(Chart));
+const gradients = [
+  ["#C62828"],
+  ["#303F9F"],
+  ["red", "orange", "yellow"],
+  ["purple", "violet"],
+  ["#00c6ff", "#F0F", "#FF0"],
+  ["#f72047", "#ffd200", "#1feaea"],
+];
+
+Vue.use(Chartkick.use(Chart));
 export default {
   data() {
     return {
+      width: 2,
+      radius: 10,
+      padding: 8,
+      lineCap: "round",
+      gradient: gradients[1],
+      value: [48.95, 47, 45, 46, 47, 47.85],
+      labels: [
+        "0 sec",
+        "5 sec",
+        "15 sec",
+        "20 sec",
+        "25 sec",
+        "30 sec",
+        "35 sec",
+      ],
+      gradientDirection: "top",
+      gradients,
+      fill: false,
+      type: "trend",
+      autoLineWidth: false,
+
       messages: [
         {
           time: "15:43",
@@ -228,31 +334,42 @@ export default {
           id: 1,
           time: "15:37",
           src: require("@/assets/img/a1.png"),
-          content: "shaco:",
+          content: "샤코, 뽀삐 챔피언이 감지되었습니다",
+          info:
+            "샤코 TOTAL GOLD: 3750, DAMAGE: 2100 <br> 뽀삐 TOTAL GOLD: 3800, DAMAGE: 1500 ",
         },
         {
           id: 2,
           time: "15:45",
           src: require("@/assets/img/a2.png"),
-          content: 4,
+          content: "노틸러스, 뽀삐, 이즈리얼, 오른 챔피언이 감지되었습니다",
+          info:
+            "노틸러스 TOTAL GOLD: 3750, DAMAGE: 2100 <br> 뽀삐 TOTAL GOLD: 3800, DAMAGE: 1500  <br> 이즈리얼 TOTAL GOLD: 4000, DAMAGE: 3200   <br> 오른 TOTAL GOLD: 3000, DAMAGE: 500  ",
         },
         {
           id: 3,
           time: "15:53",
           src: require("@/assets/img/a3.png"),
-          content: 4,
+          content:
+            "샤코, 노틸러스, 뽀삐, 이즈리얼, 오른 챔피언이 감지되었습니다",
+          info:
+            "샤코 TOTAL GOLD: 3750, DAMAGE: 2100 <br> 노틸러스 TOTAL GOLD: 3000, DAMAGE: 2500 <br> 뽀삐 TOTAL GOLD: 3800, DAMAGE: 1500 <br> 이즈리얼 TOTAL GOLD: 3900, DAMAGE: 3300 <br> 오른 TOTAL GOLD: 4800, DAMAGE: 2000  ",
         },
         {
           id: 4,
           time: "16:01",
           src: require("@/assets/img/a4.png"),
-          content: 4,
+          content: "아리, 뽀삐, 오른, 헤카림, 카이사 챔피언이 감지되었습니다",
+          info:
+            "아리 TOTAL GOLD: 3750, DAMAGE: 2100 <br> 뽀삐 TOTAL GOLD: 3000, DAMAGE: 2500 <br> 오른 TOTAL GOLD: 3800, DAMAGE: 1500 <br> 헤카림 TOTAL GOLD: 3900, DAMAGE: 3300 <br> 카이사 TOTAL GOLD: 4800, DAMAGE: 2000  ",
         },
         {
           id: 5,
           time: "16:06",
           src: require("@/assets/img/a5.png"),
-          content: 4,
+          content: "아리, 노틸러스 챔피언이 감지되었습니다",
+          info:
+            "아리 TOTAL GOLD: 3750, DAMAGE: 2100 <br> 노틸러스 TOTAL GOLD: 3000, DAMAGE: 2500 ",
         },
       ],
       sessionUserNo: "",
@@ -262,10 +379,10 @@ export default {
       videolink: "",
       state: "",
       videoData: "",
-      before_bluescore: "",
-      before_redscore: "",
-      after_bluescore: "",
-      after_redscore: "",
+      before_bluescore: "48.95",
+      before_redscore: "51.05",
+      after_bluescore: "47.85",
+      after_redscore: "52.15",
       champ1: "",
       champ2: "",
       champ3: "",
