@@ -1,16 +1,22 @@
 <template>
   <v-app>
     <v-app-bar app color="blue-grey" dark>
-      <a
+      <router-link
         class="navbar-brand mx-0"
-        href="/"
+        to="/"
         style="padding-top: 5px; font-size: 2em"
       >
         <img src="./assets/img/damacia.png" alt="" style="width: 200px" />
-      </a>
+      </router-link>
 
       <v-spacer></v-spacer>
-      <a style="color:white" href="/searchpick">대기실 전적검색</a>
+      <a style="color: white" href="/searchpick">대기실 전적검색</a>
+      <v-divider vertical class="mx-4" />
+      <v-icon @click="darkmode">
+        {{
+          $vuetify.theme.dark ? "mdi-weather-night" : "mdi-white-balance-sunny"
+        }}
+      </v-icon>
     </v-app-bar>
 
     <v-main>
@@ -35,7 +41,19 @@ export default {
   data: () => ({
     snackbar: false,
     errMsg: "",
+    theme: localStorage.getItem("dark") == "on" ? true : false,
   }),
+  methods: {
+    darkmode() {
+      this.$vuetify.theme.dark = !this.$vuetify.theme.dark;
+      this.$vuetify.theme.dark
+        ? localStorage.setItem("dark", "on")
+        : localStorage.setItem("dark", "off");
+    },
+  },
+  created() {
+    this.$vuetify.theme.dark = this.theme;
+  },
 };
 </script>
 
