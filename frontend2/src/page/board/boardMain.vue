@@ -2,10 +2,9 @@
   <v-container>
     <v-card>
       <v-toolbar flat>
-        <v-toolbar-title>
-          커뮤니티
-          <v-btn @click="write">글쓰기</v-btn>
-        </v-toolbar-title>
+        <v-toolbar-title> 커뮤니티 </v-toolbar-title>
+        <v-spacer />
+        <v-btn @click="write">글쓰기</v-btn>
       </v-toolbar>
       <v-tabs vertical>
         <v-tab> 공지사항 </v-tab>
