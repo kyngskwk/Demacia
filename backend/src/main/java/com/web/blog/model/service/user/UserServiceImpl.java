@@ -120,11 +120,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User socialuserByEmail(String userEmail) {
-        User user = dao.socialuserByEmail(userEmail);
-        if (user != null) {
-            return user;
-        }
-        return null;
+        return dao.socialuserByEmail(userEmail);
     }
 
     @Override
@@ -193,6 +189,23 @@ public class UserServiceImpl implements UserService {
             message.setSubject("데마시아 회원가입을 축하합니다");
             message.setRecipient(Message.RecipientType.TO, new InternetAddress(user.getUserEmail()));
             message.setText(user.getUserNickname() + " 님의 가입을 축하드립니다!!!");
+            message.setSentDate(new Date());
+            javaMailSender.send(message);
+            System.out.println(message);
+            return 1;
+        } catch (MessagingException e) {
+            e.printStackTrace();
+            return 0;
+        }
+    }
+
+    @Override
+    public int sendCheckMail(String Email, String code) throws MessagingException {
+        try {
+            final MimeMessage message = javaMailSender.createMimeMessage();
+            message.setSubject("DEMACIA 비밀번호 변경 인증번호");
+            message.setRecipient(Message.RecipientType.TO, new InternetAddress(Email));
+            message.setText("인증코드는 [" + code + "] 입니다.");
             message.setSentDate(new Date());
             javaMailSender.send(message);
             System.out.println(message);

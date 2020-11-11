@@ -30,39 +30,44 @@
     <v-divider></v-divider>
 
     <v-list nav dense>
-      <v-list-item>
+      <v-list-item link :disabled="!user">
         <v-list-item-icon>
           <v-icon>mdi-account</v-icon>
         </v-list-item-icon>
         <v-list-item-title>마이페이지</v-list-item-title>
       </v-list-item>
-      <v-list-item disabled>
+      <v-list-item link :disabled="!user">
         <v-list-item-icon>
           <v-icon>mdi-chart-bar</v-icon>
         </v-list-item-icon>
         <v-list-item-title>나의 전적기록</v-list-item-title>
       </v-list-item>
-      <v-list-item disabled>
+      <v-list-item link :disabled="!user" @click="goMessage">
         <v-list-item-icon>
           <v-icon>mdi-message-text-outline</v-icon>
         </v-list-item-icon>
         <v-list-item-title>쪽지</v-list-item-title>
       </v-list-item>
-      <v-list-item link>
+      <v-list-item link :disabled="!user">
         <v-list-item-icon>
           <v-icon>mdi-dots-horizontal</v-icon>
         </v-list-item-icon>
         <v-list-item-title>설정</v-list-item-title>
       </v-list-item>
-      <v-list-item link @click="openform">
+      <v-list-item link @click="openform" :disabled="!user">
         <v-list-item-icon>
           <v-icon> mdi-flash</v-icon>
         </v-list-item-icon>
         <v-list-item-title>채팅창</v-list-item-title>
       </v-list-item>
+      <v-list-item link @click="goBoard">
+        <v-list-item-icon>
+          <v-icon> mdi-account-group</v-icon>
+        </v-list-item-icon>
+        <v-list-item-title>커뮤니티</v-list-item-title>
+      </v-list-item>
     </v-list>
     <ChatModal :dialog="dialog" @close="close" @send="send" />
-    <v-snackbar v-model="snackbar">{{ errMsg }}</v-snackbar>
   </v-navigation-drawer>
 </template>
 
@@ -81,12 +86,17 @@ export default {
       user: JSON.parse(sessionStorage.getItem("user")),
       userImg:
         process.env.VUE_APP_IMGUP_URL +
-        JSON.parse(sessionStorage.getItem("user")).userImage,
+        (this.user
+          ? JSON.parse(sessionStorage.getItem("user")).userImage
+          : "noimage.png"),
       snackbar: false,
       errMsg: "",
     };
   },
   methods: {
+    goBoard() {
+      this.$router.push({ name: "board" });
+    },
     goLogin() {
       this.$router.push({ name: "Login" });
     },
@@ -121,8 +131,9 @@ export default {
             window.location.reload();
           })
           .catch((err) => {
-            this.snackbar = true;
-            this.errMsg = "로그아웃 중 서버 오류가 발생했습니다. " + err;
+            this.$root.$children[0].snackbar = true;
+            this.$root.$children[0].errMsg =
+              "로그아웃 중 서버 오류가 발생했습니다. " + err;
           });
       } else {
         axios
@@ -137,8 +148,9 @@ export default {
             window.location.reload();
           })
           .catch((err) => {
-            this.snackbar = true;
-            this.errMsg = "로그아웃 중 서버 오류가 발생했습니다. " + err;
+            this.$root.$children[0].snackbar = true;
+            this.$root.$children[0].errMsg =
+              "로그아웃 중 서버 오류가 발생했습니다. " + err;
           });
       }
     },

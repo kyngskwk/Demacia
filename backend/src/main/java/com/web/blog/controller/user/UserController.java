@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 import javax.mail.MessagingException;
 
+import com.web.blog.model.dto.user.EmailCode;
 import com.web.blog.model.dto.user.User;
 import com.web.blog.model.dto.user.UserVote;
 import com.web.blog.model.service.user.UserService;
@@ -129,10 +130,11 @@ public class UserController {
         BasicResponse result = new BasicResponse();
         System.out.println("확인 email : " + userEmail);
 
-        int res = userService.userByEmail(userEmail);
+        User res = userService.socialuserByEmail(userEmail);
 
-        if (res == 1) { // 이메일이 있다면 (중복)
+        if (res != null) { // 이메일이 있다면 (중복)
             result.status = false;
+            result.object = (String) (res.getUserNo() + " " + res.getProviderName());
             response = new ResponseEntity<>(result, HttpStatus.OK);
         } else { // 중복 아님
             result.status = true;
@@ -226,7 +228,7 @@ public class UserController {
     @GetMapping("/account/userhitrate")
     @ApiOperation(value = "사용자 적중률")
     public Object userHitRate(@RequestParam int userNo) {
-        
+
         ResponseEntity response = null;
         final BasicResponse result = new BasicResponse();
         Double ret = userService.userHitRate(userNo);
@@ -247,4 +249,18 @@ public class UserController {
 
     }
 
+    @PostMapping("/email")
+    @ApiOperation(value = "이메일인증")
+    public Object sendEmail(@RequestBody EmailCode ec) throws MessagingException {
+        System.out.println(ec.getEmail() + " : " + ec.getCode());
+        int res = userService.sendCheckMail(ec.getEmail(), ec.getCode());
+        BasicResponse result = new BasicResponse();
+        result.status = false;
+        result.data = "fail";
+        if (res != 0) {
+            result.status = true;
+            result.data = "success";
+        }
+        return new ResponseEntity<>(result, result.status ? HttpStatus.OK : HttpStatus.valueOf(500));
+    }
 }

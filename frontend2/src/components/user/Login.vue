@@ -1,13 +1,13 @@
 <template>
   <v-row align="center" class="ma-3">
     <v-col cols="12" md="6">
-      <v-card-title class="my-3"
-        ><v-img src="../../assets/img/damacia.png"
-      /></v-card-title>
+      <v-card-title class="my-3">
+        <v-img src="../../assets/img/damacia.png" draggable="false" />
+      </v-card-title>
       <v-card-text>
         <v-text-field
           v-model="email"
-          label="E-mail"
+          label="Email"
           :rules="[rules.required, rules.email]"
           outlined
         />
@@ -23,12 +23,12 @@
           outlined
           @keydown.enter="loginCheck"
         />
-        <v-row class="text-right my-n7" align="center">
+        <v-row class="my-n7" align="center">
           <v-col>
             <v-checkbox v-model="saveEmail" label="이메일 저장" />
           </v-col>
           <v-col>
-            <v-btn small color="secondary"> 비밀번호찾기</v-btn>
+            <FindPassword />
           </v-col>
         </v-row>
       </v-card-text>
@@ -43,22 +43,22 @@
         <v-img src="../../assets/img/google2.png" draggable="false" />
       </v-btn>
     </v-col>
-    <v-snackbar v-model="snackbar">{{ errMsg }}</v-snackbar>
   </v-row>
 </template>
 
 <script>
 import axios from "axios";
 import * as EmailValidator from "email-validator";
+import FindPassword from "./FindPassword";
 
 export default {
   name: "Login",
-  components: {},
+  components: { FindPassword },
   data() {
     return {
       show1: false,
       baseURL: window.location.hostname,
-      email: "",
+      email: localStorage.getItem("email"),
       password: "",
       rules: {
         required: (value) => !!value || "내용을 입력해주세요",
@@ -66,9 +66,7 @@ export default {
           EmailValidator.validate(value) || "이메일 형식을 지켜주세요",
         emailMatch: () => "아이디 또는 비밀번호를 확인해주세요",
       },
-      saveEmail: false,
-      snackbar: false,
-      errMsg: "",
+      saveEmail: localStorage.getItem("email"),
     };
   },
   created() {
@@ -90,13 +88,14 @@ export default {
             this.$router.push({ path: "/" });
             window.location.reload();
           } else {
-            this.snackbar = true;
-            this.errMsg = "구글 아이디 또는 비밀번호를 확인해주세요";
+            this.$root.$children[0].snackbar = true;
+            this.$root.$children[0].errMsg =
+              "구글 아이디 또는 비밀번호를 확인해주세요";
           }
         })
         .catch((err) => {
-          this.snackbar = true;
-          this.errMsg =
+          this.$root.$children[0].snackbar = true;
+          this.$root.$children[0].errMsg =
             "로그인 중 서버 오류가 발생했습니다. " +
             err +
             ": 다시 시도해 주세요";
@@ -117,13 +116,14 @@ export default {
             this.$router.push({ path: "/" });
             window.location.reload();
           } else {
-            this.snackbar = true;
-            this.errMsg = "아이디 또는 비밀번호를 확인해주세요";
+            this.$root.$children[0].snackbar = true;
+            this.$root.$children[0].errMsg =
+              "아이디 또는 비밀번호를 확인해주세요";
           }
         })
         .catch((err) => {
-          this.snackbar = true;
-          this.errMsg =
+          this.$root.$children[0].snackbar = true;
+          this.$root.$children[0].errMsg =
             "로그인 중 서버 오류가 발생했습니다. " +
             err +
             ": 다시 시도해 주세요";
@@ -157,24 +157,29 @@ export default {
       let err = false;
       this.emailValid = !(
         (!this.email &&
-          ((this.snackbar = true),
-          (this.errMsg = "이메일을 입력해주세요"),
+          ((this.$root.$children[0].snackbar = true),
+          (this.$root.$children[0].errMsg = "이메일을 입력해주세요"),
           (err = true))) ||
         (this.email &&
           !EmailValidator.validate(this.email) &&
-          ((this.snackbar = true),
-          (this.errMsg = "메일 형식을 맞춰주세요"),
+          ((this.$root.$children[0].snackbar = true),
+          (this.$root.$children[0].errMsg = "메일 형식을 맞춰주세요"),
           (err = true)))
       );
       this.pwValid = !(
         !this.password &&
-        ((this.snackbar = true),
-        (this.errMsg = "비밀번호를 입력해주세요"),
+        ((this.$root.$children[0].snackbar = true),
+        (this.$root.$children[0].errMsg = "비밀번호를 입력해주세요"),
         (err = true))
       );
       if (!err) this.dataSend();
     },
     dataSend() {
+      if (this.saveEmail) {
+        localStorage.setItem("email", this.email);
+      } else {
+        localStorage.removeItem("email");
+      }
       axios
         .get(process.env.VUE_APP_API_URL + "/account/login", {
           params: {
@@ -190,13 +195,14 @@ export default {
             this.$router.push({ path: "/" });
             window.location.reload();
           } else {
-            this.snackbar = true;
-            this.errMsg = "아이디 또는 비밀번호를 확인해주세요";
+            this.$root.$children[0].snackbar = true;
+            this.$root.$children[0].errMsg =
+              "아이디 또는 비밀번호를 확인해주세요";
           }
         })
         .catch((err) => {
-          this.snackbar = true;
-          this.errMsg =
+          this.$root.$children[0].snackbar = true;
+          this.$root.$children[0].errMsg =
             "로그인 중 서버 오류가 발생했습니다. " +
             err +
             ": 다시 시도해 주세요";
