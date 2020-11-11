@@ -2,7 +2,7 @@
   <v-row align="center" class="ma-3">
     <v-col cols="12">
       <v-card-title class="my-3">
-        <v-img src="../../assets/img/damacia.png" draggable="false" />
+        <v-img src="../../assets/img/logo3.png" draggable="false" />
       </v-card-title>
       <v-card-text>
         <v-text-field

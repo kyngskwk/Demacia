@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "demacia-yhjx",
+  "private_key_id": "973f6e2974eb2ed11d94855521c86e64f0c67521",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDCIOwHAWHfqH1F\nQpGm9jif7ozSEYHjy27RGC9Psmu0B9kveqSEwKtrOY1SlZl4pWRBtZnYLnEVUPUp\nIOubDKZn6xsfdh2Zrerl+SJDpVMAXf9vXawQVA0rDwolvLNoOKxbbHB8swxI7lKb\nrbDTOlwmUDEShz1Jb6fWt3xlxj4aRqLod54T3uvItvS9c0a7Cwcj2St6vT7UykT9\nVKmVNRRwfDvcODRh4SHSXwlWIwbm79LR/WJHg1VNyk7BVgkDTD7ed0mRfOAq4eRM\nGjNshZNkMiPwo1G+/bd0MgnxR8PoyICrxlRg2TO43cDCjAUiBsk/Kiz152dv4p6u\natnYlGCJAgMBAAECggEAOBwo7HtvTSSXlLHBhKctRbi/Fia+Stetf51Ea34wGDie\ng1UpAT/pLBRV7zVTRyZS3JU/UtdVkyozukAMKWQWIvo2/Dh5JMa6mt8QEspRu8zv\nfEJwbcXFipkNv0uT9X9P/hrRRpG/7sKHuPySm/MF2IMcM/VH9xZhRjQBri8HGzOn\nlR2yUSwXopkxa8cTVHsxsORdrzLCvUFXQUNR/IiR8Hd+TZ1CScRnB2WlbkV+Ng5J\nk+yGl3glpyOxxaoMftNXe3mW5SjHrS+Z+PxuRoOnN15wSfVCUG15nDTmDuUg+P4u\nLxtLbl4UR/WkX4MSYZWMbIwyHXydvwgN3qbLN7KBewKBgQDjH1Hcu8DKTVt79ex7\nNcYSJkrsZTYTLjJZ6BANDZnbA4Hh7yLTEO3X+Xsadcz4bTFJmFZ0Hsinds4Cvyhm\n6UmWgFgu1qF4x0vtZkRny7GObcY7rXnjTSZi9S0CJIiCdLcUr5xkfyTZBTbCyD2V\ny6Mt0PxksZ3ZvNjjYb3s26fQowKBgQDaz62SKqRw+pREPeoSWYktIP14bPRgPhdA\np/DWgl5hzM3S5oO8G1lTijZ9QOmTQXTAWSxmbqTIphr4LfDelntdpCjsrPR2TYT8\n7JLOjgz3e0LSIHncGzO1X31xG7QZ5ry69B94MAO+ZD3dSmh3J04jnZRh/9pklgSl\nDT4Z5aYg4wKBgQDfY9LU1SbO1D+DMWOj3EQxXdCbqwEA5JNJsuL2s8X8kPqTCu6p\nwyDtKMlYQT2Vq3Cq/lcqZ4zcihIeyX4nmpVynlId36V6civQGKJ3pPXDLV2pHPui\nAiQbeSMH1H8gMURR6Fhe0F+hxWsTMnjAeUbKrZ9SOxETNJfvLhfsfDAXGQKBgD24\nUudl69iKdgQByuK+Krl2EslDQnNbUEfGl2KKh4DiujQBHauTs1CjLdeK1dfZoMsY\n3DNQhl6qq/TRUJ4YqFezlG+eIZ61IwwM1yQ4YWP1etW2n2j8q0s/0ixzegvMT/QU\nJERMluG/eMvQz0K87YeSTWaPOtUgk9LSt2+qnX+tAoGAcVCc+Emegh614VqXoQNG\nZMKVs4HL3o6LHXzDVv1B0ekmy2AMLvvdmj2lLn9jJPC1IzOsWkkFMuUIM0jxTTGY\nPZOwHMi7MGa7E2MDafRSAo+eIszBz5dq5HpNJzILbYYllG35QWKk5JFHnt/6wSk4\nbd7HTRVfk049cal4ona1s4Y=\n-----END PRIVATE KEY-----\n",
+  "client_email": "demacia@demacia-yhjx.iam.gserviceaccount.com",
+  "client_id": "113844062365566492517",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/demacia%40demacia-yhjx.iam.gserviceaccount.com"
+}

@@ -1,14 +1,15 @@
 <template>
   <v-container fill-height>
     <v-card max-width="85%" class="mx-auto">
-      <v-tabs background-color="blue-grey" dark grow>
-        <v-tab> 로그인 </v-tab>
-        <v-tab> 회원가입 </v-tab>
+      <v-tabs dark grow hide-slider>
+        <v-tabs-slider></v-tabs-slider>
+        <v-tab style="background:rgb(247,202,201)"> 로그인 </v-tab>
+        <v-tab style="background:rgb(146,168,209)"> 회원가입 </v-tab>
         <v-tab-item>
-          <login></login>
+          <Login />
         </v-tab-item>
         <v-tab-item>
-          <join></join>
+          <Join />
         </v-tab-item>
       </v-tabs>
     </v-card>
@@ -16,12 +17,12 @@
 </template>
 
 <script>
-import login from "../../components/user/Login";
-import join from "../../components/user/Join";
+import Login from "@/components/user/Login";
+import Join from "@/components/user/Join";
 export default {
   components: {
-    login,
-    join,
+    Login,
+    Join,
   },
 };
 </script>

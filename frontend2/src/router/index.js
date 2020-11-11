@@ -1,4 +1,5 @@
 import Vue from "vue"
+
 import Router from "vue-router"
 
 // 메인 페이지
@@ -18,6 +19,8 @@ import UserSearch from "../page/UserSearch.vue"
 
 // 게시판
 import Board from "../page/board/boardMain"
+// 게시판
+import BoardWrite from "../page/board/boardWrite"
 
 Vue.use(Router);
 
@@ -27,13 +30,19 @@ export default new Router({
         // 메인 페이지
         {
             path: "/",
-            component: main
+            component: main,
         },
         // 게시판
         {
             path: "/board",
             name: "board",
             component: Board,
+        },
+        // 게시판 글쓰기
+        {
+            path: "/boardWrite",
+            name: "boardWrite",
+            component: BoardWrite,
         },
         // 로그인 페이지
         {
