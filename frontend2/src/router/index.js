@@ -14,6 +14,8 @@ import Message from "../page/Message"
 // 대기실 전적검색
 import SearchPick from "../page/SearchPick.vue"
 
+// 비디오 게시판
+import VideoDetail from "../video/VideoDetail.vue"
 // 유저 전적검색
 import UserSearch from "../page/UserSearch.vue"
 
@@ -60,6 +62,11 @@ export default new Router({
             path: "/searchpick",
             name: "SearchPick",
             component: SearchPick
+        },
+        {
+            path: "/videodetail",
+            name: "VideoDetail",
+            component: VideoDetail
         },
         {
             path: "/usersearch",
