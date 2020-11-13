@@ -8,7 +8,7 @@
             >
                 <v-toolbar-title>전적기록 검색하기</v-toolbar-title>
                 <v-autocomplete
-                v-model="select"
+                v-model="nickname"
                 :loading="loading"
                 :items="items"
                 :search-input.sync="search"
@@ -19,7 +19,7 @@
                 label="소환사명을 입력하세요!"
                 solo-inverted
                 ></v-autocomplete>
-                <v-btn icon>
+                <v-btn icon @click="gosearch">
                 <v-icon left>mdi-magnify</v-icon>
                 </v-btn>
             </v-toolbar>
@@ -50,6 +50,16 @@ export default {
         VideoAritcle,
         MessageForm,
     },
+    data() {
+        return {
+            nickname: '',
+        } 
+    },
+    methods: {
+        gosearch() {
+            this.$router.push({name:'UserSearch', params: {nickname: this.nickname}})
+        }
+    }
 }
 </script>
 
