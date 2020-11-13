@@ -71,7 +71,8 @@ export default new Router({
         {
             path: "/usersearch",
             name: "UserSearch",
-            component: UserSearch
+            component: UserSearch,
+            props: true
         }
     ],
 });

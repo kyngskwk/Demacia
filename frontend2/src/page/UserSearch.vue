@@ -36,9 +36,14 @@ export default {
     components: {
         UserSearchList,
     },
+    props: {
+        nickname: {
+            type: Object
+        }
+    },
     data() {
         return {
-            nickname: '',
+            // nickname: '',
             isloading: false,
             infoerror: false,
             isresult: false,
@@ -49,8 +54,8 @@ export default {
         gosearch() {
             if (this.nickname != '') {
                 this.isloading = true
-                // axios.post(`http://127.0.0.1:8000/django/api/usersearch/`, {
-                axios.post(`http://k3a502.p.ssafy.io/django/api/usersearch/`, {
+                axios.post(`http://127.0.0.1:8000/django/api/usersearch/`, {
+                // axios.post(`http://k3a502.p.ssafy.io/django/api/usersearch/`, {
                     nickname: this.nickname
                 }).then(response => {
                     this.result = response.data
