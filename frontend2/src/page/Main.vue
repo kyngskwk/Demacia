@@ -23,10 +23,10 @@
                 <v-icon left>mdi-magnify</v-icon>
                 </v-btn>
             </v-toolbar>
-            <v-row class="mt-5">
+            <!-- <v-row class="mt-5">
                 <v-col cols="6"><BestArticle/></v-col>
                 <v-col cols="6"><VoteArticle/></v-col>
-            </v-row>
+            </v-row> -->
             <VideoAritcle />
         </div>
         <MessageForm/>
@@ -36,8 +36,8 @@
 
 <script>
 import Carousel from "../components/common/Carousel.vue";
-import BestArticle from "../components/main/BestArticle.vue";
-import VoteArticle from "../components/main/VoteArticle.vue";
+// import BestArticle from "../components/main/BestArticle.vue";
+// import VoteArticle from "../components/main/VoteArticle.vue";
 import VideoAritcle from "../components/main/VideoArticle";
 import MessageForm from "../components/message/MessageForm.vue";
 
@@ -45,8 +45,6 @@ export default {
     name: 'Main',
     components: {
         Carousel,
-        BestArticle,
-        VoteArticle,
         VideoAritcle,
         MessageForm,
     },
