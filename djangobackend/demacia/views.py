@@ -15,7 +15,7 @@ from .video import get_image, change_text, timeline, winrate_algo
 # Create your views here.
 # .
 
-api_list = ['RGAPI-4dcd2099-2605-4440-9864-f53a305141e7', 'RGAPI-9375f8b8-782e-44ed-a105-9f9806a40cdb']
+api_list = ['RGAPI-4dcd2099-2605-4440-9864-f53a305141e7', 'RGAPI-ba080a15-5089-4c29-961a-e0810f59fc8e', 'RGAPI-c9cbb0f1-f32b-4212-a526-80a62793813b']
 
 @api_view(['POST'])
 def user_search(request):
