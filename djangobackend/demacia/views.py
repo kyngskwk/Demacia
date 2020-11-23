@@ -20,7 +20,7 @@ api_list = ['RGAPI-4dcd2099-2605-4440-9864-f53a305141e7', 'RGAPI-9375f8b8-782e-4
 @api_view(['POST'])
 def user_search(request):
     request_user = request.data['nickname']
-    api = random.choice(api_list)
+    api = 'RGAPI-4dcd2099-2605-4440-9864-f53a305141e7'
 
     ### 닉네임 -> accountid
     nicktoid = "https://kr.api.riotgames.com/lol/summoner/v4/summoners/by-name/"+ str(request_user)+ "?api_key=" + str(api)
